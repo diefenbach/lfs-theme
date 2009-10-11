@@ -1,0 +1,38 @@
+{% load i18n %}
+{% load lfs_tags %}
+
+<div class="cart-portlet portlet">
+
+    <div class="portlet-header">
+        
+        {% if title %}
+            <a href="{% url lfs.cart.views.cart %}"
+               title="{% trans 'Go to cart' %}">{{ title }}
+        {% else %}
+            {% trans 'Cart' %}    
+        {% endif %}
+
+        <img src="{{MEDIA_URL}}lfstheme/img/cart.png"
+             alt="{% trans 'Cart' %}" />
+        </a>
+    </div>
+
+    <div class="portlet-body">
+        {% if amount_of_items %}
+            <div class="article">
+                {{amount_of_items}} {% trans 'Article' %}
+            </div>
+            <div class="price">
+                {{price|currency}}
+            </div>    
+        {% else %}
+            {% trans 'Cart is empty' %}
+        {% endif %}
+    </div>
+    
+    <div class="portlet-footer">
+        <a href="{% url lfs.cart.views.cart %}">
+            {% trans 'Go to cart' %}
+        </a>
+    </div>
+</div>

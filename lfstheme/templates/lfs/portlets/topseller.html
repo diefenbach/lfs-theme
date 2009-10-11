@@ -1,0 +1,27 @@
+{% load i18n %}
+
+{% if topseller %}
+    <div class="topseller-portlet portlet">
+
+        <div class="portlet-header">
+            {% trans 'Topseller' %}
+        </div>
+
+        <div class="portlet-body">
+            {% for product in topseller %}
+                <div class="portlet-item {% if forloop.last %}last{% endif %}">
+                    <a href="{{product.get_absolute_url}}">
+                        {{ product.get_name }}
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="portlet-footer">
+            <a href="{% url lfs_pages %}">
+                {% trans 'All topseller' %}
+            </a>
+        </div>
+    </div>
+
+{% endif %}

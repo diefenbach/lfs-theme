@@ -1,0 +1,24 @@
+{% load i18n %}
+{% load lfs_tags %}
+
+{% if average %}
+    <div class="average-rating-portlet portlet">
+        <div class="portlet-header">
+            {{ title }}
+        </div>
+        <div class="portlet-body">
+            <div class="average-rating" 
+                 onclick="window.location='#reviews'">
+                <ul class="star-rating">
+                    <li class="current-rating"
+                        style="width:{{ average|multiply:25 }}px">
+                    </li>
+                </ul>				
+            </div>
+	        <div class="average-rating-description clear">
+	            {% trans 'Score' %}: {{ average|number }}, {% trans 'based on' %}
+	            {% blocktrans count amount as counter %}{{ amount }} review{% plural %}{{ amount }} reviews{% endblocktrans %}.
+	        </div>
+		</div>
+    </div>
+{% endif %}

@@ -1,0 +1,13 @@
+{% extends "lfs/customer/base.html" %}
+{% load i18n %}
+{% load lfs_tags %}
+
+{% block content %}
+    <div class="site-actions">
+        <a href="{% url lfs_my_orders %}">{% trans 'Overview' %}</a>
+    </div>
+    
+    <h1>{% trans 'Ordernumber:' %} {{current_order.id}}</h1>
+    
+    {% include "lfs/order/lfs_order_tmpl.html" %}
+{% endblock %}

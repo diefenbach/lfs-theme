@@ -1,0 +1,76 @@
+{% extends "lfs/base.html" %}
+{% load i18n %}
+
+{% block title %}
+    {% trans 'Contact form' %} - {{ block.super }}
+{% endblock %}
+
+{% block section %}{% endblock %}
+
+{% block content %}
+    
+    <h1>{% trans 'Contact form' %}</h1>
+    <p>
+        {% trans 'Please leave us a message. We will answer as soon as possible.' %}
+    </p>
+    
+    <form action="{% url contact_form %}"
+          method="post">
+        <div class="field">
+            <label>
+                {% trans 'Your name' %}:
+            </label>
+
+            {% if form.name.errors %}
+                <div class="error">
+                    {{ form.name.errors }}                    
+                    {{ form.name }}
+                </div>
+            {% else %}
+                <div>
+                    {{ form.name }}
+                </div>
+            {% endif %}
+        </div>
+        <div class="field">
+            <label>
+                {% trans 'Your e-mail' %}:
+            </label>
+
+            {% if form.email.errors %}
+                <div class="error">
+                    {{ form.email.errors }}
+                    {{ form.email }}
+                </div>
+            {% else %}
+                <div>
+                    {{ form.email }}
+                </div>
+            {% endif %}
+        </div>
+        <div class="field">
+            <label>
+                {% trans 'Your message' %}:
+            </label>
+
+            {% if form.body.errors %}
+                <div class="error">
+                    {{ form.body.errors }}                    
+                    {{ form.body }}
+
+                </div>
+            {% else %}
+                <div>
+                    {{ form.body }}
+                </div>
+            {% endif %}
+        </div>
+        
+        <div class="buttons">
+            <button class="button emphasized left"
+                   type="submit"
+                   name="add-to-cart">{% trans 'Send' %}</button>
+        </div>       
+    </form>
+
+{% endblock %}

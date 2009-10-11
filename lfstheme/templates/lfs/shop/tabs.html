@@ -1,0 +1,18 @@
+{% load i18n %}
+
+<div class="tabs">
+    <ul>
+        <li>
+            <a href="/">
+                {% trans 'Home' %}
+            </a>                                            
+        </li>
+        {% for tab in tabs %}
+            <li {% if tab.selected %}class="selected"{% endif %}>
+                <a href="{{ tab.link }}">
+                    {{ tab.title }}
+                </a>                                
+            </li>            
+        {% endfor %}
+    </ul>
+</div>

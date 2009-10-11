@@ -1,0 +1,10 @@
+<ul class="top-level-categories">
+    {% for category in categories %}
+        <li>
+            <a {% if category.current %}class="current"{% endif %}
+                href="{{ category.url }}">
+                {{ category.name }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>

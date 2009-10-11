@@ -1,0 +1,47 @@
+{% load i18n %}
+{% load lfs_tags %}
+
+<div class="reviews">
+    <h1 class="section">{% trans 'Reviews' %}</h1>
+
+    {% if reviews %}
+        {% for review in reviews %}
+            <div class="review">
+                <ul class="star-rating small-star inline-rating">
+                    <li class="current-rating"
+                        style="width:{{review.score|multiply:10}}px">
+                        Currently 3/5 Stars
+                    </li>
+                </ul>
+        
+                {% if review.email and review.name %}                    
+                    <a href="mailto:{{review.email}}">{{review.name}}</a>,
+                {% else %}
+                    {% if review.name %}
+                        {{ review.name }},
+                    {% else %}
+                        {% trans 'Anonymous' %},
+                    {% endif %}
+                {% endif %}
+                 {{ review.creation_date|date:"d. F Y" }}
+            </div>    
+            <div>        
+                {{ review.comment|safe|linebreaks }}
+            </div>    
+        {% endfor %}
+    {% else %}
+        <p>
+            {% trans 'There are no ratings for this product. Be the first one!' %}
+        </p>
+    {% endif %} 
+    {% if has_rated %}
+        <div>
+            {% trans 'You have already rated' %}
+        </div>
+    {% else %}
+        <div class="buttons">
+            <a class="button left"
+               href="{% url reviews_add content_type_id content_id %}">{% trans 'Add review' %}</a>
+        </div>
+    {% endif %}
+</div>

@@ -1,0 +1,22 @@
+{% load i18n %}
+{% if pages %}
+    <div class="pages-portlet portlet">
+        <div class="portlet-header">
+            {{ title }}
+        </div>
+        <div class="portlet-body">
+            {% for page in pages %}
+                <div class="portlet-item {% if forloop.last %}last{% endif %}">
+                    <a href="{{page.get_absolute_url}}">
+                        {{page.title}}
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="portlet-footer">
+            <a href="{% url lfs_pages %}">
+                {% trans 'More information' %}
+            </a>
+        </div>
+    </div>
+{% endif %}

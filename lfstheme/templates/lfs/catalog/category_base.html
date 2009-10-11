@@ -1,0 +1,28 @@
+{% extends "lfs/base.html" %}
+{% load lfs_tags  %}
+{% load portlets_tags %}
+{% load lfs_theme_tags %}
+
+{% block title %}
+    {{ category.name }} - {{ block.super }}
+{% endblock %}
+
+{% block section %}category{% endblock %}
+
+{% block head %}
+    {% if category.get_meta_keywords %}
+        <meta name="keywords" content="{{category.get_meta_keywords}}" />
+    {% endif %}
+    {% if category.get_meta_description %}
+        <meta name="description" content="{{category.get_meta_description}}" />
+    {% endif %}
+{% endblock %}
+
+{% block breadcrumbs %}
+    {% breadcrumbs category %}
+{% endblock %}
+
+{% block content %}
+    {{ category.static_block.html|safe }}
+    {{ category_inline|safe }}
+{% endblock %}

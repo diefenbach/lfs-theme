@@ -1,0 +1,81 @@
+{% load i18n lfs_tags %}
+
+<div class="products-navigation">
+    {% if show_pages %}
+        {% if previous_url %}
+            <a href="{{ previous_url }}">&lt;&lt; {% trans 'Previous page' %}</a>
+        {% else %}
+            &lt;&lt; {% trans 'Previous page' %}
+        {% endif %}
+
+        {% if pages %}
+            -
+        {% endif %}
+
+        {% for page in pages %}
+            <a class="{% if page.selected%}current{% endif %}"
+               href="{% url lfs_category category.slug page.start %}">
+                {{ page.name }}
+            </a>
+        {% endfor %}
+
+        ({{ amount_of_products }} {% trans 'Products' %})
+
+        {% if pages %}
+            -
+        {% endif %}
+
+        {% if next_url %}
+            <a href="{{ next_url }}">{% trans 'Next page' %} &gt;&gt;</a>
+        {% else %}
+            {% trans 'Next page' %} &gt;&gt;
+        {% endif %}
+    {% endif %}
+</div>
+
+{% sorting %}
+
+<h1>
+	{{ category.name }}
+</h1>
+<div id="products">
+    <table class="lfs-default">
+        {% for col in products %}
+        <tr class="product-row">
+            {% for product in col %}
+                <td class="product-data"
+                    onclick="window.location='{% url lfs.catalog.views.product_view product.slug %}'">
+                    <div class="product-image">
+                        <a href="{% url lfs.catalog.views.product_view product.slug %}">
+                            <img alt="{{ product.get_name }}"
+                                 src="{{ product.get_image.url_100x100 }}" />
+                        </a>
+                    </div>
+					<div>
+	                    <div class="product-title">{{ product.get_name }}</div>
+	                    <div class="product-description">{{ product.short_description|safe }}</div>
+					</div>
+	
+
+                    <div class="product-price">
+                        {% if product.get_for_sale %}
+                           <span class="for-sale-standard-price">{{ product.get_standard_price|currency }}</span>
+                           <span class="for-sale-price">{{ product.get_for_sale_price|currency }}*</span>
+                        {% else %}
+                            <span class="standard-price">{{ product.get_price|currency }}*</span>
+                        {% endif %}
+                        <div class="price-disclaimer">
+                            {% trans '*inc. VAT' %}
+                        </div>
+                    </div>
+                    <div class="details-button">
+                        <a class="button emphasized"
+                           href="{% url lfs_product product.slug %}">{% trans 'Details' %}
+                        </a>
+                    </div>
+                </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</div>

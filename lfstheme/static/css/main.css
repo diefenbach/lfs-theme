@@ -1,0 +1,970 @@
+body {
+    color: #58585a;
+    font-family: Verdana, "MS Trebuchet", sans-serif;
+    font-size: 12px;
+}
+
+a,
+a:visited {
+    color: #58585a;
+}
+
+a:hover {
+    color: black !important;
+}
+
+h1 {
+    font-size: 138.5%;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+h1.first-heading {
+    margin: 0 0 10px 0;
+}
+
+h1.section {
+    margin: 0 0 10px 0;
+    padding: 20px 0 0 0;
+    border-bottom: 1px solid #dfd7d3;
+}
+
+h2 {
+    font-size: 116%;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+h3 {
+    font-size: 100%;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+img {
+    border: none;
+}
+
+p {
+    line-height: 1.5em;
+}
+
+/* Forms */
+form label {
+    font-weight: bold;
+}
+
+td.label {
+    padding-right: 10px;
+}
+
+.field {
+    padding-bottom: 10px;
+}
+
+ul.errorlist {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    color: red;
+}
+
+tr.error td {
+    color: red;
+}
+
+table.lfs-default {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.lfs-default td {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+table.lfs-default th {
+    background-color: #9f8d83;
+    color: white;
+    font-weight: bold;
+    padding: 4px 6px;
+}
+
+table.lfs-default a {
+    text-decoration: none;
+}
+
+table.lfs-default .buttons {
+    padding: 10px 0;
+}
+
+td, th {
+    text-align:left;
+    vertical-align: top;
+}
+
+td.total {
+    font-weight: bold;
+}
+
+td.discreet {
+    font-size: 90%;
+}
+
+td.select {
+    padding-right: 5px;
+}
+
+.right,
+.number {
+    text-align:right;
+}
+
+.checkbox-left {
+    width: 1px;
+    padding-right: 5px;
+}
+
+/* Header */
+#header {
+    padding: 20px 0 10px 0;
+}
+
+#header .search {
+    text-align: right;
+}
+
+img.logo {
+    height: 69px;
+}
+
+/* Search */
+table.search-results {
+    clear: both;
+    margin-top: 10px;
+}
+
+.search-results-description {
+    padding: 10px 0;
+}
+
+.search-results td.content {
+    padding: 0;
+}
+
+.search-results .pagination {
+    float: left;
+    padding-bottom: 10px;
+}
+
+.search-results .pagination a {
+    text-decoration: none;
+}
+
+.search-results-phrase {
+    font-weight: bold;
+}
+
+#search {
+    display:inline;
+}
+
+#search-form,
+.search-results-form {
+    display:inline;
+}
+
+#search-results {
+    border-collapse: collapse;
+}
+
+#search-results tr:hover {
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+#search-results-table td {
+    vertical-align: top;
+}
+
+.livesearch-wrapper {
+    position: relative; /* Anchor for absolute livesearch */
+    top: -40px;
+    left: -40px;
+}
+
+#livesearch-results-table {
+    width:100%;
+    border-collapse: collapse;
+}
+
+#livesearch-results-table tr {
+    cursor: pointer;
+}
+
+#livesearch-results-table tr:hover {
+    background-color: #eee;
+}
+
+#livesearch-results-table td {
+    vertical-align: top;
+    padding: 2px 0;
+}
+
+#livesearch-results-table td.image {
+    width:1%;
+    padding-right:8px;
+    height: 60px;
+}
+
+#livesearch-results-table img {
+    width: 60px;
+}
+
+#livesearch-results-table td.all-results {
+    text-align:right;
+}
+
+#livesearch-result {
+    position: absolute; right: 0;
+    display:none;
+    z-index: 1000;
+    background-color: white;
+    border: 1px solid #dfd7d3;
+    width:500px;
+    padding: 5px;
+}
+
+/* Tabs */
+.tabs {
+    padding: 10px 0 0 0;
+}
+
+.tabs ul {
+    height: 40px;
+    padding: 0;
+    background: url(../../lfstheme/img/menu_bg.jpg) repeat-x;
+}
+
+.tabs li {
+    list-style-type: none;
+    float: left;
+}
+
+.tabs li a {
+    display: block;
+    position: relative;
+    float: left;
+    padding: 0 20px;
+    line-height: 40px;
+    text-align: center;
+    background: transparent;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.tabs li.selected a,
+.tabs li a:hover {
+    background: url(../../lfstheme/img/menu_bg_selected.jpg) repeat-x;
+    color: white !important;
+}
+
+/* Breadcrumbs */
+ul.breadcrumbs {
+    list-style-type: none;
+    padding: 10px 0 10px 0;
+    margin:0;
+}
+
+ul.breadcrumbs li {
+    display: inline;
+}
+
+/* Content ################################################################# */
+#content {
+    padding-top: 15px;
+}
+
+.left-slot {
+    padding-right: 20px;
+    border-right: 1px solid #dfd7d3;
+}
+
+.padding-both .middle-slot  {
+    padding: 0 20px;
+}
+
+.padding-left .middle-slot {
+    padding-left: 20px;
+}
+
+.padding-right .middle-slot {
+    padding-right: 20px;
+}
+
+.middle-slot ul {
+    margin: 10px 0 10px 30px;
+}
+
+.middle-slot li {
+    list-style: square outside;
+    line-height: 1.5em;
+}
+
+.price-disclaimer {
+    font-size: 80%;
+    color: #9f8d83;
+}
+
+.product-price {
+    text-align: right;
+    padding: 10px 10px 0 0;
+}
+
+.for-sale-price {
+    font-weight: bold;
+}
+
+.for-sale-standard-price {
+    text-decoration: line-through;
+}
+
+.sorting {
+    background: url(../../lfstheme/img/portlet_header_bg.jpg) no-repeat right;
+    text-align: right;
+    padding-right: 5px;
+}
+
+/* Category
+___________________________________________________________________________ */
+
+a.current {
+    font-weight: bold;
+}
+
+.category h3.product-title {
+    font-weight: bold;
+}
+
+.category .category-image,
+.category .product-image {
+    margin-right: 40px;
+    padding-bottom: 10px;
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+
+.category .product-row {
+    border-bottom: 1px solid #eae5e2;
+}
+
+.category .product-data {
+    padding-top: 10px;
+}
+
+.category .products {
+    clear: both;
+    padding-top: 10px;
+}
+
+.category .product-data:hover {
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.category .products-navigation {
+    float:left;
+}
+
+.category .products-navigation a {
+    text-decoration: none;
+}
+
+.category .description {
+    padding-bottom: 10px;
+}
+
+/* Product
+___________________________________________________________________________ */
+
+#product-inline {
+    padding-top: 10px;
+}
+
+.product .main-image {
+    width: 200px;
+    height: 200px;
+}
+
+.product-images {
+    float: left;
+}
+
+.product-images .main-image {
+    margin-right: 25px;
+    border: 1px solid #dfd7d3;
+    width: 200px;
+}
+
+.product .sub-images {
+    padding: 10px 0;
+}
+
+.product-images a {
+    text-decoration: none;
+}
+
+.product-images .sub-images img {
+   border: 1px solid #dfd7d3;
+   clear: both;
+}
+
+.product-title {
+    font-size: 100%;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.product .product-description {
+    clear: both;
+}
+
+.product .deliverable {
+    color: green;
+}
+
+.product .not-deliverable {
+    color: red;
+}
+
+.product .prices {
+    padding: 30px 0 0 0;
+    text-align: right;
+}
+
+.product .for-sale-price,
+.product .standard-price {
+    font-size: 200%;
+    font-weight: bold;
+    margin: 0 0 2px 0;
+}
+
+.product .for-sale-standard-price {
+    text-decoration: line-through;
+    padding-right: 10px;
+}
+
+.product-navigation {
+    float: left;
+    padding: 10px 0;
+    color: #58585a;
+}
+
+.product-navigation a:visited,
+.product-navigation a {
+    text-decoration: none;
+    color: #58585a;
+}
+
+.overview {
+    text-align: right;
+    padding: 10px 30px 10px 0;
+    background: url("../../lfstheme/img/portlet_header_bg.jpg") right no-repeat;
+    font-size: 80%;
+    font-weight: bold;
+}
+
+.overview a {
+    text-decoration: none;
+}
+
+.product .shipping-information {
+    padding-bottom: 20px;
+}
+
+table.product-accessories,
+table.product-variants {
+    font-size: 93%;
+}
+
+/* Cart
+___________________________________________________________________________ */
+
+.added-to-cart td.image,
+.cart td.image {
+    height: 60px;
+    width: 60px;
+    padding-right: 10px;
+}
+
+.added-to-cart .accessories td {
+    vertical-align: middle;
+}
+
+/* Checkout
+___________________________________________________________________________ */
+
+.checkout .payment,
+.checkout .shipping,
+.checkout #cart-inline,
+.checkout #bank-account {
+    margin-top: 20px;
+}
+
+.checkout #bank-account td {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+select.cart-country,
+select.cart-shipping-method,
+select.cart-payment-method {
+    width: 150px;
+}
+
+.checkout .payment,
+.checkout .shipping,
+.checkout #cart-inline,
+.checkout #bank-account {
+    margin-top: 20px;
+}
+
+.checkout .shipping-method,
+.checkout .payment-method {
+    padding: 2px 0
+}
+
+.checkout textarea {
+    width: 99.7%;
+}
+
+.checkout td.image {
+    height: 60px;
+    width: 60px;
+    padding-right: 10px;
+}
+
+/* Login / Register
+___________________________________________________________________________ */
+
+
+.customer-login th,
+.checkout-login th {
+    padding-right: 10px;
+}
+
+.customer-login th,
+.customer-login td,
+.checkout-login th,
+.checkout-login td {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.customer-login .description,
+.checkout-login .description {
+    height: 60px;
+}
+
+.customer-login .form,
+.checkout-login .form {
+    height: 120px;
+}
+
+h2.authenticate {
+    background: url(../../lfstheme/img/menu_bg.jpg) repeat-x;
+    padding: 10px;
+}
+
+div.login {
+    float: left;
+    padding-right: 10px;
+    width: 310px;
+}
+
+div.register {
+    float: left;
+    padding-right: 10px;
+    width: 310px;
+}
+
+div.anonymous-checkout {
+    float: left;
+    width: 310px;
+}
+
+.customer-login div.login {
+    width: 470px
+}
+
+.customer-login div.register {
+    width: 470px;
+    padding-right: 0 !important;
+}
+
+/* Tags
+___________________________________________________________________________ */
+
+.tag-cloud {
+    text-align: justify;
+}
+
+/* Reviews
+___________________________________________________________________________ */
+
+.add-review .label {
+    padding-top: 10px;
+}
+
+.review {
+    padding-top: 10px;
+}
+
+.star-rating,
+.star-rating a:hover,
+.star-rating a:active,
+.star-rating a:focus,
+.star-rating .current-rating {
+    background: url(../../lfstheme/img/star.gif) left -1000px repeat-x;
+}
+
+.star-rating {
+    position:relative;
+    height:25px;
+    overflow:hidden;
+    list-style:none;
+    margin:0 !important;
+    padding:0 !important;
+    background-position: left top;
+    width: 125px;
+}
+
+.star-rating li {
+    display: inline;
+}
+
+.star-rating a,
+.star-rating .current-rating {
+    position:absolute;
+    top:0;
+    left:0;
+    text-indent:-1000em;
+    height:25px;
+    line-height:25px;
+    outline:none;
+    overflow:hidden;
+    border: none;
+}
+
+.star-rating a:hover,
+.star-rating a:active,
+.star-rating a:focus {
+    background-position: left bottom;
+}
+
+.star-rating .current-rating {
+    z-index:1;
+    background-position: left center;
+}
+
+/* smaller star */
+.small-star {
+    width:50px;
+    height:10px;
+}
+
+.small-star,
+.small-star a:hover,
+.small-star a:active,
+.small-star a:focus,
+.small-star .current-rating {
+    background-image: url(../../lfstheme/img/star_small.gif);
+    line-height: 10px;
+    height: 10px;
+}
+
+.average-rating {
+    float:right;
+    cursor: pointer;
+}
+
+/* Portlets
+___________________________________________________________________________ */
+
+.portlet,
+.portlet a,
+.portlet a:visited {
+    color: #58585a;
+}
+
+.portlet {
+    margin-bottom:15px;
+}
+
+.portlet a {
+    text-decoration: none;
+}
+
+.portlet ul {
+    list-style-type: none;
+}
+
+.portlet ul.root {
+    padding: 0;
+    margin: 0;
+}
+
+.portlet li {
+    font-weight: normal;
+}
+
+.portlet-header {
+    background: #eee;
+    padding: 5px 10px;
+    margin-bottom: 3px;
+    color: #58585a;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.portlet-header,
+.portlet-header a,
+.portlet-header a:visited {
+    color: #58585a;
+}
+
+.portlet-item {
+    padding: 10px 0;
+}
+
+.portlet-item.last {
+    border-bottom: none !important;
+    padding: 5px 0;
+}
+
+.portlet-footer {
+    padding: 5px 0 5px 10px;
+    font-size: 80%;
+    font-weight: bold;
+    text-align: right;
+}
+
+.portlet-footer a {
+    padding-left: 25px;
+    text-decoration: none;
+    background: url("../../lfstheme/img/portlet-bullet.gif") left center no-repeat;
+}
+
+/* Cart portlet
+___________________________________________________________________________ */
+
+.cart-portlet .portlet-header {
+    text-transform: none;
+    background-color: #7e6b60;
+    background-image: none;
+    position: relative;
+    border: 1px solid #dfd7d3;
+    border-bottom: none;
+    margin: 0;
+}
+
+.cart-portlet .portlet-header,
+.cart-portlet .portlet-header a,
+.cart-portlet .portlet-header a:visited {
+    color: white;
+}
+
+.cart-portlet .portlet-header img {
+    position: absolute; right: 8px;
+}
+
+.cart-portlet .portlet-body {
+    padding: 16px 10px 10px 10px;
+    border: 1px solid #dfd7d3;
+}
+
+.cart-portlet .price {
+    font-weight: bold;
+    text-align: right;
+}
+
+.cart-portlet .portlet-footer {
+    background: #eae5e2;
+    border: 1px solid #dfd7d3;
+    border-top: none;
+    padding: 5px 10px;
+    font-size: 80%;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Categories portlet */
+.categories-portlet ul ul {
+    padding: 4px 0 0 0;
+    margin: 0 0 0 15px;
+}
+
+.categories-portlet ul ul ul {
+    margin: 0 0 0 10px;
+}
+
+.categories-portlet a {
+    text-decoration: none;
+}
+
+.categories-portlet a.current {
+    font-weight: bold;
+}
+
+.categories-portlet li.level-0 {
+    border-bottom: 1px solid #e5dfdc;
+    padding: 10px 0;
+}
+
+.categories-portlet li.level-0 a {
+    padding-left: 15px;
+    background: transparent url("../../lfstheme/img/bullet_light.jpg") left 5px no-repeat;
+    display: block;
+}
+
+.categories-portlet li.level-0 a.current,
+.categories-portlet li.level-0 a:hover {
+    background: transparent url("../../lfstheme/img/bullet_dark.jpg") left 5px no-repeat;
+}
+
+.categories-portlet li.level-1,
+.categories-portlet li.level-2 {
+    padding: 5px 0;
+    font-size: 90%;
+}
+
+.categories-portlet li.level-1 a,
+.categories-portlet li.level-1 a.current,
+.categories-portlet li.level-1 a:hover {
+    padding: 0;
+    background: transparent;
+}
+
+/* Average rating portlet
+___________________________________________________________________________ */
+.average-rating-portlet .average-rating {
+    float: none;
+    padding-top: 5px;
+}
+
+.average-rating-portlet .average-rating-description {
+    padding-top: 10px;
+}
+
+/* Colophon
+___________________________________________________________________________ */
+
+#colophon .container {
+    color: #58585a;
+    background-color: #f5f5f5;
+    margin-top: 50px;
+    padding: 10px 0;
+}
+
+#colophon a {
+    color: #58585a;
+}
+
+#colophon p {
+    text-align: center;
+}
+
+/* Buttons
+-------------------------------------------------------------- */
+.buttons {
+    margin-top: 10px;
+}
+
+.delete-button {
+    background-color: #beb5b0;
+    border: 1px solid #dfd7d3;
+    text-decoration: none;
+    padding: 2px 4px;
+    color: white !important;
+    font-weight: bold;
+    font-size: 9px;
+    margin-left: 10px;
+    position: relative; top:2px;
+    font-family: Arial;
+}
+
+/* --------------------------------------------------------------
+   Based on buttons by Kevin Hale [particletree.com]
+   * particletree.com/features/rediscovering-the-button-element
+-------------------------------------------------------------- */
+
+a.button, 
+button {
+  display:block;
+  float: right;
+  margin: 0.7em 8px 0.7em 0.5em;
+  padding:5px 10px 5px 10px;   /* Links */
+  font-size:100%;
+  line-height:130%;
+  text-decoration:none;
+  font-weight:bold;
+  cursor:pointer;
+  background-color: #beb5b0;
+  border: 1px solid #dfd7d3;
+  color: #fff !important;
+}
+
+a.button.left, 
+button.left {
+  margin: 0.7em 0.5em 0.7em 0em;
+  float:left;
+}
+
+button {
+  width:auto;
+  overflow:visible;
+  padding:4px 10px 3px 7px;   /* IE6 */
+}
+
+button[type] {
+  padding:4px 10px 4px 7px;   /* Firefox */
+  line-height:17px;           /* Safari */
+}
+
+*:first-child+html button[type] {
+  padding:4px 10px 3px 7px;   /* IE7 */
+}
+
+button img, 
+a.button img {
+  margin:0 3px -3px 0 !important;
+  padding:0;
+  border:none;
+  width:16px;
+  height:16px;
+  float:none;
+}
+
+
+/* Button colors */
+
+/* Standard */
+button:hover, a.button:hover {
+  background-color: #beb5b0;
+  border: 1px solid #dfd7d3;
+  color:black !important;
+}
+
+/* Positive */
+body .emphasized {
+  color:white;
+  background-color:#7e6b60;
+}
+
+a.emphasized:hover, button.emphasized:hover {
+  background-color:#7e6b60;
+  border:1px solid #dfd7d3;
+  color:black !important;
+}

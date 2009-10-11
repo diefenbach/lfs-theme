@@ -1,0 +1,25 @@
+{% extends "lfs/base.html" %}
+{% load i18n %}
+
+{% block section %}{% endblock %}
+{% block left-slot-wrapper %}{% endblock %}
+{% block right-slot-wrapper %}{% endblock %}
+
+{% block content %}
+    <h1>{% trans 'Thank you' %}</h1>
+
+    <ul>
+        <li>
+            <a href="{{ object.get_absolute_url }}">{% trans "Go to the reviewed product" %}</a>
+        </li>
+        <li>
+            <a href="{% url lfs_shop_view %}">{% trans 'Go to Shop' %}</a>
+        </li>
+    </ul>
+
+    <p>
+        <a href="javascript:window.close()">
+            {% trans 'Close Window' %}
+        </a>
+    </p>
+{% endblock %}

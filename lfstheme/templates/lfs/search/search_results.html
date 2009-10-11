@@ -1,0 +1,103 @@
+{% extends "lfs/base.html" %}
+{% load i18n lfs_tags pagination_tags %}
+
+{% block title %}
+    {% trans 'Search results' %} - {{ block.super }}
+{% endblock %}
+
+{% block section %}search-results{% endblock %}
+
+{% block breadcrumbs %}
+    {% breadcrumbs _("Search results") %}
+{% endblock %}
+
+{% block wrapper %}
+
+    <h1 class="first-heading">{% trans 'Search results' %}</h1>
+
+    <label for="search">{% trans 'Search' %}:</label>
+    <form action="{% url lfs_search %}"
+          class="search-results-form">
+        <input id="search-input"
+               type="text"
+               name="phrase" />
+
+        <input type="submit"
+               value="{% trans 'Go!' %}">
+    </form>
+
+    <p class="search-results-description">
+        {% trans 'You searched for' %} <span class="search-results-phrase">"{{ phrase }}"</span>.
+        {% blocktrans count total as counter %}There has been found 1 product.{% plural %}There has been found {{  counter  }} products.{% endblocktrans %}
+    </p>
+
+    {% if products %}
+
+        {% autopaginate products 10 %}
+        {% paginate %}
+        {% sorting %}
+
+        <br clear="both">
+
+        <div class="container header append-bottom">
+            <div class="span-5">
+                {% trans 'Image' %}
+            </div>
+            <div class="span-15">
+                {% trans 'Product' %}
+            </div>
+            <div class="span-4 last number">
+                {% trans 'Price' %}
+            </div>
+        </div>
+
+        {% for product in products %}
+            <div class="container append-bottom">
+                <div class="span-5">
+                    <a href="{{ product.get_absolute_url }}">
+                        <img src="{{ product.get_image.url_100x100 }}"
+                             alt="{{ product.get_name }}"
+                             title="{{ product.get_name }}"
+                             height="100px" />
+                    </a>
+                </div>
+
+                <div class="span-15 text">
+                    <a href="{{ product.get_absolute_url }}">
+                        {{ product.get_name }}
+                    </a>
+                    {% for option in product.get_options %}
+                        {% if option.property.display_on_product %}
+                            <div>
+                                {{ option.property.name }} : {{ option.value|option_name }} {{  option.property.unit|safe  }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+                <div class="span-4 number last">
+                    <div class="product-price">
+                        {% if product.for_sale %}
+                           <span class="for-sale-standard-price">{{ product.get_standard_price|currency }}</span>
+                           <span class="for-sale-price">{{ product.get_for_sale_price|currency }}*</span>
+                        {% else %}
+                            <span class="standard-price">{{ product.get_price|currency }}*</span>
+                        {% endif %}
+                        <div class="price-disclaimer">
+                            {% trans '*inc. VAT' %}
+                        </div>
+                    </div>
+
+                    <div class="buttons">
+                        <a class="button emphasized"
+                           href="{% url lfs_product product.slug %}"
+                           type="submit">
+                            {% trans 'Details' %}
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% load i18n %}
+{% trans "Product" %}:
+{{ product.get_name }} ({{ site }}{{ product.get_absolute_url }})
+
+{% trans "Name" %}:
+{% if review.name %}{{ review.name }}{% else %}{% trans "Anonymous" %}{% endif %}
+        
+{% trans "E-Mail" %}:
+{% if review.email %}{{ review.email }}{% else %}{% trans "No E-Mail" %}{% endif %}        
+
+{% trans "Score" %}:
+{{ review.score }}
+
+{% trans "Comment" %}:
+{% if review.comment %}{{ review.comment }}{% else %}{% trans "No comment" %}{% endif %}

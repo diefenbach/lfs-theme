@@ -1,0 +1,974 @@
+# LFS Theme Romanian Translations
+# Copyright (C) 2009 Tiberiu Ichim
+# This file is distributed under the same license as the LFS package.
+# Tiberiu Ichim <tibi@pixelblaster.ro>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: LFS\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-08-24 13:00+0200\n"
+"PO-Revision-Date: 2009-09-20 14:34-0500\n"
+"Last-Translator: Tiberiu Ichim <tibi@pixelblaster.ro>\n"
+"Language-Team: Kai Diefenbach <kai.diefenbach@iqpp.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: templates/404.html:9
+#: templates/500.html:4
+msgid "We are sorry!"
+msgstr "Ne pare rău!"
+
+#: templates/404.html:12
+msgid "The page you have requested could not be found."
+msgstr "Pagina pe care o cauți nu poate fi gasită."
+
+#: templates/500.html:7
+msgid "An error has occured. Please try again in a minute."
+msgstr "O eroare a apărut. Te rog incearcă din nou într-un minut."
+
+#: templates/contact_form/contact_form.html:5
+#: templates/contact_form/contact_form.html:12
+#: templates/contact_form/contact_form_sent.html:4
+#: templates/contact_form/contact_form_sent.html:10
+msgid "Contact form"
+msgstr "Formular de contact"
+
+#: templates/contact_form/contact_form.html:14
+msgid "Please leave us a message. We will answer as soon as possible."
+msgstr "Te rog lasă un mesaj. Îți vom răspunde cât de curând posibil."
+
+#: templates/contact_form/contact_form.html:21
+#: templates/reviews/review_preview.html:15
+msgid "Your name"
+msgstr "Numele tău"
+
+#: templates/contact_form/contact_form.html:37
+msgid "Your e-mail"
+msgstr "Adresa de email"
+
+#: templates/contact_form/contact_form.html:53
+msgid "Your message"
+msgstr "Mesajul tău"
+
+#: templates/contact_form/contact_form.html:72
+msgid "Send"
+msgstr "Trimite"
+
+#: templates/contact_form/contact_form_sent.html:12
+msgid "Thank you for your message. We will get back to you soon."
+msgstr "Îți mulțumim pentru mesaj. Te vom contacta cât de curând posibil."
+
+#: templates/contact_form/contact_form_sent.html:17
+#: templates/lfs/cart/added_to_cart.html:81
+#: templates/lfs/cart/cart_inline.html:192
+#: templates/lfs/cart/cart_inline.html:205
+#: templates/lfs/checkout/empty_page_checkout.html:21
+msgid "Go on shopping"
+msgstr "Continuă cumpărăturile"
+
+#: templates/lfs/base.html:64
+#: templates/lfs/base.html.py:67
+#: templates/lfs/base.html:70
+#: templates/lfs/base.html.py:73
+msgid "Manage"
+msgstr "Administrare"
+
+#: templates/lfs/base.html:78
+msgid "Logout"
+msgstr "Ieșire"
+
+#: templates/lfs/base.html:79
+#: templates/lfs/customer/base.html:8
+msgid "My account"
+msgstr "Contul meu"
+
+#: templates/lfs/base.html:82
+#: templates/lfs/checkout/login.html:6
+#: templates/lfs/checkout/login.html:12
+#: templates/lfs/checkout/login.html:21
+#: templates/lfs/checkout/login.html:54
+#: templates/lfs/customer/login.html:6
+#: templates/lfs/customer/login.html:12
+#: templates/lfs/customer/login.html:21
+#: templates/lfs/customer/login.html:57
+msgid "Login"
+msgstr "Autentificare"
+
+#: templates/lfs/base.html:86
+#: templates/lfs/search/search_results.html:18
+msgid "Search"
+msgstr "Căutare"
+
+#: templates/lfs/base.html:92
+#: templates/lfs/catalog/sorting.html:17
+#: templates/lfs/search/search_results.html:26
+msgid "Go!"
+msgstr "Go!"
+
+#: templates/lfs/base.html:158
+msgid "Powered by"
+msgstr "Rulează pe"
+
+#: templates/lfs/base.html:160
+msgid "is a product of"
+msgstr "este un produs al"
+
+#: templates/lfs/base.html:161
+msgid "by"
+msgstr "de către"
+
+#: templates/lfs/base.html:161
+msgid "All rights reserved"
+msgstr "Toate drepturile rezervate"
+
+#: templates/lfs/base.html:163
+msgid "Distributed under the"
+msgstr "Distribuit sub"
+
+#: templates/lfs/base.html:163
+msgid "BSD-License"
+msgstr "Licența BSD"
+
+#: templates/lfs/cart/added_to_cart.html:10
+msgid "Added to cart"
+msgstr "Adăugat la coș"
+
+#: templates/lfs/cart/added_to_cart.html:15
+msgid "This products have been added to cart"
+msgstr "Aceste produse au fost adăugate la coș"
+
+#: templates/lfs/cart/added_to_cart.html:17
+msgid "This product has been added to cart"
+msgstr "Acest produs a fost a adăugat la coș"
+
+#: templates/lfs/cart/added_to_cart.html:25
+#: templates/lfs/catalog/product_inline.html:150
+msgid "Accessories"
+msgstr "Accesorii"
+
+#: templates/lfs/cart/added_to_cart.html:29
+#: templates/lfs/catalog/product_inline.html:80
+#: templates/lfs/catalog/product_inline.html:154
+#: templates/lfs/mail/order_received_mail.html:197
+#: templates/lfs/order/lfs_order_tmpl.html:159
+msgid "Name"
+msgstr "Nume"
+
+#: templates/lfs/cart/added_to_cart.html:32
+#: templates/lfs/cart/added_to_cart_items.html:9
+#: templates/lfs/catalog/product_inline.html:155
+msgid "Quantity"
+msgstr "Cantitate"
+
+#: templates/lfs/cart/added_to_cart.html:35
+#: templates/lfs/cart/added_to_cart_items.html:12
+#: templates/lfs/cart/cart_inline.html:23
+#: templates/lfs/catalog/filter_navigation.html:54
+#: templates/lfs/catalog/product_inline.html:88
+#: templates/lfs/catalog/product_inline.html:156
+#: templates/lfs/checkout/checkout_cart_inline.html:13
+#: templates/lfs/customer/orders.html:31
+#: templates/lfs/mail/order_received_mail.html:203
+#: templates/lfs/order/lfs_order_tmpl.html:165
+#: templates/lfs/search/search_results.html:50
+#: templates/tagging/product_list.html:16
+msgid "Price"
+msgstr "Preț"
+
+#: templates/lfs/cart/added_to_cart.html:38
+#: templates/lfs/cart/added_to_cart_items.html:18
+#: templates/lfs/cart/added_to_cart_items.html:54
+#: templates/lfs/cart/cart_inline.html:29
+#: templates/lfs/cart/cart_inline.html:154
+#: templates/lfs/catalog/product_inline.html:157
+#: templates/lfs/checkout/checkout_cart_inline.html:19
+#: templates/lfs/checkout/checkout_cart_inline.html:92
+#: templates/lfs/mail/order_received_mail.html:80
+#: templates/lfs/mail/order_received_mail.html:206
+#: templates/lfs/order/lfs_order_tmpl.html:55
+#: templates/lfs/order/lfs_order_tmpl.html:168
+msgid "Total"
+msgstr "Total"
+
+#: templates/lfs/cart/added_to_cart.html:62
+msgid "Add"
+msgstr "Adăugă"
+
+#: templates/lfs/cart/added_to_cart.html:73
+#: templates/lfs/cart/cart_inline.html:188
+#: templates/lfs/checkout/empty_page_checkout.html:6
+#: templates/lfs/checkout/empty_page_checkout.html:12
+#: templates/lfs/checkout/login.html:95
+#: templates/lfs/checkout/login.html:105
+#: templates/lfs/checkout/one_page_checkout.html:5
+#: templates/lfs/checkout/one_page_checkout.html:11
+msgid "Checkout"
+msgstr "Închidere comandă"
+
+#: templates/lfs/cart/added_to_cart.html:77
+#: templates/lfs/checkout/one_page_checkout.html:461
+#: templates/lfs/portlets/cart.html:10
+#: templates/lfs/portlets/cart.html:35
+msgid "Go to cart"
+msgstr "Mergi la coș"
+
+#: templates/lfs/cart/added_to_cart_items.html:6
+#: templates/lfs/cart/cart_inline.html:17
+#: templates/lfs/checkout/checkout_cart_inline.html:7
+#: templates/lfs/search/search_results.html:47
+#: templates/tagging/product_list.html:14
+msgid "Product"
+msgstr "Produs"
+
+#: templates/lfs/cart/added_to_cart_items.html:15
+#: templates/lfs/cart/cart_inline.html:26
+#: templates/lfs/checkout/checkout_cart_inline.html:16
+msgid "Included VAT"
+msgstr "TVA Inclus"
+
+#: templates/lfs/cart/cart.html:6
+#: templates/lfs/cart/cart.html.py:12
+#: templates/lfs/portlets/cart.html:12
+#: templates/lfs/portlets/cart.html:16
+msgid "Cart"
+msgstr "Coș"
+
+#: templates/lfs/cart/cart_inline.html:7
+msgid "Your Cart"
+msgstr "Coșul tău"
+
+#: templates/lfs/cart/cart_inline.html:20
+#: templates/lfs/checkout/checkout_cart_inline.html:10
+#: templates/lfs/mail/order_received_mail.html:200
+#: templates/lfs/order/lfs_order_tmpl.html:162
+msgid "Amount"
+msgstr "Sumă"
+
+#: templates/lfs/cart/cart_inline.html:74
+msgid "Delete item"
+msgstr "Șterge element"
+
+#: templates/lfs/cart/cart_inline.html:84
+msgid "Country"
+msgstr "Țară"
+
+#: templates/lfs/cart/cart_inline.html:103
+#: templates/lfs/checkout/checkout_cart_inline.html:58
+#: templates/lfs/checkout/one_page_checkout.html:269
+#: templates/lfs/mail/order_received_mail.html:238
+#: templates/lfs/order/lfs_order_tmpl.html:200
+#: templates/lfs/shipping/shipping_portlet.html:6
+msgid "Shipping"
+msgstr "Livrare"
+
+#: templates/lfs/cart/cart_inline.html:128
+#: templates/lfs/checkout/checkout_cart_inline.html:75
+#: templates/lfs/checkout/payment_inline.html:3
+#: templates/lfs/mail/order_received_mail.html:253
+#: templates/lfs/order/lfs_order_tmpl.html:215
+msgid "Payment"
+msgstr "Plată"
+
+#: templates/lfs/cart/cart_inline.html:167
+#: templates/lfs/checkout/checkout_cart_inline.html:99
+#: templates/lfs/mail/order_received_mail.html:274
+#: templates/lfs/order/lfs_order_tmpl.html:236
+msgid "Inclusive VAT"
+msgstr "Include TVA"
+
+#: templates/lfs/cart/cart_inline.html:180
+msgid "Total delivery time"
+msgstr "Total timp de livrare"
+
+#: templates/lfs/cart/cart_inline.html:201
+msgid "Your Cart is empty"
+msgstr "Coșul tău este gol"
+
+#: templates/lfs/catalog/breadcrumbs.html:3
+#: templates/lfs/shop/shop_base.html:9
+#: templates/registration/password_reset_done.html:10
+#: templates/registration/password_reset_form.html:11
+msgid "You are here:"
+msgstr "Ești aici:"
+
+#: templates/lfs/catalog/breadcrumbs.html:6
+#: templates/lfs/shop/menu.html:3
+#: templates/lfs/shop/shop_base.html:11
+#: templates/lfs/shop/tabs.html:7
+#: templates/registration/password_reset_done.html:13
+#: templates/registration/password_reset_form.html:14
+msgid "Home"
+msgstr "Prima pagină"
+
+#: templates/lfs/catalog/category_categories.html:22
+#: templates/lfs/catalog/category_products.html:70
+#: templates/lfs/search/search_results.html:95
+msgid "Details"
+msgstr "Detalii"
+
+#: templates/lfs/catalog/category_products.html:6
+#: templates/lfs/catalog/category_products.html:8
+#: templates/pagination/pagination.html:5
+#: templates/pagination/pagination.html:7
+msgid "Previous page"
+msgstr "Pagina precedentă"
+
+#: templates/lfs/catalog/category_products.html:22
+msgid "Products"
+msgstr "Produse"
+
+#: templates/lfs/catalog/category_products.html:29
+#: templates/lfs/catalog/category_products.html:31
+#: templates/pagination/pagination.html:21
+#: templates/pagination/pagination.html:23
+msgid "Next page"
+msgstr "Pagina următoare"
+
+#: templates/lfs/catalog/category_products.html:65
+#: templates/lfs/catalog/product_inline.html:45
+#: templates/lfs/catalog/product_inline.html:53
+#: templates/lfs/search/search_results.html:87
+msgid "*inc. VAT"
+msgstr "*plus TVA"
+
+#: templates/lfs/catalog/filter_navigation.html:6
+#: templates/lfs/customer/orders.html:21
+msgid "Filter"
+msgstr "Filtru"
+
+#: templates/lfs/catalog/filter_navigation.html:64
+#: templates/lfs/catalog/filter_navigation.html:69
+msgid "Up to"
+msgstr "Până la"
+
+#: templates/lfs/catalog/filter_navigation.html:102
+msgid "Reset all filters"
+msgstr "Resetează toate filtrele"
+
+#: templates/lfs/catalog/product_base.html:37
+msgid "Back to overview"
+msgstr "Înapoi la sumar"
+
+#: templates/lfs/catalog/product_base.html:52
+msgid "Tags"
+msgstr "Cuvinte cheie"
+
+#: templates/lfs/catalog/product_base.html:63
+msgid "Tag cloud"
+msgstr "Tag cloud"
+
+#: templates/lfs/catalog/product_inline.html:63
+msgid "Add to cart"
+msgstr "Adaugă la coș"
+
+#: templates/lfs/catalog/product_inline.html:72
+msgid "Variants"
+msgstr "Variante"
+
+#: templates/lfs/catalog/product_inline.html:140
+msgid "Refresh options"
+msgstr "Refreșează opțiunile"
+
+#: templates/lfs/catalog/product_navigation.html:5
+#: templates/lfs/catalog/product_navigation.html:7
+msgid "Previous product"
+msgstr "Produsul precedent"
+
+#: templates/lfs/catalog/product_navigation.html:9
+msgid "of"
+msgstr "de"
+
+#: templates/lfs/catalog/product_navigation.html:11
+#: templates/lfs/catalog/product_navigation.html:13
+msgid "Next product"
+msgstr "Produsul următor"
+
+#: templates/lfs/catalog/sorting.html:8
+msgid "Price ascending"
+msgstr "Preț ascendent"
+
+#: templates/lfs/catalog/sorting.html:10
+msgid "Price descending"
+msgstr "Preț descendent"
+
+#: templates/lfs/catalog/sorting.html:12
+msgid "Name ascending"
+msgstr "Nume ascendent"
+
+#: templates/lfs/catalog/sorting.html:14
+msgid "Name descending"
+msgstr "Nume descendent"
+
+#: templates/lfs/catalog/sorting_portlet.html:7
+msgid "Sorting"
+msgstr "Sortare"
+
+#: templates/lfs/checkout/checkout_cart_inline.html:3
+msgid "Your cart"
+msgstr "Coșul tău"
+
+#: templates/lfs/checkout/empty_page_checkout.html:17
+msgid "There is nothing to checkout"
+msgstr "Nu există nimic pentru a putea închide comanda"
+
+#: templates/lfs/checkout/login.html:17
+#: templates/lfs/customer/login.html:17
+msgid "Please select!"
+msgstr "Te rog selectează!"
+
+#: templates/lfs/checkout/login.html:24
+msgid "If you are already customer you can login. Your adress data will then already known."
+msgstr "Dacă ești deja client, te poți autentifica. Datele adreselor vor fi deja completate."
+
+#: templates/lfs/checkout/login.html:37
+#: templates/lfs/customer/login.html:37
+msgid "Forgot password?"
+msgstr "Ai uitat parola?"
+
+#: templates/lfs/checkout/login.html:62
+#: templates/lfs/checkout/login.html:86
+#: templates/lfs/customer/login.html:65
+#: templates/lfs/customer/login.html:88
+msgid "Register"
+msgstr "Înregistrare"
+
+#: templates/lfs/checkout/login.html:65
+#: templates/lfs/customer/login.html:68
+msgid "If you are not already a customer you can register in order to store your address data and to follow the state of your orders."
+msgstr "Dacă nu ești deja client, te poți înregistra pentru a îți stoca adresa și pentru a monitoriza starea comenzii tale."
+
+#: templates/lfs/checkout/login.html:98
+msgid "You can also checkout without login or registration."
+msgstr "Poți de asemenea să faci comanda fără înregistrare sau autentificare."
+
+#: templates/lfs/checkout/one_page_checkout.html:22
+#: templates/lfs/mail/order_received_mail.html:94
+#: templates/lfs/order/lfs_order_tmpl.html:66
+msgid "Invoice address"
+msgstr "Adresa de facturare"
+
+#: templates/lfs/checkout/one_page_checkout.html:25
+#: templates/lfs/mail/order_received_mail.html:91
+#: templates/lfs/order/lfs_order_tmpl.html:69
+msgid "Shipping address"
+msgstr "Adresa de livrare"
+
+#: templates/lfs/checkout/one_page_checkout.html:286
+msgid "Please enter your credit card information"
+msgstr "Te rog introdu datele cărții de credit"
+
+#: templates/lfs/checkout/one_page_checkout.html:296
+#: templates/lfs/checkout/one_page_checkout.html:378
+msgid "Only necessary when the payment method is direct debit"
+msgstr "Necesar doar atunci când metoda de plată este prin debit direct"
+
+#: templates/lfs/checkout/one_page_checkout.html:347
+msgid "Expiration date"
+msgstr "Data de expirare"
+
+#: templates/lfs/checkout/one_page_checkout.html:375
+msgid "Please enter your bank information"
+msgstr "Te rog introdu informațiile bancare"
+
+#: templates/lfs/checkout/one_page_checkout.html:458
+msgid "Submit order"
+msgstr "Închide comanda"
+
+#: templates/lfs/checkout/thank_you_page.html:5
+#: templates/lfs/checkout/thank_you_page.html:11
+#: templates/lfs/checkout/thank_you_page.html:15
+msgid "Thank you!"
+msgstr "Îți mulțumim!"
+
+#: templates/lfs/checkout/thank_you_page.html:17
+msgid "Soon you will get an order confirmation via E-Mail."
+msgstr "În curând vei primi confirmarea comenzii prin email."
+
+#: templates/lfs/checkout/thank_you_page.html:21
+msgid "Please use the following link if you want to pay now"
+msgstr "Te rog să folosești linkul următor daca vrei să plătești chiar acum"
+
+#: templates/lfs/checkout/thank_you_page.html:25
+msgid "Pay"
+msgstr "Plată"
+
+#: templates/lfs/checkout/thank_you_page.html:28
+msgid "You will find the same link on your order confirmation"
+msgstr "Vei găsi același link și în confirmarea comenzii"
+
+#: templates/lfs/customer/account.html:8
+msgid "Your Account"
+msgstr "Contul tău"
+
+#: templates/lfs/customer/addresses.html:6
+msgid "Change your addresses"
+msgstr "Modifică adresele"
+
+#: templates/lfs/customer/addresses.html:11
+msgid "Your addresses"
+msgstr "Adresele tale"
+
+#: templates/lfs/customer/addresses.html:13
+msgid "Your address"
+msgstr "Adresa ta"
+
+#: templates/lfs/customer/addresses.html:22
+#: templates/lfs/customer/data.html:36
+msgid "Invoice Address"
+msgstr "Adresa de facturare"
+
+#: templates/lfs/customer/addresses.html:25
+#: templates/lfs/customer/data.html:39
+msgid "Shipping Address"
+msgstr "Adresa de livrare"
+
+#: templates/lfs/customer/addresses.html:48
+#: templates/lfs/customer/data.html:65
+msgid "Save addresses"
+msgstr "Salvează adresele"
+
+#: templates/lfs/customer/addresses.html:52
+#: templates/lfs/customer/data.html:69
+msgid "Save address"
+msgstr "Salvează adresa"
+
+#: templates/lfs/customer/base.html:11
+#: templates/lfs/customer/order.html:7
+msgid "Overview"
+msgstr "Sumar"
+
+#: templates/lfs/customer/base.html:16
+#: templates/lfs/customer/orders.html:6
+#: templates/lfs/customer/orders.html:10
+msgid "Your orders"
+msgstr "Comenzile tale"
+
+#: templates/lfs/customer/base.html:21
+#: templates/lfs/customer/password.html:52
+msgid "Change password"
+msgstr "Modifică parola"
+
+#: templates/lfs/customer/base.html:24
+msgid "Change e-mail"
+msgstr "Schimbă adresa de email"
+
+#: templates/lfs/customer/base.html:27
+msgid "Change addresses"
+msgstr "Modifică adresele"
+
+#: templates/lfs/customer/data.html:6
+msgid "Your Data"
+msgstr "Datele tale"
+
+#: templates/lfs/customer/data.html:8
+msgid "E-Mail"
+msgstr "Email"
+
+#: templates/lfs/customer/data.html:21
+#: templates/lfs/customer/email.html:25
+msgid "Save e-mail address"
+msgstr "Salvează adresa de email"
+
+#: templates/lfs/customer/data.html:25
+msgid "Addresses"
+msgstr "Adrese"
+
+#: templates/lfs/customer/data.html:27
+msgid "Address"
+msgstr "Adresă"
+
+#: templates/lfs/customer/data.html:75
+msgid "Bank account"
+msgstr "Cont bancar"
+
+#: templates/lfs/customer/data.html:87
+msgid "Save bank account"
+msgstr "Salvează cont bancar"
+
+#: templates/lfs/customer/email.html:6
+#: templates/lfs/customer/email.html:10
+msgid "Change your e-mail address"
+msgstr "Schimbă adresa ta de email"
+
+#: templates/lfs/customer/login.html:24
+msgid "If you are already customer you can login. Your address data will be stored in your account."
+msgstr "Dacă ești deja client te poți autentifica. Datele adreselor vor fi stocate in contul tău."
+
+#: templates/lfs/customer/order.html:10
+msgid "Ordernumber:"
+msgstr "Număr comanda:"
+
+#: templates/lfs/customer/orders.html:17
+msgid "Recent orders"
+msgstr "Comenzi recente"
+
+#: templates/lfs/customer/orders.html:18
+msgid "2009"
+msgstr "2009"
+
+#: templates/lfs/customer/orders.html:28
+#: templates/lfs/mail/order_received_mail.html:52
+#: templates/lfs/order/lfs_order_tmpl.html:25
+msgid "Date"
+msgstr "Date"
+
+#: templates/lfs/customer/orders.html:34
+#: templates/lfs/mail/order_received_mail.html:66
+#: templates/lfs/order/lfs_order_tmpl.html:41
+msgid "State"
+msgstr "Stare"
+
+#: templates/lfs/customer/orders.html:41
+#: templates/lfs/mail/order_received_mail.html:55
+#: templates/lfs/order/lfs_order_tmpl.html:28
+msgid "DATETIME_FORMAT"
+msgstr "DATETIME_FORMAT"
+
+#: templates/lfs/customer/orders.html:56
+msgid "You haven't any orders yet."
+msgstr "Nu ai încă nicio comandă"
+
+#: templates/lfs/customer/password.html:5
+#: templates/lfs/customer/password.html:8
+#: templates/lfs/customer/password.html:13
+msgid "Password change"
+msgstr "Schimbare parolă"
+
+#: templates/lfs/customer/password.html:16
+msgid "Please enter your old password, for security's sake, and then enter your new password twice so we can verify you typed it in correctly."
+msgstr "Te rog să introduci vechea parolă, pentru motive de securitate, iar apoi să introduci noua parolă de două ori, pentru a verifica că ai introdus-o corect."
+
+#: templates/lfs/customer/password.html:24
+msgid "Old password:"
+msgstr "Vechea parolă:"
+
+#: templates/lfs/customer/password.html:33
+#: templates/registration/password_reset_confirm.html:16
+msgid "New password:"
+msgstr "Noua parolă:"
+
+#: templates/lfs/customer/password.html:42
+#: templates/registration/password_reset_confirm.html:18
+msgid "Confirm password:"
+msgstr "Confirmă parola:"
+
+#: templates/lfs/mail/new_user_mail.html:7
+msgid "Welcome to"
+msgstr "Bun venit la"
+
+#: templates/lfs/mail/order_received_mail.html:41
+#: templates/lfs/order/lfs_order_tmpl.html:14
+msgid "General"
+msgstr "General"
+
+#: templates/lfs/mail/order_received_mail.html:46
+#: templates/lfs/order/lfs_order_tmpl.html:19
+msgid "Customer name"
+msgstr "Nume client"
+
+#: templates/lfs/mail/order_received_mail.html:60
+#: templates/lfs/order/lfs_order_tmpl.html:33
+msgid "E-mail"
+msgstr "Email"
+
+#: templates/lfs/mail/order_received_mail.html:74
+#: templates/lfs/order/lfs_order_tmpl.html:49
+msgid "Phone"
+msgstr "Telefon"
+
+#: templates/lfs/mail/order_received_mail.html:97
+#: templates/lfs/order/lfs_order_tmpl.html:72
+msgid "Shipping method"
+msgstr "Metoda de livrare"
+
+#: templates/lfs/mail/order_received_mail.html:100
+#: templates/lfs/order/lfs_order_tmpl.html:75
+msgid "Payment method"
+msgstr "Metoda de plată"
+
+#: templates/lfs/mail/order_received_mail.html:182
+msgid "Pay now"
+msgstr "Plătește acum"
+
+#: templates/lfs/mail/order_received_mail.html:194
+#: templates/lfs/order/lfs_order_tmpl.html:156
+msgid "SKU"
+msgstr "SKU"
+
+#: templates/lfs/mail/order_received_mail.html:283
+msgid "Your message to us"
+msgstr "Mesajul tău pentru noi"
+
+#: templates/lfs/order/lfs_order_tmpl.html:6
+msgid "Ordernumber"
+msgstr "Număr comandă"
+
+#: templates/lfs/order/lfs_order_tmpl.html:245
+msgid "Message from the customer"
+msgstr "Mesaj de la client"
+
+#: templates/lfs/page/pages.html:9
+#: templates/lfs/page/pages.html.py:19
+msgid "Information"
+msgstr "Informații"
+
+#: templates/lfs/page/pages.html:32
+msgid "More"
+msgstr "Mai multe"
+
+#: templates/lfs/portlets/average_rating.html:19
+msgid "Score"
+msgstr "Scor"
+
+#: templates/lfs/portlets/average_rating.html:19
+msgid "based on"
+msgstr "bazat pe"
+
+#: templates/lfs/portlets/average_rating.html:20
+#, python-format
+msgid "%(amount)s review"
+msgid_plural "%(amount)s reviews"
+msgstr[0] "O recenzie"
+msgstr[1] "%(amount)s recenzii"
+
+#: templates/lfs/portlets/cart.html:23
+msgid "Article"
+msgstr "Articol"
+
+#: templates/lfs/portlets/cart.html:29
+msgid "Cart is empty"
+msgstr "Coșul este gol"
+
+#: templates/lfs/portlets/delivery_time.html:12
+msgid "Deliverable"
+msgstr "Livrabil"
+
+#: templates/lfs/portlets/delivery_time.html:14
+#: templates/lfs/shipping/shipping_portlet.html:16
+#: templates/lfs/shipping/shipping_tag.html:11
+msgid "Not deliverable"
+msgstr "Nu este livrabil"
+
+#: templates/lfs/portlets/delivery_time.html:18
+#: templates/lfs/shipping/shipping_tag.html:7
+msgid "Delivery time"
+msgstr "Timp de livrare"
+
+#: templates/lfs/portlets/pages.html:18
+msgid "More information"
+msgstr "Mai multe informații"
+
+#: templates/lfs/portlets/related_products.html:8
+msgid "Related Products"
+msgstr "Produse de văzut"
+
+#: templates/lfs/portlets/topseller.html:7
+msgid "Topseller"
+msgstr "Topseller"
+
+#: templates/lfs/portlets/topseller.html:22
+msgid "All topseller"
+msgstr "Toți topseller-ii"
+
+#: templates/lfs/search/livesearch_results.html:38
+msgid "All results"
+msgstr "Toate rezultatele"
+
+#: templates/lfs/search/livesearch_results.html:44
+msgid "No products found"
+msgstr "Nu au fost găsite produse"
+
+#: templates/lfs/search/search_results.html:5
+#: templates/lfs/search/search_results.html:11
+#: templates/lfs/search/search_results.html:16
+msgid "Search results"
+msgstr "Rezultate căutare"
+
+#: templates/lfs/search/search_results.html:30
+msgid "You searched for"
+msgstr "Ai căutat după"
+
+#: templates/lfs/search/search_results.html:31
+#, python-format
+msgid "There has been found 1 product."
+msgid_plural "There has been found %(counter)s products."
+msgstr[0] "A fost găsit un produs."
+msgstr[1] "Au fost găsite %(counter)s produse."
+
+#: templates/lfs/search/search_results.html:44
+#: templates/tagging/product_list.html:13
+msgid "Image"
+msgstr "Imagine"
+
+#: templates/registration/password_reset_complete.html:4
+#: templates/registration/password_reset_complete.html:8
+msgid "Password reset complete"
+msgstr "Resetarea parolei a fost încheiată"
+
+#: templates/registration/password_reset_complete.html:10
+msgid "Your password has been set. You may go ahead and log in now."
+msgstr "Parola ta a fost modificată. Poți sa continui și să te autentifici."
+
+#: templates/registration/password_reset_complete.html:12
+msgid "Log in"
+msgstr "Autentificare"
+
+#: templates/registration/password_reset_confirm.html:4
+#: templates/registration/password_reset_form.html:4
+#: templates/registration/password_reset_form.html:17
+#: templates/registration/password_reset_form.html:24
+msgid "Password reset"
+msgstr "Resetare parolă"
+
+#: templates/registration/password_reset_confirm.html:10
+msgid "Enter new password"
+msgstr "Introdu parola nouă"
+
+#: templates/registration/password_reset_confirm.html:12
+msgid "Please enter your new password twice so we can verify you typed it in correctly."
+msgstr "Te rog să introduci noua parola de două ori, pentur a putea verifica că ai introdus-o corect."
+
+#: templates/registration/password_reset_confirm.html:19
+msgid "Change my password"
+msgstr "Modifică-mi parola"
+
+#: templates/registration/password_reset_confirm.html:24
+msgid "Password reset unsuccessful"
+msgstr "Resetarea parolei nu a putut fi făcută"
+
+#: templates/registration/password_reset_confirm.html:26
+msgid "The password reset link was invalid, possibly because it has already been used.  Please request a new password reset."
+msgstr "Adresa de resetare a parolei a fost invalidă, poate că a fost deja folosită. Te rog să efectuezi o nouă resetare de parolă."
+
+#: templates/registration/password_reset_done.html:16
+#: templates/registration/password_reset_done.html:22
+#: templates/registration/password_reset_done.html:26
+msgid "Password reset successful"
+msgstr "Parola a fost resetată cu succes"
+
+#: templates/registration/password_reset_done.html:28
+msgid "We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly."
+msgstr "Ți-am trimis prin email, la adresa indicată, instrucțiuni pentru resetarea  parolei. Verifică-ți adresa de email, poate l-ai primit deja!"
+
+#: templates/registration/password_reset_email.html:2
+msgid "You're receiving this e-mail because you requested a password reset"
+msgstr "Primești acest email pentru că ai cerut o resetare a parolei"
+
+#: templates/registration/password_reset_email.html:3
+#, python-format
+msgid "for your user account at %(site_name)s"
+msgstr "pentru contul tău de utilizator de la %(site_name)s"
+
+#: templates/registration/password_reset_email.html:5
+msgid "Please go to the following page and choose a new password:"
+msgstr "Te rog să mergi la următoarea adresă și să alegi o nouă parolă:"
+
+#: templates/registration/password_reset_email.html:9
+msgid "Your username, in case you've forgotten:"
+msgstr "Numele tău de utilizator, în caz că l-ai uitat:"
+
+#: templates/registration/password_reset_email.html:11
+msgid "Thanks for using our site!"
+msgstr "Îți mulțumim că ai folosit site-ul nostru!"
+
+#: templates/registration/password_reset_email.html:13
+#, python-format
+msgid "The %(site_name)s team"
+msgstr "Echipa %(site_name)s"
+
+#: templates/registration/password_reset_form.html:26
+msgid "Enter your e-mail address below, and we'll e-mail instructions for setting a new one."
+msgstr "Introdu mai jos adresa de emai și îți vom trimite instrucțiuni pentru a folosi una nouă."
+
+#: templates/registration/password_reset_form.html:33
+msgid "E-mail address:"
+msgstr "Adresa de email:"
+
+#: templates/registration/password_reset_form.html:35
+msgid "Reset my password"
+msgstr "Resetează-mi parola"
+
+#: templates/reviews/already_rated.html:9
+msgid "Review"
+msgstr "Recenzie"
+
+#: templates/reviews/already_rated.html:10
+msgid "You have already rated for this product."
+msgstr "Ai notat deja acest produs"
+
+#: templates/reviews/review_form.html:10
+msgid "Add Review"
+msgstr "Adaugă recenzie"
+
+#: templates/reviews/review_form.html:110
+#: templates/reviews/review_preview.html:10
+msgid "Preview"
+msgstr "Previzualizare"
+
+#: templates/reviews/review_preview.html:21
+msgid "Your email"
+msgstr "Adresa ta de email"
+
+#: templates/reviews/review_preview.html:27
+msgid "Your score"
+msgstr "Nota ta"
+
+#: templates/reviews/review_preview.html:38
+msgid "Your comment"
+msgstr "Comentariul tău"
+
+#: templates/reviews/review_preview.html:69
+msgid "Edit"
+msgstr "Editează"
+
+#: templates/reviews/review_preview.html:73
+msgid "Submit"
+msgstr "Submite"
+
+#: templates/reviews/reviews_for_instance.html:5
+msgid "Reviews"
+msgstr "Recenzii"
+
+#: templates/reviews/reviews_for_instance.html:23
+msgid "Anonymous"
+msgstr "Anonim"
+
+#: templates/reviews/reviews_for_instance.html:34
+msgid "There are no ratings for this product. Be the first one!"
+msgstr "Nu există recenzii pentru acest produs. Fii tu primul!"
+
+#: templates/reviews/reviews_for_instance.html:39
+msgid "You have already rated"
+msgstr "Ai pus deja o notă"
+
+#: templates/reviews/reviews_for_instance.html:44
+msgid "Add review"
+msgstr "Adaugă recenzie"
+
+#: templates/reviews/thank_you.html:9
+msgid "Thank you"
+msgstr "Îți mulțumim"
+
+#: templates/reviews/thank_you.html:12
+msgid "Close Window"
+msgstr "Închide fereastra"
+
+#: templates/tagging/product_list.html:10
+msgid "Products for tag"
+msgstr "Produse pentru acest cuvânt cheie"
+
+#: templates/tagging/related_products_by_tags.html:4
+msgid "Related products by tag"
+msgstr "Produse cu legătură cu acest cuvânt cheie"
+
+#: templates/tagging/related_products_by_tags_portlet.html:4
+msgid "Products with same Tags"
+msgstr "Produse cu acelasi Cuvânt Cheie"
+
+#: templatetags/lfs_theme_tags.py:43
+#, python-format
+msgid "%s tag needs no argument"
+msgstr "Cuvântul cheie %s nu necesită argumente"
+

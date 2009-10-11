@@ -1,0 +1,13 @@
+{% load lfs_tags %}
+
+{% if average %}
+    <div class="average-rating"
+         onclick="window.location='#reviews'">
+        <ul class="star-rating">
+            <li class="current-rating"
+                style="width:{{average|multiply:25}}px">
+                Currently 3/5 Stars
+            </li>
+        </ul>
+    </div>
+{% endif %}

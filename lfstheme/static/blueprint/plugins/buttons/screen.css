@@ -1,0 +1,78 @@
+/* --------------------------------------------------------------
+
+   buttons.css
+   * Gives you some great CSS-only buttons.
+
+   Created by Kevin Hale [particletree.com]
+   * particletree.com/features/rediscovering-the-button-element
+
+   See Readme.txt in this folder for instructions.
+
+-------------------------------------------------------------- */
+
+a.button, button {
+  display:block;
+  float: right;
+  margin: 0.7em 0em 0.7em 0.5em;
+  padding:5px 10px 5px 10px;   /* Links */
+  font-size:100%;
+  line-height:130%;
+  text-decoration:none;
+  font-weight:bold;
+  cursor:pointer;
+  background-color: #beb5b0;
+  border: 1px solid #dfd7d3;
+  color: #fff !important;
+}
+
+a.button.left, button.left {
+  margin: 0.7em 0.5em 0.7em 0em;    
+  float:left;
+}
+
+button {
+  width:auto;
+  overflow:visible;
+  padding:4px 10px 3px 7px;   /* IE6 */
+}
+
+button[type] {
+  padding:4px 10px 4px 7px;   /* Firefox */
+  line-height:17px;           /* Safari */
+}
+
+*:first-child+html button[type] {
+  padding:4px 10px 3px 7px;   /* IE7 */
+}
+
+button img, a.button img {
+  margin:0 3px -3px 0 !important;
+  padding:0;
+  border:none;
+  width:16px;
+  height:16px;
+  float:none;
+}
+
+
+/* Button colors
+-------------------------------------------------------------- */
+
+/* Standard */
+button:hover, a.button:hover {
+  background-color: #beb5b0;
+  border: 1px solid #dfd7d3;
+  color:black !important;
+}
+
+/* Positive */
+body .emphasized {
+  color:white;
+  background-color:#7e6b60;
+}
+
+a.emphasized:hover, button.emphasized:hover {
+  background-color:#7e6b60;
+  border:1px solid #dfd7d3;
+  color:black !important;
+}

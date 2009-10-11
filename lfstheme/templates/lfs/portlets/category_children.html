@@ -1,0 +1,14 @@
+{% load lfs_tags %}
+{% if categories %}
+    <ul>
+        {% for category in categories %}
+            <li class="level-{{ category.level }}">
+                <a {% if category.is_current %}class="current"{% endif %}
+                   href="{{ category.category.get_absolute_url }}">
+                    {{ category.category.name }}
+                </a>
+                {% category_children category.children %}
+            </li>    
+        {% endfor %}
+    </ul>    
+{% endif %}

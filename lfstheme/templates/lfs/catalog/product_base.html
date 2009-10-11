@@ -1,0 +1,80 @@
+{% extends "lfs/base.html" %}
+{% load i18n %}
+{% load lfs_tags %}
+{% load lfs_tagging_tags %}
+{% load lfs_theme_tags %}
+{% load reviews_tags %}
+{% load tagging_tags %}
+
+{% block title %}
+    {{ product.get_name }} - {{ block.super }}
+{% endblock %}
+
+{% block section %}product{% endblock %}
+
+{% block head %}
+    {% if product.get_meta_keywords %}
+        <meta name="keywords" content="{{product.get_meta_keywords}}" />
+    {% endif %}
+    {% if product.get_meta_description %}
+        <meta name="description" content="{{product.get_meta_description}}" />
+    {% endif %}
+{% endblock %}
+
+{% block breadcrumbs %}
+    {% breadcrumbs product %}
+{% endblock %}
+
+{% block content %}
+
+    {{ product.static_block.html|safe }}
+	
+    {% product_navigation product %}
+
+    <div class="overview">
+		{% current_category product %}
+        <a href="{{current_category.get_absolute_url}}">
+           {% trans 'Back to overview' %}
+        </a>
+    </div>
+
+    <div id="product-inline">
+        {{product_inline|safe}}
+    </div>
+
+    <a name="reviews"></a>
+
+    {% reviews_for_instance product %}
+
+    {% tags_for_object product as tags %}
+    {% if tags %}
+        <div class="tags">
+            <h1 class="section">{% trans 'Tags' %}</h1>
+            {% for tag in tags %}
+                <a href="{% url product_tag_detail tag.name %}">
+                    {{tag}}</a>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% tag_cloud_for_model catalog.Product as cloud with steps=6 min_count=1 distribution=log %}
+    {% if cloud %}
+        <div class="tags">
+            <h1 class="section">{% trans 'Tag cloud' %}</h1>
+            <div class="tag-cloud">
+                {% for tag in cloud %}
+                    <a href="{% url product_tag_detail tag.name %}" style="font-size:1{{tag.font_size}}px">
+                        {{tag}}</a>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+    {% related_products_by_tags product.id %}
+
+{% endblock %}
+
+
+{# {% block footer %} #}
+{#     {% related_products_by_tags product.id %}     #}
+{# {% endblock %} #}

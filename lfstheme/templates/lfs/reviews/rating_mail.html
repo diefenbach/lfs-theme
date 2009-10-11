@@ -1,0 +1,5 @@
+{% for item in order.items.all %}
+    <div>
+        <a href="{% url reviews_add content_type_id item.product.id %}">{{ item.product_name }}</a>
+    </div>
+{% endfor %}

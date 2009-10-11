@@ -1,0 +1,41 @@
+{% extends "lfs/base.html" %}
+{% load i18n %}
+{% load lfs_tags %}
+{% load portlets_tags %}
+{% load lfs_theme_tags %}
+
+{% block breadcrumbs %}
+    <ul class="breadcrumbs">
+        <li>{% trans 'You are here:' %}</li>
+        <li>
+            {% trans 'Home' %}
+        </li>
+    </ul>
+{% endblock %}
+
+{% block wrapper %}
+    {% slots_information %}
+    {% if SlotLeft %}
+        <div class="span-5">
+            <div class="left-slot">
+                {% block left-slot %}
+                    {% portlet_slot 'Left' SHOP %}&nbsp;
+                {% endblock %}
+            </div>
+        </div>
+    {% endif %}
+    <div class="{{ content_class }}">
+        <div class="middle-slot">
+            {% block content %}{% endblock %}&nbsp;
+        </div>
+    </div>
+    {% if SlotRight %}
+        <div class="span-4 last">  
+            <div class="right-slot">
+                {% block right-slot %}
+                    {% portlet_slot 'Right' SHOP %}&nbsp;
+                {% endblock %}
+            </div>
+        </div>        
+    {% endif %}
+{% endblock %}

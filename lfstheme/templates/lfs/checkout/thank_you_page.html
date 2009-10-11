@@ -1,0 +1,37 @@
+{% extends "lfs/base.html" %}
+{% load i18n lfs_tags %}
+
+{% block title %}
+    {% trans 'Thank you!' %} - {{ block.super }}
+{% endblock %}
+
+{% block section %}thank-you{% endblock %}
+
+{% block breadcrumbs %}
+    {% breadcrumbs _("Thank you!") %}
+{% endblock %}
+
+{% block wrapper %}
+    <h1>{% trans 'Thank you!' %}</h1>
+
+    <p>{% trans 'Soon you will get an order confirmation via E-Mail.' %}</p>
+
+    {% if order.get_pay_link %}
+        <p>
+            {% trans 'Please use the following link if you want to pay now' %}
+        </p>
+        <p>
+            <a class="pay-link"
+               href="{{ order.get_pay_link }}">{% trans 'Pay' %}</a>
+        </p>
+        <p>
+            {% trans 'You will find the same link on your order confirmation' %}
+        </p>
+    {% endif %}
+
+{% endblock %}
+
+{% block google-analytics-tracking %}{% endblock %}
+{% block google-analytics-ecommerce %}
+    {% google_analytics_ecommerce %}
+{% endblock %}

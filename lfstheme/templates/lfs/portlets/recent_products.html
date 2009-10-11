@@ -1,0 +1,19 @@
+{% load i18n %}
+{% load lfs_tags %}
+
+{% if products %}
+    <div class="recent-products-portlet portlet">
+        <div class="portlet-header">
+            {{ title }}
+        </div>
+        <div class="portlet-body">
+            {% for product in products %}
+            <div class="portlet-item {% if forloop.last %}last{% endif %}">
+                <a href="{{ product.get_absolute_url }}">
+                    {{ product.get_name }}
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}

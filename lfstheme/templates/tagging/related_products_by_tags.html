@@ -1,0 +1,10 @@
+{% load i18n %}
+{% if related_products %}
+    <div class="tags">
+        <h1 class="section">{% trans 'Related products by tag' %}</h1>
+        {% for product in related_products %}
+            <a href="{{product.get_absolute_url}}">
+                {{product.get_name}}</a>
+        {% endfor %}
+    </div>    
+{% endif %}

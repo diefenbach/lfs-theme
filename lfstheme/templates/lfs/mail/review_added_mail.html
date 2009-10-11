@@ -1,0 +1,50 @@
+{% load i18n %}
+
+<html>
+    <head>
+        <style type="text/css">
+            h1 {
+                font-size: 120%;
+            }
+        </style>
+    </head>
+</html>
+
+<body>
+    <h1>{% trans "Product" %}:</h1>
+    <div>
+        <a href="{{ site }}{{ product.get_absolute_url }}">{{ product.get_name }}</a>
+    </div>
+
+    <h1>{% trans "Name" %}:</h1>
+    <div>
+        {% if review.name %}
+            {{ review.name }}
+        {% else %}
+            {% trans "Anonymous" %}
+        {% endif %}
+    </div>
+
+    <h1>{% trans "E-Mail" %}:</h1>
+    <div>
+        {% if review.email %}
+            {{ review.email }}
+        {% else %}
+            {% trans "No E-Mail" %}
+        {% endif %}        
+    </div>
+
+    <h1>{% trans "Score" %}:</h1>
+    <div>
+        {{ review.score }}
+    </div>
+
+    <h1>{% trans "Comment" %}:</h1>
+    <div>
+        {% if review.comment %}
+            {{ review.comment }}
+        {% else %}
+            {% trans "No comment" %}
+        {% endif %}        
+    </div>
+</body>

@@ -1,0 +1,198 @@
+{% load i18n %}
+{% load lfs_tags %}
+{% load reviews_tags %}
+
+<form id="product-form"
+      action="{% url lfs.catalog.views.product_form_dispatcher %}"
+      data="{% url lfs_select_variant_from_properties %}"
+      method="post">
+
+    <div class="product-images">
+        <div class="main-image">
+            <a href="{{ variant.get_image.url_400x400 }}"
+               class="product-image">
+                <img src="{{ variant.get_image.url_200x200 }}"
+                     alt="{{ variant.get_name}}" />
+            </a>
+        </div>
+        <div class="sub-images">
+            {% for image in variant.get_sub_images %}
+                <a href="{{ image.image.url_400x400 }}"
+                   class="product-image">
+                    <img src="{{ image.image.url_60x60 }}"
+                         title="{{ image.title }}"
+                         alt="{{ image.title }}" />
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <h1 class="product-title">
+        {{ variant.get_name }}
+    </h1>
+
+    {% shipping variant %}
+
+    {% average_for_instance variant %}
+
+    <div class="prices">
+        {% if variant.get_for_sale %}
+            <div>
+                <span class="for-sale-standard-price" nowrap="nowrap">{{ variant.get_standard_price|currency }}*</span>
+                <span class="for-sale-price" nowrap="nowrap">{{ variant.get_price|currency }}*</span>
+            </div>
+            <div class="price-disclaimer">
+                {% trans '*inc. VAT' %}
+            </div>
+        {% else %}
+            <div class="standard-price"
+                  nowrap="nowrap">
+                {{ variant.get_price|currency }}*
+            </div>
+            <div class="price-disclaimer">
+                {% trans '*inc. VAT' %}
+            </div>
+        {% endif %}
+
+    </div>
+
+    <div class="buttons">
+        {% if variant.deliverable %}
+            <button class="button emphasized"
+                   type="submit"
+                   name="add-to-cart">{% trans 'Add to cart' %}</button>
+        {% endif %}
+    </div>
+    <p class="product-description">
+        {{ variant.get_description|safe}}
+    </p>
+
+    <div class="variants">
+        {% ifequal product.sub_type "1" %}
+            <h1 class="section">{% trans 'Variants' %}</h1>
+
+            {% ifequal product.variants_display_type 0 %}
+                <table class="product-variants lfs-default"
+                       data="{% url lfs_select_variant %}">
+                    <tr>
+                        <th></th>
+                        <th>
+                            {% trans 'Name' %}
+                        </th>
+                        {% for property in properties %}
+                            <th>
+                                {{ property.name}}
+                            </th>
+                        {% endfor %}
+                        <th class="number">
+                            {% trans 'Price' %}
+                        </th>
+                    </tr>
+                    {% for product_variant in variants %}
+                        <tr>
+                            <td class="select">
+                                <input type="radio"
+                                       class="variant"
+                                       name="variant_id"
+                                       value="{{ product_variant.id }}"
+                                       {% ifequal product_variant.id variant.id %}checked="checked"{% endifequal %}  />
+                            </td>
+                            <td>
+                                {{ product_variant.get_name }}
+                            </td>
+                            {% for option in product_variant.get_options %}
+                                <td>
+                                    {{ option.value|option_name }}
+                                </td>
+                            {% endfor %}
+                            <td class="number"
+                                nowrap="nowrap">
+                                {{ product_variant.get_price|currency }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% endifequal %}
+            
+            {% ifequal product.variants_display_type 1 %}
+
+                <div>
+                    {% for property in properties %}
+                        <div>
+                            <div class="property-label">
+                                {{ property.name }}:
+                            </div>
+                            <select class="property"
+                                    name="property_{{ property.id }}">
+                                {% for option in property.options %}
+                                    <option value="{{ option.id }}"
+                                            {% if option.selected %}selected="selected"{% endif %}>
+                                        {{ option.name }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    {% endfor %}
+
+                    <noscript>
+                        <input type="submit"
+                               name="refresh-options"
+                               value="{% trans 'Refresh options' %}"/>
+                    </noscript>
+                </div>
+
+            {% endifequal %}
+        {% endifequal %}
+    </div>
+
+    {% if product_accessories %}
+        <div class="accessories">
+            <h1 class="section">{% trans 'Accessories' %}</h1>
+            <table class="product-accessories lfs-default">
+                <tr>
+                    <th></th>
+                    <th>{% trans 'Name' %}</th>
+                    <th class="number">{% trans 'Quantity' %}</th>
+                    <th class="number">{% trans 'Price' %}</th>
+                    <th class="number last">{% trans 'Total' %}</th>
+                </tr>
+                {% for product_accessory in product_accessories %}
+                    <tr>
+                        <td class="checkbox-left">
+                            <input type="checkbox"
+                                   name="accessory-{{ product_accessory.accessory.id }}"/>
+                        </td>
+                        <td>
+                            <a href="{{ product_accessory.accessory.get_absolute_url }}">
+                                {{ product_accessory.accessory.get_name|truncatewords_html:5 }}
+                            </a>
+                        </td>
+                        <td class="number">
+                            <input type="hidden"
+                                   name="quantity-{{ product_accessory.accessory.id }}"
+                                   value="{{ product_accessory.quantity }}" />
+                            {{ product_accessory.quantity|quantity }}
+                        </td>
+                        <td class="number"
+                            nowrap="nowrap">
+                            {{ product_accessory.accessory.get_price|currency }}
+                        </td>
+                        <td class="number"
+                             nowrap="nowrap">
+                            {{ product_accessory.get_price|currency }}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    {% endif %}
+
+    <input type="hidden"
+           name="product_id"
+           value="{{ product.id }}" />
+
+    <input type="hidden"
+           name="variant_id"
+           value="{{ variant.id }}" />
+
+</form>

@@ -1,0 +1,22 @@
+{% load i18n %}
+{% load lfs_tags %}
+
+{% if display %}
+    <div class="delivery-time-portlet portlet">
+        <div class="portlet-header">
+            {{ title }}
+        </div>
+        <div class="portlet-body">
+            <div class="portlet-item delivery-state">
+                {% if deliverable %}
+                    <span class="deliverable">{% trans 'Deliverable' %}</span>
+                {% else %}
+                    <span class="not-deliverable">{% trans 'Not deliverable' %}</span>
+                {% endif %}
+            </div>
+            <div class="portlet-item delivery-time">
+                {% trans 'Delivery time' %}: {{ delivery_time }}
+            </div>
+        </div>
+    </div>
+{% endif %}

@@ -1,0 +1,93 @@
+{% extends "lfs/base.html" %}
+{% load i18n %}
+{% load lfs_tags %}
+
+{% block title %}
+    {% trans 'Login' %} - {{ block.super }}
+{% endblock %}
+
+{% block section %}customer-login{% endblock %}
+
+{% block breadcrumbs %}
+    {% breadcrumbs _("Login") %}
+{% endblock %}
+
+{% block wrapper %}
+    <h1>
+        {% trans 'Please select!' %}
+    </h1>
+
+    <div class="login">
+        <h2 class="authenticate">{% trans 'Login' %}</h2>
+
+        <div class="description">
+            {% trans 'If you are already customer you can login. Your address data will be stored in your account.' %}
+        </div>
+
+        <form class="authenticate"
+              action="{% url lfs_login %}"
+              method="post">
+
+            <div class="form">
+                <table>
+                    {{ login_form }}
+                    <tr>
+                        <td></td>
+                        <td>
+                            <a href="{% url lfs_password_reset %}">{% trans 'Forgot password?' %}</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+<script type="text/javascript">
+$("#id_username").focus();  
+</script>
+
+            <input type="hidden"
+                   name="action"
+                   value="login" />
+
+            <input type="hidden"
+                   name="next"
+                   value="{{ next_url }}" />
+
+            <button class="button emphasized left"
+                    type="submit">
+                {% trans 'Login' %}
+            </button>
+
+        </form>
+    </div>
+	
+	{% if not ANON_ONLY %}
+	    <div class="register">
+	        <h2 class="authenticate">{% trans 'Register' %}</h2>
+
+	        <div class="description">
+	            {% trans 'If you are not already a customer you can register in order to store your address data and to follow the state of your orders.' %}
+	        </div>
+
+	        <form action="{% url lfs_login %}"
+	              method="post">
+	                <div class="form">
+	                    <table>
+	                        {{ register_form }}
+	                    </table>
+	                </div>
+	                <input type="hidden"
+	                       name="action"
+	                       value="register" />
+
+	                <input type="hidden"
+	                       name="next"
+	                       value="{{ next_url }}" />
+
+	                <button class="button emphasized left"
+	                        type="submit">
+	                    {% trans 'Register' %}
+	                </button>
+	        </form>
+	    </div>
+	{% endif %}
+{% endblock %}

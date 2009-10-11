@@ -1,0 +1,33 @@
+{% extends "lfs/base.html" %}
+{% load lfs_tags %}
+{% load lfs_portlets_tags %}
+
+{% block title %}
+    {{ page.title }} - {{ block.super }}
+{% endblock %}
+
+{% block section %}page{% endblock %}
+
+{% block breadcrumbs %}
+    {% breadcrumbs page %}
+{% endblock %}
+
+{% block left-slot %}
+    {% lfs_pages_portlet %}
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="first-heading">
+        {{ page.title }}
+    </h1>
+    <div>
+        {{ page.body|safe }}
+    </div>
+
+    {% if page.file %}
+        <a href="{{page.file.url}}">
+            Download
+        </a>
+    {% endif %}
+{% endblock %}
