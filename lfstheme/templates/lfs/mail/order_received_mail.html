@@ -13,7 +13,7 @@
             .selectable-products table {
                 width: 100%;
                 border-collapse: collapse;
-            }            
+            }
             th {
                 text-align:left;
                 background-color: #eee;
@@ -21,18 +21,18 @@
             td {
                 vertical-align: top;
                 text-align: left;
-            }            
+            }
             .number {
                 text-align:right;
-            }            
-            .total {
-                font-weight:bold;                
             }
-            
+            .total {
+                font-weight:bold;
+            }
+
             .tax {
                 font-size: 90%;
-            }            
-        </style>        
+            }
+        </style>
     </head>
     <body>
         <table class="order-general">
@@ -83,7 +83,7 @@
                     {{order.price|currency}}
                 </td>
             </tr>
-    
+
         </table>
         <table class="order-addresses">
             <tr>
@@ -119,7 +119,7 @@
                     </div>
                     <div>
                         {{order.shipping_country}}
-                    </div>                                                        
+                    </div>
                     <div>
                         {{order.shipping_phone}}
                     </div>
@@ -145,7 +145,7 @@
                     </div>
                     <div>
                         {{order.invoice_country}}
-                    </div>                                                        
+                    </div>
                     <div>
                         {{order.invoice_phone}}
                     </div>
@@ -209,12 +209,12 @@
             {% for item in order.items.all %}
                 <tr>
                     <td>
-                       {{item.product_sku}} 
+                       {{item.product_sku}}
                     </td>
                     <td>
                        {{item.product_name}}
                        {% for option in item.product.get_options %}
-                            {% if option.property.display_on_product %}                                    
+                            {% if option.property.display_on_product %}
                                <div>
                                    {{option.property.name}} : {{option.value|option_name}} {{option.property.unit|safe}}
                                </div>
@@ -222,16 +222,35 @@
                        {% endfor %}
                     </td>
                     <td class="number">
-                       {{item.product_amount}} 
+                       {{item.product_amount}}
                     </td>
                     <td class="number">
-                       {{item.product_price_gross|currency}} 
+                       {{item.product_price_gross|currency}}
                     </td>
                     <td class="number">
                        {{item.price_gross|currency}}
                     </td>
                 </tr>
-            {% endfor %}        
+            {% endfor %}
+
+            {% if order.voucher_number %}
+                <tr>
+                    <td></td>
+                    <td>
+                        {% trans 'Voucher' %} ({{ order.voucher_number }})
+                    </td>
+                    <td class="number">
+                        1
+                    </td>
+                    <td class="number">
+                        - {{ order.voucher_price|currency }}
+                    </td>
+                    <td class="number">
+                        - {{ order.voucher_price|currency }}
+                    </td>
+                </tr>
+            {% endif %}
+
             <tr>
                 <td></td>
                 <td>
@@ -274,7 +293,7 @@
                     <span class="total-label">{% trans 'Inclusive VAT' %}:</span>
                     {{order.tax|currency}}
                 </td>
-            </tr>        
+            </tr>
         </table>
         {% if order.message %}
             <table class="order-message">
@@ -289,6 +308,6 @@
                     </td>
                 </tr>
             </table>
-        {% endif %}        
+        {% endif %}
     </body>
 </html>

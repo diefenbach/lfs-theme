@@ -15,7 +15,7 @@
     <div>
         <form class="checkout-form"
               method="post"
-			  data="{% url lfs_changed_checkout %}">
+              data="{% url lfs_changed_checkout %}">
             <table class="lfs-default">
                 <tr>
                     <th>
@@ -278,26 +278,35 @@
                     {{ payment_inline|safe }}
                 </div>
             </div>
+            
+            <h2 class="padding-top-large">
+                {% trans "Voucher code" %}
+            </h2>
+            <input data="{% url lfs_check_voucher %}"
+                   type="text"
+                   id="voucher"
+                   name="voucher"
+                   size="30" />
 
- 			{% if display_credit_card %}
+            {% if display_credit_card %}
                  <table id="credit-card">
                      <tr>
                          <th colspan="2">
                              {% trans 'Please enter your credit card information' %}
- 
- 							{% if form.errors.credit_card %}
- 								<ul class="errorlist">
- 									<li>{{ form.errors.credit_card }}</li>
- 								</div>					
- 							{% endif %}
- 
+
+                            {% if form.errors.credit_card %}
+                                <ul class="errorlist">
+                                    <li>{{ form.errors.credit_card }}</li>
+                                </div>
+                            {% endif %}
+
                              <noscript>
                                  <div class="discreet">
                                      ({% trans 'Only necessary when the payment method is direct debit' %})
                                  </div>
                              </noscript>
                          </th>
- 					</tr>
+                    </tr>
                      <tr>
                          <td class="label"
                              colspan="2">
@@ -326,7 +335,7 @@
                              {{ form.credit_card_owner }}
                          </td>
                      </tr>
- 
+
                      <tr>
                          <td class="label"
                              colspan="2">
@@ -341,7 +350,7 @@
                              {{ form.credit_card_number }}
                          </td>
                      </tr>
- 
+
                      <tr>
                          <td class="label">
                              <label>{% trans "Expiration date" %}:</label>
@@ -350,7 +359,7 @@
                              {{ form.credit_card_expiration_date_month }} {{ form.credit_card_expiration_date_year }}
                          </td>
                      </tr>
- 
+
                      <tr>
                          <td class="label"
                              colspan="2">
@@ -365,9 +374,9 @@
                              {{ form.credit_card_verification }}
                          </td>
                      </tr>
- 
- 				</table>
- 			{% endif %}
+
+                </table>
+            {% endif %}
             {% if display_bank_account %}
                 <table id="bank-account">
                     <tr>

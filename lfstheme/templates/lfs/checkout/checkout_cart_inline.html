@@ -30,7 +30,7 @@
             <td>
                 {{cart_item.product.get_name}}
                 {% for option in cart_item.product.get_options %}
-                    {% if option.property.display_on_product %}                                                    
+                    {% if option.property.display_on_product %}
                         <div>
                             {{option.property.name}} : {{option.value|option_name}} {{option.property.unit|safe}}
                         </div>
@@ -39,7 +39,7 @@
             </td>
             <td class="number">
                 {{cart_item.amount}}
-            </td>                
+            </td>
             <td class="number">
                 {{cart_item.get_price|currency}}
             </td>
@@ -51,6 +51,27 @@
             </td>
         </tr>
     {% endfor %}
+
+    {% if display_voucher %}
+        <tr id="voucher">
+            <td></td>
+            <td class="left">
+                {% trans "Voucher" %}
+            </td>
+            <td class="number">
+                1
+            </td>
+            <td class="number">
+                - {{ voucher_value|currency }}
+            </td>
+            <td class="number">
+                ({{ voucher_tax|currency }})
+            </td>
+            <td class="number">
+                - {{ voucher_value|currency }}
+            </td>
+        </tr>
+    {% endif %}
 
     <tr>
         <td></td>

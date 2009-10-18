@@ -120,6 +120,14 @@ td.select {
     text-align:right;
 }
 
+.padding-top {
+    margin-top: 10px;
+}
+
+.padding-top-large {
+    margin-top: 20px;    
+}
+
 .checkbox-left {
     width: 1px;
     padding-right: 5px;
