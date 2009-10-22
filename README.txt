@@ -21,7 +21,12 @@ A demo shop can be tried here:
 Changes
 =======
 
+0.2.0  (2009-10-22)
+-------------------
+
 * Added 'Development Status :: 3 - Alpha' to setup.py
+
+* Added support for vouchers
 
 0.1.1  (2009-10-12)
 -------------------
