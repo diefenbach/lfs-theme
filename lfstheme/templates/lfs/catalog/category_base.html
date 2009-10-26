@@ -4,7 +4,7 @@
 {% load lfs_theme_tags %}
 
 {% block title %}
-    {{ category.name }} - {{ block.super }}
+    {{ category.get_meta_title }} - {{ block.super }}
 {% endblock %}
 
 {% block section %}category{% endblock %}
