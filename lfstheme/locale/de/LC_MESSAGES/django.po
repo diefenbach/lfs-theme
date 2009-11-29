@@ -168,7 +168,7 @@ msgstr "Menge"
 #: templates/lfs/search/search_results.html:50
 #: templates/tagging/product_list.html:16
 msgid "Price"
-msgstr "Preis"
+msgstr "Einzelpreis"
 
 #: templates/lfs/cart/added_to_cart.html:38
 #: templates/lfs/cart/added_to_cart_items.html:18
