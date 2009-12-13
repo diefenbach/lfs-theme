@@ -13,6 +13,17 @@
 {% endblock %}
 
 {% block wrapper %}
+    {# Voucher #}            
+    <h2 class="padding-top-large">
+        {% trans "Voucher code" %}
+    </h2>
+    <input data="{% url lfs_check_voucher_cart %}"
+           type="text"
+           id="voucher"
+           name="voucher"
+           value="{{ voucher_number }}"
+           size="30" />
+
     <div id="cart-inline">
         {{cart_inline}}
     </div>

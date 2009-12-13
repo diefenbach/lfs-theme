@@ -10,7 +10,7 @@
     <form id="cart-form"
           action="{% url lfs.cart.views.refresh_cart %}"
           onsubmit="return false;">
-          
+
         <table class="lfs-default">
             <tr>
                 <th colspan="2">
@@ -76,6 +76,28 @@
                     </td>
                 </tr>
             {% endfor %}
+
+            {% if display_voucher %}
+                <tr id="voucher">
+                    <td></td>
+                    <td class="product-title left">
+                        {% trans "Voucher" %}
+                    </td>
+                    <td class="number">
+                        1
+                    </td>
+                    <td class="number">
+                        - {{ voucher_value|currency }}
+                    </td>
+                    <td class="number">
+                        ({{ voucher_tax|currency }})
+                    </td>
+                    <td class="number">
+                        - {{ voucher_value|currency }}
+                    </td>
+                    <td></td>
+                </tr>
+            {% endif %}
 
             <tr>
                 <td></td>
@@ -200,7 +222,7 @@
     <h1 class="title">
         {% trans 'Your Cart is empty' %}
     </h1>
-    <a class="button emphasized left" 
+    <a class="button emphasized left"
        href="{{ shopping_url }}">
        {% trans 'Go on shopping' %}
     </a>
