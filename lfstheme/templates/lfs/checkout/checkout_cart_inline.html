@@ -1,5 +1,22 @@
 {% load i18n lfs_tags %}
 
+{# Voucher #}
+<h2 class="padding-top-large">
+    {% trans "Voucher code" %}
+</h2>
+<input data="{% url lfs_check_voucher %}"
+       type="text"
+       id="voucher"
+       name="voucher"
+       value="{{ voucher_number }}"
+       size="30" />
+
+{% if voucher_number and voucher_message %}
+    <span class="voucher-message">
+        {{ voucher_message }}
+    </span>
+{% endif %}
+
 <h2>{% trans 'Your cart' %}</h2>
 <table class="lfs-default cart">
     <tr>

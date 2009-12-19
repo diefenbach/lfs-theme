@@ -3,6 +3,22 @@
 
 {% if cart.items %}
 
+    <h1 class="first-heading">
+        {% trans "Voucher" %}
+    </h1>
+    <input data="{% url lfs_check_voucher_cart %}"
+           type="text"
+           id="voucher"
+           name="voucher"
+           value="{{ voucher_number }}"
+           size="30" />
+
+    {% if voucher_number and voucher_message %}
+        <span class="voucher-message">
+            {{ voucher_message }}
+        </span>
+    {% endif %}
+
     <h1 class="title">
         {% trans 'Your Cart' %}
     </h1>
