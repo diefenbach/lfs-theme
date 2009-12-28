@@ -21,6 +21,11 @@ A demo shop can be tried here:
 Changes
 =======
 
+0.2.1  (2009-12-28)
+-------------------
+
+* Improved support for vouchers
+
 0.2.0  (2009-10-22)
 -------------------
 
