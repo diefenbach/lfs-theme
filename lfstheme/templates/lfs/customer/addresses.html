@@ -13,8 +13,7 @@
         <h1>{% trans 'Your address' %}</h1>
     {% endif %}
 
-    <form class="address-form"
-    	  action="{% url lfs_my_addresses %}"
+    <form action="{% url lfs_my_addresses %}"
           method="post">
         <table>
             {% if show_shipping_address %}
@@ -29,14 +28,15 @@
             {% endif %}
             <tr>
                 <td>
-                      {{ invoice_address_inline|safe }}
-                 
+                    <table>
+                        {{ invoice_address_form }}
+                    </table>
                 </td>
                 {% if show_shipping_address %}
                     <td>
-                   
-                       {{ shipping_address_inline|safe }}
-                   
+                        <table>
+                            {{ shipping_address_form }}
+                        </table>
                     </td>                                    
                 {% endif %}
             </tr>
