@@ -1,0 +1,19 @@
+<div id="shipping-address-inline">
+    <table class="shipping-address">
+        {{shipping_address_form.as_table}}
+        <tr>
+           <td class="label"
+               colspan="2">
+               {{ form.shipping_phone.errors }}
+           </td>
+       </tr>
+       <tr>
+           <td class="label">
+               <label for="id_shipping_country">{{ form.shipping_phone.label_tag }}:</label>
+           </td>
+           <td>
+               {{ form.shipping_phone }}
+           </td>
+       </tr>
+    </table>
+</div>
