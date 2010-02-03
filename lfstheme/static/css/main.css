@@ -90,6 +90,19 @@ table.lfs-default th {
     padding: 4px 6px;
 }
 
+table.invoice-address th {
+    background-color: white;
+    color: #58585A;
+    font-weight: bold;
+}
+
+table.shipping-address th {
+    background-color: white;
+    color: #58585A;
+    font-weight: bold;
+}
+
+
 table.lfs-default a {
     text-decoration: none;
 }
