@@ -1,5 +1,25 @@
 <div id="invoice-address-inline">
 <table class="invoice-address">
 	{{address_form.as_table}}
+	{% if request.user.is_anonymous %}
+    <tr>
+        <td class="label">
+                <label for="id_invoice_email">{{ form.invoice_email.label_tag }}:</label>
+            </td>
+            <td>
+                {{ form.invoice_email }}
+            </td>
+        </tr>
+    {% endif %}
+    {% if form.invoice_phone %}
+    <tr>
+        <td class="label">
+            <label for="id_invoice_phone">{{ form.invoice_phone.label_tag }}:</label>
+        </td>
+        <td>
+            {{ form.invoice_phone }}
+        </td>
+    </tr>
+    {% endif %}
   </table>
 </div>

@@ -1,13 +1,29 @@
 <div id="shipping-address-inline">
     <table class="shipping-address">
         {{address_form.as_table}}
+        {% if request.user.is_anonymous %}
         <tr>
+           <td class="label"
+               colspan="2">
+               {{ form.shipping_email.errors }}
+           </td>
+       </tr>
+	   <tr>
+	      <td class="label">
+	               <label for="id_shipping_email">{{ form.shipping_email.label_tag }}:</label>
+	      </td>
+	      <td>
+	          {{ form.shipping_email }}
+	      </td>
+	   </tr>
+	   {% endif %}
+       {% if form.shipping_phone %}
+       <tr>
            <td class="label"
                colspan="2">
                {{ form.shipping_phone.errors }}
            </td>
        </tr>
-       {% if form.shipping_phone %}
        <tr>
            <td class="label">
                <label for="id_shipping_country">{{ form.shipping_phone.label_tag }}:</label>

@@ -47,24 +47,6 @@
                                     {{ form.invoice_email.errors }}
                                 </td>
                             </tr>
-                            {% if request.user.is_anonymous %}
-                                <tr>
-                                <td class="label">
-                                        <label for="id_invoice_email">{{ form.invoice_email.label_tag }}:</label>
-                                    </td>
-                                    <td>
-                                        {{ form.invoice_email }}
-                                    </td>
-                                </tr>
-                            {% endif %}
-                            <tr>
-                                <td class="label">
-                                    <label for="id_invoice_phone">{{ form.invoice_phone.label_tag }}:</label>
-                                </td>
-                                <td>
-                                    {{ form.invoice_phone }}
-                                </td>
-                            </tr>
                         </table>
                     </td>
 
@@ -72,7 +54,6 @@
                     <td width="50%">
                     	{{ shipping_address_inline|safe }}
                     </td>
-
                 </tr>
             </table>
 

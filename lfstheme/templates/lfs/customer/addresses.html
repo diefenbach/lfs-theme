@@ -7,17 +7,22 @@
 {% endblock %}
 
 {% block content %}
-    {% if show_shipping_address %}
-        <h1>{% trans 'Your addresses' %}</h1>
-    {% else %}
-        <h1>{% trans 'Your address' %}</h1>
-    {% endif %}
+	{% if form.errors %}
+	<div id="form-error">
+		<p>The operation could not be performed because one or more error(s) occurred.<br />Please resubmit the form after making the following changes:</p>
+		<ul>
+		{% for field in form %}
+			{% if field.errors %}<li>{{field.label}} - {{ field.errors|striptags }}</li>{% endif %} 
+		{% endfor %}
+		</ul>
+	</div>
+	{% endif %}
+    <h1>{% trans 'Your addresses' %}</h1>
 
     <form class="address-form"
     	  action="{% url lfs_my_addresses %}"
           method="post">
         <table>
-            {% if show_shipping_address %}
                 <tr>
                     <td>
                         <h2>{% trans 'Invoice Address' %}</h2>
@@ -26,28 +31,19 @@
                         <h2>{% trans 'Shipping Address' %}</h2>
                     </td>
                 </tr>
-            {% endif %}
             <tr>
                 <td>
                       {{ invoice_address_inline|safe }}
                 </td>
-                {% if show_shipping_address %}
                     <td>
                        {{ shipping_address_inline|safe }}
                     </td>                                    
-                {% endif %}
             </tr>
             <tr>
                 <td>
-                    {% if show_shipping_address %}
                         <input class="lfs-default"
                                type="submit"
                                value="{% trans 'Save addresses' %}">
-                    {% else %}
-                        <input class="lfs-default"
-                               type="submit"
-                               value="{% trans 'Save address' %}">
-                    {% endif %}                    
                 </td>
             </tr>
         </table>
