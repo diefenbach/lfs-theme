@@ -14,7 +14,7 @@
 
         {% for page in pages %}
             <a class="{% if page.selected%}current{% endif %}"
-               href="{% url lfs_category category.slug page.start %}">
+               href="{% url lfs_category category.slug %}?start={{ page.start }}">
                 {{ page.name }}
             </a>
         {% endfor %}
@@ -36,7 +36,7 @@
 {% sorting %}
 
 <h1>
-	{{ category.name }}
+    {{ category.name }}
 </h1>
 <div id="products">
     <table class="lfs-default">
@@ -51,11 +51,11 @@
                                  src="{{ product.get_image.url_100x100 }}" />
                         </a>
                     </div>
-					<div>
-	                    <div class="product-title">{{ product.get_name }}</div>
-	                    <div class="product-description">{{ product.short_description|safe }}</div>
-					</div>
-	
+                    <div>
+                        <div class="product-title">{{ product.get_name }}</div>
+                        <div class="product-description">{{ product.short_description|safe }}</div>
+                    </div>
+
 
                     <div class="product-price">
                         {% if product.get_for_sale %}
