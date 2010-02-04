@@ -3,13 +3,14 @@
 <h1 class="first-heading">
     {{ category.name }}
 </h1>
+
 <div id="categories">
     {% for row in categories %}
         {% for category in row %}
             <div class="category-row">
                 <h2 class="first-heading">{{ category.name }}</h2>
                 <div class="category-image">
-                    <a href="{% url lfs_category category.slug 0 %}">
+                    <a href="{% url lfs_category category.slug %}">
                         {% if category.image %}
                             <img src="{{category.image.url_100x100}}"
                                  alt="{{category.name}}" />
@@ -22,7 +23,7 @@
 
                 <div class="clear details-button">
                     <a class="button emphasized"
-                       href="{% url lfs_category category.slug 0 %}">{% trans 'Details' %}
+                       href="{% url lfs_category category.slug %}">{% trans 'Details' %}
                     </a>
                 </div>
 
