@@ -38,16 +38,9 @@
                     </th>
                 </tr>
                 <tr>
+                	{# Invoice Address #}
                     <td width="50%">
                     	{{ invoice_address_inline|safe }}
-                         <table>
-                            <tr>
-                                <td class="label"
-                                    colspan="2">
-                                    {{ form.invoice_email.errors }}
-                                </td>
-                            </tr>
-                        </table>
                     </td>
 
                     {#  Shipping Address #}
