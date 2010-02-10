@@ -19,9 +19,11 @@
 	{% endif %}
     <h1>{% trans 'Your addresses' %}</h1>
 
-    <form class="address-form"
+    <form class="address-form postal-address"
     	  action="{% url lfs_my_addresses %}"
-          method="post">
+          method="post"
+          invoice="{% url lfs_changed_invoice_country %}"
+          shipping="{% url lfs_changed_shipping_country %}">
         <table>
                 <tr>
                     <td>

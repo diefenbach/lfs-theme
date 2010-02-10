@@ -23,9 +23,12 @@
 	</div>
 	{% endif %}
     <div>
-        <form class="checkout-form"
+        <form class="checkout-form postal-address"
               method="post"
-              data="{% url lfs_changed_checkout %}">
+              data="{% url lfs_changed_checkout %}"
+              invoice="{% url lfs_changed_invoice_country %}"
+              shipping="{% url lfs_changed_shipping_country %}"
+              >
             <table class="lfs-default">
                 <tr>
                     <th>
