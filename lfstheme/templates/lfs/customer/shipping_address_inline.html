@@ -1,5 +1,33 @@
 <div id="shipping-address-inline">
     <table class="shipping-address">
+	    <tr>
+	        <td class="label"
+	            colspan="2">
+	            {{ form.shipping_firstname.errors }}
+	        </td>
+	    </tr>
+	    <tr>
+	        <td class="label">
+	                <label for="id_shipping_firstname">{{ form.shipping_firstname.label_tag }}:</label>
+	            </td>
+	            <td>
+	                {{ form.shipping_firstname }}
+	            </td>
+	    </tr>
+	    <tr>
+	        <td class="label"
+	            colspan="2">
+	            {{ form.shipping_lastname.errors }}
+	        </td>
+	    </tr>
+	    <tr>
+	        <td class="label">
+	                <label for="id_shipping_lastname">{{ form.shipping_lastname.label_tag }}:</label>
+	            </td>
+	            <td>
+	                {{ form.shipping_lastname }}
+	            </td>
+	    </tr>
         {{address_form.as_table}}
         {% if request.user.is_anonymous %}
         <tr>
