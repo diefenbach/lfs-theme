@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LFS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-18 01:56-0500\n"
+"POT-Creation-Date: 2010-02-22 21:14+0100\n"
 "PO-Revision-Date: 2009-02-22 07:20+0100\n"
 "Last-Translator: Kai Diefenbach <kai.diefenbach@iqpp.de>\n"
 "Language-Team: Kai Diefenbach <kai.diefenbach@iqpp.de>\n"
@@ -62,8 +62,8 @@ msgstr "Danke für Ihre Nachricht. Wir melden uns in Kürze."
 
 #: templates/contact_form/contact_form_sent.html:17
 #: templates/lfs/cart/added_to_cart.html:81
-#: templates/lfs/cart/cart_inline.html:192
-#: templates/lfs/cart/cart_inline.html:205
+#: templates/lfs/cart/cart_inline.html:230
+#: templates/lfs/cart/cart_inline.html:243
 #: templates/lfs/checkout/empty_page_checkout.html:21
 msgid "Go on shopping"
 msgstr "Weiter Einkaufen"
@@ -135,13 +135,19 @@ msgid "This product has been added to cart"
 msgstr "Dieses Produkt wurde zum Warenkorb hinzugefügt."
 
 #: templates/lfs/cart/added_to_cart.html:25
-#: templates/lfs/catalog/product_inline.html:150
+#: templates/lfs/catalog/products/product_inline.html:150
+#: templates/lfs/catalog/products/product_inline_topdescription.html:152
+#: templates/lfs/catalog/products/product_inline_topprice.html:152
 msgid "Accessories"
 msgstr "Zubehör"
 
 #: templates/lfs/cart/added_to_cart.html:29
-#: templates/lfs/catalog/product_inline.html:80
-#: templates/lfs/catalog/product_inline.html:154
+#: templates/lfs/catalog/products/product_inline.html:80
+#: templates/lfs/catalog/products/product_inline.html:154
+#: templates/lfs/catalog/products/product_inline_topdescription.html:82
+#: templates/lfs/catalog/products/product_inline_topdescription.html:156
+#: templates/lfs/catalog/products/product_inline_topprice.html:82
+#: templates/lfs/catalog/products/product_inline_topprice.html:156
 #: templates/lfs/mail/order_received_mail.html:197
 #: templates/lfs/mail/review_added_mail.html:19
 #: templates/lfs/order/lfs_order_tmpl.html:159
@@ -150,17 +156,23 @@ msgstr "Name"
 
 #: templates/lfs/cart/added_to_cart.html:32
 #: templates/lfs/cart/added_to_cart_items.html:9
-#: templates/lfs/catalog/product_inline.html:155
+#: templates/lfs/catalog/products/product_inline.html:155
+#: templates/lfs/catalog/products/product_inline_topdescription.html:157
+#: templates/lfs/catalog/products/product_inline_topprice.html:157
 msgid "Quantity"
 msgstr "Menge"
 
 #: templates/lfs/cart/added_to_cart.html:35
 #: templates/lfs/cart/added_to_cart_items.html:12
-#: templates/lfs/cart/cart_inline.html:23
+#: templates/lfs/cart/cart_inline.html:39
 #: templates/lfs/catalog/filter_navigation.html:54
-#: templates/lfs/catalog/product_inline.html:88
-#: templates/lfs/catalog/product_inline.html:156
-#: templates/lfs/checkout/checkout_cart_inline.html:13
+#: templates/lfs/catalog/products/product_inline.html:88
+#: templates/lfs/catalog/products/product_inline.html:156
+#: templates/lfs/catalog/products/product_inline_topdescription.html:90
+#: templates/lfs/catalog/products/product_inline_topdescription.html:158
+#: templates/lfs/catalog/products/product_inline_topprice.html:90
+#: templates/lfs/catalog/products/product_inline_topprice.html:158
+#: templates/lfs/checkout/checkout_cart_inline.html:30
 #: templates/lfs/customer/orders.html:31
 #: templates/lfs/mail/order_received_mail.html:203
 #: templates/lfs/order/lfs_order_tmpl.html:165
@@ -173,11 +185,13 @@ msgstr "Einzelpreis"
 #: templates/lfs/cart/added_to_cart.html:38
 #: templates/lfs/cart/added_to_cart_items.html:18
 #: templates/lfs/cart/added_to_cart_items.html:54
-#: templates/lfs/cart/cart_inline.html:29
-#: templates/lfs/cart/cart_inline.html:154
-#: templates/lfs/catalog/product_inline.html:157
-#: templates/lfs/checkout/checkout_cart_inline.html:19
-#: templates/lfs/checkout/checkout_cart_inline.html:113
+#: templates/lfs/cart/cart_inline.html:45
+#: templates/lfs/cart/cart_inline.html:192
+#: templates/lfs/catalog/products/product_inline.html:157
+#: templates/lfs/catalog/products/product_inline_topdescription.html:159
+#: templates/lfs/catalog/products/product_inline_topprice.html:159
+#: templates/lfs/checkout/checkout_cart_inline.html:36
+#: templates/lfs/checkout/checkout_cart_inline.html:130
 #: templates/lfs/mail/order_received_mail.html:80
 #: templates/lfs/mail/order_received_mail.html:206
 #: templates/lfs/order/lfs_order_tmpl.html:55
@@ -190,7 +204,7 @@ msgid "Add"
 msgstr "Hinzufügen"
 
 #: templates/lfs/cart/added_to_cart.html:73
-#: templates/lfs/cart/cart_inline.html:188
+#: templates/lfs/cart/cart_inline.html:226
 #: templates/lfs/checkout/empty_page_checkout.html:6
 #: templates/lfs/checkout/empty_page_checkout.html:12
 #: templates/lfs/checkout/login.html:95 templates/lfs/checkout/login.html:105
@@ -200,14 +214,14 @@ msgid "Checkout"
 msgstr "Zur Kasse gehen"
 
 #: templates/lfs/cart/added_to_cart.html:77
-#: templates/lfs/checkout/one_page_checkout.html:470
+#: templates/lfs/checkout/one_page_checkout.html:482
 #: templates/lfs/portlets/cart.html:10 templates/lfs/portlets/cart.html:35
 msgid "Go to cart"
 msgstr "Zum Warenkorb"
 
 #: templates/lfs/cart/added_to_cart_items.html:6
-#: templates/lfs/cart/cart_inline.html:17
-#: templates/lfs/checkout/checkout_cart_inline.html:7
+#: templates/lfs/cart/cart_inline.html:33
+#: templates/lfs/checkout/checkout_cart_inline.html:24
 #: templates/lfs/mail/review_added_mail.html:14
 #: templates/lfs/search/search_results.html:47
 #: templates/tagging/product_list.html:14
@@ -215,8 +229,8 @@ msgid "Product"
 msgstr "Produkt"
 
 #: templates/lfs/cart/added_to_cart_items.html:15
-#: templates/lfs/cart/cart_inline.html:26
-#: templates/lfs/checkout/checkout_cart_inline.html:16
+#: templates/lfs/cart/cart_inline.html:42
+#: templates/lfs/checkout/checkout_cart_inline.html:33
 msgid "Included VAT"
 msgstr "Inkl. MwSt."
 
@@ -226,53 +240,60 @@ msgid "Cart"
 msgstr "Warenkorb"
 
 #: templates/lfs/cart/cart_inline.html:7
+#: templates/lfs/cart/cart_inline.html:100
+#: templates/lfs/checkout/checkout_cart_inline.html:76
+#: templates/lfs/mail/order_received_mail.html:240
+msgid "Voucher"
+msgstr "Gutschein"
+
+#: templates/lfs/cart/cart_inline.html:23
 msgid "Your Cart"
 msgstr "Ihr Warenkorb"
 
-#: templates/lfs/cart/cart_inline.html:20
-#: templates/lfs/checkout/checkout_cart_inline.html:10
+#: templates/lfs/cart/cart_inline.html:36
+#: templates/lfs/checkout/checkout_cart_inline.html:27
 #: templates/lfs/mail/order_received_mail.html:200
 #: templates/lfs/order/lfs_order_tmpl.html:162
 msgid "Amount"
 msgstr "Menge"
 
-#: templates/lfs/cart/cart_inline.html:74
+#: templates/lfs/cart/cart_inline.html:90
 msgid "Delete item"
 msgstr "Produkt löschen"
 
-#: templates/lfs/cart/cart_inline.html:84
+#: templates/lfs/cart/cart_inline.html:122
 msgid "Country"
 msgstr "Land"
 
-#: templates/lfs/cart/cart_inline.html:103
-#: templates/lfs/checkout/checkout_cart_inline.html:79
-#: templates/lfs/checkout/one_page_checkout.html:269
+#: templates/lfs/cart/cart_inline.html:141
+#: templates/lfs/checkout/checkout_cart_inline.html:96
+#: templates/lfs/checkout/one_page_checkout.html:279
 #: templates/lfs/mail/order_received_mail.html:257
 #: templates/lfs/order/lfs_order_tmpl.html:200
 #: templates/lfs/shipping/shipping_portlet.html:6
 msgid "Shipping"
 msgstr "Versandart"
 
-#: templates/lfs/cart/cart_inline.html:128
-#: templates/lfs/checkout/checkout_cart_inline.html:96
+#: templates/lfs/cart/cart_inline.html:166
+#: templates/lfs/checkout/checkout_cart_inline.html:113
 #: templates/lfs/checkout/payment_inline.html:3
 #: templates/lfs/mail/order_received_mail.html:272
 #: templates/lfs/order/lfs_order_tmpl.html:215
 msgid "Payment"
 msgstr "Zahlungsweise"
 
-#: templates/lfs/cart/cart_inline.html:167
-#: templates/lfs/checkout/checkout_cart_inline.html:120
+#: templates/lfs/cart/cart_inline.html:205
+#: templates/lfs/checkout/checkout_cart_inline.html:137
 #: templates/lfs/mail/order_received_mail.html:293
 #: templates/lfs/order/lfs_order_tmpl.html:236
 msgid "Inclusive VAT"
 msgstr "Inklusive MwSt."
 
-#: templates/lfs/cart/cart_inline.html:180
+#: templates/lfs/cart/cart_inline.html:218
 msgid "Total delivery time"
 msgstr "Gesamte Lieferzeit"
 
-#: templates/lfs/cart/cart_inline.html:201
+#: templates/lfs/cart/cart_inline.html:239
 msgid "Your Cart is empty"
 msgstr "Ihr Warenkorb ist leer"
 
@@ -289,37 +310,6 @@ msgstr "Sie sind hier:"
 #: templates/registration/password_reset_form.html:14
 msgid "Home"
 msgstr "Start"
-
-#: templates/lfs/catalog/category_categories.html:25
-#: templates/lfs/catalog/category_products.html:73
-#: templates/lfs/search/search_results.html:95
-msgid "Details"
-msgstr "Details"
-
-#: templates/lfs/catalog/category_products.html:6
-#: templates/lfs/catalog/category_products.html:8
-#: templates/pagination/pagination.html:5
-#: templates/pagination/pagination.html:7
-msgid "Previous page"
-msgstr "Vorhergende Seite"
-
-#: templates/lfs/catalog/category_products.html:22
-msgid "Products"
-msgstr "Produkte"
-
-#: templates/lfs/catalog/category_products.html:29
-#: templates/lfs/catalog/category_products.html:31
-#: templates/pagination/pagination.html:21
-#: templates/pagination/pagination.html:23
-msgid "Next page"
-msgstr "Nächste Seite"
-
-#: templates/lfs/catalog/category_products.html:68
-#: templates/lfs/catalog/product_inline.html:45
-#: templates/lfs/catalog/product_inline.html:53
-#: templates/lfs/search/search_results.html:87
-msgid "*inc. VAT"
-msgstr "*inkl. MwSt. zzgl. Versand"
 
 #: templates/lfs/catalog/filter_navigation.html:6
 #: templates/lfs/customer/orders.html:21
@@ -348,18 +338,6 @@ msgstr "Tags"
 #: templates/lfs/catalog/product_base.html:63
 msgid "Tag cloud"
 msgstr "Tag Cloud"
-
-#: templates/lfs/catalog/product_inline.html:63
-msgid "Add to cart"
-msgstr "In den Warenkorb"
-
-#: templates/lfs/catalog/product_inline.html:72
-msgid "Variants"
-msgstr "Varianten"
-
-#: templates/lfs/catalog/product_inline.html:140
-msgid "Refresh options"
-msgstr "Optionen aktualisieren"
 
 #: templates/lfs/catalog/product_navigation.html:5
 #: templates/lfs/catalog/product_navigation.html:7
@@ -395,14 +373,66 @@ msgstr "Name absteigend"
 msgid "Sorting"
 msgstr "Sortierung"
 
-#: templates/lfs/checkout/checkout_cart_inline.html:3
+#: templates/lfs/catalog/categories/category/default.html:26
+#: templates/lfs/catalog/categories/product/default.html:73
+#: templates/lfs/search/search_results.html:95
+msgid "Details"
+msgstr "Details"
+
+#: templates/lfs/catalog/categories/product/default.html:6
+#: templates/lfs/catalog/categories/product/default.html:8
+#: templates/pagination/pagination.html:5
+#: templates/pagination/pagination.html:7
+msgid "Previous page"
+msgstr "Vorhergende Seite"
+
+#: templates/lfs/catalog/categories/product/default.html:22
+msgid "Products"
+msgstr "Produkte"
+
+#: templates/lfs/catalog/categories/product/default.html:29
+#: templates/lfs/catalog/categories/product/default.html:31
+#: templates/pagination/pagination.html:21
+#: templates/pagination/pagination.html:23
+msgid "Next page"
+msgstr "Nächste Seite"
+
+#: templates/lfs/catalog/categories/product/default.html:68
+#: templates/lfs/catalog/products/product_inline.html:45
+#: templates/lfs/catalog/products/product_inline.html:53
+#: templates/lfs/catalog/products/product_inline_topdescription.html:49
+#: templates/lfs/catalog/products/product_inline_topdescription.html:57
+#: templates/lfs/catalog/products/product_inline_topprice.html:17
+#: templates/lfs/catalog/products/product_inline_topprice.html:25
+#: templates/lfs/search/search_results.html:87
+msgid "*inc. VAT"
+msgstr "*inkl. MwSt. zzgl. Versand"
+
+#: templates/lfs/catalog/products/product_inline.html:63
+#: templates/lfs/catalog/products/product_inline_topdescription.html:67
+#: templates/lfs/catalog/products/product_inline_topprice.html:65
+msgid "Add to cart"
+msgstr "In den Warenkorb"
+
+#: templates/lfs/catalog/products/product_inline.html:72
+#: templates/lfs/catalog/products/product_inline_topdescription.html:74
+#: templates/lfs/catalog/products/product_inline_topprice.html:74
+msgid "Variants"
+msgstr "Varianten"
+
+#: templates/lfs/catalog/products/product_inline.html:140
+#: templates/lfs/catalog/products/product_inline_topdescription.html:142
+#: templates/lfs/catalog/products/product_inline_topprice.html:142
+msgid "Refresh options"
+msgstr "Optionen aktualisieren"
+
+#: templates/lfs/checkout/checkout_cart_inline.html:5
+msgid "Voucher code"
+msgstr "Gutscheincode"
+
+#: templates/lfs/checkout/checkout_cart_inline.html:20
 msgid "Your cart"
 msgstr "Ihr Warenkorb"
-
-#: templates/lfs/checkout/checkout_cart_inline.html:59
-#: templates/lfs/mail/order_received_mail.html:240
-msgid "Voucher"
-msgstr "Gutschein"
 
 #: templates/lfs/checkout/empty_page_checkout.html:17
 msgid "There is nothing to checkout"
@@ -442,40 +472,40 @@ msgid "You can also checkout without login or registration."
 msgstr ""
 "Sie können auch ohne Anmeldung oder Registrierung weiter zur Kasse gehen."
 
-#: templates/lfs/checkout/one_page_checkout.html:22
+#: templates/lfs/checkout/one_page_checkout.html:32
 #: templates/lfs/mail/order_received_mail.html:94
 #: templates/lfs/order/lfs_order_tmpl.html:66
 msgid "Invoice address"
 msgstr "Rechnungsadresse"
 
-#: templates/lfs/checkout/one_page_checkout.html:25
+#: templates/lfs/checkout/one_page_checkout.html:35
 #: templates/lfs/mail/order_received_mail.html:91
 #: templates/lfs/order/lfs_order_tmpl.html:69
 msgid "Shipping address"
 msgstr "Lieferadresse"
 
-#: templates/lfs/checkout/one_page_checkout.html:283
-msgid "Voucher code"
-msgstr "Gutscheincode"
-
-#: templates/lfs/checkout/one_page_checkout.html:295
+#: templates/lfs/checkout/one_page_checkout.html:296
 msgid "Please enter your credit card information"
 msgstr "Bitte geben Sie Ihre Kreditkartendaten ein"
 
-#: templates/lfs/checkout/one_page_checkout.html:305
-#: templates/lfs/checkout/one_page_checkout.html:387
+#: templates/lfs/checkout/one_page_checkout.html:306
+#: templates/lfs/checkout/one_page_checkout.html:388
 msgid "Only necessary when the payment method is direct debit"
 msgstr "Nur notwendig wenn Bankabbuchung gewählt wurde."
 
-#: templates/lfs/checkout/one_page_checkout.html:356
+#: templates/lfs/checkout/one_page_checkout.html:357
 msgid "Expiration date"
 msgstr "Ablaufdatum"
 
-#: templates/lfs/checkout/one_page_checkout.html:384
+#: templates/lfs/checkout/one_page_checkout.html:385
 msgid "Please enter your bank information"
 msgstr "Bitte geben Sie Ihre Bankinformationen ein"
 
-#: templates/lfs/checkout/one_page_checkout.html:467
+#: templates/lfs/checkout/one_page_checkout.html:473
+msgid "Please confirm our terms and conditions"
+msgstr "Bitte bestätigen Sie unsere AGB"
+
+#: templates/lfs/checkout/one_page_checkout.html:479
 msgid "Submit order"
 msgstr "Bestellung absenden"
 
