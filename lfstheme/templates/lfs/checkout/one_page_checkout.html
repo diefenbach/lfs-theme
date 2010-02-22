@@ -17,7 +17,7 @@
 		<p>The operation could not be performed because one or more error(s) occurred.<br />Please resubmit the form after making the following changes:</p>
 		<ul>
 		{% for field in form %}
-			{% if field.errors %}<li>{{field.label}} - {{ field.errors|striptags }}</li>{% endif %} 
+			{% if field.errors %}<li>{{field.label}} - {{ field.errors|striptags }}</li>{% endif %}
 		{% endfor %}
 		</ul>
 	</div>
@@ -461,6 +461,17 @@
             <div>
                 {{form.message}}
             </div>
+
+            {% if SHOP.confirm_toc %}
+                {% if form.errors.confirm_toc %}
+                    <ul class="errorlist">
+                        <li>{{ form.errors.confirm_toc }}</li>
+                    </ul>
+                {% endif %}
+
+                <input type="checkbox" name="confirm_toc" />
+                <label>{% trans "Please confirm our terms and conditions" %}</label>
+            {% endif %}
 
             <div class="right">
                 <button class="button emphasized"
