@@ -325,6 +325,10 @@ ul.breadcrumbs li {
     color: #9f8d83;
 }
 
+.product-properties {
+    padding-bottom:  10px;
+}
+
 .product-price {
     text-align: right;
     padding: 10px 10px 0 0;
