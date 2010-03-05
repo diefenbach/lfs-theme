@@ -1,0 +1,1015 @@
+# LFS Theme Russian Translations
+# Copyright (C) 2010 Konstantin Sharikov
+# This file is distributed under the same license as the LFS package.
+# Kai Diefenbach <kai.diefenbach@iqpp.de>, 2009.
+# Konstantin Sharikov <sharikovkv@gmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: LFS\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-10-18 01:56-0500\n"
+"PO-Revision-Date: 2010-03-05 12:33+0300\n"
+"Last-Translator: Konstantin Sharikov <sharikovkv@gmail.com>\n"
+"Language-Team: Kai Diefenbach <kai.diefenbach@iqpp.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;"
+
+#: templates/404.html:9 templates/500.html:4
+msgid "We are sorry!"
+msgstr "Извините!"
+
+#: templates/404.html:12
+msgid "The page you have requested could not be found."
+msgstr "Запрашиваемая вами страница не найдена."
+
+#: templates/500.html:7
+msgid "An error has occured. Please try again in a minute."
+msgstr "Обнаружена проблема. Повторите позже."
+
+#: templates/contact_form/contact_form.html:5
+#: templates/contact_form/contact_form.html:12
+#: templates/contact_form/contact_form_sent.html:4
+#: templates/contact_form/contact_form_sent.html:10
+msgid "Contact form"
+msgstr "Форма связи"
+
+#: templates/contact_form/contact_form.html:14
+msgid "Please leave us a message. We will answer as soon as possible."
+msgstr "Вы можете оставить сообщение. Мы ответим при первой возможности."
+
+#: templates/contact_form/contact_form.html:21
+#: templates/reviews/review_preview.html:15
+msgid "Your name"
+msgstr "Ваше имя"
+
+#: templates/contact_form/contact_form.html:37
+msgid "Your e-mail"
+msgstr "Ваш e-mail"
+
+#: templates/contact_form/contact_form.html:53
+msgid "Your message"
+msgstr "Ваше сообщение"
+
+#: templates/contact_form/contact_form.html:72
+#: templates/reviews/review_form.html:114
+msgid "Send"
+msgstr "Отправить"
+
+#: templates/contact_form/contact_form_sent.html:12
+msgid "Thank you for your message. We will get back to you soon."
+msgstr "Спасибо за внимание. Мы скоро с вами свяжемся."
+
+#: templates/contact_form/contact_form_sent.html:17
+#: templates/lfs/cart/added_to_cart.html:81
+#: templates/lfs/cart/cart_inline.html:192
+#: templates/lfs/cart/cart_inline.html:205
+#: templates/lfs/checkout/empty_page_checkout.html:21
+msgid "Go on shopping"
+msgstr "Продолжить покупки"
+
+#: templates/lfs/base.html:64 templates/lfs/base.html.py:67
+#: templates/lfs/base.html:70 templates/lfs/base.html.py:73
+msgid "Manage"
+msgstr "Управление"
+
+#: templates/lfs/base.html:78
+msgid "Logout"
+msgstr "Выход"
+
+#: templates/lfs/base.html:79 templates/lfs/customer/base.html:8
+msgid "My account"
+msgstr "Моя учетка"
+
+#: templates/lfs/base.html:82 templates/lfs/checkout/login.html:6
+#: templates/lfs/checkout/login.html:12 templates/lfs/checkout/login.html:21
+#: templates/lfs/checkout/login.html:54 templates/lfs/customer/login.html:6
+#: templates/lfs/customer/login.html:12 templates/lfs/customer/login.html:21
+#: templates/lfs/customer/login.html:57
+msgid "Login"
+msgstr "Вход"
+
+#: templates/lfs/base.html:86 templates/lfs/search/search_results.html:18
+msgid "Search"
+msgstr "Поиск"
+
+#: templates/lfs/base.html:92 templates/lfs/catalog/sorting.html:17
+#: templates/lfs/search/search_results.html:26
+msgid "Go!"
+msgstr "Вперед!"
+
+#: templates/lfs/base.html:158
+msgid "Powered by"
+msgstr "Работает на"
+
+#: templates/lfs/base.html:160
+msgid "is a product of"
+msgstr "создан"
+
+#: templates/lfs/base.html:161
+msgid "by"
+msgstr "-"
+
+#: templates/lfs/base.html:161
+msgid "All rights reserved"
+msgstr "Все права защищены"
+
+#: templates/lfs/base.html:163
+msgid "Distributed under the"
+msgstr "Распространяется под"
+
+#: templates/lfs/base.html:163
+msgid "BSD-License"
+msgstr "лицензией BSD"
+
+#: templates/lfs/cart/added_to_cart.html:10
+msgid "Added to cart"
+msgstr "Добавлено в корзину"
+
+#: templates/lfs/cart/added_to_cart.html:15
+msgid "This products have been added to cart"
+msgstr "Эти товары были добавлены в корзину"
+
+#: templates/lfs/cart/added_to_cart.html:17
+msgid "This product has been added to cart"
+msgstr "Этот товар был добавлен в корзину"
+
+#: templates/lfs/cart/added_to_cart.html:25
+#: templates/lfs/catalog/product_inline.html:150
+msgid "Accessories"
+msgstr "Аксессуары"
+
+#: templates/lfs/cart/added_to_cart.html:29
+#: templates/lfs/catalog/product_inline.html:80
+#: templates/lfs/catalog/product_inline.html:154
+#: templates/lfs/mail/order_received_mail.html:197
+#: templates/lfs/mail/review_added_mail.html:19
+#: templates/lfs/order/lfs_order_tmpl.html:159
+msgid "Name"
+msgstr "Наименование"
+
+#: templates/lfs/cart/added_to_cart.html:32
+#: templates/lfs/cart/added_to_cart_items.html:9
+#: templates/lfs/catalog/product_inline.html:155
+msgid "Quantity"
+msgstr "Количество"
+
+#: templates/lfs/cart/added_to_cart.html:35
+#: templates/lfs/cart/added_to_cart_items.html:12
+#: templates/lfs/cart/cart_inline.html:23
+#: templates/lfs/catalog/filter_navigation.html:54
+#: templates/lfs/catalog/product_inline.html:88
+#: templates/lfs/catalog/product_inline.html:156
+#: templates/lfs/checkout/checkout_cart_inline.html:13
+#: templates/lfs/customer/orders.html:31
+#: templates/lfs/mail/order_received_mail.html:203
+#: templates/lfs/order/lfs_order_tmpl.html:165
+#: templates/lfs/portlets/filter.html:59
+#: templates/lfs/search/search_results.html:50
+#: templates/tagging/product_list.html:16
+msgid "Price"
+msgstr "Цена"
+
+#: templates/lfs/cart/added_to_cart.html:38
+#: templates/lfs/cart/added_to_cart_items.html:18
+#: templates/lfs/cart/added_to_cart_items.html:54
+#: templates/lfs/cart/cart_inline.html:29
+#: templates/lfs/cart/cart_inline.html:154
+#: templates/lfs/catalog/product_inline.html:157
+#: templates/lfs/checkout/checkout_cart_inline.html:19
+#: templates/lfs/checkout/checkout_cart_inline.html:113
+#: templates/lfs/mail/order_received_mail.html:80
+#: templates/lfs/mail/order_received_mail.html:206
+#: templates/lfs/order/lfs_order_tmpl.html:55
+#: templates/lfs/order/lfs_order_tmpl.html:168
+msgid "Total"
+msgstr "Итого"
+
+#: templates/lfs/cart/added_to_cart.html:62
+msgid "Add"
+msgstr "Добавить"
+
+#: templates/lfs/cart/added_to_cart.html:73
+#: templates/lfs/cart/cart_inline.html:188
+#: templates/lfs/checkout/empty_page_checkout.html:6
+#: templates/lfs/checkout/empty_page_checkout.html:12
+#: templates/lfs/checkout/login.html:95 templates/lfs/checkout/login.html:105
+#: templates/lfs/checkout/one_page_checkout.html:5
+#: templates/lfs/checkout/one_page_checkout.html:11
+msgid "Checkout"
+msgstr "Рассчитаться"
+
+#: templates/lfs/cart/added_to_cart.html:77
+#: templates/lfs/checkout/one_page_checkout.html:470
+#: templates/lfs/portlets/cart.html:10 templates/lfs/portlets/cart.html:35
+msgid "Go to cart"
+msgstr "Просмотр корзины"
+
+#: templates/lfs/cart/added_to_cart_items.html:6
+#: templates/lfs/cart/cart_inline.html:17
+#: templates/lfs/checkout/checkout_cart_inline.html:7
+#: templates/lfs/mail/review_added_mail.html:14
+#: templates/lfs/search/search_results.html:47
+#: templates/tagging/product_list.html:14
+msgid "Product"
+msgstr "Товар"
+
+#: templates/lfs/cart/added_to_cart_items.html:15
+#: templates/lfs/cart/cart_inline.html:26
+#: templates/lfs/checkout/checkout_cart_inline.html:16
+msgid "Included VAT"
+msgstr "С НДС"
+
+#: templates/lfs/cart/cart.html:6 templates/lfs/cart/cart.html.py:12
+#: templates/lfs/portlets/cart.html:12 templates/lfs/portlets/cart.html:16
+msgid "Cart"
+msgstr "Корзина"
+
+#: templates/lfs/cart/cart_inline.html:7
+msgid "Your Cart"
+msgstr "Ваша корзина"
+
+#: templates/lfs/cart/cart_inline.html:20
+#: templates/lfs/checkout/checkout_cart_inline.html:10
+#: templates/lfs/mail/order_received_mail.html:200
+#: templates/lfs/order/lfs_order_tmpl.html:162
+msgid "Amount"
+msgstr "Сумма"
+
+#: templates/lfs/cart/cart_inline.html:74
+msgid "Delete item"
+msgstr "Убрать"
+
+#: templates/lfs/cart/cart_inline.html:84
+msgid "Country"
+msgstr "Страна"
+
+#: templates/lfs/cart/cart_inline.html:103
+#: templates/lfs/checkout/checkout_cart_inline.html:79
+#: templates/lfs/checkout/one_page_checkout.html:269
+#: templates/lfs/mail/order_received_mail.html:257
+#: templates/lfs/order/lfs_order_tmpl.html:200
+#: templates/lfs/shipping/shipping_portlet.html:6
+msgid "Shipping"
+msgstr "Доставка"
+
+#: templates/lfs/cart/cart_inline.html:128
+#: templates/lfs/checkout/checkout_cart_inline.html:96
+#: templates/lfs/checkout/payment_inline.html:3
+#: templates/lfs/mail/order_received_mail.html:272
+#: templates/lfs/order/lfs_order_tmpl.html:215
+msgid "Payment"
+msgstr "Оплата"
+
+#: templates/lfs/cart/cart_inline.html:167
+#: templates/lfs/checkout/checkout_cart_inline.html:120
+#: templates/lfs/mail/order_received_mail.html:293
+#: templates/lfs/order/lfs_order_tmpl.html:236
+msgid "Inclusive VAT"
+msgstr "Включая НДС"
+
+#: templates/lfs/cart/cart_inline.html:180
+msgid "Total delivery time"
+msgstr "Полное время доставки"
+
+#: templates/lfs/cart/cart_inline.html:201
+msgid "Your Cart is empty"
+msgstr "Ваша корзина пуста"
+
+#: templates/lfs/catalog/breadcrumbs.html:3
+#: templates/lfs/shop/shop_base.html:9
+#: templates/registration/password_reset_done.html:10
+#: templates/registration/password_reset_form.html:11
+msgid "You are here:"
+msgstr "Вы здесь:"
+
+#: templates/lfs/catalog/breadcrumbs.html:6 templates/lfs/shop/menu.html:3
+#: templates/lfs/shop/shop_base.html:11 templates/lfs/shop/tabs.html:7
+#: templates/registration/password_reset_done.html:13
+#: templates/registration/password_reset_form.html:14
+msgid "Home"
+msgstr "Главная"
+
+#: templates/lfs/catalog/category_categories.html:25
+#: templates/lfs/catalog/category_products.html:73
+#: templates/lfs/search/search_results.html:95
+msgid "Details"
+msgstr "Подробно"
+
+#: templates/lfs/catalog/category_products.html:6
+#: templates/lfs/catalog/category_products.html:8
+#: templates/pagination/pagination.html:5
+#: templates/pagination/pagination.html:7
+msgid "Previous page"
+msgstr "Предыдущая страница"
+
+#: templates/lfs/catalog/category_products.html:22
+msgid "Products"
+msgstr "Товары"
+
+#: templates/lfs/catalog/category_products.html:29
+#: templates/lfs/catalog/category_products.html:31
+#: templates/pagination/pagination.html:21
+#: templates/pagination/pagination.html:23
+msgid "Next page"
+msgstr "Следующая страница"
+
+#: templates/lfs/catalog/category_products.html:68
+#: templates/lfs/catalog/product_inline.html:45
+#: templates/lfs/catalog/product_inline.html:53
+#: templates/lfs/search/search_results.html:87
+msgid "*inc. VAT"
+msgstr "*с НДС"
+
+#: templates/lfs/catalog/filter_navigation.html:6
+#: templates/lfs/customer/orders.html:21
+msgid "Filter"
+msgstr "Фильтр"
+
+#: templates/lfs/catalog/filter_navigation.html:64
+#: templates/lfs/catalog/filter_navigation.html:69
+#: templates/lfs/portlets/filter.html:69 templates/lfs/portlets/filter.html:74
+msgid "Up to"
+msgstr "До"
+
+#: templates/lfs/catalog/filter_navigation.html:102
+#: templates/lfs/portlets/filter.html:106
+msgid "Reset all filters"
+msgstr "Сбросить фильтры"
+
+#: templates/lfs/catalog/product_base.html:37
+msgid "Back to overview"
+msgstr "Назад к обзору"
+
+#: templates/lfs/catalog/product_base.html:52
+msgid "Tags"
+msgstr "Метки"
+
+#: templates/lfs/catalog/product_base.html:63
+msgid "Tag cloud"
+msgstr "Куча меток"
+
+#: templates/lfs/catalog/product_inline.html:63
+msgid "Add to cart"
+msgstr "В корзину"
+
+#: templates/lfs/catalog/product_inline.html:72
+msgid "Variants"
+msgstr "Варианты"
+
+#: templates/lfs/catalog/product_inline.html:140
+msgid "Refresh options"
+msgstr "Обновить комплектации"
+
+#: templates/lfs/catalog/product_navigation.html:5
+#: templates/lfs/catalog/product_navigation.html:7
+msgid "Previous product"
+msgstr "Предыдущий товар"
+
+#: templates/lfs/catalog/product_navigation.html:9
+msgid "of"
+msgstr "из"
+
+#: templates/lfs/catalog/product_navigation.html:11
+#: templates/lfs/catalog/product_navigation.html:13
+msgid "Next product"
+msgstr "Следующий товар"
+
+#: templates/lfs/catalog/sorting.html:8
+msgid "Price ascending"
+msgstr "По возрастанию цены"
+
+#: templates/lfs/catalog/sorting.html:10
+msgid "Price descending"
+msgstr "По убыванию цены"
+
+#: templates/lfs/catalog/sorting.html:12
+msgid "Name ascending"
+msgstr "По алфавиту"
+
+#: templates/lfs/catalog/sorting.html:14
+msgid "Name descending"
+msgstr "Обратно алфавиту"
+
+#: templates/lfs/catalog/sorting_portlet.html:7
+msgid "Sorting"
+msgstr "Сортировка"
+
+#: templates/lfs/checkout/checkout_cart_inline.html:3
+msgid "Your cart"
+msgstr "Ваша корзина"
+
+#: templates/lfs/checkout/checkout_cart_inline.html:59
+#: templates/lfs/mail/order_received_mail.html:240
+msgid "Voucher"
+msgstr "Сертификат"
+
+#: templates/lfs/checkout/empty_page_checkout.html:17
+msgid "There is nothing to checkout"
+msgstr "Рассчитываться не за что"
+
+#: templates/lfs/checkout/login.html:17 templates/lfs/customer/login.html:17
+msgid "Please select!"
+msgstr "Пожалуйста выберите!"
+
+#: templates/lfs/checkout/login.html:24
+msgid ""
+"If you are already customer you can login. Your adress data will then "
+"already known."
+msgstr "Вы можете войти, если покупали у нас ранее. Ваш адрес будет заполнен."
+
+#: templates/lfs/checkout/login.html:37 templates/lfs/customer/login.html:37
+msgid "Forgot password?"
+msgstr "Забыли пароль?"
+
+#: templates/lfs/checkout/login.html:62 templates/lfs/checkout/login.html:86
+#: templates/lfs/customer/login.html:65 templates/lfs/customer/login.html:88
+msgid "Register"
+msgstr "Регистрация"
+
+#: templates/lfs/checkout/login.html:65 templates/lfs/customer/login.html:68
+msgid ""
+"If you are not already a customer you can register in order to store your "
+"address data and to follow the state of your orders."
+msgstr ""
+"Если вы не являетесь нашим клиентом, вы можете зарегистрироваться для "
+"удобства последующих покупок и отслеживания заказов."
+
+#: templates/lfs/checkout/login.html:98
+msgid "You can also checkout without login or registration."
+msgstr "Вы также можете рассчитаться без регистрации."
+
+#: templates/lfs/checkout/one_page_checkout.html:22
+#: templates/lfs/mail/order_received_mail.html:94
+#: templates/lfs/order/lfs_order_tmpl.html:66
+msgid "Invoice address"
+msgstr "Адрес плательщика"
+
+#: templates/lfs/checkout/one_page_checkout.html:25
+#: templates/lfs/mail/order_received_mail.html:91
+#: templates/lfs/order/lfs_order_tmpl.html:69
+msgid "Shipping address"
+msgstr "Адрес доставки"
+
+#: templates/lfs/checkout/one_page_checkout.html:283
+msgid "Voucher code"
+msgstr "Код сертификата"
+
+#: templates/lfs/checkout/one_page_checkout.html:295
+msgid "Please enter your credit card information"
+msgstr "Введите данные вашей кредитной карты"
+
+#: templates/lfs/checkout/one_page_checkout.html:305
+#: templates/lfs/checkout/one_page_checkout.html:387
+msgid "Only necessary when the payment method is direct debit"
+msgstr "Необходимо только при использовании безакцептного списания"
+
+#: templates/lfs/checkout/one_page_checkout.html:356
+msgid "Expiration date"
+msgstr "Срок действия"
+
+#: templates/lfs/checkout/one_page_checkout.html:384
+msgid "Please enter your bank information"
+msgstr "Введите ваши банковкие реквизиты"
+
+#: templates/lfs/checkout/one_page_checkout.html:467
+msgid "Submit order"
+msgstr "Отправить заказ"
+
+#: templates/lfs/checkout/thank_you_page.html:5
+#: templates/lfs/checkout/thank_you_page.html:11
+#: templates/lfs/checkout/thank_you_page.html:15
+msgid "Thank you!"
+msgstr "Спасибо!"
+
+#: templates/lfs/checkout/thank_you_page.html:17
+msgid "Soon you will get an order confirmation via E-Mail."
+msgstr "Вы получите подтверждение заказа по e-mail."
+
+#: templates/lfs/checkout/thank_you_page.html:21
+msgid "Please use the following link if you want to pay now"
+msgstr "Если хотите оплатить сейчас, нажмите данную ссылку"
+
+#: templates/lfs/checkout/thank_you_page.html:25
+msgid "Pay"
+msgstr "Оплатить"
+
+#: templates/lfs/checkout/thank_you_page.html:28
+msgid "You will find the same link on your order confirmation"
+msgstr "Эта же ссылка будет в письме подтверждения заказа"
+
+#: templates/lfs/customer/account.html:8
+msgid "Your Account"
+msgstr "Ваша учетка"
+
+#: templates/lfs/customer/addresses.html:6
+msgid "Change your addresses"
+msgstr "Изменить ваши адреса"
+
+#: templates/lfs/customer/addresses.html:11
+msgid "Your addresses"
+msgstr "Ваши адреса"
+
+#: templates/lfs/customer/addresses.html:13
+msgid "Your address"
+msgstr "Ваш адрес"
+
+#: templates/lfs/customer/addresses.html:22
+#: templates/lfs/customer/data.html:36
+msgid "Invoice Address"
+msgstr "Адрес плательщика"
+
+#: templates/lfs/customer/addresses.html:25
+#: templates/lfs/customer/data.html:39
+msgid "Shipping Address"
+msgstr "Адрес доставки"
+
+#: templates/lfs/customer/addresses.html:48
+#: templates/lfs/customer/data.html:65
+msgid "Save addresses"
+msgstr "Сохранить адреса"
+
+#: templates/lfs/customer/addresses.html:52
+#: templates/lfs/customer/data.html:69
+msgid "Save address"
+msgstr "Сохранить адрес"
+
+#: templates/lfs/customer/base.html:11 templates/lfs/customer/order.html:7
+msgid "Overview"
+msgstr "Обзор"
+
+#: templates/lfs/customer/base.html:16 templates/lfs/customer/orders.html:6
+#: templates/lfs/customer/orders.html:10
+msgid "Your orders"
+msgstr "Ваши заказы"
+
+#: templates/lfs/customer/base.html:21 templates/lfs/customer/password.html:52
+msgid "Change password"
+msgstr "Сменить пароль"
+
+#: templates/lfs/customer/base.html:24
+msgid "Change e-mail"
+msgstr "Сменить e-mail"
+
+#: templates/lfs/customer/base.html:27
+msgid "Change addresses"
+msgstr "Изменить адреса"
+
+#: templates/lfs/customer/data.html:6
+msgid "Your Data"
+msgstr "Ваши данные"
+
+#: templates/lfs/customer/data.html:8
+#: templates/lfs/mail/review_added_mail.html:28
+msgid "E-Mail"
+msgstr "E-Mail"
+
+#: templates/lfs/customer/data.html:21 templates/lfs/customer/email.html:25
+msgid "Save e-mail address"
+msgstr "Сохранить адрес e-mail"
+
+#: templates/lfs/customer/data.html:25
+msgid "Addresses"
+msgstr "Адреса"
+
+#: templates/lfs/customer/data.html:27
+msgid "Address"
+msgstr "Адрес"
+
+#: templates/lfs/customer/data.html:75
+msgid "Bank account"
+msgstr "Реквизиты"
+
+#: templates/lfs/customer/data.html:87
+msgid "Save bank account"
+msgstr "Сохранить реквизиты"
+
+#: templates/lfs/customer/email.html:6 templates/lfs/customer/email.html:10
+msgid "Change your e-mail address"
+msgstr "Сменить ваш адрес e-mail"
+
+#: templates/lfs/customer/login.html:24
+msgid ""
+"If you are already customer you can login. Your address data will be stored "
+"in your account."
+msgstr ""
+"Вы можете войти, если покупали у нас ранее. Ваши адресные данные будут "
+"храниться в вашей учетке."
+
+#: templates/lfs/customer/order.html:10
+msgid "Ordernumber:"
+msgstr "Номер заказа:"
+
+#: templates/lfs/customer/orders.html:17
+msgid "Recent orders"
+msgstr "Последние заказы"
+
+#: templates/lfs/customer/orders.html:18
+msgid "2009"
+msgstr "2009"
+
+#: templates/lfs/customer/orders.html:28
+#: templates/lfs/mail/order_received_mail.html:52
+#: templates/lfs/order/lfs_order_tmpl.html:25
+msgid "Date"
+msgstr "Дата"
+
+#: templates/lfs/customer/orders.html:34
+#: templates/lfs/mail/order_received_mail.html:66
+#: templates/lfs/order/lfs_order_tmpl.html:41
+msgid "State"
+msgstr "Состояние"
+
+#: templates/lfs/customer/orders.html:41
+#: templates/lfs/mail/order_received_mail.html:55
+#: templates/lfs/order/lfs_order_tmpl.html:28
+msgid "DATETIME_FORMAT"
+msgstr "Y-m-d H:i:s"
+
+#: templates/lfs/customer/orders.html:56
+msgid "You haven't any orders yet."
+msgstr "У вас пока не было заказов."
+
+#: templates/lfs/customer/password.html:5
+#: templates/lfs/customer/password.html:8
+#: templates/lfs/customer/password.html:13
+msgid "Password change"
+msgstr "Смена пароля"
+
+#: templates/lfs/customer/password.html:16
+msgid ""
+"Please enter your old password, for security's sake, and then enter your new "
+"password twice so we can verify you typed it in correctly."
+msgstr ""
+"Для обеспечения безопасности введите ваш нынешний пароль, затем дважды "
+"введите новый пароль."
+
+#: templates/lfs/customer/password.html:24
+msgid "Old password:"
+msgstr "Старый пароль:"
+
+#: templates/lfs/customer/password.html:33
+#: templates/registration/password_reset_confirm.html:16
+msgid "New password:"
+msgstr "Новый пароль:"
+
+#: templates/lfs/customer/password.html:42
+#: templates/registration/password_reset_confirm.html:18
+msgid "Confirm password:"
+msgstr "Повтор пароля:"
+
+#: templates/lfs/mail/new_user_mail.html:7
+msgid "Welcome to"
+msgstr "Добро пожаловать в"
+
+#: templates/lfs/mail/order_received_mail.html:41
+#: templates/lfs/order/lfs_order_tmpl.html:14
+msgid "General"
+msgstr "Общее"
+
+#: templates/lfs/mail/order_received_mail.html:46
+#: templates/lfs/order/lfs_order_tmpl.html:19
+msgid "Customer name"
+msgstr "Клиент"
+
+#: templates/lfs/mail/order_received_mail.html:60
+#: templates/lfs/order/lfs_order_tmpl.html:33
+msgid "E-mail"
+msgstr "E-Mail"
+
+#: templates/lfs/mail/order_received_mail.html:74
+#: templates/lfs/order/lfs_order_tmpl.html:49
+msgid "Phone"
+msgstr "Телефон"
+
+#: templates/lfs/mail/order_received_mail.html:97
+#: templates/lfs/order/lfs_order_tmpl.html:72
+msgid "Shipping method"
+msgstr "Способ доставки"
+
+#: templates/lfs/mail/order_received_mail.html:100
+#: templates/lfs/order/lfs_order_tmpl.html:75
+msgid "Payment method"
+msgstr "Способ оплаты"
+
+#: templates/lfs/mail/order_received_mail.html:182
+msgid "Pay now"
+msgstr "Оплатить"
+
+#: templates/lfs/mail/order_received_mail.html:194
+#: templates/lfs/order/lfs_order_tmpl.html:156
+msgid "SKU"
+msgstr "Артикул"
+
+#: templates/lfs/mail/order_received_mail.html:302
+msgid "Your message to us"
+msgstr "Ваше сообщение нам"
+
+#: templates/lfs/mail/review_added_mail.html:24
+#: templates/reviews/reviews_for_instance.html:23
+msgid "Anonymous"
+msgstr "Аноним"
+
+#: templates/lfs/mail/review_added_mail.html:33
+msgid "No E-Mail"
+msgstr "нет e-mail"
+
+#: templates/lfs/mail/review_added_mail.html:37
+#: templates/lfs/portlets/average_rating.html:19
+msgid "Score"
+msgstr "Оценка"
+
+#: templates/lfs/mail/review_added_mail.html:42
+msgid "Comment"
+msgstr "Комментарий"
+
+#: templates/lfs/mail/review_added_mail.html:47
+msgid "No comment"
+msgstr "Комментария нет"
+
+#: templates/lfs/order/lfs_order_tmpl.html:6
+msgid "Ordernumber"
+msgstr "Номер заказа:"
+
+#: templates/lfs/order/lfs_order_tmpl.html:245
+msgid "Message from the customer"
+msgstr "Сообщение от клиента"
+
+#: templates/lfs/page/pages.html:9 templates/lfs/page/pages.html.py:19
+msgid "Information"
+msgstr "Информация"
+
+#: templates/lfs/page/pages.html:32
+msgid "More"
+msgstr "Еще"
+
+#: templates/lfs/portlets/average_rating.html:19
+msgid "based on"
+msgstr "по"
+
+#: templates/lfs/portlets/average_rating.html:20
+#, python-format
+msgid "%(amount)s review"
+msgid_plural "%(amount)s reviews"
+msgstr[0] "%(amount)s мнению"
+msgstr[1] "%(amount)s мнениям"
+msgstr[2] "%(amount)s мнениям"
+
+#: templates/lfs/portlets/cart.html:23
+msgid "Article"
+msgstr "Предмет"
+
+#: templates/lfs/portlets/cart.html:29
+msgid "Cart is empty"
+msgstr "Корзина пуста"
+
+#: templates/lfs/portlets/delivery_time.html:12
+msgid "Deliverable"
+msgstr "Подлежит доставке"
+
+#: templates/lfs/portlets/delivery_time.html:14
+#: templates/lfs/shipping/shipping_portlet.html:16
+#: templates/lfs/shipping/shipping_tag.html:11
+msgid "Not deliverable"
+msgstr "Не подлежит доставке"
+
+#: templates/lfs/portlets/delivery_time.html:18
+#: templates/lfs/shipping/shipping_tag.html:7
+msgid "Delivery time"
+msgstr "Срок доставки"
+
+#: templates/lfs/portlets/pages.html:18
+msgid "More information"
+msgstr "Доп. информация"
+
+#: templates/lfs/portlets/related_products.html:8
+msgid "Related Products"
+msgstr "Сопутствующие товары"
+
+#: templates/lfs/portlets/topseller.html:7
+msgid "Topseller"
+msgstr "Популярные"
+
+#: templates/lfs/portlets/topseller.html:22
+msgid "All topseller"
+msgstr "Все популярные"
+
+#: templates/lfs/search/livesearch_results.html:38
+msgid "All results"
+msgstr "Все результаты"
+
+#: templates/lfs/search/livesearch_results.html:44
+msgid "No products found"
+msgstr "Товаров не найдено"
+
+#: templates/lfs/search/search_results.html:5
+#: templates/lfs/search/search_results.html:11
+#: templates/lfs/search/search_results.html:16
+msgid "Search results"
+msgstr "Результаты поиска"
+
+#: templates/lfs/search/search_results.html:30
+msgid "You searched for"
+msgstr "Вы искали"
+
+#: templates/lfs/search/search_results.html:31
+#, python-format
+msgid "There has been found 1 product."
+msgid_plural "There has been found %(counter)s products."
+msgstr[0] "Найден %(counter)s товар."
+msgstr[1] "Найдено %(counter)s товара."
+msgstr[2] "Найдено %(counter)s товаров."
+
+#: templates/lfs/search/search_results.html:44
+#: templates/tagging/product_list.html:13
+msgid "Image"
+msgstr "Картинка"
+
+#: templates/registration/password_reset_complete.html:4
+#: templates/registration/password_reset_complete.html:8
+msgid "Password reset complete"
+msgstr "Сброс пароля завершен"
+
+#: templates/registration/password_reset_complete.html:10
+msgid "Your password has been set. You may go ahead and log in now."
+msgstr "Ваш пароль задан. Можете войти"
+
+#: templates/registration/password_reset_complete.html:12
+msgid "Log in"
+msgstr "Вход"
+
+#: templates/registration/password_reset_confirm.html:4
+#: templates/registration/password_reset_form.html:4
+#: templates/registration/password_reset_form.html:17
+#: templates/registration/password_reset_form.html:24
+msgid "Password reset"
+msgstr "Пароль сброшен"
+
+#: templates/registration/password_reset_confirm.html:10
+msgid "Enter new password"
+msgstr "Введите новый пароль"
+
+#: templates/registration/password_reset_confirm.html:12
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr "Подтвердите ввод пароля, чтобы исключть опечатку."
+
+#: templates/registration/password_reset_confirm.html:19
+msgid "Change my password"
+msgstr "Сменить пароль"
+
+#: templates/registration/password_reset_confirm.html:24
+msgid "Password reset unsuccessful"
+msgstr "Не удалось сбросить пароль"
+
+#: templates/registration/password_reset_confirm.html:26
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr ""
+"Неверная ссылка на сброс пароля, возможно ей уже воспользовались.Пройдите "
+"процедуру заново."
+
+#: templates/registration/password_reset_done.html:16
+#: templates/registration/password_reset_done.html:22
+#: templates/registration/password_reset_done.html:26
+msgid "Password reset successful"
+msgstr "Сброс пароля завершен"
+
+#: templates/registration/password_reset_done.html:28
+msgid ""
+"We've e-mailed you instructions for setting your password to the e-mail "
+"address you submitted. You should be receiving it shortly."
+msgstr ""
+"На ваш e-mail отправлены указания о том, как задать пароль для входа. Вскоре "
+"вы должны их получить."
+
+#: templates/registration/password_reset_email.html:2
+msgid "You're receiving this e-mail because you requested a password reset"
+msgstr "Это письмо отправлено вам по запросу сброса пароля"
+
+#: templates/registration/password_reset_email.html:3
+#, python-format
+msgid "for your user account at %(site_name)s"
+msgstr "вашей учетки на сайте %(site_name)s"
+
+#: templates/registration/password_reset_email.html:5
+msgid "Please go to the following page and choose a new password:"
+msgstr "Перейдите на следующую страницу и выберите новый пароль:"
+
+#: templates/registration/password_reset_email.html:9
+msgid "Your username, in case you've forgotten:"
+msgstr "Ваше имя пользователя:"
+
+#: templates/registration/password_reset_email.html:11
+msgid "Thanks for using our site!"
+msgstr "Спасибо за то, что зашли к нам!"
+
+#: templates/registration/password_reset_email.html:13
+#, python-format
+msgid "The %(site_name)s team"
+msgstr "%(site_name)s"
+
+#: templates/registration/password_reset_form.html:26
+msgid ""
+"Enter your e-mail address below, and we'll e-mail instructions for setting a "
+"new one."
+msgstr ""
+"Введите ваш адрес e-mail, и мы вышлем вам письмо, в котором будет указано, "
+"как сменить пароль."
+
+#: templates/registration/password_reset_form.html:33
+msgid "E-mail address:"
+msgstr "Адрес e-mail:"
+
+#: templates/registration/password_reset_form.html:35
+msgid "Reset my password"
+msgstr "Сменить пароль"
+
+#: templates/reviews/already_rated.html:9
+msgid "Review"
+msgstr "Оценка"
+
+#: templates/reviews/already_rated.html:10
+msgid "You have already rated for this product."
+msgstr "Вы уже опубликовали свое мнение о товаре."
+
+#: templates/reviews/review_form.html:10
+msgid "Add Review"
+msgstr "Добавить оценку"
+
+#: templates/reviews/review_form.html:111
+#: templates/reviews/review_preview.html:10
+msgid "Preview"
+msgstr "предпросмотр"
+
+#: templates/reviews/review_preview.html:21
+msgid "Your email"
+msgstr "Ваш e-mail"
+
+#: templates/reviews/review_preview.html:27
+msgid "Your score"
+msgstr "Ваша оценка"
+
+#: templates/reviews/review_preview.html:38
+msgid "Your comment"
+msgstr "Ваш комментарий"
+
+#: templates/reviews/review_preview.html:69
+msgid "Edit"
+msgstr "Правка"
+
+#: templates/reviews/review_preview.html:73
+msgid "Submit"
+msgstr "Применить"
+
+#: templates/reviews/reviews_for_instance.html:5
+msgid "Reviews"
+msgstr "Оценки"
+
+#: templates/reviews/reviews_for_instance.html:34
+msgid "There are no ratings for this product. Be the first one!"
+msgstr "Вы можете стать первым, кто выскажет мнение об этом товаре!"
+
+#: templates/reviews/reviews_for_instance.html:39
+msgid "You have already rated"
+msgstr "Вы уже выставили оценку"
+
+#: templates/reviews/reviews_for_instance.html:44
+msgid "Add review"
+msgstr "Добавить мнение"
+
+#: templates/reviews/thank_you.html:9
+msgid "Thank you"
+msgstr "Спасибо!"
+
+#: templates/reviews/thank_you.html:13
+msgid "Go to the reviewed product"
+msgstr "Перейти к оцененному товару"
+
+#: templates/reviews/thank_you.html:16
+msgid "Go to Shop"
+msgstr "Перейти в магазин"
+
+#: templates/reviews/thank_you.html:22
+msgid "Close Window"
+msgstr "Закрыть"
+
+#: templates/tagging/product_list.html:10
+msgid "Products for tag"
+msgstr "Товары с меткой"
+
+#: templates/tagging/related_products_by_tags.html:4
+msgid "Related products by tag"
+msgstr "Сопутствующие товары с меткой"
+
+#: templates/tagging/related_products_by_tags_portlet.html:4
+msgid "Products with same Tags"
+msgstr "Товары с одинаковыми метками"
+
+#: templatetags/lfs_theme_tags.py:43
+#, python-format
+msgid "%s tag needs no argument"
+msgstr "Метка %s не требует параметра"
