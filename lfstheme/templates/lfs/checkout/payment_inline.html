@@ -6,7 +6,7 @@
             <div class="span-1">
                 <input type="radio"
                        name="payment_method"
-                       class="update-checkout payment-methods"
+                       class="update-checkout payment-methods payment-method-type-{{ payment_method.type }}"
                        id="payment-method-{{ payment_method.id }}"
                        {% ifequal payment_method.id selected_payment_method.id  %}checked="checked"{% endifequal %}
                        value="{{payment_method.id}}" />

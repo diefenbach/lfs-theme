@@ -1,64 +1,65 @@
-# LFS Theme German Translations
-# Copyright (C) 2009 Kai Diefenbach
-# This file is distributed under the same license as the LFS package.
-# Kai Diefenbach <kai.diefenbach@iqpp.de>, 2009.
-#
+# LFS Theme Italian Translations
+# Copyright (C) Massimiliano Pippi
+# This file is distributed under the same license as the PACKAGE package.
+# Massimiliano Pippi <mpippi@gmail.com>, 2009.
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: LFS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-22 21:14+0100\n"
-"PO-Revision-Date: 2009-02-22 07:20+0100\n"
-"Last-Translator: Kai Diefenbach <kai.diefenbach@iqpp.de>\n"
+"POT-Creation-Date: 2010-02-20 11:34+0100\n"
+"PO-Revision-Date: 2009-10-03 12:07+0100\n"
+"Last-Translator: Max Pippi <mpippi@gmail.com>\n"
 "Language-Team: Kai Diefenbach <kai.diefenbach@iqpp.de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: templates/404.html:9 templates/500.html:4
 msgid "We are sorry!"
-msgstr "Tut uns leid!"
+msgstr "Spiacenti!"
 
 #: templates/404.html:12
 msgid "The page you have requested could not be found."
-msgstr "Die Seite die Sie angefordert haben existiert leider nicht."
+msgstr "Impossibile trovare la pagina richiesta"
 
 #: templates/500.html:7
 msgid "An error has occured. Please try again in a minute."
-msgstr "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal."
+msgstr "Si è verificato un errore. Si prega di riprovare fra qualche minuto."
 
 #: templates/contact_form/contact_form.html:5
 #: templates/contact_form/contact_form.html:12
 #: templates/contact_form/contact_form_sent.html:4
 #: templates/contact_form/contact_form_sent.html:10
 msgid "Contact form"
-msgstr "Kontaktform"
+msgstr "Modulo di contatto"
 
 #: templates/contact_form/contact_form.html:14
 msgid "Please leave us a message. We will answer as soon as possible."
-msgstr "Bitte senden Sie uns eine Nachricht. Wir werden in Kürze antworten."
+msgstr "Per favore lasciate un messaggio. Risponderemo appena possibile"
 
 #: templates/contact_form/contact_form.html:21
 #: templates/reviews/review_preview.html:15
 msgid "Your name"
-msgstr "Ihr Name"
+msgstr "Nome"
 
 #: templates/contact_form/contact_form.html:37
 msgid "Your e-mail"
-msgstr "Ihre E-Mail"
+msgstr "indirizzo e-mail"
 
 #: templates/contact_form/contact_form.html:53
 msgid "Your message"
-msgstr "Ihre Nachricht"
+msgstr "Messaggio"
 
 #: templates/contact_form/contact_form.html:72
 #: templates/reviews/review_form.html:114
 msgid "Send"
-msgstr "Absenden"
+msgstr "Invia"
 
 #: templates/contact_form/contact_form_sent.html:12
 msgid "Thank you for your message. We will get back to you soon."
-msgstr "Danke für Ihre Nachricht. Wir melden uns in Kürze."
+msgstr "Grazie per il tuo messaggio. Ti ricontatteremo presto."
 
 #: templates/contact_form/contact_form_sent.html:17
 #: templates/lfs/cart/added_to_cart.html:81
@@ -66,20 +67,20 @@ msgstr "Danke für Ihre Nachricht. Wir melden uns in Kürze."
 #: templates/lfs/cart/cart_inline.html:243
 #: templates/lfs/checkout/empty_page_checkout.html:21
 msgid "Go on shopping"
-msgstr "Weiter Einkaufen"
+msgstr "Vai al negozio"
 
 #: templates/lfs/base.html:64 templates/lfs/base.html.py:67
 #: templates/lfs/base.html:70 templates/lfs/base.html.py:73
 msgid "Manage"
-msgstr "Verwalten"
+msgstr "Gestione"
 
 #: templates/lfs/base.html:78
 msgid "Logout"
-msgstr "Abmelden"
+msgstr "Disconnetti"
 
 #: templates/lfs/base.html:79 templates/lfs/customer/base.html:8
 msgid "My account"
-msgstr "Mein Konto"
+msgstr "Il mio account"
 
 #: templates/lfs/base.html:82 templates/lfs/checkout/login.html:6
 #: templates/lfs/checkout/login.html:12 templates/lfs/checkout/login.html:21
@@ -87,59 +88,59 @@ msgstr "Mein Konto"
 #: templates/lfs/customer/login.html:12 templates/lfs/customer/login.html:21
 #: templates/lfs/customer/login.html:57
 msgid "Login"
-msgstr "Anmelden"
+msgstr "Accedi"
 
 #: templates/lfs/base.html:86 templates/lfs/search/search_results.html:18
 msgid "Search"
-msgstr "Suche"
+msgstr "Cerca"
 
 #: templates/lfs/base.html:92 templates/lfs/catalog/sorting.html:17
 #: templates/lfs/search/search_results.html:26
 msgid "Go!"
-msgstr "Los!"
+msgstr "Vai!"
 
 #: templates/lfs/base.html:158
 msgid "Powered by"
-msgstr "Powered by"
+msgstr "Fornito da"
 
 #: templates/lfs/base.html:160
 msgid "is a product of"
-msgstr "ist ein Produkt von"
+msgstr "è un prodotto di"
 
 #: templates/lfs/base.html:161
 msgid "by"
-msgstr "bei"
+msgstr "da"
 
 #: templates/lfs/base.html:161
 msgid "All rights reserved"
-msgstr "Alle Rechte vorbehalten"
+msgstr "Tutti i diritti riservati"
 
 #: templates/lfs/base.html:163
 msgid "Distributed under the"
-msgstr "Veröffentlicht unter der"
+msgstr "Distribuito sotto"
 
 #: templates/lfs/base.html:163
 msgid "BSD-License"
-msgstr "BSD-Lizenz"
+msgstr "licenza BSD"
 
 #: templates/lfs/cart/added_to_cart.html:10
 msgid "Added to cart"
-msgstr "Zum Warenkorb hinzugefügt"
+msgstr "Aggiunto al carrello"
 
 #: templates/lfs/cart/added_to_cart.html:15
 msgid "This products have been added to cart"
-msgstr "Diese Produkte wurden zum Warenkorb hinzugefügt."
+msgstr "Questo prodotto è stato aggiunto al carrello"
 
 #: templates/lfs/cart/added_to_cart.html:17
 msgid "This product has been added to cart"
-msgstr "Dieses Produkt wurde zum Warenkorb hinzugefügt."
+msgstr "Questo prodotto è stato aggiunto al carrello"
 
 #: templates/lfs/cart/added_to_cart.html:25
 #: templates/lfs/catalog/products/product_inline.html:150
 #: templates/lfs/catalog/products/product_inline_topdescription.html:152
 #: templates/lfs/catalog/products/product_inline_topprice.html:152
 msgid "Accessories"
-msgstr "Zubehör"
+msgstr "Accessori"
 
 #: templates/lfs/cart/added_to_cart.html:29
 #: templates/lfs/catalog/products/product_inline.html:80
@@ -152,7 +153,7 @@ msgstr "Zubehör"
 #: templates/lfs/mail/review_added_mail.html:19
 #: templates/lfs/order/lfs_order_tmpl.html:159
 msgid "Name"
-msgstr "Name"
+msgstr "Nome"
 
 #: templates/lfs/cart/added_to_cart.html:32
 #: templates/lfs/cart/added_to_cart_items.html:9
@@ -160,7 +161,7 @@ msgstr "Name"
 #: templates/lfs/catalog/products/product_inline_topdescription.html:157
 #: templates/lfs/catalog/products/product_inline_topprice.html:157
 msgid "Quantity"
-msgstr "Menge"
+msgstr "Quantità"
 
 #: templates/lfs/cart/added_to_cart.html:35
 #: templates/lfs/cart/added_to_cart_items.html:12
@@ -180,7 +181,7 @@ msgstr "Menge"
 #: templates/lfs/search/search_results.html:50
 #: templates/tagging/product_list.html:16
 msgid "Price"
-msgstr "Einzelpreis"
+msgstr "Prezzo"
 
 #: templates/lfs/cart/added_to_cart.html:38
 #: templates/lfs/cart/added_to_cart_items.html:18
@@ -197,11 +198,11 @@ msgstr "Einzelpreis"
 #: templates/lfs/order/lfs_order_tmpl.html:55
 #: templates/lfs/order/lfs_order_tmpl.html:168
 msgid "Total"
-msgstr "Summe"
+msgstr "Totale"
 
 #: templates/lfs/cart/added_to_cart.html:62
 msgid "Add"
-msgstr "Hinzufügen"
+msgstr "Aggiungi"
 
 #: templates/lfs/cart/added_to_cart.html:73
 #: templates/lfs/cart/cart_inline.html:226
@@ -211,13 +212,13 @@ msgstr "Hinzufügen"
 #: templates/lfs/checkout/one_page_checkout.html:5
 #: templates/lfs/checkout/one_page_checkout.html:11
 msgid "Checkout"
-msgstr "Zur Kasse gehen"
+msgstr "Vai alla cassa"
 
 #: templates/lfs/cart/added_to_cart.html:77
-#: templates/lfs/checkout/one_page_checkout.html:482
+#: templates/lfs/checkout/one_page_checkout.html:471
 #: templates/lfs/portlets/cart.html:10 templates/lfs/portlets/cart.html:35
 msgid "Go to cart"
-msgstr "Zum Warenkorb"
+msgstr "Vai al carrello"
 
 #: templates/lfs/cart/added_to_cart_items.html:6
 #: templates/lfs/cart/cart_inline.html:33
@@ -226,44 +227,44 @@ msgstr "Zum Warenkorb"
 #: templates/lfs/search/search_results.html:47
 #: templates/tagging/product_list.html:14
 msgid "Product"
-msgstr "Produkt"
+msgstr "Prodotto"
 
 #: templates/lfs/cart/added_to_cart_items.html:15
 #: templates/lfs/cart/cart_inline.html:42
 #: templates/lfs/checkout/checkout_cart_inline.html:33
 msgid "Included VAT"
-msgstr "Inkl. MwSt."
+msgstr "IVA inclusa"
 
 #: templates/lfs/cart/cart.html:6 templates/lfs/cart/cart.html.py:12
 #: templates/lfs/portlets/cart.html:12 templates/lfs/portlets/cart.html:16
 msgid "Cart"
-msgstr "Warenkorb"
+msgstr "Carrello"
 
 #: templates/lfs/cart/cart_inline.html:7
 #: templates/lfs/cart/cart_inline.html:100
 #: templates/lfs/checkout/checkout_cart_inline.html:76
 #: templates/lfs/mail/order_received_mail.html:240
 msgid "Voucher"
-msgstr "Gutschein"
+msgstr "Voucher"
 
 #: templates/lfs/cart/cart_inline.html:23
 msgid "Your Cart"
-msgstr "Ihr Warenkorb"
+msgstr "Il tuo carrello"
 
 #: templates/lfs/cart/cart_inline.html:36
 #: templates/lfs/checkout/checkout_cart_inline.html:27
 #: templates/lfs/mail/order_received_mail.html:200
 #: templates/lfs/order/lfs_order_tmpl.html:162
 msgid "Amount"
-msgstr "Menge"
+msgstr "Importo"
 
 #: templates/lfs/cart/cart_inline.html:90
 msgid "Delete item"
-msgstr "Produkt löschen"
+msgstr "Rimuovi articolo"
 
 #: templates/lfs/cart/cart_inline.html:122
 msgid "Country"
-msgstr "Land"
+msgstr "Paese"
 
 #: templates/lfs/cart/cart_inline.html:141
 #: templates/lfs/checkout/checkout_cart_inline.html:96
@@ -272,7 +273,7 @@ msgstr "Land"
 #: templates/lfs/order/lfs_order_tmpl.html:200
 #: templates/lfs/shipping/shipping_portlet.html:6
 msgid "Shipping"
-msgstr "Versandart"
+msgstr "Spedizione"
 
 #: templates/lfs/cart/cart_inline.html:166
 #: templates/lfs/checkout/checkout_cart_inline.html:113
@@ -280,56 +281,56 @@ msgstr "Versandart"
 #: templates/lfs/mail/order_received_mail.html:272
 #: templates/lfs/order/lfs_order_tmpl.html:215
 msgid "Payment"
-msgstr "Zahlungsweise"
+msgstr "Pagamento"
 
 #: templates/lfs/cart/cart_inline.html:205
 #: templates/lfs/checkout/checkout_cart_inline.html:137
 #: templates/lfs/mail/order_received_mail.html:293
 #: templates/lfs/order/lfs_order_tmpl.html:236
 msgid "Inclusive VAT"
-msgstr "Inklusive MwSt."
+msgstr "IVA inclusa"
 
 #: templates/lfs/cart/cart_inline.html:218
 msgid "Total delivery time"
-msgstr "Gesamte Lieferzeit"
+msgstr "Tempo totale di consegna"
 
 #: templates/lfs/cart/cart_inline.html:239
 msgid "Your Cart is empty"
-msgstr "Ihr Warenkorb ist leer"
+msgstr "Il tuo carrello è vuoto"
 
 #: templates/lfs/catalog/breadcrumbs.html:3
 #: templates/lfs/shop/shop_base.html:9
 #: templates/registration/password_reset_done.html:10
 #: templates/registration/password_reset_form.html:11
 msgid "You are here:"
-msgstr "Sie sind hier:"
+msgstr "Sei qui:"
 
 #: templates/lfs/catalog/breadcrumbs.html:6 templates/lfs/shop/menu.html:3
 #: templates/lfs/shop/shop_base.html:11 templates/lfs/shop/tabs.html:7
 #: templates/registration/password_reset_done.html:13
 #: templates/registration/password_reset_form.html:14
 msgid "Home"
-msgstr "Start"
+msgstr "Pagina principale"
 
 #: templates/lfs/catalog/filter_navigation.html:6
 #: templates/lfs/customer/orders.html:21
 msgid "Filter"
-msgstr "Filter"
+msgstr "Filtro"
 
 #: templates/lfs/catalog/filter_navigation.html:64
 #: templates/lfs/catalog/filter_navigation.html:69
 #: templates/lfs/portlets/filter.html:69 templates/lfs/portlets/filter.html:74
 msgid "Up to"
-msgstr "Bis"
+msgstr "Fino a"
 
 #: templates/lfs/catalog/filter_navigation.html:102
 #: templates/lfs/portlets/filter.html:106
 msgid "Reset all filters"
-msgstr "Filter zurücksetzen"
+msgstr "Rimuovi tutti i filtri"
 
 #: templates/lfs/catalog/product_base.html:37
 msgid "Back to overview"
-msgstr "Zurück zur Übersicht"
+msgstr "Torna alla descrizione"
 
 #: templates/lfs/catalog/product_base.html:52
 msgid "Tags"
@@ -337,65 +338,65 @@ msgstr "Tags"
 
 #: templates/lfs/catalog/product_base.html:63
 msgid "Tag cloud"
-msgstr "Tag Cloud"
+msgstr "Tag cloud"
 
 #: templates/lfs/catalog/product_navigation.html:5
 #: templates/lfs/catalog/product_navigation.html:7
 msgid "Previous product"
-msgstr "Vorhergendes Produkt"
+msgstr "Prodotto precedente"
 
 #: templates/lfs/catalog/product_navigation.html:9
 msgid "of"
-msgstr "von"
+msgstr "di"
 
 #: templates/lfs/catalog/product_navigation.html:11
 #: templates/lfs/catalog/product_navigation.html:13
 msgid "Next product"
-msgstr "Nächstes Produkt"
+msgstr "Prodotto successivo"
 
 #: templates/lfs/catalog/sorting.html:8
 msgid "Price ascending"
-msgstr "Preis aufsteigend"
+msgstr "Prezzo crescente"
 
 #: templates/lfs/catalog/sorting.html:10
 msgid "Price descending"
-msgstr "Preis absteigend"
+msgstr "Prezzo decrescente"
 
 #: templates/lfs/catalog/sorting.html:12
 msgid "Name ascending"
-msgstr "Name aufsteigend"
+msgstr "Nome crescente"
 
 #: templates/lfs/catalog/sorting.html:14
 msgid "Name descending"
-msgstr "Name absteigend"
+msgstr "Nome decrescente"
 
 #: templates/lfs/catalog/sorting_portlet.html:7
 msgid "Sorting"
-msgstr "Sortierung"
+msgstr "Ordinamento"
 
 #: templates/lfs/catalog/categories/category/default.html:26
 #: templates/lfs/catalog/categories/product/default.html:73
 #: templates/lfs/search/search_results.html:95
 msgid "Details"
-msgstr "Details"
+msgstr "Dettagli"
 
 #: templates/lfs/catalog/categories/product/default.html:6
 #: templates/lfs/catalog/categories/product/default.html:8
 #: templates/pagination/pagination.html:5
 #: templates/pagination/pagination.html:7
 msgid "Previous page"
-msgstr "Vorhergende Seite"
+msgstr "Pagina precedente"
 
 #: templates/lfs/catalog/categories/product/default.html:22
 msgid "Products"
-msgstr "Produkte"
+msgstr "Prodotti"
 
 #: templates/lfs/catalog/categories/product/default.html:29
 #: templates/lfs/catalog/categories/product/default.html:31
 #: templates/pagination/pagination.html:21
 #: templates/pagination/pagination.html:23
 msgid "Next page"
-msgstr "Nächste Seite"
+msgstr "Pagina successiva"
 
 #: templates/lfs/catalog/categories/product/default.html:68
 #: templates/lfs/catalog/products/product_inline.html:45
@@ -406,191 +407,178 @@ msgstr "Nächste Seite"
 #: templates/lfs/catalog/products/product_inline_topprice.html:25
 #: templates/lfs/search/search_results.html:87
 msgid "*inc. VAT"
-msgstr "*inkl. MwSt. zzgl. Versand"
+msgstr "*IVA inc."
 
 #: templates/lfs/catalog/products/product_inline.html:63
 #: templates/lfs/catalog/products/product_inline_topdescription.html:67
 #: templates/lfs/catalog/products/product_inline_topprice.html:65
 msgid "Add to cart"
-msgstr "In den Warenkorb"
+msgstr "Aggiungi al carrello"
 
 #: templates/lfs/catalog/products/product_inline.html:72
 #: templates/lfs/catalog/products/product_inline_topdescription.html:74
 #: templates/lfs/catalog/products/product_inline_topprice.html:74
 msgid "Variants"
-msgstr "Varianten"
+msgstr "Varianti"
 
 #: templates/lfs/catalog/products/product_inline.html:140
 #: templates/lfs/catalog/products/product_inline_topdescription.html:142
 #: templates/lfs/catalog/products/product_inline_topprice.html:142
 msgid "Refresh options"
-msgstr "Optionen aktualisieren"
+msgstr "Aggiorna le opzioni"
 
 #: templates/lfs/checkout/checkout_cart_inline.html:5
 msgid "Voucher code"
-msgstr "Gutscheincode"
+msgstr "Codice del voucher"
 
 #: templates/lfs/checkout/checkout_cart_inline.html:20
 msgid "Your cart"
-msgstr "Ihr Warenkorb"
+msgstr "Il tuo carrello"
 
 #: templates/lfs/checkout/empty_page_checkout.html:17
 msgid "There is nothing to checkout"
-msgstr "Keine Produkte vorhanden."
+msgstr "Non ci sono articoli"
 
 #: templates/lfs/checkout/login.html:17 templates/lfs/customer/login.html:17
 msgid "Please select!"
-msgstr "Bitte wählen Sie aus!"
+msgstr "Seleziona per favore!"
 
 #: templates/lfs/checkout/login.html:24
-msgid ""
-"If you are already customer you can login. Your adress data will then "
-"already known."
-msgstr ""
-"Falls Sie bereits Kunde sind, können Sie sich anmelden. Ihre Adressdaten "
-"sind dann bereits vom letztem Kauf bekannt."
+msgid "If you are already customer you can login. Your adress data will then already known."
+msgstr "Se sei già cliente puoi fare login. I tuoi dati sono già registrati."
 
 #: templates/lfs/checkout/login.html:37 templates/lfs/customer/login.html:37
 msgid "Forgot password?"
-msgstr "Passwort vergessen?"
+msgstr "Dimenticato la password?"
 
 #: templates/lfs/checkout/login.html:62 templates/lfs/checkout/login.html:86
 #: templates/lfs/customer/login.html:65 templates/lfs/customer/login.html:88
 msgid "Register"
-msgstr "Registrieren"
+msgstr "Registrati"
 
 #: templates/lfs/checkout/login.html:65 templates/lfs/customer/login.html:68
-msgid ""
-"If you are not already a customer you can register in order to store your "
-"address data and to follow the state of your orders."
-msgstr ""
-"Falls Sie noch kein Kunde sind, können Sie sich registrieren um Ihre "
-"Adressdaten zu speichern und den Status Ihrer Bestellungen zu folgen."
+msgid "If you are not already a customer you can register in order to store your address data and to follow the state of your orders."
+msgstr "Se non sei ancora cliente puoi registrarti così da salvare i tuoi dati per la spedizione e seguire lo stato dei tuoi ordini."
 
 #: templates/lfs/checkout/login.html:98
 msgid "You can also checkout without login or registration."
-msgstr ""
-"Sie können auch ohne Anmeldung oder Registrierung weiter zur Kasse gehen."
+msgstr "Puoi anche andare alla cassa senza fare login o registrarti."
 
 #: templates/lfs/checkout/one_page_checkout.html:32
 #: templates/lfs/mail/order_received_mail.html:94
 #: templates/lfs/order/lfs_order_tmpl.html:66
 msgid "Invoice address"
-msgstr "Rechnungsadresse"
+msgstr "Indirizzo per la fattura"
 
 #: templates/lfs/checkout/one_page_checkout.html:35
 #: templates/lfs/mail/order_received_mail.html:91
 #: templates/lfs/order/lfs_order_tmpl.html:69
 msgid "Shipping address"
-msgstr "Lieferadresse"
+msgstr "Indirizzo per la spedizione"
 
 #: templates/lfs/checkout/one_page_checkout.html:296
 msgid "Please enter your credit card information"
-msgstr "Bitte geben Sie Ihre Kreditkartendaten ein"
+msgstr "Per favore inserisci le informazioni della tua carta di credito"
 
 #: templates/lfs/checkout/one_page_checkout.html:306
 #: templates/lfs/checkout/one_page_checkout.html:388
 msgid "Only necessary when the payment method is direct debit"
-msgstr "Nur notwendig wenn Bankabbuchung gewählt wurde."
+msgstr "Necessario solo se si è scelto di pagare con RID"
 
 #: templates/lfs/checkout/one_page_checkout.html:357
 msgid "Expiration date"
-msgstr "Ablaufdatum"
+msgstr "Data di scadenza"
 
 #: templates/lfs/checkout/one_page_checkout.html:385
 msgid "Please enter your bank information"
-msgstr "Bitte geben Sie Ihre Bankinformationen ein"
+msgstr "Per favore inserisci le tue coordinate bancarie"
 
-#: templates/lfs/checkout/one_page_checkout.html:473
-msgid "Please confirm our terms and conditions"
-msgstr "Bitte bestätigen Sie unsere AGB"
-
-#: templates/lfs/checkout/one_page_checkout.html:479
+#: templates/lfs/checkout/one_page_checkout.html:468
 msgid "Submit order"
-msgstr "Bestellung absenden"
+msgstr "Invia ordine"
 
 #: templates/lfs/checkout/thank_you_page.html:5
 #: templates/lfs/checkout/thank_you_page.html:11
 #: templates/lfs/checkout/thank_you_page.html:15
 msgid "Thank you!"
-msgstr "Vielen Dank!"
+msgstr "Grazie!"
 
 #: templates/lfs/checkout/thank_you_page.html:17
 msgid "Soon you will get an order confirmation via E-Mail."
-msgstr "Sie bekommen in Kürze eine Bestätigungsmail."
+msgstr "Riceverai presto per e-mail la conferma dell'ordine"
 
 #: templates/lfs/checkout/thank_you_page.html:21
 msgid "Please use the following link if you want to pay now"
-msgstr "Bitte verwenden Sie den folgenden Link, wenn Sie nun bezahlen möchten"
+msgstr "Per favore usa il link seguente se vuoi pagare ora"
 
 #: templates/lfs/checkout/thank_you_page.html:25
 msgid "Pay"
-msgstr "Bezahlen"
+msgstr "Paga"
 
 #: templates/lfs/checkout/thank_you_page.html:28
 msgid "You will find the same link on your order confirmation"
-msgstr "Sie finden diesen Link auch auf Ihre Bestellbestätigung"
+msgstr "Troverai lo stesso link sulla conferma del tuo ordine"
 
 #: templates/lfs/customer/account.html:8
 msgid "Your Account"
-msgstr "Ihr Konto"
+msgstr "Il tuo account"
 
 #: templates/lfs/customer/addresses.html:6
 msgid "Change your addresses"
-msgstr "Ändern Sie Ihre Adressen"
+msgstr "Cambia i tuoi indirizzi"
 
 #: templates/lfs/customer/addresses.html:11
 msgid "Your addresses"
-msgstr "Ihre Adressen"
+msgstr "I tuoi indirizzi"
 
 #: templates/lfs/customer/addresses.html:13
 msgid "Your address"
-msgstr "Ihre Adresse"
+msgstr "Il tuo indirizzo"
 
 #: templates/lfs/customer/addresses.html:22
 #: templates/lfs/customer/data.html:36
 msgid "Invoice Address"
-msgstr "Rechnungsadresse"
+msgstr "Indirizzo per la fatturazione"
 
 #: templates/lfs/customer/addresses.html:25
 #: templates/lfs/customer/data.html:39
 msgid "Shipping Address"
-msgstr "Lieferadresse"
+msgstr "Indirizzo per la spedizione"
 
 #: templates/lfs/customer/addresses.html:48
 #: templates/lfs/customer/data.html:65
 msgid "Save addresses"
-msgstr "Addressen speichern"
+msgstr "Salva indirizzi"
 
 #: templates/lfs/customer/addresses.html:52
 #: templates/lfs/customer/data.html:69
 msgid "Save address"
-msgstr "Adresse speichern"
+msgstr "Salva indirizzo"
 
 #: templates/lfs/customer/base.html:11 templates/lfs/customer/order.html:7
 msgid "Overview"
-msgstr "Übersicht"
+msgstr "Panoramica"
 
 #: templates/lfs/customer/base.html:16 templates/lfs/customer/orders.html:6
 #: templates/lfs/customer/orders.html:10
 msgid "Your orders"
-msgstr "Ihre Bestellungen"
+msgstr "I tuoi ordini"
 
 #: templates/lfs/customer/base.html:21 templates/lfs/customer/password.html:52
 msgid "Change password"
-msgstr "Password ändern"
+msgstr "Cambia password"
 
 #: templates/lfs/customer/base.html:24
 msgid "Change e-mail"
-msgstr "E-Mail ändern"
+msgstr "Cambia indirizzo e-mail"
 
 #: templates/lfs/customer/base.html:27
 msgid "Change addresses"
-msgstr "Addressen ändern"
+msgstr "Cambia indirizzi"
 
 #: templates/lfs/customer/data.html:6
 msgid "Your Data"
-msgstr "Ihre Daten"
+msgstr "I tuoi dati"
 
 #: templates/lfs/customer/data.html:8
 #: templates/lfs/mail/review_added_mail.html:28
@@ -599,43 +587,39 @@ msgstr "E-Mail"
 
 #: templates/lfs/customer/data.html:21 templates/lfs/customer/email.html:25
 msgid "Save e-mail address"
-msgstr "E-Mail-Adresse speichern"
+msgstr "Salva indirizzo e-mail"
 
 #: templates/lfs/customer/data.html:25
 msgid "Addresses"
-msgstr "Adressen"
+msgstr "Indirizzi"
 
 #: templates/lfs/customer/data.html:27
 msgid "Address"
-msgstr "Addresse"
+msgstr "Indirizzo"
 
 #: templates/lfs/customer/data.html:75
 msgid "Bank account"
-msgstr "Bankkonto"
+msgstr "Conto corrente bancario"
 
 #: templates/lfs/customer/data.html:87
 msgid "Save bank account"
-msgstr "Bankkonto speichern"
+msgstr "Salva conto corrente bancario"
 
 #: templates/lfs/customer/email.html:6 templates/lfs/customer/email.html:10
 msgid "Change your e-mail address"
-msgstr "Ihre E-Mail-Adresse ändern"
+msgstr "Cambia il tuo indirizzo e-mail"
 
 #: templates/lfs/customer/login.html:24
-msgid ""
-"If you are already customer you can login. Your address data will be stored "
-"in your account."
-msgstr ""
-"Falls Sie bereits Kunde sind, können Sie sich anmelden. Ihre Adressdaten "
-"sind dann bereits vom letztem Kauf bekannt."
+msgid "If you are already customer you can login. Your address data will be stored in your account."
+msgstr "Se sei già cliente puoi fare login. I dati dei tuoi indirizzi saranno salvati nel tuo account."
 
 #: templates/lfs/customer/order.html:10
 msgid "Ordernumber:"
-msgstr "Bestellnummer:"
+msgstr "Numero ordine:"
 
 #: templates/lfs/customer/orders.html:17
 msgid "Recent orders"
-msgstr "Neueste Bestellungen"
+msgstr "Ordini recenti"
 
 #: templates/lfs/customer/orders.html:18
 msgid "2009"
@@ -645,178 +629,174 @@ msgstr "2009"
 #: templates/lfs/mail/order_received_mail.html:52
 #: templates/lfs/order/lfs_order_tmpl.html:25
 msgid "Date"
-msgstr "Datum"
+msgstr "Data"
 
 #: templates/lfs/customer/orders.html:34
 #: templates/lfs/mail/order_received_mail.html:66
 #: templates/lfs/order/lfs_order_tmpl.html:41
 msgid "State"
-msgstr "Status"
+msgstr "Stato"
 
 #: templates/lfs/customer/orders.html:41
 #: templates/lfs/mail/order_received_mail.html:55
 #: templates/lfs/order/lfs_order_tmpl.html:28
 msgid "DATETIME_FORMAT"
-msgstr ""
+msgstr "DATETIME_FORMAT"
 
 #: templates/lfs/customer/orders.html:56
 msgid "You haven't any orders yet."
-msgstr "Sie haben noch keine Bestellungen getätigt."
+msgstr "Per ora non hai alcun ordine."
 
 #: templates/lfs/customer/password.html:5
 #: templates/lfs/customer/password.html:8
 #: templates/lfs/customer/password.html:13
 msgid "Password change"
-msgstr "Passwort ändern"
+msgstr "Cambio password"
 
 #: templates/lfs/customer/password.html:16
-msgid ""
-"Please enter your old password, for security's sake, and then enter your new "
-"password twice so we can verify you typed it in correctly."
-msgstr ""
-"Bitte geben Sie aus Sicherheitsgründen Ihr altes Passwort ein und danach "
-"zweimal Ihr neues."
+msgid "Please enter your old password, for security's sake, and then enter your new password twice so we can verify you typed it in correctly."
+msgstr "Per favore inserisci la tua vecchia password, per esigenze di sicurezza, poi inserisci la nuova password due volte in modo da verificare che sia stata digitata correttamente."
 
 #: templates/lfs/customer/password.html:24
 msgid "Old password:"
-msgstr "Altes Passwort:"
+msgstr "Vecchia password:"
 
 #: templates/lfs/customer/password.html:33
 #: templates/registration/password_reset_confirm.html:16
 msgid "New password:"
-msgstr "Neues Passwort:"
+msgstr "Nuova password:"
 
 #: templates/lfs/customer/password.html:42
 #: templates/registration/password_reset_confirm.html:18
 msgid "Confirm password:"
-msgstr "Passwort bestätigen:"
+msgstr "Conferma password:"
 
 #: templates/lfs/mail/new_user_mail.html:7
 msgid "Welcome to"
-msgstr "Willkommen zu"
+msgstr "Benvenuto"
 
 #: templates/lfs/mail/order_received_mail.html:41
 #: templates/lfs/order/lfs_order_tmpl.html:14
 msgid "General"
-msgstr "Allgemein"
+msgstr "Generale"
 
 #: templates/lfs/mail/order_received_mail.html:46
 #: templates/lfs/order/lfs_order_tmpl.html:19
 msgid "Customer name"
-msgstr "Kundenname"
+msgstr "Nome cliente"
 
 #: templates/lfs/mail/order_received_mail.html:60
 #: templates/lfs/order/lfs_order_tmpl.html:33
 msgid "E-mail"
-msgstr "E-Mail"
+msgstr "E-mail"
 
 #: templates/lfs/mail/order_received_mail.html:74
 #: templates/lfs/order/lfs_order_tmpl.html:49
 msgid "Phone"
-msgstr "Telefon"
+msgstr "Telefono"
 
 #: templates/lfs/mail/order_received_mail.html:97
 #: templates/lfs/order/lfs_order_tmpl.html:72
 msgid "Shipping method"
-msgstr "Liefermethod"
+msgstr "Metodo di spedizione"
 
 #: templates/lfs/mail/order_received_mail.html:100
 #: templates/lfs/order/lfs_order_tmpl.html:75
 msgid "Payment method"
-msgstr "Zahlungsweise"
+msgstr "Metodo di pagamento"
 
 #: templates/lfs/mail/order_received_mail.html:182
 msgid "Pay now"
-msgstr "Jetzt bezahlen"
+msgstr "Paga ora"
 
 #: templates/lfs/mail/order_received_mail.html:194
 #: templates/lfs/order/lfs_order_tmpl.html:156
 msgid "SKU"
-msgstr "Artikelnummer"
+msgstr "SKU"
 
 #: templates/lfs/mail/order_received_mail.html:302
 msgid "Your message to us"
-msgstr "Ihre Nachricht an uns"
+msgstr "Il tuo messaggio per noi"
 
 #: templates/lfs/mail/review_added_mail.html:24
 #: templates/reviews/reviews_for_instance.html:23
 msgid "Anonymous"
-msgstr "Anonym"
+msgstr "Anonimo"
 
 #: templates/lfs/mail/review_added_mail.html:33
 msgid "No E-Mail"
-msgstr "No E-Mail"
+msgstr "Nessuna E-Mail"
 
 #: templates/lfs/mail/review_added_mail.html:37
 #: templates/lfs/portlets/average_rating.html:19
 msgid "Score"
-msgstr "Wertung"
+msgstr "Voto"
 
 #: templates/lfs/mail/review_added_mail.html:42
 msgid "Comment"
-msgstr "Kommentar"
+msgstr "Il tuo commento"
 
 #: templates/lfs/mail/review_added_mail.html:47
 msgid "No comment"
-msgstr "Kein Kommentar"
+msgstr "Nessun commento"
 
 #: templates/lfs/order/lfs_order_tmpl.html:6
 msgid "Ordernumber"
-msgstr "Bestellnummer:"
+msgstr "Numero ordine"
 
 #: templates/lfs/order/lfs_order_tmpl.html:245
 msgid "Message from the customer"
-msgstr "Nachricht vom Kunden"
+msgstr "Messaggio dal cliente"
 
 #: templates/lfs/page/pages.html:9 templates/lfs/page/pages.html.py:19
 msgid "Information"
-msgstr "Informationen"
+msgstr "Informazione"
 
 #: templates/lfs/page/pages.html:32
 msgid "More"
-msgstr "Mehr"
+msgstr "Ancora"
 
 #: templates/lfs/portlets/average_rating.html:19
 msgid "based on"
-msgstr "basierend auf"
+msgstr "basato su"
 
 #: templates/lfs/portlets/average_rating.html:20
 #, python-format
 msgid "%(amount)s review"
 msgid_plural "%(amount)s reviews"
-msgstr[0] "1 Bewertung"
-msgstr[1] "%(amount)s Bewertungen"
+msgstr[0] "%(amount)s recensione"
+msgstr[1] "%(amount)s recensioni"
 
 #: templates/lfs/portlets/cart.html:23
 msgid "Article"
-msgstr "Artikel"
+msgstr "Articolo"
 
 #: templates/lfs/portlets/cart.html:29
 msgid "Cart is empty"
-msgstr "Der Warenkorb ist leer"
+msgstr "Il carrello è vuoto"
 
 #: templates/lfs/portlets/delivery_time.html:12
 msgid "Deliverable"
-msgstr "Lieferbar"
+msgstr "Consegnabile"
 
 #: templates/lfs/portlets/delivery_time.html:14
 #: templates/lfs/shipping/shipping_portlet.html:16
 #: templates/lfs/shipping/shipping_tag.html:11
 msgid "Not deliverable"
-msgstr "Nicht lieferbar"
+msgstr "Non consegnabile"
 
 #: templates/lfs/portlets/delivery_time.html:18
 #: templates/lfs/shipping/shipping_tag.html:7
 msgid "Delivery time"
-msgstr "Lieferzeit"
+msgstr "Tempo di consegna"
 
 #: templates/lfs/portlets/pages.html:18
 msgid "More information"
-msgstr "Mehr Informationen"
+msgstr "Più informazioni"
 
 #: templates/lfs/portlets/related_products.html:8
 msgid "Related Products"
-msgstr "Zugehörige Produkte"
+msgstr "Prodotti collegati"
 
 #: templates/lfs/portlets/topseller.html:7
 msgid "Topseller"
@@ -824,220 +804,208 @@ msgstr "Topseller"
 
 #: templates/lfs/portlets/topseller.html:22
 msgid "All topseller"
-msgstr "Alle Topseller"
+msgstr "Tutti i topseller"
 
 #: templates/lfs/search/livesearch_results.html:38
 msgid "All results"
-msgstr "Alle Ergebnisse"
+msgstr "Tutti i risultati"
 
 #: templates/lfs/search/livesearch_results.html:44
 msgid "No products found"
-msgstr "Keine Produkte gefunden"
+msgstr "Nessun prodotto trovato"
 
 #: templates/lfs/search/search_results.html:5
 #: templates/lfs/search/search_results.html:11
 #: templates/lfs/search/search_results.html:16
 msgid "Search results"
-msgstr "Suchergebnisse"
+msgstr "Cerca fra i risultati"
 
 #: templates/lfs/search/search_results.html:30
 msgid "You searched for"
-msgstr "Sie suchten nach"
+msgstr "Hai cercato"
 
 #: templates/lfs/search/search_results.html:31
 #, python-format
 msgid "There has been found 1 product."
 msgid_plural "There has been found %(counter)s products."
-msgstr[0] "Es wurde 1 Produkt gefunden."
-msgstr[1] "Es wurden %(counter)s Produkte gefunden."
+msgstr[0] "E' stato trovato 1 prodotto."
+msgstr[1] "Sono stati trovati %(counter)s prodotti."
 
 #: templates/lfs/search/search_results.html:44
 #: templates/tagging/product_list.html:13
 msgid "Image"
-msgstr "Bild"
+msgstr "Immagine"
 
 #: templates/registration/password_reset_complete.html:4
 #: templates/registration/password_reset_complete.html:8
 msgid "Password reset complete"
-msgstr "Passwortreset ist komplett"
+msgstr "Reset della password completato"
 
 #: templates/registration/password_reset_complete.html:10
 msgid "Your password has been set. You may go ahead and log in now."
-msgstr "Ihr passwort wurde gesetzt. Sie können sich nun anmelden"
+msgstr "La tua password è stata impostata. Puoi proseguire e fare login ora."
 
 #: templates/registration/password_reset_complete.html:12
 msgid "Log in"
-msgstr "Anmelden"
+msgstr "Accedi"
 
 #: templates/registration/password_reset_confirm.html:4
 #: templates/registration/password_reset_form.html:4
 #: templates/registration/password_reset_form.html:17
 #: templates/registration/password_reset_form.html:24
 msgid "Password reset"
-msgstr "Passwort zurücksetzen"
+msgstr "Reset password"
 
 #: templates/registration/password_reset_confirm.html:10
 msgid "Enter new password"
-msgstr "Neues Passwort eintragen"
+msgstr "Inserisci la nuova password"
 
 #: templates/registration/password_reset_confirm.html:12
-msgid ""
-"Please enter your new password twice so we can verify you typed it in "
-"correctly."
-msgstr "Bitte geben Sie Ihr Passwort zweimal ein."
+msgid "Please enter your new password twice so we can verify you typed it in correctly."
+msgstr "Per favore inserisci la nuova password due volte in modo che possiamo verificare sia stata digitata correttamente"
 
 #: templates/registration/password_reset_confirm.html:19
 msgid "Change my password"
-msgstr "Passwort ändern"
+msgstr "Cambia la mia password"
 
 #: templates/registration/password_reset_confirm.html:24
 msgid "Password reset unsuccessful"
-msgstr "Das Zurücksetzen des Passworts war nicht erfolgreich"
+msgstr "Reset della password fallito"
 
 #: templates/registration/password_reset_confirm.html:26
-msgid ""
-"The password reset link was invalid, possibly because it has already been "
-"used.  Please request a new password reset."
-msgstr "Der Link zum Rücksetzen Ihres Passwortes ist nicht mehr gültig."
+msgid "The password reset link was invalid, possibly because it has already been used.  Please request a new password reset."
+msgstr "Il link per il reset della password non è valido, probabilmente perché è stato già usato. Per favore richiedi di nuovo il reset della password."
 
 #: templates/registration/password_reset_done.html:16
 #: templates/registration/password_reset_done.html:22
 #: templates/registration/password_reset_done.html:26
 msgid "Password reset successful"
-msgstr "Das Zurücksetzen des Passworts war erfolgreich"
+msgstr "Reset della password completato con successo"
 
 #: templates/registration/password_reset_done.html:28
-msgid ""
-"We've e-mailed you instructions for setting your password to the e-mail "
-"address you submitted. You should be receiving it shortly."
-msgstr ""
-"Wir haben Ihnen eine Anleitung zum Zurücksetzen gesendet. Sie sollte in "
-"Kürze bei Ihnen eintreffen."
+msgid "We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly."
+msgstr "Ti abbiamo inviato all'indirizzo e-mail che ci hai fornito le istruzioni per settare la password. Dovresti ricevere il messaggio a breve."
 
 #: templates/registration/password_reset_email.html:2
 msgid "You're receiving this e-mail because you requested a password reset"
-msgstr "Sie erhalten diese E-Mail, weil Sie Ihr Passwort zurücksetzen möchten."
+msgstr "Hai ricevuto questo messaggio perché hai richiesto il reset della password"
 
 #: templates/registration/password_reset_email.html:3
 #, python-format
 msgid "for your user account at %(site_name)s"
-msgstr "für Ihr Benutzerkonto bei %(site_name)s"
+msgstr "per il tuo account su %(site_name)s"
 
 #: templates/registration/password_reset_email.html:5
 msgid "Please go to the following page and choose a new password:"
-msgstr "Bitte gehen Sie zur folgenden Seite und wählen Sie ein neues Passwort."
+msgstr "Per favore vai alla pagina seguente e scegli una nuova password:"
 
 #: templates/registration/password_reset_email.html:9
 msgid "Your username, in case you've forgotten:"
-msgstr "Ihr Benutzername"
+msgstr "Il tuo nome utente, nel caso l'avessi dimenticato:"
 
 #: templates/registration/password_reset_email.html:11
 msgid "Thanks for using our site!"
-msgstr "Vielen Dank, dass Sie unsere Seite benutzen!"
+msgstr "Grazie di utilizzare il nostro sito!"
 
 #: templates/registration/password_reset_email.html:13
 #, python-format
 msgid "The %(site_name)s team"
-msgstr "Ihr %(site_name)s-Team"
+msgstr "Il team di %(site_name)s"
 
 #: templates/registration/password_reset_form.html:26
-msgid ""
-"Enter your e-mail address below, and we'll e-mail instructions for setting a "
-"new one."
-msgstr ""
-"Bitte geben Sie Ihre E-Mail Adresse ein und wir senden Ihnen eine Mail zum "
-"Zurücksetzen Ihres Passworts."
+msgid "Enter your e-mail address below, and we'll e-mail instructions for setting a new one."
+msgstr "Inserisci il tuo indirizzo e-mail qui di seguito e ti verranno spedite le istruzioni per impostarne uno nuovo."
 
 #: templates/registration/password_reset_form.html:33
 msgid "E-mail address:"
-msgstr "E-Mail-Adresse:"
+msgstr "Indirizzo e-mail:"
 
 #: templates/registration/password_reset_form.html:35
 msgid "Reset my password"
-msgstr "Passwort zurücksetzen"
+msgstr "Reset della mia password"
 
 #: templates/reviews/already_rated.html:9
 msgid "Review"
-msgstr "Bewertung"
+msgstr "Recensione"
 
 #: templates/reviews/already_rated.html:10
 msgid "You have already rated for this product."
-msgstr "Sie haben bereits für dieses Produkt gewertet."
+msgstr "Hai già votato questo prodotto."
 
 #: templates/reviews/review_form.html:10
 msgid "Add Review"
-msgstr "Bewertung hinzufügen"
+msgstr "Aggiungi recensione"
 
 #: templates/reviews/review_form.html:111
 #: templates/reviews/review_preview.html:10
 msgid "Preview"
-msgstr "Vorschau"
+msgstr "Anteprima"
 
 #: templates/reviews/review_preview.html:21
 msgid "Your email"
-msgstr "Ihre E-Mail"
+msgstr "La tua e-mail"
 
 #: templates/reviews/review_preview.html:27
 msgid "Your score"
-msgstr "Ihre Bewertung"
+msgstr "Il tuo voto"
 
 #: templates/reviews/review_preview.html:38
 msgid "Your comment"
-msgstr "Ihr Kommentar"
+msgstr "Il tuo commento"
 
 #: templates/reviews/review_preview.html:69
 msgid "Edit"
-msgstr "Bearbeiten"
+msgstr "Modifica"
 
 #: templates/reviews/review_preview.html:73
 msgid "Submit"
-msgstr "Absenden"
+msgstr "Invia"
 
 #: templates/reviews/reviews_for_instance.html:5
 msgid "Reviews"
-msgstr "Bewertungen"
+msgstr "Recensioni"
 
 #: templates/reviews/reviews_for_instance.html:34
 msgid "There are no ratings for this product. Be the first one!"
-msgstr "Dieses Produkt wurde noch nicht bewertet. Seien Sie die/der Erste!"
+msgstr "Non ci sono recensioni per questo prodotto. Fallo tu per primo!"
 
 #: templates/reviews/reviews_for_instance.html:39
 msgid "You have already rated"
-msgstr "Sie haben bereits bewertet"
+msgstr "Hai già votato"
 
 #: templates/reviews/reviews_for_instance.html:44
 msgid "Add review"
-msgstr "Bewertung hinzufügen"
+msgstr "Aggiungi recensione"
 
 #: templates/reviews/thank_you.html:9
 msgid "Thank you"
-msgstr "Vielen Dank!"
+msgstr "Grazie"
 
 #: templates/reviews/thank_you.html:13
 msgid "Go to the reviewed product"
-msgstr "Zum bewerteten Produkt"
+msgstr "Vai al prodotto recensito"
 
 #: templates/reviews/thank_you.html:16
 msgid "Go to Shop"
-msgstr "Weiter Einkaufen"
+msgstr "Vai al negozio"
 
 #: templates/reviews/thank_you.html:22
 msgid "Close Window"
-msgstr "Fenster schließen"
+msgstr "Chiudi finestra"
 
 #: templates/tagging/product_list.html:10
 msgid "Products for tag"
-msgstr "Produkte für Tag"
+msgstr "Prodotti per tag"
 
 #: templates/tagging/related_products_by_tags.html:4
 msgid "Related products by tag"
-msgstr "Zugehörige Produkte auf Basis von Tags"
+msgstr "Prodotti collegati per tag"
 
 #: templates/tagging/related_products_by_tags_portlet.html:4
 msgid "Products with same Tags"
-msgstr "Produkte mit gleichen Tags"
+msgstr "Prodotti con gli stessi Tag"
 
 #: templatetags/lfs_theme_tags.py:43
 #, python-format
 msgid "%s tag needs no argument"
-msgstr ""
+msgstr "il tag %s non necessita di argomenti"
