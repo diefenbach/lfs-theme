@@ -30,17 +30,17 @@
     <h1 class="product-title">
         {{ variant.get_name }}
     </h1>
-    
+
     <div class="product-properties">
         {% for option in variant.get_options %}
-            {% if option.property.display_on_product %}                                                    
+            {% if option.property.display_on_product %}
                 <div>
                     {{ option.property.name }} : {{ option.value|option_name }} {{ option.property.unit|safe }}
                 </div>
             {% endif %}
         {% endfor %}
     </div>
-    
+
     {% shipping variant %}
 
     {% average_for_instance variant %}
@@ -48,8 +48,8 @@
     <div class="prices">
         {% if variant.get_for_sale %}
             <div>
-                <span class="for-sale-standard-price" nowrap="nowrap">{{ variant.get_standard_price|currency }}*</span>
-                <span class="for-sale-price" nowrap="nowrap">{{ variant.get_price|currency }}*</span>
+                <span class="for-sale-standard-price" nowrap="nowrap">{{ variant.get_standard_price|currency }}* {% if product.price_unit %}/ {{ product.price_unit }}{% endif %}</span>
+                <span class="for-sale-price" nowrap="nowrap">{{ variant.get_price|currency }}* {% if product.price_unit %}/ {{ product.price_unit }}{% endif %}</span>
             </div>
             <div class="price-disclaimer">
                 {% trans '*inc. VAT' %}
@@ -57,7 +57,8 @@
         {% else %}
             <div class="standard-price"
                   nowrap="nowrap">
-                {{ variant.get_price|currency }}*
+                {{ variant.get_price|currency }}* {% if product.price_unit %}/ {{ product.price_unit }}{% endif %}
+
             </div>
             <div class="price-disclaimer">
                 {% trans '*inc. VAT' %}
@@ -68,9 +69,18 @@
 
     <div class="buttons">
         {% if variant.deliverable %}
+            
+            <div style="text-align:right">
+                {% for property in product.get_property_input_fields %}
+                    <label>{{ property.name }}:</label><input style="margin: 0 6px" type="input" size="6" name="property-{{ property.id }}" />{{ property.unit }}
+                {% endfor %}
+                <input class="number" name="quantity" size="2" type="text" value="1" /> {% trans "piece" %}
+            </div>
+
             <button class="button emphasized"
                    type="submit"
                    name="add-to-cart">{% trans 'Add to cart' %}</button>
+
         {% endif %}
     </div>
     <p class="product-description">
@@ -123,7 +133,7 @@
                     {% endfor %}
                 </table>
             {% endifequal %}
-            
+
             {% ifequal product.variants_display_type 1 %}
 
                 <div>

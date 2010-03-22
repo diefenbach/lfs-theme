@@ -24,19 +24,28 @@
                 <img src="{{cart_item.product.get_image.url_60x60}}"
                      alt="{{cart_item.product.get_name}}"/>
             </td>
-            <td>                
+            <td>
                 {{cart_item.product.get_name}}
                 {% for option in cart_item.product.get_options %}
-                    {% if option.property.display_on_product %}                                                    
+                    {% if option.property.display_on_product %}
                         <div>
                             {{option.property.name}} : {{option.value|option_name}} {{option.property.unit|safe}}
                         </div>
                     {% endif %}
                 {% endfor %}
+
+                {% if cart_item.product.is_configurable_product %}
+                    {% for property in cart_item.properties.all %}
+                        <div>
+                            {{ property.property.name }} : {{ property.value }} {{ property.property.unit|safe }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
             </td>
             <td class="number">
                 {{cart_item.amount|quantity}}
-            </td>                
+            </td>
             <td class="number">
                 {{cart_item.product.get_price|currency}}
             </td>

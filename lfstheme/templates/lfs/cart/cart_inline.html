@@ -65,6 +65,15 @@
                                 </div>
                             {% endif %}
                         {% endfor %}
+                        
+                        {% if cart_item.product.is_configurable_product %}
+                            {% for property in cart_item.properties.all %}
+                                <div>
+                                    {{ property.property.name }} : {{ property.value|quantity }} {{ property.property.unit|safe }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        
                     </td>
                     <td class="number">
                         <input class="cart-amount"
