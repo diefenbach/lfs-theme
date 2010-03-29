@@ -15,7 +15,7 @@
                 </td>
                 <td class="text">
                     <a href="{{product.get_absolute_url}}">
-                        {{product.get_name}}
+                        {{ product.get_name }} 
                     </a>
                     {% for option in product.get_options %}
                         {% if option.property.display_on_product %}
@@ -27,7 +27,7 @@
                 </td>
                 <td class="number"
                     nowrap="nowrap">
-                    {{product.get_price|currency}}
+                    {{ product.get_price|currency }}* {% if product.price_unit %}/ {{ product.price_unit }}{% endif %}
                 </td>
             </tr>
         {% endfor %}
