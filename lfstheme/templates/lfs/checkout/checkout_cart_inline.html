@@ -78,6 +78,30 @@
         </tr>
     {% endfor %}
 
+    {% for discount in discounts %}
+        <tr id="discounts-display">
+            <td></td>
+            <td class="left">
+                {{ discount.name }}
+            </td>
+            <td class="number">
+                1
+            </td>
+            <td class="number">
+                - {{ discount.price|currency }}                
+            </td>
+            <td class="number">
+                {% if discount.tax %}
+                    (- {{ discount.tax|currency }})
+                {% endif %}
+            </td>
+            <td class="number">
+                - {{ discount.price|currency }}
+            </td>
+            <td></td>
+        </tr>                
+    {% endfor %}
+
     {% if display_voucher %}
         <tr id="voucher-display">
             <td></td>
