@@ -65,7 +65,7 @@
                                 </div>
                             {% endif %}
                         {% endfor %}
-                        
+
                         {% if cart_item.product.is_configurable_product %}
                             {% for property in cart_item.properties.all %}
                                 <div>
@@ -73,7 +73,7 @@
                                 </div>
                             {% endfor %}
                         {% endif %}
-                        
+
                     </td>
                     <td class="number">
                         <input class="cart-amount"
@@ -85,6 +85,9 @@
                     <td class="number"
                         nowrap="nowrap">
                         {{ cart_item.product.get_price|currency }}
+                        {% if cart_item.product.price_unit %}
+                            / {{ cart_item.product.price_unit }}
+                        {% endif %}
                     </td>
                     <td class="number"
                         nowrap="nowrap">
@@ -111,7 +114,7 @@
                         1
                     </td>
                     <td class="number">
-                        
+
                     </td>
                     <td class="number">
                         {% if discount.tax %}
@@ -122,7 +125,7 @@
                         - {{ discount.price|currency }}
                     </td>
                     <td></td>
-                </tr>                
+                </tr>
             {% endfor %}
 
             {% if display_voucher %}
@@ -202,7 +205,7 @@
                             name="payment_method">
                         {% for payment_method in payment_methods %}
                             <option {% ifequal payment_method.id selected_payment_method.id  %}selected="selected"{% endifequal %}
-                                    value="{{payment_method.id}}">
+                                    value="{{ payment_method.id }}">
                                 {{ payment_method.name }}
                             </option>
                         {% endfor %}
