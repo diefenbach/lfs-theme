@@ -48,9 +48,8 @@
                    name="next"
                    value="{{ next_url }}" />
 
-            <input type="submit"
-                   class="button login-button emphasized"
-                   value='{% trans 'Login' %}' />
+            <button type="submit"
+                    class="button login-button emphasized left">{% trans 'Login' %}</form>
                    
         </form>
     </div>
@@ -78,9 +77,8 @@
                            name="next"
                            value="{{ next_url }}" />
 
-                    <input type="submit"
-                           class="button register-button emphasized" 
-                           value='{% trans "Register" %}' />
+                    <button type="submit"
+                            class="button register-button emphasized left">{% trans "Register" %}</button>
             </form>
         </div>
     {% endif %}

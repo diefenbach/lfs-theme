@@ -48,10 +48,9 @@
                    name="next"
                    value="{% url lfs_checkout %}" />
 
-            <input type="submit"
-                   class="button checkout-button emphasized"
-                   href="{% url lfs_checkout %}"
-                   value='{% trans 'Login' %}' />
+            <button type="submit"
+                    class="button checkout-button emphasized left"
+                    href="{% url lfs_checkout %}">{% trans 'Login' %}</button>
 
         </form>
     </div>
@@ -79,10 +78,9 @@
                            name="next"
                            value="{% url lfs_checkout %}" />
 
-                    <input class="button register-button emphasized"
-                           type="submit"
-                           href="{% url lfs_checkout %}"
-                           value='{% trans "Register" %}' />
+                    <button class="button register-button emphasized left"
+                            type="submit"
+                            href="{% url lfs_checkout %}">{% trans "Register" %}</form>
             </form>
 
         </div>
@@ -98,7 +96,7 @@
 
             <div class="form">&nbsp;</div>
 
-            <a class="button checkout-button emphasized"
+            <a class="button checkout-button emphasized left"
                href="{% url lfs_checkout %}">
                {% trans 'Checkout' %}
             </a>
