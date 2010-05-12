@@ -67,9 +67,9 @@
                         {% endfor %}
 
                         {% if cart_item.product.is_configurable_product %}
-                            {% for property in cart_item.properties.all %}
+                            {% for property_value in cart_item.properties.all %}
                                 <div>
-                                    {{ property.property.name }} : {{ property.value|quantity }} {{ property.property.unit|safe }}
+                                    {{ property_value.property.name }} : {{ property_value|option_name_for_property_value }} {{ property_value.property.unit|safe }}
                                 </div>
                             {% endfor %}
                         {% endif %}
@@ -84,14 +84,15 @@
                     </td>
                     <td class="number"
                         nowrap="nowrap">
-                        {{ cart_item.product.get_price|currency }}
+                        {{ cart_item.get_price|currency }}
+                        {# {{ cart_item.product.get_price|currency }} #}
                         {% if cart_item.product.price_unit %}
                             / {{ cart_item.product.price_unit }}
                         {% endif %}
                     </td>
                     <td class="number"
                         nowrap="nowrap">
-                        ({{ cart_item.product.get_tax|currency }})
+                        ({{ cart_item.get_tax|currency }})
                     </td>
                     <td class="number"
                         nowrap="nowrap">

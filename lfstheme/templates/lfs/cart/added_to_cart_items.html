@@ -37,7 +37,7 @@
                 {% if cart_item.product.is_configurable_product %}
                     {% for property in cart_item.properties.all %}
                         <div>
-                            {{ property.property.name }} : {{ property.value }} {{ property.property.unit|safe }}
+                            {{ property.property.name }} : {{ property.value|option_name }} {{ property.property.unit|safe }}
                         </div>
                     {% endfor %}
                 {% endif %}
