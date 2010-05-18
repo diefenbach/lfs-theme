@@ -79,7 +79,7 @@
                     {{ property.name }}:
                 </td>
                 <td>
-                    <input style="margin: 0 6px" type="input" size="6" name="property-{{ property.id }}" />{{ property.unit }}
+                    <input class="product-input-field" style="margin: 0 6px" type="input" size="6" name="property-{{ property.id }}" />{{ property.unit }}
                 </td>
             {% endfor %}
 
@@ -106,11 +106,32 @@
     {% endif %}
 
     <br clear="both">
+
     <div class="buttons">
         {% if variant.deliverable %}
-            <div style="float:right; padding-right: 10px">
-                <input class="number" name="quantity" size="2" type="text" value="1" /> {% trans "Piece" %}
-            </div>
+            {% if product.active_packing_unit %}
+                <div class="product-quantity packing-unit"
+                    id="packing-url"
+                    data="{% url lfs_calculate_packing product.id %}">
+                    <input class="number product-quantity" 
+                           name="quantity" 
+                           size="10" 
+                           type="text" 
+                           value="1" /> {{ product.price_unit }}
+                </div>
+                
+                <div class="packing-result">
+                    {{ packing_result }}
+                </div>
+                                
+            {% else %}
+                <div class="product-quantity">
+                    <input name="quantity" 
+                           size="10" 
+                           type="text" 
+                           value="1" /> {{ product.price_unit }}                
+                </div>
+            {% endif %}
             <br clear="both">
 
             <button class="emphasized"

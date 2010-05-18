@@ -351,12 +351,27 @@ table.cp-properties td {
     padding: 10px 10px 0 0;
 }
 
+div.product-quantity {
+    float: right;
+}
+
 .for-sale-price {
     font-weight: bold;
 }
 
 .for-sale-standard-price {
     text-decoration: line-through;
+}
+
+.packing-result {
+    clear: both;
+    float: right;
+    font-size: 89%;
+    margin-top: 10px;
+}
+
+.packing-unit {
+    color: #555;
 }
 
 .sorting {
