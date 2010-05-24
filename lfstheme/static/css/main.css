@@ -138,7 +138,7 @@ td.select {
 }
 
 .padding-top-large {
-    margin-top: 20px;    
+    margin-top: 20px;
 }
 
 .checkbox-left {
@@ -338,6 +338,23 @@ ul.breadcrumbs li {
     color: #9f8d83;
 }
 
+table.cp-properties {
+    margin: 20px 0;
+    float: right;
+}
+
+table.cp-properties td {
+    vertical-align: middle;
+}
+
+table.cp-properties select {
+    width: 200px;
+}
+
+table.cp-properties td {
+    padding-right: 10px;
+}
+
 .product-properties {
     padding-bottom:  10px;
 }
@@ -347,12 +364,27 @@ ul.breadcrumbs li {
     padding: 10px 10px 0 0;
 }
 
+div.product-quantity {
+    float: right;
+}
+
 .for-sale-price {
     font-weight: bold;
 }
 
 .for-sale-standard-price {
     text-decoration: line-through;
+}
+
+.packing-result {
+    clear: both;
+    float: right;
+    font-size: 89%;
+    margin-top: 10px;
+}
+
+.packing-unit {
+    color: #555;
 }
 
 .sorting {
@@ -920,19 +952,14 @@ ___________________________________________________________________________ */
     font-family: Arial;
 }
 
-/* --------------------------------------------------------------
-   Based on buttons by Kevin Hale [particletree.com]
-   * particletree.com/features/rediscovering-the-button-element
--------------------------------------------------------------- */
-
-a.button, 
+a.button,
 button {
   display:block;
-  float: right;
   margin: 0.7em 8px 0.7em 0.5em;
+  float: right;
   padding:5px 10px 5px 10px;   /* Links */
-  font-size:100%;
-  line-height:130%;
+  font-size: 100%;
+  line-height: 130%;
   text-decoration:none;
   font-weight:bold;
   cursor:pointer;
@@ -941,7 +968,7 @@ button {
   color: #fff !important;
 }
 
-a.button.left, 
+a.button.left,
 button.left {
   margin: 0.7em 0.5em 0.7em 0em;
   float:left;
@@ -962,7 +989,7 @@ button[type] {
   padding:4px 10px 3px 7px;   /* IE7 */
 }
 
-button img, 
+button img,
 a.button img {
   margin:0 3px -3px 0 !important;
   padding:0;
@@ -972,11 +999,9 @@ a.button img {
   float:none;
 }
 
-
-/* Button colors */
-
 /* Standard */
-button:hover, a.button:hover {
+button:hover, 
+a.button:hover {
   background-color: #beb5b0;
   border: 1px solid #dfd7d3;
   color:black !important;
@@ -988,7 +1013,8 @@ body .emphasized {
   background-color:#7e6b60;
 }
 
-a.emphasized:hover, button.emphasized:hover {
+a.emphasized:hover, 
+button.emphasized:hover {
   background-color:#7e6b60;
   border:1px solid #dfd7d3;
   color:black !important;

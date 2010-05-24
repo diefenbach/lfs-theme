@@ -40,10 +40,6 @@
                 </table>
             </div>
             
-<script type="text/javascript">
-$("#id_username").focus();  
-</script>
-
             <input type="hidden"
                    name="action"
                    value="login" />
@@ -52,42 +48,43 @@ $("#id_username").focus();
                    name="next"
                    value="{{ next_url }}" />
 
-            <button class="button emphasized left"
-                    type="submit">
-                {% trans 'Login' %}
-            </button>
-
+            <button type="submit"
+                    class="button login-button emphasized left">{% trans 'Login' %}</form>
+                   
         </form>
     </div>
-	
-	{% if not ANON_ONLY %}
-	    <div class="register">
-	        <h2 class="authenticate">{% trans 'Register' %}</h2>
+    
+    {% if not ANON_ONLY %}
+        <div class="register">
+            <h2 class="authenticate">{% trans 'Register' %}</h2>
 
-	        <div class="description">
-	            {% trans 'If you are not already a customer you can register in order to store your address data and to follow the state of your orders.' %}
-	        </div>
+            <div class="description">
+                {% trans 'If you are not already a customer you can register in order to store your address data and to follow the state of your orders.' %}
+            </div>
 
-	        <form action="{% url lfs_login %}"
-	              method="post">
-	                <div class="form">
-	                    <table>
-	                        {{ register_form }}
-	                    </table>
-	                </div>
-	                <input type="hidden"
-	                       name="action"
-	                       value="register" />
+            <form action="{% url lfs_login %}"
+                  method="post">
+                    <div class="form">
+                        <table>
+                            {{ register_form }}
+                        </table>
+                    </div>
+                    <input type="hidden"
+                           name="action"
+                           value="register" />
 
-	                <input type="hidden"
-	                       name="next"
-	                       value="{{ next_url }}" />
+                    <input type="hidden"
+                           name="next"
+                           value="{{ next_url }}" />
 
-	                <button class="button emphasized left"
-	                        type="submit">
-	                    {% trans 'Register' %}
-	                </button>
-	        </form>
-	    </div>
-	{% endif %}
+                    <button type="submit"
+                            class="button register-button emphasized left">{% trans "Register" %}</button>
+            </form>
+        </div>
+    {% endif %}
 {% endblock %}
+
+<script type="text/javascript">
+$("#id_username").focus();  
+</script>
+

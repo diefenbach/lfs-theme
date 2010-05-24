@@ -30,17 +30,19 @@
     <h1 class="product-title">
         {{ variant.get_name }}
     </h1>
-    
-    <div class="product-properties">
-        {% for option in variant.get_options %}
-            {% if option.property.display_on_product %}                                                    
-                <div>
-                    {{ option.property.name }} : {{ option.value|option_name }} {{ option.property.unit|safe }}
-                </div>
-            {% endif %}
-        {% endfor %}
-    </div>
-    
+
+    {% if not product.is_configurable_product %}
+        <div class="product-properties">
+            {% for option in variant.get_options %}
+                {% if option.property.display_on_product %}
+                    <div>
+                        {{ option.property.name }} : {{ option.value|option_name }} {{ option.property.unit|safe }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+
     {% shipping variant %}
 
     {% average_for_instance variant %}
@@ -48,8 +50,8 @@
     <div class="prices">
         {% if variant.get_for_sale %}
             <div>
-                <span class="for-sale-standard-price" nowrap="nowrap">{{ variant.get_standard_price|currency }}*</span>
-                <span class="for-sale-price" nowrap="nowrap">{{ variant.get_price|currency }}*</span>
+                <span class="for-sale-standard-price" nowrap="nowrap">{{ variant.get_standard_price|currency }}* {% if product.price_unit %}/ {{ product.price_unit }}{% endif %}</span>
+                <span class="for-sale-price" nowrap="nowrap">{{ variant.get_price|currency }}* {% if product.price_unit %}/ {{ product.price_unit }}{% endif %}</span>
             </div>
             <div class="price-disclaimer">
                 {% trans '*inc. VAT' %}
@@ -57,7 +59,7 @@
         {% else %}
             <div class="standard-price"
                   nowrap="nowrap">
-                {{ variant.get_price|currency }}*
+                  <span class="standard-price-value">{{ variant.get_price|currency }}</span>* {% if product.price_unit %}/ {{ product.price_unit }}{% endif %}
             </div>
             <div class="price-disclaimer">
                 {% trans '*inc. VAT' %}
@@ -66,11 +68,76 @@
 
     </div>
 
+    {# Configurable Product  #}
+    {% if product.is_configurable_product %}
+        <table class="cp-properties"
+               id="cp-url"
+               data="{% url lfs_calculate_price product.id %}">
+
+            {% for property in product.get_property_input_fields %}
+                <td class="property-label">
+                    {{ property.name }}:
+                </td>
+                <td>
+                    <input class="product-input-field" style="margin: 0 6px" type="input" size="6" name="property-{{ property.id }}" />{{ property.unit }}
+                </td>
+            {% endfor %}
+
+            {% for property in product.get_property_select_fields %}
+                <tr>
+                    <td class="property-label">
+                        {{ property.name }}:
+                    </td>
+                    <td>
+                        <select class="cp-property"
+                                name="property-{{ property.id }}">
+                            {% for option in property.options.all %}
+                                <option value="{{ option.id }}"
+                                    {% if option.selected %}selected="selected"{% endif %}>
+                                    {{ option.name }} /
+                                    {{ option.price|currency }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+
+    <br clear="both">
+
     <div class="buttons">
         {% if variant.deliverable %}
-            <button class="button emphasized"
+            {% if product.active_packing_unit %}
+                <div class="product-quantity packing-unit"
+                    id="packing-url"
+                    data="{% url lfs_calculate_packing product.id %}">
+                    <input class="number product-quantity" 
+                           name="quantity" 
+                           size="10" 
+                           type="text" 
+                           value="1" /> {{ product.price_unit }}
+                </div>
+                
+                <div class="packing-result">
+                    {{ packing_result }}
+                </div>
+                                
+            {% else %}
+                <div class="product-quantity">
+                    <input name="quantity" 
+                           size="10" 
+                           type="text" 
+                           value="1" /> {{ product.price_unit }}                
+                </div>
+            {% endif %}
+            <br clear="both">
+
+            <button class="emphasized"
                    type="submit"
                    name="add-to-cart">{% trans 'Add to cart' %}</button>
+
         {% endif %}
     </div>
     <p class="product-description">
@@ -78,6 +145,8 @@
     </p>
 
     <div class="variants">
+        {# Product with variants #}
+
         {% ifequal product.sub_type "1" %}
             <h1 class="section">{% trans 'Variants' %}</h1>
 
@@ -123,7 +192,7 @@
                     {% endfor %}
                 </table>
             {% endifequal %}
-            
+
             {% ifequal product.variants_display_type 1 %}
 
                 <div>

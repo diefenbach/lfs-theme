@@ -21,37 +21,56 @@
     {% for cart_item in cart_items %}
         <tr>
             <td class="image">
-                <img src="{{cart_item.product.get_image.url_60x60}}"
-                     alt="{{cart_item.product.get_name}}"/>
+                <img src="{{ cart_item.product.get_image.url_60x60 }}"
+                     alt="{{ cart_item.product.get_name }}"/>
             </td>
-            <td>                
-                {{cart_item.product.get_name}}
+            <td>
+                {{ cart_item.product.get_name }}
                 {% for option in cart_item.product.get_options %}
-                    {% if option.property.display_on_product %}                                                    
+                    {% if option.property.display_on_product %}
                         <div>
-                            {{option.property.name}} : {{option.value|option_name}} {{option.property.unit|safe}}
+                            {{ option.property.name }} : {{ option.value|option_name }} {{ option.property.unit|safe }}
                         </div>
                     {% endif %}
                 {% endfor %}
+
+                {% if cart_item.product.is_configurable_product %}
+                    {% for property in cart_item.properties.all %}
+                        <div>
+                            {{ property.property.name }} : {{ property|option_name_for_property_value }} {{ property.property.unit|safe }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
             </td>
             <td class="number">
-                {{cart_item.amount|quantity}}
-            </td>                
-            <td class="number">
-                {{cart_item.product.get_price|currency}}
+                {{ cart_item.amount|quantity }} {{ cart_item.product.price_unit }}
+
+                {% if cart_item.product.active_packing_unit %}
+                    <span class="packing-unit">
+                        ({{ cart_item|packages }} {{ cart_item.product.packing_unit_unit }})
+                    </span>
+                {% endif %}
+
             </td>
             <td class="number">
-                ({{cart_item.product.get_tax|currency}})
+                {{ cart_item.product.get_price|currency }}
+                {% if cart_item.product.price_unit %}
+                    / {{ cart_item.product.price_unit }}
+                {% endif %}
+            </td>
+            <td class="number">
+                ({{ cart_item.product.get_tax|currency }})
             </td>
             <td class="number last">
-                {{cart_item.get_price|currency}}
+                {{ cart_item.get_price|currency }}
             </td>
         </tr>
     {% endfor %}
     <tr class="total">
         <td colspan="3"></td>
         <td colspan="3" class="number total">
-            {% trans 'Total' %}: {{total|currency}}
+            {% trans 'Total' %}: {{ total|currency }}
         </td>
     </tr>
 </table>

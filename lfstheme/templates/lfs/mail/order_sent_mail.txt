@@ -1,3 +1,5 @@
+Your order has been sent
+
 {% load i18n %}{% load lfs_tags %}
 {% trans 'General' %}
 ==============================================================================

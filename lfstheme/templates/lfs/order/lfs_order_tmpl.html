@@ -193,7 +193,16 @@
                             {{option.property.name}} : {{option.value|option_name}} {{ option.property.unit|safe }}
                         </div>
                     {% endif %}
-                {% endfor %}                   
+                {% endfor %}
+                
+                {% if item.product.is_configurable_product %}
+                    {% for property in item.properties.all %}
+                        <div>
+                            {{ property.property.name }} : {{ property.value }} {{ property.property.unit|safe }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                
             </td>
             <td class="number">
                {{item.product_amount}} 

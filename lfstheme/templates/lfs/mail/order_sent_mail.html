@@ -35,6 +35,7 @@
         </style>
     </head>
     <body>
+        <p>{% trans "Your order has been sent" %}</p>
         <table class="order-general">
             <tr>
                 <th colspan="4">
@@ -109,19 +110,13 @@
                         {{ order.shipping_lastname }}
                     </div>
                     <div>
-                        {{ order.shipping_line1 }}
+                        {{ order.shipping_company_name }}
                     </div>
                     <div>
-                        {{ order.shipping_line2 }}
+                        {{ order.shipping_street }}
                     </div>
                     <div>
-                        {{ order.shipping_city }}
-                    </div>
-                    <div>
-                        {{ order.shipping_state }}
-                    </div>
-                    <div>
-                        {{ order.shipping_code }}
+                        {{ order.shipping_zip_code }} {{ order.shipping_city }}
                     </div>
                     <div>
                         {{ order.shipping_country }}
@@ -141,19 +136,13 @@
                         {{ order.invoice_lastname }}
                     </div>
                     <div>
-                        {{ order.invoice_line1 }}
+                        {{ order.invoice_company_name }}
                     </div>
                     <div>
-                        {{ order.invoice_line2 }}
+                        {{ order.invoice_street }}
                     </div>
                     <div>
-                        {{ order.invoice_city }}
-                    </div>
-                    <div>
-                        {{ order.invoice_state }}
-                    </div>
-                    <div>
-                        {{ order.invoice_code }}
+                        {{ order.invoice_zip_code }} {{ order.invoice_city }}
                     </div>
                     <div>
                         {{ order.invoice_country }}
