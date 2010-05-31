@@ -50,8 +50,17 @@
     <div class="prices">
         {% if variant.get_for_sale %}
             <div>
-                <span class="for-sale-standard-price" nowrap="nowrap">{{ variant.get_standard_price|currency }}* {% if product.price_unit %}/ {{ product.price_unit }}{% endif %}</span>
-                <span class="for-sale-price" nowrap="nowrap">{{ variant.get_price|currency }}* {% if product.price_unit %}/ {{ product.price_unit }}{% endif %}</span>
+                <span class="for-sale-standard-price" nowrap="nowrap">
+                    <span class="for-sale-standard-price-value">
+                        {{ variant.get_standard_price|currency }} 
+                    </span>
+                    * {% if product.price_unit %}/ {{ product.price_unit }}{% endif %}</span>
+                <span class="for-sale-price" nowrap="nowrap">
+                    <span class="for-sale-price-value">
+                        {{ variant.get_price|currency }} 
+                    </span>
+                    * {% if product.price_unit %}/ {{ product.price_unit }}{% endif %}
+                </span>
             </div>
             <div class="price-disclaimer">
                 {% trans '*inc. VAT' %}
@@ -83,7 +92,7 @@
                 </td>
             {% endfor %}
 
-            {% for property in product.get_property_select_fields %}
+            {% for property in properties %}
                 <tr>
                     <td class="property-label">
                         {{ property.name }}:
@@ -91,7 +100,7 @@
                     <td>
                         <select class="cp-property"
                                 name="property-{{ property.id }}">
-                            {% for option in property.options.all %}
+                            {% for option in property.options %}
                                 <option value="{{ option.id }}"
                                     {% if option.selected %}selected="selected"{% endif %}>
                                     {{ option.name }} /

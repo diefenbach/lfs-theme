@@ -67,9 +67,9 @@
                         {% endfor %}
 
                         {% if cart_item.product.is_configurable_product %}
-                            {% for property_value in cart_item.properties.all %}
+                            {% for property in cart_item.get_properties %}
                                 <div>
-                                    {{ property_value.property.name }} : {{ property_value|option_name_for_property_value }} {{ property_value.property.unit|safe }}
+                                    {{ property.name }} : {{ property.value }} {{ property.unit|safe }} {{ property.price }}
                                 </div>
                             {% endfor %}
                         {% endif %}
