@@ -212,19 +212,17 @@
                        {{ item.product_sku }}
                     </td>
                     <td>
-                       {{ item.product_name }}
-                       {% for option in item.product.get_options %}
-                            {% if option.property.display_on_product %}
-                               <div>
-                                   {{ option.property.name }} : {{ option.value|option_name }} {{ option.property.unit|safe }}
-                               </div>
-                            {% endif %}
-                       {% endfor %}
+                        {{ item.product_name }}
+                        {% for property in item.product.get_displayed_properties %}
+                            <div>
+                                {{ property.name }} : {{ property.value }} {{ property.unit|safe }}
+                            </div>
+                        {% endfor %}
 
                         {% if item.product.is_configurable_product %}
-                            {% for property in item.properties.all %}
+                            {% for property in item.get_properties %}
                                 <div>
-                                    {{ property.property.name }} : {{ property.value|quantity }} {{ property.property.unit|safe }}
+                                    {{ property.name }} : {{ property.value }} {{ property.unit|safe }} ({{ property.price|currency }})
                                 </div>
                             {% endfor %}
                         {% endif %}

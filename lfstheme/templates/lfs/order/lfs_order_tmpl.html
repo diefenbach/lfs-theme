@@ -19,13 +19,13 @@
             {% trans 'Customer name' %}:
         </td>
         <td>
-            {{current_order.customer_firstname}} {{current_order.customer_lastname}}
+            {{ current_order.customer_firstname }} {{ current_order.customer_lastname }}
         </td>
         <td class="label">
             {% trans 'Date' %}:
         </td>
         <td>
-            {{current_order.created|date:_("DATETIME_FORMAT")}}
+            {{ current_order.created|date:_("DATETIME_FORMAT") }}
         </td>
     </tr>
     <tr>
@@ -33,15 +33,15 @@
             {% trans 'E-mail' %}:
         </td>
         <td>
-            <a href="mailto:{{current_order.customer_email}}">
-                {{current_order.customer_email}}
+            <a href="mailto:{{ current_order.customer_email }}">
+                {{ current_order.customer_email }}
             </a>                
         </td>
         <td class="label">
             {% trans 'State' %}:
         </td>
         <td>
-            {{current_order.get_state_display}}
+            {{ current_order.get_state_display }}
         </td>
     </tr>
     <tr>
@@ -49,13 +49,13 @@
             {% trans 'Phone' %}:
         </td>
         <td>
-            {{current_order.shipping_phone}}
+            {{ current_order.shipping_phone }}
         </td>
         <td class="label">
             {% trans 'Total' %}:
         </td>
         <td>
-            {{current_order.price|currency}}
+            {{ current_order.price|currency }}
         </td>
     </tr>
     
@@ -78,71 +78,71 @@
     <tr>
         <td>
             <div>
-                {{current_order.invoice_firstname}}
+                {{ current_order.invoice_firstname }}
             </div>
             <div>
-                {{current_order.invoice_lastname}}
+                {{ current_order.invoice_lastname }}
             </div>
             <div>
-                {{current_order.invoice_company_name}}
+                {{ current_order.invoice_company_name }}
             </div>
             <div>
-                {{current_order.invoice_street}}
+                {{ current_order.invoice_street }}
             </div>
             <div>
-                {{current_order.invoice_zip_code}} {{current_order.invoice_city}}
+                {{ current_order.invoice_zip_code }} {{ current_order.invoice_city }}
             </div>
             <div>
-                {{current_order.invoice_country}}
+                {{ current_order.invoice_country }}
             </div>
             <div>
-                {{current_order.invoice_phone}}
+                {{ current_order.invoice_phone }}
             </div>
         </td>
         <td>
             <div>
-                {{current_order.shipping_firstname}}
+                {{ current_order.shipping_firstname }}
             </div>
             <div>
-                {{current_order.shipping_lastname}}
+                {{ current_order.shipping_lastname }}
             </div>
             <div>
-                {{current_order.shipping_company_name}}
+                {{ current_order.shipping_company_name }}
             </div>            
             <div>
-                {{current_order.shipping_street}}
+                {{ current_order.shipping_street }}
             </div>
             <div>
-                {{current_order.shipping_zip_code}} {{current_order.shipping_city}}
+                {{ current_order.shipping_zip_code }} {{ current_order.shipping_city }}
             </div>
             <div>
-                {{current_order.shipping_country}}
+                {{ current_order.shipping_country }}
             </div>                
             <div>
-                {{current_order.shipping_phone}}
+                {{ current_order.shipping_phone }}
             </div>
         </td>        
         <td>
             <div>
-                {{current_order.shipping_method}}
+                {{ current_order.shipping_method }}
             </div>
         </td>
         <td>
             <div>
-                {{current_order.payment_method.name}}
+                {{ current_order.payment_method.name }}
             </div>
             {% ifequal current_order.payment_method.id 1 %}
                 <div>
-                    {{current_order.account_number}}
+                    {{ current_order.account_number }}
                 </div>
                 <div>
-                    {{current_order.bank_identification_code}}
+                    {{ current_order.bank_identification_code }}
                 </div>
                 <div>
-                    {{current_order.bank_name}}
+                    {{ current_order.bank_name }}
                 </div>
                 <div>
-                    {{current_order.depositor}}
+                    {{ current_order.depositor }}
                 </div>
             {% endifequal %}
         </td>
@@ -171,79 +171,77 @@
     {% for item in current_order.items.all %}
         <tr>
             <td>
-               {{item.product_sku}} 
+               {{ item.product_sku }} 
             </td>
             <td>
-               {{item.product_name}} 
-                {% for option in item.product.get_options %}
-                    {% if option.property.display_on_product %}
-                        <div>
-                            {{option.property.name}} : {{option.value|option_name}} {{ option.property.unit|safe }}
-                        </div>
-                    {% endif %}
+                {{ item.product_name }} 
+                {% for property in item.product.get_displayed_properties %}
+                    <div>
+                        {{ property.name }} : {{ property.value }} {{ property.unit|safe }}
+                    </div>
                 {% endfor %}
                 
                 {% if item.product.is_configurable_product %}
-                    {% for property in item.properties.all %}
+                    {% for property in item.get_properties %}
                         <div>
-                            {{ property.property.name }} : {{ property.value }} {{ property.property.unit|safe }}
+                            {{ property.name }} : {{ property.value }} {{ property.unit|safe }} ({{ property.price|currency }})
                         </div>
                     {% endfor %}
                 {% endif %}
                 
             </td>
             <td class="number">
-               {{item.product_amount}} 
+               {{ item.product_amount }} 
             </td>
             <td class="number">
-               {{item.product_price_gross|currency}} 
+               {{ item.product_price_gross|currency }} 
             </td>
             <td class="number">
-               {{item.price_gross|currency}}
+               {{ item.price_gross|currency }}
             </td>
         </tr>
     {% endfor %}        
     <tr>
         <td></td>
         <td>
-            {% trans 'Shipping' %} ({{current_order.shipping_method}})
+            {% trans 'Shipping' %} ({{ current_order.shipping_method }})
         </td>
         <td class="number">
             1
         </td>
         <td class="number">
-            {{current_order.shipping_price|currency}}
+            {{ current_order.shipping_price|currency }}
         </td>
         <td class="number">
-            {{current_order.shipping_price|currency}}
+            {{ current_order.shipping_price|currency }}
         </td>
     </tr>
     <tr>
         <td></td>
         <td>
-            {% trans 'Payment' %} ({{current_order.payment_method}})
+            {% trans 'Payment' %} ({{ current_order.payment_method }})
         </td>
         <td class="number">
             1
         </td>
         <td class="number">
-            {{current_order.payment_price|currency}}
+            {{ current_order.payment_price|currency }}
         </td>
         <td class="number">
-            {{current_order.payment_price|currency}}
+            {{ current_order.payment_price|currency }}
         </td>
     </tr>
     <tr class="total">
         <td colspan="5"
             class="number total">
-            {{current_order.price|currency}}
+            {{ current_order.price|currency }}
         </td>
     </tr>
     <tr>
         <td colspan="5"
             class="number tax">
             <span class="total-label">{% trans 'Inclusive VAT' %}:</span>
-            {{current_order.tax|currency}}
+            {{ current_order.tax|currency }}
         </td>
     </tr>        
 </table>
@@ -256,7 +254,7 @@
         </tr>
         <tr>
             <td colspan="5">
-                {{current_order.message}}
+                {{ current_order.message }}
             </td>
         </tr>
     </table>

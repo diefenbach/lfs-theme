@@ -58,18 +58,16 @@
                         <span class="product-title">
                             {{ cart_item.product.get_name }}
                         </span>
-                        {% for option in cart_item.product.get_options %}
-                            {% if option.property.display_on_product %}
-                                <div>
-                                    {{ option.property.name }} : {{ option.value|option_name }} {{ option.property.unit|safe }}
-                                </div>
-                            {% endif %}
+                        {% for property in cart_item.product.get_displayed_properties %}
+                            <div>
+                                {{ property.name }} : {{ property.value }} {{ property.unit|safe }}
+                            </div>
                         {% endfor %}
 
                         {% if cart_item.product.is_configurable_product %}
                             {% for property in cart_item.get_properties %}
                                 <div>
-                                    {{ property.name }} : {{ property.value }} {{ property.unit|safe }} {{ property.price }}
+                                    {{ property.name }} : {{ property.value }} {{ property.unit|safe }} ({{ property.price|currency }})
                                 </div>
                             {% endfor %}
                         {% endif %}
@@ -81,7 +79,7 @@
                                name="amount-cart-item_{{ cart_item.id }}"
                                size="6"
                                value="{{ cart_item.amount }}" /> {{ cart_item.product.price_unit }}
-                               
+
                         {% if cart_item.product.active_packing_unit %}
                             <span class="packing-unit">
                                 ({{ cart_item|packages }} {{ cart_item.product.packing_unit_unit }})
