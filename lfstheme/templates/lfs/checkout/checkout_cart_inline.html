@@ -55,7 +55,10 @@
                 {% if cart_item.product.is_configurable_product %}
                     {% for property in cart_item.get_properties %}
                         <div>
-                            {{ property.name }} : {{ property.value }} {{ property.unit|safe }} ({{ property.price|currency }})
+                            {{ property.name }}: {{ property.value }} {{ property.unit|safe }}
+                            {% if property.is_select_field %}
+                                ({{ property.price|currency }})
+                            {% endif %}                            
                         </div>
                     {% endfor %}
                 {% endif %}

@@ -77,6 +77,7 @@
 
     {# Configurable properties #}
     {% if product.is_configurable_product %}
+
         <table class="cp-properties"
                id="cp-url"
                data="{% url lfs_calculate_price product.id %}">
@@ -103,7 +104,7 @@
                             </select>
                         </td>
                     {% endif %}
-                    {% if property.obj.is_input_field %}
+                    {% if property.obj.is_text_field %}
                         <td class="property-label">
                             {{ property.name }}:
                         </td>
