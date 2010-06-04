@@ -60,7 +60,7 @@
                         </span>
                         {% for property in cart_item.product.get_displayed_properties %}
                             <div>
-                                {{ property.name }} : {{ property.value }} {{ property.unit|safe }}
+                                {{ property.name }}: {{ property.value }} {{ property.unit|safe }}
                             </div>
                         {% endfor %}
 
