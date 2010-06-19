@@ -108,11 +108,12 @@
                                 {% endfor %}
                             </select>
                         </td>
+                        <td></td>
                     {% else %}                        
                         <td class="property-label">
                             {{ property.title }}:
                         </td>
-                        <td>
+                        <td class="right">
                             <input class="product-input-field" type="input" size="6" name="property-{{ property.id }}" />
                         </td>
                         <td>
@@ -126,39 +127,48 @@
 
     <br clear="both">
 
-    <div class="buttons">
-        {% if variant.deliverable %}
-            {% if product.active_packing_unit %}
-                <div class="product-quantity packing-unit"
-                    id="packing-url"
-                    data="{% url lfs_calculate_packing product.id %}">
-                    <input class="number product-quantity"
-                           name="quantity"
-                           size="10"
-                           type="text"
-                           value="1" /> {{ product.price_unit }}
-                </div>
+    {% if variant.deliverable %}
+        <table align="right" class="buttons">
+            <tr>
+                {% if product.active_packing_unit %}
+                    <div class="product-quantity packing-unit"
+                        id="packing-url"
+                        data="{% url lfs_calculate_packing product.id %}">
+                        <input class="number product-quantity"
+                               name="quantity"
+                               size="3"
+                               type="text"
+                               value="1" /> {{ product.price_unit }}
+                    </div>
 
-                <div class="packing-result">
-                    {{ packing_result }}
-                </div>
+                    <div class="packing-result">
+                        {{ packing_result }}
+                    </div>
 
-            {% else %}
-                <div class="product-quantity">
-                    <input name="quantity"
-                           size="10"
-                           type="text"
-                           value="1" /> {{ product.unit }}
-                </div>
-            {% endif %}
-            <br clear="both">
-
-            <button class="emphasized"
-                   type="submit"
-                   name="add-to-cart">{% trans 'Add to cart' %}</button>
-
-        {% endif %}
-    </div>
+                {% else %}            
+                    <td>
+                        {% if product.unit %}
+                            {{ product.unit }}:
+                        {% else %}
+                            {% trans "Quantity" %}:
+                        {% endif %}
+                    </td>                    
+                    <td class="product-quantity">
+                        <input name="quantity"
+                               size="3"
+                               type="text"
+                               value="1" />
+                    </td>
+                {% endif %}
+                <td>
+                    <button class="emphasized"
+                           type="submit"
+                           name="add-to-cart">{% trans 'Add to cart' %}</button>                
+                </td>
+            </tr>
+        </table>
+    {% endif %}
+        
 
     <p class="product-description">
         {{ variant.get_description|safe}}
