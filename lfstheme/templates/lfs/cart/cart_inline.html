@@ -67,8 +67,8 @@
                         {% if cart_item.product.is_configurable_product %}
                             {% for property in cart_item.get_properties %}
                                 <div>
-                                    {{ property.name }}: {{ property.value }} {{ property.unit|safe }}
-                                    {% if property.is_select_field %}
+                                    {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
+                                    {% if property.display_price %}
                                         ({{ property.price|currency }})
                                     {% endif %}
                                 </div>
@@ -81,7 +81,10 @@
                                type="text"
                                name="amount-cart-item_{{ cart_item.id }}"
                                size="6"
-                               value="{{ cart_item.amount }}" /> {{ cart_item.product.price_unit }}
+                               value="{{ cart_item.amount }}" />
+                               {% if cart_item.product.unit %}
+                                    {{ cart_item.product.unit }}
+                               {% endif %}
 
                         {% if cart_item.product.active_packing_unit %}
                             <span class="packing-unit">

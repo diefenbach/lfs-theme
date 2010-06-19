@@ -56,7 +56,7 @@
                     {% for property in cart_item.get_properties %}
                         <div>
                             {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
-                            {% if property.is_select_field %}
+                            {% if property.display_price %}
                                 ({{ property.price|currency }})
                             {% endif %}                            
                         </div>
@@ -65,7 +65,7 @@
 
             </td>
             <td class="number">
-                {{ cart_item.amount }} {{ cart_item.product.price_unit }}
+                {{ cart_item.amount }} {{ cart_item.product.unit }}
                 
                 {% if cart_item.product.active_packing_unit %}
                     <span class="packing-unit">

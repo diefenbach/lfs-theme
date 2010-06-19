@@ -35,7 +35,7 @@
                 {% if cart_item.product.is_configurable_product %}
                     {% for property in cart_item.get_properties %}
                         <div>
-                            {{ property.name }}: {{ property.value }} {{ property.unit|safe }}
+                            {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
                             {% if property.is_select_field %}
                                 ({{ property.price|currency }})
                             {% endif %}
@@ -45,7 +45,7 @@
 
             </td>
             <td class="number">
-                {{ cart_item.amount|quantity }} {{ cart_item.product.price_unit }}
+                {{ cart_item.amount|quantity }} {{ cart_item.product.unit }}
 
                 {% if cart_item.product.active_packing_unit %}
                     <span class="packing-unit">

@@ -9,11 +9,13 @@
 
     <div class="product-images">
         <div class="main-image">
-            <a href="{{ variant.get_image.url_400x400 }}"
-               class="product-image">
-                <img src="{{ variant.get_image.url_200x200 }}"
-                     alt="{{ variant.get_name}}" />
-            </a>
+            {% if variant.get_image %}
+                <a href="{{ variant.get_image.url_400x400 }}"
+                   class="product-image">
+                    <img src="{{ variant.get_image.url_200x200 }}"
+                         alt="{{ variant.get_name}}" />
+                </a>
+            {% endif %}
         </div>
         <div class="sub-images">
             {% for image in variant.get_sub_images %}
@@ -86,7 +88,7 @@
                 <tr>
                     {% if property.obj.is_select_field %}
                         <td class="property-label">
-                            {{ property.name }}:
+                            {{ property.title }}:
                         </td>
                         <td>
                             <select class="cp-property"
@@ -97,19 +99,24 @@
                                 {% for option in property.options %}
                                     <option value="{{ option.id }}"
                                         {% if option.selected %}selected="selected"{% endif %}>
-                                        {{ option.name }} /
-                                        {{ option.price|currency }}
+                                        {{ option.name }}
+                                        
+                                        {% if property.display_price %}
+                                         / {{ option.price|currency }}                                            
+                                        {% endif %}
                                     </option>
                                 {% endfor %}
                             </select>
                         </td>
-                    {% endif %}
-                    {% if property.obj.is_text_field %}
+                    {% else %}                        
                         <td class="property-label">
-                            {{ property.name }}:
+                            {{ property.title }}:
                         </td>
                         <td>
-                            <input class="product-input-field" type="input" size="6" name="property-{{ property.id }}" />{{ property.unit }}
+                            <input class="product-input-field" type="input" size="6" name="property-{{ property.id }}" />
+                        </td>
+                        <td>
+                            {{ property.unit }}
                         </td>
                     {% endif %}
                 </tr>
@@ -137,12 +144,12 @@
                 </div>
 
             {% else %}
-                {# <div class="product-quantity"> #}
-                {#     <input name="quantity" #}
-                {#            size="10" #}
-                {#            type="text" #}
-                {#            value="1" /> {{ product.price_unit }} #}
-                {# </div> #}
+                <div class="product-quantity">
+                    <input name="quantity"
+                           size="10"
+                           type="text"
+                           value="1" /> {{ product.unit }}
+                </div>
             {% endif %}
             <br clear="both">
 
@@ -158,7 +165,7 @@
     </p>
 
     {# Product with variants #}
-    
+
     {% if product.is_product_with_variants %}
 
         <div class="variants">
