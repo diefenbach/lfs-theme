@@ -16,10 +16,10 @@ class SlotsInformationNode(Node):
     def render(self, context):
 
         object = context.get("category") or context.get("product")
-        
+
         if object is None:
             object = lfs.core.utils.get_default_shop()
-        
+
         for slot in Slot.objects.all():
             context["Slot%s" % slot.name] = portlets.utils.has_portlets(slot, object)
 
@@ -30,7 +30,7 @@ class SlotsInformationNode(Node):
             content_class = "span-19 padding-left last"
         elif context.get("SlotRight", None):
             content_class = "span-20 padding-right"
-        
+
         context["content_class"] = content_class
         return ''
 

@@ -102,9 +102,9 @@
                             <td>
                                 {{ product_variant.get_name }}
                             </td>
-                            {% for option in product_variant.get_options %}
+                            {% for property in product_variant.get_variant_properties %}
                                 <td>
-                                    {{ option.value|option_name }}
+                                    {{ property.value }}
                                 </td>
                             {% endfor %}
                             <td class="number"

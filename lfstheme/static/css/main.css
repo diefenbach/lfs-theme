@@ -107,8 +107,13 @@ table.lfs-default a {
     text-decoration: none;
 }
 
-table.lfs-default .buttons {
+table.buttons {
     padding: 10px 0;
+}
+
+table.buttons td {
+    vertical-align: middle;
+    padding: 0px 4px;
 }
 
 td, th {
@@ -362,6 +367,10 @@ table.cp-properties td {
 .product-price {
     text-align: right;
     padding: 10px 10px 0 0;
+}
+
+.product-input-field {
+    margin: 1px 0;
 }
 
 div.product-quantity {

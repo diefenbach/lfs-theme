@@ -28,7 +28,7 @@
 
     <p class="search-results-description">
         {% trans 'You searched for' %} <span class="search-results-phrase">"{{ phrase }}"</span>.
-        {% blocktrans count total as counter %}There has been found 1 product.{% plural %}There has been found {{  counter  }} products.{% endblocktrans %}
+        {% blocktrans count total as counter %}There has been found 1 product.{% plural %}There has been found {{ counter }} products.{% endblocktrans %}
     </p>
 
     {% if products %}
@@ -65,12 +65,10 @@
                     <a href="{{ product.get_absolute_url }}">
                         {{ product.get_name }}
                     </a>
-                    {% for option in product.get_options %}
-                        {% if option.property.display_on_product %}
-                            <div>
-                                {{ option.property.name }} : {{ option.value|option_name }} {{  option.property.unit|safe  }}
-                            </div>
-                        {% endif %}
+                    {% for property in product.get_displayed_properties %}
+                        <div>
+                            {{ property.name }} : {{ property.value }} {{ property.unit|safe }}
+                        </div>
                     {% endfor %}
                 </div>
 

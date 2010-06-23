@@ -28,11 +28,11 @@
 {% block content %}
 
     {{ product.static_block.html|safe }}
-	
+
     {% product_navigation product %}
 
     <div class="overview">
-		{% current_category product %}
+        {% current_category product %}
         <a href="{{current_category.get_absolute_url}}">
            {% trans 'Back to overview' %}
         </a>

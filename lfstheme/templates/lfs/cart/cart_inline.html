@@ -58,18 +58,19 @@
                         <span class="product-title">
                             {{ cart_item.product.get_name }}
                         </span>
-                        {% for option in cart_item.product.get_options %}
-                            {% if option.property.display_on_product %}
-                                <div>
-                                    {{ option.property.name }} : {{ option.value|option_name }} {{ option.property.unit|safe }}
-                                </div>
-                            {% endif %}
+                        {% for property in cart_item.product.get_displayed_properties %}
+                            <div>
+                                {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
+                            </div>
                         {% endfor %}
 
                         {% if cart_item.product.is_configurable_product %}
-                            {% for property_value in cart_item.properties.all %}
+                            {% for property in cart_item.get_properties %}
                                 <div>
-                                    {{ property_value.property.name }} : {{ property_value|option_name_for_property_value }} {{ property_value.property.unit|safe }}
+                                    {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
+                                    {% if property.display_price %}
+                                        ({{ property.price|currency }})
+                                    {% endif %}
                                 </div>
                             {% endfor %}
                         {% endif %}
@@ -80,8 +81,11 @@
                                type="text"
                                name="amount-cart-item_{{ cart_item.id }}"
                                size="6"
-                               value="{{ cart_item.amount }}" /> {{ cart_item.product.price_unit }}
-                               
+                               value="{{ cart_item.amount }}" />
+                               {% if cart_item.product.unit %}
+                                    {{ cart_item.product.unit }}
+                               {% endif %}
+
                         {% if cart_item.product.active_packing_unit %}
                             <span class="packing-unit">
                                 ({{ cart_item|packages }} {{ cart_item.product.packing_unit_unit }})
