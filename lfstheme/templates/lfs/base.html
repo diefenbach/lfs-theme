@@ -20,7 +20,7 @@
         <!--[if IE]>
             <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}lfstheme/css/iefixes.css" />
         <![endif]-->
-		
+
         <script type="text/javascript" src="{{ MEDIA_URL }}lfs/jquery/jquery.pack.js"></script>
         <script type="text/javascript" src="{{ MEDIA_URL }}lfs/jquery/jquery.livequery.pack.js"></script>
         <script type="text/javascript" src="{{ MEDIA_URL }}lfs/jquery/jquery.form.pack.js"></script>
@@ -81,13 +81,13 @@
                             {% if not ANON_ONLY %}
                                 <a href="{% url lfs_login %}">{% trans 'Login' %}</a> |
                             {% endif %}
-							
+
                         {% endif %}
                         <label for="search">{% trans 'Search' %}:</label>
                         <form id="search-form"
                               action="{% url lfs_search %}"
                               autocomplete="off">
-                            <input id="search-input" type="text" name="phrase" autocomplete="off" data="{% url lfs_livesearch %}" />
+                            <input id="search-input" type="text" name="q" autocomplete="off" data="{% url lfs_livesearch %}" />
                             <input type="submit"
                                    value="{% trans 'Go!' %}" />
                         </form>
