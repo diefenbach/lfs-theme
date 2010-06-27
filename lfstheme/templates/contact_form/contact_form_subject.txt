@@ -1,1 +1,2 @@
-Neue Mail vom Gartenhaus-Shop
+{% load i18n %}
+{% trans 'New mail from' %} {{ SHOP.name }}
