@@ -1,16 +1,21 @@
 {% extends "lfs/base.html" %}
 {% load i18n %}
+{% load lfs_tags %}
 
 {% block title %}
     {% trans 'Contact form' %} - {{ block.super }}
 {% endblock %}
 
-{% block section %}{% endblock %}
+{% block section %}contact-form{% endblock %}
+
+{% block breadcrumbs %}
+    {% breadcrumbs _("Contact") %}
+{% endblock %}
 
 {% block content %}
     
-    <h1>{% trans 'Contact form' %}</h1>
-    <p>
+    <h1 class="first-heading">{% trans 'Contact form' %}</h1>
+    <p class="message">
         {% trans 'Please leave us a message. We will answer as soon as possible.' %}
     </p>
     
