@@ -52,8 +52,6 @@ p {
 /* Forms */
 form label {
     font-weight: bold;
-    display: block;
-    padding-bottom: 2px;
 }
 
 td.label {
