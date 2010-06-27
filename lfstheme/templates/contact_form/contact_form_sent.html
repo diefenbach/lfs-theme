@@ -1,14 +1,17 @@
 {% extends "lfs/base.html" %}
 {% load i18n %}
+{% load lfs_tags %}
 
 {% block title %}{% trans "Contact form" %}{% endblock %}
-{% block section %}{% endblock %}
-{% block left-slot-wrapper%}{% endblock %}
-{% block right-slot-wrapper%}{% endblock %}
+{% block section %}contact-form-sent{% endblock %}
+
+{% block breadcrumbs %}
+    {% breadcrumbs _("Contact thank you") %}
+{% endblock %}
 
 {% block content %}
-    <h1>{% trans 'Contact form' %}</h1>
-    <p>
+    <h1 class="first-heading">{% trans 'Contact form' %}</h1>
+    <p class="message">
         {% trans 'Thank you for your message. We will get back to you soon.' %}
     </p>
 
