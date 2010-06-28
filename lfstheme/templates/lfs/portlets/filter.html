@@ -36,11 +36,11 @@
                                     {% else %}
                                         {% if property.show_quantity %}
                                             <a href='{% url lfs_set_product_filter category.slug property_group.id property.value %}'>
-                                                {{ property.name }} {{ property_group.unit|safe }} ({{ property.quantity }})
+                                                {{ property.title }} {{ property_group.unit|safe }} ({{ property.quantity }})
                                             </a>
                                         {% else %}
                                             <span>
-                                                {{ property.name }} {{ property_group.unit|safe }}
+                                                {{ property.title }} {{ property_group.unit|safe }}
                                             </span>
                                         {% endif %}
 

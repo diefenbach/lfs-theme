@@ -32,6 +32,12 @@
                     </div>
                 {% endfor %}
 
+                {% for property in cart_item.product.get_variant_properties %}
+                    <div>
+                        {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
+                    </div>
+                {% endfor %}
+
                 {% if cart_item.product.is_configurable_product %}
                     {% for property in cart_item.get_properties %}
                         <div>
