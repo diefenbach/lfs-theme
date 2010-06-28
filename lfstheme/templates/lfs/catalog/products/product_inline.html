@@ -192,7 +192,7 @@
                         </th>
                         {% for property in properties %}
                             <th>
-                                {{ property.name}}
+                                {{ property.title }}
                             </th>
                         {% endfor %}
                         <th class="number">
@@ -232,7 +232,7 @@
                     {% for property in properties %}
                         <div>
                             <div class="property-label">
-                                {{ property.name }}:
+                                {{ property.title }}:
                             </div>
                             <select class="property"
                                     name="property_{{ property.id }}">
