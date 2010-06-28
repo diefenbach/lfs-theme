@@ -9,11 +9,13 @@
 
     <div class="product-images">
         <div class="main-image">
-            <a href="{{ variant.get_image.url_400x400 }}"
-               class="product-image">
-                <img src="{{ variant.get_image.url_200x200 }}"
-                     alt="{{ variant.get_name}}" />
-            </a>
+            {% if variant.get_image %}
+                <a href="{{ variant.get_image.url_400x400 }}"
+                   class="product-image">
+                    <img src="{{ variant.get_image.url_200x200 }}"
+                         alt="{{ variant.get_name}}" />
+                </a>
+            {% endif %}
         </div>
         <div class="sub-images">
             {% for image in variant.get_sub_images %}
@@ -31,27 +33,34 @@
         {{ variant.get_name }}
     </h1>
 
-    {% if not product.is_configurable_product %}
-        <div class="product-properties">
-            {% for option in variant.get_options %}
-                {% if option.property.display_on_product %}
-                    <div>
-                        {{ option.property.title }} : {{ option.value|option_name }} {{ option.property.unit|safe }}
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    {% endif %}
+    {# Displayed properties #}
+    <div class="product-properties">
+        {% for property in variant.get_displayed_properties %}
+            <div>
+                {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
+            </div>
+        {% endfor %}
+    </div>
 
     {% shipping variant %}
 
     {% average_for_instance variant %}
 
+    {# Prices #}
     <div class="prices">
         {% if variant.get_for_sale %}
             <div>
-                <span class="for-sale-standard-price" nowrap="nowrap">{{ variant.get_standard_price|currency }}* {% if product.price_unit %}/ {{ product.price_unit }}{% endif %}</span>
-                <span class="for-sale-price" nowrap="nowrap">{{ variant.get_price|currency }}* {% if product.price_unit %}/ {{ product.price_unit }}{% endif %}</span>
+                <span class="for-sale-standard-price" nowrap="nowrap">
+                    <span class="for-sale-standard-price-value">
+                        {{ variant.get_standard_price|currency }}
+                    </span>
+                    * {% if product.price_unit %}/ {{ product.price_unit }}{% endif %}</span>
+                <span class="for-sale-price" nowrap="nowrap">
+                    <span class="for-sale-price-value">
+                        {{ variant.get_price|currency }}
+                    </span>
+                    * {% if product.price_unit %}/ {{ product.price_unit }}{% endif %}
+                </span>
             </div>
             <div class="price-disclaimer">
                 {% trans '*inc. VAT' %}
@@ -68,38 +77,49 @@
 
     </div>
 
-    {# Configurable Product  #}
+    {# Configurable properties #}
     {% if product.is_configurable_product %}
+
         <table class="cp-properties"
                id="cp-url"
                data="{% url lfs_calculate_price product.id %}">
 
-            {% for property in product.get_property_input_fields %}
-                <td class="property-label">
-                    {{ property.title }}:
-                </td>
-                <td>
-                    <input class="product-input-field" style="margin: 0 6px" type="input" size="6" name="property-{{ property.id }}" />{{ property.unit }}
-                </td>
-            {% endfor %}
-
-            {% for property in product.get_property_select_fields %}
+            {% for property in properties %}
                 <tr>
-                    <td class="property-label">
-                        {{ property.title }}:
-                    </td>
-                    <td>
-                        <select class="cp-property"
-                                name="property-{{ property.id }}">
-                            {% for option in property.options.all %}
-                                <option value="{{ option.id }}"
-                                    {% if option.selected %}selected="selected"{% endif %}>
-                                    {{ option.name }} /
-                                    {{ option.price|currency }}
-                                </option>
-                            {% endfor %}
-                        </select>
-                    </td>
+                    {% if property.obj.is_select_field %}
+                        <td class="property-label">
+                            {{ property.title }}:
+                        </td>
+                        <td>
+                            <select class="cp-property"
+                                    name="property-{{ property.id }}">
+                                {% if not property.obj.required %}
+                                    <option>---</option>
+                                {% endif %}
+                                {% for option in property.options %}
+                                    <option value="{{ option.id }}"
+                                        {% if option.selected %}selected="selected"{% endif %}>
+                                        {{ option.name }}
+                                        
+                                        {% if property.display_price %}
+                                         / {{ option.price|currency }}                                            
+                                        {% endif %}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </td>
+                        <td></td>
+                    {% else %}                        
+                        <td class="property-label">
+                            {{ property.title }}:
+                        </td>
+                        <td class="right">
+                            <input class="product-input-field" type="input" size="6" name="property-{{ property.id }}" />
+                        </td>
+                        <td>
+                            {{ property.unit }}
+                        </td>
+                    {% endif %}
                 </tr>
             {% endfor %}
         </table>
@@ -107,49 +127,61 @@
 
     <br clear="both">
 
-    <div class="buttons">
-        {% if variant.deliverable %}
-            {% if product.active_packing_unit %}
-                <div class="product-quantity packing-unit"
-                    id="packing-url"
-                    data="{% url lfs_calculate_packing product.id %}">
-                    <input class="number product-quantity"
-                           name="quantity"
-                           size="10"
-                           type="text"
-                           value="1" /> {{ product.unit }}
-                </div>
+    {% if variant.deliverable %}
+        <table align="right" class="buttons">
+            <tr>
+                {% if product.active_packing_unit %}
+                    <div class="product-quantity packing-unit"
+                        id="packing-url"
+                        data="{% url lfs_calculate_packing product.id %}">
+                        <input class="number product-quantity"
+                               name="quantity"
+                               size="3"
+                               type="text"
+                               value="1" /> {{ product.price_unit }}
+                    </div>
 
-                <div class="packing-result">
-                    {{ packing_result }}
-                </div>
+                    <div class="packing-result">
+                        {{ packing_result }}
+                    </div>
 
-            {% else %}
-                <div class="product-quantity">
-                    <input name="quantity"
-                           size="10"
-                           type="text"
-                           value="1" /> {{ product.unit }}
-                </div>
-            {% endif %}
-            <br clear="both">
+                {% else %}            
+                    <td>
+                        {% if product.unit %}
+                            {{ product.unit }}:
+                        {% else %}
+                            {% trans "Quantity" %}:
+                        {% endif %}
+                    </td>                    
+                    <td class="product-quantity">
+                        <input name="quantity"
+                               size="3"
+                               type="text"
+                               value="1" />
+                    </td>
+                {% endif %}
+                <td>
+                    <button class="emphasized"
+                           type="submit"
+                           name="add-to-cart">{% trans 'Add to cart' %}</button>                
+                </td>
+            </tr>
+        </table>
+    {% endif %}
+        
 
-            <button class="emphasized"
-                   type="submit"
-                   name="add-to-cart">{% trans 'Add to cart' %}</button>
-
-        {% endif %}
-    </div>
     <p class="product-description">
         {{ variant.get_description|safe}}
     </p>
 
-    <div class="variants">
-        {# Product with variants #}
+    {# Product with variants #}
 
-        {% ifequal product.sub_type "1" %}
+    {% if product.is_product_with_variants %}
+
+        <div class="variants">
             <h1 class="section">{% trans 'Variants' %}</h1>
 
+            {# List #}
             {% ifequal product.variants_display_type 0 %}
                 <table class="product-variants lfs-default"
                        data="{% url lfs_select_variant %}">
@@ -160,7 +192,7 @@
                         </th>
                         {% for property in properties %}
                             <th>
-                                {{ property.title }}
+                                {{ property.name}}
                             </th>
                         {% endfor %}
                         <th class="number">
@@ -193,13 +225,14 @@
                 </table>
             {% endifequal %}
 
+            {# Select field #}
             {% ifequal product.variants_display_type 1 %}
 
                 <div>
                     {% for property in properties %}
                         <div>
                             <div class="property-label">
-                                {{ property.title }}:
+                                {{ property.name }}:
                             </div>
                             <select class="property"
                                     name="property_{{ property.id }}">
@@ -212,18 +245,12 @@
                             </select>
                         </div>
                     {% endfor %}
-
-                    <noscript>
-                        <input type="submit"
-                               name="refresh-options"
-                               value="{% trans 'Refresh options' %}"/>
-                    </noscript>
                 </div>
-
             {% endifequal %}
-        {% endifequal %}
-    </div>
+        </div>
+    {% endif %}
 
+    {# Accessories #}
     {% if product_accessories %}
         <div class="accessories">
             <h1 class="section">{% trans 'Accessories' %}</h1>

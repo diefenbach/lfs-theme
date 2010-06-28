@@ -58,14 +58,7 @@
                         <span class="product-title">
                             {{ cart_item.product.get_name }}
                         </span>
-
                         {% for property in cart_item.product.get_displayed_properties %}
-                            <div>
-                                {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
-                            </div>
-                        {% endfor %}
-
-                        {% for property in cart_item.product.get_variant_properties %}
                             <div>
                                 {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
                             </div>
