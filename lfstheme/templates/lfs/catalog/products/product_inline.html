@@ -100,21 +100,21 @@
                                     <option value="{{ option.id }}"
                                         {% if option.selected %}selected="selected"{% endif %}>
                                         {{ option.name }}
-                                        
+
                                         {% if property.display_price %}
-                                         / {{ option.price|currency }}                                            
+                                         / {{ option.price|currency }}
                                         {% endif %}
                                     </option>
                                 {% endfor %}
                             </select>
                         </td>
                         <td></td>
-                    {% else %}                        
+                    {% else %}
                         <td class="property-label">
                             {{ property.title }}:
                         </td>
                         <td class="right">
-                            <input class="product-input-field" type="input" size="6" name="property-{{ property.id }}" />
+                            <input class="right product-input-field" type="input" size="6" name="property-{{ property.id }}" value = "{{ property.value }}" />
                         </td>
                         <td>
                             {{ property.unit }}
@@ -145,14 +145,14 @@
                         {{ packing_result }}
                     </div>
 
-                {% else %}            
+                {% else %}
                     <td>
                         {% if product.unit %}
                             {{ product.unit }}:
                         {% else %}
                             {% trans "Quantity" %}:
                         {% endif %}
-                    </td>                    
+                    </td>
                     <td class="product-quantity">
                         <input name="quantity"
                                size="3"
@@ -160,15 +160,15 @@
                                value="1" />
                     </td>
                 {% endif %}
-                <td>
+                <td nowrap="nowrap">
                     <button class="emphasized"
                            type="submit"
-                           name="add-to-cart">{% trans 'Add to cart' %}</button>                
+                           name="add-to-cart">{% trans 'Add to cart' %}</button>
                 </td>
             </tr>
         </table>
     {% endif %}
-        
+
 
     <p class="product-description">
         {{ variant.get_description|safe}}
