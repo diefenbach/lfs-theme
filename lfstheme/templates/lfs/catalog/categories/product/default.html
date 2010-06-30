@@ -47,22 +47,21 @@
                     onclick="window.location='{% url lfs.catalog.views.product_view product.slug %}'">
                     <div class="product-image">
                         <a href="{% url lfs.catalog.views.product_view product.slug %}">
-                            <img alt="{{ product.get_name }}"
-                                 src="{{ product.get_image.url_100x100 }}" />
+                            <img alt="{{ product.name }}"
+                                 src="{{ product.image.url_100x100 }}" />
                         </a>
                     </div>
                     <div>
-                        <div class="product-title">{{ product.get_name }}</div>
-                        <div class="product-description">{{ product.short_description|safe }}</div>
+                        <div class="product-title">{{ product.name }}</div>
+                        <div class="product-description">{{ product.obj.short_description|safe }}</div>
                     </div>
-
 
                     <div class="product-price">
                         {% if product.get_for_sale %}
-                           <span class="for-sale-standard-price">{{ product.get_standard_price|currency }}</span>
-                           <span class="for-sale-price">{{ product.get_for_sale_price|currency }}*</span>
+                           <span class="for-sale-standard-price">{{ product.standard_price|currency }}</span>
+                           <span class="for-sale-price">{{ product.for_sale_price|currency }}*</span>
                         {% else %}
-                            <span class="standard-price">{{ product.get_price|currency }}*</span>
+                            <span class="standard-price">{{ product.price|currency }}*</span>
                         {% endif %}
                         <div class="price-disclaimer">
                             {% trans '*inc. VAT' %}

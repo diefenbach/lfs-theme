@@ -20,7 +20,7 @@
         <!--[if IE]>
             <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}lfstheme/css/iefixes.css" />
         <![endif]-->
-		
+
         <script type="text/javascript" src="{{ MEDIA_URL }}lfs/jquery/jquery.pack.js"></script>
         <script type="text/javascript" src="{{ MEDIA_URL }}lfs/jquery/jquery.livequery.pack.js"></script>
         <script type="text/javascript" src="{{ MEDIA_URL }}lfs/jquery/jquery.form.pack.js"></script>
@@ -81,13 +81,13 @@
                             {% if not ANON_ONLY %}
                                 <a href="{% url lfs_login %}">{% trans 'Login' %}</a> |
                             {% endif %}
-							
+
                         {% endif %}
                         <label for="search">{% trans 'Search' %}:</label>
                         <form id="search-form"
                               action="{% url lfs_search %}"
                               autocomplete="off">
-                            <input id="search-input" type="text" name="phrase" autocomplete="off" data="{% url lfs_livesearch %}" />
+                            <input id="search-input" type="text" name="q" autocomplete="off" data="{% url lfs_livesearch %}" />
                             <input type="submit"
                                    value="{% trans 'Go!' %}" />
                         </form>
@@ -148,7 +148,13 @@
 
         <div id="footer">
             <div class="container">
-                {% block footer %}{% endblock %}
+                {% block footer %}
+                    {% actions Footer %}
+                    {% for action in actions %}
+                        <a href="{{ action.link }}">{{ action.title }}</a>
+                        {% if not forloop.last %}|{% endif %}
+                    {% endfor %}
+                {% endblock %}
             </div>
         </div>
 
@@ -158,7 +164,7 @@
                     <p>{% trans 'Powered by' %} <a target="_blank" href="http://www.getlfs.com">LFS</a> &mdash; Lightning Fast Shop</p>
                     <p>
                         <a target="_blank" href="http://www.getlfs.com">LFS</a> {% trans 'is a product of' %} <a target="_blank" href="http://www.iqpp.de">iqplusplus</a>
-                        &mdash; &copy; 2009 {% trans 'by' %} <a target="_blank" href="http://www.iqpp.de">iqplusplus</a> &mdash; {% trans 'All rights reserved' %}
+                        &mdash; &copy; 2009 &mdash; 2010 {% trans 'by' %} <a target="_blank" href="http://www.iqpp.de">iqplusplus</a> &mdash; {% trans 'All rights reserved' %}
                     </p>
                     <p>{% trans 'Distributed under the' %} <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">{% trans 'BSD-License' %}</a></p>
                 {% endblock %}
