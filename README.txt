@@ -6,6 +6,16 @@ This is the default theme for `LFS`_, an online shop based on Django.
 Changes
 =======
 
+0.5.0 beta 3 (2010-06-30)
+-------------------------
+
+* Bugfix filter portlet: display option name
+* Added new_user_mail_subject template
+* Display default value for configurable properties
+* Bugfix: correct display of property title
+* Bugfix: correct display of product unit
+* CSS fix: remove display:block from label
+
 0.5.0 beta 2 (2010-06-27)
 -------------------------
 
