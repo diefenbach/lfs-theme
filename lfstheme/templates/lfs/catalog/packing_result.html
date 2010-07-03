@@ -1,7 +1,7 @@
 {% load i18n %}
 {% load lfs_tags %}
 <div>
-   This complies to {{ packs }} {{ unit }} ({{ real_quantity|decimal_l10n }} 
+   {% trans "This complies to" %} {{ packs }} {{ unit }} ({{ real_quantity|decimal_l10n }}
    {% if product.unit %}{{ product.unit }}{% else %}{% trans "Pieces" %}{% endif %})
    {% trans "and costs" %} {{ price|currency }}.
 </div>
