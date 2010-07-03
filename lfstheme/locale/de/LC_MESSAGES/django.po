@@ -352,7 +352,7 @@ msgstr "Das entspricht"
 
 #: templates/lfs/catalog/packing_result.html:5
 msgid "Pieces"
-msgstr "Stücke"
+msgstr "Stück"
 
 #: templates/lfs/catalog/packing_result.html:6
 msgid "and costs"
