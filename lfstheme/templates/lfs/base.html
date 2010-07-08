@@ -87,6 +87,7 @@
                         <form id="search-form"
                               action="{% url lfs_search %}"
                               autocomplete="off">
+                            <input type="hidden" name="livesearch" value="1" />
                             <input id="search-input" type="text" name="q" autocomplete="off" data="{% url lfs_livesearch %}" />
                             <input type="submit"
                                    value="{% trans 'Go!' %}" />
@@ -118,30 +119,33 @@
                 {% slots_information %}
 
                 {% block wrapper %}
-                    {% if SlotLeft %}
-                        <div class="span-5">
-                            <div class="left-slot">
-                                {% block left-slot %}
-                                    {% lfs_portlet_slot 'Left' %}
-                                {% endblock %}
+                    {% block right-slot-wrapper %}
+                        {% if SlotLeft %}
+                            <div class="span-5">
+                                <div class="left-slot">
+                                    {% block left-slot %}
+                                        {% lfs_portlet_slot 'Left' %}
+                                    {% endblock %}
+                                </div>
                             </div>
-                        </div>
-                    {% endif %}
+                        {% endif %}
+                    {% endblock %}
                     <div class="{{ content_class }}">
                         <div class="middle-slot">
                             {% block content %}{% endblock %}
                         </div>
                     </div>
-                    {% if SlotRight %}
-                        <div class="span-4 last">
-                            <div class="right-slot">
-                                {% block right-slot %}
-                                    {% lfs_portlet_slot 'Right' %}
-                                {% endblock %}
+                    {% block right-slot-wrapper %}
+                        {% if SlotRight %}
+                            <div class="span-4 last">
+                                <div class="right-slot">
+                                    {% block right-slot %}
+                                        {% lfs_portlet_slot 'Right' %}
+                                    {% endblock %}
+                                </div>
                             </div>
-                        </div>
-                    {% endif %}
-
+                        {% endif %}
+                    {% endblock %}
                 {% endblock %}
             </div>
         </div>

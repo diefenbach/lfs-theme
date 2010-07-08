@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LFS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-25 09:33+0200\n"
+"POT-Creation-Date: 2010-07-03 02:09-0500\n"
 "PO-Revision-Date: 2009-02-22 07:20+0100\n"
 "Last-Translator: Kai Diefenbach <kai.diefenbach@iqpp.de>\n"
 "Language-Team: Kai Diefenbach <kai.diefenbach@iqpp.de>\n"
@@ -28,40 +28,48 @@ msgstr "Die Seite die Sie angefordert haben existiert leider nicht."
 msgid "An error has occured. Please try again in a minute."
 msgstr "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal."
 
-#: templates/contact_form/contact_form.html:5
-#: templates/contact_form/contact_form.html:12
-#: templates/contact_form/contact_form_sent.html:4
-#: templates/contact_form/contact_form_sent.html:10
+#: templates/contact_form/contact_form.html:6
+#: templates/contact_form/contact_form.html:17
+#: templates/contact_form/contact_form_sent.html:5
+#: templates/contact_form/contact_form_sent.html:13
 msgid "Contact form"
 msgstr "Kontaktform"
 
-#: templates/contact_form/contact_form.html:14
+#: templates/contact_form/contact_form.html:12
+msgid "Contact"
+msgstr "Kontakt"
+
+#: templates/contact_form/contact_form.html:19
 msgid "Please leave us a message. We will answer as soon as possible."
 msgstr "Bitte senden Sie uns eine Nachricht. Wir werden in Kürze antworten."
 
-#: templates/contact_form/contact_form.html:21
+#: templates/contact_form/contact_form.html:26
 #: templates/reviews/review_preview.html:15
 msgid "Your name"
 msgstr "Ihr Name"
 
-#: templates/contact_form/contact_form.html:37
+#: templates/contact_form/contact_form.html:42
 msgid "Your e-mail"
 msgstr "Ihre E-Mail"
 
-#: templates/contact_form/contact_form.html:53
+#: templates/contact_form/contact_form.html:58
 msgid "Your message"
 msgstr "Ihre Nachricht"
 
-#: templates/contact_form/contact_form.html:72
+#: templates/contact_form/contact_form.html:77
 #: templates/reviews/review_form.html:114
 msgid "Send"
 msgstr "Absenden"
 
-#: templates/contact_form/contact_form_sent.html:12
+#: templates/contact_form/contact_form_sent.html:9
+msgid "Contact thank you"
+msgstr "Kontakt - Danke!"
+
+#: templates/contact_form/contact_form_sent.html:15
 msgid "Thank you for your message. We will get back to you soon."
 msgstr "Danke für Ihre Nachricht. Wir melden uns in Kürze."
 
-#: templates/contact_form/contact_form_sent.html:17
+#: templates/contact_form/contact_form_sent.html:20
 #: templates/lfs/cart/added_to_cart.html:81
 #: templates/lfs/cart/cart_inline.html:276
 #: templates/lfs/cart/cart_inline.html:289
@@ -99,27 +107,27 @@ msgstr "Suche"
 msgid "Go!"
 msgstr "Los!"
 
-#: templates/lfs/base.html:158
+#: templates/lfs/base.html:164
 msgid "Powered by"
 msgstr "Powered by"
 
-#: templates/lfs/base.html:160
+#: templates/lfs/base.html:166
 msgid "is a product of"
 msgstr "ist ein Produkt von"
 
-#: templates/lfs/base.html:161
+#: templates/lfs/base.html:167
 msgid "by"
 msgstr "bei"
 
-#: templates/lfs/base.html:161
+#: templates/lfs/base.html:167
 msgid "All rights reserved"
 msgstr "Alle Rechte vorbehalten"
 
-#: templates/lfs/base.html:163
+#: templates/lfs/base.html:169
 msgid "Distributed under the"
 msgstr "Veröffentlicht unter der"
 
-#: templates/lfs/base.html:163
+#: templates/lfs/base.html:169
 msgid "BSD-License"
 msgstr "BSD-Lizenz"
 
@@ -333,14 +341,18 @@ msgstr "Filter"
 msgid "Up to"
 msgstr "Bis"
 
-#: templates/lfs/catalog/filter_navigation.html:102
+#: templates/lfs/catalog/filter_navigation.html:79
 #: templates/lfs/portlets/filter.html:106
 msgid "Reset all filters"
 msgstr "Filter zurücksetzen"
 
+#: templates/lfs/catalog/packing_result.html:4
+msgid "This complies to"
+msgstr "Das entspricht"
+
 #: templates/lfs/catalog/packing_result.html:5
 msgid "Pieces"
-msgstr "Stücke"
+msgstr "Stück"
 
 #: templates/lfs/catalog/packing_result.html:6
 msgid "and costs"
@@ -392,8 +404,8 @@ msgstr "Name absteigend"
 msgid "Sorting"
 msgstr "Sortierung"
 
-#: templates/lfs/catalog/categories/category/default.html:26
-#: templates/lfs/catalog/categories/product/default.html:73
+#: templates/lfs/catalog/categories/category/default.html:28
+#: templates/lfs/catalog/categories/product/default.html:72
 #: templates/lfs/search/search_results.html:93
 msgid "Details"
 msgstr "Details"
@@ -416,7 +428,7 @@ msgstr "Produkte"
 msgid "Next page"
 msgstr "Nächste Seite"
 
-#: templates/lfs/catalog/categories/product/default.html:68
+#: templates/lfs/catalog/categories/product/default.html:67
 #: templates/lfs/catalog/products/product_inline.html:66
 #: templates/lfs/catalog/products/product_inline.html:74
 #: templates/lfs/catalog/products/product_inline_topdescription.html:49
@@ -1073,7 +1085,7 @@ msgstr "Zugehörige Produkte auf Basis von Tags"
 msgid "Products with same Tags"
 msgstr "Produkte mit gleichen Tags"
 
-#: templatetags/lfs_theme_tags.py:43
+#: templatetags/lfs_theme_tags.py:61
 #, python-format
 msgid "%s tag needs no argument"
 msgstr ""
