@@ -6,6 +6,13 @@ This is the default theme for `LFS`_, an online shop based on Django.
 Changes
 =======
 
+0.5.0 beta 4 (2010-07-30)
+-------------------------
+
+* Bugfixed right-slot-wrapper
+* Bugfix order_received_mail.html: display property price only if display_price is true
+* Added french translations (Jacques Seite)
+
 0.5.0 beta 3 (2010-06-30)
 -------------------------
 
