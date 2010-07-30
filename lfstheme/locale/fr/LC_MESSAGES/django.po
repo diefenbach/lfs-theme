@@ -1,0 +1,1084 @@
+# LFS Theme French Translations
+# Copyright (C) 2010 Jacques Seite
+# This file is distributed under the same license as the LFS package.
+# Jacques Seite <jacques.seite@gmail.com>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: LFS\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-06-25 09:33+0200\n"
+"PO-Revision-Date: 2010-07-25 20:44+0100\n"
+"Last-Translator: Jacques SEITE <jacques.seite@noveltys.fr>\n"
+"Language-Team: Kai Diefenbach <kai.diefenbach@iqpp.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language-code: fr\n"
+"Language-name: French\n"
+"Preferred-encodings: utf-8 latin1\n"
+"X-Is-Fallback-For: fr-be fr-ca fr-lu fr-mc fr-ch fr-fr\n"
+
+#: templates/404.html:9
+#: templates/500.html:4
+msgid "We are sorry!"
+msgstr "Nous sommes désolés !"
+
+#: templates/404.html:12
+msgid "The page you have requested could not be found."
+msgstr "La page demandée n'existe pas."
+
+#: templates/500.html:7
+msgid "An error has occured. Please try again in a minute."
+msgstr "Une erreur s'est produite. Veuillez s'il vous plaît réessayer plus tard."
+
+#: templates/contact_form/contact_form.html:5
+#: templates/contact_form/contact_form.html:12
+#: templates/contact_form/contact_form_sent.html:4
+#: templates/contact_form/contact_form_sent.html:10
+msgid "Contact form"
+msgstr "Formulaire de contact"
+
+#: templates/contact_form/contact_form.html:14
+msgid "Please leave us a message. We will answer as soon as possible."
+msgstr "Veuillez nous laisser un message. Nous vous contacterons le plus tôt possible."
+
+#: templates/contact_form/contact_form.html:21
+#: templates/reviews/review_preview.html:15
+msgid "Your name"
+msgstr "Votre nom"
+
+#: templates/contact_form/contact_form.html:37
+msgid "Your e-mail"
+msgstr "Votre e-mail"
+
+#: templates/contact_form/contact_form.html:53
+msgid "Your message"
+msgstr "Votre message"
+
+#: templates/contact_form/contact_form.html:72
+#: templates/reviews/review_form.html:114
+msgid "Send"
+msgstr "Envoyer"
+
+#: templates/contact_form/contact_form_sent.html:12
+msgid "Thank you for your message. We will get back to you soon."
+msgstr "Merci pour votre message. Nous reviendrons prochainement vers vous."
+
+#: templates/contact_form/contact_form_sent.html:17
+#: templates/lfs/cart/added_to_cart.html:81
+#: templates/lfs/cart/cart_inline.html:276
+#: templates/lfs/cart/cart_inline.html:289
+#: templates/lfs/checkout/empty_page_checkout.html:21
+msgid "Go on shopping"
+msgstr "Continuer vos achats"
+
+#: templates/lfs/base.html:64
+#: templates/lfs/base.html.py:67
+#: templates/lfs/base.html:70
+#: templates/lfs/base.html.py:73
+msgid "Manage"
+msgstr "Gestion"
+
+#: templates/lfs/base.html:78
+msgid "Logout"
+msgstr "Quitter"
+
+#: templates/lfs/base.html:79
+#: templates/lfs/customer/base.html:8
+msgid "My account"
+msgstr "Mon compte"
+
+#: templates/lfs/base.html:82
+#: templates/lfs/checkout/login.html:6
+#: templates/lfs/checkout/login.html:12
+#: templates/lfs/checkout/login.html:21
+#: templates/lfs/checkout/login.html:53
+#: templates/lfs/customer/login.html:6
+#: templates/lfs/customer/login.html:12
+#: templates/lfs/customer/login.html:21
+#: templates/lfs/customer/login.html:52
+msgid "Login"
+msgstr "Login"
+
+#: templates/lfs/base.html:86
+#: templates/lfs/search/search_results.html:18
+msgid "Search"
+msgstr "Rechercher"
+
+#: templates/lfs/base.html:92
+#: templates/lfs/catalog/sorting.html:17
+#: templates/lfs/search/search_results.html:26
+msgid "Go!"
+msgstr "Go!"
+
+#: templates/lfs/base.html:158
+msgid "Powered by"
+msgstr "Powered by"
+
+#: templates/lfs/base.html:160
+msgid "is a product of"
+msgstr "est un produit de"
+
+#: templates/lfs/base.html:161
+msgid "by"
+msgstr "par"
+
+#: templates/lfs/base.html:161
+msgid "All rights reserved"
+msgstr "Tous droits réservés"
+
+#: templates/lfs/base.html:163
+msgid "Distributed under the"
+msgstr "Distribué sous"
+
+#: templates/lfs/base.html:163
+msgid "BSD-License"
+msgstr "BSD-License"
+
+#: templates/lfs/cart/added_to_cart.html:10
+msgid "Added to cart"
+msgstr "Ajouter au panier"
+
+#: templates/lfs/cart/added_to_cart.html:15
+msgid "This products have been added to cart"
+msgstr "Ces produits ont bien été ajoutés à votre panier."
+
+#: templates/lfs/cart/added_to_cart.html:17
+msgid "This product has been added to cart"
+msgstr "Ce produit a bien été ajouté à votre panier."
+
+#: templates/lfs/cart/added_to_cart.html:25
+#: templates/lfs/catalog/products/product_inline.html:256
+#: templates/lfs/catalog/products/product_inline_topdescription.html:152
+#: templates/lfs/catalog/products/product_inline_topprice.html:152
+msgid "Accessories"
+msgstr "Accessoires"
+
+#: templates/lfs/cart/added_to_cart.html:29
+#: templates/lfs/catalog/products/product_inline.html:191
+#: templates/lfs/catalog/products/product_inline.html:260
+#: templates/lfs/catalog/products/product_inline_topdescription.html:82
+#: templates/lfs/catalog/products/product_inline_topdescription.html:156
+#: templates/lfs/catalog/products/product_inline_topprice.html:82
+#: templates/lfs/catalog/products/product_inline_topprice.html:156
+#: templates/lfs/mail/order_received_mail.html:197
+#: templates/lfs/mail/order_sent_mail.html:198
+#: templates/lfs/mail/review_added_mail.html:19
+#: templates/lfs/order/lfs_order_tmpl.html:159
+msgid "Name"
+msgstr "Nom"
+
+#: templates/lfs/cart/added_to_cart.html:32
+#: templates/lfs/cart/added_to_cart_items.html:9
+#: templates/lfs/catalog/products/product_inline.html:153
+#: templates/lfs/catalog/products/product_inline.html:261
+#: templates/lfs/catalog/products/product_inline_topdescription.html:157
+#: templates/lfs/catalog/products/product_inline_topprice.html:157
+msgid "Quantity"
+msgstr "Quantité"
+
+#: templates/lfs/cart/added_to_cart.html:35
+#: templates/lfs/cart/added_to_cart_items.html:12
+#: templates/lfs/cart/cart_inline.html:39
+#: templates/lfs/catalog/filter_navigation.html:54
+#: templates/lfs/catalog/products/product_inline.html:199
+#: templates/lfs/catalog/products/product_inline.html:262
+#: templates/lfs/catalog/products/product_inline_topdescription.html:90
+#: templates/lfs/catalog/products/product_inline_topdescription.html:158
+#: templates/lfs/catalog/products/product_inline_topprice.html:90
+#: templates/lfs/catalog/products/product_inline_topprice.html:158
+#: templates/lfs/checkout/checkout_cart_inline.html:30
+#: templates/lfs/customer/orders.html:31
+#: templates/lfs/mail/order_received_mail.html:203
+#: templates/lfs/mail/order_sent_mail.html:204
+#: templates/lfs/order/lfs_order_tmpl.html:165
+#: templates/lfs/portlets/filter.html:59
+#: templates/lfs/search/search_results.html:50
+#: templates/tagging/product_list.html:16
+msgid "Price"
+msgstr "Prix"
+
+#: templates/lfs/cart/added_to_cart.html:38
+#: templates/lfs/cart/added_to_cart_items.html:18
+#: templates/lfs/cart/added_to_cart_items.html:74
+#: templates/lfs/cart/cart_inline.html:45
+#: templates/lfs/cart/cart_inline.html:238
+#: templates/lfs/catalog/products/product_inline.html:263
+#: templates/lfs/catalog/products/product_inline_topdescription.html:159
+#: templates/lfs/catalog/products/product_inline_topprice.html:159
+#: templates/lfs/checkout/checkout_cart_inline.html:36
+#: templates/lfs/checkout/checkout_cart_inline.html:175
+#: templates/lfs/mail/order_received_mail.html:80
+#: templates/lfs/mail/order_received_mail.html:206
+#: templates/lfs/mail/order_sent_mail.html:81
+#: templates/lfs/mail/order_sent_mail.html:207
+#: templates/lfs/order/lfs_order_tmpl.html:55
+#: templates/lfs/order/lfs_order_tmpl.html:168
+msgid "Total"
+msgstr "Total"
+
+#: templates/lfs/cart/added_to_cart.html:62
+msgid "Add"
+msgstr "Ajouter"
+
+#: templates/lfs/cart/added_to_cart.html:73
+#: templates/lfs/cart/cart_inline.html:272
+#: templates/lfs/checkout/empty_page_checkout.html:6
+#: templates/lfs/checkout/empty_page_checkout.html:12
+#: templates/lfs/checkout/login.html:91
+#: templates/lfs/checkout/login.html:101
+#: templates/lfs/checkout/one_page_checkout.html:5
+#: templates/lfs/checkout/one_page_checkout.html:11
+msgid "Checkout"
+msgstr "Régler mes achats"
+
+#: templates/lfs/cart/added_to_cart.html:77
+#: templates/lfs/checkout/one_page_checkout.html:482
+#: templates/lfs/portlets/cart.html:10
+#: templates/lfs/portlets/cart.html:35
+msgid "Go to cart"
+msgstr "Voir le panier"
+
+#: templates/lfs/cart/added_to_cart_items.html:6
+#: templates/lfs/cart/cart_inline.html:33
+#: templates/lfs/checkout/checkout_cart_inline.html:24
+#: templates/lfs/mail/review_added_mail.html:14
+#: templates/lfs/search/search_results.html:47
+#: templates/tagging/product_list.html:14
+msgid "Product"
+msgstr "Produit"
+
+#: templates/lfs/cart/added_to_cart_items.html:15
+#: templates/lfs/cart/cart_inline.html:42
+#: templates/lfs/checkout/checkout_cart_inline.html:33
+msgid "Included VAT"
+msgstr "TVA Incluse"
+
+#: templates/lfs/cart/cart.html:6
+#: templates/lfs/cart/cart.html.py:12
+#: templates/lfs/portlets/cart.html:12
+#: templates/lfs/portlets/cart.html:16
+msgid "Cart"
+msgstr "Panier"
+
+#: templates/lfs/cart/cart_inline.html:7
+#: templates/lfs/cart/cart_inline.html:146
+#: templates/lfs/checkout/checkout_cart_inline.html:121
+#: templates/lfs/mail/order_received_mail.html:252
+#: templates/lfs/mail/order_sent_mail.html:253
+msgid "Voucher"
+msgstr "Coupon"
+
+#: templates/lfs/cart/cart_inline.html:23
+msgid "Your Cart"
+msgstr "Votre panier"
+
+#: templates/lfs/cart/cart_inline.html:36
+#: templates/lfs/checkout/checkout_cart_inline.html:27
+#: templates/lfs/mail/order_received_mail.html:200
+#: templates/lfs/mail/order_sent_mail.html:201
+#: templates/lfs/order/lfs_order_tmpl.html:162
+msgid "Amount"
+msgstr "Montant"
+
+#: templates/lfs/cart/cart_inline.html:113
+msgid "Delete item"
+msgstr "Effacer le produit"
+
+#: templates/lfs/cart/cart_inline.html:168
+msgid "Country"
+msgstr "Pays"
+
+#: templates/lfs/cart/cart_inline.html:187
+#: templates/lfs/checkout/checkout_cart_inline.html:141
+#: templates/lfs/checkout/one_page_checkout.html:279
+#: templates/lfs/mail/order_received_mail.html:269
+#: templates/lfs/mail/order_sent_mail.html:270
+#: templates/lfs/order/lfs_order_tmpl.html:207
+#: templates/lfs/shipping/shipping_portlet.html:6
+msgid "Shipping"
+msgstr "Livraison"
+
+#: templates/lfs/cart/cart_inline.html:212
+#: templates/lfs/checkout/checkout_cart_inline.html:158
+#: templates/lfs/checkout/payment_inline.html:3
+#: templates/lfs/mail/order_received_mail.html:284
+#: templates/lfs/mail/order_sent_mail.html:285
+#: templates/lfs/order/lfs_order_tmpl.html:222
+msgid "Payment"
+msgstr "Paiement"
+
+#: templates/lfs/cart/cart_inline.html:251
+#: templates/lfs/checkout/checkout_cart_inline.html:182
+#: templates/lfs/mail/order_received_mail.html:305
+#: templates/lfs/mail/order_sent_mail.html:306
+#: templates/lfs/order/lfs_order_tmpl.html:243
+msgid "Inclusive VAT"
+msgstr "TTC"
+
+#: templates/lfs/cart/cart_inline.html:264
+msgid "Total delivery time"
+msgstr "Délai de livraison total"
+
+#: templates/lfs/cart/cart_inline.html:285
+msgid "Your Cart is empty"
+msgstr "Votre panier est vide"
+
+#: templates/lfs/catalog/breadcrumbs.html:3
+#: templates/lfs/shop/shop_base.html:9
+#: templates/registration/password_reset_done.html:10
+#: templates/registration/password_reset_form.html:11
+msgid "You are here:"
+msgstr "Vous êtes ici:"
+
+#: templates/lfs/catalog/breadcrumbs.html:6
+#: templates/lfs/shop/menu.html:3
+#: templates/lfs/shop/shop_base.html:11
+#: templates/lfs/shop/tabs.html:7
+#: templates/registration/password_reset_done.html:13
+#: templates/registration/password_reset_form.html:14
+msgid "Home"
+msgstr "Accueil"
+
+#: templates/lfs/catalog/filter_navigation.html:6
+#: templates/lfs/customer/orders.html:21
+msgid "Filter"
+msgstr "Filtrer"
+
+#: templates/lfs/catalog/filter_navigation.html:64
+#: templates/lfs/catalog/filter_navigation.html:69
+#: templates/lfs/portlets/filter.html:69
+#: templates/lfs/portlets/filter.html:74
+msgid "Up to"
+msgstr "Jusqu'à"
+
+#: templates/lfs/catalog/filter_navigation.html:102
+#: templates/lfs/portlets/filter.html:106
+msgid "Reset all filters"
+msgstr "Réinitialiser tous les filtres"
+
+#: templates/lfs/catalog/packing_result.html:5
+msgid "Pieces"
+msgstr "Pièces"
+
+#: templates/lfs/catalog/packing_result.html:6
+msgid "and costs"
+msgstr "et coûtes"
+
+#: templates/lfs/catalog/product_base.html:37
+msgid "Back to overview"
+msgstr "Retour à la vue d'ensemble"
+
+#: templates/lfs/catalog/product_base.html:52
+msgid "Tags"
+msgstr "Tags"
+
+#: templates/lfs/catalog/product_base.html:63
+msgid "Tag cloud"
+msgstr "Tag Cloud"
+
+#: templates/lfs/catalog/product_navigation.html:5
+#: templates/lfs/catalog/product_navigation.html:7
+msgid "Previous product"
+msgstr "Produit précédent"
+
+#: templates/lfs/catalog/product_navigation.html:9
+msgid "of"
+msgstr "de"
+
+#: templates/lfs/catalog/product_navigation.html:11
+#: templates/lfs/catalog/product_navigation.html:13
+msgid "Next product"
+msgstr "Produit suivant"
+
+#: templates/lfs/catalog/sorting.html:8
+msgid "Price ascending"
+msgstr "Prix croissants"
+
+#: templates/lfs/catalog/sorting.html:10
+msgid "Price descending"
+msgstr "Prix décroissants"
+
+#: templates/lfs/catalog/sorting.html:12
+msgid "Name ascending"
+msgstr "Ordre alphabétique croissant"
+
+#: templates/lfs/catalog/sorting.html:14
+msgid "Name descending"
+msgstr "Ordre alphabétique décroissant "
+
+#: templates/lfs/catalog/sorting_portlet.html:7
+msgid "Sorting"
+msgstr "Trier"
+
+#: templates/lfs/catalog/categories/category/default.html:26
+#: templates/lfs/catalog/categories/product/default.html:73
+#: templates/lfs/search/search_results.html:93
+msgid "Details"
+msgstr "Détails"
+
+#: templates/lfs/catalog/categories/product/default.html:6
+#: templates/lfs/catalog/categories/product/default.html:8
+#: templates/pagination/pagination.html:5
+#: templates/pagination/pagination.html:7
+msgid "Previous page"
+msgstr "Page précédente"
+
+#: templates/lfs/catalog/categories/product/default.html:22
+msgid "Products"
+msgstr "Produits"
+
+#: templates/lfs/catalog/categories/product/default.html:29
+#: templates/lfs/catalog/categories/product/default.html:31
+#: templates/pagination/pagination.html:21
+#: templates/pagination/pagination.html:23
+msgid "Next page"
+msgstr "Page suivante"
+
+#: templates/lfs/catalog/categories/product/default.html:68
+#: templates/lfs/catalog/products/product_inline.html:66
+#: templates/lfs/catalog/products/product_inline.html:74
+#: templates/lfs/catalog/products/product_inline_topdescription.html:49
+#: templates/lfs/catalog/products/product_inline_topdescription.html:57
+#: templates/lfs/catalog/products/product_inline_topprice.html:17
+#: templates/lfs/catalog/products/product_inline_topprice.html:25
+#: templates/lfs/search/search_results.html:85
+msgid "*inc. VAT"
+msgstr "*TTC"
+
+#: templates/lfs/catalog/products/product_inline.html:166
+#: templates/lfs/catalog/products/product_inline_topdescription.html:67
+#: templates/lfs/catalog/products/product_inline_topprice.html:65
+msgid "Add to cart"
+msgstr "Ajouter au panier"
+
+#: templates/lfs/catalog/products/product_inline.html:182
+#: templates/lfs/catalog/products/product_inline_topdescription.html:74
+#: templates/lfs/catalog/products/product_inline_topprice.html:74
+msgid "Variants"
+msgstr "Variantes"
+
+#: templates/lfs/catalog/products/product_inline_topdescription.html:142
+#: templates/lfs/catalog/products/product_inline_topprice.html:142
+msgid "Refresh options"
+msgstr "Rafraichir les options"
+
+#: templates/lfs/checkout/checkout_cart_inline.html:5
+msgid "Voucher code"
+msgstr "Code du coupon"
+
+#: templates/lfs/checkout/checkout_cart_inline.html:20
+msgid "Your cart"
+msgstr "Votre panier"
+
+#: templates/lfs/checkout/empty_page_checkout.html:17
+msgid "There is nothing to checkout"
+msgstr "Vous n'avez rien à régler."
+
+#: templates/lfs/checkout/login.html:17
+#: templates/lfs/customer/login.html:17
+msgid "Please select!"
+msgstr "Veuillez choisir"
+
+#: templates/lfs/checkout/login.html:24
+msgid "If you are already customer you can login. Your adress data will then already known."
+msgstr "Si vous êtes déjà client vous pouvez vous connecter et accéder aux informations de votre compte."
+
+#: templates/lfs/checkout/login.html:37
+#: templates/lfs/customer/login.html:37
+msgid "Forgot password?"
+msgstr "Mot de passe oublié ?"
+
+#: templates/lfs/checkout/login.html:60
+#: templates/lfs/checkout/login.html:83
+#: templates/lfs/customer/login.html:59
+#: templates/lfs/customer/login.html:81
+msgid "Register"
+msgstr "S'enregistrer"
+
+#: templates/lfs/checkout/login.html:63
+#: templates/lfs/customer/login.html:62
+msgid "If you are not already a customer you can register in order to store your address data and to follow the state of your orders."
+msgstr "Si vous n'êtes pas encore client vous pouvez vous inscrire afin d'enregistrer votre adresse et suivre l'état de vos commandes."
+
+#: templates/lfs/checkout/login.html:94
+msgid "You can also checkout without login or registration."
+msgstr "Vous pouvez également régler vos achats sans vous connecter ni vous enregistrer."
+
+#: templates/lfs/checkout/one_page_checkout.html:32
+#: templates/lfs/mail/order_received_mail.html:94
+#: templates/lfs/mail/order_sent_mail.html:95
+#: templates/lfs/order/lfs_order_tmpl.html:66
+msgid "Invoice address"
+msgstr "Adresse de facturation"
+
+#: templates/lfs/checkout/one_page_checkout.html:35
+#: templates/lfs/mail/order_received_mail.html:91
+#: templates/lfs/mail/order_sent_mail.html:92
+#: templates/lfs/order/lfs_order_tmpl.html:69
+msgid "Shipping address"
+msgstr "Adresse de livraison"
+
+#: templates/lfs/checkout/one_page_checkout.html:296
+msgid "Please enter your credit card information"
+msgstr "Veuillez saisir les informations de votre carte de crédit"
+
+#: templates/lfs/checkout/one_page_checkout.html:306
+#: templates/lfs/checkout/one_page_checkout.html:388
+msgid "Only necessary when the payment method is direct debit"
+msgstr "Nécessaire uniquement si le prélévement automatique est sélectionné."
+
+#: templates/lfs/checkout/one_page_checkout.html:357
+msgid "Expiration date"
+msgstr "Date d'expiration"
+
+#: templates/lfs/checkout/one_page_checkout.html:385
+msgid "Please enter your bank information"
+msgstr "Veuillez compléter vos informations bancaires."
+
+#: templates/lfs/checkout/one_page_checkout.html:473
+msgid "Please confirm our terms and conditions"
+msgstr "Veuillez confirmer nos termes et conditions"
+
+#: templates/lfs/checkout/one_page_checkout.html:479
+msgid "Submit order"
+msgstr "Envoyer la commande"
+
+#: templates/lfs/checkout/thank_you_page.html:5
+#: templates/lfs/checkout/thank_you_page.html:11
+#: templates/lfs/checkout/thank_you_page.html:15
+msgid "Thank you!"
+msgstr "Merci"
+
+#: templates/lfs/checkout/thank_you_page.html:17
+msgid "Soon you will get an order confirmation via E-Mail."
+msgstr "Vous recevrez sous peu un e-mail de confirmation de votre commande."
+
+#: templates/lfs/checkout/thank_you_page.html:21
+msgid "Please use the following link if you want to pay now"
+msgstr "Veuillez utiliser le lien suivant si vous voulez régler vos achats maintenant"
+
+#: templates/lfs/checkout/thank_you_page.html:25
+msgid "Pay"
+msgstr "Régler"
+
+#: templates/lfs/checkout/thank_you_page.html:28
+msgid "You will find the same link on your order confirmation"
+msgstr "Vous trouverez le même lien sur le mail de confirmation de votre commande."
+
+#: templates/lfs/customer/account.html:8
+msgid "Your Account"
+msgstr "Votre compte"
+
+#: templates/lfs/customer/addresses.html:6
+msgid "Change your addresses"
+msgstr "Changer vos adresses"
+
+#: templates/lfs/customer/addresses.html:11
+msgid "Your addresses"
+msgstr "Vos adresses"
+
+#: templates/lfs/customer/addresses.html:13
+msgid "Your address"
+msgstr "Votre adresse"
+
+#: templates/lfs/customer/addresses.html:22
+#: templates/lfs/customer/data.html:36
+msgid "Invoice Address"
+msgstr "Adresse de facturation"
+
+#: templates/lfs/customer/addresses.html:25
+#: templates/lfs/customer/data.html:39
+msgid "Shipping Address"
+msgstr "Adresse de livraison"
+
+#: templates/lfs/customer/addresses.html:48
+#: templates/lfs/customer/data.html:65
+msgid "Save addresses"
+msgstr "Enregistrer les adresses"
+
+#: templates/lfs/customer/addresses.html:52
+#: templates/lfs/customer/data.html:69
+msgid "Save address"
+msgstr "Enregistrer l'adresse"
+
+#: templates/lfs/customer/base.html:11
+#: templates/lfs/customer/order.html:7
+msgid "Overview"
+msgstr "Vue d'ensemble"
+
+#: templates/lfs/customer/base.html:16
+#: templates/lfs/customer/orders.html:6
+#: templates/lfs/customer/orders.html:10
+msgid "Your orders"
+msgstr "Vos commandes"
+
+#: templates/lfs/customer/base.html:21
+#: templates/lfs/customer/password.html:52
+msgid "Change password"
+msgstr "Changer de mot de passe"
+
+#: templates/lfs/customer/base.html:24
+msgid "Change e-mail"
+msgstr "Changer d'e-mail"
+
+#: templates/lfs/customer/base.html:27
+msgid "Change addresses"
+msgstr "Changer les adresses"
+
+#: templates/lfs/customer/data.html:6
+msgid "Your Data"
+msgstr "Vos informations"
+
+#: templates/lfs/customer/data.html:8
+#: templates/lfs/mail/review_added_mail.html:28
+msgid "E-Mail"
+msgstr "E-Mail"
+
+#: templates/lfs/customer/data.html:21
+#: templates/lfs/customer/email.html:25
+msgid "Save e-mail address"
+msgstr "Enregistrer l'adresse e-mail"
+
+#: templates/lfs/customer/data.html:25
+msgid "Addresses"
+msgstr "Adresses"
+
+#: templates/lfs/customer/data.html:27
+msgid "Address"
+msgstr "Adresse"
+
+#: templates/lfs/customer/data.html:75
+msgid "Bank account"
+msgstr "Compte bancaire"
+
+#: templates/lfs/customer/data.html:87
+msgid "Save bank account"
+msgstr "Enregistrer le compte bancaire"
+
+#: templates/lfs/customer/email.html:6
+#: templates/lfs/customer/email.html:10
+msgid "Change your e-mail address"
+msgstr "Changer votre adresse e-mail"
+
+#: templates/lfs/customer/login.html:24
+msgid "If you are already customer you can login. Your address data will be stored in your account."
+msgstr "Si vous êtes déjà client, vous pouvez vous connecter et accéder aux informations de votre compte."
+
+#: templates/lfs/customer/order.html:10
+msgid "Ordernumber:"
+msgstr "Numéro de commande"
+
+#: templates/lfs/customer/orders.html:17
+msgid "Recent orders"
+msgstr "Commandes récentes"
+
+#: templates/lfs/customer/orders.html:18
+msgid "2009"
+msgstr "2009"
+
+#: templates/lfs/customer/orders.html:28
+#: templates/lfs/mail/order_received_mail.html:52
+#: templates/lfs/mail/order_sent_mail.html:53
+#: templates/lfs/order/lfs_order_tmpl.html:25
+msgid "Date"
+msgstr "Date"
+
+#: templates/lfs/customer/orders.html:34
+#: templates/lfs/mail/order_received_mail.html:66
+#: templates/lfs/mail/order_sent_mail.html:67
+#: templates/lfs/order/lfs_order_tmpl.html:41
+msgid "State"
+msgstr "Statut"
+
+#: templates/lfs/customer/orders.html:41
+#: templates/lfs/mail/order_received_mail.html:55
+#: templates/lfs/mail/order_sent_mail.html:56
+#: templates/lfs/order/lfs_order_tmpl.html:28
+#, fuzzy
+msgid "DATETIME_FORMAT"
+msgstr ""
+
+#: templates/lfs/customer/orders.html:56
+msgid "You haven't any orders yet."
+msgstr "Vous n'avez pas encore de commande."
+
+#: templates/lfs/customer/password.html:5
+#: templates/lfs/customer/password.html:8
+#: templates/lfs/customer/password.html:13
+msgid "Password change"
+msgstr "Changer votre mot de passe"
+
+#: templates/lfs/customer/password.html:16
+msgid "Please enter your old password, for security's sake, and then enter your new password twice so we can verify you typed it in correctly."
+msgstr "Pour des raisons de sécurité, veuillez d'abord saisir votre ancien mot de passe puis deux fois le nouveau."
+
+#: templates/lfs/customer/password.html:24
+msgid "Old password:"
+msgstr "Ancien mot de passe:"
+
+#: templates/lfs/customer/password.html:33
+#: templates/registration/password_reset_confirm.html:16
+msgid "New password:"
+msgstr "Nouveau mot de passe:"
+
+#: templates/lfs/customer/password.html:42
+#: templates/registration/password_reset_confirm.html:18
+msgid "Confirm password:"
+msgstr "Confirmer le mot de passe:"
+
+#: templates/lfs/mail/new_user_mail.html:7
+msgid "Welcome to"
+msgstr "Bienvenue chez"
+
+#: templates/lfs/mail/order_received_mail.html:41
+#: templates/lfs/mail/order_sent_mail.html:42
+#: templates/lfs/order/lfs_order_tmpl.html:14
+msgid "General"
+msgstr "Général"
+
+#: templates/lfs/mail/order_received_mail.html:46
+#: templates/lfs/mail/order_sent_mail.html:47
+#: templates/lfs/order/lfs_order_tmpl.html:19
+msgid "Customer name"
+msgstr "Nom du client"
+
+#: templates/lfs/mail/order_received_mail.html:60
+#: templates/lfs/mail/order_sent_mail.html:61
+#: templates/lfs/order/lfs_order_tmpl.html:33
+msgid "E-mail"
+msgstr "E-Mail"
+
+#: templates/lfs/mail/order_received_mail.html:74
+#: templates/lfs/mail/order_sent_mail.html:75
+#: templates/lfs/order/lfs_order_tmpl.html:49
+msgid "Phone"
+msgstr "Téléphone"
+
+#: templates/lfs/mail/order_received_mail.html:97
+#: templates/lfs/mail/order_sent_mail.html:98
+#: templates/lfs/order/lfs_order_tmpl.html:72
+msgid "Shipping method"
+msgstr "Mode de livraison"
+
+#: templates/lfs/mail/order_received_mail.html:100
+#: templates/lfs/mail/order_sent_mail.html:101
+#: templates/lfs/order/lfs_order_tmpl.html:75
+msgid "Payment method"
+msgstr "Mode de paiement"
+
+#: templates/lfs/mail/order_received_mail.html:182
+#: templates/lfs/mail/order_sent_mail.html:183
+msgid "Pay now"
+msgstr "Régler maintenant"
+
+#: templates/lfs/mail/order_received_mail.html:194
+#: templates/lfs/mail/order_sent_mail.html:195
+#: templates/lfs/order/lfs_order_tmpl.html:156
+msgid "SKU"
+msgstr "Référence article"
+
+#: templates/lfs/mail/order_received_mail.html:314
+#: templates/lfs/mail/order_sent_mail.html:315
+msgid "Your message to us"
+msgstr "Votre message"
+
+#: templates/lfs/mail/order_sent_mail.html:38
+msgid "Your order has been sent"
+msgstr "Votre commande a bien été envoyée"
+
+#: templates/lfs/mail/review_added_mail.html:24
+#: templates/reviews/reviews_for_instance.html:23
+msgid "Anonymous"
+msgstr "Anonyme"
+
+#: templates/lfs/mail/review_added_mail.html:33
+msgid "No E-Mail"
+msgstr "Pas d'e-mail"
+
+#: templates/lfs/mail/review_added_mail.html:37
+#: templates/lfs/portlets/average_rating.html:19
+msgid "Score"
+msgstr "Evaluation"
+
+#: templates/lfs/mail/review_added_mail.html:42
+msgid "Comment"
+msgstr "Commentaire"
+
+#: templates/lfs/mail/review_added_mail.html:47
+msgid "No comment"
+msgstr "Pas de commentaire"
+
+#: templates/lfs/order/lfs_order_tmpl.html:6
+msgid "Ordernumber"
+msgstr "Numéro de commande:"
+
+#: templates/lfs/order/lfs_order_tmpl.html:252
+msgid "Message from the customer"
+msgstr "Message du client"
+
+#: templates/lfs/page/pages.html:9
+#: templates/lfs/page/pages.html.py:19
+msgid "Information"
+msgstr "Information"
+
+#: templates/lfs/page/pages.html:32
+msgid "More"
+msgstr "Plus"
+
+#: templates/lfs/portlets/average_rating.html:19
+msgid "based on"
+msgstr "basé sur"
+
+#: templates/lfs/portlets/average_rating.html:20
+#, python-format
+msgid "%(amount)s revue"
+msgid_plural "%(amount)s revues"
+msgstr[0] "1 vote"
+msgstr[1] "%(amount)s votes"
+
+#: templates/lfs/portlets/cart.html:23
+msgid "Article"
+msgstr "Article"
+
+#: templates/lfs/portlets/cart.html:29
+msgid "Cart is empty"
+msgstr "Le panier est vide"
+
+#: templates/lfs/portlets/delivery_time.html:12
+msgid "Deliverable"
+msgstr "Disponible"
+
+#: templates/lfs/portlets/delivery_time.html:14
+#: templates/lfs/shipping/shipping_portlet.html:16
+#: templates/lfs/shipping/shipping_tag.html:11
+msgid "Not deliverable"
+msgstr "Non disponible"
+
+#: templates/lfs/portlets/delivery_time.html:18
+#: templates/lfs/shipping/shipping_tag.html:7
+msgid "Delivery time"
+msgstr "Délai de livraison"
+
+#: templates/lfs/portlets/pages.html:18
+msgid "More information"
+msgstr "Plus d'informations"
+
+#: templates/lfs/portlets/related_products.html:8
+msgid "Related Products"
+msgstr "Produits connexes"
+
+#: templates/lfs/portlets/topseller.html:7
+msgid "Topseller"
+msgstr "Nos meilleures ventes"
+
+#: templates/lfs/portlets/topseller.html:22
+msgid "All topseller"
+msgstr "Toutes nos meilleures ventes"
+
+#: templates/lfs/search/livesearch_results.html:36
+msgid "All results"
+msgstr "Tous les résultats"
+
+#: templates/lfs/search/livesearch_results.html:42
+msgid "No products found"
+msgstr "Nous ne trouvons pas de produit correspondant à votre recherche."
+
+#: templates/lfs/search/search_results.html:5
+#: templates/lfs/search/search_results.html:11
+#: templates/lfs/search/search_results.html:16
+msgid "Search results"
+msgstr "Résultats de la recherche"
+
+#: templates/lfs/search/search_results.html:30
+msgid "You searched for"
+msgstr "Vous recherchiez"
+
+#: templates/lfs/search/search_results.html:31
+#, python-format
+msgid "There has been found 1 product."
+msgid_plural "There has been found %(counter)s products."
+msgstr[0] "Nous avons trouvé 1 produit correspondant à votre recherche."
+msgstr[1] "Nous avons trouvé %(counter)s produits correspondant à votre recherche."
+
+#: templates/lfs/search/search_results.html:44
+#: templates/tagging/product_list.html:13
+msgid "Image"
+msgstr "Image"
+
+#: templates/registration/password_reset_complete.html:4
+#: templates/registration/password_reset_complete.html:8
+msgid "Password reset complete"
+msgstr "La réinitialisation du mot de passe est complète"
+
+#: templates/registration/password_reset_complete.html:10
+msgid "Your password has been set. You may go ahead and log in now."
+msgstr "Votre mot de passe a été défini avec succès. Vous pouvez vous connecter dès maintenant."
+
+#: templates/registration/password_reset_complete.html:12
+msgid "Log in"
+msgstr "Se connecter"
+
+#: templates/registration/password_reset_confirm.html:4
+#: templates/registration/password_reset_form.html:4
+#: templates/registration/password_reset_form.html:17
+#: templates/registration/password_reset_form.html:24
+msgid "Password reset"
+msgstr "Réinitialisation du mot de passe"
+
+#: templates/registration/password_reset_confirm.html:10
+msgid "Enter new password"
+msgstr "Saisissez un nouveau mot de passe"
+
+#: templates/registration/password_reset_confirm.html:12
+msgid "Please enter your new password twice so we can verify you typed it in correctly."
+msgstr "Veuillez saisir votre mot de passe deux fois."
+
+#: templates/registration/password_reset_confirm.html:19
+msgid "Change my password"
+msgstr "Changer mon mot de passe"
+
+#: templates/registration/password_reset_confirm.html:24
+msgid "Password reset unsuccessful"
+msgstr "La réinitialisation de mot de passe n'a pas réussi"
+
+#: templates/registration/password_reset_confirm.html:26
+msgid "The password reset link was invalid, possibly because it has already been used.  Please request a new password reset."
+msgstr "Le lien pour réinitialiser votre mot de passe n'est plus valide. Veuillez demander une nouvelle réinitialisation de votre mot de passe."
+
+#: templates/registration/password_reset_done.html:16
+#: templates/registration/password_reset_done.html:22
+#: templates/registration/password_reset_done.html:26
+msgid "Password reset successful"
+msgstr "La réinitialisation de mot de passe a été réalisée avec succès"
+
+#: templates/registration/password_reset_done.html:28
+msgid "We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly."
+msgstr "Nous avons envoyé les instructions pour réinitialiser votre mot de passe à l'adresse e-mail que vous nous avez fournie. Vous devriez bientôt les recevoir."
+
+#: templates/registration/password_reset_email.html:2
+msgid "You're receiving this e-mail because you requested a password reset"
+msgstr "Vous recevez cet e-mail car vous avez fait une demande réinitialisation de votre mot de passe."
+
+#: templates/registration/password_reset_email.html:3
+#, python-format
+msgid "for your user account at %(site_name)s"
+msgstr "pour votre compte utilisateur à %(site_name)s"
+
+#: templates/registration/password_reset_email.html:5
+msgid "Please go to the following page and choose a new password:"
+msgstr "Veuillez vous rendre à a page suivante et choisir un nouveau mot de passe"
+
+#: templates/registration/password_reset_email.html:9
+msgid "Your username, in case you've forgotten:"
+msgstr "Votre nom d'utilisateur"
+
+#: templates/registration/password_reset_email.html:11
+msgid "Thanks for using our site!"
+msgstr "Merci d'utiliser notre site !"
+
+#: templates/registration/password_reset_email.html:13
+#, python-format
+msgid "The %(site_name)s team"
+msgstr "L'équipe %(site_name)s"
+
+#: templates/registration/password_reset_form.html:26
+msgid "Enter your e-mail address below, and we'll e-mail instructions for setting a new one."
+msgstr "Veuillez saisir votre adresse e-mail afin que l'on vous envoie les informations pour réinitialiser votre mot de passe."
+
+#: templates/registration/password_reset_form.html:33
+msgid "E-mail address:"
+msgstr "Adresse e-mail:"
+
+#: templates/registration/password_reset_form.html:35
+msgid "Reset my password"
+msgstr "Réinitialiser mon mot de passe"
+
+#: templates/reviews/already_rated.html:9
+msgid "Review"
+msgstr "Revue"
+
+#: templates/reviews/already_rated.html:10
+msgid "You have already rated for this product."
+msgstr "Vous avez déja évalué ce produit."
+
+#: templates/reviews/review_form.html:10
+msgid "Add Review"
+msgstr "Ajouter une revue"
+
+#: templates/reviews/review_form.html:111
+#: templates/reviews/review_preview.html:10
+msgid "Preview"
+msgstr "Avant-première"
+
+#: templates/reviews/review_preview.html:21
+msgid "Your email"
+msgstr "Votre e-mai"
+
+#: templates/reviews/review_preview.html:27
+msgid "Your score"
+msgstr "Votre évaluation"
+
+#: templates/reviews/review_preview.html:38
+msgid "Your comment"
+msgstr "Vos commentaires"
+
+#: templates/reviews/review_preview.html:69
+msgid "Edit"
+msgstr "Editer"
+
+#: templates/reviews/review_preview.html:73
+msgid "Submit"
+msgstr "Soumettre"
+
+#: templates/reviews/reviews_for_instance.html:5
+msgid "Reviews"
+msgstr "Evaluations"
+
+#: templates/reviews/reviews_for_instance.html:34
+msgid "There are no ratings for this product. Be the first one!"
+msgstr "Ce produit n'a pas encore été évalué. Soyez le premier !"
+
+#: templates/reviews/reviews_for_instance.html:39
+msgid "You have already rated"
+msgstr "Vous avez déjà noté cet article."
+
+#: templates/reviews/reviews_for_instance.html:44
+msgid "Add review"
+msgstr "Ajouter une évaluation"
+
+#: templates/reviews/thank_you.html:9
+msgid "Thank you"
+msgstr "Merci"
+
+#: templates/reviews/thank_you.html:13
+msgid "Go to the reviewed product"
+msgstr "Aller au produit évalué"
+
+#: templates/reviews/thank_you.html:16
+msgid "Go to Shop"
+msgstr "Continuer les achats"
+
+#: templates/reviews/thank_you.html:22
+msgid "Close Window"
+msgstr "Fermer la fenêtre"
+
+#: templates/tagging/product_list.html:10
+msgid "Products for tag"
+msgstr "Produits pour la balise"
+
+#: templates/tagging/related_products_by_tags.html:4
+msgid "Related products by tag"
+msgstr "Produits connexes par tag"
+
+#: templates/tagging/related_products_by_tags_portlet.html:4
+msgid "Products with same Tags"
+msgstr "Produits avec les mêmes tags"
+
+#: templatetags/lfs_theme_tags.py:43
+#, python-format
+msgid "%s tag needs no argument"
+msgstr ""
+
