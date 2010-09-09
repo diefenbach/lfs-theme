@@ -126,10 +126,10 @@
     {% endif %}
 
     <br clear="both">
-
-    {% if variant.deliverable %}
+    {% if variant.is_deliverable %}
         <table align="right" class="buttons">
             <tr>
+                <td>
                 {% if product.active_packing_unit %}
                     <div class="product-quantity packing-unit"
                         id="packing-url"
@@ -140,11 +140,7 @@
                                type="text"
                                value="1" /> {{ product.unit }}
                     </div>
-
-                    <div class="packing-result">
-                        {{ packing_result }}
-                    </div>
-
+                </td>
                 {% else %}
                     <td>
                         {% if product.unit %}
@@ -167,8 +163,14 @@
                 </td>
             </tr>
         </table>
+        <div class="packing-result">
+            {{ packing_result }}
+        </div>
+    {% else %}
+        <button class="emphasized"
+                onclick="window.location='{% url contact_form %}'; return false"
+                name="">{% trans 'Send request' %}</button>
     {% endif %}
-
 
     <p class="product-description">
         {{ variant.get_description|safe}}

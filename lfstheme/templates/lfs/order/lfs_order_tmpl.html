@@ -187,6 +187,12 @@
             </td>
             <td>
                 {{ item.product_name }} 
+                {% for property in item.product.get_variant_properties %}
+                    <div>
+                        {{ property.title }} : {{ property.value }} {{ property.unit|safe }}
+                    </div>
+                {% endfor %}
+
                 {% for property in item.product.get_displayed_properties %}
                     <div>
                         {{ property.title }} : {{ property.value }} {{ property.unit|safe }}

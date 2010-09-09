@@ -38,22 +38,22 @@
 {{ order.account_number }}
 {{ order.bank_identification_code }}
 {{ order.bank_name }}
-{{ order.depositor }}{% endifequal %}{% ifequal order.payment_method.id 3 %}\n{% trans 'Pay now' %}: {{ order.get_pay_link }}{% endifequal %}
+{{ order.depositor }}{% endifequal %}{% ifequal order.payment_method.id 3 %} {% trans 'Pay now' %}: {{ order.get_pay_link }}{% endifequal %}
 
 {% trans 'Order' %}: 
 ==============================================================================
 {% for item in order.items.all %}{% trans 'SKU' %}:  {{ item.product_sku }}
-{% trans 'Name' %}: {{ item.product_name }} {% for property in item.product.get_displayed_properties %}{{ property.title }} : {{ property.value }} {{ property.unit|safe }}\n{% endfor %}
+{% trans 'Name' %}: {{ item.product_name }} {% for property in item.product.get_variant_properties %}{{ property.title }} : {{ property.value }} {{ property.unit|safe }} {% endfor %}{% for property in item.product.get_displayed_properties %}{{ property.title }} : {{ property.value }} {{ property.unit|safe }} {% endfor %}
 {% trans 'Amount' %}: {{ item.product_amount }} {{ item.product.unit }} {% if item.product.active_packing_unit %}{{ item|packages }} {{ item.product.packing_unit_unit }}{% endif %} 
 {% trans 'Price' %}: {{ item.product_price_gross|currency }}
 {% trans 'Total' %}: {{ item.price_gross|currency }}
-{% endfor %}{% if order.voucher_number %}\n{% trans 'Voucher' %} ({{ order.voucher_number }})\n- {{ order.voucher_price|currency }}\n- {{ order.voucher_price|currency }}{% endif %}
+{% endfor %}{% if order.voucher_number %} {% trans 'Voucher' %} ({{ order.voucher_number }}) - {{ order.voucher_price|currency }} - {{ order.voucher_price|currency }}{% endif %}
 {% trans 'Shipping method' %}: {{ order.shipping_price|currency }} ({{ order.shipping_method }}) 
 {% trans 'Payment method' %}: {{ order.payment_price|currency }} ({{ order.payment_method }})
 
 {% trans ' Total' %}: {{ order.price|currency }}
 {% trans 'Inclusive VAT' %}: {{ order.tax|currency }}
 
-{% if order.message %}\n{% trans 'Message' %}
+{% if order.message %} {% trans 'Message' %}
 ==============================================================================
 {{ order.message }}{% endif %}
