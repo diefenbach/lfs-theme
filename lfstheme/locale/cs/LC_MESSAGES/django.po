@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lfstheme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-06 15:08+0200\n"
-"PO-Revision-Date: 2010-09-10 14:53+0100\n"
+"POT-Creation-Date: 2010-09-11 09:16+0200\n"
+"PO-Revision-Date: 2010-09-11 13:12+0100\n"
 "Last-Translator: Radim Novotny <novotny.radim@gmail.com>\n"
 "Language-Team: Czech <info@dms4u.cz>\n"
 "MIME-Version: 1.0\n"
@@ -29,43 +29,51 @@ msgstr "Stránka, kterou hledáte, neexistuje."
 msgid "An error has occured. Please try again in a minute."
 msgstr "Došlo k chybě. Zkuste to prosím za chvíli znovu."
 
-#: templates/contact_form/contact_form.html:5
-#: templates/contact_form/contact_form.html:12
-#: templates/contact_form/contact_form_sent.html:4
-#: templates/contact_form/contact_form_sent.html:10
+#: templates/contact_form/contact_form.html:6
+#: templates/contact_form/contact_form.html:17
+#: templates/contact_form/contact_form_sent.html:5
+#: templates/contact_form/contact_form_sent.html:13
 msgid "Contact form"
 msgstr "Kontaktní formulář"
 
-#: templates/contact_form/contact_form.html:14
+#: templates/contact_form/contact_form.html:12
+msgid "Contact"
+msgstr "Kontaktní formulář"
+
+#: templates/contact_form/contact_form.html:19
 msgid "Please leave us a message. We will answer as soon as possible."
 msgstr "Zanechte nám prosím zprávu. Odpovíme, jakmile to jen bude možné."
 
-#: templates/contact_form/contact_form.html:21
+#: templates/contact_form/contact_form.html:26
 #: templates/reviews/review_preview.html:15
 msgid "Your name"
 msgstr "Vaše jméno"
 
-#: templates/contact_form/contact_form.html:37
+#: templates/contact_form/contact_form.html:42
 msgid "Your e-mail"
 msgstr "Váš email"
 
-#: templates/contact_form/contact_form.html:53
+#: templates/contact_form/contact_form.html:58
 msgid "Your message"
 msgstr "Vaše zpráva"
 
-#: templates/contact_form/contact_form.html:72
+#: templates/contact_form/contact_form.html:77
 #: templates/reviews/review_form.html:114
 msgid "Send"
 msgstr "Odeslat"
 
-#: templates/contact_form/contact_form_sent.html:12
+#: templates/contact_form/contact_form_sent.html:9
+msgid "Contact thank you"
+msgstr "Kontaktní formulář"
+
+#: templates/contact_form/contact_form_sent.html:15
 msgid "Thank you for your message. We will get back to you soon."
 msgstr "Děkujeme za vaši zprávu. Odpovíme, jakmile to jen bude možné."
 
-#: templates/contact_form/contact_form_sent.html:17
+#: templates/contact_form/contact_form_sent.html:20
 #: templates/lfs/cart/added_to_cart.html:81
-#: templates/lfs/cart/cart_inline.html:230
-#: templates/lfs/cart/cart_inline.html:243
+#: templates/lfs/cart/cart_inline.html:282
+#: templates/lfs/cart/cart_inline.html:295
 #: templates/lfs/checkout/empty_page_checkout.html:21
 msgid "Go on shopping"
 msgstr "Pokračovat v nakupování"
@@ -90,11 +98,11 @@ msgstr "Můj účet"
 #: templates/lfs/checkout/login.html:6
 #: templates/lfs/checkout/login.html:12
 #: templates/lfs/checkout/login.html:21
-#: templates/lfs/checkout/login.html:54
+#: templates/lfs/checkout/login.html:53
 #: templates/lfs/customer/login.html:6
 #: templates/lfs/customer/login.html:12
 #: templates/lfs/customer/login.html:21
-#: templates/lfs/customer/login.html:53
+#: templates/lfs/customer/login.html:52
 msgid "Login"
 msgstr "Přihlásit"
 
@@ -103,33 +111,33 @@ msgstr "Přihlásit"
 msgid "Search"
 msgstr "Vyhledávání"
 
-#: templates/lfs/base.html:92
+#: templates/lfs/base.html:93
 #: templates/lfs/catalog/sorting.html:17
 #: templates/lfs/search/search_results.html:26
 msgid "Go!"
 msgstr "Jdi!"
 
-#: templates/lfs/base.html:158
+#: templates/lfs/base.html:168
 msgid "Powered by"
 msgstr "Založeno na"
 
-#: templates/lfs/base.html:160
+#: templates/lfs/base.html:170
 msgid "is a product of"
 msgstr "je produktem firmy"
 
-#: templates/lfs/base.html:161
+#: templates/lfs/base.html:171
 msgid "by"
 msgstr "-"
 
-#: templates/lfs/base.html:161
+#: templates/lfs/base.html:171
 msgid "All rights reserved"
 msgstr "Všechna práva vyhrazena"
 
-#: templates/lfs/base.html:163
+#: templates/lfs/base.html:173
 msgid "Distributed under the"
 msgstr "Distribuováno v licenci"
 
-#: templates/lfs/base.html:163
+#: templates/lfs/base.html:173
 msgid "BSD-License"
 msgstr "BSD"
 
@@ -146,20 +154,21 @@ msgid "This product has been added to cart"
 msgstr "Produkt byl přidán do košíku"
 
 #: templates/lfs/cart/added_to_cart.html:25
-#: templates/lfs/catalog/products/product_inline.html:160
+#: templates/lfs/catalog/products/product_inline.html:258
 #: templates/lfs/catalog/products/product_inline_topdescription.html:152
 #: templates/lfs/catalog/products/product_inline_topprice.html:152
 msgid "Accessories"
 msgstr "Příslušenství"
 
 #: templates/lfs/cart/added_to_cart.html:29
-#: templates/lfs/catalog/products/product_inline.html:90
-#: templates/lfs/catalog/products/product_inline.html:164
+#: templates/lfs/catalog/products/product_inline.html:193
+#: templates/lfs/catalog/products/product_inline.html:262
 #: templates/lfs/catalog/products/product_inline_topdescription.html:82
 #: templates/lfs/catalog/products/product_inline_topdescription.html:156
 #: templates/lfs/catalog/products/product_inline_topprice.html:82
 #: templates/lfs/catalog/products/product_inline_topprice.html:156
 #: templates/lfs/mail/order_received_mail.html:197
+#: templates/lfs/mail/order_sent_mail.html:198
 #: templates/lfs/mail/review_added_mail.html:19
 #: templates/lfs/order/lfs_order_tmpl.html:159
 msgid "Name"
@@ -167,7 +176,8 @@ msgstr "Jméno"
 
 #: templates/lfs/cart/added_to_cart.html:32
 #: templates/lfs/cart/added_to_cart_items.html:9
-#: templates/lfs/catalog/products/product_inline.html:165
+#: templates/lfs/catalog/products/product_inline.html:149
+#: templates/lfs/catalog/products/product_inline.html:263
 #: templates/lfs/catalog/products/product_inline_topdescription.html:157
 #: templates/lfs/catalog/products/product_inline_topprice.html:157
 msgid "Quantity"
@@ -177,8 +187,8 @@ msgstr "Množství"
 #: templates/lfs/cart/added_to_cart_items.html:12
 #: templates/lfs/cart/cart_inline.html:39
 #: templates/lfs/catalog/filter_navigation.html:54
-#: templates/lfs/catalog/products/product_inline.html:98
-#: templates/lfs/catalog/products/product_inline.html:166
+#: templates/lfs/catalog/products/product_inline.html:201
+#: templates/lfs/catalog/products/product_inline.html:264
 #: templates/lfs/catalog/products/product_inline_topdescription.html:90
 #: templates/lfs/catalog/products/product_inline_topdescription.html:158
 #: templates/lfs/catalog/products/product_inline_topprice.html:90
@@ -186,6 +196,7 @@ msgstr "Množství"
 #: templates/lfs/checkout/checkout_cart_inline.html:30
 #: templates/lfs/customer/orders.html:31
 #: templates/lfs/mail/order_received_mail.html:203
+#: templates/lfs/mail/order_sent_mail.html:204
 #: templates/lfs/order/lfs_order_tmpl.html:165
 #: templates/lfs/portlets/filter.html:59
 #: templates/lfs/search/search_results.html:50
@@ -195,16 +206,18 @@ msgstr "Cena"
 
 #: templates/lfs/cart/added_to_cart.html:38
 #: templates/lfs/cart/added_to_cart_items.html:18
-#: templates/lfs/cart/added_to_cart_items.html:54
+#: templates/lfs/cart/added_to_cart_items.html:80
 #: templates/lfs/cart/cart_inline.html:45
-#: templates/lfs/cart/cart_inline.html:192
-#: templates/lfs/catalog/products/product_inline.html:167
+#: templates/lfs/cart/cart_inline.html:244
+#: templates/lfs/catalog/products/product_inline.html:265
 #: templates/lfs/catalog/products/product_inline_topdescription.html:159
 #: templates/lfs/catalog/products/product_inline_topprice.html:159
 #: templates/lfs/checkout/checkout_cart_inline.html:36
-#: templates/lfs/checkout/checkout_cart_inline.html:130
+#: templates/lfs/checkout/checkout_cart_inline.html:181
 #: templates/lfs/mail/order_received_mail.html:80
 #: templates/lfs/mail/order_received_mail.html:206
+#: templates/lfs/mail/order_sent_mail.html:81
+#: templates/lfs/mail/order_sent_mail.html:207
 #: templates/lfs/order/lfs_order_tmpl.html:55
 #: templates/lfs/order/lfs_order_tmpl.html:168
 msgid "Total"
@@ -215,11 +228,11 @@ msgid "Add"
 msgstr "Přidat"
 
 #: templates/lfs/cart/added_to_cart.html:73
-#: templates/lfs/cart/cart_inline.html:226
+#: templates/lfs/cart/cart_inline.html:278
 #: templates/lfs/checkout/empty_page_checkout.html:6
 #: templates/lfs/checkout/empty_page_checkout.html:12
-#: templates/lfs/checkout/login.html:93
-#: templates/lfs/checkout/login.html:103
+#: templates/lfs/checkout/login.html:91
+#: templates/lfs/checkout/login.html:101
 #: templates/lfs/checkout/one_page_checkout.html:5
 #: templates/lfs/checkout/one_page_checkout.html:11
 msgid "Checkout"
@@ -255,9 +268,10 @@ msgid "Cart"
 msgstr "Košík"
 
 #: templates/lfs/cart/cart_inline.html:7
-#: templates/lfs/cart/cart_inline.html:100
-#: templates/lfs/checkout/checkout_cart_inline.html:76
-#: templates/lfs/mail/order_received_mail.html:240
+#: templates/lfs/cart/cart_inline.html:152
+#: templates/lfs/checkout/checkout_cart_inline.html:127
+#: templates/lfs/mail/order_received_mail.html:261
+#: templates/lfs/mail/order_sent_mail.html:259
 msgid "Voucher"
 msgstr "Kupón"
 
@@ -268,47 +282,51 @@ msgstr "Váš košík"
 #: templates/lfs/cart/cart_inline.html:36
 #: templates/lfs/checkout/checkout_cart_inline.html:27
 #: templates/lfs/mail/order_received_mail.html:200
+#: templates/lfs/mail/order_sent_mail.html:201
 #: templates/lfs/order/lfs_order_tmpl.html:162
 msgid "Amount"
 msgstr "Množství"
 
-#: templates/lfs/cart/cart_inline.html:90
+#: templates/lfs/cart/cart_inline.html:119
 msgid "Delete item"
 msgstr "Odebrat položku"
 
-#: templates/lfs/cart/cart_inline.html:122
+#: templates/lfs/cart/cart_inline.html:174
 msgid "Country"
 msgstr "Země"
 
-#: templates/lfs/cart/cart_inline.html:141
-#: templates/lfs/checkout/checkout_cart_inline.html:96
+#: templates/lfs/cart/cart_inline.html:193
+#: templates/lfs/checkout/checkout_cart_inline.html:147
 #: templates/lfs/checkout/one_page_checkout.html:279
-#: templates/lfs/mail/order_received_mail.html:257
-#: templates/lfs/order/lfs_order_tmpl.html:200
+#: templates/lfs/mail/order_received_mail.html:278
+#: templates/lfs/mail/order_sent_mail.html:276
+#: templates/lfs/order/lfs_order_tmpl.html:213
 #: templates/lfs/shipping/shipping_portlet.html:6
 msgid "Shipping"
 msgstr "Doprava"
 
-#: templates/lfs/cart/cart_inline.html:166
-#: templates/lfs/checkout/checkout_cart_inline.html:113
+#: templates/lfs/cart/cart_inline.html:218
+#: templates/lfs/checkout/checkout_cart_inline.html:164
 #: templates/lfs/checkout/payment_inline.html:3
-#: templates/lfs/mail/order_received_mail.html:272
-#: templates/lfs/order/lfs_order_tmpl.html:215
+#: templates/lfs/mail/order_received_mail.html:293
+#: templates/lfs/mail/order_sent_mail.html:291
+#: templates/lfs/order/lfs_order_tmpl.html:228
 msgid "Payment"
 msgstr "Platba"
 
-#: templates/lfs/cart/cart_inline.html:205
-#: templates/lfs/checkout/checkout_cart_inline.html:137
-#: templates/lfs/mail/order_received_mail.html:293
-#: templates/lfs/order/lfs_order_tmpl.html:236
+#: templates/lfs/cart/cart_inline.html:257
+#: templates/lfs/checkout/checkout_cart_inline.html:188
+#: templates/lfs/mail/order_received_mail.html:314
+#: templates/lfs/mail/order_sent_mail.html:312
+#: templates/lfs/order/lfs_order_tmpl.html:249
 msgid "Inclusive VAT"
 msgstr "DPH"
 
-#: templates/lfs/cart/cart_inline.html:218
+#: templates/lfs/cart/cart_inline.html:270
 msgid "Total delivery time"
 msgstr "Doba dodání"
 
-#: templates/lfs/cart/cart_inline.html:239
+#: templates/lfs/cart/cart_inline.html:291
 msgid "Your Cart is empty"
 msgstr "Váš košík je prázdný"
 
@@ -340,10 +358,22 @@ msgstr "Filtr"
 msgid "Up to"
 msgstr "Nahoru"
 
-#: templates/lfs/catalog/filter_navigation.html:102
+#: templates/lfs/catalog/filter_navigation.html:79
 #: templates/lfs/portlets/filter.html:106
 msgid "Reset all filters"
 msgstr "Odebrat všechny filtry"
+
+#: templates/lfs/catalog/packing_result.html:4
+msgid "This complies to"
+msgstr ""
+
+#: templates/lfs/catalog/packing_result.html:5
+msgid "Pieces"
+msgstr ""
+
+#: templates/lfs/catalog/packing_result.html:6
+msgid "and costs"
+msgstr ""
 
 #: templates/lfs/catalog/product_base.html:37
 msgid "Back to overview"
@@ -391,9 +421,9 @@ msgstr "Název od Z"
 msgid "Sorting"
 msgstr "Řazení"
 
-#: templates/lfs/catalog/categories/category/default.html:26
-#: templates/lfs/catalog/categories/product/default.html:73
-#: templates/lfs/search/search_results.html:95
+#: templates/lfs/catalog/categories/category/default.html:28
+#: templates/lfs/catalog/categories/product/default.html:72
+#: templates/lfs/search/search_results.html:99
 msgid "Details"
 msgstr "Detaily"
 
@@ -415,30 +445,33 @@ msgstr "Produkty"
 msgid "Next page"
 msgstr "Další stránka"
 
-#: templates/lfs/catalog/categories/product/default.html:68
-#: templates/lfs/catalog/products/product_inline.html:55
-#: templates/lfs/catalog/products/product_inline.html:63
+#: templates/lfs/catalog/categories/product/default.html:67
+#: templates/lfs/catalog/products/product_inline.html:66
+#: templates/lfs/catalog/products/product_inline.html:74
 #: templates/lfs/catalog/products/product_inline_topdescription.html:49
 #: templates/lfs/catalog/products/product_inline_topdescription.html:57
 #: templates/lfs/catalog/products/product_inline_topprice.html:17
 #: templates/lfs/catalog/products/product_inline_topprice.html:25
-#: templates/lfs/search/search_results.html:87
+#: templates/lfs/search/search_results.html:91
 msgid "*inc. VAT"
 msgstr "*vč. DPH"
 
-#: templates/lfs/catalog/products/product_inline.html:73
+#: templates/lfs/catalog/products/product_inline.html:162
 #: templates/lfs/catalog/products/product_inline_topdescription.html:67
 #: templates/lfs/catalog/products/product_inline_topprice.html:65
 msgid "Add to cart"
 msgstr "Přidat do košíku"
 
-#: templates/lfs/catalog/products/product_inline.html:82
+#: templates/lfs/catalog/products/product_inline.html:172
+msgid "Send request"
+msgstr "Zaslat dotaz"
+
+#: templates/lfs/catalog/products/product_inline.html:184
 #: templates/lfs/catalog/products/product_inline_topdescription.html:74
 #: templates/lfs/catalog/products/product_inline_topprice.html:74
 msgid "Variants"
 msgstr "Varianty"
 
-#: templates/lfs/catalog/products/product_inline.html:150
 #: templates/lfs/catalog/products/product_inline_topdescription.html:142
 #: templates/lfs/catalog/products/product_inline_topprice.html:142
 msgid "Refresh options"
@@ -470,30 +503,32 @@ msgstr "Jste-li již naším zákazníkem, můžete se přihlásit. Vaše osobn�
 msgid "Forgot password?"
 msgstr "Zapomněli jste heslo?"
 
-#: templates/lfs/checkout/login.html:61
-#: templates/lfs/checkout/login.html:85
-#: templates/lfs/customer/login.html:60
-#: templates/lfs/customer/login.html:83
+#: templates/lfs/checkout/login.html:60
+#: templates/lfs/checkout/login.html:83
+#: templates/lfs/customer/login.html:59
+#: templates/lfs/customer/login.html:81
 msgid "Register"
 msgstr "Registrovat"
 
-#: templates/lfs/checkout/login.html:64
-#: templates/lfs/customer/login.html:63
+#: templates/lfs/checkout/login.html:63
+#: templates/lfs/customer/login.html:62
 msgid "If you are not already a customer you can register in order to store your address data and to follow the state of your orders."
 msgstr "Pokud ještě nejste registrovaným zákazníkem, doporučujeme provést registraci. Později můžete sledovat stav vašich objednávek."
 
-#: templates/lfs/checkout/login.html:96
+#: templates/lfs/checkout/login.html:94
 msgid "You can also checkout without login or registration."
 msgstr "Můžete také pokračovat bez přihlášení nebo bez registrace."
 
 #: templates/lfs/checkout/one_page_checkout.html:32
 #: templates/lfs/mail/order_received_mail.html:94
+#: templates/lfs/mail/order_sent_mail.html:95
 #: templates/lfs/order/lfs_order_tmpl.html:66
 msgid "Invoice address"
 msgstr "Fakturační adresa"
 
 #: templates/lfs/checkout/one_page_checkout.html:35
 #: templates/lfs/mail/order_received_mail.html:91
+#: templates/lfs/mail/order_sent_mail.html:92
 #: templates/lfs/order/lfs_order_tmpl.html:69
 msgid "Shipping address"
 msgstr "Dodací adresa"
@@ -658,21 +693,24 @@ msgstr "2009"
 
 #: templates/lfs/customer/orders.html:28
 #: templates/lfs/mail/order_received_mail.html:52
+#: templates/lfs/mail/order_sent_mail.html:53
 #: templates/lfs/order/lfs_order_tmpl.html:25
 msgid "Date"
 msgstr "Datum"
 
 #: templates/lfs/customer/orders.html:34
 #: templates/lfs/mail/order_received_mail.html:66
+#: templates/lfs/mail/order_sent_mail.html:67
 #: templates/lfs/order/lfs_order_tmpl.html:41
 msgid "State"
 msgstr "Stav"
 
 #: templates/lfs/customer/orders.html:41
 #: templates/lfs/mail/order_received_mail.html:55
+#: templates/lfs/mail/order_sent_mail.html:56
 #: templates/lfs/order/lfs_order_tmpl.html:28
 msgid "DATETIME_FORMAT"
-msgstr "%e.%m.%Y"
+msgstr "d.m.Y"
 
 #: templates/lfs/customer/orders.html:56
 msgid "You haven't any orders yet."
@@ -707,47 +745,60 @@ msgid "Welcome to"
 msgstr "Vítejte v "
 
 #: templates/lfs/mail/order_received_mail.html:41
+#: templates/lfs/mail/order_sent_mail.html:42
 #: templates/lfs/order/lfs_order_tmpl.html:14
 msgid "General"
 msgstr "Obecné"
 
 #: templates/lfs/mail/order_received_mail.html:46
+#: templates/lfs/mail/order_sent_mail.html:47
 #: templates/lfs/order/lfs_order_tmpl.html:19
 msgid "Customer name"
 msgstr "Jméno zákazníka"
 
 #: templates/lfs/mail/order_received_mail.html:60
+#: templates/lfs/mail/order_sent_mail.html:61
 #: templates/lfs/order/lfs_order_tmpl.html:33
 msgid "E-mail"
 msgstr "E-mail"
 
 #: templates/lfs/mail/order_received_mail.html:74
+#: templates/lfs/mail/order_sent_mail.html:75
 #: templates/lfs/order/lfs_order_tmpl.html:49
 msgid "Phone"
 msgstr "Telefon"
 
 #: templates/lfs/mail/order_received_mail.html:97
+#: templates/lfs/mail/order_sent_mail.html:98
 #: templates/lfs/order/lfs_order_tmpl.html:72
 msgid "Shipping method"
 msgstr "Způsob dodání"
 
 #: templates/lfs/mail/order_received_mail.html:100
+#: templates/lfs/mail/order_sent_mail.html:101
 #: templates/lfs/order/lfs_order_tmpl.html:75
 msgid "Payment method"
 msgstr "Způsob platby"
 
 #: templates/lfs/mail/order_received_mail.html:182
+#: templates/lfs/mail/order_sent_mail.html:183
 msgid "Pay now"
 msgstr "Zaplatit teď"
 
 #: templates/lfs/mail/order_received_mail.html:194
+#: templates/lfs/mail/order_sent_mail.html:195
 #: templates/lfs/order/lfs_order_tmpl.html:156
 msgid "SKU"
 msgstr "SKU"
 
-#: templates/lfs/mail/order_received_mail.html:302
+#: templates/lfs/mail/order_received_mail.html:323
+#: templates/lfs/mail/order_sent_mail.html:321
 msgid "Your message to us"
 msgstr "Vaše zpráva pro nás"
+
+#: templates/lfs/mail/order_sent_mail.html:38
+msgid "Your order has been sent"
+msgstr "Vaše objednávka byla odeslána"
 
 #: templates/lfs/mail/review_added_mail.html:24
 #: templates/reviews/reviews_for_instance.html:23
@@ -775,7 +826,7 @@ msgstr "Žádná poznámka"
 msgid "Ordernumber"
 msgstr "Číslo objednávky"
 
-#: templates/lfs/order/lfs_order_tmpl.html:245
+#: templates/lfs/order/lfs_order_tmpl.html:258
 msgid "Message from the customer"
 msgstr "Zpráva od zákazníka"
 
@@ -810,13 +861,13 @@ msgstr "Košík je prázdný"
 
 #: templates/lfs/portlets/delivery_time.html:12
 msgid "Deliverable"
-msgstr "Dodatelné"
+msgstr "K dispozici"
 
 #: templates/lfs/portlets/delivery_time.html:14
 #: templates/lfs/shipping/shipping_portlet.html:16
 #: templates/lfs/shipping/shipping_tag.html:11
 msgid "Not deliverable"
-msgstr "Není dodatelné"
+msgstr "Dočasně nedostupné"
 
 #: templates/lfs/portlets/delivery_time.html:18
 #: templates/lfs/shipping/shipping_tag.html:7
@@ -839,11 +890,11 @@ msgstr "Nejprodávanější"
 msgid "All topseller"
 msgstr "Všechny nejprodávanější"
 
-#: templates/lfs/search/livesearch_results.html:38
+#: templates/lfs/search/livesearch_results.html:43
 msgid "All results"
 msgstr "Všechny výsledky"
 
-#: templates/lfs/search/livesearch_results.html:44
+#: templates/lfs/search/livesearch_results.html:49
 msgid "No products found"
 msgstr "Nebyly nalezeny žádné produkty"
 
@@ -1039,7 +1090,7 @@ msgstr "Podobné produkty podle štítku"
 msgid "Products with same Tags"
 msgstr "Produkty se stejnými štítky"
 
-#: templatetags/lfs_theme_tags.py:43
+#: templatetags/lfs_theme_tags.py:61
 #, python-format
 msgid "%s tag needs no argument"
 msgstr "Štítek %s nemá žádné parametry"
