@@ -31,7 +31,7 @@ class SlotsInformationNode(Node):
             cache_key = "has-portlets-%s-%s-%s" % (object.__class__.__name__, object.id, slot.name)
             has_portlets = cache.get(cache_key)
             if has_portlets is None:
-                has_portlets = portlets.utils.has_portlets(object, slot)
+                has_portlets = portlets.utils.has_portlets(slot, object)
                 cache.set(cache_key, has_portlets)
 
             context["Slot%s" % slot.name] = has_portlets
