@@ -28,7 +28,7 @@
 
     <p class="search-results-description">
         {% trans 'You searched for' %} <span class="search-results-query">"{{ q }}"</span>.
-        {% blocktrans count total as counter %}There has been found 1 product.{% plural %}There has been found {{ counter }} products.{% endblocktrans %}
+        {% blocktrans count total as counter %}1 product was found.{% plural %}{{ counter }} products were found.{% endblocktrans %}
     </p>
 
     {% if products %}
