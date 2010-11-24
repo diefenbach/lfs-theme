@@ -177,8 +177,8 @@
                     <select class="cart-country"
                             name="country">
                         {% for country in countries %}
-                            <option {% ifequal country.iso selected_country.iso  %}selected="selected"{% endifequal %}
-                                    value="{{ country.iso }}">
+                            <option {% ifequal country.code selected_country.code  %}selected="selected"{% endifequal %}
+                                    value="{{ country.code }}">
                                 {{ country.name }}
                             </option>
                         {% endfor %}
