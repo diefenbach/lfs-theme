@@ -111,12 +111,14 @@ table.invoice-address th {
     background-color: white;
     color: #58585A;
     font-weight: bold;
+    padding-left: 0px;
 }
 
 table.shipping-address th {
     background-color: white;
     color: #58585A;
     font-weight: bold;
+    padding-left: 0px;
 }
 
 
