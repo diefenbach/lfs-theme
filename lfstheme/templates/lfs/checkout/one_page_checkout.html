@@ -16,6 +16,9 @@
 	<div id="form-error">
 		<p>The operation could not be performed because one or more error(s) occurred.<br />Please resubmit the form after making the following changes:</p>
 		<ul>
+		{% for error in form.non_field_errors %}
+      <li>{{error}}</li>
+    {% endfor %}
 		{% for field in form %}
 			{% if field.errors %}<li>{{field.label}} - {{ field.errors|striptags }}</li>{% endif %}
 		{% endfor %}
