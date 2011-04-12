@@ -616,6 +616,19 @@ select.cart-payment-method {
     padding-right: 10px;
 }
 
+.checkout #form-error {
+    background: none repeat scroll 0 0 #FBE3E4;
+    border-color: #FBC2C4;
+    color: #8A1F11;
+    border: 2px solid #DDDDDD;
+    margin-bottom: 1em;
+    padding: 0.8em;
+}
+
+.checkout #form-error  p {
+    padding-bottom:0.8em;
+}
+
 /* Login / Register
 ___________________________________________________________________________ */
 
