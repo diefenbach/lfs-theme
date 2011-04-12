@@ -49,14 +49,18 @@
             {% for cart_item in cart.items %}
                 <tr>
                     <td class="image">
-                        <a href="{{ cart_item.product.get_absolute_url }}">
-                            <img src="{{ cart_item.product.get_image.url_60x60 }}"
-                                 alt="{{ cart_item.product.get_name }}"/>
-                        </a>
+                        {% if cart_item.product.get_image.url_60x60 %}
+                            <a href="{{ cart_item.product.get_absolute_url }}">
+                                <img src="{{ cart_item.product.get_image.url_60x60 }}"
+                                     alt="{{ cart_item.product.get_name }}"/>
+                            </a>
+                        {% endif %}
                     </td>
                     <td>
                         <span class="product-title">
-                            {{ cart_item.product.get_name }}
+                            <a href="{{ cart_item.product.get_absolute_url }}">
+                                {{ cart_item.product.get_name }}
+                            </a>
                         </span>
                         {% for property in cart_item.product.get_variant_properties %}
                             <div>
