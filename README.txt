@@ -6,6 +6,23 @@ This is the default theme for `LFS`_, an online shop based on Django.
 Changes
 =======
 
+0.5.0 beta 6 (2011-04-13)
+-------------------------
+
+* Improved error message for checkout form (Andres Vargas / zodman); issue #87
+* Fixed invalid HTML; issue #81
+* Bugfix: correct display of cart within shop view after cart has been updated; issue #82
+* Added transifex config file
+* Added translations for mexican spanish (Andres Vargas)
+* Updated romanian translations
+* Updated german translations
+
+0.5.0 beta 5 (2010-10-16)
+-------------------------
+
+* Bugfix added_to_cart: Display correct taxes within added_to_cart view. Issue #65.
+* Bugfix variants: display variant's properties on cart, added_to_cart, checkout, received_mail, sent_mail. Issue #40.
+
 0.5.0 beta 4 (2010-07-30)
 -------------------------
 

@@ -1,4 +1,14 @@
-{% extends "lfs/shop/shop_base.html" %}
+{% extends "lfs/base.html" %}
+{% load i18n %}
+
+{% block breadcrumbs %}
+    <ul class="breadcrumbs">
+        <li>{% trans 'You are here:' %}</li>
+        <li>
+            {% trans 'Home' %}
+        </li>
+    </ul>
+{% endblock %}
 
 {% block content %}
     {{ shop.static_block.html }}

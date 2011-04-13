@@ -1,0 +1,13 @@
+[lfs.lfstheme]
+source_file = lfstheme/locale/de/LC_MESSAGES/django.po
+source_lang = de
+trans.es = lfstheme/locale/es/LC_MESSAGES/django.po
+trans.es_MX = lfstheme/locale/es_MX/LC_MESSAGES/django.po
+trans.fr = lfstheme/locale/fr/LC_MESSAGES/django.po
+trans.it = lfstheme/locale/it/LC_MESSAGES/django.po
+trans.ro = lfstheme/locale/ro/LC_MESSAGES/django.po
+trans.ru = lfstheme/locale/ru/LC_MESSAGES/django.po
+
+[main]
+host = http://www.transifex.net
+

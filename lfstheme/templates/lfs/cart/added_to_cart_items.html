@@ -67,7 +67,7 @@
                 {% endif %}
             </td>
             <td class="number">
-                ({{ cart_item.product.get_tax|currency }})
+                ({{ cart_item.get_tax|currency }})
             </td>
             <td class="number last">
                 {{ cart_item.get_price|currency }}
