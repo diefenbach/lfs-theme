@@ -79,11 +79,14 @@ td.label {
     padding-bottom: 10px;
 }
 
-ul.errorlist {
-    padding: 0;
+.middle-slot ul.errorlist {
+    padding: 2px 0 0 0;
     margin: 0;
-    list-style-type: none;
     color: red;
+}
+
+.middle-slot ul.errorlist li {
+    list-style-type: none;
 }
 
 tr.error td {
