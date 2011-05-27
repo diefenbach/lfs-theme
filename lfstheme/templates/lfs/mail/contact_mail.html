@@ -1,0 +1,28 @@
+{% load i18n %}
+<html>
+    <head>
+        <style type="text/css">
+            h1 {
+                padding:10px 0 0 0;
+                margin:0;
+                font-size: 120%;
+            }
+        </style>
+    </head>
+    <body>
+        <p>{% trans "A new mail has been received:" %}</p>
+        
+        <h1>
+            {% trans "Shop" %}
+        </h1>
+        <div>
+            {{ shop.name }}
+        </div>
+        {% for field in fields %}
+            <h1>{{ field.label }}</h1>
+            <div>
+                {{ field.value }}
+            </div>
+        {% endfor %}        
+    </body>
+</html>
