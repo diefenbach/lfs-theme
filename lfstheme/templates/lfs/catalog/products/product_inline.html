@@ -10,10 +10,11 @@
     <div class="product-images">
         <div class="main-image">
             {% if variant.get_image %}
-                <a href="{{ variant.get_image.url_400x400 }}"
+                <a href="{{ variant.get_image.image.url_400x400 }}"
                    class="product-image">
-                    <img src="{{ variant.get_image.url_200x200 }}"
-                         alt="{{ variant.get_name}}" />
+                    <img src="{{ variant.get_image.image.url_200x200 }}"
+                         title="{{ variant.get_image.title }}"
+                         alt="{{ variant.get_image.title }}" />
                 </a>
             {% endif %}
         </div>

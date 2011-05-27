@@ -1075,3 +1075,9 @@ button.emphasized:hover {
   border:1px solid #dfd7d3;
   color:black !important;
 }
+
+.image-title {
+    font-size: 90%;
+    color: #aaa;
+    padding-top:4px;
+}
