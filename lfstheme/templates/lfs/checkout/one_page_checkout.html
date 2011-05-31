@@ -27,8 +27,8 @@
               method="post"
               data="{% url lfs_changed_checkout %}"
               invoice="{% url lfs_changed_invoice_country %}"
-              shipping="{% url lfs_changed_shipping_country %}"
-              >
+              shipping="{% url lfs_changed_shipping_country %}">
+            {% csrf_token %}  
             <table class="lfs-default">
                 <tr>
                     <th>

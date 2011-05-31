@@ -27,7 +27,7 @@
         <form class="authenticate"
               action="{% url lfs_checkout_login %}"
               method="post">
-
+            {% csrf_token %}
             <div class="form">
                 <table>
                     {{ login_form }}
@@ -65,6 +65,7 @@
 
             <form action="{% url lfs_checkout_login %}"
                   method="post">
+                    {% csrf_token %}
                     <div class="form">
                         <table>
                             {{ register_form }}

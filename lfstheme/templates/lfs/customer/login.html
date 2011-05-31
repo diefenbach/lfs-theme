@@ -27,6 +27,7 @@
         <form class="authenticate"
               action="{% url lfs_login %}"
               method="post">
+            {% csrf_token %}
 
             <div class="form">
                 <table>
@@ -39,7 +40,7 @@
                     </tr>
                 </table>
             </div>
-            
+
             <input type="hidden"
                    name="action"
                    value="login" />
@@ -52,7 +53,7 @@
                     class="button login-button emphasized left">{% trans 'Login' %}</button>
         </form>
     </div>
-    
+
     {% if not ANON_ONLY %}
         <div class="register">
             <h2 class="authenticate">{% trans 'Register' %}</h2>
@@ -82,7 +83,7 @@
         </div>
     {% endif %}
 <script type="text/javascript">
-$("#id_username").focus();  
+$("#id_username").focus();
 </script>
 {% endblock %}
 
