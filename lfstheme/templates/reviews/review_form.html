@@ -8,16 +8,16 @@
 {% block content %}
 
     <h1>{% trans 'Add Review' %}</h1>
-    
-    <img class="image-left" 
-         src="{{object.get_image.url_200x200}}" 
+
+    <img class="image-left"
+         src="{{object.get_image.url_200x200}}"
          width="100px" />
     <div>{{ object.get_name }}</div>
     <br clear="all" />
-     
+
     <form action="{% url reviews_add content_type_id content_id %}"
           method="post">
-
+        {% csrf_token %}
         {% if request.user.is_anonymous %}
             <div class="field">
                 <div class="label">
@@ -58,15 +58,15 @@
             {{ form.score.label_tag }}:
         </div>
         <div class="star-rating-wrapper">
-            {% if form.score.errors %}            
+            {% if form.score.errors %}
                 <div class="field error">
                     {{ form.score.errors }}
-                </div>            
+                </div>
             {% endif %}
             <ul class="star-rating">
                 {% for score in scores %}
                     <li>
-                        <a href="#" 
+                        <a href="#"
                            class="rate {% if score.current %}current-rating{% endif %}"
                            title="{{score.title}}"
                            data="{{score.value}}"
@@ -95,7 +95,7 @@
 
         <input type="hidden"
                name="score"
-               id="id_score" 
+               id="id_score"
                value="{{request.POST.score}}" />
 
         <input type="hidden"
@@ -107,13 +107,13 @@
                value="{{content_id}}" />
 
         {% if show_preview %}
-            <input type="submit" 
+            <input type="submit"
                    value="{% trans 'Preview' %}" />
-        {% else %}               
-            <input type="submit" 
-                   value="{% trans 'Send' %}" />        
+        {% else %}
+            <input type="submit"
+                   value="{% trans 'Send' %}" />
         {% endif %}
-        
+
     </form>
-    
+
 {% endblock %}
