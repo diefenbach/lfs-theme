@@ -26,7 +26,7 @@
                  {{ review.creation_date|date:"d. F Y" }}
             </div>    
             <div>        
-                {{ review.comment|safe|linebreaks }}
+                {{ review.comment|linebreaks }}
             </div>    
         {% endfor %}
     {% else %}
