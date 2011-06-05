@@ -65,6 +65,9 @@
                         {% else %}
                             <span class="standard-price">{{ product.price|currency }}*</span>
                         {% endif %}
+                        {% if product.price_unit %}
+                            / {{ product.price_unit }}
+                        {% endif %}
                         <div class="price-disclaimer">
                             {% trans '*inc. VAT' %}
                         </div>
