@@ -231,13 +231,12 @@
 
             {# Select field #}
             {% ifequal product.variants_display_type 1 %}
-
                 <div>
                     {% for property in properties %}
                         <div>
-                            <div class="property-label">
+                            <span class="property-label">
                                 {{ property.title }}:
-                            </div>
+                            </span>
                             <select class="property"
                                     name="property_{{ property.id }}">
                                 {% for option in property.options %}
