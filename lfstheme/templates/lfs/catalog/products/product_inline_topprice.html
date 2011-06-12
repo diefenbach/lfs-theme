@@ -14,7 +14,11 @@
                 <span class="for-sale-price" nowrap="nowrap">{{ variant.get_price|currency }}*</span>
             </div>
             <div class="price-disclaimer">
-                {% trans '*inc. VAT' %}
+                {% if product.price_includes_tax %}
+                    {% trans '*inc. VAT' %}
+                {% else  %}
+                    {% trans '*exc. VAT' %}
+                {% endif %}
             </div>
         {% else %}
             <div class="standard-price"
@@ -22,7 +26,11 @@
                 {{ variant.get_price|currency }}*
             </div>
             <div class="price-disclaimer">
-                {% trans '*inc. VAT' %}
+                {% if product.price_includes_tax %}
+                    {% trans '*inc. VAT' %}
+                {% else  %}
+                    {% trans '*exc. VAT' %}
+                {% endif %}
             </div>
         {% endif %}
 
