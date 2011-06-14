@@ -27,10 +27,10 @@
             {% trans 'Amount' %}
         </th>
         <th class="number">
-            {% trans 'Price' %}
+            {% trans 'Net Price' %}
         </th>
         <th class="number">
-            {% trans 'Included VAT' %}
+            {% trans 'VAT' %}
         </th>
         <th class="number">
             {% trans 'Total' %}
@@ -81,7 +81,7 @@
                 
             </td>
             <td class="number">
-                {{ cart_item.product.get_price|currency }}
+                {{ cart_item.product.get_price_net|currency }}
                 {% if cart_item.product.price_unit %}
                     / {{ cart_item.product.price_unit }}
                 {% endif %}
