@@ -69,7 +69,11 @@
                             / {{ product.price_unit }}
                         {% endif %}
                         <div class="price-disclaimer">
-                            {% trans '*inc. VAT' %}
+                            {% if product.price_includes_tax %}
+                                {% trans '*inc. VAT' %}
+                            {% else  %}
+                                {% trans '*exc. VAT' %}
+                            {% endif %}
                         </div>
                     </div>
                     <div class="details-button">
