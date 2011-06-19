@@ -18,7 +18,7 @@
     {% endif %}
 
     <div id="cart-items">
-        {{cart_items}}
+        {{ cart_items }}
     </div>
 
     {% if product_accessories %}
@@ -42,18 +42,18 @@
             {% for product_accessory in product_accessories %}
                 <tr>
                     <td>
-                        <a href="{{product_accessory.accessory.get_absolute_url}}">
-                            {{product_accessory.accessory.get_name}}
+                        <a href="{{ product_accessory.accessory.get_absolute_url }}">
+                            {{ product_accessory.accessory.get_name }}
                         </a>
                     </td>
                     <td class="number">
-                        {{product_accessory.quantity|quantity}}
+                        {{ product_accessory.quantity|quantity }}
                     </td>
                     <td class="number">
-                        {{product_accessory.accessory.get_price|currency}}
+                        {{ product_accessory.accessory.get_price|currency }}
                     </td>
                     <td class="number">
-                        {{product_accessory.get_price|currency}}
+                        {{ product_accessory.get_price|currency }}
                     </td>
                     <td class="right">
                         <a class="button add-accessory-link"
@@ -77,7 +77,7 @@
             {% trans 'Go to cart' %}
         </a>
         <a class="button shopping-button" 
-           href="{{shopping_url}}">
+           href="{{ shopping_url }}">
             {% trans 'Go on shopping' %}
         </a>
     </div>
