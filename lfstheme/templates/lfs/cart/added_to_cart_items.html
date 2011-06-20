@@ -9,10 +9,10 @@
             {% trans 'Quantity' %}
         </th>
         <th class="number">
-            {% trans 'Price' %}
+            {% trans 'Net Price' %}
         </th>
         <th class="number">
-            {% trans 'Included VAT' %}
+            {% trans 'VAT' %}
         </th>
         <th class="number last">
             {% trans 'Total' %}
@@ -61,16 +61,16 @@
 
             </td>
             <td class="number">
-                {{ cart_item.product.get_price|currency }}
+                {{ cart_item.product_price_net|currency }}
                 {% if cart_item.product.price_unit %}
                     / {{ cart_item.product.price_unit }}
                 {% endif %}
             </td>
             <td class="number">
-                ({{ cart_item.get_tax|currency }})
+                ({{ cart_item.product_tax|currency }})
             </td>
             <td class="number last">
-                {{ cart_item.get_price|currency }}
+                {{ cart_item.product_price_gross|currency }}
             </td>
         </tr>
     {% endfor %}

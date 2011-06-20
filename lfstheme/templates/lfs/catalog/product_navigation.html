@@ -6,11 +6,11 @@
         {% else %}
             &lt;&lt; {% trans 'Previous product' %}
         {% endif %}
-        - {{current}} {% trans 'of' %} {{total}} -
+        - {{ current }} {% trans 'of' %} {{ total }} -
         {% if next %}
             <a href="{% url lfs_product next %}">{% trans 'Next product' %} &gt;&gt;</a>
         {% else %}
-            {% trans 'Next product' %} &gt;&gt; 
-        {% endif %}    
+            {% trans 'Next product' %} &gt;&gt;
+        {% endif %}
     {% endif %}
 </div>
