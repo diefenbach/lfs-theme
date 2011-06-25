@@ -9,7 +9,7 @@ Changes
 0.5.0 beta 7 (2011-06-25)
 -------------------------
 
-Enhancement: cleaned up password reset templates
+* Enhancement: cleaned up password reset templates
 
 0.5.0 beta 6 (2011-04-13)
 -------------------------
