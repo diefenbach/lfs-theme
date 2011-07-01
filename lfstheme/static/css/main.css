@@ -1081,3 +1081,8 @@ button.emphasized:hover {
     color: #aaa;
     padding-top:4px;
 }
+
+#id_comment {
+    width: 100%;
+    height: 300px;
+}

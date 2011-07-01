@@ -21,7 +21,7 @@
     {% for cart_item in cart_items %}
         <tr>
             <td class="image">
-                <img src="{{ cart_item.product.get_image.url_60x60 }}"
+                <img src="{{ cart_item.product.get_image.image.url_60x60 }}"
                      alt="{{ cart_item.product.get_name }}"/>
             </td>
             <td>
@@ -51,7 +51,7 @@
 
             </td>
             <td class="number">
-                {{ cart_item.amount|quantity }} {{ cart_item.product.unit }}
+                {{ cart_item.obj.amount|quantity }} {{ cart_item.product.unit }}
 
                 {% if cart_item.product.active_packing_unit %}
                     <span class="packing-unit">

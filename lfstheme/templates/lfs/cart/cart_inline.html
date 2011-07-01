@@ -49,9 +49,9 @@
             {% for cart_item in cart_items %}
                 <tr>
                     <td class="image">
-                        {% if cart_item.product.get_image.url_60x60 %}
+                        {% if cart_item.product.get_image.image %}
                             <a href="{{ cart_item.product.get_absolute_url }}">
-                                <img src="{{ cart_item.product.get_image.url_60x60 }}"
+                                <img src="{{ cart_item.product.get_image.image.url_60x60 }}"
                                      alt="{{ cart_item.product.get_name }}"/>
                             </a>
                         {% endif %}
@@ -89,9 +89,9 @@
                     <td class="number">
                         <input class="number cart-amount"
                                type="text"
-                               name="amount-cart-item_{{ cart_item.id }}"
+                               name="amount-cart-item_{{ cart_item.obj.id }}"
                                size="6"
-                               value="{{ cart_item.amount }}" />
+                               value="{{ cart_item.obj.amount }}" />
                                {% if cart_item.product.unit %}
                                     {{ cart_item.product.unit }}
                                {% endif %}

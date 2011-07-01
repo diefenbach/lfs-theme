@@ -2,17 +2,16 @@
 {% load i18n %}
 
 {% block section %}add-review {% endblock %}
-{% block left-slot-wrapper %}{% endblock %}
-{% block right-slot-wrapper %}{% endblock %}
 
 {% block content %}
 
-    <h1>{% trans 'Add Review' %}</h1>
+    <h1>{% trans 'Add Review' %} {% trans "for" %} {{ object.get_name }}</h1>
 
-    <img class="image-left"
-         src="{{object.get_image.url_200x200}}"
-         width="100px" />
-    <div>{{ object.get_name }}</div>
+    {% if object.get_image.image %}
+        <img class="image-left"
+             src="{{ object.get_image.image.url_200x200 }}" />
+    {% endif %}
+
     <br clear="all" />
 
     <form action="{% url reviews_add content_type_id content_id %}"
@@ -68,9 +67,9 @@
                     <li>
                         <a href="#"
                            class="rate {% if score.current %}current-rating{% endif %}"
-                           title="{{score.title}}"
-                           data="{{score.value}}"
-                           style="z-index:{{score.z_index}}; width:{{score.width}}px">
+                           title="{{ score.title }}"
+                           data="{{ score.value }}"
+                           style="z-index:{{ score.z_index }}; width:{{ score.width }}px">
                         </a>
                     </li>
                 {% endfor %}
@@ -96,15 +95,15 @@
         <input type="hidden"
                name="score"
                id="id_score"
-               value="{{request.POST.score}}" />
+               value="{{ request.POST.score }}" />
 
         <input type="hidden"
                name="content_type_id"
-               value="{{content_type_id}}" />
+               value="{{ content_type_id }}" />
 
         <input type="hidden"
                name="content_id"
-               value="{{content_id}}" />
+               value="{{ content_id }}" />
 
         {% if show_preview %}
             <input type="submit"
