@@ -49,6 +49,14 @@ p {
     line-height: 1.5em;
 }
 
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
 /* Forms */
 form label {
     font-weight: bold;
