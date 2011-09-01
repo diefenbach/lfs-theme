@@ -2,7 +2,6 @@
 {% load lfs_tags %}
 
 {% if cart_items %}
-
     <h1 class="first-heading">
         {% trans "Voucher" %}
     </h1>
@@ -118,7 +117,7 @@
                         {{ cart_item.product_price_gross|currency }}
                     </td>
                     <td class="right">
-                        <a href="{% url lfs_delete_cart_item cart_item.id %}"
+                        <a href="{% url lfs_delete_cart_item cart_item.obj.id %}"
                            title="{% trans 'Delete item' %}"
                            class="delete-button delete-cart-item">X</a>
                     </td>
