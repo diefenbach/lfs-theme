@@ -1,0 +1,11 @@
+{% load i18n %}
+{% load lfs_tags %}
+<span class="for-sale-price">{{ sale_price|currency|safe }}*</span>
+<br/>
+<div class="price-disclaimer">
+    {% if product.price_includes_tax %}
+        {% trans '*inc. VAT' %}
+    {% else  %}
+        {% trans '*exc. VAT' %}
+    {% endif %}
+</div>
