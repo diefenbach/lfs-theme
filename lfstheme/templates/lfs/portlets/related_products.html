@@ -12,7 +12,7 @@
             {% for related_product in product.get_related_products %}
                 <div class="portlet-item">
                     <img alt="{{related_product.get_name}}"
-                         src="{{related_product.get_image.url_60x60}}" />
+                         src="{{related_product.get_image.image.url_60x60}}" />
                     
                     <div>
                         <a href="{{related_product.get_absolute_url}}">
@@ -20,7 +20,7 @@
                         </a>
                     </div>
                     <div class="price">
-                        {{related_product.get_price|currency}}
+                        {{price|currency}}
                     </div>
                 </div>    
             {% endfor %}    
