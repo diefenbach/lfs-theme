@@ -13,14 +13,13 @@
                 <div class="portlet-item">
                     <img alt="{{related_product.get_name}}"
                          src="{{related_product.get_image.image.url_60x60}}" />
-                    
                     <div>
                         <a href="{{related_product.get_absolute_url}}">
                             {{related_product.get_name}}
                         </a>
                     </div>
                     <div class="price">
-                        {{price|currency}}
+                        {%  get_price request related_product %}
                     </div>
                 </div>    
             {% endfor %}    
