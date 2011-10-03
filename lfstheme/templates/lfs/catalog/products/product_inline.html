@@ -292,11 +292,11 @@
                         </td>
                         <td class="number"
                             nowrap="nowrap">
-                            {% get_price request product_accessory.accessory %}
+                            {{ product_accessory.accessory|get_price:request|currency %}
                         </td>
                         <td class="number"
                              nowrap="nowrap">
-                            {% get_price request product_accessory %}
+                            {{ product_accessory|get_price:request|currency }}
                         </td>
                     </tr>
                 {% endfor %}

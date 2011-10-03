@@ -19,7 +19,7 @@
                         </a>
                     </div>
                     <div class="price">
-                        {%  get_price request related_product %}
+                        {{ related_product|get_price:request|currency }}
                     </div>
                 </div>    
             {% endfor %}    
