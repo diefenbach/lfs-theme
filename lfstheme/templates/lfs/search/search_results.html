@@ -55,7 +55,7 @@
             <div class="container append-bottom">
                 <div class="span-5">
                     <a href="{{ product.get_absolute_url }}">
-                        <img src="{{ product.get_image.url_100x100 }}"
+                        <img src="{{ product.get_image.image.url_100x100 }}"
                              alt="{{ product.get_name }}"
                              title="{{ product.get_name }}" />
                     </a>
@@ -82,9 +82,9 @@
                     <div class="product-price">
                         {% if product.for_sale %}
                            <span class="for-sale-standard-price">{{ product.get_standard_price|currency }}</span>
-                           <span class="for-sale-price">{{ product.get_for_sale_price|currency }}*</span>
+                           <span class="for-sale-price">{{ product|get_for_sale_price:request|currency }}*</span>
                         {% else %}
-                            <span class="standard-price">{{ product.get_price|currency }}*</span>
+                            <span class="standard-price">{{ product|get_price:request|currency }}*</span>
                         {% endif %}
                         <div class="price-disclaimer">
                             {% trans '*inc. VAT' %}
