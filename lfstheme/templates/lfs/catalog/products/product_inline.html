@@ -74,7 +74,7 @@
         {% else %}
             <div class="standard-price"
                   nowrap="nowrap">
-                  <span class="standard-price-value">{{ price|currency }}</span>* {% if product.price_unit %}/ {{ product.price_unit }}{% endif %}
+                  <span class="standard-price-value">{{ variant|get_price:request|currency }}</span>* {% if product.price_unit %}/ {{ product.price_unit }}{% endif %}
             </div>
             <div class="price-disclaimer">
                 {% if product.price_includes_tax %}
@@ -229,8 +229,15 @@
                                 </td>
                             {% endfor %}
                             <td class="number"
-                                nowrap="nowrap">
-                                {{ product_variant.get_price|currency }}
+                            nowrap="nowrap">
+                                {% if product_variant.get_for_sale %}
+                                    <span class="for-sale-standard-price">
+                                        {{ product_variant|get_standard_price:request|currency }}
+                                    </span>
+                                    {{ product_variant|get_for_sale_price:request|currency }}
+                                {% else %}
+                                    {{ product_variant|get_price:request|currency }}
+                                {% endif %}
                             </td>
                         </tr>
                     {% endfor %}
@@ -292,7 +299,7 @@
                         </td>
                         <td class="number"
                             nowrap="nowrap">
-                            {{ product_accessory.accessory|get_price:request|currency %}
+                            {{ product_accessory.accessory|get_price:request|currency }}
                         </td>
                         <td class="number"
                              nowrap="nowrap">
