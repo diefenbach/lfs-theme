@@ -37,7 +37,7 @@
                                         {% if property.show_quantity %}
                                             <a href='{% url lfs_set_product_filter category.slug property_group.id property.value %}'>
                                                 {{ property.name }} {{ property_group.unit|safe }} ({{ property.quantity }})
-                                            </a>                                            
+                                            </a>
                                         {% else %}
                                             <span>
                                                 {{ property.name }} {{ property_group.unit|safe }}
@@ -66,7 +66,7 @@
                         <div>
                             {% if price_filters.show_quantity %}
                                 <a href="{% url lfs_set_price_filter category.slug %}?min={{ price_filter.min }}&amp;max={{ price_filter.max }}">
-                                    {% trans 'Up to' %} {{ price_filter.max|number }}
+                                    {% trans 'Up to' %} {{ price_filter.max|decimal_l10n }}
                                     ({{ price_filter.quantity }})
                                 </a>
                             {% else %}
