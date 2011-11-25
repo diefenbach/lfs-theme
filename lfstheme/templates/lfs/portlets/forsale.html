@@ -33,7 +33,7 @@
         <a href="{{ product.get_absolute_url }}">
             {% if product.get_image %}
                 <img alt="{{ product.get_name }}"
-                    src="{{ product.get_image.url_100x100 }}" />
+                    src="{{ product.get_image.image.url_100x100 }}" />
             {% endif %}
         </a>
     </div>
