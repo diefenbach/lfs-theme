@@ -966,6 +966,24 @@ ___________________________________________________________________________ */
     padding-top: 10px;
 }
 
+/* slideshow portlets
+___________________________________________________________________________ */
+
+.featured-products-portlet,
+.forsale-products-portlet {
+    min-height: 220px;
+}
+
+.featured-products-portlet .ui-widget-content,
+.forsale-products-portlet .ui-widget-content {
+    border: none;
+}
+
+.featured-products-portlet .product-image img,
+.forsale-products-portlet .product-image img {
+    width: 120px;
+}
+
 /* Footer
 ___________________________________________________________________________ */
 
