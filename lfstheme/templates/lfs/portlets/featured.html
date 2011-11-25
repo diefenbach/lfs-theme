@@ -1,0 +1,59 @@
+{% load i18n %}
+{% load lfs_tags %}
+
+{% if products %}
+    <div class="forsale-products portlet">
+        <div class="portlet-header">
+            {{ title }}
+        </div>
+        <div class="portlet-body">
+            {% if not slideshow %}
+                {% for product in products %}
+                <div class="portlet-item {% if forloop.last %}last{% endif %}">
+                    <a href="{{ product.get_absolute_url }}">
+                        {{ product.get_name }}
+                    </a>
+                    <div class="product-price">
+                        {{ product.price|currency }}
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+            <div class="products-wrapper slideshow">
+                {% for product in products %}
+                    <div id="tab-{{forloop.counter}}"class="portlet-item {% if forloop.last %}last{% endif %}">
+
+<div class="product-data">
+    <div class="product-image">
+        <a href="{{ product.get_absolute_url }}">
+            {% if product.get_image %}
+                <img alt="{{ product.get_name }}"
+                    src="{{ product.get_image.url_100x100 }}" />
+            {% endif %}
+        </a>
+    </div>
+    <div>
+        <div class="product-title">{{ product.get_name }}</div>
+    </div>
+
+    <div class="product-price">
+        {{ product.price|currency }}
+    </div>
+</div>
+                    </div>
+                {% endfor %}{# slideshow products #}
+                {# tabs #}
+                <ul style="display:none">
+                {% for product in products%}
+                    <li><a href="#tab-{{forloop.counter}}">{{forloop.counter}}</a></li>
+                {% endfor %}
+                </ul>
+            </div>
+            <script type="text/javascript">
+                $('.slideshow').tabs({ fx: { opacity: 'none' } }).tabs('rotate', 1600);
+            </script>
+            {% endif %}{# slideshow check #}
+
+        </div>{# portlet-body #}
+    </div>
+{% endif %}
