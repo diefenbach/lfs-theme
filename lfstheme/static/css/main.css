@@ -865,6 +865,16 @@ ___________________________________________________________________________ */
     background: url("../img/portlet-bullet.gif") left center no-repeat;
 }
 
+.portlet .for-sale-standard-price {
+    padding-right: 20px;
+    text-decoration: line-through;
+}
+
+.portlet .for-sale-price {
+    font-weight:bold;
+    font-size: 100%;
+}
+
 /* Cart portlet
 ___________________________________________________________________________ */
 
