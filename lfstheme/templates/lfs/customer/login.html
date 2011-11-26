@@ -64,6 +64,7 @@
 
             <form action="{% url lfs_login %}"
                   method="post">
+                    {% csrf_token %}
                     <div class="form">
                         <table>
                             {{ register_form }}
