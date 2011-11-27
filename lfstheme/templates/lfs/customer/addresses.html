@@ -2,30 +2,35 @@
 {% load i18n %}
 {% load lfs_tags %}
 
+{% block title %}
+    {% trans 'My Addresses' %} - {{ block.super }}
+{% endblock %}
+
+{% block section %}my-addresses{% endblock %}
+
 {% block breadcrumbs %}
     {% breadcrumbs _("Change your addresses") %}
 {% endblock %}
 
 {% block content %}
-	{% if form.errors %}
-    	<div id="form-error">
-    		<p>The operation could not be performed because one or more error(s) occurred.<br />Please resubmit the form after making the following changes:</p>
-    		<ul>
-        		{% for field in form %}
-        			{% if field.errors %}<li>{{ field.label }} - {{ field.errors|striptags }}</li>{% endif %}
-        		{% endfor %}
-    		</ul>
-    	</div>
-	{% endif %}
+    {% if form.errors %}
+        <div id="form-error" class="error">
+            <p>{% blocktrans %}The operation could not be performed because one or more error(s) occurred.<br />Please resubmit the form after making the following changes:{% endblocktrans %}</p>
+            <ul>
+                {% for field in form %}
+                    {% if field.errors %}<li><a href="javascript:void(0);" onclick="$('#id_{{ field.name }}').focus();">{{field.label}}</a> - {{ field.errors|striptags }}</li>{% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
     <h1>{% trans 'Your addresses' %}</h1>
-
     <form class="address-form postal-address"
     	  action="{% url lfs_my_addresses %}"
           method="post"
           invoice="{% url lfs_changed_invoice_country %}"
           shipping="{% url lfs_changed_shipping_country %}">
         {% csrf_token %}
-        <table>
+        <table class="lfs-default">
             <tr>
                 <td>
                     <h2>{% trans 'Invoice Address' %}</h2>
@@ -51,5 +56,4 @@
             </tr>
         </table>
     </form>
-
 {% endblock %}

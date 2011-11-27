@@ -1,65 +1,45 @@
 <div id="invoice-address-inline">
 	<table class="invoice-address">
-		<tr>
-	        <td class="label"
-	            colspan="2">
-	            {{ form.invoice_firstname.errors }}
+	    <tr>
+	        <td class="label">
+	            <label for="id_invoice_firstname">{{ form.invoice_firstname.label_tag }}:</label>
 	        </td>
+            <td>
+            	{{ form.invoice_firstname.errors }}
+                {{ form.invoice_firstname }}
+            </td>
 	    </tr>
 	    <tr>
 	        <td class="label">
-	                <label for="id_invoice_firstname">{{ form.invoice_firstname.label_tag }}:</label>
-	            </td>
-	            <td>
-	                {{ form.invoice_firstname }}
-	            </td>
+                <label for="id_invoice_lastname">{{ form.invoice_lastname.label_tag }}:</label>
+            </td>
+            <td>
+            	{{ form.invoice_lastname.errors }}
+                {{ form.invoice_lastname }}
+            </td>
 	    </tr>
-	    <tr>
-	        <td class="label"
-	            colspan="2">
-	            {{ form.invoice_lastname.errors }}
-	        </td>
-	    </tr>
-	    <tr>
-	        <td class="label">
-	                <label for="id_invoice_lastname">{{ form.invoice_lastname.label_tag }}:</label>
-	            </td>
-	            <td>
-	                {{ form.invoice_lastname }}
-	            </td>
-	    </tr>
-		{{address_form.as_table}}
+		{{ address_form.as_table }}
 		{% if request.user.is_anonymous %}
-	    <tr>
-	        <td class="label"
-	            colspan="2">
-	            {{ form.invoice_email.errors }}
-	        </td>
-	    </tr>
-	    <tr>
-	        <td class="label">
-	                <label for="id_invoice_email">{{ form.invoice_email.label_tag }}:</label>
-	            </td>
-	            <td>
-	                {{ form.invoice_email }}
-	            </td>
-	    </tr>
+		    <tr>
+		        <td class="label">
+		                <label for="id_invoice_email">{{ form.invoice_email.label_tag }}:</label>
+		            </td>
+		            <td>
+		            	{{ form.invoice_email.errors }}
+		                {{ form.invoice_email }}
+		            </td>
+		    </tr>
 	    {% endif %}
 	    {% if form.invoice_phone %}
-	    <tr>
-	        <td class="label"
-	            colspan="2">
-	            {{ form.invoice_phone.errors }}
-	        </td>
-	    </tr>
-	    <tr>
-	        <td class="label">
-	            <label for="id_invoice_phone">{{ form.invoice_phone.label_tag }}:</label>
-	        </td>
-	        <td>
-	            {{ form.invoice_phone }}
-	        </td>
-	    </tr>
+		    <tr>
+		        <td class="label">
+		            <label for="id_invoice_phone">{{ form.invoice_phone.label_tag }}:</label>
+		        </td>
+		        <td>
+		        	{{ form.invoice_phone.errors }}
+		            {{ form.invoice_phone }}
+		        </td>
+		    </tr>
 	    {% endif %}
 	</table>
 </div>
