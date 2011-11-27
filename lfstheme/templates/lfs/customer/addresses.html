@@ -8,14 +8,14 @@
 
 {% block content %}
 	{% if form.errors %}
-	<div id="form-error">
-		<p>The operation could not be performed because one or more error(s) occurred.<br />Please resubmit the form after making the following changes:</p>
-		<ul>
-		{% for field in form %}
-			{% if field.errors %}<li>{{field.label}} - {{ field.errors|striptags }}</li>{% endif %} 
-		{% endfor %}
-		</ul>
-	</div>
+    	<div id="form-error">
+    		<p>The operation could not be performed because one or more error(s) occurred.<br />Please resubmit the form after making the following changes:</p>
+    		<ul>
+        		{% for field in form %}
+        			{% if field.errors %}<li>{{ field.label }} - {{ field.errors|striptags }}</li>{% endif %}
+        		{% endfor %}
+    		</ul>
+    	</div>
 	{% endif %}
     <h1>{% trans 'Your addresses' %}</h1>
 
@@ -24,31 +24,32 @@
           method="post"
           invoice="{% url lfs_changed_invoice_country %}"
           shipping="{% url lfs_changed_shipping_country %}">
+        {% csrf_token %}
         <table>
-                <tr>
-                    <td>
-                        <h2>{% trans 'Invoice Address' %}</h2>
-                    </td>
-                    <td>
-                        <h2>{% trans 'Shipping Address' %}</h2>
-                    </td>
-                </tr>
             <tr>
                 <td>
-                      {{ invoice_address_inline|safe }}
+                    <h2>{% trans 'Invoice Address' %}</h2>
                 </td>
-                    <td>
-                       {{ shipping_address_inline|safe }}
-                    </td>                                    
+                <td>
+                    <h2>{% trans 'Shipping Address' %}</h2>
+                </td>
             </tr>
             <tr>
                 <td>
-                        <input class="lfs-default"
-                               type="submit"
-                               value="{% trans 'Save addresses' %}">
+                    {{ invoice_address_inline|safe }}
+                </td>
+                <td>
+                    {{ shipping_address_inline|safe }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="lfs-default"
+                           type="submit"
+                           value="{% trans 'Save addresses' %}">
                 </td>
             </tr>
         </table>
     </form>
-    
+
 {% endblock %}
