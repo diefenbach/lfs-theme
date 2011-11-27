@@ -2,6 +2,12 @@
 {% load i18n %}
 {% load lfs_tags %}
 
+{% block title %}
+    {% trans 'Your orders' %} - {{ block.super }}
+{% endblock %}
+
+{% block section %}my-addresses{% endblock %}
+
 {% block breadcrumbs %}
     {% breadcrumbs _("Your orders") %}
 {% endblock %}
@@ -13,6 +19,7 @@
         <div class="site-actions">
             <form action="{% url lfs_my_orders %}"
                   method="post">
+                {% csrf_token %}
                 <select>
                     <option>{% trans 'Recent orders' %}</option>
                     <option>{% trans '2009' %}</option>
