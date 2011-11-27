@@ -641,6 +641,7 @@ select.cart-payment-method {
     padding-right: 10px;
 }
 
+.my-addresses #form-error,
 .checkout #form-error {
     background: none repeat scroll 0 0 #FBE3E4;
     border-color: #FBC2C4;
@@ -650,8 +651,9 @@ select.cart-payment-method {
     padding: 0.8em;
 }
 
-.checkout #form-error  p {
-    padding-bottom:0.8em;
+.my-addresses #form-error p,
+.checkout #form-error p {
+    padding-bottom: 0.8em;
 }
 
 /* Login / Register
