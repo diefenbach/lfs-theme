@@ -15,14 +15,20 @@
 {% block content %}
     <h1>{% trans 'Your orders' %}</h1>
 
-    {% if orders %}
+    {% if not date_filter and not orders %}
+        <p>
+            {% trans "You haven't any orders yet." %}
+        </p>
+    {% else %}
         <div class="site-actions">
             <form action="{% url lfs_my_orders %}"
                   method="post">
                 {% csrf_token %}
-                <select>
-                    <option>{% trans 'Recent orders' %}</option>
-                    <option>{% trans '2009' %}</option>
+                <select name="date-filter">
+                    <option value="">{% trans 'All' %}</option>
+                    {% for option in options %}
+                        <option value="{{ option.value }}" {% if option.selected %}selected="selected"{% endif %}>{{ option.value }} {% trans "months" %}</option>
+                    {% endfor %}
                 </select>
                 <input type="submit"
                        value="{% trans 'Filter' %}">
@@ -56,11 +62,13 @@
                         {{order.get_state_display}}
                     </td>
                 </tr>
+            {% empty %}
+                <tr colspan="3">
+                    <td>
+                        {% trans "There are no orders for this time range." %}
+                    </td>
+                </tr>
             {% endfor %}
         </table>
-    {% else %}
-        <p>
-            {% trans "You haven't any orders yet." %}
-        </p>
     {% endif %}
 {% endblock %}
