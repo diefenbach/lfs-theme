@@ -2,12 +2,22 @@
 {% load i18n %}
 {% load lfs_tags %}
 
+{% block title %}
+    {% trans 'Order' %} - {{ block.super }}
+{% endblock %}
+
+{% block section %}my-orders{% endblock %}
+
+{% block breadcrumbs %}
+    {% breadcrumbs _("Order") %}
+{% endblock %}
+
 {% block content %}
-    <div class="site-actions">
-        <a href="{% url lfs_my_orders %}">{% trans 'Overview' %}</a>
-    </div>
-    
-    <h1>{% trans 'Ordernumber:' %} {{current_order.id}}</h1>
-    
+    <h1>{% trans 'Ordernumber:' %} {{ current_order.id }}</h1>
+
+    <p class="site-actions">
+        <a href="{% url lfs_my_orders %}">{% trans "Back to overview" %}</a>
+    </p>
+
     {% include "lfs/order/lfs_order_tmpl.html" %}
 {% endblock %}
