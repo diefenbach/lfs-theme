@@ -16,9 +16,7 @@ class SlotsInformationNode(Node):
     """
     """
     def render(self, context):
-
-        object = context.get("category") or context.get("product")
-
+        object = context.get("category") or context.get("product") or context.get("page")
         if object is None:
             object = lfs.core.utils.get_default_shop()
 
