@@ -3,17 +3,22 @@
 {% load lfs_portlets_tags %}
 
 {% block title %}
-    {{ page.title }} - {{ block.super }}
+    {{ page.get_meta_title }} - {{ block.super }}
+{% endblock %}
+
+{% block head %}
+    {% if page.get_meta_keywords %}
+        <meta name="keywords" content="{{ page.get_meta_keywords }}" />
+    {% endif %}
+    {% if page.get_meta_description %}
+        <meta name="description" content="{{ page.get_meta_description }}" />
+    {% endif %}
 {% endblock %}
 
 {% block section %}page{% endblock %}
 
 {% block breadcrumbs %}
     {% breadcrumbs page %}
-{% endblock %}
-
-{% block left-slot %}
-    {% lfs_pages_portlet %}
 {% endblock %}
 
 {% block content %}

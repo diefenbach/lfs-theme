@@ -9,16 +9,12 @@
     {% breadcrumbs _("Information") %}
 {% endblock %}
 
-{% block left-slot %}
-    {% lfs_pages_portlet %}
-{% endblock %}
-
 {% block content %}
 
     <h1 class="page-title">
         {% trans 'Information' %}
     </h1>
-    
+
     {% for page in pages %}
         <h2 class="page-title">
             {{ page.title }}
@@ -31,5 +27,5 @@
         <div class="more">
             <a href="{{ page.get_absolute_url }}">{% trans 'More' %}</a>
         </div>
-    {% endfor %}    
+    {% endfor %}
 {% endblock %}

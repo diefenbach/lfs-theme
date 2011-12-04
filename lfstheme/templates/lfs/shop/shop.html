@@ -1,6 +1,15 @@
 {% extends "lfs/base.html" %}
 {% load i18n %}
 
+{% block head %}
+    {% if shop.get_meta_keywords %}
+        <meta name="keywords" content="{{ shop.get_meta_keywords }}" />
+    {% endif %}
+    {% if shop.get_meta_description %}
+        <meta name="description" content="{{ shop.get_meta_description }}" />
+    {% endif %}
+{% endblock %}
+
 {% block breadcrumbs %}
     <ul class="breadcrumbs">
         <li>{% trans 'You are here:' %}</li>
