@@ -2,29 +2,21 @@
 {% load lfs_tags %}
 <table class="order lfs-default">
     <tr>
-        <td>
-            {% trans 'Ordernumber' %}
-        </td>
-        <td>
-            {{ current_order.uuid }}
-        </td>
-    </tr>
-    <tr>
         <th colspan="4">
             {% trans 'General' %}
         </th>
     </tr>
     <tr>
-        <td class="label">
+        <td class="label" width="25%">
             {% trans 'Customer name' %}:
         </td>
-        <td>
+        <td width="25%">
             {{ current_order.customer_firstname }} {{ current_order.customer_lastname }}
         </td>
-        <td class="label">
+        <td class="label" width="25%">
             {% trans 'Date' %}:
         </td>
-        <td>
+        <td width="25%">
             {{ current_order.created|date:_("DATETIME_FORMAT") }}
         </td>
     </tr>
@@ -35,7 +27,7 @@
         <td>
             <a href="mailto:{{ current_order.customer_email }}">
                 {{ current_order.customer_email }}
-            </a>                
+            </a>
         </td>
         <td class="label">
             {% trans 'State' %}:
@@ -58,9 +50,9 @@
             {{ current_order.price|currency }}
         </td>
     </tr>
-    
+
 </table>
-<table class="order">
+<table class="order lfs-default padding-top-middle">
     <tr>
         <th width="25%">
             {% trans 'Invoice address' %}
@@ -129,11 +121,11 @@
             </div>
             <div>
                 {{ current_order.shipping_country }}
-            </div>                
+            </div>
             <div>
                 {{ current_order.shipping_phone }}
             </div>
-        </td>        
+        </td>
         <td>
             <div>
                 {{ current_order.shipping_method }}
@@ -162,7 +154,7 @@
 
 </table>
 
-<table class="order">
+<table class="order lfs-default padding-top-middle">
     <tr>
         <th width="25%">
             {% trans 'SKU' %}
@@ -183,10 +175,10 @@
     {% for item in current_order.items.all %}
         <tr>
             <td>
-               {{ item.product_sku }} 
+               {{ item.product_sku }}
             </td>
             <td>
-                {{ item.product_name }} 
+                {{ item.product_name }}
                 {% for property in item.product.get_variant_properties %}
                     <div>
                         {{ property.title }} : {{ property.value }} {{ property.unit|safe }}
@@ -198,7 +190,7 @@
                         {{ property.title }} : {{ property.value }} {{ property.unit|safe }}
                     </div>
                 {% endfor %}
-                
+
                 {% if item.product.is_configurable_product %}
                     {% for property in item.get_properties %}
                         <div>
@@ -206,19 +198,19 @@
                         </div>
                     {% endfor %}
                 {% endif %}
-                
+
             </td>
             <td class="number">
-               {{ item.product_amount }} 
+               {{ item.product_amount }}
             </td>
             <td class="number">
-               {{ item.product_price_gross|currency }} 
+               {{ item.product_price_gross|currency }}
             </td>
             <td class="number">
                {{ item.price_gross|currency }}
             </td>
         </tr>
-    {% endfor %}        
+    {% endfor %}
     <tr>
         <td></td>
         <td>
@@ -261,17 +253,17 @@
             <span class="total-label">{% trans 'Inclusive VAT' %}:</span>
             {{ current_order.tax|currency }}
         </td>
-    </tr>        
+    </tr>
 </table>
 {% if current_order.message %}
-    <table class="order">
+    <table class="order lfs-default padding-top-middle">
         <tr>
-            <th colspan="5">
+            <th>
                 {% trans 'Message from the customer' %}
             </th>
         </tr>
         <tr>
-            <td colspan="5">
+            <td>
                 {{ current_order.message }}
             </td>
         </tr>

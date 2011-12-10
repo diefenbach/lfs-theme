@@ -10,10 +10,10 @@
             &gt;
             {% if forloop.last %}
                 {{ object.name }}
-            {% else %}                
+            {% else %}
                 <a href="{{ object.url }}">
                     {{ object.name }}</a>
             {% endif %}
-        </li>        
+        </li>
     {% endfor %}
 </ul>
