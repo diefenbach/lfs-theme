@@ -1,23 +1,24 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
+# Translators:
+#   <bas@30loops.net>, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-28 12:46+0100\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Bas Tichelaar <bas@30loops.net>\n"
-"Language-Team: \n"
-"Language: \n"
+"Project-Id-Version: LFS\n"
+"Report-Msgid-Bugs-To: https://bitbucket.org/diefenbach/django-lfs/issues\n"
+"POT-Creation-Date: 2011-11-28 08:22-0600\n"
+"PO-Revision-Date: 2011-12-13 10:01+0000\n"
+"Last-Translator: bastichelaar <bas@30loops.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: templates/404.html:9
-#: templates/500.html:4
+#: templates/404.html:9 templates/500.html:4
 msgid "We are sorry!"
 msgstr "Onze excuses!"
 
@@ -29,66 +30,57 @@ msgstr "De pagina die u heeft opgevraagd is niet gevonden."
 msgid "An error has occured. Please try again in a minute."
 msgstr "Er is een fout opgetreden. Probeer het na 1 minuut opnieuw"
 
-#: templates/lfs/base.html:62
-#: templates/lfs/base.html.py:65
-#: templates/lfs/base.html:68
-#: templates/lfs/base.html.py:71
+#: templates/lfs/base.html:73 templates/lfs/base.html.py:76
+#: templates/lfs/base.html:79 templates/lfs/base.html.py:82
 msgid "Manage"
 msgstr "Beheren"
 
-#: templates/lfs/base.html:76
+#: templates/lfs/base.html:87
 msgid "Logout"
 msgstr "Uitloggen"
 
-#: templates/lfs/base.html:77
-#: templates/lfs/customer/base.html:8
+#: templates/lfs/base.html:88 templates/lfs/customer/base.html:8
 msgid "My account"
 msgstr "Mijn account"
 
-#: templates/lfs/base.html:80
-#: templates/lfs/checkout/login.html:6
-#: templates/lfs/checkout/login.html:12
-#: templates/lfs/checkout/login.html:21
-#: templates/lfs/checkout/login.html:53
-#: templates/lfs/customer/login.html:6
-#: templates/lfs/customer/login.html:12
-#: templates/lfs/customer/login.html:21
+#: templates/lfs/base.html:91 templates/lfs/checkout/login.html:6
+#: templates/lfs/checkout/login.html:12 templates/lfs/checkout/login.html:21
+#: templates/lfs/checkout/login.html:53 templates/lfs/customer/login.html:6
+#: templates/lfs/customer/login.html:12 templates/lfs/customer/login.html:21
 #: templates/lfs/customer/login.html:53
 msgid "Login"
 msgstr "Inloggen"
 
-#: templates/lfs/base.html:84
-#: templates/lfs/search/search_results.html:18
+#: templates/lfs/base.html:95 templates/lfs/search/search_results.html:18
 msgid "Search"
 msgstr "Zoeken"
 
-#: templates/lfs/base.html:91
-#: templates/lfs/catalog/sorting.html:18
+#: templates/lfs/base.html:102 templates/lfs/catalog/sorting.html:18
 #: templates/lfs/search/search_results.html:26
 msgid "Go!"
 msgstr "Zoek!"
 
-#: templates/lfs/base.html:166
+#: templates/lfs/base.html:177
 msgid "Powered by"
 msgstr "Mogelijk gemaakt door"
 
-#: templates/lfs/base.html:168
+#: templates/lfs/base.html:179
 msgid "is a product of"
 msgstr "Is een product van"
 
-#: templates/lfs/base.html:169
+#: templates/lfs/base.html:180
 msgid "by"
 msgstr "Door"
 
-#: templates/lfs/base.html:169
+#: templates/lfs/base.html:180
 msgid "All rights reserved"
 msgstr "Alle rechten voorbehouden"
 
-#: templates/lfs/base.html:171
+#: templates/lfs/base.html:182
 msgid "Distributed under the"
 msgstr "Gedistribueerd onder de"
 
-#: templates/lfs/base.html:171
+#: templates/lfs/base.html:182
 msgid "BSD-License"
 msgstr "BSD-licentie"
 
@@ -115,7 +107,7 @@ msgstr "Accessoires"
 #: templates/lfs/mail/order_received_mail.html:209
 #: templates/lfs/mail/order_sent_mail.html:198
 #: templates/lfs/mail/review_added_mail.html:19
-#: templates/lfs/order/lfs_order_tmpl.html:171
+#: templates/lfs/order/lfs_order_tmpl.html:163
 msgid "Name"
 msgstr "Naam"
 
@@ -129,10 +121,10 @@ msgstr "Hoeveelheid"
 #: templates/lfs/cart/added_to_cart.html:35
 #: templates/lfs/catalog/products/product_inline.html:211
 #: templates/lfs/catalog/products/product_inline.html:280
-#: templates/lfs/customer/orders.html:31
+#: templates/lfs/customer/orders.html:44
 #: templates/lfs/mail/order_received_mail.html:215
 #: templates/lfs/mail/order_sent_mail.html:204
-#: templates/lfs/order/lfs_order_tmpl.html:177
+#: templates/lfs/order/lfs_order_tmpl.html:169
 #: templates/lfs/portlets/filter.html:59
 #: templates/lfs/search/search_results.html:50
 #: templates/tagging/product_list.html:16
@@ -151,8 +143,8 @@ msgstr "Prijs"
 #: templates/lfs/mail/order_received_mail.html:218
 #: templates/lfs/mail/order_sent_mail.html:81
 #: templates/lfs/mail/order_sent_mail.html:207
-#: templates/lfs/order/lfs_order_tmpl.html:55
-#: templates/lfs/order/lfs_order_tmpl.html:180
+#: templates/lfs/order/lfs_order_tmpl.html:47
+#: templates/lfs/order/lfs_order_tmpl.html:172
 msgid "Total"
 msgstr "Totaal"
 
@@ -164,8 +156,7 @@ msgstr "Toevoegen"
 #: templates/lfs/cart/cart_inline.html:280
 #: templates/lfs/checkout/empty_page_checkout.html:6
 #: templates/lfs/checkout/empty_page_checkout.html:12
-#: templates/lfs/checkout/login.html:92
-#: templates/lfs/checkout/login.html:102
+#: templates/lfs/checkout/login.html:92 templates/lfs/checkout/login.html:102
 #: templates/lfs/checkout/one_page_checkout.html:5
 #: templates/lfs/checkout/one_page_checkout.html:11
 msgid "Checkout"
@@ -173,8 +164,7 @@ msgstr "Afrekenen"
 
 #: templates/lfs/cart/added_to_cart.html:77
 #: templates/lfs/checkout/one_page_checkout.html:261
-#: templates/lfs/portlets/cart.html:10
-#: templates/lfs/portlets/cart.html:35
+#: templates/lfs/portlets/cart.html:10 templates/lfs/portlets/cart.html:35
 msgid "Go to cart"
 msgstr "Ga naar het winkelmandje"
 
@@ -198,9 +188,8 @@ msgstr "Produkt"
 #: templates/lfs/cart/added_to_cart_items.html:12
 #: templates/lfs/cart/cart_inline.html:38
 #: templates/lfs/checkout/checkout_cart_inline.html:30
-#, fuzzy
 msgid "Net Price"
-msgstr "Prijs"
+msgstr "Netto prijs"
 
 #: templates/lfs/cart/added_to_cart_items.html:15
 #: templates/lfs/cart/cart_inline.html:41
@@ -208,10 +197,8 @@ msgstr "Prijs"
 msgid "VAT"
 msgstr "BTW"
 
-#: templates/lfs/cart/cart.html:6
-#: templates/lfs/cart/cart.html.py:12
-#: templates/lfs/portlets/cart.html:12
-#: templates/lfs/portlets/cart.html:16
+#: templates/lfs/cart/cart.html:6 templates/lfs/cart/cart.html.py:12
+#: templates/lfs/portlets/cart.html:12 templates/lfs/portlets/cart.html:16
 msgid "Cart"
 msgstr "Winkelmandje"
 
@@ -231,7 +218,7 @@ msgstr "Jouw winkelmandje"
 #: templates/lfs/checkout/checkout_cart_inline.html:27
 #: templates/lfs/mail/order_received_mail.html:212
 #: templates/lfs/mail/order_sent_mail.html:201
-#: templates/lfs/order/lfs_order_tmpl.html:174
+#: templates/lfs/order/lfs_order_tmpl.html:166
 msgid "Amount"
 msgstr "Hoeveelheid"
 
@@ -248,7 +235,7 @@ msgstr "Land"
 #: templates/lfs/checkout/one_page_checkout.html:58
 #: templates/lfs/mail/order_received_mail.html:290
 #: templates/lfs/mail/order_sent_mail.html:276
-#: templates/lfs/order/lfs_order_tmpl.html:225
+#: templates/lfs/order/lfs_order_tmpl.html:217
 #: templates/lfs/shipping/shipping_portlet.html:6
 msgid "Shipping"
 msgstr "Verzenden"
@@ -258,7 +245,7 @@ msgstr "Verzenden"
 #: templates/lfs/checkout/payment_inline.html:3
 #: templates/lfs/mail/order_received_mail.html:305
 #: templates/lfs/mail/order_sent_mail.html:291
-#: templates/lfs/order/lfs_order_tmpl.html:240
+#: templates/lfs/order/lfs_order_tmpl.html:232
 msgid "Payment"
 msgstr "Betaling"
 
@@ -266,7 +253,7 @@ msgstr "Betaling"
 #: templates/lfs/checkout/checkout_cart_inline.html:188
 #: templates/lfs/mail/order_received_mail.html:326
 #: templates/lfs/mail/order_sent_mail.html:312
-#: templates/lfs/order/lfs_order_tmpl.html:261
+#: templates/lfs/order/lfs_order_tmpl.html:253
 msgid "Inclusive VAT"
 msgstr "Inclusief BTW"
 
@@ -278,17 +265,14 @@ msgstr "Totale levertijd"
 msgid "Your Cart is empty"
 msgstr "Jouw winkelmandje is leeg"
 
-#: templates/lfs/catalog/breadcrumbs.html:3
-#: templates/lfs/shop/shop.html:6
+#: templates/lfs/catalog/breadcrumbs.html:3 templates/lfs/shop/shop.html:6
 #: templates/registration/password_reset_done.html:10
 #: templates/registration/password_reset_form.html:11
 msgid "You are here:"
 msgstr "Je bent hier"
 
-#: templates/lfs/catalog/breadcrumbs.html:6
-#: templates/lfs/shop/menu.html:3
-#: templates/lfs/shop/shop.html:8
-#: templates/lfs/shop/tabs.html:7
+#: templates/lfs/catalog/breadcrumbs.html:6 templates/lfs/shop/menu.html:3
+#: templates/lfs/shop/shop.html:8 templates/lfs/shop/tabs.html:7
 #: templates/registration/password_reset_done.html:13
 #: templates/registration/password_reset_form.html:14
 msgid "Home"
@@ -307,6 +291,7 @@ msgid "and costs"
 msgstr "en kosten"
 
 #: templates/lfs/catalog/product_base.html:37
+#: templates/lfs/customer/order.html:19
 msgid "Back to overview"
 msgstr "Terug naar overzicht"
 
@@ -375,6 +360,10 @@ msgstr "Volgende pagina"
 #: templates/lfs/catalog/categories/product/default.html:73
 #: templates/lfs/catalog/products/product_inline.html:69
 #: templates/lfs/catalog/products/product_inline.html:81
+#: templates/lfs/portlets/featured.html:20
+#: templates/lfs/portlets/featured.html:49
+#: templates/lfs/portlets/forsale.html:21
+#: templates/lfs/portlets/forsale.html:51
 #: templates/lfs/search/search_results.html:90
 msgid "*inc. VAT"
 msgstr "*incl. BTW"
@@ -382,9 +371,12 @@ msgstr "*incl. BTW"
 #: templates/lfs/catalog/categories/product/default.html:75
 #: templates/lfs/catalog/products/product_inline.html:71
 #: templates/lfs/catalog/products/product_inline.html:83
-#, fuzzy
+#: templates/lfs/portlets/featured.html:22
+#: templates/lfs/portlets/featured.html:51
+#: templates/lfs/portlets/forsale.html:23
+#: templates/lfs/portlets/forsale.html:53
 msgid "*exc. VAT"
-msgstr "*incl. BTW"
+msgstr "*exclusief BTW"
 
 #: templates/lfs/catalog/products/product_inline.html:172
 msgid "Add to cart"
@@ -410,51 +402,60 @@ msgstr "Jouw winkelmandje"
 msgid "There is nothing to checkout"
 msgstr "Jouw winkelmandje is leeg"
 
-#: templates/lfs/checkout/login.html:17
-#: templates/lfs/customer/login.html:17
+#: templates/lfs/checkout/login.html:17 templates/lfs/customer/login.html:17
 msgid "Please select!"
 msgstr "Selecteren"
 
 #: templates/lfs/checkout/login.html:24
-msgid "If you are already customer you can login. Your adress data will then already known."
-msgstr "Als je al eerder in deze webshop heeft besteld kunt je inloggen. Jouw adres gegevens zijn dan al bekend."
+msgid ""
+"If you are already customer you can login. Your adress data will then "
+"already known."
+msgstr ""
+"Als je al eerder in deze webshop heeft besteld kunt je inloggen. Jouw adres "
+"gegevens zijn dan al bekend."
 
-#: templates/lfs/checkout/login.html:37
-#: templates/lfs/customer/login.html:38
+#: templates/lfs/checkout/login.html:37 templates/lfs/customer/login.html:38
 msgid "Forgot password?"
 msgstr "Wachtwoord vergeten"
 
-#: templates/lfs/checkout/login.html:60
-#: templates/lfs/checkout/login.html:84
-#: templates/lfs/customer/login.html:59
-#: templates/lfs/customer/login.html:82
+#: templates/lfs/checkout/login.html:60 templates/lfs/checkout/login.html:84
+#: templates/lfs/customer/login.html:59 templates/lfs/customer/login.html:82
 msgid "Register"
 msgstr "Registeren"
 
-#: templates/lfs/checkout/login.html:63
-#: templates/lfs/customer/login.html:62
-msgid "If you are not already a customer you can register in order to store your address data and to follow the state of your orders."
-msgstr "Als je niet al een klant bent kunt u zich inschrijven om je adresgegevens op te slaan en om de status van je bestellingen te volgen."
+#: templates/lfs/checkout/login.html:63 templates/lfs/customer/login.html:62
+msgid ""
+"If you are not already a customer you can register in order to store your "
+"address data and to follow the state of your orders."
+msgstr ""
+"Als je niet al een klant bent kunt u zich inschrijven om je adresgegevens op"
+" te slaan en om de status van je bestellingen te volgen."
 
 #: templates/lfs/checkout/login.html:95
 msgid "You can also checkout without login or registration."
 msgstr "Je kunt ook afrekenen zonder login of registratie."
 
 #: templates/lfs/checkout/one_page_checkout.html:17
-msgid "The operation could not be performed because one or more error(s) occurred.<br />Please resubmit the form after making the following changes:"
-msgstr "De bewerking kan niet worden uitgevoerd omdat een of meerdere fout(en) zijn opgetreden <br /> Gelieve het formulier opnieuw in te dienen na het maken van de volgende veranderingen.:"
+#: templates/lfs/customer/addresses.html:18
+msgid ""
+"The operation could not be performed because one or more error(s) "
+"occurred.<br />Please resubmit the form after making the following changes:"
+msgstr ""
+"De bewerking kan niet worden uitgevoerd omdat een of meerdere fout(en) zijn "
+"opgetreden <br /> Gelieve het formulier opnieuw in te dienen na het maken "
+"van de volgende veranderingen.:"
 
 #: templates/lfs/checkout/one_page_checkout.html:35
 #: templates/lfs/mail/order_received_mail.html:94
 #: templates/lfs/mail/order_sent_mail.html:95
-#: templates/lfs/order/lfs_order_tmpl.html:66
+#: templates/lfs/order/lfs_order_tmpl.html:58
 msgid "Invoice address"
 msgstr "Factuur adres"
 
 #: templates/lfs/checkout/one_page_checkout.html:38
 #: templates/lfs/mail/order_received_mail.html:91
 #: templates/lfs/mail/order_sent_mail.html:92
-#: templates/lfs/order/lfs_order_tmpl.html:69
+#: templates/lfs/order/lfs_order_tmpl.html:61
 msgid "Shipping address"
 msgstr "Verzend adres"
 
@@ -518,7 +519,9 @@ msgstr "Contact"
 
 #: templates/lfs/contact/contact_form.html:19
 msgid "Please leave us a message. We will answer as soon as possible."
-msgstr "Laat een bericht achter. wij zullen zo spoedig mogelijk contact met u opnemen"
+msgstr ""
+"Laat een bericht achter. wij zullen zo spoedig mogelijk contact met u "
+"opnemen"
 
 #: templates/lfs/contact/contact_form.html:30
 #: templates/reviews/review_form.html:113
@@ -531,56 +534,71 @@ msgstr "Bedankt voor uw bericht"
 
 #: templates/lfs/contact/contact_form_sent.html:15
 msgid "Thank you for your message. We will get back to you soon."
-msgstr "Bedankt voor je bericht wij zullen zo spoedig mogelijk contact met je opnemen"
+msgstr ""
+"Bedankt voor je bericht wij zullen zo spoedig mogelijk contact met je "
+"opnemen"
 
 #: templates/lfs/customer/account.html:8
 msgid "Your Account"
 msgstr "Jouw account"
 
+#: templates/lfs/customer/account.html:12
+msgid "Welcome!"
+msgstr "Welkom!"
+
+#: templates/lfs/customer/account.html:14
+msgid ""
+"Welcome to your account. Here you can find your orders, you can change your "
+"addresses, email address and your password."
+msgstr ""
+"Welkom bij je account. Hier kun je je bestellingen zien, je gegevens "
+"aanpassen en je password wijzigen."
+
 #: templates/lfs/customer/addresses.html:6
+msgid "My Addresses"
+msgstr "Mijn adres"
+
+#: templates/lfs/customer/addresses.html:12
 msgid "Change your addresses"
 msgstr "Verander jouw adres"
 
-#: templates/lfs/customer/addresses.html:20
+#: templates/lfs/customer/addresses.html:26
 msgid "Your addresses"
 msgstr "Jouw adressen"
 
-#: templates/lfs/customer/addresses.html:30
+#: templates/lfs/customer/addresses.html:36
 #: templates/lfs/customer/data.html:36
 msgid "Invoice Address"
 msgstr "Factuuradressen "
 
-#: templates/lfs/customer/addresses.html:33
+#: templates/lfs/customer/addresses.html:39
 #: templates/lfs/customer/data.html:39
 msgid "Shipping Address"
 msgstr "verzendadressen"
 
-#: templates/lfs/customer/addresses.html:48
+#: templates/lfs/customer/addresses.html:54
 #: templates/lfs/customer/data.html:65
 msgid "Save addresses"
 msgstr "Adressen opslaan"
 
 #: templates/lfs/customer/base.html:11
-#: templates/lfs/customer/order.html:7
 msgid "Overview"
 msgstr "Overzicht"
 
-#: templates/lfs/customer/base.html:16
-#: templates/lfs/customer/orders.html:6
-#: templates/lfs/customer/orders.html:10
+#: templates/lfs/customer/base.html:14 templates/lfs/customer/orders.html:6
+#: templates/lfs/customer/orders.html:12 templates/lfs/customer/orders.html:16
 msgid "Your orders"
 msgstr "Jouw bestelling"
 
-#: templates/lfs/customer/base.html:21
-#: templates/lfs/customer/password.html:52
+#: templates/lfs/customer/base.html:17 templates/lfs/customer/password.html:50
 msgid "Change password"
 msgstr "Verander wachtwoord"
 
-#: templates/lfs/customer/base.html:24
+#: templates/lfs/customer/base.html:20
 msgid "Change e-mail"
 msgstr "Verander E-mail"
 
-#: templates/lfs/customer/base.html:27
+#: templates/lfs/customer/base.html:23
 msgid "Change addresses"
 msgstr "Verander adressen"
 
@@ -593,8 +611,7 @@ msgstr "Jouw gegevens"
 msgid "E-Mail"
 msgstr "E-Mail"
 
-#: templates/lfs/customer/data.html:21
-#: templates/lfs/customer/email.html:25
+#: templates/lfs/customer/data.html:21 templates/lfs/customer/email.html:25
 msgid "Save e-mail address"
 msgstr "Sla E-mail adressen op"
 
@@ -618,76 +635,92 @@ msgstr "Bankrekening"
 msgid "Save bank account"
 msgstr "Sla bankrekening op"
 
-#: templates/lfs/customer/email.html:6
-#: templates/lfs/customer/email.html:10
+#: templates/lfs/customer/email.html:6 templates/lfs/customer/email.html:10
 msgid "Change your e-mail address"
 msgstr "Verander jouw E-mail adres"
 
 #: templates/lfs/customer/login.html:24
-msgid "If you are already customer you can login. Your address data will be stored in your account."
-msgstr "Als je al eerder op deze webshop heeft besteld kun je inloggen. Jouw adres gegevens staan dan in je account."
+msgid ""
+"If you are already customer you can login. Your address data will be stored "
+"in your account."
+msgstr ""
+"Als je al eerder op deze webshop heeft besteld kun je inloggen. Jouw adres "
+"gegevens staan dan in je account."
 
-#: templates/lfs/customer/order.html:10
+#: templates/lfs/customer/order.html:6 templates/lfs/customer/order.html:12
+msgid "Order"
+msgstr "Bestelling"
+
+#: templates/lfs/customer/order.html:16
 msgid "Ordernumber:"
 msgstr "Bestelnummer"
 
-#: templates/lfs/customer/orders.html:17
-msgid "Recent orders"
-msgstr "Recente bestellingen"
-
-#: templates/lfs/customer/orders.html:18
-msgid "2009"
-msgstr "2009"
-
-#: templates/lfs/customer/orders.html:21
-msgid "Filter"
-msgstr "Filter"
-
-#: templates/lfs/customer/orders.html:28
-#: templates/lfs/mail/order_received_mail.html:52
-#: templates/lfs/mail/order_sent_mail.html:53
-#: templates/lfs/order/lfs_order_tmpl.html:25
-msgid "Date"
-msgstr "Datum"
-
-#: templates/lfs/customer/orders.html:34
-#: templates/lfs/mail/order_received_mail.html:66
-#: templates/lfs/mail/order_sent_mail.html:67
-#: templates/lfs/order/lfs_order_tmpl.html:41
-msgid "State"
-msgstr "Status"
-
-#: templates/lfs/customer/orders.html:41
-#: templates/lfs/mail/order_received_mail.html:55
-#: templates/lfs/mail/order_sent_mail.html:56
-#: templates/lfs/order/lfs_order_tmpl.html:28
-msgid "DATETIME_FORMAT"
-msgstr ""
-
-#: templates/lfs/customer/orders.html:56
+#: templates/lfs/customer/orders.html:20
 msgid "You haven't any orders yet."
 msgstr "Je heeft nog geen bestellingen"
 
+#: templates/lfs/customer/orders.html:28
+msgid "All"
+msgstr "Alle"
+
+#: templates/lfs/customer/orders.html:30
+msgid "months"
+msgstr "maanden"
+
+#: templates/lfs/customer/orders.html:34
+msgid "Filter"
+msgstr "Filter"
+
+#: templates/lfs/customer/orders.html:41
+#: templates/lfs/mail/order_received_mail.html:52
+#: templates/lfs/mail/order_sent_mail.html:53
+#: templates/lfs/order/lfs_order_tmpl.html:17
+msgid "Date"
+msgstr "Datum"
+
+#: templates/lfs/customer/orders.html:47
+#: templates/lfs/mail/order_received_mail.html:66
+#: templates/lfs/mail/order_sent_mail.html:67
+#: templates/lfs/order/lfs_order_tmpl.html:33
+msgid "State"
+msgstr "Status"
+
+#: templates/lfs/customer/orders.html:54
+#: templates/lfs/mail/order_received_mail.html:55
+#: templates/lfs/mail/order_sent_mail.html:56
+#: templates/lfs/order/lfs_order_tmpl.html:20
+msgid "DATETIME_FORMAT"
+msgstr "DATETIME_FORMAT"
+
+#: templates/lfs/customer/orders.html:68
+msgid "There are no orders for this time range."
+msgstr "Er zijn geen bestellingen in deze tijdsperiode"
+
 #: templates/lfs/customer/password.html:5
 #: templates/lfs/customer/password.html:8
-#: templates/lfs/customer/password.html:13
+#: templates/lfs/customer/password.html:12
 msgid "Password change"
 msgstr "Wijzig paswoord"
 
-#: templates/lfs/customer/password.html:16
-msgid "Please enter your old password, for security's sake, and then enter your new password twice so we can verify you typed it in correctly."
-msgstr "Vul je oude wachtwoord in, ter wille van de veiligheid, en voer vervolgens je nieuwe wachtwoord twee keer in, zodat we kunnen controleren of wat je hebt getypt correct is."
+#: templates/lfs/customer/password.html:14
+msgid ""
+"Please enter your old password, for security's sake, and then enter your new"
+" password twice so we can verify you typed it in correctly."
+msgstr ""
+"Vul je oude wachtwoord in, ter wille van de veiligheid, en voer vervolgens "
+"je nieuwe wachtwoord twee keer in, zodat we kunnen controleren of wat je "
+"hebt getypt correct is."
 
-#: templates/lfs/customer/password.html:24
+#: templates/lfs/customer/password.html:22
 msgid "Old password:"
 msgstr "Oud paswoord"
 
-#: templates/lfs/customer/password.html:33
+#: templates/lfs/customer/password.html:31
 #: templates/registration/password_reset_confirm.html:16
 msgid "New password:"
 msgstr "Nieuw paswoord"
 
-#: templates/lfs/customer/password.html:42
+#: templates/lfs/customer/password.html:40
 #: templates/registration/password_reset_confirm.html:18
 msgid "Confirm password:"
 msgstr "Bevestig paswoord"
@@ -706,37 +739,37 @@ msgstr "Welkom"
 
 #: templates/lfs/mail/order_received_mail.html:41
 #: templates/lfs/mail/order_sent_mail.html:42
-#: templates/lfs/order/lfs_order_tmpl.html:14
+#: templates/lfs/order/lfs_order_tmpl.html:6
 msgid "General"
 msgstr "Algemeen"
 
 #: templates/lfs/mail/order_received_mail.html:46
 #: templates/lfs/mail/order_sent_mail.html:47
-#: templates/lfs/order/lfs_order_tmpl.html:19
+#: templates/lfs/order/lfs_order_tmpl.html:11
 msgid "Customer name"
 msgstr "klant naam"
 
 #: templates/lfs/mail/order_received_mail.html:60
 #: templates/lfs/mail/order_sent_mail.html:61
-#: templates/lfs/order/lfs_order_tmpl.html:33
+#: templates/lfs/order/lfs_order_tmpl.html:25
 msgid "E-mail"
 msgstr "E-mail"
 
 #: templates/lfs/mail/order_received_mail.html:74
 #: templates/lfs/mail/order_sent_mail.html:75
-#: templates/lfs/order/lfs_order_tmpl.html:49
+#: templates/lfs/order/lfs_order_tmpl.html:41
 msgid "Phone"
 msgstr "Telefoon"
 
 #: templates/lfs/mail/order_received_mail.html:97
 #: templates/lfs/mail/order_sent_mail.html:98
-#: templates/lfs/order/lfs_order_tmpl.html:72
+#: templates/lfs/order/lfs_order_tmpl.html:64
 msgid "Shipping method"
 msgstr "Verzendwijze"
 
 #: templates/lfs/mail/order_received_mail.html:100
 #: templates/lfs/mail/order_sent_mail.html:101
-#: templates/lfs/order/lfs_order_tmpl.html:75
+#: templates/lfs/order/lfs_order_tmpl.html:67
 msgid "Payment method"
 msgstr "Betaalwijze"
 
@@ -747,7 +780,7 @@ msgstr "Afrekenen"
 
 #: templates/lfs/mail/order_received_mail.html:206
 #: templates/lfs/mail/order_sent_mail.html:195
-#: templates/lfs/order/lfs_order_tmpl.html:168
+#: templates/lfs/order/lfs_order_tmpl.html:160
 msgid "SKU"
 msgstr "SKU"
 
@@ -782,16 +815,11 @@ msgstr "Toelichting"
 msgid "No comment"
 msgstr "Geen toelichting"
 
-#: templates/lfs/order/lfs_order_tmpl.html:6
-msgid "Ordernumber"
-msgstr "Bestelnummer"
-
-#: templates/lfs/order/lfs_order_tmpl.html:270
+#: templates/lfs/order/lfs_order_tmpl.html:262
 msgid "Message from the customer"
 msgstr "Bericht van de klant"
 
-#: templates/lfs/page/pages.html:9
-#: templates/lfs/page/pages.html.py:19
+#: templates/lfs/page/pages.html:9 templates/lfs/page/pages.html.py:19
 msgid "Information"
 msgstr "Informatie"
 
@@ -804,11 +832,11 @@ msgid "based on"
 msgstr "Gebaseerd op"
 
 #: templates/lfs/portlets/average_rating.html:20
-#, fuzzy, python-format
+#, python-format
 msgid "%(amount)s review"
 msgid_plural "%(amount)s reviews"
-msgstr[0] "%(amount)s reviews"
-msgstr[1] "%(amount)s reviews"
+msgstr[0] "%(amount)s recensie"
+msgstr[1] "%(amount)s recensies"
 
 #: templates/lfs/portlets/cart.html:23
 msgid "Article"
@@ -833,8 +861,7 @@ msgstr "Niet leverbaar"
 msgid "Delivery time"
 msgstr "Levertijd"
 
-#: templates/lfs/portlets/filter.html:69
-#: templates/lfs/portlets/filter.html:74
+#: templates/lfs/portlets/filter.html:69 templates/lfs/portlets/filter.html:74
 msgid "Up to"
 msgstr "Tot en met"
 
@@ -877,11 +904,11 @@ msgid "You searched for"
 msgstr "Je zocht naar"
 
 #: templates/lfs/search/search_results.html:31
-#, fuzzy, python-format
+#, python-format
 msgid "1 product was found."
 msgid_plural "%(counter)s products were found."
-msgstr[0] "Geen producten gevonden"
-msgstr[1] "Geen producten gevonden"
+msgstr[0] "Er is 1 product gevonden"
+msgstr[1] "Er zijn %(counter)s producten gevonden"
 
 #: templates/lfs/search/search_results.html:44
 #: templates/tagging/product_list.html:13
@@ -913,7 +940,9 @@ msgid "Enter new password"
 msgstr "Voer nieuw paswoord in"
 
 #: templates/registration/password_reset_confirm.html:12
-msgid "Please enter your new password twice so we can verify you typed it in correctly."
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
 msgstr "Voer jouw nieuwe wachtwoord twee keer in ter controle"
 
 #: templates/registration/password_reset_confirm.html:19
@@ -925,8 +954,12 @@ msgid "Password reset unsuccessful"
 msgstr "Paswoord niet gewijzigd"
 
 #: templates/registration/password_reset_confirm.html:26
-msgid "The password reset link was invalid, possibly because it has already been used.  Please request a new password reset."
-msgstr "De link om jouw wachtwoord te wijzigen is ongeldig, waarwschijnlijk omdat deze al eens is gebruikt. Vraag een nieuw wachtwoord aan."
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr ""
+"De link om jouw wachtwoord te wijzigen is ongeldig, waarwschijnlijk omdat "
+"deze al eens is gebruikt. Vraag een nieuw wachtwoord aan."
 
 #: templates/registration/password_reset_done.html:16
 #: templates/registration/password_reset_done.html:22
@@ -935,12 +968,19 @@ msgid "Password reset successful"
 msgstr "Paswoord is succesvol gewijzigd"
 
 #: templates/registration/password_reset_done.html:28
-msgid "We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly."
-msgstr "We hebben je instructies voor het instellen van uw wachtwoord per e-mail toegestuurd naar het e-mailadres dat je hebt opgegeven. Je moet het binnenkort ontvangen."
+msgid ""
+"We've e-mailed you instructions for setting your password to the e-mail "
+"address you submitted. You should be receiving it shortly."
+msgstr ""
+"We hebben je instructies voor het instellen van uw wachtwoord per e-mail "
+"toegestuurd naar het e-mailadres dat je hebt opgegeven. Je moet het "
+"binnenkort ontvangen."
 
 #: templates/registration/password_reset_email.html:2
 msgid "You're receiving this e-mail because you requested a password reset"
-msgstr "Je ontvangt deze e-mail omdat je gevraagd hebt om een ​​wachtwoord te wijzigen"
+msgstr ""
+"Je ontvangt deze e-mail omdat je gevraagd hebt om een ​​wachtwoord te "
+"wijzigen"
 
 #: templates/registration/password_reset_email.html:3
 #, python-format
@@ -965,13 +1005,16 @@ msgid "The %(site_name)s team"
 msgstr "The %(site_name)s team"
 
 #: templates/registration/password_reset_form.html:26
-msgid "Enter your e-mail address below, and we'll e-mail instructions for setting a new one."
-msgstr "Vul jouw e-mail adres hieronder in, en wij mailen je instructies voor het instellen van een nieuwe. "
+msgid ""
+"Enter your e-mail address below, and we'll e-mail instructions for setting a"
+" new one."
+msgstr ""
+"Vul jouw e-mail adres hieronder in, en wij mailen je instructies voor het "
+"instellen van een nieuwe. "
 
 #: templates/registration/password_reset_form.html:33
-#, fuzzy
 msgid "E-mail address:"
-msgstr "Sla E-mail adressen op"
+msgstr "E-mail adres"
 
 #: templates/registration/password_reset_form.html:35
 msgid "Reset my password"
@@ -1067,26 +1110,4 @@ msgstr "Producten met dezelfde tag"
 msgid "%s tag needs no argument"
 msgstr "%s tag hebben geen argument nodig"
 
-#~ msgid "Your e-mail"
-#~ msgstr "Jouw e-mail"
 
-#~ msgid "Your message"
-#~ msgstr "Jouw bericht"
-
-#~ msgid "Included VAT"
-#~ msgstr "Inclusief BTW"
-
-#~ msgid "Sorting"
-#~ msgstr "Keuze"
-
-#~ msgid "Refresh options"
-#~ msgstr "Opties vernieuwen"
-
-#~ msgid "Your address"
-#~ msgstr "Jouw adres"
-
-#~ msgid "There has been found %(counter)s product."
-#~ msgstr "There has been found %(counter)s products."
-
-#~ msgid "Close Window"
-#~ msgstr "Sluit scherm"

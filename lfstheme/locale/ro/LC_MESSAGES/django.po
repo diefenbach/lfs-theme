@@ -1,22 +1,22 @@
-# LFS Theme Romanian Translations
-# Copyright (C) 2009 Tiberiu Ichim
-# This file is distributed under the same license as the LFS package.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
 # Tiberiu Ichim <tibi@pixelblaster.ro>, 2009, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: LFS\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-25 11:51+0200\n"
-"PO-Revision-Date: 2011-11-25 12:55+0200\n"
-"Last-Translator: bsdwave\n"
-"Language-Team: Romanian <kde-i18n-doc@kde.org>\n"
-"Language: \n"
+"Report-Msgid-Bugs-To: https://bitbucket.org/diefenbach/django-lfs/issues\n"
+"POT-Creation-Date: 2011-11-28 08:22-0600\n"
+"PO-Revision-Date: 2011-11-28 14:58+0000\n"
+"Last-Translator: diefenbach <kai.diefenbach@iqpp.de>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 1.2\n"
+"Language: ro\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1))\n"
 
 #: templates/404.html:9 templates/500.html:4
 msgid "We are sorry!"
@@ -30,20 +30,20 @@ msgstr "Pagina pe care o cauți nu poate fi gasită."
 msgid "An error has occured. Please try again in a minute."
 msgstr "O eroare a apărut. Te rog incearcă din nou într-un minut."
 
-#: templates/lfs/base.html:62 templates/lfs/base.html.py:65
-#: templates/lfs/base.html:68 templates/lfs/base.html.py:71
+#: templates/lfs/base.html:73 templates/lfs/base.html.py:76
+#: templates/lfs/base.html:79 templates/lfs/base.html.py:82
 msgid "Manage"
 msgstr "Administrare"
 
-#: templates/lfs/base.html:76
+#: templates/lfs/base.html:87
 msgid "Logout"
 msgstr "Ieșire"
 
-#: templates/lfs/base.html:77 templates/lfs/customer/base.html:8
+#: templates/lfs/base.html:88 templates/lfs/customer/base.html:8
 msgid "My account"
 msgstr "Contul meu"
 
-#: templates/lfs/base.html:80 templates/lfs/checkout/login.html:6
+#: templates/lfs/base.html:91 templates/lfs/checkout/login.html:6
 #: templates/lfs/checkout/login.html:12 templates/lfs/checkout/login.html:21
 #: templates/lfs/checkout/login.html:53 templates/lfs/customer/login.html:6
 #: templates/lfs/customer/login.html:12 templates/lfs/customer/login.html:21
@@ -51,36 +51,36 @@ msgstr "Contul meu"
 msgid "Login"
 msgstr "Autentificare"
 
-#: templates/lfs/base.html:84 templates/lfs/search/search_results.html:18
+#: templates/lfs/base.html:95 templates/lfs/search/search_results.html:18
 msgid "Search"
 msgstr "Căutare"
 
-#: templates/lfs/base.html:91 templates/lfs/catalog/sorting.html:18
+#: templates/lfs/base.html:102 templates/lfs/catalog/sorting.html:18
 #: templates/lfs/search/search_results.html:26
 msgid "Go!"
 msgstr "Go!"
 
-#: templates/lfs/base.html:166
+#: templates/lfs/base.html:177
 msgid "Powered by"
 msgstr "Rulează pe"
 
-#: templates/lfs/base.html:168
+#: templates/lfs/base.html:179
 msgid "is a product of"
 msgstr "este un produs al"
 
-#: templates/lfs/base.html:169
+#: templates/lfs/base.html:180
 msgid "by"
 msgstr "de către"
 
-#: templates/lfs/base.html:169
+#: templates/lfs/base.html:180
 msgid "All rights reserved"
 msgstr "Toate drepturile rezervate"
 
-#: templates/lfs/base.html:171
+#: templates/lfs/base.html:182
 msgid "Distributed under the"
 msgstr "Distribuit sub"
 
-#: templates/lfs/base.html:171
+#: templates/lfs/base.html:182
 msgid "BSD-License"
 msgstr "Licența BSD"
 
@@ -107,7 +107,7 @@ msgstr "Accesorii"
 #: templates/lfs/mail/order_received_mail.html:209
 #: templates/lfs/mail/order_sent_mail.html:198
 #: templates/lfs/mail/review_added_mail.html:19
-#: templates/lfs/order/lfs_order_tmpl.html:171
+#: templates/lfs/order/lfs_order_tmpl.html:163
 msgid "Name"
 msgstr "Nume"
 
@@ -121,10 +121,10 @@ msgstr "Cantitate"
 #: templates/lfs/cart/added_to_cart.html:35
 #: templates/lfs/catalog/products/product_inline.html:211
 #: templates/lfs/catalog/products/product_inline.html:280
-#: templates/lfs/customer/orders.html:31
+#: templates/lfs/customer/orders.html:44
 #: templates/lfs/mail/order_received_mail.html:215
 #: templates/lfs/mail/order_sent_mail.html:204
-#: templates/lfs/order/lfs_order_tmpl.html:177
+#: templates/lfs/order/lfs_order_tmpl.html:169
 #: templates/lfs/portlets/filter.html:59
 #: templates/lfs/search/search_results.html:50
 #: templates/tagging/product_list.html:16
@@ -143,8 +143,8 @@ msgstr "Preț"
 #: templates/lfs/mail/order_received_mail.html:218
 #: templates/lfs/mail/order_sent_mail.html:81
 #: templates/lfs/mail/order_sent_mail.html:207
-#: templates/lfs/order/lfs_order_tmpl.html:55
-#: templates/lfs/order/lfs_order_tmpl.html:180
+#: templates/lfs/order/lfs_order_tmpl.html:47
+#: templates/lfs/order/lfs_order_tmpl.html:172
 msgid "Total"
 msgstr "Total"
 
@@ -218,7 +218,7 @@ msgstr "Coșul tău"
 #: templates/lfs/checkout/checkout_cart_inline.html:27
 #: templates/lfs/mail/order_received_mail.html:212
 #: templates/lfs/mail/order_sent_mail.html:201
-#: templates/lfs/order/lfs_order_tmpl.html:174
+#: templates/lfs/order/lfs_order_tmpl.html:166
 msgid "Amount"
 msgstr "Sumă"
 
@@ -235,7 +235,7 @@ msgstr "Țară"
 #: templates/lfs/checkout/one_page_checkout.html:58
 #: templates/lfs/mail/order_received_mail.html:290
 #: templates/lfs/mail/order_sent_mail.html:276
-#: templates/lfs/order/lfs_order_tmpl.html:225
+#: templates/lfs/order/lfs_order_tmpl.html:217
 #: templates/lfs/shipping/shipping_portlet.html:6
 msgid "Shipping"
 msgstr "Livrare"
@@ -245,7 +245,7 @@ msgstr "Livrare"
 #: templates/lfs/checkout/payment_inline.html:3
 #: templates/lfs/mail/order_received_mail.html:305
 #: templates/lfs/mail/order_sent_mail.html:291
-#: templates/lfs/order/lfs_order_tmpl.html:240
+#: templates/lfs/order/lfs_order_tmpl.html:232
 msgid "Payment"
 msgstr "Plată"
 
@@ -253,7 +253,7 @@ msgstr "Plată"
 #: templates/lfs/checkout/checkout_cart_inline.html:188
 #: templates/lfs/mail/order_received_mail.html:326
 #: templates/lfs/mail/order_sent_mail.html:312
-#: templates/lfs/order/lfs_order_tmpl.html:261
+#: templates/lfs/order/lfs_order_tmpl.html:253
 msgid "Inclusive VAT"
 msgstr "Include TVA"
 
@@ -291,6 +291,7 @@ msgid "and costs"
 msgstr "și costă"
 
 #: templates/lfs/catalog/product_base.html:37
+#: templates/lfs/customer/order.html:19
 msgid "Back to overview"
 msgstr "Înapoi la sumar"
 
@@ -359,6 +360,10 @@ msgstr "Pagina următoare"
 #: templates/lfs/catalog/categories/product/default.html:73
 #: templates/lfs/catalog/products/product_inline.html:69
 #: templates/lfs/catalog/products/product_inline.html:81
+#: templates/lfs/portlets/featured.html:20
+#: templates/lfs/portlets/featured.html:49
+#: templates/lfs/portlets/forsale.html:21
+#: templates/lfs/portlets/forsale.html:51
 #: templates/lfs/search/search_results.html:90
 msgid "*inc. VAT"
 msgstr "*cu TVA"
@@ -366,6 +371,10 @@ msgstr "*cu TVA"
 #: templates/lfs/catalog/categories/product/default.html:75
 #: templates/lfs/catalog/products/product_inline.html:71
 #: templates/lfs/catalog/products/product_inline.html:83
+#: templates/lfs/portlets/featured.html:22
+#: templates/lfs/portlets/featured.html:51
+#: templates/lfs/portlets/forsale.html:23
+#: templates/lfs/portlets/forsale.html:53
 msgid "*exc. VAT"
 msgstr "*fără TVA"
 
@@ -410,7 +419,7 @@ msgid "Forgot password?"
 msgstr "Ai uitat parola?"
 
 #: templates/lfs/checkout/login.html:60 templates/lfs/checkout/login.html:84
-#: templates/lfs/customer/login.html:59 templates/lfs/customer/login.html:81
+#: templates/lfs/customer/login.html:59 templates/lfs/customer/login.html:82
 msgid "Register"
 msgstr "Înregistrare"
 
@@ -427,26 +436,26 @@ msgid "You can also checkout without login or registration."
 msgstr "Poți de asemenea să faci comanda fără înregistrare sau autentificare."
 
 #: templates/lfs/checkout/one_page_checkout.html:17
+#: templates/lfs/customer/addresses.html:18
 msgid ""
-"The operation could not be performed because one or more error(s) occurred."
-"<br />Please resubmit the form after making the following changes:"
+"The operation could not be performed because one or more error(s) "
+"occurred.<br />Please resubmit the form after making the following changes:"
 msgstr ""
 "Operația nu a putut fi executată deoarece una sau mai multe erori au fost "
-"raportate. "
-"<br />Te rugăm trimite formularul din nou după ce ai făcut următoarele "
-"modificări:"
+"raportate. <br />Te rugăm trimite formularul din nou după ce ai făcut "
+"următoarele modificări:"
 
 #: templates/lfs/checkout/one_page_checkout.html:35
 #: templates/lfs/mail/order_received_mail.html:94
 #: templates/lfs/mail/order_sent_mail.html:95
-#: templates/lfs/order/lfs_order_tmpl.html:66
+#: templates/lfs/order/lfs_order_tmpl.html:58
 msgid "Invoice address"
 msgstr "Adresa de facturare"
 
 #: templates/lfs/checkout/one_page_checkout.html:38
 #: templates/lfs/mail/order_received_mail.html:91
 #: templates/lfs/mail/order_sent_mail.html:92
-#: templates/lfs/order/lfs_order_tmpl.html:69
+#: templates/lfs/order/lfs_order_tmpl.html:61
 msgid "Shipping address"
 msgstr "Adresa de livrare"
 
@@ -529,47 +538,61 @@ msgstr "Îți mulțumim pentru mesaj. Te vom contacta cât de curând posibil."
 msgid "Your Account"
 msgstr "Contul tău"
 
+#: templates/lfs/customer/account.html:12
+msgid "Welcome!"
+msgstr ""
+
+#: templates/lfs/customer/account.html:14
+msgid ""
+"Welcome to your account. Here you can find your orders, you can change your "
+"addresses, email address and your password."
+msgstr ""
+
 #: templates/lfs/customer/addresses.html:6
+msgid "My Addresses"
+msgstr ""
+
+#: templates/lfs/customer/addresses.html:12
 msgid "Change your addresses"
 msgstr "Modifică adresele"
 
-#: templates/lfs/customer/addresses.html:20
+#: templates/lfs/customer/addresses.html:26
 msgid "Your addresses"
 msgstr "Adresele tale"
 
-#: templates/lfs/customer/addresses.html:30
+#: templates/lfs/customer/addresses.html:36
 #: templates/lfs/customer/data.html:36
 msgid "Invoice Address"
 msgstr "Adresa de facturare"
 
-#: templates/lfs/customer/addresses.html:33
+#: templates/lfs/customer/addresses.html:39
 #: templates/lfs/customer/data.html:39
 msgid "Shipping Address"
 msgstr "Adresa de livrare"
 
-#: templates/lfs/customer/addresses.html:48
+#: templates/lfs/customer/addresses.html:54
 #: templates/lfs/customer/data.html:65
 msgid "Save addresses"
 msgstr "Salvează adresele"
 
-#: templates/lfs/customer/base.html:11 templates/lfs/customer/order.html:7
+#: templates/lfs/customer/base.html:11
 msgid "Overview"
 msgstr "Sumar"
 
-#: templates/lfs/customer/base.html:16 templates/lfs/customer/orders.html:6
-#: templates/lfs/customer/orders.html:10
+#: templates/lfs/customer/base.html:14 templates/lfs/customer/orders.html:6
+#: templates/lfs/customer/orders.html:12 templates/lfs/customer/orders.html:16
 msgid "Your orders"
 msgstr "Comenzile tale"
 
-#: templates/lfs/customer/base.html:21 templates/lfs/customer/password.html:52
+#: templates/lfs/customer/base.html:17 templates/lfs/customer/password.html:50
 msgid "Change password"
 msgstr "Modifică parola"
 
-#: templates/lfs/customer/base.html:24
+#: templates/lfs/customer/base.html:20
 msgid "Change e-mail"
 msgstr "Schimbă adresa de email"
 
-#: templates/lfs/customer/base.html:27
+#: templates/lfs/customer/base.html:23
 msgid "Change addresses"
 msgstr "Modifică adresele"
 
@@ -615,75 +638,83 @@ msgid ""
 "If you are already customer you can login. Your address data will be stored "
 "in your account."
 msgstr ""
-"Dacă ești deja client te poți autentifica. Datele de livrare si facturare vor "
-"fi "
-"înregistrate în contul tău."
+"Dacă ești deja client te poți autentifica. Datele de livrare si facturare "
+"vor fi înregistrate în contul tău."
 
-#: templates/lfs/customer/order.html:10
+#: templates/lfs/customer/order.html:6 templates/lfs/customer/order.html:12
+msgid "Order"
+msgstr ""
+
+#: templates/lfs/customer/order.html:16
 msgid "Ordernumber:"
 msgstr "Număr comanda:"
 
-#: templates/lfs/customer/orders.html:17
-msgid "Recent orders"
-msgstr "Comenzi recente"
-
-#: templates/lfs/customer/orders.html:18
-msgid "2009"
-msgstr "2009"
-
-#: templates/lfs/customer/orders.html:21
-msgid "Filter"
-msgstr "Filtru"
-
-#: templates/lfs/customer/orders.html:28
-#: templates/lfs/mail/order_received_mail.html:52
-#: templates/lfs/mail/order_sent_mail.html:53
-#: templates/lfs/order/lfs_order_tmpl.html:25
-msgid "Date"
-msgstr "Date"
-
-#: templates/lfs/customer/orders.html:34
-#: templates/lfs/mail/order_received_mail.html:66
-#: templates/lfs/mail/order_sent_mail.html:67
-#: templates/lfs/order/lfs_order_tmpl.html:41
-msgid "State"
-msgstr "Județ"
-
-#: templates/lfs/customer/orders.html:41
-#: templates/lfs/mail/order_received_mail.html:55
-#: templates/lfs/mail/order_sent_mail.html:56
-#: templates/lfs/order/lfs_order_tmpl.html:28
-msgid "DATETIME_FORMAT"
-msgstr "DATETIME_FORMAT"
-
-#: templates/lfs/customer/orders.html:56
+#: templates/lfs/customer/orders.html:20
 msgid "You haven't any orders yet."
 msgstr "Nu ai încă nici o comandă"
 
+#: templates/lfs/customer/orders.html:28
+msgid "All"
+msgstr ""
+
+#: templates/lfs/customer/orders.html:30
+msgid "months"
+msgstr ""
+
+#: templates/lfs/customer/orders.html:34
+msgid "Filter"
+msgstr "Filtru"
+
+#: templates/lfs/customer/orders.html:41
+#: templates/lfs/mail/order_received_mail.html:52
+#: templates/lfs/mail/order_sent_mail.html:53
+#: templates/lfs/order/lfs_order_tmpl.html:17
+msgid "Date"
+msgstr "Date"
+
+#: templates/lfs/customer/orders.html:47
+#: templates/lfs/mail/order_received_mail.html:66
+#: templates/lfs/mail/order_sent_mail.html:67
+#: templates/lfs/order/lfs_order_tmpl.html:33
+msgid "State"
+msgstr "Județ"
+
+#: templates/lfs/customer/orders.html:54
+#: templates/lfs/mail/order_received_mail.html:55
+#: templates/lfs/mail/order_sent_mail.html:56
+#: templates/lfs/order/lfs_order_tmpl.html:20
+msgid "DATETIME_FORMAT"
+msgstr "DATETIME_FORMAT"
+
+#: templates/lfs/customer/orders.html:68
+msgid "There are no orders for this time range."
+msgstr ""
+
 #: templates/lfs/customer/password.html:5
 #: templates/lfs/customer/password.html:8
-#: templates/lfs/customer/password.html:13
+#: templates/lfs/customer/password.html:12
 msgid "Password change"
 msgstr "Schimbare parolă"
 
-#: templates/lfs/customer/password.html:16
+#: templates/lfs/customer/password.html:14
 msgid ""
-"Please enter your old password, for security's sake, and then enter your new "
-"password twice so we can verify you typed it in correctly."
+"Please enter your old password, for security's sake, and then enter your new"
+" password twice so we can verify you typed it in correctly."
 msgstr ""
 "Te rog să introduci vechea parolă, pentru motive de securitate, iar apoi să "
-"introduci noua parolă de două ori, pentru a verifica că ai introdus-o corect."
+"introduci noua parolă de două ori, pentru a verifica că ai introdus-o "
+"corect."
 
-#: templates/lfs/customer/password.html:24
+#: templates/lfs/customer/password.html:22
 msgid "Old password:"
 msgstr "Vechea parolă:"
 
-#: templates/lfs/customer/password.html:33
+#: templates/lfs/customer/password.html:31
 #: templates/registration/password_reset_confirm.html:16
 msgid "New password:"
 msgstr "Noua parolă:"
 
-#: templates/lfs/customer/password.html:42
+#: templates/lfs/customer/password.html:40
 #: templates/registration/password_reset_confirm.html:18
 msgid "Confirm password:"
 msgstr "Confirmă parola:"
@@ -702,37 +733,37 @@ msgstr "Bun venit la"
 
 #: templates/lfs/mail/order_received_mail.html:41
 #: templates/lfs/mail/order_sent_mail.html:42
-#: templates/lfs/order/lfs_order_tmpl.html:14
+#: templates/lfs/order/lfs_order_tmpl.html:6
 msgid "General"
 msgstr "General"
 
 #: templates/lfs/mail/order_received_mail.html:46
 #: templates/lfs/mail/order_sent_mail.html:47
-#: templates/lfs/order/lfs_order_tmpl.html:19
+#: templates/lfs/order/lfs_order_tmpl.html:11
 msgid "Customer name"
 msgstr "Nume client"
 
 #: templates/lfs/mail/order_received_mail.html:60
 #: templates/lfs/mail/order_sent_mail.html:61
-#: templates/lfs/order/lfs_order_tmpl.html:33
+#: templates/lfs/order/lfs_order_tmpl.html:25
 msgid "E-mail"
 msgstr "Email"
 
 #: templates/lfs/mail/order_received_mail.html:74
 #: templates/lfs/mail/order_sent_mail.html:75
-#: templates/lfs/order/lfs_order_tmpl.html:49
+#: templates/lfs/order/lfs_order_tmpl.html:41
 msgid "Phone"
 msgstr "Telefon"
 
 #: templates/lfs/mail/order_received_mail.html:97
 #: templates/lfs/mail/order_sent_mail.html:98
-#: templates/lfs/order/lfs_order_tmpl.html:72
+#: templates/lfs/order/lfs_order_tmpl.html:64
 msgid "Shipping method"
 msgstr "Metoda de livrare"
 
 #: templates/lfs/mail/order_received_mail.html:100
 #: templates/lfs/mail/order_sent_mail.html:101
-#: templates/lfs/order/lfs_order_tmpl.html:75
+#: templates/lfs/order/lfs_order_tmpl.html:67
 msgid "Payment method"
 msgstr "Metoda de plată"
 
@@ -743,7 +774,7 @@ msgstr "Plătește acum"
 
 #: templates/lfs/mail/order_received_mail.html:206
 #: templates/lfs/mail/order_sent_mail.html:195
-#: templates/lfs/order/lfs_order_tmpl.html:168
+#: templates/lfs/order/lfs_order_tmpl.html:160
 msgid "SKU"
 msgstr "SKU"
 
@@ -778,11 +809,7 @@ msgstr "Comentariu"
 msgid "No comment"
 msgstr "Nici un comentariu"
 
-#: templates/lfs/order/lfs_order_tmpl.html:6
-msgid "Ordernumber"
-msgstr "Număr comandă"
-
-#: templates/lfs/order/lfs_order_tmpl.html:270
+#: templates/lfs/order/lfs_order_tmpl.html:262
 msgid "Message from the customer"
 msgstr "Mesaj de la client"
 
@@ -802,8 +829,9 @@ msgstr "bazat pe"
 #, python-format
 msgid "%(amount)s review"
 msgid_plural "%(amount)s reviews"
-msgstr[0] "%(amount)s recenzii"
-msgstr[1] "%(amount)s recenzii"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: templates/lfs/portlets/cart.html:23
 msgid "Article"
@@ -874,8 +902,9 @@ msgstr "Ai căutat după"
 #, python-format
 msgid "1 product was found."
 msgid_plural "%(counter)s products were found."
-msgstr[0] "1 produs a fost găsit."
-msgstr[1] "%(counter)s produse au fost găsite."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: templates/lfs/search/search_results.html:44
 #: templates/tagging/product_list.html:13
@@ -927,8 +956,8 @@ msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used.  Please request a new password reset."
 msgstr ""
-"Adresa de resetare a parolei a fost invalidă, poate că a fost deja folosită. "
-"Te rog să efectuezi o nouă resetare de parolă."
+"Adresa de resetare a parolei a fost invalidă, poate că a fost deja folosită."
+" Te rog să efectuezi o nouă resetare de parolă."
 
 #: templates/registration/password_reset_done.html:16
 #: templates/registration/password_reset_done.html:22
@@ -972,8 +1001,8 @@ msgstr "Echipa %(site_name)s"
 
 #: templates/registration/password_reset_form.html:26
 msgid ""
-"Enter your e-mail address below, and we'll e-mail instructions for setting a "
-"new one."
+"Enter your e-mail address below, and we'll e-mail instructions for setting a"
+" new one."
 msgstr ""
 "Introdu mai jos adresa de email și îți vom trimite instrucțiuni pentru a "
 "alege una nouă."
@@ -1076,28 +1105,4 @@ msgstr "Produse cu acelasi Cuvânt Cheie"
 msgid "%s tag needs no argument"
 msgstr "Cuvântul cheie %s nu necesită argumente"
 
-#~ msgid "Your e-mail"
-#~ msgstr "Adresa de email"
 
-#~ msgid "Your message"
-#~ msgstr "Mesajul tău"
-
-#~ msgid "Included VAT"
-#~ msgstr "TVA Inclus"
-
-#~ msgid "Refresh options"
-#~ msgstr "Refreșează opțiunile"
-
-#~ msgid "Sorting"
-#~ msgstr "Sortare"
-
-#~ msgid "Your address"
-#~ msgstr "Adresa ta"
-
-#~ msgid "There has been found 1 product."
-#~ msgid_plural "There has been found %(counter)s products."
-#~ msgstr[0] "A fost găsit un produs."
-#~ msgstr[1] "Au fost găsite %(counter)s produse."
-
-#~ msgid "Close Window"
-#~ msgstr "Închide fereastra"

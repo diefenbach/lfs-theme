@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: LFS\n"
 "Report-Msgid-Bugs-To: https://bitbucket.org/diefenbach/django-lfs/issues\n"
 "POT-Creation-Date: 2011-11-28 08:22-0600\n"
-"PO-Revision-Date: 2011-12-02 08:25+0000\n"
+"PO-Revision-Date: 2011-12-02 18:57+0000\n"
 "Last-Translator: Belanchuk <belanchuk@bk.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -226,7 +226,7 @@ msgstr "Кол-во"
 
 #: templates/lfs/cart/cart_inline.html:121
 msgid "Delete item"
-msgstr "Убрать"
+msgstr "Удалить"
 
 #: templates/lfs/cart/cart_inline.html:176
 msgid "Country"
