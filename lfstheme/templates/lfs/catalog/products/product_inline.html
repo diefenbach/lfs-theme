@@ -144,11 +144,11 @@
                     <div class="product-quantity packing-unit"
                         id="packing-url"
                         data="{% url lfs_calculate_packing product.id %}">
-                        <input class="number product-quantity"
-                               name="quantity"
+                        <input class="number"
+                               name="number quantity"
                                size="3"
                                type="text"
-                               value="1" /> {{ product.unit }}
+                               value="{{ quantity }}" /> {{ product.unit }}
                     </div>
                 </td>
                 {% else %}
@@ -160,10 +160,11 @@
                         {% endif %}
                     </td>
                     <td class="product-quantity">
-                        <input name="quantity"
+                        <input class="number"
+                               name="quantity"
                                size="3"
                                type="text"
-                               value="1" />
+                               value="{{ quantity }}" />
                     </td>
                 {% endif %}
                 <td nowrap="nowrap">
