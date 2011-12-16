@@ -51,7 +51,7 @@
 
             </td>
             <td class="number">
-                {{ cart_item.obj.amount|quantity }} {{ cart_item.product.unit }}
+                {{ cart_item.quantity }} {{ cart_item.product.unit }}
 
                 {% if cart_item.product.active_packing_unit %}
                     <span class="packing-unit">
