@@ -77,14 +77,13 @@
                   <span class="standard-price-value">{{ variant|get_price:request|currency }}</span>* {% if product.price_unit %}/ {{ product.price_unit }}{% endif %}
             </div>
             <div class="price-disclaimer">
-                {% if product.price_includes_tax %}
+                {% if price_includes_tax %}
                     {% trans '*inc. VAT' %}
                 {% else  %}
                     {% trans '*exc. VAT' %}
                 {% endif %}
             </div>
         {% endif %}
-        - {{ variant.base_price }} -
     </div>
 
     {# Configurable properties #}
