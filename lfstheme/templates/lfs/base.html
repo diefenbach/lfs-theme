@@ -40,16 +40,6 @@
 
     </head>
     <body class="{% block section %}lfs{% endblock %}">
-
-        {% if debug %}
-            {{ sql_queries|length }}<!--
-            SQL queries ({{ sql_queries|length }}):
-            {% for query in sql_queries %}
-                {{ query.sql|safe|wordwrap:"75" }} ({{ query.time }})
-            {% endfor %}
-            -->
-        {% endif %}
-
         <div id="header">
             <div class="container">
                 {% block header %}
