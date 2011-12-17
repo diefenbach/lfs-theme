@@ -32,7 +32,7 @@
                 </td>
                 <td class="number"
                     nowrap="nowrap">
-                    {{ product|get_price:request|currency }}* {% if product.price_unit %}/ {{ product.price_unit }}{% endif %}
+                    {{ product|get_price:request|currency:request}}* {% if product.price_unit %}/ {{ product.price_unit }}{% endif %}
                 </td>
             </tr>
         {% endfor %}

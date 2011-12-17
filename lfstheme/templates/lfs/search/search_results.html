@@ -81,10 +81,10 @@
                 <div class="span-4 number last">
                     <div class="product-price">
                         {% if product.for_sale %}
-                           <span class="for-sale-standard-price">{{ product.get_standard_price|currency }}</span>
-                           <span class="for-sale-price">{{ product|get_for_sale_price:request|currency }}*</span>
+                           <span class="for-sale-standard-price">{{ product.get_standard_price|currency:request }}</span>
+                           <span class="for-sale-price">{{ product|get_for_sale_price:request|currency:request }}*</span>
                         {% else %}
-                            <span class="standard-price">{{ product|get_price:request|currency }}*</span>
+                            <span class="standard-price">{{ product|get_price:request|currency:request }}*</span>
                         {% endif %}
                         <div class="price-disclaimer">
                             {% trans '*inc. VAT' %}

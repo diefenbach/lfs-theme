@@ -3,11 +3,11 @@
 
 {% if product.get_related_products %}
     <div class="related-products-portlet portlet">
-    
+
         <div class="portlet-header">
             {% trans 'Related Products' %}
         </div>
-        
+
         <div class="portlet-body">
             {% for related_product in product.get_related_products %}
                 <div class="portlet-item">
@@ -19,10 +19,10 @@
                         </a>
                     </div>
                     <div class="price">
-                        {{ related_product|get_price:request|currency }}
+                        {{ related_product|get_price:request|currency:request }}
                     </div>
-                </div>    
-            {% endfor %}    
+                </div>
+            {% endfor %}
         </div>
     </div>
 {% endif %}

@@ -78,7 +78,7 @@
                                 <div>
                                     {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
                                     {% if property.display_price %}
-                                        ({{ property.price|currency }})
+                                        ({{ property.price|currency:request }})
                                     {% endif %}
                                 </div>
                             {% endfor %}
@@ -103,18 +103,18 @@
                     </td>
                     <td class="number"
                         nowrap="nowrap">
-                        {{ cart_item.product_price_net|currency }}
+                        {{ cart_item.product_price_net|currency:request }}
                         {% if cart_item.product.price_unit %}
                             / {{ cart_item.product.price_unit }}
                         {% endif %}
                     </td>
                     <td class="number"
                         nowrap="nowrap">
-                        ({{ cart_item.product_tax|currency }})
+                        ({{ cart_item.product_tax|currency:request }})
                     </td>
                     <td class="number"
                         nowrap="nowrap">
-                        {{ cart_item.product_price_gross|currency }}
+                        {{ cart_item.product_price_gross|currency:request }}
                     </td>
                     <td class="right">
                         <a href="{% url lfs_delete_cart_item cart_item.obj.id %}"
@@ -137,11 +137,11 @@
                     </td>
                     <td class="number">
                         {% if discount.tax %}
-                            ({{ discount.tax|currency }})
+                            ({{ discount.tax|currency:request }})
                         {% endif %}
                     </td>
                     <td class="number">
-                        - {{ discount.price|currency }}
+                        - {{ discount.price|currency:request }}
                     </td>
                     <td></td>
                 </tr>
@@ -157,13 +157,13 @@
                         1
                     </td>
                     <td class="number">
-                        - {{ voucher_value|currency }}
+                        - {{ voucher_value|currency:request }}
                     </td>
                     <td class="number">
-                        ({{ voucher_tax|currency }})
+                        ({{ voucher_tax|currency:request }})
                     </td>
                     <td class="number">
-                        - {{ voucher_value|currency }}
+                        - {{ voucher_value|currency:request }}
                     </td>
                     <td></td>
                 </tr>
@@ -208,7 +208,7 @@
                 <td></td>
                 <td class="number"
                     nowrap="nowrap">
-                    {{ shipping_price|currency }}
+                    {{ shipping_price|currency:request }}
                 </td>
                 <td></td>
             </tr>
@@ -233,7 +233,7 @@
                 <td></td>
                 <td class="number"
                     nowrap="nowrap">
-                    {{ payment_price|currency }}
+                    {{ payment_price|currency:request }}
                 </td>
                 <td></td>
             </tr>
@@ -247,7 +247,7 @@
                 </td>
                 <td class="total number padding-top"
                     nowrap="nowrap">
-                    {{ cart_price|currency }}
+                    {{ cart_price|currency:request }}
                 </td>
                 <td></td>
             </tr>
@@ -260,7 +260,7 @@
                 </td>
                 <td class="discreet number"
                     nowrap="nowrap">
-                    {{ cart_tax|currency }}
+                    {{ cart_tax|currency:request }}
                 </td>
                 <td></td>
             </tr>

@@ -50,10 +50,10 @@
                         {{ product_accessory.quantity|quantity }}
                     </td>
                     <td class="number">
-                        {{ product_accessory.accessory.get_price|currency }}
+                        {{ product_accessory.accessory.get_price|currency:request }}
                     </td>
                     <td class="number">
-                        {{ product_accessory.get_price|currency }}
+                        {{ product_accessory.get_price|currency:request }}
                     </td>
                     <td class="right">
                         <a class="button add-accessory-link"
@@ -72,11 +72,11 @@
            href="{% url lfs_checkout_dispatcher %}">
             {% trans 'Checkout' %}
         </a>
-        <a class="button cart-button" 
+        <a class="button cart-button"
            href="{% url lfs.cart.views.cart %}">
             {% trans 'Go to cart' %}
         </a>
-        <a class="button shopping-button" 
+        <a class="button shopping-button"
            href="{{ shopping_url }}">
             {% trans 'Go on shopping' %}
         </a>

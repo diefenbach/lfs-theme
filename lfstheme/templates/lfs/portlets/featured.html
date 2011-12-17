@@ -14,7 +14,7 @@
                         {{ product.get_name }}
                     </a>
                     <div class="product-price">
-                        {{ product.price|currency }}*
+                        {{ product.price|currency:request}}*
                         <div class="price-disclaimer">
                             {% if product.price_includes_tax %}
                                 {% trans '*inc. VAT' %}
@@ -43,7 +43,7 @@
                             </div>
 
                             <div class="product-price">
-                                {{ product.price|currency }}*
+                                {{ product.price|currency:request}}*
                                 <div class="price-disclaimer">
                                     {% if product.price_includes_tax %}
                                         {% trans '*inc. VAT' %}
