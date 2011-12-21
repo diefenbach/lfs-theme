@@ -9,7 +9,7 @@
         <div class="portlet-body">
             <ul class="root">
                 {% for category in categories %}
-                    <li class="level-{{ category.level }}">
+                    <li class="level-{{ category.level }} {% if forloop.last %}last{% endif %}">
                         <a {% if category.is_current %}class="current"{% endif %}
                            href="{{ category.category.get_absolute_url }}">
                             {{ category.category.name }}
