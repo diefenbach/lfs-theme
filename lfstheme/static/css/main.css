@@ -1013,8 +1013,8 @@ ___________________________________________________________________________ */
 /* slideshow portlets
 ___________________________________________________________________________ */
 
-.featured-products-portlet,
-.forsale-products-portlet {
+.featured-products-portlet .slideshow,
+.forsale-products-portlet.slideshow {
     min-height: 220px;
 }
 
