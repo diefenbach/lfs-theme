@@ -74,7 +74,7 @@
                         {% endfor %}
 
                         {% if cart_item.product.is_configurable_product %}
-                            {% for property in cart_item.get_properties %}
+                            {% for property in cart_item.obj.get_properties %}
                                 <div>
                                     {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
                                     {% if property.display_price %}
