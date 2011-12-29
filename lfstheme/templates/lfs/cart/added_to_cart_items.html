@@ -39,11 +39,11 @@
                 {% endfor %}
 
                 {% if cart_item.product.is_configurable_product %}
-                    {% for property in cart_item.get_properties %}
+                    {% for property in cart_item.obj.get_properties %}
                         <div>
                             {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
                             {% if property.display_price %}
-                                ({{ property.price|currency }})
+                                ({{ property.price|currency:request}})
                             {% endif %}
                         </div>
                     {% endfor %}
@@ -61,23 +61,23 @@
 
             </td>
             <td class="number">
-                {{ cart_item.product_price_net|currency }}
+                {{ cart_item.product_price_net|currency:request}}
                 {% if cart_item.product.price_unit %}
                     / {{ cart_item.product.price_unit }}
                 {% endif %}
             </td>
             <td class="number">
-                ({{ cart_item.product_tax|currency }})
+                ({{ cart_item.product_tax|currency:request}})
             </td>
             <td class="number last">
-                {{ cart_item.product_price_gross|currency }}
+                {{ cart_item.product_price_gross|currency:request}}
             </td>
         </tr>
     {% endfor %}
     <tr class="total">
         <td colspan="3"></td>
         <td colspan="3" class="number total">
-            {% trans 'Total' %}: {{ total|currency }}
+            {% trans 'Total' %}: {{ total|currency:request}}
         </td>
     </tr>
 </table>

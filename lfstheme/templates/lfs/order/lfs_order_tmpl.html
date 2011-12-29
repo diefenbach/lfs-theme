@@ -47,7 +47,7 @@
             {% trans 'Total' %}:
         </td>
         <td>
-            {{ current_order.price|currency }}
+            {{ current_order.price|currency:request}}
         </td>
     </tr>
 
@@ -194,7 +194,7 @@
                 {% if item.product.is_configurable_product %}
                     {% for property in item.get_properties %}
                         <div>
-                            {{ property.title }} : {{ property.value }} {{ property.unit|safe }} ({{ property.price|currency }})
+                            {{ property.title }} : {{ property.value }} {{ property.unit|safe }} ({{ property.price|currency:request}})
                         </div>
                     {% endfor %}
                 {% endif %}
@@ -204,10 +204,10 @@
                {{ item.product_amount }}
             </td>
             <td class="number">
-               {{ item.product_price_gross|currency }}
+               {{ item.product_price_gross|currency:request}}
             </td>
             <td class="number">
-               {{ item.price_gross|currency }}
+               {{ item.price_gross|currency:request}}
             </td>
         </tr>
     {% endfor %}
@@ -220,10 +220,10 @@
             1
         </td>
         <td class="number">
-            {{ current_order.shipping_price|currency }}
+            {{ current_order.shipping_price|currency:request}}
         </td>
         <td class="number">
-            {{ current_order.shipping_price|currency }}
+            {{ current_order.shipping_price|currency:request}}
         </td>
     </tr>
     <tr>
@@ -235,23 +235,23 @@
             1
         </td>
         <td class="number">
-            {{ current_order.payment_price|currency }}
+            {{ current_order.payment_price|currency:request}}
         </td>
         <td class="number">
-            {{ current_order.payment_price|currency }}
+            {{ current_order.payment_price|currency:request}}
         </td>
     </tr>
     <tr class="total">
         <td colspan="5"
             class="number total">
-            {{ current_order.price|currency }}
+            {{ current_order.price|currency:request}}
         </td>
     </tr>
     <tr>
         <td colspan="5"
             class="number tax">
             <span class="total-label">{% trans 'Inclusive VAT' %}:</span>
-            {{ current_order.tax|currency }}
+            {{ current_order.tax|currency:request}}
         </td>
     </tr>
 </table>

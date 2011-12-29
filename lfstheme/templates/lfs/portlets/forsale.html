@@ -14,8 +14,8 @@
                         {{ product.get_name }}
                     </a>
                     <div class="product-price">
-                        <span class="for-sale-standard-price">{{ product|get_standard_price:request|currency }}*</span>
-                        <span class="for-sale-price">{{ product.for_sale_price|currency }}*</span>
+                        <span class="for-sale-standard-price">{{ product|get_standard_price:request|currency:request}}*</span>
+                        <span class="for-sale-price">{{ product.for_sale_price|currency:request}}*</span>
                         <div class="price-disclaimer">
                             {% if product.price_includes_tax %}
                                 {% trans '*inc. VAT' %}
@@ -44,8 +44,8 @@
                             </div>
 
                             <div class="product-price">
-                                <span class="for-sale-standard-price">{{ product|get_standard_price:request|currency }}*</span>
-                                <span class="for-sale-price">{{ product.for_sale_price|currency }}*</span>
+                                <span class="for-sale-standard-price">{{ product|get_standard_price:request|currency:request}}*</span>
+                                <span class="for-sale-price">{{ product.for_sale_price|currency:request}}*</span>
                                 <div class="price-disclaimer">
                                     {% if product.price_includes_tax %}
                                         {% trans '*inc. VAT' %}

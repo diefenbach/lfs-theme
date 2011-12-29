@@ -60,10 +60,10 @@
 
                     <div class="product-price">
                         {% if product.get_for_sale %}
-                           <span class="for-sale-standard-price">{{ product.standard_price|currency }}</span>
-                           <span class="for-sale-price">{{ product.for_sale_price|currency }}*</span>
+                           <span class="for-sale-standard-price">{{ product.standard_price|currency:request }}</span>
+                           <span class="for-sale-price">{{ product.for_sale_price|currency:request }}*</span>
                         {% else %}
-                            <span class="standard-price">{{ product.price|currency }}*</span>
+                            <span class="standard-price">{{ product.price|currency:request }}*</span>
                         {% endif %}
                         {% if product.price_unit %}
                             / {{ product.price_unit }}

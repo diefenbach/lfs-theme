@@ -3,5 +3,5 @@
 <div>
    {% trans "This complies to" %} {{ packs }} {{ unit }} ({{ real_quantity|decimal_l10n }}
    {% if product.unit %}{{ product.unit }}{% else %}{% trans "Pieces" %}{% endif %})
-   {% trans "and costs" %} {{ price|currency }}.
+   {% trans "and costs" %} {{ price|currency:request }}.
 </div>

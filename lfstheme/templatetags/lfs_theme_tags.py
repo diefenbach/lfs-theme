@@ -16,9 +16,10 @@ class SlotsInformationNode(Node):
     """
     """
     def render(self, context):
+        request = context.get("request")
         object = context.get("category") or context.get("product") or context.get("page")
         if object is None:
-            object = lfs.core.utils.get_default_shop()
+            object = lfs.core.utils.get_default_shop(request)
 
         slots = cache.get("slots")
         if slots is None:

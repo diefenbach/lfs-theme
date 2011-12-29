@@ -520,7 +520,6 @@ ___________________________________________________________________________ */
 
 .product-images .main-image {
     margin-right: 25px;
-    border: 1px solid #dfd7d3;
     width: 200px;
 }
 
@@ -972,6 +971,10 @@ ___________________________________________________________________________ */
     padding: 10px 0;
 }
 
+.categories-portlet li.level-0.last {
+    border-bottom: none;
+}
+
 .categories-portlet li.level-0 a {
     padding-left: 15px;
     background: transparent url("../img/bullet_light.jpg") left 5px no-repeat;
@@ -1010,8 +1013,8 @@ ___________________________________________________________________________ */
 /* slideshow portlets
 ___________________________________________________________________________ */
 
-.featured-products-portlet,
-.forsale-products-portlet {
+.featured-products-portlet .slideshow,
+.forsale-products-portlet.slideshow {
     min-height: 220px;
 }
 

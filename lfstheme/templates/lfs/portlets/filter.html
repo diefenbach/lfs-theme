@@ -71,7 +71,7 @@
                                 </a>
                             {% else %}
                                 <span>
-                                    {% trans 'Up to' %} {{ price_filter.max|currency }}
+                                    {% trans 'Up to' %} {{ price_filter.max|currency:request }}
                                 </span>
                             {% endif %}
                         </div>
