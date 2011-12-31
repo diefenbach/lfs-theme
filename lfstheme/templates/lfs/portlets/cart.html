@@ -20,7 +20,8 @@
     <div class="portlet-body">
         {% if amount_of_items %}
             <div class="article">
-                {{amount_of_items}} {% trans 'Article' %}
+                {{amount_of_items}}
+                {% blocktrans count amount_of_items as counter %}Article{% plural %}Article{% endblocktrans %}
             </div>
             <div class="price">
                 {{price|currency}}

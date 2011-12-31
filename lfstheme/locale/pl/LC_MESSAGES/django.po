@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LFS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-28 08:50+0100\n"
+"POT-Creation-Date: 2011-12-30 23:30+0100\n"
 "PO-Revision-Date: 2011-12-28 08:50+0100\n"
 "Last-Translator: Wojciech Jarymowicz <wjarym@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -160,7 +160,7 @@ msgstr "Zamówienie"
 
 #: templates/lfs/cart/added_to_cart.html:77
 #: templates/lfs/checkout/one_page_checkout.html:266
-#: templates/lfs/portlets/cart.html:10 templates/lfs/portlets/cart.html:35
+#: templates/lfs/portlets/cart.html:10 templates/lfs/portlets/cart.html:36
 msgid "Go to cart"
 msgstr "Sprawdź koszyk"
 
@@ -411,8 +411,8 @@ msgid ""
 "If you are already customer you can login. Your adress data will then "
 "already known."
 msgstr ""
-"Jeśli jesteś już klientem możesz się zalogować."
-"Państwa dane adresowe będą już znane."
+"Jeśli jesteś już klientem możesz się zalogować.Państwa dane adresowe będą "
+"już znane."
 
 #: templates/lfs/checkout/login.html:37 templates/lfs/customer/login.html:38
 msgid "Forgot password?"
@@ -428,8 +428,8 @@ msgid ""
 "If you are not already a customer you can register in order to store your "
 "address data and to follow the state of your orders."
 msgstr ""
-"Jeżeli nie jesteś jeszcze naszym klientem możesz się zarejestrować "
-"w celu przechowywania danych adresowych i śledzenia stanu swojego zamówienia"
+"Jeżeli nie jesteś jeszcze naszym klientem możesz się zarejestrować w celu "
+"przechowywania danych adresowych i śledzenia stanu swojego zamówienia"
 
 #: templates/lfs/checkout/login.html:95
 msgid "You can also checkout without login or registration."
@@ -518,7 +518,8 @@ msgstr "Kontakt"
 
 #: templates/lfs/contact/contact_form.html:19
 msgid "Please leave us a message. We will answer as soon as possible."
-msgstr "Proszę zostawić nam wiadomość. Postaramy się odpowiedzieć jak najszybciej."
+msgstr ""
+"Proszę zostawić nam wiadomość. Postaramy się odpowiedzieć jak najszybciej."
 
 #: templates/lfs/contact/contact_form.html:30
 #: templates/reviews/review_form.html:113
@@ -546,6 +547,8 @@ msgid ""
 "Welcome to your account. Here you can find your orders, you can change your "
 "addresses, email address and your password."
 msgstr ""
+"Witamy w Twoim koncie. Tutaj masz możliwość przeglądania swoich zamówień, "
+"możesz zmienić swoje adresy, e-mail lub hasło."
 
 #: templates/lfs/customer/addresses.html:6
 msgid "My Addresses"
@@ -637,8 +640,8 @@ msgid ""
 "If you are already customer you can login. Your address data will be stored "
 "in your account."
 msgstr ""
-"Jeśli jesteś już naszym klientem, możesz się zalogować. "
-"Twoje dane adresowe zostaną zapisane na koncie."
+"Jeśli jesteś już naszym klientem, możesz się zalogować. Twoje dane adresowe "
+"zostaną zapisane na koncie."
 
 #: templates/lfs/customer/order.html:6 templates/lfs/customer/order.html:12
 msgid "Order"
@@ -701,7 +704,8 @@ msgid ""
 "password twice so we can verify you typed it in correctly."
 msgstr ""
 "Proszę podać swoje stare hasło ze względów bezpieczeństwo, a następnie wpisz "
-"nowe hasło dwa razy, dzięki czemu potwierdzi to, że masz je wpisane poprawnie."
+"nowe hasło dwa razy, dzięki czemu potwierdzi to, że masz je wpisane "
+"poprawnie."
 
 #: templates/lfs/customer/password.html:22
 msgid "Old password:"
@@ -830,11 +834,14 @@ msgid_plural "%(amount)s reviews"
 msgstr[0] ""
 msgstr[1] ""
 
-#: templates/lfs/portlets/cart.html:23
+#: templates/lfs/portlets/cart.html:24
 msgid "Article"
-msgstr "Artykuł"
+msgid_plural "Article"
+msgstr[0] "Towar"
+msgstr[1] "Towary"
+msgstr[2] "Towarów"
 
-#: templates/lfs/portlets/cart.html:29
+#: templates/lfs/portlets/cart.html:30
 msgid "Cart is empty"
 msgstr "Koszyk jest pusty"
 
@@ -871,11 +878,11 @@ msgstr "Podobne produkty"
 
 #: templates/lfs/portlets/topseller.html:7
 msgid "Topseller"
-msgstr "Super sprzedawcy"
+msgstr "Najlepiej kupowane"
 
 #: templates/lfs/portlets/topseller.html:22
 msgid "All topseller"
-msgstr "Wszystcy super sprzedawcy"
+msgstr "Wszystkie najlepiej kupowane produkty"
 
 #: templates/lfs/search/livesearch_results.html:43
 msgid "All results"
