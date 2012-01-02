@@ -204,7 +204,7 @@ msgstr "Koszyk"
 #: templates/lfs/mail/order_received_mail.html:273
 #: templates/lfs/mail/order_sent_mail.html:259
 msgid "Voucher"
-msgstr "Talon"
+msgstr "Kupon"
 
 #: templates/lfs/cart/cart_inline.html:22
 msgid "Your Cart"
@@ -392,7 +392,7 @@ msgstr "Załączniki"
 
 #: templates/lfs/checkout/checkout_cart_inline.html:5
 msgid "Voucher code"
-msgstr "Kupon"
+msgstr "Kod kuponu"
 
 #: templates/lfs/checkout/checkout_cart_inline.html:20
 msgid "Your cart"
