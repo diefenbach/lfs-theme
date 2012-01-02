@@ -289,7 +289,7 @@ msgstr "i koszty"
 #: templates/lfs/catalog/product_base.html:37
 #: templates/lfs/customer/order.html:19
 msgid "Back to overview"
-msgstr "Powrót na początke"
+msgstr "Powrót na począteK"
 
 #: templates/lfs/catalog/product_base.html:52
 msgid "Tags"
