@@ -6,21 +6,22 @@
       action="{% url lfs.catalog.views.product_form_dispatcher %}"
       data="{% url lfs_select_variant_from_properties %}"
       method="post">
-
     {% csrf_token %}
+
+    {# Images #}
     <div class="product-images">
         <div class="main-image">
-            {% if variant.get_image %}
-                <a href="{{ variant.get_image.image.url_400x400 }}"
+            {% if product.get_image %}
+                <a href="{{ product.get_image.image.url_400x400 }}"
                    class="product-image">
-                    <img src="{{ variant.get_image.image.url_200x200 }}"
-                         title="{{ variant.get_image.title }}"
-                         alt="{{ variant.get_image.title }}" />
+                    <img src="{{ product.get_image.image.url_200x200 }}"
+                         title="{{ product.get_image.title }}"
+                         alt="{{ product.get_image.title }}" />
                 </a>
             {% endif %}
         </div>
         <div class="sub-images">
-            {% for image in variant.get_sub_images %}
+            {% for image in product.get_sub_images %}
                 <a href="{{ image.image.url_400x400 }}"
                    class="product-image">
                     <img src="{{ image.image.url_60x60 }}"
@@ -32,40 +33,39 @@
     </div>
 
     <h1 class="product-title">
-        {{ variant.get_name }}
+        {{ product.get_name }}
     </h1>
 
-    {# Displayed properties #}
+    {# Displayed Properties #}
     <div class="product-properties">
-        {% for property in variant.get_displayed_properties %}
+        {% for property in product.get_displayed_properties %}
             <div>
                 {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
             </div>
         {% endfor %}
     </div>
 
-    {% shipping variant %}
-
-    {% average_for_instance variant %}
+    {% shipping product %}
+    {% average_for_instance product %}
 
     {# Prices #}
     <div class="prices">
-        {% if variant.get_for_sale %}
+        {% if for_sale %}
             <div>
                 <span class="for-sale-standard-price" nowrap="nowrap">
                     <span class="for-sale-standard-price-value">
-                        {{ variant|get_standard_price:request|currency:request }}
+                        {{ product|get_standard_price:request|currency:request }}
                     </span>
-                    * {% if product.price_unit %}/ {{ product.price_unit }}{% endif %}</span>
+                    * {% if price_unit %}/ {{ price_unit }}{% endif %}</span>
                 <span class="for-sale-price" nowrap="nowrap">
                     <span class="for-sale-price-value">
-                        {{ variant|get_for_sale_price:request|currency:request }}
+                        {{ product|get_for_sale_price:request|currency:request }}
                     </span>
-                    * {% if product.price_unit %}/ {{ product.price_unit }}{% endif %}
+                    * {% if price_unit %}/ {{ price_unit }}{% endif %}
                 </span>
             </div>
             <div class="price-disclaimer">
-                {% if product.price_includes_tax %}
+                {% if price_includes_tax %}
                     {% trans '*inc. VAT' %}
                 {% else  %}
                     {% trans '*exc. VAT' %}
@@ -74,7 +74,7 @@
         {% else %}
             <div class="standard-price"
                   nowrap="nowrap">
-                  <span class="standard-price-value">{{ variant|get_price:request|currency:request }}</span>* {% if product.price_unit %}/ {{ product.price_unit }}{% endif %}
+                  <span class="standard-price-value">{{ product|get_price:request|currency:request }}</span>* {% if price_unit %}/ {{ price_unit }}{% endif %}
             </div>
             <div class="price-disclaimer">
                 {% if price_includes_tax %}
@@ -86,9 +86,8 @@
         {% endif %}
     </div>
 
-    {# Configurable properties #}
+    {# Configurable Properties #}
     {% if product.is_configurable_product %}
-
         <table class="cp-properties"
                id="cp-url"
                data="{% url lfs_calculate_price product.id %}">
@@ -135,7 +134,7 @@
     {% endif %}
 
     <br clear="both">
-    {% if variant.is_deliverable %}
+    {% if product.is_deliverable %}
         <table align="right" class="buttons">
             <tr>
                 <td>
@@ -143,8 +142,8 @@
                     <div class="product-quantity packing-unit"
                         id="packing-url"
                         data="{% url lfs_calculate_packing product.id %}">
-                        <input class="number"
-                               name="number quantity"
+                        <input class="number quantity"
+                               name="quantity"
                                size="3"
                                type="text"
                                value="{{ quantity }}" /> {{ product.unit }}
@@ -183,18 +182,15 @@
     {% endif %}
 
     <p class="product-description">
-        {{ variant.get_description|safe}}
+        {{ product.get_description|safe}}
     </p>
 
-    {# Product with variants #}
-
-    {% if product.is_product_with_variants %}
-
+    {# Variants #}
+    {% if product.is_variant %}
         <div class="variants">
             <h1 class="section">{% trans 'Variants' %}</h1>
-
             {# List #}
-            {% ifequal product.variants_display_type 0 %}
+            {% if display_variants_list %}
                 <table class="product-variants lfs-default"
                        data="{% url lfs_select_variant %}">
                     <tr>
@@ -218,7 +214,7 @@
                                        class="variant"
                                        name="variant_id"
                                        value="{{ product_variant.id }}"
-                                       {% ifequal product_variant.id variant.id %}checked="checked"{% endifequal %}  />
+                                       {% ifequal product_variant.id product.id %}checked="checked"{% endifequal %}  />
                             </td>
                             <td>
                                 {{ product_variant.get_name }}
@@ -242,10 +238,7 @@
                         </tr>
                     {% endfor %}
                 </table>
-            {% endifequal %}
-
-            {# Select field #}
-            {% ifequal product.variants_display_type 1 %}
+            {% else %}
                 <div>
                     {% for property in properties %}
                         <div>
@@ -264,7 +257,7 @@
                         </div>
                     {% endfor %}
                 </div>
-            {% endifequal %}
+            {% endif %}
         </div>
     {% endif %}
 
@@ -335,9 +328,5 @@
     <input type="hidden"
            name="product_id"
            value="{{ product.id }}" />
-
-    <input type="hidden"
-           name="variant_id"
-           value="{{ variant.id }}" />
 
 </form>
