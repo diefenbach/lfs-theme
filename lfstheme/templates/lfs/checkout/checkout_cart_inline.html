@@ -75,7 +75,7 @@
 
                 {% if cart_item.product.active_packing_unit %}
                     <span class="packing-unit">
-                        ({{ cart_item|packages }} {{ cart_item.product.packing_unit_unit }})
+                        ({{ cart_item.obj|packages }} {{ cart_item.product.packing_unit_unit }})
                     </span>
                 {% endif %}
 
