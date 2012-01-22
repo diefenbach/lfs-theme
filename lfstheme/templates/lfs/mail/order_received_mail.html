@@ -108,13 +108,20 @@
                     <div>
                         {{ order.shipping_lastname }}
                     </div>
+                    {% if order.shipping_company_name %}
+                        <div>
+                            {{ order.shipping_company_name }}
+                        </div>
+                    {% endif %}
                     <div>
-                        {{ order.shipping_line1 }}
+                        {{ order.invoice_line1 }}
                     </div>
-                    <div>
-                        {{ order.shipping_line2 }}
-                    </div>
-                    <div>
+                    {% if order.shipping_line2 %}
+                        <div>
+                            {{ order.shipping_line2 }}
+                        </div>
+                    {% endif %}
+                        <div>
                         {{ order.shipping_city }}
                     </div>
                     <div>
@@ -140,13 +147,20 @@
                     <div>
                         {{ order.invoice_lastname }}
                     </div>
+                    {% if order.invoice_company_name %}
+                        <div>
+                            {{ order.invoice_company_name }}
+                        </div>
+                    {% endif %}
                     <div>
                         {{ order.invoice_line1 }}
                     </div>
-                    <div>
-                        {{ order.invoice_line2 }}
-                    </div>
-                    <div>
+                    {% if order.invoice_line2 %}
+                        <div>
+                            {{ order.invoice_line2 }}
+                        </div>
+                    {% endif %}
+                        <div>
                         {{ order.invoice_city }}
                     </div>
                     <div>
@@ -238,7 +252,7 @@
                         {% endfor %}
 
                         {% if item.product.is_configurable_product %}
-                            {% for property in item.get_properties %}                    
+                            {% for property in item.get_properties %}
                                 <div>
                                     {{ property.title }} : {{ property.value }} {{ property.unit|safe }}
                                     {% if property.display_price %}
@@ -251,11 +265,11 @@
                     </td>
                     <td class="number">
                         {{ item.product_amount }} {{ item.product.unit }}
-                        {% if item.product.active_packing_unit %} 
+                        {% if item.product.active_packing_unit %}
                             <span class="packing-unit">
                                 ({{ item|packages }} {{ item.product.packing_unit_unit }})
                             </span>
-                        {% endif %}                      
+                        {% endif %}
                     </td>
                     <td class="number">
                        {{ item.product_price_gross|currency }}{% if item.product.price_unit %} / {{ item.product.price_unit }}{% endif %}
