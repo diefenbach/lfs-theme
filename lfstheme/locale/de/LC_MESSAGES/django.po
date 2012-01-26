@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LFS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-22 12:04+0100\n"
+"POT-Creation-Date: 2012-01-26 08:07+0100\n"
 "PO-Revision-Date: 2011-03-30 09:35+0100\n"
 "Last-Translator: Kai Diefenbach <kai.diefenbach@iqpp.de>\n"
 "Language-Team: Kai Diefenbach <kai.diefenbach@iqpp.de>\n"
@@ -92,14 +92,14 @@ msgid "This product has been added to cart"
 msgstr "Dieses Produkt wurde zum Warenkorb hinzugefügt."
 
 #: templates/lfs/cart/added_to_cart.html:25
-#: templates/lfs/catalog/products/product_inline.html:288
+#: templates/lfs/catalog/products/product_inline.html:298
 msgid "Accessories"
 msgstr "Zubehör"
 
 #: templates/lfs/cart/added_to_cart.html:29
-#: templates/lfs/catalog/products/product_inline.html:199
-#: templates/lfs/catalog/products/product_inline.html:292
-#: templates/lfs/mail/order_received_mail.html:209
+#: templates/lfs/catalog/products/product_inline.html:209
+#: templates/lfs/catalog/products/product_inline.html:302
+#: templates/lfs/mail/order_received_mail.html:223
 #: templates/lfs/mail/order_sent_mail.html:198
 #: templates/lfs/mail/review_added_mail.html:19
 #: templates/lfs/order/lfs_order_tmpl.html:163
@@ -108,16 +108,16 @@ msgstr "Name"
 
 #: templates/lfs/cart/added_to_cart.html:32
 #: templates/lfs/cart/added_to_cart_items.html:9
-#: templates/lfs/catalog/products/product_inline.html:157
-#: templates/lfs/catalog/products/product_inline.html:293
+#: templates/lfs/catalog/products/product_inline.html:167
+#: templates/lfs/catalog/products/product_inline.html:303
 msgid "Quantity"
 msgstr "Menge"
 
 #: templates/lfs/cart/added_to_cart.html:35
-#: templates/lfs/catalog/products/product_inline.html:207
-#: templates/lfs/catalog/products/product_inline.html:294
+#: templates/lfs/catalog/products/product_inline.html:217
+#: templates/lfs/catalog/products/product_inline.html:304
 #: templates/lfs/customer/orders.html:44
-#: templates/lfs/mail/order_received_mail.html:215
+#: templates/lfs/mail/order_received_mail.html:229
 #: templates/lfs/mail/order_sent_mail.html:204
 #: templates/lfs/order/lfs_order_tmpl.html:169
 #: templates/lfs/portlets/filter.html:59
@@ -128,14 +128,14 @@ msgstr "Einzelpreis"
 
 #: templates/lfs/cart/added_to_cart.html:38
 #: templates/lfs/cart/added_to_cart_items.html:18
-#: templates/lfs/cart/added_to_cart_items.html:80
-#: templates/lfs/cart/cart_inline.html:44
+#: templates/lfs/cart/added_to_cart_items.html:77
+#: templates/lfs/cart/cart_inline.html:45
 #: templates/lfs/cart/cart_inline.html:246
-#: templates/lfs/catalog/products/product_inline.html:295
-#: templates/lfs/checkout/checkout_cart_inline.html:36
-#: templates/lfs/checkout/checkout_cart_inline.html:181
+#: templates/lfs/catalog/products/product_inline.html:305
+#: templates/lfs/checkout/checkout_cart_inline.html:37
+#: templates/lfs/checkout/checkout_cart_inline.html:188
 #: templates/lfs/mail/order_received_mail.html:80
-#: templates/lfs/mail/order_received_mail.html:218
+#: templates/lfs/mail/order_received_mail.html:232
 #: templates/lfs/mail/order_sent_mail.html:81
 #: templates/lfs/mail/order_sent_mail.html:207
 #: templates/lfs/order/lfs_order_tmpl.html:47
@@ -181,14 +181,14 @@ msgid "Product"
 msgstr "Produkt"
 
 #: templates/lfs/cart/added_to_cart_items.html:12
-#: templates/lfs/cart/cart_inline.html:38
-#: templates/lfs/checkout/checkout_cart_inline.html:30
+#: templates/lfs/cart/cart_inline.html:39
+#: templates/lfs/checkout/checkout_cart_inline.html:31
 msgid "Net Price"
 msgstr "Nettopreis"
 
 #: templates/lfs/cart/added_to_cart_items.html:15
-#: templates/lfs/cart/cart_inline.html:41
-#: templates/lfs/checkout/checkout_cart_inline.html:33
+#: templates/lfs/cart/cart_inline.html:42
+#: templates/lfs/checkout/checkout_cart_inline.html:34
 msgid "VAT"
 msgstr "MwSt."
 
@@ -199,8 +199,8 @@ msgstr "Warenkorb"
 
 #: templates/lfs/cart/cart_inline.html:6
 #: templates/lfs/cart/cart_inline.html:154
-#: templates/lfs/checkout/checkout_cart_inline.html:127
-#: templates/lfs/mail/order_received_mail.html:273
+#: templates/lfs/checkout/checkout_cart_inline.html:131
+#: templates/lfs/mail/order_received_mail.html:287
 #: templates/lfs/mail/order_sent_mail.html:259
 msgid "Voucher"
 msgstr "Gutschein"
@@ -209,9 +209,9 @@ msgstr "Gutschein"
 msgid "Your Cart"
 msgstr "Ihr Warenkorb"
 
-#: templates/lfs/cart/cart_inline.html:35
-#: templates/lfs/checkout/checkout_cart_inline.html:27
-#: templates/lfs/mail/order_received_mail.html:212
+#: templates/lfs/cart/cart_inline.html:36
+#: templates/lfs/checkout/checkout_cart_inline.html:28
+#: templates/lfs/mail/order_received_mail.html:226
 #: templates/lfs/mail/order_sent_mail.html:201
 #: templates/lfs/order/lfs_order_tmpl.html:166
 msgid "Amount"
@@ -226,9 +226,9 @@ msgid "Country"
 msgstr "Land"
 
 #: templates/lfs/cart/cart_inline.html:195
-#: templates/lfs/checkout/checkout_cart_inline.html:147
+#: templates/lfs/checkout/checkout_cart_inline.html:152
 #: templates/lfs/checkout/one_page_checkout.html:63
-#: templates/lfs/mail/order_received_mail.html:290
+#: templates/lfs/mail/order_received_mail.html:304
 #: templates/lfs/mail/order_sent_mail.html:276
 #: templates/lfs/order/lfs_order_tmpl.html:217
 #: templates/lfs/shipping/shipping_portlet.html:6
@@ -236,17 +236,17 @@ msgid "Shipping"
 msgstr "Versandart"
 
 #: templates/lfs/cart/cart_inline.html:220
-#: templates/lfs/checkout/checkout_cart_inline.html:164
+#: templates/lfs/checkout/checkout_cart_inline.html:170
 #: templates/lfs/checkout/payment_inline.html:3
-#: templates/lfs/mail/order_received_mail.html:305
+#: templates/lfs/mail/order_received_mail.html:319
 #: templates/lfs/mail/order_sent_mail.html:291
 #: templates/lfs/order/lfs_order_tmpl.html:232
 msgid "Payment"
 msgstr "Zahlungsweise"
 
 #: templates/lfs/cart/cart_inline.html:259
-#: templates/lfs/checkout/checkout_cart_inline.html:188
-#: templates/lfs/mail/order_received_mail.html:326
+#: templates/lfs/checkout/checkout_cart_inline.html:195
+#: templates/lfs/mail/order_received_mail.html:340
 #: templates/lfs/mail/order_sent_mail.html:312
 #: templates/lfs/order/lfs_order_tmpl.html:253
 msgid "Inclusive VAT"
@@ -329,7 +329,7 @@ msgid "Name descending"
 msgstr "Name absteigend"
 
 #: templates/lfs/catalog/categories/category/default.html:28
-#: templates/lfs/catalog/categories/product/default.html:81
+#: templates/lfs/catalog/categories/product/default.html:94
 #: templates/lfs/search/search_results.html:98
 msgid "Details"
 msgstr "Details"
@@ -352,9 +352,13 @@ msgstr "Produkte"
 msgid "Next page"
 msgstr "Nächste Seite"
 
-#: templates/lfs/catalog/categories/product/default.html:73
-#: templates/lfs/catalog/products/product_inline.html:69
-#: templates/lfs/catalog/products/product_inline.html:81
+#: templates/lfs/catalog/categories/product/default.html:63
+msgid "Starting at"
+msgstr "Ab"
+
+#: templates/lfs/catalog/categories/product/default.html:86
+#: templates/lfs/catalog/products/product_inline.html:74
+#: templates/lfs/catalog/products/product_inline.html:91
 #: templates/lfs/portlets/featured.html:20
 #: templates/lfs/portlets/featured.html:50
 #: templates/lfs/portlets/forsale.html:21
@@ -363,9 +367,9 @@ msgstr "Nächste Seite"
 msgid "*inc. VAT"
 msgstr "*inkl. MwSt. zzgl. Versand"
 
-#: templates/lfs/catalog/categories/product/default.html:75
-#: templates/lfs/catalog/products/product_inline.html:71
-#: templates/lfs/catalog/products/product_inline.html:83
+#: templates/lfs/catalog/categories/product/default.html:88
+#: templates/lfs/catalog/products/product_inline.html:76
+#: templates/lfs/catalog/products/product_inline.html:93
 #: templates/lfs/portlets/featured.html:22
 #: templates/lfs/portlets/featured.html:52
 #: templates/lfs/portlets/forsale.html:23
@@ -373,19 +377,19 @@ msgstr "*inkl. MwSt. zzgl. Versand"
 msgid "*exc. VAT"
 msgstr "*exkl. MwSt. zzgl. Versand"
 
-#: templates/lfs/catalog/products/product_inline.html:171
+#: templates/lfs/catalog/products/product_inline.html:181
 msgid "Add to cart"
 msgstr "In den Warenkorb"
 
-#: templates/lfs/catalog/products/product_inline.html:181
+#: templates/lfs/catalog/products/product_inline.html:191
 msgid "Send request"
 msgstr "Anfrage senden"
 
-#: templates/lfs/catalog/products/product_inline.html:191
+#: templates/lfs/catalog/products/product_inline.html:201
 msgid "Variants"
 msgstr "Varianten"
 
-#: templates/lfs/catalog/products/product_inline.html:267
+#: templates/lfs/catalog/products/product_inline.html:277
 msgid "Attachments"
 msgstr "Anhänge"
 
@@ -440,7 +444,10 @@ msgstr ""
 msgid ""
 "The operation could not be performed because one or more error(s) occurred."
 "<br />Please resubmit the form after making the following changes:"
-msgstr "Die Bestellung konnte nicht abgeschickt werden, da ein oder mehrere Fehler aufgetreten sind. <br />Bitte beheben Sie diese und senden das Formular erneut ab."
+msgstr ""
+"Die Bestellung konnte nicht abgeschickt werden, da ein oder mehrere Fehler "
+"aufgetreten sind. <br />Bitte beheben Sie diese und senden das Formular "
+"erneut ab."
 
 #: templates/lfs/checkout/one_page_checkout.html:40
 #: templates/lfs/mail/order_received_mail.html:94
@@ -543,7 +550,9 @@ msgstr "Willkommen!"
 msgid ""
 "Welcome to your account. Here you can find your orders, you can change your "
 "addresses, email address and your password."
-msgstr "Willkommen zu Ihrem Konto. Hier können Sie Ihre Besllungen ansehen, Ihre Addressen, Ihre E-Mail und Ihr Passwort ändern."
+msgstr ""
+"Willkommen zu Ihrem Konto. Hier können Sie Ihre Besllungen ansehen, Ihre "
+"Addressen, Ihre E-Mail und Ihr Passwort ändern."
 
 #: templates/lfs/customer/addresses.html:6
 msgid "My Addresses"
@@ -763,18 +772,18 @@ msgstr "Liefermethod"
 msgid "Payment method"
 msgstr "Zahlungsweise"
 
-#: templates/lfs/mail/order_received_mail.html:194
+#: templates/lfs/mail/order_received_mail.html:208
 #: templates/lfs/mail/order_sent_mail.html:183
 msgid "Pay now"
 msgstr "Jetzt bezahlen"
 
-#: templates/lfs/mail/order_received_mail.html:206
+#: templates/lfs/mail/order_received_mail.html:220
 #: templates/lfs/mail/order_sent_mail.html:195
 #: templates/lfs/order/lfs_order_tmpl.html:160
 msgid "SKU"
 msgstr "Artikelnummer"
 
-#: templates/lfs/mail/order_received_mail.html:335
+#: templates/lfs/mail/order_received_mail.html:349
 #: templates/lfs/mail/order_sent_mail.html:321
 msgid "Your message to us"
 msgstr "Ihre Nachricht an uns"
