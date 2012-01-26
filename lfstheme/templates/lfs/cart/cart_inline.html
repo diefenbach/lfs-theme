@@ -31,7 +31,8 @@
                 <th colspan="2">
                     {% trans 'Product' %}
                 </th>
-                <th class="number">
+                <th class="left"
+                    colspan="2">
                     {% trans 'Amount' %}
                 </th>
                 <th class="number">
@@ -91,6 +92,8 @@
                                name="amount-cart-item_{{ cart_item.obj.id }}"
                                size="6"
                                value="{{ cart_item.quantity }}" />
+                    </td>
+                    <td>
                                {% if cart_item.product.unit %}
                                     {{ cart_item.product.unit }}
                                {% endif %}
@@ -104,13 +107,10 @@
                     <td class="number"
                         nowrap="nowrap">
                         {{ cart_item.product_price_net|currency:request }}
-                        {% if cart_item.product.price_unit %}
-                            / {{ cart_item.product.price_unit }}
-                        {% endif %}
                     </td>
                     <td class="number"
                         nowrap="nowrap">
-                        ({{ cart_item.product_tax|currency:request }})
+                        {{ cart_item.product_tax|currency:request }}
                     </td>
                     <td class="number"
                         nowrap="nowrap">

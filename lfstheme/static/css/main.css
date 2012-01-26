@@ -167,6 +167,10 @@ td.select {
     text-align:right;
 }
 
+.padding-left {
+    padding-left: 4px;
+}
+
 .padding-top {
     margin-top: 10px;
 }
@@ -388,6 +392,7 @@ ul.breadcrumbs li {
     line-height: 1.5em;
 }
 
+.base-price,
 .price-disclaimer {
     font-size: 80%;
     color: #9f8d83;

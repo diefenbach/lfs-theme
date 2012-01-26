@@ -23,7 +23,8 @@
         <th colspan="2">
             {% trans 'Product' %}
         </th>
-        <th class="number">
+        <th class="left"
+            colspan="2">
             {% trans 'Amount' %}
         </th>
         <th class="number">
@@ -71,7 +72,10 @@
 
             </td>
             <td class="number">
-                {{ cart_item.quantity }} {{ cart_item.product.unit }}
+                {{ cart_item.quantity }}
+            </td>
+            <td class="padding-left">
+                {{ cart_item.product.unit }}
 
                 {% if cart_item.product.active_packing_unit %}
                     <span class="packing-unit">
@@ -83,12 +87,11 @@
             <td class="number">
                 {{ cart_item.product_price_net|currency:request}}
                 {% if cart_item.product.price_unit %}
-                    / {{ cart_item.product.price_unit }}
                 {% endif %}
 
             </td>
             <td class="number">
-                ({{ cart_item.product_tax|currency:request}})
+                {{ cart_item.product_tax|currency:request}}
             </td>
             <td class="number">
                 {{ cart_item.product_price_gross|currency:request}}
@@ -105,6 +108,7 @@
             <td class="number">
                 1
             </td>
+            <td></td>
             <td class="number">
                 - {{ discount.price|currency:request}}
             </td>
@@ -129,6 +133,7 @@
             <td class="number">
                 1
             </td>
+            <td></td>
             <td class="number">
                 - {{ voucher_value|currency:request}}
             </td>
@@ -149,6 +154,7 @@
         <td class="number">
             1
         </td>
+        <td></td>
         <td class="number">
             {{ shipping_price|currency:request}}
         </td>
@@ -166,6 +172,7 @@
         <td class="number">
             1
         </td>
+        <td></td>
         <td class="number">
             {{ payment_price|currency:request}}
         </td>
@@ -176,14 +183,14 @@
     </tr>
 
     <tr>
-        <td colspan="6"
+        <td colspan="7"
             class="total number padding-top">
             <span class="total-label">{% trans 'Total' %}:</span>
             {{ cart_price|currency:request}}
         </td>
     </tr>
     <tr>
-        <td colspan="6"
+        <td colspan="7"
             class="discreet number">
             <span class="total-label">{% trans 'Inclusive VAT' %}:</span>
             {{ cart_tax|currency:request}}

@@ -62,12 +62,9 @@
             </td>
             <td class="number">
                 {{ cart_item.product_price_net|currency:request}}
-                {% if cart_item.product.price_unit %}
-                    / {{ cart_item.product.price_unit }}
-                {% endif %}
             </td>
             <td class="number">
-                ({{ cart_item.product_tax|currency:request}})
+                {{ cart_item.product_tax|currency:request}}
             </td>
             <td class="number last">
                 {{ cart_item.product_price_gross|currency:request}}

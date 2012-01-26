@@ -54,16 +54,21 @@
             <div>
                 <span class="for-sale-standard-price" nowrap="nowrap">
                     <span class="for-sale-standard-price-value">
-                        {{ product|get_standard_price:request|currency:request }}
+                        {{ product|get_standard_price_gross:request|currency:request }}
                     </span>
                     * {% if price_unit %}/ {{ price_unit }}{% endif %}</span>
                 <span class="for-sale-price" nowrap="nowrap">
                     <span class="for-sale-price-value">
-                        {{ product|get_for_sale_price:request|currency:request }}
+                        {{ product|get_for_sale_price_gross:request|currency:request }}
                     </span>
                     * {% if price_unit %}/ {{ price_unit }}{% endif %}
                 </span>
             </div>
+            {% if product.get_active_base_price %}
+                <div class="base-price">
+                    {{ product|get_base_price_gross:request|currency }} / {{ product.get_base_price_unit }}*
+                </div>
+            {% endif %}
             <div class="price-disclaimer">
                 {% if price_includes_tax %}
                     {% trans '*inc. VAT' %}
@@ -74,8 +79,13 @@
         {% else %}
             <div class="standard-price"
                   nowrap="nowrap">
-                  <span class="standard-price-value">{{ product|get_price:request|currency:request }}</span>* {% if price_unit %}/ {{ price_unit }}{% endif %}
+                  <span class="standard-price-value">{{ product|get_price_gross:request|currency:request }}</span>* {% if price_unit %}/ {{ price_unit }}{% endif %}
             </div>
+            {% if product.get_active_base_price %}
+                <div class="base-price">
+                    {{ product|get_base_price_gross:request|currency }} / {{ product.get_base_price_unit }}*
+                </div>
+            {% endif %}
             <div class="price-disclaimer">
                 {% if price_includes_tax %}
                     {% trans '*inc. VAT' %}
@@ -138,7 +148,7 @@
         <table align="right" class="buttons">
             <tr>
                 <td>
-                {% if product.active_packing_unit %}
+                {% if product.get_active_packing_unit %}
                     <div class="product-quantity packing-unit"
                         id="packing-url"
                         data="{% url lfs_calculate_packing product.id %}">
@@ -146,13 +156,13 @@
                                name="quantity"
                                size="3"
                                type="text"
-                               value="{{ quantity }}" /> {{ product.unit }}
+                               value="{{ quantity }}" /> {{ unit }}
                     </div>
                 </td>
                 {% else %}
                     <td>
-                        {% if product.unit %}
-                            {{ product.unit }}:
+                        {% if unit %}
+                            {{ unit }}:
                         {% else %}
                             {% trans "Quantity" %}:
                         {% endif %}
