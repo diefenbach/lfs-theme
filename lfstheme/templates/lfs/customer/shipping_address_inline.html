@@ -18,7 +18,17 @@
                 {{ form.shipping_lastname }}
             </td>
         </tr>
-        {{ address_form.as_table }}
+        {% for field in address_form %}
+            <tr>
+                <td class="label">
+                    <label for="{{ field.id }}">{{ field.label_tag }}:</label>
+                </td>
+                <td>
+                    {{ field.errors }}
+                    {{ field }}
+                </td>
+            </tr>
+        {% endfor %}
         {% if request.user.is_anonymous %}
            <tr>
                 <td class="label">
