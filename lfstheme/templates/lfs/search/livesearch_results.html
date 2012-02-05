@@ -28,11 +28,17 @@
                             {{ property.title }} : {{ property.value }} {{ property.unit|safe }}
                         </div>
                     {% endfor %}
-
                 </td>
                 <td class="number"
                     nowrap="nowrap">
-                    {{ product|get_price:request|currency:request}}* {% if product.price_unit %}/ {{ product.price_unit }}{% endif %}
+                    <div class="price">
+                        {{ product|get_price_gross:request|currency:request}}* {% if product.get_price_unit %}/ {{ product.get_price_unit }}{% endif %}
+                    </div>
+                    {% if product.active_base_price %}
+                        <div class="base-price">
+                            {{ product|get_base_price_gross:request|currency:request}}* {% if product.get_base_price_unit %}/ {{ product.get_base_price_unit }}{% endif %}
+                        </div>
+                    {% endif %}
                 </td>
             </tr>
         {% endfor %}

@@ -224,6 +224,13 @@ table.search-results {
     margin-top: 10px;
 }
 
+.search-results .header {
+    background-color: #9F8D83;
+    color: white;
+    font-weight: bold;
+    padding: 4px 6px;
+}
+
 .search-results-description {
     padding: 10px 0;
 }
