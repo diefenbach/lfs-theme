@@ -18,6 +18,15 @@
                 {{ form.invoice_lastname }}
             </td>
 	    </tr>
+        <tr>
+            <td class="label">
+                <label for="id_invoice_company_name">{{ form.invoice_company_name.label_tag }}:</label>
+            </td>
+            <td>
+                {{ form.invoice_company_name.errors }}
+                {{ form.invoice_company_name }}
+            </td>
+        </tr>
         {% for field in address_form %}
             <tr>
                 <td class="label">
