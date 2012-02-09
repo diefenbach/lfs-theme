@@ -35,9 +35,12 @@
 
 {% sorting %}
 
-<h1>
+<h1 class="first-heading">
     {{ category.name }}
 </h1>
+<div class="description">
+    {{ category.description|safe }}
+</div>
 <div id="products">
     <table class="lfs-default">
         {% for col in products %}
