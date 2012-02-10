@@ -35,9 +35,12 @@
 
 {% sorting %}
 
-<h1>
+<h1 class="first-heading">
     {{ category.name }}
 </h1>
+<div class="description">
+    {{ category.description|safe }}
+</div>
 <div id="products">
     <table class="lfs-default">
         {% for col in products %}
@@ -58,27 +61,35 @@
                         <div class="product-description">{{ product.obj.short_description|safe }}</div>
                     </div>
 
+                    {% category_product_prices_gross product.obj.id %}
+
                     <div class="product-price">
-                        {% if product.obj.parent.display_cheapest_variant_for_category %}
+                        {% if price_starting_from %}
                             {% trans "Starting at" %}
                         {% endif %}
                         {% if product.obj.get_for_sale %}
-                           <span class="for-sale-standard-price">{{ product.obj|get_standard_price_gross:request|currency:request }}*</span>
-                           <span class="for-sale-price">{{ product.obj|get_for_sale_price_gross:request|currency:request }}*</span>
+                           <span class="for-sale-standard-price">{{ standard_price|currency:request }}*</span>
+                           <span class="for-sale-price">{{ price|currency:request }}*</span>
                         {% else %}
-                            <span class="standard-price">{{ product.obj|get_price_gross:request|currency:request }}*</span>
+                            <span class="standard-price">{{ price|currency:request }}*</span>
                         {% endif %}
                         {% if product.price_unit %}
                             / {{ product.price_unit }}
                         {% endif %}
                         {% if product.obj.get_active_packing_unit %}
                             <div class="base-price">
-                                {{ product.obj|get_base_packing_price:request|currency }}* / {{ product.obj.get_packing_info.1 }}
+                                {{ base_packing_price|currency:request }}* / {{ product.obj.get_packing_info.1 }}
                             </div>
                         {% endif %}
                         {% if product.obj.get_active_base_price %}
                             <div class="base-price">
-                                {{ product.obj|get_base_price_gross:request|currency }}* / {{ product.obj.base_price_unit }}
+                                {% if base_price_starting_from %}
+                                    {% trans "Starting at" %}
+                                {% endif %}
+                                {{ base_price|currency:request }}*
+                                {% if product.obj.get_base_price_unit %}
+                                    / {{ product.obj.get_base_price_unit }}
+                                {% endif %}
                             </div>
                         {% endif %}
                         <div class="price-disclaimer">

@@ -18,6 +18,15 @@
                 {{ form.shipping_lastname }}
             </td>
         </tr>
+        <tr>
+            <td class="label">
+                <label for="id_shipping_company_name">{{ form.shipping_company_name.label_tag }}:</label>
+            </td>
+            <td>
+                {{ form.shipping_company_name.errors }}
+                {{ form.shipping_company_name }}
+            </td>
+            </tr>
         {% for field in address_form %}
             <tr>
                 <td class="label">

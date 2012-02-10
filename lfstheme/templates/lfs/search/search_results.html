@@ -37,70 +37,67 @@
         {% paginate %}
         {% sorting %}
 
-        <br clear="both">
+        <table class="lfs-default padding-top">
+            <tr>
+                <th>{% trans 'Image' %}</th>
+                <th>{% trans 'Product' %}</th>
+                <th class="number">{% trans 'Price' %}</th>
+                <th></th>
+            <tr>
+            {% for product in products %}
+                <tr>
+                    <td>
+                        <a href="{{ product.get_absolute_url }}">
+                            <img src="{{ product.get_image.image.url_100x100 }}"
+                                 alt="{{ product.get_name }}"
+                                 title="{{ product.get_name }}" />
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ product.get_absolute_url }}">
+                            {{ product.get_name }}
+                        </a>
+                        {% for property in product.get_variant_properties %}
+                            <div>
+                                {{ property.title }} : {{ property.value }} {{ property.unit|safe }}
+                            </div>
+                        {% endfor %}
 
-        <div class="container header append-bottom">
-            <div class="span-5">
-                {% trans 'Image' %}
-            </div>
-            <div class="span-15">
-                {% trans 'Product' %}
-            </div>
-            <div class="span-4 last number">
-                {% trans 'Price' %}
-            </div>
-        </div>
+                        {% for property in product.get_displayed_properties %}
+                            <div>
+                                {{ property.title }} : {{ property.value }} {{ property.unit|safe }}
+                            </div>
+                        {% endfor %}
+                    </td>
 
-        {% for product in products %}
-            <div class="container append-bottom">
-                <div class="span-5">
-                    <a href="{{ product.get_absolute_url }}">
-                        <img src="{{ product.get_image.image.url_100x100 }}"
-                             alt="{{ product.get_name }}"
-                             title="{{ product.get_name }}" />
-                    </a>
-                </div>
-
-                <div class="span-15 text">
-                    <a href="{{ product.get_absolute_url }}">
-                        {{ product.get_name }}
-                    </a>
-                    {% for property in product.get_variant_properties %}
-                        <div>
-                            {{ property.title }} : {{ property.value }} {{ property.unit|safe }}
-                        </div>
-                    {% endfor %}
-
-                    {% for property in product.get_displayed_properties %}
-                        <div>
-                            {{ property.title }} : {{ property.value }} {{ property.unit|safe }}
-                        </div>
-                    {% endfor %}
-                </div>
-
-                <div class="span-4 number last">
-                    <div class="product-price">
-                        {% if product.for_sale %}
-                           <span class="for-sale-standard-price">{{ product.get_standard_price|currency:request }}</span>
-                           <span class="for-sale-price">{{ product|get_for_sale_price:request|currency:request }}*</span>
-                        {% else %}
+                    <td class="number">
+                        <div class="product-price">
+                            {% if product.for_sale %}
+                               <span class="for-sale-standard-price">{{ product.get_standard_price|currency:request }}</span>
+                               <span class="for-sale-price">{{ product|get_for_sale_price:request|currency:request }}*</span>
+                            {% else %}
                             <span class="standard-price">{{ product|get_price:request|currency:request }}*</span>
-                        {% endif %}
-                        <div class="price-disclaimer">
-                            {% trans '*inc. VAT' %}
+                            {% endif %}
+                            {% if product.get_price_unit %}/ {{ product.get_price_unit }}{% endif %}
+                            {% if product.active_base_price %}
+                                <div class="base-price">
+                                    {{ product|get_base_price_gross:request|currency:request}}* {% if product.get_base_price_unit %}/ {{ product.get_base_price_unit }}{% endif %}
+                                </div>
+                            {% endif %}
+                            <div class="price-disclaimer">
+                                {% trans '*inc. VAT' %}
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="buttons">
+                    </td>
+                    <td class="buttons">
                         <a class="button emphasized"
                            href="{% url lfs_product product.slug %}"
                            type="submit">
                             {% trans 'Details' %}
                         </a>
-                    </div>
-
-                </div>
-            </div>
-        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
     {% endif %}
 {% endblock %}
