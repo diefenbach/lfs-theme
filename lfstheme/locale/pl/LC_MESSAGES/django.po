@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LFS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-26 21:12+0100\n"
-"PO-Revision-Date: 2012-01-28 23:55+0100\n"
-"Last-Translator: Maciej Wiśniowski <pigletto@gmail.com>\n"
+"POT-Creation-Date: 2012-02-13 07:28+0100\n"
+"PO-Revision-Date: 2012-02-13 07:29+0100\n"
+"Last-Translator: Maciej Wiśniowski <maciej.wisniowski@natcam.pl>\n"
 "Language-Team: natcam.pl <hello@natcam.pl>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -315,11 +315,11 @@ msgstr "Start"
 
 #: templates/lfs/catalog/packing_result.html:4
 msgid "This complies to"
-msgstr ""
+msgstr "Odpowiada"
 
 #: templates/lfs/catalog/packing_result.html:5
-msgid "Pieces"
-msgstr "Elementy"
+msgid "pieces"
+msgstr "sztuki"
 
 #: templates/lfs/catalog/packing_result.html:6
 msgid "and costs"
