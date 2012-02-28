@@ -1,1 +1,8 @@
-Your order has been paid.
+Dear {{ order.customer_firstname }} {{ order.customer_lastname }},
+
+your order has been paid.
+
+{% include "lfs/mail/order_details.html" %}
+
+Best regards
+Your shop team

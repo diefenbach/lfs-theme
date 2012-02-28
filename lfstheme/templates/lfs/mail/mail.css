@@ -1,0 +1,35 @@
+<style type="text/css">
+    h1 {
+        padding:10px 0 0 0;
+        margin:0;
+        font-size: 120%;
+    }
+    table.orders,
+    table.order-general,
+    table.order-items,
+    table.order-addresses,
+    table.order-message,
+    table.manage-overview,
+    .selected-accessories table,
+    .selectable-products table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th {
+        text-align:left;
+        background-color: #eee;
+    }
+    td {
+        vertical-align: top;
+        text-align: left;
+    }
+    .number {
+        text-align:right;
+    }
+    .total {
+        font-weight:bold;
+    }
+    .tax {
+        font-size: 90%;
+    }
+</style>

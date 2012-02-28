@@ -1,15 +1,15 @@
 {% load i18n %}
 <html>
     <head>
-        <style type="text/css"></style>
+        {% include "lfs/mail/mail.css" %}
     </head>
     <body>
-        <h1>{% trans 'Welcome to' %} {{shop.name}}</h1>
-        <p>            
+        <h1>{% trans 'Welcome to' %} {{ shop.name }}</h1>
+        <p>
             Lorem ipsum dolor
         </p>
         <p>
-            {{user.username}}
+            {{ user.username }}
         </p>
     </body>
 </html>

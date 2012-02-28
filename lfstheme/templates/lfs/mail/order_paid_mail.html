@@ -1,9 +1,22 @@
 {% load i18n %}
 {% load lfs_tags %}
 <html>
+    <head>
+        {% include "lfs/mail/mail.css" %}
+    </head>
     <body>
         <p>
-            Your order has been paid
+            Dear {{ order.customer_firstname }} {{ order.customer_lastname }},
+        </p>
+        <p>
+            your order has been paid.
+        </p>
+        <p>
+            {% include "lfs/mail/order_details.html" %}
+        </p>
+        <p>
+            Best regards<br>
+            Your shop team
         </p>
     </body>
 </html>
