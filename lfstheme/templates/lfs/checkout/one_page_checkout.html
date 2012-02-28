@@ -13,18 +13,8 @@
 
 {% block wrapper %}
     {% if form.errors %}
-        <div id="form-error" class="error">
-            <p>{% blocktrans %}The operation could not be performed because one or more error(s) occurred.<br />Please resubmit the form after making the following changes:{% endblocktrans %}</p>
-<!--
-            <ul>
-                {% for field in form %}
-                    {% if field.errors %}<li><a href="javascript:void(0);" onclick="$('#id_{{ field.name }}').focus();">{{field.label}}</a> - {{ field.errors|striptags }}</li>{% endif %}
-                {% endfor %}
-                {% for error in form.non_field_errors %}
-                	<li>{{ error }}</li>
-                {% endfor %}
-            </ul>
--->
+        <div class="form-errors">
+            {% trans "The operation could not be performed because one or more errors occurred. Please see below." %}
         </div>
     {% endif %}
     <div>

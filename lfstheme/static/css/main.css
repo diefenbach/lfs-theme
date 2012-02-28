@@ -673,19 +673,13 @@ select.cart-payment-method {
     padding-right: 10px;
 }
 
-.my-addresses #form-error,
-.checkout #form-error {
-    background: none repeat scroll 0 0 #FBE3E4;
-    border-color: #FBC2C4;
-    color: #8A1F11;
-    border: 2px solid #DDDDDD;
+.form-errors {
+    background-color: #fbe3e4;
+    border-color: #fbc2c4;
+    color: #8a1f11;
+    border: 2px solid #ddd;
     margin-bottom: 1em;
     padding: 0.8em;
-}
-
-.my-addresses #form-error p,
-.checkout #form-error p {
-    padding-bottom: 0.8em;
 }
 
 .my-orders td.label {
