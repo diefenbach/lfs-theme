@@ -3,12 +3,14 @@
 <h1 class="first-heading">
     {{ category.name }}
 </h1>
-
+<div class="description">
+    {{ category.description|safe }}
+</div>
 <div id="categories">
     <table class="lfs-default">
         {% for row in categories %}
             <tr>
-                {% for category in row %}                
+                {% for category in row %}
                     <td class="category-row">
                         <h2 class="first-heading">{{ category.name }}</h2>
                         <div class="category-image">
@@ -34,5 +36,5 @@
                 {% endfor %}
             </tr>
         {% endfor %}
-    </table>    
+    </table>
 </div>
