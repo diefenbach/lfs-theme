@@ -32,7 +32,7 @@
                     <th>
                         {% trans 'Shipping address' %}
                         ({{ form.no_shipping }}
-                        <label for="id_no_shipping">{{ form.no_shipping.label_tag }}</label>)
+                        {{ form.no_shipping.label_tag }})
                     </th>
                 </tr>
                 <tr>
@@ -72,7 +72,7 @@
                             {% if form.errors.credit_card %}
                                 <ul class="errorlist">
                                     <li>{{ form.errors.credit_card }}</li>
-                                </div>
+                                </ul>
                             {% endif %}
 
                              <noscript>
@@ -90,7 +90,7 @@
                      </tr>
                      <tr>
                          <td class="label">
-                             <label for="id_account_number">{{ form.credit_card_type.label_tag }}:</label>
+                             {{ form.credit_card_type.label_tag }}:
                          </td>
                          <td>
                              {{ form.credit_card_type }}
@@ -104,7 +104,7 @@
                      </tr>
                      <tr>
                          <td class="label">
-                             <label for="id_account_number">{{ form.credit_card_owner.label_tag }}:</label>
+                             {{ form.credit_card_owner.label_tag }}:
                          </td>
                          <td>
                              {{ form.credit_card_owner }}
@@ -119,7 +119,7 @@
                      </tr>
                      <tr>
                          <td class="label">
-                             <label for="id_account_number">{{ form.credit_card_number.label_tag }}:</label>
+                             {{ form.credit_card_number.label_tag }}:
                          </td>
                          <td>
                              {{ form.credit_card_number }}
@@ -143,7 +143,7 @@
                      </tr>
                      <tr>
                          <td class="label">
-                             <label for="id_verification_code">{{ form.credit_card_verification.label_tag }}:</label>
+                             {{ form.credit_card_verification.label_tag }}:
                          </td>
                          <td>
                              {{ form.credit_card_verification }}
@@ -172,7 +172,7 @@
                     </tr>
                     <tr>
                         <td class="label">
-                            <label for="id_account_number">{{ form.account_number.label_tag }}:</label>
+                            {{ form.account_number.label_tag }}:
                         </td>
                         <td>
                             {{ form.account_number }}
@@ -186,7 +186,7 @@
                     </tr>
                     <tr>
                         <td class="label">
-                            <label for="id_bank_identification_code">{{ form.bank_identification_code.label_tag }}:</label>
+                            {{ form.bank_identification_code.label_tag }}:
                         </td>
                         <td>
                             {{ form.bank_identification_code }}
@@ -200,7 +200,7 @@
                     </tr>
                     <tr>
                         <td class="label">
-                            <label for="id_bank_name">{{ form.bank_name.label_tag }}:</label>
+                            {{ form.bank_name.label_tag }}:
                         </td>
                         <td>
                             {{ form.bank_name }}
@@ -214,7 +214,7 @@
                     </tr>
                     <tr>
                         <td class="label">
-                            <label for="id_depositor">{{ form.depositor.label_tag }}:</label>
+                            {{ form.depositor.label_tag }}:
                         </td>
                         <td>
                             {{ form.depositor }}
@@ -230,7 +230,7 @@
 
             {# Message #}
             <div>
-                <label for="id_message">{{form.message.label_tag}}:</label>
+                {{form.message.label_tag}}:
             </div>
             <div>
                 {{ form.message }}
