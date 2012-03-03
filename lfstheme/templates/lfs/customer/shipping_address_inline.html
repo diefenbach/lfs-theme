@@ -20,7 +20,7 @@
         </tr>
         <tr>
             <td class="label">
-                <label for="id_shipping_company_name">{{ form.shipping_company_name.label_tag }}{% if settings.LFS_INVOICE_SHIPPING_NAME_REQUIRED %}*{% endif %}:</label>
+                <label for="id_shipping_company_name">{{ form.shipping_company_name.label_tag }}{% if settings.LFS_INVOICE_COMPANY_NAME_REQUIRED %}*{% endif %}:</label>
             </td>
             <td>
                 {{ form.shipping_company_name.errors }}
