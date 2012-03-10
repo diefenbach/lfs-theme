@@ -515,7 +515,7 @@ msgstr "Sie finden diesen Link auch auf Ihre Bestellbestätigung"
 #: templates/lfs/contact/contact_form_sent.html:5
 #: templates/lfs/contact/contact_form_sent.html:13
 msgid "Contact form"
-msgstr "Kontaktform"
+msgstr "Kontaktformular"
 
 #: templates/lfs/contact/contact_form.html:12
 msgid "Contact"
