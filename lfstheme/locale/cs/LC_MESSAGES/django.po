@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lfstheme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-09 18:40+0100\n"
-"PO-Revision-Date: 2012-03-10 17:09+0100\n"
+"PO-Revision-Date: 2012-03-12 08:32+0100\n"
 "Last-Translator: Radim Novotny <novotny.radim@gmail.com>\n"
 "Language-Team: Czech <info@dms4u.cz>\n"
 "MIME-Version: 1.0\n"
@@ -194,9 +194,8 @@ msgstr "Produkt"
 #: templates/lfs/cart/added_to_cart_items.html:12
 #: templates/lfs/cart/cart_inline.html:39
 #: templates/lfs/checkout/checkout_cart_inline.html:31
-#, fuzzy
 msgid "Net Price"
-msgstr "Cena"
+msgstr "Cena (net)"
 
 #: templates/lfs/cart/added_to_cart_items.html:15
 #: templates/lfs/cart/cart_inline.html:42
@@ -371,9 +370,8 @@ msgstr "Další stránka"
 
 #: templates/lfs/catalog/categories/product/default.html:68
 #: templates/lfs/catalog/categories/product/default.html:87
-#, fuzzy
 msgid "Starting at"
-msgstr "Řazení"
+msgstr ""
 
 #: templates/lfs/catalog/categories/product/default.html:97
 #: templates/lfs/catalog/products/product_inline.html:74
@@ -406,11 +404,11 @@ msgstr "Zaslat dotaz"
 
 #: templates/lfs/catalog/products/product_inline.html:201
 msgid "Variants"
-msgstr "Varianty"
+msgstr "Dostupné varianty"
 
 #: templates/lfs/catalog/products/product_inline.html:277
 msgid "Attachments"
-msgstr ""
+msgstr "Přílohy"
 
 #: templates/lfs/checkout/checkout_cart_inline.html:5
 msgid "Voucher code"
@@ -672,9 +670,8 @@ msgid "All"
 msgstr "Vše"
 
 #: templates/lfs/customer/orders.html:30
-#, fuzzy
 msgid "months"
-msgstr "Množství"
+msgstr "měs."
 
 #: templates/lfs/customer/orders.html:34
 msgid "Filter"
@@ -731,11 +728,11 @@ msgstr "Potvrzení hesla:"
 
 #: templates/lfs/mail/contact_mail.html:13
 msgid "A new mail has been received:"
-msgstr ""
+msgstr "Byl obdržen nový email:"
 
 #: templates/lfs/mail/contact_mail.html:16
 msgid "Shop"
-msgstr ""
+msgstr "Obchod"
 
 #: templates/lfs/mail/new_user_mail.html:7
 msgid "Welcome to"
@@ -885,7 +882,7 @@ msgstr "Více informací"
 
 #: templates/lfs/portlets/related_products.html:8
 msgid "Related Products"
-msgstr "Podobné produkty"
+msgstr "Podobnécounter produkty"
 
 #: templates/lfs/portlets/topseller.html:7
 msgid "Topseller"
@@ -917,9 +914,9 @@ msgstr "Hledali jste"
 #, python-format
 msgid "1 product was found."
 msgid_plural "%(counter)s products were found."
-msgstr[0] "Byl nalezen jeden produkt."
+msgstr[0] "Byl nalezen %(counter)s produkt."
 msgstr[1] "Byly nalezeny %(counter)s produkty."
-msgstr[2] "Nebyly nalezeny žádné produkty"
+msgstr[2] "Bylo nalezeno %(counter)s produktů"
 
 #: templates/lfs/search/search_results.html:42
 #: templates/tagging/product_list.html:13
@@ -1028,7 +1025,7 @@ msgstr "Přidat hodnocení"
 
 #: templates/reviews/review_form.html:8
 msgid "for"
-msgstr ""
+msgstr "pro"
 
 #: templates/reviews/review_form.html:110
 #: templates/reviews/review_preview.html:10
