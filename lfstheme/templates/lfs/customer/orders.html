@@ -27,7 +27,7 @@
                 <select name="date-filter">
                     <option value="">{% trans 'All' %}</option>
                     {% for option in options %}
-                        <option value="{{ option.value }}" {% if option.selected %}selected="selected"{% endif %}>{{ option.value }} {% trans "months" %}</option>
+                        <option value="{{ option.value }}" {% if option.selected %}selected="selected"{% endif %}>{{ option.value }}{% blocktrans count counter=option.value %} month{% plural %} months{% endblocktrans %}</option>
                     {% endfor %}
                 </select>
                 <input type="submit"

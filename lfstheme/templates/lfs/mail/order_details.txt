@@ -1,0 +1,59 @@
+{% load i18n %}{% load lfs_tags %}
+{% trans 'General' %}
+==============================================================================
+{% trans 'Customer name' %}: {{ order.customer_firstname }} {{ order.customer_lastname }}
+{% trans 'Date' %}: {{ order.created|date:_("DATETIME_FORMAT") }}
+{% trans 'E-mail' %}: {{ order.customer_email }}
+{% trans 'State' %}: {{ order.get_state_display }}
+{% trans 'Phone' %}: {{ order.shipping_phone }}
+{% trans 'Total' %}: {{ order.price|currency }}
+
+{% trans 'Shipping address' %}
+==============================================================================
+{{ order.shipping_firstname }} {{ order.shipping_lastname }}
+{{ order.shipping_company_name }}
+{{ order.shipping_street }}
+{{ order.shipping_zip_code }} {{ order.shipping_city }}
+{{ order.shipping_country }}
+{{ order.shipping_phone }}
+{{ order.shipping_email }}
+
+{% trans 'Invoice address' %}
+==============================================================================
+{{ order.invoice_firstname }} {{ order.invoice_lastname }}
+{{ order.invoice_company_name }}
+{{ order.invoice_street }}
+{{ order.invoice_zip_code }} {{ order.invoice_city }}
+{{ order.invoice_country }}
+{{ order.invoice_phone }}
+{{ order.invoice_email }}
+
+{% trans 'Shipping method' %}:
+==============================================================================
+{{ order.shipping_method }}
+
+{% trans 'Payment method' %}:
+==============================================================================
+{{ order.payment_method.name }}{% ifequal order.payment_method.id 1 %}
+{{ order.account_number }}
+{{ order.bank_identification_code }}
+{{ order.bank_name }}
+{{ order.depositor }}{% endifequal %}{% ifequal order.payment_method.id 3 %} {% trans 'Pay now' %}: {{ order.get_pay_link }}{% endifequal %}
+
+{% trans 'Order' %}:
+==============================================================================
+{% for item in order.items.all %}{% trans 'SKU' %}:  {{ item.product_sku }}
+{% trans 'Name' %}: {{ item.product_name }} {% for property in item.product.get_variant_properties %}{{ property.title }} : {{ property.value }} {{ property.unit|safe }} {% endfor %}{% for property in item.product.get_displayed_properties %}{{ property.title }} : {{ property.value }} {{ property.unit|safe }} {% endfor %}
+{% trans 'Amount' %}: {{ item.product_amount }} {{ item.product.unit }} {% if item.product.active_packing_unit %}{{ item|packages }} {{ item.product.packing_unit_unit }}{% endif %}
+{% trans 'Price' %}: {{ item.product_price_gross|currency }}
+{% trans 'Total' %}: {{ item.price_gross|currency }}
+{% endfor %}{% if order.voucher_number %} {% trans 'Voucher' %} ({{ order.voucher_number }}) - {{ order.voucher_price|currency }} - {{ order.voucher_price|currency }}{% endif %}
+{% trans 'Shipping method' %}: {{ order.shipping_price|currency }} ({{ order.shipping_method }})
+{% trans 'Payment method' %}: {{ order.payment_price|currency }} ({{ order.payment_method }})
+
+{% trans ' Total' %}: {{ order.price|currency }}
+{% trans 'Inclusive VAT' %}: {{ order.tax|currency }}
+
+{% if order.message %} {% trans 'Message' %}
+==============================================================================
+{{ order.message }}{% endif %}

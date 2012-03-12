@@ -13,19 +13,14 @@
 {% endblock %}
 
 {% block content %}
+    <h1>{% trans 'Your addresses' %}</h1>
+
     {% if form.errors %}
-        <div id="form-error" class="error">
-            <p>{% blocktrans %}The operation could not be performed because one or more error(s) occurred.<br />Please resubmit the form after making the following changes:{% endblocktrans %}</p>
-<!--
-            <ul>
-                {% for field in form %}
-                    {% if field.errors %}<li><a href="javascript:void(0);" onclick="$('#id_{{ field.name }}').focus();">{{field.label}}</a> - {{ field.errors|striptags }}</li>{% endif %}
-                {% endfor %}
-            </ul>
--->
+        <div class="form-errors">
+            {% trans "The operation could not be performed because one or more errors occurred. Please see below." %}
         </div>
     {% endif %}
-    <h1>{% trans 'Your addresses' %}</h1>
+
     <form class="address-form postal-address"
     	  action="{% url lfs_my_addresses %}"
           method="post"

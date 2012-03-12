@@ -1,7 +1,6 @@
-{% load i18n %}{% load lfs_tags %}
 Dear {{ order.customer_firstname }} {{ order.customer_lastname }},
 
-your order has been sent.
+your order has been paid.
 
 {% include "lfs/mail/order_details.html" %}
 
