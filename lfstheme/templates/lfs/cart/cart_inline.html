@@ -1,5 +1,4 @@
-{% load i18n %}
-{% load lfs_tags %}
+{% load i18n lfs_tags %}
 
 {% if cart_items %}
     <h1 class="first-heading">
@@ -94,9 +93,9 @@
                                value="{{ cart_item.quantity }}" />
                     </td>
                     <td>
-                               {% if cart_item.product.unit %}
-                                    {{ cart_item.product.unit }}
-                               {% endif %}
+                        {% if cart_item.product.unit %}
+                            {{ cart_item.product.unit }}
+                        {% endif %}
 
                         {% if cart_item.product.active_packing_unit %}
                             <span class="packing-unit">
@@ -136,12 +135,13 @@
 
                     </td>
                     <td class="number">
-                        {% if discount.tax %}
-                            ({{ discount.tax|currency:request }})
-                        {% endif %}
+                        - {{ discount.get_price_net|currency:request }}
                     </td>
                     <td class="number">
-                        - {{ discount.price|currency:request }}
+                        - {{ discount.get_tax|currency:request }}
+                    </td>
+                    <td class="number">
+                        - {{ discount.get_price_gross|currency:request }}
                     </td>
                     <td></td>
                 </tr>
@@ -156,6 +156,7 @@
                     <td class="number">
                         1
                     </td>
+                    <td></td>
                     <td class="number">
                         - {{ voucher_value|currency:request }}
                     </td>
@@ -170,6 +171,7 @@
             {% endif %}
 
             <tr>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td class="left">
@@ -187,8 +189,10 @@
                     </select>
                 </td>
                 <td colspan="2"></td>
+                <td></td>
             </tr>
             <tr>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td class="left">
@@ -216,6 +220,7 @@
             <tr>
                 <td></td>
                 <td></td>
+                <td></td>
                 <td class="left">
                     {% trans 'Payment' %}:
                 </td>
@@ -241,6 +246,7 @@
             <tr>
                 <td></td>
                 <td></td>
+                <td></td>
                 <td colspan="3"
                     class="total left padding-top">
                     {% trans 'Total' %}:
@@ -252,6 +258,7 @@
                 <td></td>
             </tr>
             <tr>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td colspan="3"
@@ -267,13 +274,14 @@
             <tr>
                 <td></td>
                 <td></td>
+                <td></td>
                 <td colspan="5"
                     class="discreet left padding-top">
                     {% trans 'Total delivery time' %}: {{ max_delivery_time }}
                 </td>
             </tr>
             <tr>
-                <td colspan="7">
+                <td colspan="8">
                     <div class="buttons">
                         <a class="button checkout-button emphasized"
                            href="{% url lfs_checkout_dispatcher %}">
