@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lfstheme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-12 09:01+0100\n"
-"PO-Revision-Date: 2012-03-12 09:03+0100\n"
+"PO-Revision-Date: 2012-03-13 14:18+0100\n"
 "Last-Translator: Radim Novotny <novotny.radim@gmail.com>\n"
 "Language-Team: Czech <info@dms4u.cz>\n"
 "MIME-Version: 1.0\n"
@@ -541,7 +541,7 @@ msgstr "Váš účet"
 
 #: templates/lfs/customer/account.html:12
 msgid "Welcome!"
-msgstr "Vítejte v "
+msgstr "Vítejte!"
 
 #: templates/lfs/customer/account.html:14
 msgid "Welcome to your account. Here you can find your orders, you can change your addresses, email address and your password."
@@ -846,7 +846,7 @@ msgstr "Doba dodání"
 #: templates/lfs/portlets/filter.html:69
 #: templates/lfs/portlets/filter.html:74
 msgid "Up to"
-msgstr "Nahoru"
+msgstr "do"
 
 #: templates/lfs/portlets/filter.html:106
 msgid "Reset all filters"
@@ -858,7 +858,7 @@ msgstr "Více informací"
 
 #: templates/lfs/portlets/related_products.html:8
 msgid "Related Products"
-msgstr "Podobnécounter produkty"
+msgstr "Podobné produkty"
 
 #: templates/lfs/portlets/topseller.html:7
 msgid "Topseller"
