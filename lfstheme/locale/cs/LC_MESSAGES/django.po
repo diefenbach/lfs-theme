@@ -479,7 +479,7 @@ msgstr "Zadejte informace o vašem účtu"
 
 #: templates/lfs/checkout/one_page_checkout.html:247
 msgid "Please confirm our terms and conditions"
-msgstr "Potvrďte prosím obchodní podmínky"
+msgstr "Potvrzuji souhlas s obchodními podmínkami"
 
 #: templates/lfs/checkout/one_page_checkout.html:253
 msgid "Submit order"
