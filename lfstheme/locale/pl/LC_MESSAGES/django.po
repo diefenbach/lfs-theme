@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: LFS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-15 19:58+0100\n"
-"PO-Revision-Date: 2012-03-15 20:03+0100\n"
+"PO-Revision-Date: 2012-03-16 22:53+0100\n"
 "Last-Translator: Maciej Wiśniowski <pigletto@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pl\n"
@@ -702,7 +702,7 @@ msgstr "Stan"
 #: templates/lfs/mail/order_details.txt:5
 #: templates/lfs/order/lfs_order_tmpl.html:20
 msgid "DATETIME_FORMAT"
-msgstr "Format daty"
+msgstr "Y-m-d H:i:s"
 
 #: templates/lfs/customer/orders.html:68
 msgid "There are no orders for this time range."
