@@ -14,10 +14,10 @@
             {{ order.customer_firstname }} {{ order.customer_lastname }}
         </td>
         <td class="label">
-            {% trans 'Date' %}:
+            {% trans 'Number' %}:
         </td>
         <td>
-            {{ order.created|date:_("DATETIME_FORMAT") }}
+            {{ order.number }}
         </td>
     </tr>
     <tr>
@@ -28,10 +28,10 @@
             {{ order.customer_email }}
         </td>
         <td class="label">
-            {% trans 'State' %}:
+            {% trans 'Date' %}:
         </td>
         <td>
-            {{ order.get_state_display }}
+            {{ order.created|date:_("DATETIME_FORMAT") }}
         </td>
     </tr>
     <tr>
@@ -42,14 +42,24 @@
             {{ order.shipping_phone }}
         </td>
         <td class="label">
+            {% trans 'State' %}:
+        </td>
+        <td>
+            {{ order.get_state_display }}
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+        </td>
+        <td class="label">
             {% trans 'Total' %}:
         </td>
         <td>
             {{ order.price|currency }}
         </td>
     </tr>
-
 </table>
+
 <table class="order-addresses">
     <tr>
         <th>
@@ -200,7 +210,7 @@
 
             </td>
             <td class="number">
-                {{ item.product_amount }} {{ item.product.unit }}
+                {{ item.amount }} {{ item.product.unit }}
                 {% if item.product.active_packing_unit %}
                     <span class="packing-unit">
                         ({{ item|packages }} {{ item.product.packing_unit_unit }})

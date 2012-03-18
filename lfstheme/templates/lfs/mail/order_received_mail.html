@@ -5,7 +5,7 @@
     </head>
     <body>
         <p>
-            {% blocktrans with firstname=order.customer_firstname, lastname=order.customer_lastname %}Dear {{ firstname }} {{ lastname }}{% endblocktrans %},
+            {% blocktrans with firstname=order.customer_firstname lastname=order.customer_lastname %}Dear {{ firstname }} {{ lastname }}{% endblocktrans %},
         </p>
         <p>
             {% trans "your order has been received." %}
