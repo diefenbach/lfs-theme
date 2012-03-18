@@ -2,7 +2,7 @@
 	<table class="invoice-address">
 	    <tr>
 	        <td class="label">
-	            <label for="id_invoice_firstname">{{ form.invoice_firstname.label_tag }}*:</label>
+	            >{{ form.invoice_firstname.label_tag }}*:
 	        </td>
             <td>
             	{{ form.invoice_firstname.errors }}
@@ -11,7 +11,7 @@
 	    </tr>
 	    <tr>
 	        <td class="label">
-                <label for="id_invoice_lastname">{{ form.invoice_lastname.label_tag }}*:</label>
+                {{ form.invoice_lastname.label_tag }}*:
             </td>
             <td>
             	{{ form.invoice_lastname.errors }}
@@ -20,7 +20,7 @@
 	    </tr>
         <tr>
             <td class="label">
-                <label for="id_invoice_company_name">{{ form.invoice_company_name.label_tag }}{% if settings.LFS_INVOICE_COMPANY_NAME_REQUIRED %}*{% endif %}:</label>
+                {{ form.invoice_company_name.label_tag }}{% if settings.LFS_INVOICE_COMPANY_NAME_REQUIRED %}*{% endif %}:
             </td>
             <td>
                 {{ form.invoice_company_name.errors }}
@@ -30,7 +30,7 @@
         {% for field in address_form %}
             <tr>
                 <td class="label">
-                    <label for="{{ field.id }}">{{ field.label_tag }}{% if field.field.required %}*{% endif %}:</label>
+                    {{ field.label_tag }}{% if field.field.required %}*{% endif %}:
                 </td>
                 <td>
                     {{ field.errors }}
@@ -41,7 +41,7 @@
 		{% if request.user.is_anonymous %}
 		    <tr>
 		        <td class="label">
-		                <label for="id_invoice_email">{{ form.invoice_email.label_tag }}{% if settings.LFS_INVOICE_EMAIL_REQUIRED %}*{% endif %}:</label>
+		                {{ form.invoice_email.label_tag }}{% if settings.LFS_INVOICE_EMAIL_REQUIRED %}*{% endif %}:
 		            </td>
 		            <td>
 		            	{{ form.invoice_email.errors }}
@@ -52,7 +52,7 @@
 	    {% if form.invoice_phone %}
 		    <tr>
 		        <td class="label">
-		            <label for="id_invoice_phone">{{ form.invoice_phone.label_tag }}{% if settings.LFS_INVOICE_PHONE_REQUIRED %}*{% endif %}:</label>
+		            {{ form.invoice_phone.label_tag }}{% if settings.LFS_INVOICE_PHONE_REQUIRED %}*{% endif %}:
 		        </td>
 		        <td>
 		        	{{ form.invoice_phone.errors }}

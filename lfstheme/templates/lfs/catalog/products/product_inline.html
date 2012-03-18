@@ -66,7 +66,7 @@
             </div>
             {% if product.get_active_base_price %}
                 <div class="base-price">
-                    {{ product|get_base_price_gross:request|currency }} / {{ product.get_base_price_unit }}*
+                    {{ product|get_base_price_gross:request|currency:request }} / {{ product.get_base_price_unit }}*
                 </div>
             {% endif %}
             <div class="price-disclaimer">
@@ -83,7 +83,7 @@
             </div>
             {% if product.get_active_base_price %}
                 <div class="base-price">
-                    {{ product|get_base_price_gross:request|currency }} / {{ product.get_base_price_unit }}*
+                    {{ product|get_base_price_gross:request|currency:request }} / {{ product.get_base_price_unit }}*
                 </div>
             {% endif %}
             <div class="price-disclaimer">
@@ -147,18 +147,18 @@
     {% if product.is_deliverable %}
         <table align="right" class="buttons">
             <tr>
-                <td>
                 {% if product.get_active_packing_unit %}
-                    <div class="product-quantity packing-unit"
-                        id="packing-url"
-                        data="{% url lfs_calculate_packing product.id %}">
-                        <input class="number quantity"
-                               name="quantity"
-                               size="3"
-                               type="text"
-                               value="{{ quantity }}" /> {{ unit }}
-                    </div>
-                </td>
+                    <td>
+                        <div class="product-quantity packing-unit"
+                            id="packing-url"
+                            data="{% url lfs_calculate_packing product.id %}">
+                            <input class="number quantity"
+                                   name="quantity"
+                                   size="3"
+                                   type="text"
+                                   value="{{ quantity }}" /> {{ unit }}
+                        </div>
+                    </td>
                 {% else %}
                     <td>
                         {% if unit %}
