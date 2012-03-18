@@ -1,7 +1,7 @@
 {% load i18n lfs_theme_tags %}
-{% trans 'Welcome to' %} {{shop.name}}</h1>
+{% trans 'Welcome to' %} {{ shop.name }}</h1>
 
 {% trans "Thank you for registering" %}
-{% trans "Your username" %}: {{user.username}}
+{% trans "Your username" %}: {{ user.username }}
 
 {% email_text_footer %}

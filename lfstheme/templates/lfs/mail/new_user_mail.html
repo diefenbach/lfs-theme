@@ -4,12 +4,12 @@
         {% include "lfs/mail/mail.css" %}
     </head>
     <body>
-        <h1>{% trans 'Welcome to' %} {{shop.name}}</h1>
+        <h1>{% trans 'Welcome to' %} {{ shop.name }}</h1>
         <p>
             {% trans "Thank you for registering" %}
         </p>
         <p>
-            {% trans "Your username" %}: {{user.username}}
+            {% trans "Your username" %}: {{ user.username }}
         </p>
 
         {% email_html_footer %}
