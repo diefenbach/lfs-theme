@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LFS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-18 15:44+0100\n"
-"PO-Revision-Date: 2012-03-18 15:45+0100\n"
+"POT-Creation-Date: 2012-03-18 20:29+0100\n"
+"PO-Revision-Date: 2012-03-18 20:31+0100\n"
 "Last-Translator: Maciej Wiśniowski <pigletto@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pl\n"
@@ -144,7 +144,7 @@ msgstr "Cena"
 #: templates/lfs/cart/cart_inline.html:252
 #: templates/lfs/catalog/products/product_inline.html:305
 #: templates/lfs/checkout/checkout_cart_inline.html:37
-#: templates/lfs/checkout/checkout_cart_inline.html:187
+#: templates/lfs/checkout/checkout_cart_inline.html:183
 #: templates/lfs/mail/order_details.html:45
 #: templates/lfs/mail/order_details.html:171
 #: templates/lfs/mail/order_details.txt:9
@@ -215,7 +215,7 @@ msgstr "Koszyk"
 
 #: templates/lfs/cart/cart_inline.html:5
 #: templates/lfs/cart/cart_inline.html:154
-#: templates/lfs/checkout/checkout_cart_inline.html:130
+#: templates/lfs/checkout/checkout_cart_inline.html:126
 #: templates/lfs/mail/order_details.html:223
 #: templates/lfs/mail/order_details.txt:50
 msgid "Voucher"
@@ -242,7 +242,7 @@ msgid "Country"
 msgstr "Kraj"
 
 #: templates/lfs/cart/cart_inline.html:199
-#: templates/lfs/checkout/checkout_cart_inline.html:151
+#: templates/lfs/checkout/checkout_cart_inline.html:147
 #: templates/lfs/checkout/one_page_checkout.html:53
 #: templates/lfs/mail/order_details.html:240
 #: templates/lfs/order/lfs_order_tmpl.html:217
@@ -251,7 +251,7 @@ msgid "Shipping"
 msgstr "Wysyłka"
 
 #: templates/lfs/cart/cart_inline.html:225
-#: templates/lfs/checkout/checkout_cart_inline.html:169
+#: templates/lfs/checkout/checkout_cart_inline.html:165
 #: templates/lfs/checkout/payment_inline.html:3
 #: templates/lfs/mail/order_details.html:255
 #: templates/lfs/order/lfs_order_tmpl.html:232
@@ -259,7 +259,7 @@ msgid "Payment"
 msgstr "Płatność"
 
 #: templates/lfs/cart/cart_inline.html:266
-#: templates/lfs/checkout/checkout_cart_inline.html:194
+#: templates/lfs/checkout/checkout_cart_inline.html:190
 #: templates/lfs/mail/order_details.html:276
 #: templates/lfs/mail/order_details.txt:55
 #: templates/lfs/order/lfs_order_tmpl.html:253
@@ -737,6 +737,12 @@ msgstr "Nowe hasło:"
 msgid "Confirm password:"
 msgstr "Potwierdź hasło:"
 
+#: templates/lfs/mail/_mail_html_footer.html:2
+#: templates/lfs/mail/_mail_text_footer.html:2
+#, python-format
+msgid "This e-mail was sent automatically from %(name)s"
+msgstr "Ten e-mail został wysłany automatycznie przez %(name)s"
+
 #: templates/lfs/mail/contact_mail.html:13
 msgid "A new mail has been received:"
 msgstr "Nowa poczta została odebrana:"
@@ -746,9 +752,20 @@ msgid "Shop"
 msgstr "Sklep"
 
 #: templates/lfs/mail/new_user_mail.html:7
+#: templates/lfs/mail/new_user_mail.txt:2
 #: templates/lfs/mail/new_user_mail_subject.txt:1
 msgid "Welcome to"
 msgstr "Witamy w"
+
+#: templates/lfs/mail/new_user_mail.html:9
+#: templates/lfs/mail/new_user_mail.txt:4
+msgid "Thank you for registering"
+msgstr "Dziękujemy za rejestrację"
+
+#: templates/lfs/mail/new_user_mail.html:12
+#: templates/lfs/mail/new_user_mail.txt:5
+msgid "Your username"
+msgstr "Twój login"
 
 #: templates/lfs/mail/order_details.html:6
 #: templates/lfs/mail/order_details.txt:2
@@ -810,6 +827,43 @@ msgstr "Suma"
 #: templates/lfs/mail/order_details.txt:57
 msgid "Message"
 msgstr "Wiadomość"
+
+#: templates/lfs/mail/order_paid_mail.html:8
+#: templates/lfs/mail/order_paid_mail.txt:1
+#: templates/lfs/mail/order_received_mail.html:8
+#: templates/lfs/mail/order_received_mail.txt:2
+#: templates/lfs/mail/order_sent_mail.html:8
+#: templates/lfs/mail/order_sent_mail.txt:2
+#, python-format
+msgid "Dear %(firstname)s %(lastname)s"
+msgstr "Drogi(a) %(firstname)s %(lastname)s"
+
+#: templates/lfs/mail/order_paid_mail.html:11
+#: templates/lfs/mail/order_paid_mail.txt:3
+msgid "your order has been paid."
+msgstr "Twoje zamówienie zostało zapłacone."
+
+#: templates/lfs/mail/order_paid_subject.txt:1
+msgid "Your order has been paid."
+msgstr "Twoje zamówienie zostało zapłacone."
+
+#: templates/lfs/mail/order_received_mail.html:11
+#: templates/lfs/mail/order_received_mail.txt:4
+msgid "your order has been received."
+msgstr "otrzymaliśmy Twoje zamówienie."
+
+#: templates/lfs/mail/order_received_subject.txt:1
+msgid "Your order has been received"
+msgstr "otrzymaliśmy Twoje zamówienie"
+
+#: templates/lfs/mail/order_sent_mail.html:11
+#: templates/lfs/mail/order_sent_mail.txt:4
+msgid "your order has been sent."
+msgstr "Twoje zamówienie zostało wysłane."
+
+#: templates/lfs/mail/order_sent_subject.txt:1
+msgid "Your order has been sent"
+msgstr "Twoje zamówienie zostało wysłane"
 
 #: templates/lfs/mail/review_added_mail.html:17
 #: templates/lfs/mail/review_added_mail.txt:6
@@ -1130,9 +1184,6 @@ msgstr "%s tag nie potrzebuje argumentów"
 #~ msgstr[0] "miesiąc"
 #~ msgstr[1] "miesiące"
 #~ msgstr[2] "miesięcy"
-
-#~ msgid "Your order has been sent"
-#~ msgstr "Twoje zamówienie zostało wysłane"
 
 #~ msgid "Article"
 
