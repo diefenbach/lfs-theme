@@ -2,7 +2,7 @@
     <table class="shipping-address">
         <tr>
             <td class="label">
-                <label for="id_shipping_firstname">{{ form.shipping_firstname.label_tag }}*:</label>
+                {{ form.shipping_firstname.label_tag }}*:
             </td>
             <td>
                 {{ form.shipping_firstname.errors }}
@@ -11,7 +11,7 @@
         </tr>
         <tr>
             <td class="label">
-                <label for="id_shipping_lastname">{{ form.shipping_lastname.label_tag }}*:</label>
+                {{ form.shipping_lastname.label_tag }}*:
             </td>
             <td>
                 {{ form.shipping_lastname.errors }}
@@ -20,17 +20,17 @@
         </tr>
         <tr>
             <td class="label">
-                <label for="id_shipping_company_name">{{ form.shipping_company_name.label_tag }}{% if settings.LFS_INVOICE_COMPANY_NAME_REQUIRED %}*{% endif %}:</label>
+                {{ form.shipping_company_name.label_tag }}{% if settings.LFS_INVOICE_COMPANY_NAME_REQUIRED %}*{% endif %}:
             </td>
             <td>
                 {{ form.shipping_company_name.errors }}
                 {{ form.shipping_company_name }}
             </td>
-            </tr>
+        </tr>
         {% for field in address_form %}
             <tr>
                 <td class="label">
-                    <label for="{{ field.id }}">{{ field.label_tag }}{% if field.field.required %}*{% endif %}:</label>
+                    {{ field.label_tag }}{% if field.field.required %}*{% endif %}:
                 </td>
                 <td>
                     {{ field.errors }}
@@ -41,7 +41,7 @@
         {% if request.user.is_anonymous %}
            <tr>
                 <td class="label">
-                    <label for="id_shipping_email">{{ form.shipping_email.label_tag }}{% if settings.LFS_SHIPPING_EMAIL_REQUIRED %}*{% endif %}:</label>
+                    {{ form.shipping_email.label_tag }}{% if settings.LFS_SHIPPING_EMAIL_REQUIRED %}*{% endif %}:
                 </td>
                 <td>
                     {{ form.shipping_email.errors }}
@@ -52,7 +52,7 @@
        {% if form.shipping_phone %}
             <tr>
                 <td class="label">
-                    <label for="id_shipping_country">{{ form.shipping_phone.label_tag }}{% if settings.LFS_SHIPPING_PHONE_REQUIRED %}*{% endif %}:</label>
+                    {{ form.shipping_phone.label_tag }}{% if settings.LFS_SHIPPING_PHONE_REQUIRED %}*{% endif %}:
                 </td>
                 <td>
                     {{ form.shipping_phone.errors }}

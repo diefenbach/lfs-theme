@@ -27,7 +27,7 @@
                 <select name="date-filter">
                     <option value="">{% trans 'All' %}</option>
                     {% for option in options %}
-                        <option value="{{ option.value }}" {% if option.selected %}selected="selected"{% endif %}>{{ option.value }}{% blocktrans count counter=option.value %} month{% plural %} months{% endblocktrans %}</option>
+                        <option value="{{ option.value }}" {% if option.selected %}selected="selected"{% endif %}>{% blocktrans count counter=option.value %}{{ counter }} month{% plural %}{{ counter }} months{% endblocktrans %}</option>
                     {% endfor %}
                 </select>
                 <input type="submit"
@@ -37,6 +37,9 @@
 
         <table class="order lfs-default">
             <tr>
+                <th>
+                    {% trans 'Number' %}
+                </th>
                 <th>
                     {% trans 'Date' %}
                 </th>
@@ -50,10 +53,12 @@
             {% for order in orders %}
                 <tr>
                     <td>
+                        <a href="{% url lfs_my_order order.id %}">{{ order.number|default_if_none:"-" }}</a>
+                    </td>
+                    <td>
                         <a href="{% url lfs_my_order order.id %}">
                             {{order.created|date:_("DATETIME_FORMAT")}}
                         </a>
-
                     </td>
                     <td class="number">
                         {{order.price|currency:request}}
