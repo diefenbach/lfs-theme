@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LFS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-15 19:58+0100\n"
-"PO-Revision-Date: 2012-03-16 22:53+0100\n"
+"POT-Creation-Date: 2012-03-18 15:44+0100\n"
+"PO-Revision-Date: 2012-03-18 15:45+0100\n"
 "Last-Translator: Maciej Wiśniowski <pigletto@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pl\n"
@@ -127,7 +127,7 @@ msgstr "Ilość"
 #: templates/lfs/cart/added_to_cart.html:35
 #: templates/lfs/catalog/products/product_inline.html:217
 #: templates/lfs/catalog/products/product_inline.html:304
-#: templates/lfs/customer/orders.html:44
+#: templates/lfs/customer/orders.html:47
 #: templates/lfs/mail/order_details.html:168
 #: templates/lfs/mail/order_details.txt:48
 #: templates/lfs/order/lfs_order_tmpl.html:169
@@ -673,38 +673,43 @@ msgid "All"
 msgstr "Wszystko"
 
 #: templates/lfs/customer/orders.html:30
-msgid " month"
-msgid_plural " months"
-msgstr[0] "miesiąc"
-msgstr[1] "miesiące"
-msgstr[2] "miesięcy"
+#, python-format
+msgid "%(counter)s month"
+msgid_plural "%(counter)s months"
+msgstr[0] "%(counter)s miesiąc"
+msgstr[1] "%(counter)s miesiące"
+msgstr[2] "%(counter)s miesięcy"
 
 #: templates/lfs/customer/orders.html:34
 msgid "Filter"
 msgstr "Filtr"
 
 #: templates/lfs/customer/orders.html:41
+msgid "Number"
+msgstr "Numer"
+
+#: templates/lfs/customer/orders.html:44
 #: templates/lfs/mail/order_details.html:17
 #: templates/lfs/mail/order_details.txt:5
 #: templates/lfs/order/lfs_order_tmpl.html:17
 msgid "Date"
 msgstr "Data"
 
-#: templates/lfs/customer/orders.html:47
+#: templates/lfs/customer/orders.html:50
 #: templates/lfs/mail/order_details.html:31
 #: templates/lfs/mail/order_details.txt:7
 #: templates/lfs/order/lfs_order_tmpl.html:33
 msgid "State"
 msgstr "Stan"
 
-#: templates/lfs/customer/orders.html:54
+#: templates/lfs/customer/orders.html:60
 #: templates/lfs/mail/order_details.html:20
 #: templates/lfs/mail/order_details.txt:5
 #: templates/lfs/order/lfs_order_tmpl.html:20
 msgid "DATETIME_FORMAT"
 msgstr "Y-m-d H:i:s"
 
-#: templates/lfs/customer/orders.html:68
+#: templates/lfs/customer/orders.html:73
 msgid "There are no orders for this time range."
 msgstr "Brak zamówień na ten przedział czasu."
 
@@ -1118,6 +1123,13 @@ msgstr "Produkty z tymi samymi tagami"
 #, python-format
 msgid "%s tag needs no argument"
 msgstr "%s tag nie potrzebuje argumentów"
+
+#~ msgid " month"
+
+#~ msgid_plural " months"
+#~ msgstr[0] "miesiąc"
+#~ msgstr[1] "miesiące"
+#~ msgstr[2] "miesięcy"
 
 #~ msgid "Your order has been sent"
 #~ msgstr "Twoje zamówienie zostało wysłane"
