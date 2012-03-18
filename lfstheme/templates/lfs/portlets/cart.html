@@ -20,7 +20,7 @@
                 {% blocktrans with amount=amount_of_items_locale count counter=amount_of_items_int %}{{ amount }} Article{% plural %}{{ amount }} Articles{% endblocktrans %}
             </div>
             <div class="price">
-                {{ price|currency }}
+                {{ price|currency:request }}
             </div>
         {% else %}
             {% trans 'Cart is empty' %}
