@@ -1,1 +1,1 @@
-Your order has been paid.
+{% load i18n %}{% trans "Your order has been paid." %}

@@ -1,9 +1,8 @@
-{% load i18n %}{% load lfs_tags %}
-Dear {{ order.customer_firstname }} {{ order.customer_lastname }},
+{% load i18n lfs_theme_tags %}
+{% blocktrans with firstname=order.customer_firstname lastname=order.customer_lastname %}Dear {{ firstname }} {{ lastname }}{% endblocktrans %},
 
-your order has been sent.
+{% trans "your order has been sent." %}
 
 {% include "lfs/mail/order_details.html" %}
 
-Best regards
-Your shop team
+{% email_text_footer %}

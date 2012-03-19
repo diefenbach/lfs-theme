@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LFS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-15 09:06-0500\n"
+"POT-Creation-Date: 2012-03-18 10:07-0500\n"
 "PO-Revision-Date: 2011-03-30 09:35+0100\n"
 "Last-Translator: Kai Diefenbach <kai.diefenbach@iqpp.de>\n"
 "Language-Team: Kai Diefenbach <kai.diefenbach@iqpp.de>\n"
@@ -115,7 +115,7 @@ msgstr "Menge"
 #: templates/lfs/cart/added_to_cart.html:35
 #: templates/lfs/catalog/products/product_inline.html:217
 #: templates/lfs/catalog/products/product_inline.html:304
-#: templates/lfs/customer/orders.html:44
+#: templates/lfs/customer/orders.html:47
 #: templates/lfs/mail/order_details.html:168
 #: templates/lfs/order/lfs_order_tmpl.html:169
 #: templates/lfs/portlets/filter.html:59
@@ -654,34 +654,39 @@ msgid "All"
 msgstr "Alle"
 
 #: templates/lfs/customer/orders.html:30
-msgid " month"
-msgid_plural " months"
-msgstr[0] "Monat"
-msgstr[1] "Monate"
+#, python-format
+msgid "%(counter)s month"
+msgid_plural "%(counter)s months"
+msgstr[0] "%(counter)s Monat"
+msgstr[1] "%(counter)s Monate"
 
 #: templates/lfs/customer/orders.html:34
 msgid "Filter"
 msgstr "Filter"
 
 #: templates/lfs/customer/orders.html:41
+msgid "Number"
+msgstr "Nummer"
+
+#: templates/lfs/customer/orders.html:44
 #: templates/lfs/mail/order_details.html:17
 #: templates/lfs/order/lfs_order_tmpl.html:17
 msgid "Date"
 msgstr "Datum"
 
-#: templates/lfs/customer/orders.html:47
+#: templates/lfs/customer/orders.html:50
 #: templates/lfs/mail/order_details.html:31
 #: templates/lfs/order/lfs_order_tmpl.html:33
 msgid "State"
 msgstr "Status"
 
-#: templates/lfs/customer/orders.html:54
+#: templates/lfs/customer/orders.html:60
 #: templates/lfs/mail/order_details.html:20
 #: templates/lfs/order/lfs_order_tmpl.html:20
 msgid "DATETIME_FORMAT"
 msgstr ""
 
-#: templates/lfs/customer/orders.html:68
+#: templates/lfs/customer/orders.html:73
 msgid "There are no orders for this time range."
 msgstr "Es gibt keine Bestellungen für diesen Zeitraum."
 

@@ -1,22 +1,18 @@
-{% load i18n %}
-{% load lfs_tags %}
+{% load i18n lfs_theme_tags %}
 <html>
     <head>
         {% include "lfs/mail/mail.css" %}
     </head>
     <body>
         <p>
-            Dear {{ order.customer_firstname }} {{ order.customer_lastname }},
+            {% blocktrans with firstname=order.customer_firstname lastname=order.customer_lastname %}Dear {{ firstname }} {{ lastname }}{% endblocktrans %},
         </p>
         <p>
-            your order has been sent.
+            {% trans "your order has been sent." %}
         </p>
         <p>
             {% include "lfs/mail/order_details.html" %}
         </p>
-        <p>
-            Best regards<br>
-            Your shop team
-        </p>
+        {% email_html_footer %}
     </body>
 </html>
