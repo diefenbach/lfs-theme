@@ -64,7 +64,7 @@ def do_slots_information(parser, token):
 register.tag('slots_information', do_slots_information)
 
 
-@register.inclusion_tag('lfs/mail/_mail_html_footer.html', takes_context=True)
+@register.inclusion_tag('lfs/mail/mail_html_footer.html', takes_context=True)
 def email_html_footer(context):
     request = context.get('request', None)
     shop = lfs.core.utils.get_default_shop(request)
@@ -73,7 +73,7 @@ def email_html_footer(context):
     }
 
 
-@register.inclusion_tag('lfs/mail/_mail_text_footer.html', takes_context=True)
+@register.inclusion_tag('lfs/mail/mail_text_footer.html', takes_context=True)
 def email_text_footer(context):
     request = context.get('request', None)
     shop = lfs.core.utils.get_default_shop(request)
