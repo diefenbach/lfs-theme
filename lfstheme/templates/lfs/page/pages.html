@@ -1,18 +1,15 @@
 {% extends "lfs/base.html" %}
-{% load i18n %}
-{% load lfs_tags %}
-{% load lfs_portlets_tags %}
+{% load i18n lfs_tags lfs_portlets_tags %}
 
 {% block section %}pages{% endblock %}
 
 {% block breadcrumbs %}
-    {% breadcrumbs _("Information") %}
+    {% breadcrumbs _("Informations") %}
 {% endblock %}
 
 {% block content %}
-
     <h1 class="page-title">
-        {% trans 'Information' %}
+        {% trans 'Informations' %}
     </h1>
 
     {% for page in pages %}

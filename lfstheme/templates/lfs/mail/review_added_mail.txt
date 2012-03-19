@@ -9,7 +9,7 @@
 {% if review.email %}{{ review.email }}{% else %}{% trans "No E-Mail" %}{% endif %}        
 
 {% trans "Score" %}:
-{{ review.score }}
+{{ review.score|stringformat:"d" }}
 
 {% trans "Comment" %}:
 {% if review.comment %}{{ review.comment }}{% else %}{% trans "No comment" %}{% endif %}

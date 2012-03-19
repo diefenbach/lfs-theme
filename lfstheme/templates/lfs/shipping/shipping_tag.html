@@ -1,10 +1,9 @@
-    {% load i18n %}
-{% load lfs_tags %}
+{% load i18n %}
 
 <div class="shipping-information">
     {% if deliverable %}
         <div class="deliverable">
-            {% trans 'Delivery time' %}: {{delivery_time}}
+            {% trans 'Delivery time' %}: {{ delivery_time }}
         </div>
     {% else %}
         <div class="not-deliverable">

@@ -1,6 +1,5 @@
 {% extends "lfs/base.html" %}
-{% load lfs_tags %}
-{% load lfs_portlets_tags %}
+{% load i18n lfs_tags lfs_portlets_tags %}
 
 {% block title %}
     {{ page.get_meta_title }} - {{ block.super }}
@@ -22,7 +21,6 @@
 {% endblock %}
 
 {% block content %}
-
     <h1 class="first-heading">
         {{ page.title }}
     </h1>
@@ -32,7 +30,7 @@
 
     {% if page.file %}
         <a href="{{page.file.url}}">
-            Download
+            {% trans "Download" %}
         </a>
     {% endif %}
 {% endblock %}

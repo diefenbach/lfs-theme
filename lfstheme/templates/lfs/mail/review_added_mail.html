@@ -29,7 +29,7 @@
 
         <h1>{% trans "Score" %}:</h1>
         <div>
-            {{ review.score }}
+            {{ review.score|stringformat:"d" }}
         </div>
 
         <h1>{% trans "Comment" %}:</h1>
