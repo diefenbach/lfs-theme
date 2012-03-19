@@ -1,4 +1,4 @@
-[lfs.lfstheme]
+[lfs.lfstheme-06]
 source_file = lfstheme/locale/de/LC_MESSAGES/django.po
 source_lang = de
 trans.es = lfstheme/locale/es/LC_MESSAGES/django.po
