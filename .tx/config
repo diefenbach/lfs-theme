@@ -1,7 +1,7 @@
 [main]
 host = http://www.transifex.net
 
-[lfs.lfstheme]
+[lfs.lfstheme-07]
 source_file = lfstheme/locale/en/LC_MESSAGES/django.po
 source_lang = en
 trans.de = lfstheme/locale/de/LC_MESSAGES/django.po

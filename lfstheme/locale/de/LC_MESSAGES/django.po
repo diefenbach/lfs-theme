@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LFS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-18 10:07-0500\n"
+"POT-Creation-Date: 2012-03-20 03:18-0500\n"
 "PO-Revision-Date: 2011-03-30 09:35+0100\n"
 "Last-Translator: Kai Diefenbach <kai.diefenbach@iqpp.de>\n"
 "Language-Team: Kai Diefenbach <kai.diefenbach@iqpp.de>\n"
@@ -99,7 +99,7 @@ msgstr "Zubehör"
 #: templates/lfs/cart/added_to_cart.html:29
 #: templates/lfs/catalog/products/product_inline.html:209
 #: templates/lfs/catalog/products/product_inline.html:302
-#: templates/lfs/mail/order_details.html:162
+#: templates/lfs/mail/order_details.html:172
 #: templates/lfs/mail/review_added_mail.html:12
 #: templates/lfs/order/lfs_order_tmpl.html:163
 msgid "Name"
@@ -116,7 +116,7 @@ msgstr "Menge"
 #: templates/lfs/catalog/products/product_inline.html:217
 #: templates/lfs/catalog/products/product_inline.html:304
 #: templates/lfs/customer/orders.html:47
-#: templates/lfs/mail/order_details.html:168
+#: templates/lfs/mail/order_details.html:178
 #: templates/lfs/order/lfs_order_tmpl.html:169
 #: templates/lfs/portlets/filter.html:59
 #: templates/lfs/search/search_results.html:44
@@ -131,9 +131,9 @@ msgstr "Einzelpreis"
 #: templates/lfs/cart/cart_inline.html:252
 #: templates/lfs/catalog/products/product_inline.html:305
 #: templates/lfs/checkout/checkout_cart_inline.html:37
-#: templates/lfs/checkout/checkout_cart_inline.html:187
-#: templates/lfs/mail/order_details.html:45
-#: templates/lfs/mail/order_details.html:171
+#: templates/lfs/checkout/checkout_cart_inline.html:183
+#: templates/lfs/mail/order_details.html:55
+#: templates/lfs/mail/order_details.html:181
 #: templates/lfs/order/lfs_order_tmpl.html:47
 #: templates/lfs/order/lfs_order_tmpl.html:172
 msgid "Total"
@@ -195,8 +195,8 @@ msgstr "Warenkorb"
 
 #: templates/lfs/cart/cart_inline.html:5
 #: templates/lfs/cart/cart_inline.html:154
-#: templates/lfs/checkout/checkout_cart_inline.html:130
-#: templates/lfs/mail/order_details.html:223
+#: templates/lfs/checkout/checkout_cart_inline.html:126
+#: templates/lfs/mail/order_details.html:233
 msgid "Voucher"
 msgstr "Gutschein"
 
@@ -206,7 +206,7 @@ msgstr "Ihr Warenkorb"
 
 #: templates/lfs/cart/cart_inline.html:35
 #: templates/lfs/checkout/checkout_cart_inline.html:28
-#: templates/lfs/mail/order_details.html:165
+#: templates/lfs/mail/order_details.html:175
 #: templates/lfs/order/lfs_order_tmpl.html:166
 msgid "Amount"
 msgstr "Menge"
@@ -220,25 +220,25 @@ msgid "Country"
 msgstr "Land"
 
 #: templates/lfs/cart/cart_inline.html:199
-#: templates/lfs/checkout/checkout_cart_inline.html:151
+#: templates/lfs/checkout/checkout_cart_inline.html:147
 #: templates/lfs/checkout/one_page_checkout.html:53
-#: templates/lfs/mail/order_details.html:240
+#: templates/lfs/mail/order_details.html:250
 #: templates/lfs/order/lfs_order_tmpl.html:217
 #: templates/lfs/shipping/shipping_portlet.html:6
 msgid "Shipping"
 msgstr "Versandart"
 
 #: templates/lfs/cart/cart_inline.html:225
-#: templates/lfs/checkout/checkout_cart_inline.html:169
+#: templates/lfs/checkout/checkout_cart_inline.html:165
 #: templates/lfs/checkout/payment_inline.html:3
-#: templates/lfs/mail/order_details.html:255
+#: templates/lfs/mail/order_details.html:265
 #: templates/lfs/order/lfs_order_tmpl.html:232
 msgid "Payment"
 msgstr "Zahlungsweise"
 
 #: templates/lfs/cart/cart_inline.html:266
-#: templates/lfs/checkout/checkout_cart_inline.html:194
-#: templates/lfs/mail/order_details.html:276
+#: templates/lfs/checkout/checkout_cart_inline.html:190
+#: templates/lfs/mail/order_details.html:286
 #: templates/lfs/order/lfs_order_tmpl.html:253
 msgid "Inclusive VAT"
 msgstr "Inklusive MwSt."
@@ -442,13 +442,13 @@ msgstr ""
 "erneut ab."
 
 #: templates/lfs/checkout/one_page_checkout.html:30
-#: templates/lfs/mail/order_details.html:59
+#: templates/lfs/mail/order_details.html:69
 #: templates/lfs/order/lfs_order_tmpl.html:58
 msgid "Invoice address"
 msgstr "Rechnungsadresse"
 
 #: templates/lfs/checkout/one_page_checkout.html:33
-#: templates/lfs/mail/order_details.html:56
+#: templates/lfs/mail/order_details.html:66
 #: templates/lfs/order/lfs_order_tmpl.html:61
 msgid "Shipping address"
 msgstr "Lieferadresse"
@@ -642,7 +642,7 @@ msgid "Order"
 msgstr "Bestellung"
 
 #: templates/lfs/customer/order.html:16
-msgid "Ordernumber:"
+msgid "Order number:"
 msgstr "Bestellnummer:"
 
 #: templates/lfs/customer/orders.html:20
@@ -665,23 +665,24 @@ msgid "Filter"
 msgstr "Filter"
 
 #: templates/lfs/customer/orders.html:41
+#: templates/lfs/mail/order_details.html:17
 msgid "Number"
 msgstr "Nummer"
 
 #: templates/lfs/customer/orders.html:44
-#: templates/lfs/mail/order_details.html:17
+#: templates/lfs/mail/order_details.html:31
 #: templates/lfs/order/lfs_order_tmpl.html:17
 msgid "Date"
 msgstr "Datum"
 
 #: templates/lfs/customer/orders.html:50
-#: templates/lfs/mail/order_details.html:31
+#: templates/lfs/mail/order_details.html:45
 #: templates/lfs/order/lfs_order_tmpl.html:33
 msgid "State"
 msgstr "Status"
 
 #: templates/lfs/customer/orders.html:60
-#: templates/lfs/mail/order_details.html:20
+#: templates/lfs/mail/order_details.html:34
 #: templates/lfs/order/lfs_order_tmpl.html:20
 msgid "DATETIME_FORMAT"
 msgstr ""
@@ -726,9 +727,23 @@ msgstr "Ein neue E-Mail wurde empfangen."
 msgid "Shop"
 msgstr "Shop"
 
+#: templates/lfs/mail/mail_html_footer.html:2
+#: templates/lfs/mail/mail_text_footer.html:2
+#, python-format
+msgid "This e-mail was sent automatically from %(name)s"
+msgstr "Diese E-Mail wurde automatisch von %(name)s versandt."
+
 #: templates/lfs/mail/new_user_mail.html:7
 msgid "Welcome to"
 msgstr "Willkommen zu"
+
+#: templates/lfs/mail/new_user_mail.html:9
+msgid "Thank you for registering"
+msgstr "Vielen Dank für Ihre Registrierung!"
+
+#: templates/lfs/mail/new_user_mail.html:12
+msgid "Your username"
+msgstr "Ihr Benutzername"
 
 #: templates/lfs/mail/order_details.html:6
 #: templates/lfs/order/lfs_order_tmpl.html:6
@@ -750,28 +765,47 @@ msgstr "E-Mail"
 msgid "Phone"
 msgstr "Telefon"
 
-#: templates/lfs/mail/order_details.html:62
+#: templates/lfs/mail/order_details.html:72
 #: templates/lfs/order/lfs_order_tmpl.html:64
 msgid "Shipping method"
 msgstr "Liefermethode"
 
-#: templates/lfs/mail/order_details.html:65
+#: templates/lfs/mail/order_details.html:75
 #: templates/lfs/order/lfs_order_tmpl.html:67
 msgid "Payment method"
 msgstr "Zahlungsweise"
 
-#: templates/lfs/mail/order_details.html:147
+#: templates/lfs/mail/order_details.html:157
 msgid "Pay now"
 msgstr "Jetzt bezahlen"
 
-#: templates/lfs/mail/order_details.html:159
+#: templates/lfs/mail/order_details.html:169
 #: templates/lfs/order/lfs_order_tmpl.html:160
 msgid "SKU"
 msgstr "Artikelnummer"
 
-#: templates/lfs/mail/order_details.html:285
+#: templates/lfs/mail/order_details.html:295
 msgid "Your message to us"
 msgstr "Ihre Nachricht an uns"
+
+#: templates/lfs/mail/order_paid_mail.html:8
+#: templates/lfs/mail/order_received_mail.html:8
+#: templates/lfs/mail/order_sent_mail.html:8
+#, python-format
+msgid "Dear %(firstname)s %(lastname)s"
+msgstr "Sehr geehrte Frau/geehrter Herr %(firstname)s %(lastname)s"
+
+#: templates/lfs/mail/order_paid_mail.html:11
+msgid "your order has been paid."
+msgstr "Ihre Bestellung wurde bezahlt."
+
+#: templates/lfs/mail/order_received_mail.html:11
+msgid "your order has been received."
+msgstr "Ihre Bestellung wurde empfangen."
+
+#: templates/lfs/mail/order_sent_mail.html:11
+msgid "your order has been sent."
+msgstr "Ihre Bestellung wurde versendet."
 
 #: templates/lfs/mail/review_added_mail.html:17
 #: templates/reviews/reviews_for_instance.html:23
@@ -799,11 +833,15 @@ msgstr "Kein Kommentar"
 msgid "Message from the customer"
 msgstr "Nachricht vom Kunden"
 
-#: templates/lfs/page/pages.html:9 templates/lfs/page/pages.html.py:15
+#: templates/lfs/page/page.html:33
+msgid "Download"
+msgstr "Herunterladen"
+
+#: templates/lfs/page/pages.html:7 templates/lfs/page/pages.html.py:12
 msgid "Information"
 msgstr "Informationen"
 
-#: templates/lfs/page/pages.html:28
+#: templates/lfs/page/pages.html:25
 msgid "More"
 msgstr "Mehr"
 
@@ -835,12 +873,12 @@ msgstr "Lieferbar"
 
 #: templates/lfs/portlets/delivery_time.html:14
 #: templates/lfs/shipping/shipping_portlet.html:16
-#: templates/lfs/shipping/shipping_tag.html:11
+#: templates/lfs/shipping/shipping_tag.html:10
 msgid "Not deliverable"
 msgstr "Nicht lieferbar"
 
 #: templates/lfs/portlets/delivery_time.html:18
-#: templates/lfs/shipping/shipping_tag.html:7
+#: templates/lfs/shipping/shipping_tag.html:6
 msgid "Delivery time"
 msgstr "Lieferzeit"
 
@@ -867,6 +905,10 @@ msgstr "Topseller"
 #: templates/lfs/portlets/topseller.html:22
 msgid "All topseller"
 msgstr "Alle Topseller"
+
+#: templates/lfs/reviews/rating_mail.html:7
+msgid "Please, review the articles you've bought in our shop."
+msgstr "Bitte bewerten Sie die Artikel, die sie in unserem Shop gekauft haben."
 
 #: templates/lfs/search/livesearch_results.html:49
 msgid "All results"

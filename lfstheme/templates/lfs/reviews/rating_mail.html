@@ -1,5 +1,16 @@
-{% for item in order.items.all %}
-    <div>
-        <a href="{% url reviews_add content_type_id item.product.id %}">{{ item.product_name }}</a>
-    </div>
-{% endfor %}
+{% load i18n lfs_theme_tags %}
+<html>
+    <head>
+        {% include "lfs/mail/mail.css" %}
+    </head>
+    <body>
+        <h2>{% trans "Please, review the articles you've bought in our shop." %}</h2>
+        {% for item in order.items.all %}
+            <div>
+                <a href="http://{{ site.domain }}{% url reviews_add content_type_id item.product.id %}">{{ item.product_name }}</a>
+            </div>
+        {% endfor %}
+
+        {% email_html_footer %}
+    </body>
+</html>

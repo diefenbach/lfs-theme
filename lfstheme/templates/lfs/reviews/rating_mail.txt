@@ -1,0 +1,8 @@
+{% load i18n lfs_theme_tags %}
+{% trans "Please, review the articles you've bought in our shop." %}
+
+{% for item in order.items.all %}
+    {{ item.product_name }}: http://{{ site.domain }}{% url reviews_add content_type_id item.product.id %}
+{% endfor %}
+
+{% email_text_footer %}

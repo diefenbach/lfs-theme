@@ -13,7 +13,7 @@
 {% endblock %}
 
 {% block content %}
-    <h1>{% trans 'Ordernumber:' %} {{ current_order.id }}</h1>
+    <h1>{% trans 'Order number:' %} {{ current_order.number }}</h1>
 
     <p class="site-actions">
         <a href="{% url lfs_my_orders %}">{% trans "Back to overview" %}</a>
