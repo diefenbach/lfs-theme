@@ -1,37 +1,6 @@
 {% load i18n lfs_tags %}
 
-<div class="products-navigation">
-    {% if show_pages %}
-        {% if previous_url %}
-            <a href="{{ previous_url }}">&lt;&lt; {% trans 'Previous page' %}</a>
-        {% else %}
-            &lt;&lt; {% trans 'Previous page' %}
-        {% endif %}
-
-        {% if pages %}
-            -
-        {% endif %}
-
-        {% for page in pages %}
-            <a class="{% if page.selected%}current{% endif %}"
-               href="{% url lfs_category category.slug %}?start={{ page.start }}">
-                {{ page.name }}
-            </a>
-        {% endfor %}
-
-        ({{ amount_of_products }} {% trans 'Products' %})
-
-        {% if pages %}
-            -
-        {% endif %}
-
-        {% if next_url %}
-            <a href="{{ next_url }}">{% trans 'Next page' %} &gt;&gt;</a>
-        {% else %}
-            {% trans 'Next page' %} &gt;&gt;
-        {% endif %}
-    {% endif %}
-</div>
+{% include "lfs/catalog/categories/product/products_navigation.html" %}
 
 {% sorting %}
 
