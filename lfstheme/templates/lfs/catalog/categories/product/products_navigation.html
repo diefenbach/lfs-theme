@@ -14,7 +14,7 @@
 
     {% for p in pagination.page_range %}
       {% if p == pagination.current_page %}
-        {{ p }}
+        <span class="current">{{ p }}</span>
       {% else %}
         <a href="{{ pagination.url }}?{{ pagination.getparam }}={{ p }}{{ pagination.getvars }}">{{ p }}</a>
       {% endif %}
