@@ -467,7 +467,7 @@ div.product-quantity {
 /* Category
 ___________________________________________________________________________ */
 
-a.current {
+a.current, span.current {
     font-weight: bold;
 }
 

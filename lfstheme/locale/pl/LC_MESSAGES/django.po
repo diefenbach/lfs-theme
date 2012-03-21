@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LFS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-19 22:56+0100\n"
-"PO-Revision-Date: 2012-03-19 22:56+0100\n"
+"POT-Creation-Date: 2012-03-20 22:36+0100\n"
+"PO-Revision-Date: 2012-03-20 22:39+0100\n"
 "Last-Translator: Maciej Wiśniowski <pigletto@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pl\n"
@@ -346,35 +346,17 @@ msgid "Name descending"
 msgstr "Nazwa malejąco"
 
 #: templates/lfs/catalog/categories/category/default.html:30
-#: templates/lfs/catalog/categories/product/default.html:105
+#: templates/lfs/catalog/categories/product/default.html:74
 #: templates/lfs/search/search_results.html:96
 msgid "Details"
 msgstr "Szczegóły"
 
-#: templates/lfs/catalog/categories/product/default.html:6
-#: templates/lfs/catalog/categories/product/default.html:8
-#: templates/pagination/pagination.html:5
-#: templates/pagination/pagination.html:7
-msgid "Previous page"
-msgstr "Poprzednia strona"
-
-#: templates/lfs/catalog/categories/product/default.html:22
-msgid "Products"
-msgstr "Produkty"
-
-#: templates/lfs/catalog/categories/product/default.html:29
-#: templates/lfs/catalog/categories/product/default.html:31
-#: templates/pagination/pagination.html:21
-#: templates/pagination/pagination.html:23
-msgid "Next page"
-msgstr "Następna strona"
-
-#: templates/lfs/catalog/categories/product/default.html:68
-#: templates/lfs/catalog/categories/product/default.html:87
+#: templates/lfs/catalog/categories/product/default.html:37
+#: templates/lfs/catalog/categories/product/default.html:56
 msgid "Starting at"
 msgstr "Rozpoczynając od"
 
-#: templates/lfs/catalog/categories/product/default.html:97
+#: templates/lfs/catalog/categories/product/default.html:66
 #: templates/lfs/catalog/products/product_inline.html:74
 #: templates/lfs/catalog/products/product_inline.html:91
 #: templates/lfs/portlets/featured.html:20
@@ -385,7 +367,7 @@ msgstr "Rozpoczynając od"
 msgid "*inc. VAT"
 msgstr "*zawiera VAT"
 
-#: templates/lfs/catalog/categories/product/default.html:99
+#: templates/lfs/catalog/categories/product/default.html:68
 #: templates/lfs/catalog/products/product_inline.html:76
 #: templates/lfs/catalog/products/product_inline.html:93
 #: templates/lfs/portlets/featured.html:22
@@ -394,6 +376,49 @@ msgstr "*zawiera VAT"
 #: templates/lfs/portlets/forsale.html:53
 msgid "*exc. VAT"
 msgstr "*nie zawiera VAT"
+
+#: templates/lfs/catalog/categories/product/products_navigation.html:6
+msgid "First page"
+msgstr "Pierwsza"
+
+#: templates/lfs/catalog/categories/product/products_navigation.html:11
+#: templates/pagination/pagination.html:5
+#: templates/pagination/pagination.html:7
+msgid "Previous page"
+msgstr "Poprzednia strona"
+
+#: templates/lfs/catalog/categories/product/products_navigation.html:25
+#: templates/pagination/pagination.html:21
+#: templates/pagination/pagination.html:23
+msgid "Next page"
+msgstr "Następna strona"
+
+#: templates/lfs/catalog/categories/product/products_navigation.html:31
+msgid "Last page"
+msgstr "Ostatnia"
+
+#: templates/lfs/catalog/categories/product/products_navigation.html:36
+#, python-format
+msgid ""
+"\n"
+"            (%(amount_of_products)s product)\n"
+"        "
+msgid_plural ""
+"\n"
+"            (%(amount_of_products)s products)\n"
+"        "
+msgstr[0] ""
+"\n"
+"            (%(amount_of_products)s produkt)\n"
+"        "
+msgstr[1] ""
+"\n"
+"            (%(amount_of_products)s produkty)\n"
+"        "
+msgstr[2] ""
+"\n"
+"            (%(amount_of_products)s produktów)\n"
+"        "
 
 #: templates/lfs/catalog/products/product_inline.html:181
 msgid "Add to cart"
@@ -898,16 +923,16 @@ msgstr "Brak komentarza"
 msgid "Message from the customer"
 msgstr "Wiadomość od klienta"
 
-#: templates/lfs/page/page.html:34
+#: templates/lfs/page/page.html:33
 msgid "Download"
 msgstr "Pobierz"
 
-#: templates/lfs/page/pages.html:9
-#: templates/lfs/page/pages.html.py:15
+#: templates/lfs/page/pages.html:7
+#: templates/lfs/page/pages.html.py:12
 msgid "Information"
 msgstr "Informacja"
 
-#: templates/lfs/page/pages.html:28
+#: templates/lfs/page/pages.html:25
 msgid "More"
 msgstr "Więcej"
 
@@ -941,12 +966,12 @@ msgstr "Wysyłane"
 
 #: templates/lfs/portlets/delivery_time.html:14
 #: templates/lfs/shipping/shipping_portlet.html:16
-#: templates/lfs/shipping/shipping_tag.html:11
+#: templates/lfs/shipping/shipping_tag.html:10
 msgid "Not deliverable"
 msgstr "Nie wysyłane"
 
 #: templates/lfs/portlets/delivery_time.html:18
-#: templates/lfs/shipping/shipping_tag.html:7
+#: templates/lfs/shipping/shipping_tag.html:6
 msgid "Delivery time"
 msgstr "Czas dostawy"
 
@@ -974,6 +999,11 @@ msgstr "Najlepiej kupowane"
 #: templates/lfs/portlets/topseller.html:22
 msgid "All topseller"
 msgstr "Wszystkie najlepiej kupowane produkty"
+
+#: templates/lfs/reviews/rating_mail.html:7
+#: templates/lfs/reviews/rating_mail.txt:2
+msgid "Please, review the articles you've bought in our shop."
+msgstr "Prosimy o ocenę artykułów zakupionych w naszym sklepie."
 
 #: templates/lfs/search/livesearch_results.html:49
 msgid "All results"
@@ -1183,6 +1213,9 @@ msgstr "Produkty z tymi samymi tagami"
 #, python-format
 msgid "%s tag needs no argument"
 msgstr "%s tag nie potrzebuje argumentów"
+
+#~ msgid "Products"
+#~ msgstr "Produkty"
 
 #~ msgid " month"
 
