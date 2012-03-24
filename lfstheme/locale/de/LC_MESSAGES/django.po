@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LFS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-03 00:47-0600\n"
+"POT-Creation-Date: 2012-03-24 06:30-0500\n"
 "PO-Revision-Date: 2011-03-30 09:35+0100\n"
 "Last-Translator: Kai Diefenbach <kai.diefenbach@iqpp.de>\n"
 "Language-Team: Kai Diefenbach <kai.diefenbach@iqpp.de>\n"
@@ -265,14 +265,18 @@ msgid "Your Cart is empty"
 msgstr "Ihr Warenkorb ist leer"
 
 #: templates/lfs/catalog/breadcrumbs.html:3 templates/lfs/shop/shop.html:6
-#: templates/registration/password_reset_done.html:10
+#: templates/registration/password_reset_complete.html:9
+#: templates/registration/password_reset_confirm.html:9
+#: templates/registration/password_reset_done.html:9
 #: templates/registration/password_reset_form.html:11
 msgid "You are here:"
 msgstr "Sie sind hier:"
 
 #: templates/lfs/catalog/breadcrumbs.html:6 templates/lfs/shop/menu.html:3
 #: templates/lfs/shop/shop.html:8 templates/lfs/shop/tabs.html:7
-#: templates/registration/password_reset_done.html:13
+#: templates/registration/password_reset_complete.html:12
+#: templates/registration/password_reset_confirm.html:12
+#: templates/registration/password_reset_done.html:12
 #: templates/registration/password_reset_form.html:14
 msgid "Home"
 msgstr "Start"
@@ -679,12 +683,12 @@ msgid "Old password:"
 msgstr "Altes Passwort:"
 
 #: templates/lfs/customer/password.html:31
-#: templates/registration/password_reset_confirm.html:16
+#: templates/registration/password_reset_confirm.html:33
 msgid "New password:"
 msgstr "Neues Passwort:"
 
 #: templates/lfs/customer/password.html:40
-#: templates/registration/password_reset_confirm.html:18
+#: templates/registration/password_reset_confirm.html:42
 msgid "Confirm password:"
 msgstr "Passwort bestätigen:"
 
@@ -883,56 +887,58 @@ msgid "Image"
 msgstr "Bild"
 
 #: templates/registration/password_reset_complete.html:4
-#: templates/registration/password_reset_complete.html:8
+#: templates/registration/password_reset_complete.html:22
 msgid "Password reset complete"
 msgstr "Passwortreset ist komplett"
 
-#: templates/registration/password_reset_complete.html:10
-msgid "Your password has been set. You may go ahead and log in now."
-msgstr "Ihr passwort wurde gesetzt. Sie können sich nun anmelden"
-
-#: templates/registration/password_reset_complete.html:12
-msgid "Log in"
-msgstr "Anmelden"
-
+#: templates/registration/password_reset_complete.html:15
 #: templates/registration/password_reset_confirm.html:4
+#: templates/registration/password_reset_confirm.html:15
+#: templates/registration/password_reset_done.html:15
 #: templates/registration/password_reset_form.html:4
 #: templates/registration/password_reset_form.html:17
 #: templates/registration/password_reset_form.html:24
 msgid "Password reset"
 msgstr "Passwort zurücksetzen"
 
-#: templates/registration/password_reset_confirm.html:10
+#: templates/registration/password_reset_complete.html:25
+msgid "Your password has been set. You may go ahead and log in now."
+msgstr "Ihr passwort wurde gesetzt. Sie können sich nun anmelden"
+
+#: templates/registration/password_reset_complete.html:28
+msgid "Log in"
+msgstr "Anmelden"
+
+#: templates/registration/password_reset_confirm.html:23
 msgid "Enter new password"
 msgstr "Neues Passwort eintragen"
 
-#: templates/registration/password_reset_confirm.html:12
+#: templates/registration/password_reset_confirm.html:26
 msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
 msgstr "Bitte geben Sie Ihr Passwort zweimal ein."
 
-#: templates/registration/password_reset_confirm.html:19
+#: templates/registration/password_reset_confirm.html:50
 msgid "Change my password"
 msgstr "Passwort ändern"
 
-#: templates/registration/password_reset_confirm.html:24
+#: templates/registration/password_reset_confirm.html:55
 msgid "Password reset unsuccessful"
 msgstr "Das Zurücksetzen des Passworts war nicht erfolgreich"
 
-#: templates/registration/password_reset_confirm.html:26
+#: templates/registration/password_reset_confirm.html:58
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
-"used.  Please request a new password reset."
+"used. Please request a new password reset."
 msgstr "Der Link zum Rücksetzen Ihres Passwortes ist nicht mehr gültig."
 
-#: templates/registration/password_reset_done.html:16
+#: templates/registration/password_reset_done.html:4
 #: templates/registration/password_reset_done.html:22
-#: templates/registration/password_reset_done.html:26
 msgid "Password reset successful"
 msgstr "Das Zurücksetzen des Passworts war erfolgreich"
 
-#: templates/registration/password_reset_done.html:28
+#: templates/registration/password_reset_done.html:25
 msgid ""
 "We've e-mailed you instructions for setting your password to the e-mail "
 "address you submitted. You should be receiving it shortly."
@@ -966,7 +972,7 @@ msgstr "Vielen Dank, dass Sie unsere Seite benutzen!"
 msgid "The %(site_name)s team"
 msgstr "Ihr %(site_name)s-Team"
 
-#: templates/registration/password_reset_form.html:26
+#: templates/registration/password_reset_form.html:27
 msgid ""
 "Enter your e-mail address below, and we'll e-mail instructions for setting a "
 "new one."
@@ -974,11 +980,7 @@ msgstr ""
 "Bitte geben Sie Ihre E-Mail Adresse ein und wir senden Ihnen eine Mail zum "
 "Zurücksetzen Ihres Passworts."
 
-#: templates/registration/password_reset_form.html:33
-msgid "E-mail address:"
-msgstr "E-Mail-Adresse:"
-
-#: templates/registration/password_reset_form.html:35
+#: templates/registration/password_reset_form.html:42
 msgid "Reset my password"
 msgstr "Passwort zurücksetzen"
 
