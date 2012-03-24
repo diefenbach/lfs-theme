@@ -943,11 +943,11 @@ msgstr "Bild"
 #: templates/registration/password_reset_complete.html:4
 #: templates/registration/password_reset_complete.html:8
 msgid "Password reset complete"
-msgstr "Passwortreset ist komplett"
+msgstr "Das Zurücksetzen Ihres Passwortes war erfolgreich"
 
 #: templates/registration/password_reset_complete.html:10
 msgid "Your password has been set. You may go ahead and log in now."
-msgstr "Ihr passwort wurde gesetzt. Sie können sich nun anmelden"
+msgstr "Ihr Passwort wurde gesetzt. Sie können sich nun anmelden."
 
 #: templates/registration/password_reset_complete.html:12
 msgid "Log in"
@@ -981,7 +981,7 @@ msgstr "Das Zurücksetzen des Passworts war nicht erfolgreich"
 #: templates/registration/password_reset_confirm.html:26
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
-"used.  Please request a new password reset."
+"used. Please request a new password reset."
 msgstr "Der Link zum Rücksetzen Ihres Passwortes ist nicht mehr gültig."
 
 #: templates/registration/password_reset_done.html:16
