@@ -1,0 +1,1139 @@
+# LFSTHEME TRADITIONAL CHINESE LANGUAGE TRANSLATION
+# Copyright (C) 2012 YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# AUTHOR: FRANK FENG 
+# Enail: fengxl@tiroxlab.com
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: LFSTHEME TRADITIONAL CHINESE\n"
+"Report-Msgid-Bugs-To: https://bitbucket.org/callbay/django-lfstheme-0.7/issues\n"
+"POT-Creation-Date: 2012-03-24 19:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FRANK FENG <fengxl@tiroxlab.com>\n"
+"Language-Team: GAVIN WU <gavin@tiroxlab.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+#: templates/404.html:9 templates/500.html:4
+msgid "We are sorry!"
+msgstr "抱歉！"
+
+#: templates/404.html:12
+msgid "The page you have requested could not be found."
+msgstr "您瀏覽的網頁不存在。"
+
+#: templates/500.html:7
+msgid "An error has occured. Please try again in a minute."
+msgstr "系統出錯，請稍候再試。"
+
+#: templates/lfs/base.html:63 templates/lfs/base.html.py:66
+#: templates/lfs/base.html:69 templates/lfs/base.html.py:72
+msgid "Manage"
+msgstr "管理"
+
+#: templates/lfs/base.html:77
+msgid "Logout"
+msgstr "退出"
+
+#: templates/lfs/base.html:78 templates/lfs/customer/base.html:8
+msgid "My account"
+msgstr "我的帳戶"
+
+#: templates/lfs/base.html:81 templates/lfs/checkout/login.html:6
+#: templates/lfs/checkout/login.html:12 templates/lfs/checkout/login.html:21
+#: templates/lfs/checkout/login.html:53 templates/lfs/customer/login.html:6
+#: templates/lfs/customer/login.html:12 templates/lfs/customer/login.html:21
+#: templates/lfs/customer/login.html:53
+msgid "Login"
+msgstr "登錄"
+
+#: templates/lfs/base.html:85 templates/lfs/search/search_results.html:18
+msgid "Search"
+msgstr "查找"
+
+#: templates/lfs/base.html:92 templates/lfs/catalog/sorting.html:18
+#: templates/lfs/search/search_results.html:26
+msgid "Go!"
+msgstr "開始！"
+
+#: templates/lfs/base.html:167
+msgid "Powered by"
+msgstr "開發方:"
+
+#: templates/lfs/base.html:169
+msgid "by"
+msgstr "由"
+
+#: templates/lfs/base.html:169
+msgid "All rights reserved"
+msgstr "保留全部權利"
+
+#: templates/lfs/base.html:171
+msgid "Distributed under the"
+msgstr "分發方式遵循"
+
+#: templates/lfs/base.html:171
+msgid "BSD-License"
+msgstr ""
+
+#: templates/lfs/cart/added_to_cart.html:10
+msgid "Added to cart"
+msgstr "放入購物車"
+
+#: templates/lfs/cart/added_to_cart.html:15
+msgid "This products have been added to cart"
+msgstr "商品已被放入購物車"
+
+#: templates/lfs/cart/added_to_cart.html:17
+msgid "This product has been added to cart"
+msgstr "商品已被放入購物車"
+
+#: templates/lfs/cart/added_to_cart.html:25
+#: templates/lfs/catalog/products/product_inline.html:298
+msgid "Accessories"
+msgstr "配件"
+
+#: templates/lfs/cart/added_to_cart.html:29
+#: templates/lfs/catalog/products/product_inline.html:209
+#: templates/lfs/catalog/products/product_inline.html:302
+#: templates/lfs/mail/order_details.html:172
+#: templates/lfs/mail/review_added_mail.html:12
+#: templates/lfs/order/lfs_order_tmpl.html:163
+msgid "Name"
+msgstr "名稱"
+
+#: templates/lfs/cart/added_to_cart.html:32
+#: templates/lfs/cart/added_to_cart_items.html:9
+#: templates/lfs/catalog/products/product_inline.html:167
+#: templates/lfs/catalog/products/product_inline.html:303
+msgid "Quantity"
+msgstr "數量"
+
+#: templates/lfs/cart/added_to_cart.html:35
+#: templates/lfs/catalog/products/product_inline.html:217
+#: templates/lfs/catalog/products/product_inline.html:304
+#: templates/lfs/customer/orders.html:47
+#: templates/lfs/mail/order_details.html:178
+#: templates/lfs/order/lfs_order_tmpl.html:169
+#: templates/lfs/portlets/filter.html:59
+#: templates/lfs/search/search_results.html:44
+#: templates/tagging/product_list.html:16
+msgid "Price"
+msgstr "價格"
+
+#: templates/lfs/cart/added_to_cart.html:38
+#: templates/lfs/cart/added_to_cart_items.html:18
+#: templates/lfs/cart/added_to_cart_items.html:77
+#: templates/lfs/cart/cart_inline.html:44
+#: templates/lfs/cart/cart_inline.html:252
+#: templates/lfs/catalog/products/product_inline.html:305
+#: templates/lfs/checkout/checkout_cart_inline.html:37
+#: templates/lfs/checkout/checkout_cart_inline.html:183
+#: templates/lfs/mail/order_details.html:55
+#: templates/lfs/mail/order_details.html:181
+#: templates/lfs/order/lfs_order_tmpl.html:47
+#: templates/lfs/order/lfs_order_tmpl.html:172
+msgid "Total"
+msgstr "總計"
+
+#: templates/lfs/cart/added_to_cart.html:62
+msgid "Add"
+msgstr "添加"
+
+#: templates/lfs/cart/added_to_cart.html:73
+#: templates/lfs/cart/cart_inline.html:288
+#: templates/lfs/checkout/empty_page_checkout.html:6
+#: templates/lfs/checkout/empty_page_checkout.html:12
+#: templates/lfs/checkout/login.html:92 templates/lfs/checkout/login.html:102
+#: templates/lfs/checkout/one_page_checkout.html:5
+#: templates/lfs/checkout/one_page_checkout.html:11
+msgid "Checkout"
+msgstr "結算"
+
+#: templates/lfs/cart/added_to_cart.html:77
+#: templates/lfs/checkout/one_page_checkout.html:256
+#: templates/lfs/portlets/cart.html:8 templates/lfs/portlets/cart.html:32
+msgid "Go to cart"
+msgstr "查看購物車"
+
+#: templates/lfs/cart/added_to_cart.html:81
+#: templates/lfs/cart/cart_inline.html:292
+#: templates/lfs/cart/cart_inline.html:305
+#: templates/lfs/checkout/empty_page_checkout.html:21
+#: templates/lfs/contact/contact_form_sent.html:20
+msgid "Go on shopping"
+msgstr "繼續購物"
+
+#: templates/lfs/cart/added_to_cart_items.html:6
+#: templates/lfs/cart/cart_inline.html:31
+#: templates/lfs/checkout/checkout_cart_inline.html:24
+#: templates/lfs/mail/review_added_mail.html:7
+#: templates/lfs/search/search_results.html:43
+#: templates/tagging/product_list.html:14
+msgid "Product"
+msgstr "商品"
+
+#: templates/lfs/cart/added_to_cart_items.html:12
+#: templates/lfs/cart/cart_inline.html:38
+#: templates/lfs/checkout/checkout_cart_inline.html:31
+msgid "Net Price"
+msgstr "凈價"
+
+#: templates/lfs/cart/added_to_cart_items.html:15
+#: templates/lfs/cart/cart_inline.html:41
+#: templates/lfs/checkout/checkout_cart_inline.html:34
+msgid "VAT"
+msgstr "附加稅"
+
+#: templates/lfs/cart/cart.html:6 templates/lfs/cart/cart.html.py:12
+#: templates/lfs/portlets/cart.html:10 templates/lfs/portlets/cart.html:13
+msgid "Cart"
+msgstr "購物車"
+
+#: templates/lfs/cart/cart_inline.html:5
+#: templates/lfs/cart/cart_inline.html:154
+#: templates/lfs/checkout/checkout_cart_inline.html:126
+#: templates/lfs/mail/order_details.html:233
+msgid "Voucher"
+msgstr "優惠卷"
+
+#: templates/lfs/cart/cart_inline.html:21
+msgid "Your Cart"
+msgstr "您的購物車"
+
+#: templates/lfs/cart/cart_inline.html:35
+#: templates/lfs/checkout/checkout_cart_inline.html:28
+#: templates/lfs/mail/order_details.html:175
+#: templates/lfs/order/lfs_order_tmpl.html:166
+msgid "Amount"
+msgstr ""
+
+#: templates/lfs/cart/cart_inline.html:120
+msgid "Delete item"
+msgstr "刪除"
+
+#: templates/lfs/cart/cart_inline.html:178
+msgid "Country"
+msgstr "國家"
+
+#: templates/lfs/cart/cart_inline.html:199
+#: templates/lfs/checkout/checkout_cart_inline.html:147
+#: templates/lfs/checkout/one_page_checkout.html:53
+#: templates/lfs/mail/order_details.html:250
+#: templates/lfs/order/lfs_order_tmpl.html:217
+#: templates/lfs/shipping/shipping_portlet.html:6
+msgid "Shipping"
+msgstr "送貨"
+
+#: templates/lfs/cart/cart_inline.html:225
+#: templates/lfs/checkout/checkout_cart_inline.html:165
+#: templates/lfs/checkout/payment_inline.html:3
+#: templates/lfs/mail/order_details.html:265
+#: templates/lfs/order/lfs_order_tmpl.html:232
+msgid "Payment"
+msgstr "支付"
+
+#: templates/lfs/cart/cart_inline.html:266
+#: templates/lfs/checkout/checkout_cart_inline.html:190
+#: templates/lfs/mail/order_details.html:286
+#: templates/lfs/order/lfs_order_tmpl.html:253
+msgid "Inclusive VAT"
+msgstr "不含稅"
+
+#: templates/lfs/cart/cart_inline.html:280
+msgid "Total delivery time"
+msgstr "送貨時間"
+
+#: templates/lfs/cart/cart_inline.html:301
+msgid "Your Cart is empty"
+msgstr "您的購物車為空"
+
+#: templates/lfs/catalog/breadcrumbs.html:3 templates/lfs/shop/shop.html:15
+#: templates/registration/password_reset_complete.html:9
+#: templates/registration/password_reset_confirm.html:9
+#: templates/registration/password_reset_done.html:9
+#: templates/registration/password_reset_form.html:11
+msgid "You are here:"
+msgstr "當前位置"
+
+#: templates/lfs/catalog/breadcrumbs.html:6 templates/lfs/shop/menu.html:3
+#: templates/lfs/shop/shop.html:17 templates/lfs/shop/tabs.html:7
+#: templates/registration/password_reset_complete.html:12
+#: templates/registration/password_reset_confirm.html:12
+#: templates/registration/password_reset_done.html:12
+#: templates/registration/password_reset_form.html:14
+msgid "Home"
+msgstr "主頁"
+
+#: templates/lfs/catalog/packing_result.html:4
+msgid "This complies to"
+msgstr "包裝概況："
+
+#: templates/lfs/catalog/packing_result.html:5
+msgid "pieces"
+msgstr "件"
+
+#: templates/lfs/catalog/packing_result.html:6
+msgid "and costs"
+msgstr "費用"
+
+#: templates/lfs/catalog/product_base.html:37
+#: templates/lfs/customer/order.html:19
+msgid "Back to overview"
+msgstr "返回"
+
+#: templates/lfs/catalog/product_base.html:52
+msgid "Tags"
+msgstr "標簽"
+
+#: templates/lfs/catalog/product_base.html:63
+msgid "Tag cloud"
+msgstr "雲標簽"
+
+#: templates/lfs/catalog/product_navigation.html:5
+#: templates/lfs/catalog/product_navigation.html:7
+msgid "Previous product"
+msgstr "上壹個商品"
+
+#: templates/lfs/catalog/product_navigation.html:9
+msgid "of"
+msgstr "之"
+
+#: templates/lfs/catalog/product_navigation.html:11
+#: templates/lfs/catalog/product_navigation.html:13
+msgid "Next product"
+msgstr "下壹個商品"
+
+#: templates/lfs/catalog/sorting.html:9
+msgid "Price ascending"
+msgstr "按價格由低到高"
+
+#: templates/lfs/catalog/sorting.html:11
+msgid "Price descending"
+msgstr "按價格由高到低"
+
+#: templates/lfs/catalog/sorting.html:13
+msgid "Name ascending"
+msgstr "按名稱升序"
+
+#: templates/lfs/catalog/sorting.html:15
+msgid "Name descending"
+msgstr "按名稱降序"
+
+#: templates/lfs/catalog/categories/category/default.html:30
+#: templates/lfs/catalog/categories/product/default.html:74
+#: templates/lfs/search/search_results.html:96
+msgid "Details"
+msgstr "詳細"
+
+#: templates/lfs/catalog/categories/product/default.html:37
+#: templates/lfs/catalog/categories/product/default.html:56
+msgid "Starting at"
+msgstr "起價"
+
+#: templates/lfs/catalog/categories/product/default.html:66
+#: templates/lfs/catalog/products/product_inline.html:74
+#: templates/lfs/catalog/products/product_inline.html:91
+#: templates/lfs/portlets/featured.html:20
+#: templates/lfs/portlets/featured.html:50
+#: templates/lfs/portlets/forsale.html:21
+#: templates/lfs/portlets/forsale.html:51
+#: templates/lfs/search/search_results.html:88
+msgid "*inc. VAT"
+msgstr "含稅"
+
+#: templates/lfs/catalog/categories/product/default.html:68
+#: templates/lfs/catalog/products/product_inline.html:76
+#: templates/lfs/catalog/products/product_inline.html:93
+#: templates/lfs/portlets/featured.html:22
+#: templates/lfs/portlets/featured.html:52
+#: templates/lfs/portlets/forsale.html:23
+#: templates/lfs/portlets/forsale.html:53
+msgid "*exc. VAT"
+msgstr "不含稅"
+
+#: templates/lfs/catalog/categories/product/products_navigation.html:6
+msgid "First page"
+msgstr "首頁"
+
+#: templates/lfs/catalog/categories/product/products_navigation.html:11
+#: templates/pagination/pagination.html:5
+#: templates/pagination/pagination.html:7
+msgid "Previous page"
+msgstr "上壹頁"
+
+#: templates/lfs/catalog/categories/product/products_navigation.html:25
+#: templates/pagination/pagination.html:21
+#: templates/pagination/pagination.html:23
+msgid "Next page"
+msgstr "下壹頁"
+
+#: templates/lfs/catalog/categories/product/products_navigation.html:31
+msgid "Last page"
+msgstr "末頁"
+
+#: templates/lfs/catalog/categories/product/products_navigation.html:36
+#, python-format
+msgid ""
+"\n"
+"            (%(amount_of_products)s product)\n"
+"        "
+msgid_plural ""
+"\n"
+"            (%(amount_of_products)s products)\n"
+"        "
+msgstr[0] ""
+"\n"
+"            (%(amount_of_products)s 個商品)\n"
+"        "
+msgstr[1] ""
+"\n"
+"            (%(amount_of_products)s 個商品)\n"
+"        "
+
+#: templates/lfs/catalog/products/product_inline.html:181
+msgid "Add to cart"
+msgstr "添加到購物車"
+
+#: templates/lfs/catalog/products/product_inline.html:191
+msgid "Send request"
+msgstr "預約訂購"
+
+#: templates/lfs/catalog/products/product_inline.html:201
+msgid "Variants"
+msgstr "衍生商品"
+
+#: templates/lfs/catalog/products/product_inline.html:277
+msgid "Attachments"
+msgstr "附件"
+
+#: templates/lfs/checkout/checkout_cart_inline.html:5
+msgid "Voucher code"
+msgstr "優惠卷號"
+
+#: templates/lfs/checkout/checkout_cart_inline.html:20
+msgid "Your cart"
+msgstr "您的購物車"
+
+#: templates/lfs/checkout/empty_page_checkout.html:17
+msgid "There is nothing to checkout"
+msgstr "暫無購物，無法結算"
+
+#: templates/lfs/checkout/login.html:17 templates/lfs/customer/login.html:17
+msgid "Please select!"
+msgstr "請選擇！"
+
+#: templates/lfs/checkout/login.html:24
+msgid ""
+"If you are already customer you can login. Your adress data will then "
+"already known."
+msgstr "如果您已經是我們的會員，請直接登錄。系統會自動獲取您的地址信息。"
+
+#: templates/lfs/checkout/login.html:37 templates/lfs/customer/login.html:38
+msgid "Forgot password?"
+msgstr "忘記密碼？"
+
+#: templates/lfs/checkout/login.html:60 templates/lfs/checkout/login.html:84
+#: templates/lfs/customer/login.html:59 templates/lfs/customer/login.html:82
+msgid "Register"
+msgstr "註冊"
+
+#: templates/lfs/checkout/login.html:63 templates/lfs/customer/login.html:62
+msgid ""
+"If you are not already a customer you can register in order to store your "
+"address data and to follow the state of your orders."
+msgstr "您還不是會員？那就填寫以下信息，註冊加入我們吧！"
+
+#: templates/lfs/checkout/login.html:95
+msgid "You can also checkout without login or registration."
+msgstr "您也可以不用登錄或者註冊完成結算。"
+
+#: templates/lfs/checkout/one_page_checkout.html:17
+#: templates/lfs/customer/addresses.html:20
+msgid ""
+"The operation could not be performed because one or more errors occurred. "
+"Please see below."
+msgstr "有錯誤發生，操作無法繼續，請檢查。"
+
+#: templates/lfs/checkout/one_page_checkout.html:30
+#: templates/lfs/mail/order_details.html:69
+#: templates/lfs/order/lfs_order_tmpl.html:58
+msgid "Invoice address"
+msgstr "發票地址"
+
+#: templates/lfs/checkout/one_page_checkout.html:33
+#: templates/lfs/mail/order_details.html:66
+#: templates/lfs/order/lfs_order_tmpl.html:61
+msgid "Shipping address"
+msgstr "送貨地址"
+
+#: templates/lfs/checkout/one_page_checkout.html:70
+msgid "Please enter your credit card information"
+msgstr "請輸入您的信用卡信息"
+
+#: templates/lfs/checkout/one_page_checkout.html:80
+#: templates/lfs/checkout/one_page_checkout.html:162
+msgid "Only necessary when the payment method is direct debit"
+msgstr "只有選擇直接付款的時候才需要。"
+
+#: templates/lfs/checkout/one_page_checkout.html:131
+msgid "Expiration date"
+msgstr "有效期"
+
+#: templates/lfs/checkout/one_page_checkout.html:159
+msgid "Please enter your bank information"
+msgstr "請輸入您的銀行信息"
+
+#: templates/lfs/checkout/one_page_checkout.html:247
+msgid "Please confirm our terms and conditions"
+msgstr "我已經閱讀,並同意服務條款！"
+
+#: templates/lfs/checkout/one_page_checkout.html:253
+msgid "Submit order"
+msgstr "提交訂單"
+
+#: templates/lfs/checkout/thank_you_page.html:5
+#: templates/lfs/checkout/thank_you_page.html:11
+#: templates/lfs/checkout/thank_you_page.html:15
+msgid "Thank you!"
+msgstr "謝謝您！"
+
+#: templates/lfs/checkout/thank_you_page.html:17
+msgid "Soon you will get an order confirmation via E-Mail."
+msgstr "您的訂單已經成功提交，我們很快會通過郵件和您聯系。"
+
+#: templates/lfs/checkout/thank_you_page.html:21
+msgid "Please use the following link if you want to pay now"
+msgstr "如果您想現在付款，請使用下面的鏈接。"
+
+#: templates/lfs/checkout/thank_you_page.html:25
+msgid "Pay"
+msgstr "付款"
+
+#: templates/lfs/checkout/thank_you_page.html:28
+msgid "You will find the same link on your order confirmation"
+msgstr "您將在您的訂單確認郵件裏面找到相同的鏈接。"
+
+#: templates/lfs/contact/contact_form.html:6
+#: templates/lfs/contact/contact_form.html:17
+#: templates/lfs/contact/contact_form_sent.html:5
+#: templates/lfs/contact/contact_form_sent.html:13
+msgid "Contact form"
+msgstr "留言表單"
+
+#: templates/lfs/contact/contact_form.html:12
+msgid "Contact"
+msgstr "聯系我們"
+
+#: templates/lfs/contact/contact_form.html:19
+msgid "Please leave us a message. We will answer as soon as possible."
+msgstr "請給我們留言，我們將盡快與您聯系。"
+
+#: templates/lfs/contact/contact_form.html:30
+#: templates/reviews/review_form.html:113
+msgid "Send"
+msgstr "提交"
+
+#: templates/lfs/contact/contact_form_sent.html:9
+msgid "Contact thank you"
+msgstr "感謝您！"
+
+#: templates/lfs/contact/contact_form_sent.html:15
+msgid "Thank you for your message. We will get back to you soon."
+msgstr "感謝您的留言，我們將盡快與您取得聯系。"
+
+#: templates/lfs/customer/account.html:8
+msgid "Your Account"
+msgstr "我的帳戶"
+
+#: templates/lfs/customer/account.html:12
+msgid "Welcome!"
+msgstr "歡迎！"
+
+#: templates/lfs/customer/account.html:14
+msgid ""
+"Welcome to your account. Here you can find your orders, you can change your "
+"addresses, email address and your password."
+msgstr "這裏您可以查看您的訂單信息，也可以修改您的地址，郵件以及登錄密碼。"
+
+#: templates/lfs/customer/addresses.html:6
+msgid "My Addresses"
+msgstr "我的地址"
+
+#: templates/lfs/customer/addresses.html:12
+msgid "Change your addresses"
+msgstr "修改您的地址"
+
+#: templates/lfs/customer/addresses.html:16
+msgid "Your addresses"
+msgstr "當前地址"
+
+#: templates/lfs/customer/addresses.html:33
+#: templates/lfs/customer/data.html:36
+msgid "Invoice Address"
+msgstr "發票地址"
+
+#: templates/lfs/customer/addresses.html:36
+#: templates/lfs/customer/data.html:39
+msgid "Shipping Address"
+msgstr "送貨地址"
+
+#: templates/lfs/customer/addresses.html:51
+#: templates/lfs/customer/data.html:65
+msgid "Save addresses"
+msgstr "保存地址"
+
+#: templates/lfs/customer/base.html:11
+msgid "Overview"
+msgstr "概況"
+
+#: templates/lfs/customer/base.html:14 templates/lfs/customer/orders.html:6
+#: templates/lfs/customer/orders.html:12 templates/lfs/customer/orders.html:16
+msgid "Your orders"
+msgstr "我的訂單"
+
+#: templates/lfs/customer/base.html:17 templates/lfs/customer/password.html:50
+msgid "Change password"
+msgstr "修改密碼"
+
+#: templates/lfs/customer/base.html:20
+msgid "Change e-mail"
+msgstr "變更郵件"
+
+#: templates/lfs/customer/base.html:23
+msgid "Change addresses"
+msgstr "變更地址"
+
+#: templates/lfs/customer/data.html:6
+msgid "Your Data"
+msgstr "您的信息"
+
+#: templates/lfs/customer/data.html:8
+#: templates/lfs/mail/review_added_mail.html:21
+msgid "E-Mail"
+msgstr "郵件"
+
+#: templates/lfs/customer/data.html:21 templates/lfs/customer/email.html:25
+msgid "Save e-mail address"
+msgstr "保存郵件地址"
+
+#: templates/lfs/customer/data.html:25
+msgid "Addresses"
+msgstr "地址"
+
+#: templates/lfs/customer/data.html:27
+msgid "Address"
+msgstr "地址"
+
+#: templates/lfs/customer/data.html:69
+msgid "Save address"
+msgstr "保存地址"
+
+#: templates/lfs/customer/data.html:75
+msgid "Bank account"
+msgstr "銀行帳號"
+
+#: templates/lfs/customer/data.html:87
+msgid "Save bank account"
+msgstr "保存銀行賬戶"
+
+#: templates/lfs/customer/email.html:6 templates/lfs/customer/email.html:10
+msgid "Change your e-mail address"
+msgstr "修改您的郵件地址"
+
+#: templates/lfs/customer/login.html:24
+msgid ""
+"If you are already customer you can login. Your address data will be stored "
+"in your account."
+msgstr "如果您已經是我們的註冊會員，在這裏可以直接登錄。"
+
+#: templates/lfs/customer/order.html:6 templates/lfs/customer/order.html:12
+msgid "Order"
+msgstr "訂單"
+
+#: templates/lfs/customer/order.html:16
+msgid "Order number:"
+msgstr "訂單號："
+
+#: templates/lfs/customer/orders.html:20
+msgid "You haven't any orders yet."
+msgstr "您到目前還沒有任何訂單。"
+
+#: templates/lfs/customer/orders.html:28
+msgid "All"
+msgstr "所有"
+
+#: templates/lfs/customer/orders.html:30
+#, python-format
+msgid "%(counter)s month"
+msgid_plural "%(counter)s months"
+msgstr[0] "%(counter)s 月"
+msgstr[1] "%(counter)s 月"
+
+#: templates/lfs/customer/orders.html:34
+msgid "Filter"
+msgstr "過濾"
+
+#: templates/lfs/customer/orders.html:41
+#: templates/lfs/mail/order_details.html:17
+msgid "Number"
+msgstr "號碼"
+
+#: templates/lfs/customer/orders.html:44
+#: templates/lfs/mail/order_details.html:31
+#: templates/lfs/order/lfs_order_tmpl.html:17
+msgid "Date"
+msgstr "日期"
+
+#: templates/lfs/customer/orders.html:50
+#: templates/lfs/mail/order_details.html:45
+#: templates/lfs/order/lfs_order_tmpl.html:33
+msgid "State"
+msgstr ""
+
+#: templates/lfs/customer/orders.html:60
+#: templates/lfs/mail/order_details.html:34
+#: templates/lfs/order/lfs_order_tmpl.html:20
+msgid "DATETIME_FORMAT"
+msgstr ""
+
+#: templates/lfs/customer/orders.html:73
+msgid "There are no orders for this time range."
+msgstr "該時間段沒有訂單。"
+
+#: templates/lfs/customer/password.html:5
+#: templates/lfs/customer/password.html:8
+#: templates/lfs/customer/password.html:12
+msgid "Password change"
+msgstr "修改密碼"
+
+#: templates/lfs/customer/password.html:14
+msgid ""
+"Please enter your old password, for security's sake, and then enter your new "
+"password twice so we can verify you typed it in correctly."
+msgstr "請輸入您的舊密碼，然後輸入兩次新的密碼。"
+
+#: templates/lfs/customer/password.html:22
+msgid "Old password:"
+msgstr "舊密碼："
+
+#: templates/lfs/customer/password.html:31
+#: templates/registration/password_reset_confirm.html:33
+msgid "New password:"
+msgstr "新密碼："
+
+#: templates/lfs/customer/password.html:40
+#: templates/registration/password_reset_confirm.html:42
+msgid "Confirm password:"
+msgstr "確認新密碼："
+
+#: templates/lfs/mail/contact_mail.html:13
+msgid "A new mail has been received:"
+msgstr "新郵件已被接受："
+
+#: templates/lfs/mail/contact_mail.html:16
+msgid "Shop"
+msgstr "商城"
+
+#: templates/lfs/mail/mail_html_footer.html:2
+#: templates/lfs/mail/mail_text_footer.html:2
+#, python-format
+msgid "This e-mail was sent automatically from %(name)s"
+msgstr "該郵件由%(name)s自動發送"
+
+#: templates/lfs/mail/new_user_mail.html:7
+msgid "Welcome to"
+msgstr "歡迎來到"
+
+#: templates/lfs/mail/new_user_mail.html:9
+msgid "Thank you for registering"
+msgstr "感謝您的註冊"
+
+#: templates/lfs/mail/new_user_mail.html:12
+msgid "Your username"
+msgstr "您的名稱"
+
+#: templates/lfs/mail/order_details.html:6
+#: templates/lfs/order/lfs_order_tmpl.html:6
+msgid "General"
+msgstr "通用"
+
+#: templates/lfs/mail/order_details.html:11
+#: templates/lfs/order/lfs_order_tmpl.html:11
+msgid "Customer name"
+msgstr "客戶名"
+
+#: templates/lfs/mail/order_details.html:25
+#: templates/lfs/order/lfs_order_tmpl.html:25
+msgid "E-mail"
+msgstr "郵件"
+
+#: templates/lfs/mail/order_details.html:39
+#: templates/lfs/order/lfs_order_tmpl.html:41
+msgid "Phone"
+msgstr "電話"
+
+#: templates/lfs/mail/order_details.html:72
+#: templates/lfs/order/lfs_order_tmpl.html:64
+msgid "Shipping method"
+msgstr "送貨方式"
+
+#: templates/lfs/mail/order_details.html:75
+#: templates/lfs/order/lfs_order_tmpl.html:67
+msgid "Payment method"
+msgstr "支付方式"
+
+#: templates/lfs/mail/order_details.html:157
+msgid "Pay now"
+msgstr "立即支付"
+
+#: templates/lfs/mail/order_details.html:169
+#: templates/lfs/order/lfs_order_tmpl.html:160
+msgid "SKU"
+msgstr ""
+
+#: templates/lfs/mail/order_details.html:295
+msgid "Your message to us"
+msgstr "留言信息"
+
+#: templates/lfs/mail/order_paid_mail.html:8
+#: templates/lfs/mail/order_received_mail.html:8
+#: templates/lfs/mail/order_sent_mail.html:8
+#, python-format
+msgid "Dear %(firstname)s %(lastname)s"
+msgstr "尊敬的 %(firstname)s %(lastname)s"
+
+#: templates/lfs/mail/order_paid_mail.html:11
+msgid "your order has been paid."
+msgstr "您的訂單已付款。"
+
+#: templates/lfs/mail/order_received_mail.html:11
+msgid "your order has been received."
+msgstr "您的訂單已被接受。"
+
+#: templates/lfs/mail/order_sent_mail.html:11
+msgid "your order has been sent."
+msgstr "您的訂單已被發送。"
+
+#: templates/lfs/mail/review_added_mail.html:17
+#: templates/reviews/reviews_for_instance.html:23
+msgid "Anonymous"
+msgstr "匿名"
+
+#: templates/lfs/mail/review_added_mail.html:26
+msgid "No E-Mail"
+msgstr "無郵件地址"
+
+#: templates/lfs/mail/review_added_mail.html:30
+#: templates/lfs/portlets/average_rating.html:19
+msgid "Score"
+msgstr "評分"
+
+#: templates/lfs/mail/review_added_mail.html:35
+msgid "Comment"
+msgstr "說明"
+
+#: templates/lfs/mail/review_added_mail.html:40
+msgid "No comment"
+msgstr "無說明"
+
+#: templates/lfs/order/lfs_order_tmpl.html:262
+msgid "Message from the customer"
+msgstr "客戶留言"
+
+#: templates/lfs/page/page.html:33
+msgid "Download"
+msgstr "下載"
+
+#: templates/lfs/page/pages.html:7 templates/lfs/page/pages.html.py:12
+msgid "Information"
+msgstr "資訊"
+
+#: templates/lfs/page/pages.html:25
+msgid "More"
+msgstr "更多"
+
+#: templates/lfs/portlets/average_rating.html:19
+msgid "based on"
+msgstr "基於"
+
+#: templates/lfs/portlets/average_rating.html:20
+#, python-format
+msgid "%(amount)s review"
+msgid_plural "%(amount)s reviews"
+msgstr[0] "%(amount)s 個評論"
+msgstr[1] "%(amount)s 個評論"
+
+#: templates/lfs/portlets/cart.html:20
+#, python-format
+msgid "%(amount)s Article"
+msgid_plural "%(amount)s Articles"
+msgstr[0] "%(amount)s 個商品"
+msgstr[1] "%(amount)s 個商品"
+
+#: templates/lfs/portlets/cart.html:26
+msgid "Cart is empty"
+msgstr "購物車為空"
+
+#: templates/lfs/portlets/delivery_time.html:12
+msgid "Deliverable"
+msgstr "可送貨"
+
+#: templates/lfs/portlets/delivery_time.html:14
+#: templates/lfs/shipping/shipping_portlet.html:16
+#: templates/lfs/shipping/shipping_tag.html:10
+msgid "Not deliverable"
+msgstr "不能送貨"
+
+#: templates/lfs/portlets/delivery_time.html:18
+#: templates/lfs/shipping/shipping_tag.html:6
+msgid "Delivery time"
+msgstr "送貨時間"
+
+#: templates/lfs/portlets/filter.html:69 templates/lfs/portlets/filter.html:74
+msgid "Up to"
+msgstr "至"
+
+#: templates/lfs/portlets/filter.html:106
+msgid "Reset all filters"
+msgstr "重置所有過濾條件"
+
+#: templates/lfs/portlets/pages.html:18
+msgid "More information"
+msgstr "更多的資訊"
+
+#: templates/lfs/portlets/related_products.html:8
+msgid "Related Products"
+msgstr "相關商品"
+
+#: templates/lfs/portlets/topseller.html:7
+msgid "Topseller"
+msgstr "熱銷商品"
+
+#: templates/lfs/portlets/topseller.html:22
+msgid "All topseller"
+msgstr "所有熱銷商品"
+
+#: templates/lfs/reviews/rating_mail.html:7
+msgid "Please, review the articles you've bought in our shop."
+msgstr "請您對妳購買的商品評分。"
+
+#: templates/lfs/search/livesearch_results.html:49
+msgid "All results"
+msgstr "所有結果"
+
+#: templates/lfs/search/livesearch_results.html:55
+msgid "No products found"
+msgstr "沒有符合條件的商品"
+
+#: templates/lfs/search/search_results.html:5
+#: templates/lfs/search/search_results.html:11
+#: templates/lfs/search/search_results.html:16
+msgid "Search results"
+msgstr "搜索結果"
+
+#: templates/lfs/search/search_results.html:30
+msgid "You searched for"
+msgstr "您所搜索的 "
+
+#: templates/lfs/search/search_results.html:31
+#, python-format
+msgid "1 product was found."
+msgid_plural "%(counter)s products were found."
+msgstr[0] "找到 %(counter)s 個商品"
+msgstr[1] "找到 %(counter)s 個商品"
+
+#: templates/lfs/search/search_results.html:42
+#: templates/tagging/product_list.html:13
+msgid "Image"
+msgstr "商品圖片"
+
+#: templates/registration/password_reset_complete.html:4
+#: templates/registration/password_reset_complete.html:22
+msgid "Password reset complete"
+msgstr "密碼重置完成"
+
+#: templates/registration/password_reset_complete.html:15
+#: templates/registration/password_reset_confirm.html:4
+#: templates/registration/password_reset_confirm.html:15
+#: templates/registration/password_reset_done.html:15
+#: templates/registration/password_reset_form.html:4
+#: templates/registration/password_reset_form.html:17
+#: templates/registration/password_reset_form.html:24
+msgid "Password reset"
+msgstr "密碼重置"
+
+#: templates/registration/password_reset_complete.html:25
+msgid "Your password has been set. You may go ahead and log in now."
+msgstr "您的密碼已經設置，您現在可以登錄了。"
+
+#: templates/registration/password_reset_complete.html:28
+msgid "Log in"
+msgstr "登錄"
+
+#: templates/registration/password_reset_confirm.html:23
+msgid "Enter new password"
+msgstr "輸入新密碼"
+
+#: templates/registration/password_reset_confirm.html:26
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr "請輸入兩次新密碼以作驗證。"
+
+#: templates/registration/password_reset_confirm.html:50
+msgid "Change my password"
+msgstr "修改密碼"
+
+#: templates/registration/password_reset_confirm.html:55
+msgid "Password reset unsuccessful"
+msgstr "密碼重置失敗！"
+
+#: templates/registration/password_reset_confirm.html:58
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a new password reset."
+msgstr "密碼重置連接無效，可能該鏈接已經被使用。請重置新密碼。"
+
+#: templates/registration/password_reset_done.html:4
+#: templates/registration/password_reset_done.html:22
+msgid "Password reset successful"
+msgstr "密碼重置成功！"
+
+#: templates/registration/password_reset_done.html:25
+msgid ""
+"We've e-mailed you instructions for setting your password to the e-mail "
+"address you submitted. You should be receiving it shortly."
+msgstr "我們已經發送郵件給您，請按照電子郵件的指引設置密碼。"
+
+#: templates/registration/password_reset_email.html:2
+msgid "You're receiving this e-mail because you requested a password reset"
+msgstr "您接收到這封郵件是因為您發送了密碼重置請求。"
+
+#: templates/registration/password_reset_email.html:3
+#, python-format
+msgid "for your user account at %(site_name)s"
+msgstr "您在 %(site_name)s 的帳號"
+
+#: templates/registration/password_reset_email.html:5
+msgid "Please go to the following page and choose a new password:"
+msgstr "請轉到下面的頁面，並選擇新密碼。"
+
+#: templates/registration/password_reset_email.html:9
+msgid "Your username, in case you've forgotten:"
+msgstr "您的用戶名，請牢記："
+
+#: templates/registration/password_reset_email.html:11
+msgid "Thanks for using our site!"
+msgstr "感謝光顧和使用。歡迎下次再來！"
+
+#: templates/registration/password_reset_email.html:13
+#, python-format
+msgid "The %(site_name)s team"
+msgstr "%(site_name)s 團隊"
+
+#: templates/registration/password_reset_form.html:27
+msgid ""
+"Enter your e-mail address below, and we'll e-mail instructions for setting a "
+"new one."
+msgstr "在下面輸入您的郵件地址，我們將發送郵件給您，指導您設置新密碼。"
+
+#: templates/registration/password_reset_form.html:42
+msgid "Reset my password"
+msgstr "重置密碼"
+
+#: templates/reviews/already_rated.html:9
+msgid "Review"
+msgstr "評論"
+
+#: templates/reviews/already_rated.html:10
+msgid "You have already rated for this product."
+msgstr "您已經對該商品做了評論。"
+
+#: templates/reviews/review_form.html:8
+msgid "Add Review"
+msgstr "添加評論"
+
+#: templates/reviews/review_form.html:8
+msgid "for"
+msgstr "對"
+
+#: templates/reviews/review_form.html:110
+#: templates/reviews/review_preview.html:10
+msgid "Preview"
+msgstr "預覽"
+
+#: templates/reviews/review_preview.html:15
+msgid "Your name"
+msgstr "您的名稱"
+
+#: templates/reviews/review_preview.html:21
+msgid "Your email"
+msgstr "您的郵件"
+
+#: templates/reviews/review_preview.html:27
+msgid "Your score"
+msgstr "您的評分"
+
+#: templates/reviews/review_preview.html:38
+msgid "Your comment"
+msgstr "您的評價"
+
+#: templates/reviews/review_preview.html:69
+msgid "Edit"
+msgstr "修改"
+
+#: templates/reviews/review_preview.html:73
+msgid "Submit"
+msgstr "提交"
+
+#: templates/reviews/reviews_for_instance.html:5
+msgid "Reviews"
+msgstr "評論"
+
+#: templates/reviews/reviews_for_instance.html:34
+msgid "There are no ratings for this product. Be the first one!"
+msgstr "該商品暫無評論，您的評論（評分）是第壹個！"
+
+#: templates/reviews/reviews_for_instance.html:39
+msgid "You have already rated"
+msgstr "您已經對該產品投票過啦！"
+
+#: templates/reviews/reviews_for_instance.html:44
+msgid "Add review"
+msgstr "添加評論"
+
+#: templates/reviews/thank_you.html:7
+msgid "Thank you"
+msgstr "謝謝！"
+
+#: templates/reviews/thank_you.html:11
+msgid "Go to the reviewed product"
+msgstr "轉到已評論的產品"
+
+#: templates/reviews/thank_you.html:14
+msgid "Go to Shop"
+msgstr "轉到商城首頁"
+
+#: templates/tagging/product_list.html:10
+msgid "Products for tag"
+msgstr "商品標簽"
+
+#: templates/tagging/related_products_by_tags.html:4
+msgid "Related products by tag"
+msgstr "相關商品標簽"
+
+#: templates/tagging/related_products_by_tags_portlet.html:4
+msgid "Products with same Tags"
+msgstr "相同標簽的商品"
+
+#: templatetags/lfs_theme_tags.py:60
+#, python-format
+msgid "%s tag needs no argument"
+msgstr "%s 標簽不需要參數"
+
+
