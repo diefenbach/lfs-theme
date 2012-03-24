@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LFS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-20 22:36+0100\n"
-"PO-Revision-Date: 2012-03-20 22:39+0100\n"
+"POT-Creation-Date: 2012-03-24 17:38+0100\n"
+"PO-Revision-Date: 2012-03-24 17:39+0100\n"
 "Last-Translator: Maciej Wiśniowski <pigletto@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pl\n"
@@ -276,7 +276,9 @@ msgstr "Twój koszyk jest pusty"
 
 #: templates/lfs/catalog/breadcrumbs.html:3
 #: templates/lfs/shop/shop.html:15
-#: templates/registration/password_reset_done.html:10
+#: templates/registration/password_reset_complete.html:9
+#: templates/registration/password_reset_confirm.html:9
+#: templates/registration/password_reset_done.html:9
 #: templates/registration/password_reset_form.html:11
 msgid "You are here:"
 msgstr "Jesteś tutaj"
@@ -285,7 +287,9 @@ msgstr "Jesteś tutaj"
 #: templates/lfs/shop/menu.html:3
 #: templates/lfs/shop/shop.html:17
 #: templates/lfs/shop/tabs.html:7
-#: templates/registration/password_reset_done.html:13
+#: templates/registration/password_reset_complete.html:12
+#: templates/registration/password_reset_confirm.html:12
+#: templates/registration/password_reset_done.html:12
 #: templates/registration/password_reset_form.html:14
 msgid "Home"
 msgstr "Strona domowa"
@@ -755,12 +759,12 @@ msgid "Old password:"
 msgstr "Stare hasło:"
 
 #: templates/lfs/customer/password.html:31
-#: templates/registration/password_reset_confirm.html:16
+#: templates/registration/password_reset_confirm.html:33
 msgid "New password:"
 msgstr "Nowe hasło:"
 
 #: templates/lfs/customer/password.html:40
-#: templates/registration/password_reset_confirm.html:18
+#: templates/registration/password_reset_confirm.html:42
 msgid "Confirm password:"
 msgstr "Potwierdź hasło:"
 
@@ -1037,52 +1041,54 @@ msgid "Image"
 msgstr "Obrazek"
 
 #: templates/registration/password_reset_complete.html:4
-#: templates/registration/password_reset_complete.html:8
+#: templates/registration/password_reset_complete.html:22
 msgid "Password reset complete"
 msgstr "Restartowanie hasła zakończone"
 
-#: templates/registration/password_reset_complete.html:10
-msgid "Your password has been set. You may go ahead and log in now."
-msgstr "Twoje hasło zostało ustawione. Możesz iść dalej i zalogować się teraz."
-
-#: templates/registration/password_reset_complete.html:12
-msgid "Log in"
-msgstr "Zaloguj się"
-
+#: templates/registration/password_reset_complete.html:15
 #: templates/registration/password_reset_confirm.html:4
+#: templates/registration/password_reset_confirm.html:15
+#: templates/registration/password_reset_done.html:15
 #: templates/registration/password_reset_form.html:4
 #: templates/registration/password_reset_form.html:17
 #: templates/registration/password_reset_form.html:24
 msgid "Password reset"
 msgstr "Resetuj hasło"
 
-#: templates/registration/password_reset_confirm.html:10
+#: templates/registration/password_reset_complete.html:25
+msgid "Your password has been set. You may go ahead and log in now."
+msgstr "Twoje hasło zostało ustawione. Możesz iść dalej i zalogować się teraz."
+
+#: templates/registration/password_reset_complete.html:28
+msgid "Log in"
+msgstr "Zaloguj się"
+
+#: templates/registration/password_reset_confirm.html:23
 msgid "Enter new password"
 msgstr "Wpisz nowe hasło"
 
-#: templates/registration/password_reset_confirm.html:12
+#: templates/registration/password_reset_confirm.html:26
 msgid "Please enter your new password twice so we can verify you typed it in correctly."
 msgstr "Proszę wpisać dwukrotnie nowe hasło, dzięki czemu możemy potwierdzić, że masz je poprawnie wpisane."
 
-#: templates/registration/password_reset_confirm.html:19
+#: templates/registration/password_reset_confirm.html:50
 msgid "Change my password"
 msgstr "Zmień moje hasło"
 
-#: templates/registration/password_reset_confirm.html:24
+#: templates/registration/password_reset_confirm.html:55
 msgid "Password reset unsuccessful"
 msgstr "Resetowanie hasła nie powiodło się"
 
-#: templates/registration/password_reset_confirm.html:26
-msgid "The password reset link was invalid, possibly because it has already been used.  Please request a new password reset."
+#: templates/registration/password_reset_confirm.html:58
+msgid "The password reset link was invalid, possibly because it has already been used. Please request a new password reset."
 msgstr "Link umożliwiający zresetowanie hasła jest nieprawidłowy, prawdopodobnie dlatego, że został już wykorzystany. Prosimy ponownie wysłać żądanie resetowania hasła."
 
-#: templates/registration/password_reset_done.html:16
+#: templates/registration/password_reset_done.html:4
 #: templates/registration/password_reset_done.html:22
-#: templates/registration/password_reset_done.html:26
 msgid "Password reset successful"
 msgstr "Restartowanie hasła zakończone sukcesem"
 
-#: templates/registration/password_reset_done.html:28
+#: templates/registration/password_reset_done.html:25
 msgid "We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly."
 msgstr "Wysłaliśmy instrukcje ustawienia hasła na wskazany e-mail. Powinieneś otrzymać je w najbliższym czasie."
 
@@ -1112,15 +1118,11 @@ msgstr "Dziękujemy za korzystanie z naszego serwisu!"
 msgid "The %(site_name)s team"
 msgstr "Zespół %(site_name)s"
 
-#: templates/registration/password_reset_form.html:26
+#: templates/registration/password_reset_form.html:27
 msgid "Enter your e-mail address below, and we'll e-mail instructions for setting a new one."
 msgstr "Wpisz swój adres e-mail poniżej, a my wyślemy Tobie instrukcje dotyczące ustawienia nowego."
 
-#: templates/registration/password_reset_form.html:33
-msgid "E-mail address:"
-msgstr "Adres e-mail:"
-
-#: templates/registration/password_reset_form.html:35
+#: templates/registration/password_reset_form.html:42
 msgid "Reset my password"
 msgstr "Resetuj moje hasło"
 
@@ -1213,6 +1215,9 @@ msgstr "Produkty z tymi samymi tagami"
 #, python-format
 msgid "%s tag needs no argument"
 msgstr "%s tag nie potrzebuje argumentów"
+
+#~ msgid "E-mail address:"
+#~ msgstr "Adres e-mail:"
 
 #~ msgid "Products"
 #~ msgstr "Produkty"
