@@ -1,0 +1,15 @@
+{% extends "lfs/base.html" %}
+{% load lfs_tags portlets_tags lfs_theme_tags %}
+
+{% block section %}manufacturers{% endblock %}
+
+{% block breadcrumbs %}
+{% endblock %}
+
+{% block content %}
+{% include "lfs/catalog/categories/product/products_navigation.html" %}
+
+{% for manufacturer in manufacturers %}
+    <div>{{ manufacturer.name }}</div>
+{% endfor %}
+{% endblock %}
