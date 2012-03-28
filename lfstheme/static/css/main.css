@@ -59,6 +59,12 @@ em {
     font-style: italic;
 }
 
+/* Contain floats: nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1;}
+
+
 /* Forms */
 form label {
     font-weight: bold;
@@ -464,6 +470,11 @@ div.product-quantity {
     padding-right: 5px;
 }
 
+.lfs-pagination a{
+    text-decoration: none;
+}
+
+
 /* Category
 ___________________________________________________________________________ */
 
@@ -502,16 +513,59 @@ a.current, span.current {
     cursor: pointer;
 }
 
-.category .products-navigation {
+.category .lfs-pagination {
     float:left;
 }
 
-.category .products-navigation a {
+.category .lfs-pagination a {
     text-decoration: none;
 }
 
 .category .description {
     padding-bottom: 20px;
+}
+
+
+/* Manufacturers
+___________________________________________________________________________ */
+.manufacturers div.manufacturer {
+    margin-bottom: 10px;
+    display: table-row;
+}
+
+.manufacturers div.manufacturer.odd{
+    background-color: #f8f8f8;
+}
+
+.manufacturers div.manufacturer div.img{
+    display: table-cell;
+    padding: 5px;
+}
+
+.manufacturers div.manufacturer div.img img{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.manufacturers div.manufacturer div.description h2{
+    margin-top: 0px;
+    margin-bottom: 2px;
+}
+
+.manufacturers div.manufacturer div.description {
+    display: table-cell;
+    padding: 5px;
+    vertical-align: top;
+}
+
+.manufacturers div.manufacturer div.products-count{
+    font-size: 0.8em;
+    color: #888888;
+}
+
+.manufacturer div.description{
+    margin-bottom: 10px;
 }
 
 /* Product
