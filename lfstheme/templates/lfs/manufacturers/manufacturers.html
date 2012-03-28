@@ -13,7 +13,7 @@
 <h1>{% trans "Manufacturers" %}</h1>
 
 {% for manufacturer in manufacturers %}
-    <div class="manufacturer clearfix {% cycle "even" "odd" %}">
+    <div class="manufacturer clearfix {% cycle "even" "odd" %}" data-href="{{ manufacturer.get_absolute_url }}">
         <div class="img">
             {% if manufacturer.get_image %}
                 <a href="{{ manufacturer.get_absolute_url }}">
@@ -34,4 +34,12 @@
         </div>
     </div>
 {% endfor %}
+<script type="text/javascript">
+    $(function() {
+        $('div.manufacturer').click(function(){
+            window.location = $(this).data('href');
+            return false;
+        });
+    });
+</script>
 {% endblock %}

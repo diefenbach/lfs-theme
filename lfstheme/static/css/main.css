@@ -537,6 +537,10 @@ ___________________________________________________________________________ */
     background-color: #f8f8f8;
 }
 
+.manufacturers div.manufacturer a{
+    display: block;
+}
+
 .manufacturers div.manufacturer div.img{
     display: table-cell;
     padding: 5px;
@@ -553,6 +557,14 @@ ___________________________________________________________________________ */
     margin-bottom: 2px;
 }
 
+.manufacturers div.manufacturer div.description h2 a{
+    text-decoration: none;
+}
+
+.manufacturers div.manufacturer div.description h2 a:hover{
+    text-decoration: underline;
+}
+
 .manufacturers div.manufacturer div.description {
     display: table-cell;
     padding: 5px;
@@ -567,6 +579,34 @@ ___________________________________________________________________________ */
 .manufacturer div.description{
     margin-bottom: 10px;
 }
+
+.manufacturer .manufacturer-image,
+.manufacturer .product-image {
+    margin-right: 40px;
+    padding-bottom: 10px;
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+
+.manufacturer .product-row {
+    border-bottom: 1px solid #eae5e2;
+}
+
+.manufacturer .product-data {
+    padding-top: 10px;
+}
+
+.manufacturer .products {
+    clear: both;
+    padding-top: 10px;
+}
+
+.manufacturer .product-data:hover, .manufacturers div.manufacturer:hover {
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
 
 /* Product
 ___________________________________________________________________________ */
