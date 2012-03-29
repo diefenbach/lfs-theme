@@ -59,12 +59,6 @@ em {
     font-style: italic;
 }
 
-/* Contain floats: nicolasgallagher.com/micro-clearfix-hack/ */
-.clearfix:before, .clearfix:after { content: ""; display: table; }
-.clearfix:after { clear: both; }
-.clearfix { zoom: 1;}
-
-
 /* Forms */
 form label {
     font-weight: bold;
@@ -470,11 +464,6 @@ div.product-quantity {
     padding-right: 5px;
 }
 
-.lfs-pagination a{
-    text-decoration: none;
-}
-
-
 /* Category
 ___________________________________________________________________________ */
 
@@ -513,100 +502,17 @@ a.current, span.current {
     cursor: pointer;
 }
 
-.category .lfs-pagination {
+.category .products-navigation {
     float:left;
 }
 
-.category .lfs-pagination a {
+.category .products-navigation a {
     text-decoration: none;
 }
 
 .category .description {
     padding-bottom: 20px;
 }
-
-
-/* Manufacturers
-___________________________________________________________________________ */
-.manufacturers div.manufacturer {
-    margin-bottom: 10px;
-    display: table-row;
-}
-
-.manufacturers div.manufacturer.odd{
-    background-color: #f8f8f8;
-}
-
-.manufacturers div.manufacturer a{
-    display: block;
-}
-
-.manufacturers div.manufacturer div.img{
-    display: table-cell;
-    padding: 5px;
-}
-
-.manufacturers div.manufacturer div.img img{
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-}
-
-.manufacturers div.manufacturer div.description h2{
-    margin-top: 0px;
-    margin-bottom: 2px;
-}
-
-.manufacturers div.manufacturer div.description h2 a{
-    text-decoration: none;
-}
-
-.manufacturers div.manufacturer div.description h2 a:hover{
-    text-decoration: underline;
-}
-
-.manufacturers div.manufacturer div.description {
-    display: table-cell;
-    padding: 5px;
-    vertical-align: top;
-}
-
-.manufacturers div.manufacturer div.products-count{
-    font-size: 0.8em;
-    color: #888888;
-}
-
-.manufacturer div.description{
-    margin-bottom: 10px;
-}
-
-.manufacturer .manufacturer-image,
-.manufacturer .product-image {
-    margin-right: 40px;
-    padding-bottom: 10px;
-    width: 100px;
-    height: 100px;
-    float: left;
-}
-
-.manufacturer .product-row {
-    border-bottom: 1px solid #eae5e2;
-}
-
-.manufacturer .product-data {
-    padding-top: 10px;
-}
-
-.manufacturer .products {
-    clear: both;
-    padding-top: 10px;
-}
-
-.manufacturer .product-data:hover, .manufacturers div.manufacturer:hover {
-    background-color: #f9f9f9;
-    cursor: pointer;
-}
-
 
 /* Product
 ___________________________________________________________________________ */
