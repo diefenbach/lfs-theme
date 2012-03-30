@@ -2,6 +2,6 @@
 
 {% trans "your order has been paid." %}
 
-{% include "lfs/mail/order_details.html" %}
+{% include "lfs/mail/order_details.txt" %}
 
 {% email_text_footer %}
