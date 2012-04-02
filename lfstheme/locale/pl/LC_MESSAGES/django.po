@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: LFS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-24 17:38+0100\n"
-"PO-Revision-Date: 2012-03-24 17:39+0100\n"
+"PO-Revision-Date: 2012-04-02 20:15+0100\n"
 "Last-Translator: Maciej Wiśniowski <pigletto@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pl\n"
@@ -471,7 +471,7 @@ msgstr "Zapomniane hasło?"
 #: templates/lfs/customer/login.html:59
 #: templates/lfs/customer/login.html:82
 msgid "Register"
-msgstr "Zarejestrój się"
+msgstr "Zarejestruj się"
 
 #: templates/lfs/checkout/login.html:63
 #: templates/lfs/customer/login.html:62
