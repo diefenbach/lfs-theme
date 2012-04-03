@@ -106,7 +106,7 @@
             </td>
             <td></td>
             <td class="number">
-                - {{ discount.price|currency:request}}
+                - {{ discount.price_net|currency:request}}
             </td>
             <td class="number">
                 {% if discount.tax %}
@@ -114,7 +114,7 @@
                 {% endif %}
             </td>
             <td class="number">
-                - {{ discount.price|currency:request}}
+                - {{ discount.price_gross|currency:request}}
             </td>
         </tr>
     {% endfor %}
