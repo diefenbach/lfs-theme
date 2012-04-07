@@ -135,13 +135,13 @@
 
                     </td>
                     <td class="number">
-                        - {{ discount.get_price_net|currency:request }}
+                        - {{ discount.price_net|currency:request }}
                     </td>
                     <td class="number">
                         - {{ discount.get_tax|currency:request }}
                     </td>
                     <td class="number">
-                        - {{ discount.get_price_gross|currency:request }}
+                        - {{ discount.price_gross|currency:request }}
                     </td>
                     <td></td>
                 </tr>
