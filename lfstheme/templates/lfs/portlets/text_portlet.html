@@ -1,7 +1,7 @@
 <div class="portlet">
-    <div class="portlet-header">
+    {% if title %}<div class="portlet-header">
         {{ title }}
-    </div>
+    </div>{% endif %}
     <div class="portlet-body">
         {{ text|safe }}
     </div>
