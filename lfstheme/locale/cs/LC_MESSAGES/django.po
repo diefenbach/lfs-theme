@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lfstheme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-12 09:01+0100\n"
-"PO-Revision-Date: 2012-03-16 10:28+0100\n"
+"POT-Creation-Date: 2012-04-09 15:57+0200\n"
+"PO-Revision-Date: 2012-04-10 08:09+0100\n"
 "Last-Translator: Radim Novotny <novotny.radim@gmail.com>\n"
 "Language-Team: Czech <info@dms4u.cz>\n"
 "MIME-Version: 1.0\n"
@@ -136,8 +136,8 @@ msgstr "Cena"
 #: templates/lfs/cart/added_to_cart.html:38
 #: templates/lfs/cart/added_to_cart_items.html:18
 #: templates/lfs/cart/added_to_cart_items.html:77
-#: templates/lfs/cart/cart_inline.html:45
-#: templates/lfs/cart/cart_inline.html:246
+#: templates/lfs/cart/cart_inline.html:44
+#: templates/lfs/cart/cart_inline.html:252
 #: templates/lfs/catalog/products/product_inline.html:305
 #: templates/lfs/checkout/checkout_cart_inline.html:37
 #: templates/lfs/checkout/checkout_cart_inline.html:187
@@ -153,7 +153,7 @@ msgid "Add"
 msgstr "Přidat"
 
 #: templates/lfs/cart/added_to_cart.html:73
-#: templates/lfs/cart/cart_inline.html:280
+#: templates/lfs/cart/cart_inline.html:288
 #: templates/lfs/checkout/empty_page_checkout.html:6
 #: templates/lfs/checkout/empty_page_checkout.html:12
 #: templates/lfs/checkout/login.html:92
@@ -165,21 +165,21 @@ msgstr "K pokladně"
 
 #: templates/lfs/cart/added_to_cart.html:77
 #: templates/lfs/checkout/one_page_checkout.html:256
-#: templates/lfs/portlets/cart.html:10
-#: templates/lfs/portlets/cart.html:36
+#: templates/lfs/portlets/cart.html:8
+#: templates/lfs/portlets/cart.html:32
 msgid "Go to cart"
 msgstr "Zobrazit košík"
 
 #: templates/lfs/cart/added_to_cart.html:81
-#: templates/lfs/cart/cart_inline.html:284
-#: templates/lfs/cart/cart_inline.html:297
+#: templates/lfs/cart/cart_inline.html:292
+#: templates/lfs/cart/cart_inline.html:305
 #: templates/lfs/checkout/empty_page_checkout.html:21
 #: templates/lfs/contact/contact_form_sent.html:20
 msgid "Go on shopping"
 msgstr "Pokračovat v nakupování"
 
 #: templates/lfs/cart/added_to_cart_items.html:6
-#: templates/lfs/cart/cart_inline.html:32
+#: templates/lfs/cart/cart_inline.html:31
 #: templates/lfs/checkout/checkout_cart_inline.html:24
 #: templates/lfs/mail/review_added_mail.html:7
 #: templates/lfs/search/search_results.html:43
@@ -188,51 +188,51 @@ msgid "Product"
 msgstr "Produkt"
 
 #: templates/lfs/cart/added_to_cart_items.html:12
-#: templates/lfs/cart/cart_inline.html:39
+#: templates/lfs/cart/cart_inline.html:38
 #: templates/lfs/checkout/checkout_cart_inline.html:31
 msgid "Net Price"
 msgstr "Cena (net)"
 
 #: templates/lfs/cart/added_to_cart_items.html:15
-#: templates/lfs/cart/cart_inline.html:42
+#: templates/lfs/cart/cart_inline.html:41
 #: templates/lfs/checkout/checkout_cart_inline.html:34
 msgid "VAT"
 msgstr "DPH"
 
 #: templates/lfs/cart/cart.html:6
 #: templates/lfs/cart/cart.html.py:12
-#: templates/lfs/portlets/cart.html:12
-#: templates/lfs/portlets/cart.html:16
+#: templates/lfs/portlets/cart.html:10
+#: templates/lfs/portlets/cart.html:13
 msgid "Cart"
 msgstr "Košík"
 
-#: templates/lfs/cart/cart_inline.html:6
+#: templates/lfs/cart/cart_inline.html:5
 #: templates/lfs/cart/cart_inline.html:154
 #: templates/lfs/checkout/checkout_cart_inline.html:130
 #: templates/lfs/mail/order_details.html:223
 msgid "Voucher"
 msgstr "Kupón"
 
-#: templates/lfs/cart/cart_inline.html:22
+#: templates/lfs/cart/cart_inline.html:21
 msgid "Your Cart"
 msgstr "Váš košík"
 
-#: templates/lfs/cart/cart_inline.html:36
+#: templates/lfs/cart/cart_inline.html:35
 #: templates/lfs/checkout/checkout_cart_inline.html:28
 #: templates/lfs/mail/order_details.html:165
 #: templates/lfs/order/lfs_order_tmpl.html:166
 msgid "Amount"
 msgstr "Množství"
 
-#: templates/lfs/cart/cart_inline.html:121
+#: templates/lfs/cart/cart_inline.html:120
 msgid "Delete item"
 msgstr "Odebrat položku"
 
-#: templates/lfs/cart/cart_inline.html:176
+#: templates/lfs/cart/cart_inline.html:178
 msgid "Country"
 msgstr "Země"
 
-#: templates/lfs/cart/cart_inline.html:195
+#: templates/lfs/cart/cart_inline.html:199
 #: templates/lfs/checkout/checkout_cart_inline.html:151
 #: templates/lfs/checkout/one_page_checkout.html:53
 #: templates/lfs/mail/order_details.html:240
@@ -241,7 +241,7 @@ msgstr "Země"
 msgid "Shipping"
 msgstr "Doprava"
 
-#: templates/lfs/cart/cart_inline.html:220
+#: templates/lfs/cart/cart_inline.html:225
 #: templates/lfs/checkout/checkout_cart_inline.html:169
 #: templates/lfs/checkout/payment_inline.html:3
 #: templates/lfs/mail/order_details.html:255
@@ -249,18 +249,18 @@ msgstr "Doprava"
 msgid "Payment"
 msgstr "Platba"
 
-#: templates/lfs/cart/cart_inline.html:259
+#: templates/lfs/cart/cart_inline.html:266
 #: templates/lfs/checkout/checkout_cart_inline.html:194
 #: templates/lfs/mail/order_details.html:276
 #: templates/lfs/order/lfs_order_tmpl.html:253
 msgid "Inclusive VAT"
 msgstr "DPH"
 
-#: templates/lfs/cart/cart_inline.html:272
+#: templates/lfs/cart/cart_inline.html:280
 msgid "Total delivery time"
 msgstr "Doba dodání"
 
-#: templates/lfs/cart/cart_inline.html:293
+#: templates/lfs/cart/cart_inline.html:301
 msgid "Your Cart is empty"
 msgstr "Váš košík je prázdný"
 
@@ -817,14 +817,15 @@ msgstr[0] "%(amount)s hodnocení"
 msgstr[1] "%(amount)s hodnocení"
 msgstr[2] "%(amount)s hodnocení"
 
-#: templates/lfs/portlets/cart.html:24
-msgid "Article"
-msgid_plural "Article"
-msgstr[0] "pol."
-msgstr[1] "pol."
-msgstr[2] "pol."
+#: templates/lfs/portlets/cart.html:20
+#, python-format
+msgid "%(amount)s Article"
+msgid_plural "%(amount)s Articles"
+msgstr[0] "%(amount)s položka"
+msgstr[1] "%(amount)s položky"
+msgstr[2] "%(amount)s položek"
 
-#: templates/lfs/portlets/cart.html:30
+#: templates/lfs/portlets/cart.html:26
 msgid "Cart is empty"
 msgstr "Košík je prázdný"
 
@@ -1076,6 +1077,13 @@ msgstr "Produkty se stejnými štítky"
 #, python-format
 msgid "%s tag needs no argument"
 msgstr "Štítek %s nemá žádné parametry"
+
+#~ msgid "Article"
+
+#~ msgid_plural "Article"
+#~ msgstr[0] "pol."
+#~ msgstr[1] "pol."
+#~ msgstr[2] "pol."
 
 #~ msgid "Your order has been sent"
 #~ msgstr "Vaše objednávka byla odeslána"
