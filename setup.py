@@ -9,8 +9,8 @@ from lfs import __version__
 here = os.path.abspath(os.path.dirname(__file__))
 README = open(os.path.join(here, 'README.txt')).read()
 
-setup(name='django-lfstheme',
-      version = __version__,
+setup(name='lfs-theme',
+      version=__version__,
       description='The default theme for LFS',
       long_description=README,
       classifiers=[
@@ -31,4 +31,4 @@ setup(name='django-lfstheme',
       install_requires=[
         'setuptools',
       ],
-      )
+)
