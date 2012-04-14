@@ -20,7 +20,7 @@
                 {% endif %}
             </div>
             <div class="span-6">
-                {{ payment_method.name }}
+                <label for="payment-method-{{ payment_method.id }}">{{ payment_method.name }}</label>
             </div>
             <div class="span-14 last">
                 {{ payment_method.description|safe }}
