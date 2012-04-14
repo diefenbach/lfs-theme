@@ -42,7 +42,7 @@
                     {% for property in cart_item.obj.get_properties %}
                         <div>
                             {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
-                            {% if property.display_price %}
+                            {% if property.is_select_field and property.display_price %}
                                 ({{ property.price|currency:request}})
                             {% endif %}
                         </div>
