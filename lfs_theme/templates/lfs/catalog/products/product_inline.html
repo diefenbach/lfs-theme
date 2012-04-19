@@ -132,7 +132,11 @@
                             {{ property.title }}:
                         </td>
                         <td class="right">
-                            <input class="right product-input-field" type="input" size="6" name="property-{{ property.id }}" value = "{{ property.value }}" />
+                            {% if property.obj.is_text_field %}
+                                <input class="product-input-field text-field" type="input" size="15" maxlength="100" name="property-{{ property.id }}" value="{{ property.value }}" />
+                            {% else %}
+                                <input class="right product-input-field number-field" type="input" size="6" maxlength="9" name="property-{{ property.id }}" value="{{ property.value }}" />
+                            {% endif %}
                         </td>
                         <td>
                             {{ property.unit }}
