@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lfstheme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-09 15:57+0200\n"
-"PO-Revision-Date: 2012-04-10 08:09+0100\n"
+"POT-Creation-Date: 2012-04-12 11:30+0200\n"
+"PO-Revision-Date: 2012-04-21 14:53+0100\n"
 "Last-Translator: Radim Novotny <novotny.radim@gmail.com>\n"
 "Language-Team: Czech <info@dms4u.cz>\n"
 "MIME-Version: 1.0\n"
@@ -108,11 +108,11 @@ msgstr "Příslušenství"
 #: templates/lfs/cart/added_to_cart.html:29
 #: templates/lfs/catalog/products/product_inline.html:209
 #: templates/lfs/catalog/products/product_inline.html:302
-#: templates/lfs/mail/order_details.html:162
+#: templates/lfs/mail/order_details.html:172
 #: templates/lfs/mail/review_added_mail.html:12
 #: templates/lfs/order/lfs_order_tmpl.html:163
 msgid "Name"
-msgstr "Jméno"
+msgstr "Název"
 
 #: templates/lfs/cart/added_to_cart.html:32
 #: templates/lfs/cart/added_to_cart_items.html:9
@@ -124,8 +124,8 @@ msgstr "Množství"
 #: templates/lfs/cart/added_to_cart.html:35
 #: templates/lfs/catalog/products/product_inline.html:217
 #: templates/lfs/catalog/products/product_inline.html:304
-#: templates/lfs/customer/orders.html:44
-#: templates/lfs/mail/order_details.html:168
+#: templates/lfs/customer/orders.html:47
+#: templates/lfs/mail/order_details.html:178
 #: templates/lfs/order/lfs_order_tmpl.html:169
 #: templates/lfs/portlets/filter.html:59
 #: templates/lfs/search/search_results.html:44
@@ -140,9 +140,9 @@ msgstr "Cena"
 #: templates/lfs/cart/cart_inline.html:252
 #: templates/lfs/catalog/products/product_inline.html:305
 #: templates/lfs/checkout/checkout_cart_inline.html:37
-#: templates/lfs/checkout/checkout_cart_inline.html:187
-#: templates/lfs/mail/order_details.html:45
-#: templates/lfs/mail/order_details.html:171
+#: templates/lfs/checkout/checkout_cart_inline.html:183
+#: templates/lfs/mail/order_details.html:55
+#: templates/lfs/mail/order_details.html:181
 #: templates/lfs/order/lfs_order_tmpl.html:47
 #: templates/lfs/order/lfs_order_tmpl.html:172
 msgid "Total"
@@ -208,8 +208,8 @@ msgstr "Košík"
 
 #: templates/lfs/cart/cart_inline.html:5
 #: templates/lfs/cart/cart_inline.html:154
-#: templates/lfs/checkout/checkout_cart_inline.html:130
-#: templates/lfs/mail/order_details.html:223
+#: templates/lfs/checkout/checkout_cart_inline.html:126
+#: templates/lfs/mail/order_details.html:233
 msgid "Voucher"
 msgstr "Kupón"
 
@@ -219,7 +219,7 @@ msgstr "Váš košík"
 
 #: templates/lfs/cart/cart_inline.html:35
 #: templates/lfs/checkout/checkout_cart_inline.html:28
-#: templates/lfs/mail/order_details.html:165
+#: templates/lfs/mail/order_details.html:175
 #: templates/lfs/order/lfs_order_tmpl.html:166
 msgid "Amount"
 msgstr "Množství"
@@ -233,25 +233,25 @@ msgid "Country"
 msgstr "Země"
 
 #: templates/lfs/cart/cart_inline.html:199
-#: templates/lfs/checkout/checkout_cart_inline.html:151
+#: templates/lfs/checkout/checkout_cart_inline.html:147
 #: templates/lfs/checkout/one_page_checkout.html:53
-#: templates/lfs/mail/order_details.html:240
+#: templates/lfs/mail/order_details.html:250
 #: templates/lfs/order/lfs_order_tmpl.html:217
 #: templates/lfs/shipping/shipping_portlet.html:6
 msgid "Shipping"
 msgstr "Doprava"
 
 #: templates/lfs/cart/cart_inline.html:225
-#: templates/lfs/checkout/checkout_cart_inline.html:169
+#: templates/lfs/checkout/checkout_cart_inline.html:165
 #: templates/lfs/checkout/payment_inline.html:3
-#: templates/lfs/mail/order_details.html:255
+#: templates/lfs/mail/order_details.html:265
 #: templates/lfs/order/lfs_order_tmpl.html:232
 msgid "Payment"
 msgstr "Platba"
 
 #: templates/lfs/cart/cart_inline.html:266
-#: templates/lfs/checkout/checkout_cart_inline.html:194
-#: templates/lfs/mail/order_details.html:276
+#: templates/lfs/checkout/checkout_cart_inline.html:190
+#: templates/lfs/mail/order_details.html:286
 #: templates/lfs/order/lfs_order_tmpl.html:253
 msgid "Inclusive VAT"
 msgstr "DPH"
@@ -266,7 +266,9 @@ msgstr "Váš košík je prázdný"
 
 #: templates/lfs/catalog/breadcrumbs.html:3
 #: templates/lfs/shop/shop.html:15
-#: templates/registration/password_reset_done.html:10
+#: templates/registration/password_reset_complete.html:9
+#: templates/registration/password_reset_confirm.html:9
+#: templates/registration/password_reset_done.html:9
 #: templates/registration/password_reset_form.html:11
 msgid "You are here:"
 msgstr "Nacházíte se zde:"
@@ -275,7 +277,9 @@ msgstr "Nacházíte se zde:"
 #: templates/lfs/shop/menu.html:3
 #: templates/lfs/shop/shop.html:17
 #: templates/lfs/shop/tabs.html:7
-#: templates/registration/password_reset_done.html:13
+#: templates/registration/password_reset_complete.html:12
+#: templates/registration/password_reset_confirm.html:12
+#: templates/registration/password_reset_done.html:12
 #: templates/registration/password_reset_form.html:14
 msgid "Home"
 msgstr "Domů"
@@ -336,35 +340,17 @@ msgid "Name descending"
 msgstr "Název od Z"
 
 #: templates/lfs/catalog/categories/category/default.html:30
-#: templates/lfs/catalog/categories/product/default.html:105
+#: templates/lfs/catalog/categories/product/default.html:74
 #: templates/lfs/search/search_results.html:96
 msgid "Details"
 msgstr "Detaily"
 
-#: templates/lfs/catalog/categories/product/default.html:6
-#: templates/lfs/catalog/categories/product/default.html:8
-#: templates/pagination/pagination.html:5
-#: templates/pagination/pagination.html:7
-msgid "Previous page"
-msgstr "Předchozí stránka"
-
-#: templates/lfs/catalog/categories/product/default.html:22
-msgid "Products"
-msgstr "Produkty"
-
-#: templates/lfs/catalog/categories/product/default.html:29
-#: templates/lfs/catalog/categories/product/default.html:31
-#: templates/pagination/pagination.html:21
-#: templates/pagination/pagination.html:23
-msgid "Next page"
-msgstr "Další stránka"
-
-#: templates/lfs/catalog/categories/product/default.html:68
-#: templates/lfs/catalog/categories/product/default.html:87
+#: templates/lfs/catalog/categories/product/default.html:37
+#: templates/lfs/catalog/categories/product/default.html:56
 msgid "Starting at"
 msgstr ""
 
-#: templates/lfs/catalog/categories/product/default.html:97
+#: templates/lfs/catalog/categories/product/default.html:66
 #: templates/lfs/catalog/products/product_inline.html:74
 #: templates/lfs/catalog/products/product_inline.html:91
 #: templates/lfs/portlets/featured.html:20
@@ -375,7 +361,7 @@ msgstr ""
 msgid "*inc. VAT"
 msgstr "*vč. DPH"
 
-#: templates/lfs/catalog/categories/product/default.html:99
+#: templates/lfs/catalog/categories/product/default.html:68
 #: templates/lfs/catalog/products/product_inline.html:76
 #: templates/lfs/catalog/products/product_inline.html:93
 #: templates/lfs/portlets/featured.html:22
@@ -384,6 +370,49 @@ msgstr "*vč. DPH"
 #: templates/lfs/portlets/forsale.html:53
 msgid "*exc. VAT"
 msgstr "*bez DPH"
+
+#: templates/lfs/catalog/categories/product/products_navigation.html:6
+msgid "First page"
+msgstr "První stránka"
+
+#: templates/lfs/catalog/categories/product/products_navigation.html:11
+#: templates/pagination/pagination.html:5
+#: templates/pagination/pagination.html:7
+msgid "Previous page"
+msgstr "Předchozí stránka"
+
+#: templates/lfs/catalog/categories/product/products_navigation.html:25
+#: templates/pagination/pagination.html:21
+#: templates/pagination/pagination.html:23
+msgid "Next page"
+msgstr "Další stránka"
+
+#: templates/lfs/catalog/categories/product/products_navigation.html:31
+msgid "Last page"
+msgstr "Poslední stránka"
+
+#: templates/lfs/catalog/categories/product/products_navigation.html:36
+#, python-format
+msgid ""
+"\n"
+"            (%(amount_of_products)s product)\n"
+"        "
+msgid_plural ""
+"\n"
+"            (%(amount_of_products)s products)\n"
+"        "
+msgstr[0] ""
+"\n"
+"            (%(amount_of_products)s produkt)\n"
+"        "
+msgstr[1] ""
+"\n"
+"            (%(amount_of_products)s produkty)\n"
+"        "
+msgstr[2] ""
+"\n"
+"            (%(amount_of_products)s produktů)\n"
+"        "
 
 #: templates/lfs/catalog/products/product_inline.html:181
 msgid "Add to cart"
@@ -449,13 +478,13 @@ msgid "The operation could not be performed because one or more errors occurred.
 msgstr "Operace nemohla být dokončena, protože došlo k chybám. Jakmile opravíte uvedené chyby, odešlete prosím formulář znovu:"
 
 #: templates/lfs/checkout/one_page_checkout.html:30
-#: templates/lfs/mail/order_details.html:59
+#: templates/lfs/mail/order_details.html:69
 #: templates/lfs/order/lfs_order_tmpl.html:58
 msgid "Invoice address"
 msgstr "Fakturační adresa"
 
 #: templates/lfs/checkout/one_page_checkout.html:33
-#: templates/lfs/mail/order_details.html:56
+#: templates/lfs/mail/order_details.html:66
 #: templates/lfs/order/lfs_order_tmpl.html:61
 msgid "Shipping address"
 msgstr "Dodací adresa"
@@ -647,7 +676,7 @@ msgid "Order"
 msgstr "Číslo objednávky"
 
 #: templates/lfs/customer/order.html:16
-msgid "Ordernumber:"
+msgid "Order number:"
 msgstr "Číslo objednávky:"
 
 #: templates/lfs/customer/orders.html:20
@@ -659,11 +688,12 @@ msgid "All"
 msgstr "Vše"
 
 #: templates/lfs/customer/orders.html:30
-msgid " month"
-msgid_plural " months"
-msgstr[0] " měsíc"
-msgstr[1] " měsíce"
-msgstr[2] " měsíců"
+#, python-format
+msgid "%(counter)s month"
+msgid_plural "%(counter)s months"
+msgstr[0] "%(counter)s měsíc"
+msgstr[1] "%(counter)s měsíce"
+msgstr[2] "%(counter)s měsíců"
 
 #: templates/lfs/customer/orders.html:34
 msgid "Filter"
@@ -671,23 +701,28 @@ msgstr "Filtr"
 
 #: templates/lfs/customer/orders.html:41
 #: templates/lfs/mail/order_details.html:17
+msgid "Number"
+msgstr "Číslo"
+
+#: templates/lfs/customer/orders.html:44
+#: templates/lfs/mail/order_details.html:31
 #: templates/lfs/order/lfs_order_tmpl.html:17
 msgid "Date"
 msgstr "Datum"
 
-#: templates/lfs/customer/orders.html:47
-#: templates/lfs/mail/order_details.html:31
+#: templates/lfs/customer/orders.html:50
+#: templates/lfs/mail/order_details.html:45
 #: templates/lfs/order/lfs_order_tmpl.html:33
 msgid "State"
 msgstr "Stav"
 
-#: templates/lfs/customer/orders.html:54
-#: templates/lfs/mail/order_details.html:20
+#: templates/lfs/customer/orders.html:60
+#: templates/lfs/mail/order_details.html:34
 #: templates/lfs/order/lfs_order_tmpl.html:20
 msgid "DATETIME_FORMAT"
 msgstr "d.m.Y"
 
-#: templates/lfs/customer/orders.html:68
+#: templates/lfs/customer/orders.html:73
 msgid "There are no orders for this time range."
 msgstr "V daném období nebyly nalezeny žádné objednávky."
 
@@ -706,12 +741,12 @@ msgid "Old password:"
 msgstr "Původní heslo:"
 
 #: templates/lfs/customer/password.html:31
-#: templates/registration/password_reset_confirm.html:16
+#: templates/registration/password_reset_confirm.html:33
 msgid "New password:"
 msgstr "Nové heslo:"
 
 #: templates/lfs/customer/password.html:40
-#: templates/registration/password_reset_confirm.html:18
+#: templates/registration/password_reset_confirm.html:42
 msgid "Confirm password:"
 msgstr "Potvrzení hesla:"
 
@@ -723,9 +758,23 @@ msgstr "Byl obdržen nový email:"
 msgid "Shop"
 msgstr "Obchod"
 
+#: templates/lfs/mail/mail_html_footer.html:2
+#: templates/lfs/mail/mail_text_footer.html:2
+#, python-format
+msgid "This e-mail was sent automatically from %(name)s"
+msgstr "Tento email byl zaslán automaticky z %(name)s"
+
 #: templates/lfs/mail/new_user_mail.html:7
 msgid "Welcome to"
 msgstr "Vítejte v "
+
+#: templates/lfs/mail/new_user_mail.html:9
+msgid "Thank you for registering"
+msgstr "Děkujeme za registraci"
+
+#: templates/lfs/mail/new_user_mail.html:12
+msgid "Your username"
+msgstr "Vaše uživatelské jméno"
 
 #: templates/lfs/mail/order_details.html:6
 #: templates/lfs/order/lfs_order_tmpl.html:6
@@ -747,28 +796,47 @@ msgstr "E-mail"
 msgid "Phone"
 msgstr "Telefon"
 
-#: templates/lfs/mail/order_details.html:62
+#: templates/lfs/mail/order_details.html:72
 #: templates/lfs/order/lfs_order_tmpl.html:64
 msgid "Shipping method"
 msgstr "Způsob dodání"
 
-#: templates/lfs/mail/order_details.html:65
+#: templates/lfs/mail/order_details.html:75
 #: templates/lfs/order/lfs_order_tmpl.html:67
 msgid "Payment method"
 msgstr "Způsob platby"
 
-#: templates/lfs/mail/order_details.html:147
+#: templates/lfs/mail/order_details.html:157
 msgid "Pay now"
 msgstr "Zaplatit teď"
 
-#: templates/lfs/mail/order_details.html:159
+#: templates/lfs/mail/order_details.html:169
 #: templates/lfs/order/lfs_order_tmpl.html:160
 msgid "SKU"
 msgstr "SKU"
 
-#: templates/lfs/mail/order_details.html:285
+#: templates/lfs/mail/order_details.html:295
 msgid "Your message to us"
 msgstr "Vaše zpráva pro nás"
+
+#: templates/lfs/mail/order_paid_mail.html:8
+#: templates/lfs/mail/order_received_mail.html:8
+#: templates/lfs/mail/order_sent_mail.html:8
+#, python-format
+msgid "Dear %(firstname)s %(lastname)s"
+msgstr "Vážený/vážená p. %(firstname)s %(lastname)s"
+
+#: templates/lfs/mail/order_paid_mail.html:11
+msgid "your order has been paid."
+msgstr "vaše platba byla přijata"
+
+#: templates/lfs/mail/order_received_mail.html:11
+msgid "your order has been received."
+msgstr "vaše objednávka byla přijata."
+
+#: templates/lfs/mail/order_sent_mail.html:11
+msgid "your order has been sent."
+msgstr "vaše objednávka byla odeslána"
 
 #: templates/lfs/mail/review_added_mail.html:17
 #: templates/reviews/reviews_for_instance.html:23
@@ -796,12 +864,16 @@ msgstr "Žádná poznámka"
 msgid "Message from the customer"
 msgstr "Zpráva od zákazníka"
 
-#: templates/lfs/page/pages.html:9
-#: templates/lfs/page/pages.html.py:15
+#: templates/lfs/page/page.html:33
+msgid "Download"
+msgstr "Stáhnout"
+
+#: templates/lfs/page/pages.html:7
+#: templates/lfs/page/pages.html.py:12
 msgid "Information"
 msgstr "Informace"
 
-#: templates/lfs/page/pages.html:28
+#: templates/lfs/page/pages.html:25
 msgid "More"
 msgstr "Více"
 
@@ -835,12 +907,12 @@ msgstr "K dispozici"
 
 #: templates/lfs/portlets/delivery_time.html:14
 #: templates/lfs/shipping/shipping_portlet.html:16
-#: templates/lfs/shipping/shipping_tag.html:11
+#: templates/lfs/shipping/shipping_tag.html:10
 msgid "Not deliverable"
 msgstr "Dočasně nedostupné"
 
 #: templates/lfs/portlets/delivery_time.html:18
-#: templates/lfs/shipping/shipping_tag.html:7
+#: templates/lfs/shipping/shipping_tag.html:6
 msgid "Delivery time"
 msgstr "Doba dodání"
 
@@ -868,6 +940,10 @@ msgstr "Nejprodávanější"
 #: templates/lfs/portlets/topseller.html:22
 msgid "All topseller"
 msgstr "Všechny nejprodávanější"
+
+#: templates/lfs/reviews/rating_mail.html:7
+msgid "Please, review the articles you've bought in our shop."
+msgstr "Zkontrolujte si prosím zboží, které bylo zakoupeno v našem obchodě."
 
 #: templates/lfs/search/livesearch_results.html:49
 msgid "All results"
@@ -901,52 +977,54 @@ msgid "Image"
 msgstr "Náhled"
 
 #: templates/registration/password_reset_complete.html:4
-#: templates/registration/password_reset_complete.html:8
+#: templates/registration/password_reset_complete.html:22
 msgid "Password reset complete"
 msgstr "Obnova hesla byla dokončena"
 
-#: templates/registration/password_reset_complete.html:10
-msgid "Your password has been set. You may go ahead and log in now."
-msgstr "Vaše heslo bylo nastaveno. Můžete se nyní pomocí něj přihlásit."
-
-#: templates/registration/password_reset_complete.html:12
-msgid "Log in"
-msgstr "Přihlásit"
-
+#: templates/registration/password_reset_complete.html:15
 #: templates/registration/password_reset_confirm.html:4
+#: templates/registration/password_reset_confirm.html:15
+#: templates/registration/password_reset_done.html:15
 #: templates/registration/password_reset_form.html:4
 #: templates/registration/password_reset_form.html:17
 #: templates/registration/password_reset_form.html:24
 msgid "Password reset"
 msgstr "Obnova hesla"
 
-#: templates/registration/password_reset_confirm.html:10
+#: templates/registration/password_reset_complete.html:25
+msgid "Your password has been set. You may go ahead and log in now."
+msgstr "Vaše heslo bylo nastaveno. Můžete se nyní pomocí něj přihlásit."
+
+#: templates/registration/password_reset_complete.html:28
+msgid "Log in"
+msgstr "Přihlásit"
+
+#: templates/registration/password_reset_confirm.html:23
 msgid "Enter new password"
 msgstr "Zadejte nové heslo"
 
-#: templates/registration/password_reset_confirm.html:12
+#: templates/registration/password_reset_confirm.html:26
 msgid "Please enter your new password twice so we can verify you typed it in correctly."
 msgstr "Zadejte vaše nové heslo dvakrát, prosím."
 
-#: templates/registration/password_reset_confirm.html:19
+#: templates/registration/password_reset_confirm.html:50
 msgid "Change my password"
 msgstr "Změnit heslo"
 
-#: templates/registration/password_reset_confirm.html:24
+#: templates/registration/password_reset_confirm.html:55
 msgid "Password reset unsuccessful"
 msgstr "Obnova hesla nemohla být dokončena"
 
-#: templates/registration/password_reset_confirm.html:26
-msgid "The password reset link was invalid, possibly because it has already been used.  Please request a new password reset."
-msgstr "Odkaz pro obnovu hesla je neplatný. Je možné, že požadavek již vypršel. Zkuste to prosím znovu."
+#: templates/registration/password_reset_confirm.html:58
+msgid "The password reset link was invalid, possibly because it has already been used. Please request a new password reset."
+msgstr "Odkaz pro obnovu hesla je neplatný. Je možné, že požadavek již vypršel nebo byl už použit. Zkuste to prosím znovu."
 
-#: templates/registration/password_reset_done.html:16
+#: templates/registration/password_reset_done.html:4
 #: templates/registration/password_reset_done.html:22
-#: templates/registration/password_reset_done.html:26
 msgid "Password reset successful"
 msgstr "Obnova hesla byla úspěšně dokončena"
 
-#: templates/registration/password_reset_done.html:28
+#: templates/registration/password_reset_done.html:25
 msgid "We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly."
 msgstr "Právě vám byl odeslán email s instrukcemi pro obnovu hesla."
 
@@ -976,15 +1054,11 @@ msgstr "Děkujeme. že využíváte náš obchod!"
 msgid "The %(site_name)s team"
 msgstr "Pracovníci %(site_name)s"
 
-#: templates/registration/password_reset_form.html:26
+#: templates/registration/password_reset_form.html:27
 msgid "Enter your e-mail address below, and we'll e-mail instructions for setting a new one."
 msgstr "Zadejte prosím vaši email adresu a my vám obratem zašleme emailem instrukce k obonvě hesla."
 
-#: templates/registration/password_reset_form.html:33
-msgid "E-mail address:"
-msgstr "Email adresa:"
-
-#: templates/registration/password_reset_form.html:35
+#: templates/registration/password_reset_form.html:42
 msgid "Reset my password"
 msgstr "Obnovit heslo"
 
@@ -1078,15 +1152,25 @@ msgstr "Produkty se stejnými štítky"
 msgid "%s tag needs no argument"
 msgstr "Štítek %s nemá žádné parametry"
 
+#~ msgid "Products"
+#~ msgstr "Produkty"
+
+#~ msgid " month"
+
+#~ msgid_plural " months"
+#~ msgstr[0] " měsíc"
+#~ msgstr[1] " měsíce"
+#~ msgstr[2] " měsíců"
+
+#~ msgid "E-mail address:"
+#~ msgstr "Email adresa:"
+
 #~ msgid "Article"
 
 #~ msgid_plural "Article"
 #~ msgstr[0] "pol."
 #~ msgstr[1] "pol."
 #~ msgstr[2] "pol."
-
-#~ msgid "Your order has been sent"
-#~ msgstr "Vaše objednávka byla odeslána"
 
 #~ msgid "Your e-mail"
 #~ msgstr "Váš email"
