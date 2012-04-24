@@ -452,7 +452,7 @@ div.product-quantity {
     clear: both;
     float: right;
     font-size: 89%;
-    margin-top: 10px;
+    margin: 2px 10px 20px 0;
 }
 
 .packing-unit {
