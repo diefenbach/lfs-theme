@@ -33,7 +33,9 @@
 
     {% if products %}
 
-        {% autopaginate products 10 %}
+        {% if not paginator %}
+            {% autopaginate products 10 %}
+        {% endif %}
         {% paginate %}
         {% sorting %}
 
