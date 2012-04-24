@@ -47,7 +47,7 @@
             {% for product in products %}
                 <tr>
                     <td>
-                        <a href="{{ product.get_absolute_url }}">
+                        <a href="{{ product.get_absolute_url }}" class="preview-100-100">
                             <img src="{{ product.get_image.image.url_100x100 }}"
                                  alt="{{ product.get_name }}"
                                  title="{{ product.get_name }}" />
