@@ -156,7 +156,10 @@
 
 <table class="order lfs-default padding-top-middle">
     <tr>
-        <th width="25%">
+        <th width="13%">
+            {% trans 'Image' %}
+        </th>
+        <th width="12%">
             {% trans 'SKU' %}
         </th>
         <th>
@@ -174,8 +177,7 @@
     </tr>
     {% for item in current_order.items.all %}
         <tr>
-            <td>
-               {{ item.product_sku }}
+            <td class="top">
                 {% if item.product.get_image.image %}
                 <div>
                   <a href="{% url lfs_manage_product item.product.id %}">
@@ -183,9 +185,14 @@
                          src="{{ item.product.get_image.image.url_100x100 }}" />
                    </a>
                 </div>
+                {% else %}
+                &nbsp;
                 {% endif %}
             </td>
-            <td>
+            <td class="top">
+               {{ item.product_sku }}
+            </td>
+            <td class="top">
                 {{ item.product_name }}
                 {% for property in item.product.get_variant_properties %}
                     <div>
@@ -211,13 +218,13 @@
                 {% endif %}
 
             </td>
-            <td class="number">
+            <td class="number top">
                {{ item.amount }}
             </td>
-            <td class="number">
+            <td class="number top">
                {{ item.product_price_gross|currency:request}}
             </td>
-            <td class="number">
+            <td class="number top">
                {{ item.price_gross|currency:request}}
             </td>
         </tr>
