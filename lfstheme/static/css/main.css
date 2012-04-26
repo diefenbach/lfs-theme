@@ -484,6 +484,12 @@ a.current, span.current {
     float: left;
 }
 
+.preview-100-100 {
+    width: 100px;
+    height: 100px;
+    display: block;
+}
+
 .category .category-image {
     margin-right: 10px;
     padding-bottom: 10px;
