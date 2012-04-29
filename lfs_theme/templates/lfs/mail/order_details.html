@@ -87,10 +87,13 @@
                 {{ order.shipping_company_name }}
             </div>
             <div>
-                {{ order.shipping_street }}
+                {{ order.shipping_line1 }}
             </div>
             <div>
-                {{ order.shipping_zip_code }} {{ order.shipping_city }}
+                {{ order.shipping_line2 }}
+            </div>
+            <div>
+                {{ order.shipping_code }} {{ order.shipping_city }}
             </div>
             <div>
                 {{ order.shipping_country }}
@@ -113,10 +116,13 @@
                 {{ order.invoice_company_name }}
             </div>
             <div>
-                {{ order.invoice_street }}
+                {{ order.invoice_line1 }}
             </div>
             <div>
-                {{ order.invoice_zip_code }} {{ order.invoice_city }}
+                {{ order.invoice_line2 }}
+            </div>
+            <div>
+                {{ order.invoice_code }} {{ order.invoice_city }}
             </div>
             <div>
                 {{ order.invoice_country }}

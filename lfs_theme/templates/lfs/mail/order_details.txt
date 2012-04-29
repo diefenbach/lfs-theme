@@ -14,8 +14,9 @@
 ==============================================================================
 {{ order.shipping_firstname }} {{ order.shipping_lastname }}
 {{ order.shipping_company_name }}
-{{ order.shipping_street }}
-{{ order.shipping_zip_code }} {{ order.shipping_city }}
+{{ order.shipping_line1 }}
+{{ order.shipping_line2 }}
+{{ order.shipping_code }} {{ order.shipping_city }}
 {{ order.shipping_country }}
 {{ order.shipping_phone }}
 {{ order.shipping_email }}
@@ -24,8 +25,9 @@
 ==============================================================================
 {{ order.invoice_firstname }} {{ order.invoice_lastname }}
 {{ order.invoice_company_name }}
-{{ order.invoice_street }}
-{{ order.invoice_zip_code }} {{ order.invoice_city }}
+{{ order.invoice_line1 }}
+{{ order.invoice_line2 }}
+{{ order.invoice_code }} {{ order.invoice_city }}
 {{ order.invoice_country }}
 {{ order.invoice_phone }}
 {{ order.invoice_email }}
