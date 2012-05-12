@@ -4,7 +4,7 @@ from setuptools import find_packages
 from setuptools import setup
 
 # lfs imports
-from lfs import __version__
+from lfs_theme import __version__
 
 here = os.path.abspath(os.path.dirname(__file__))
 README = open(os.path.join(here, 'README.txt')).read()
