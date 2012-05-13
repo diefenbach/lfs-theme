@@ -1,0 +1,25 @@
+{% extends "lfs/base.html" %}
+{% load lfs_tags portlets_tags lfs_theme_tags %}
+
+{% block title %}
+    {{ manufacturer.get_meta_title }} - {{ block.super }}
+{% endblock %}
+
+{% block section %}manufacturer{% endblock %}
+
+{% block head %}
+    {% if manufacturer.get_meta_keywords %}
+        <meta name="keywords" content="{{ manufacturer.get_meta_keywords }}" />
+    {% endif %}
+    {% if manufacturer.get_meta_description %}
+        <meta name="description" content="{{ manufacturer.get_meta_description }}" />
+    {% endif %}
+{% endblock %}
+
+{% block breadcrumbs %}
+    {% breadcrumbs manufacturer %}
+{% endblock %}
+
+{% block content %}
+    {{ manufacturer_inline|safe }}
+{% endblock %}
