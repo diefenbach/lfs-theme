@@ -1,6 +1,6 @@
 {% load i18n %}
 {% if pagination.total_pages > 1 %}
-<div class="products-navigation">
+<div class="lfs-pagination">
     {% if pagination.first_page %}
     <span class="first-page">
         <a href="{{ pagination.url }}?{{ pagination.getparam }}={{ pagination.first_page }}{{ pagination.getvars }}">{% trans "First page" %}</a>
@@ -32,12 +32,10 @@
     </span>
     {% endif %}
 
-    <span class="products-total">
-        {% blocktrans count counter=amount_of_products %}
-            ({{ amount_of_products }} product)
-        {% plural %}
-            ({{ amount_of_products }} products)
-        {% endblocktrans %}
-    </span>
+    {% if pagination.total_text %}
+        <span class="total-text">
+            ({{ pagination.total_text }})
+        </span>
+    {% endif %}
 </div>
 {% endif %}

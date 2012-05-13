@@ -32,9 +32,9 @@
     {% product_navigation product %}
 
     <div class="overview">
-        {% current_category product %}
-        <a href="{{ current_category.get_absolute_url }}">
-           {% trans 'Back to overview' %}
+        {% come_from_page product %}
+        <a href="{{ come_from_page.get_absolute_url }}">
+            {% trans 'Back to overview' %}
         </a>
     </div>
 

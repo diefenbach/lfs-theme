@@ -1,0 +1,45 @@
+{% extends "lfs/base.html" %}
+{% load i18n lfs_tags portlets_tags lfs_theme_tags %}
+
+{% block section %}manufacturers{% endblock %}
+
+{% block breadcrumbs %}
+    {% breadcrumbs _("Manufacturers") %}
+{% endblock %}
+
+{% block content %}
+{% include "lfs/catalog/categories/product/products_navigation.html" %}
+
+<h1>{% trans "Manufacturers" %}</h1>
+
+{% for manufacturer in manufacturers %}
+    <div class="manufacturer clearfix {% cycle "even" "odd" %}" data-href="{{ manufacturer.get_absolute_url }}">
+        <div class="img">
+            {% if manufacturer.get_image %}
+                <a href="{{ manufacturer.get_absolute_url }}">
+                    <img src="{{ manufacturer.get_image.url_60x60 }}" alt="{{ manufacturer.name }}" />
+                </a>
+            {% endif %}
+        </div>
+        <div class="description">
+            <h2><a href="{{ manufacturer.get_absolute_url }}">{{ manufacturer.name }}</a></h2>
+            {% with manufacturer.get_all_products.count as products_count %}
+                {% if products_count %}
+                    <div class="products-count">
+                        {% blocktrans count counter=products_count %}{{ counter }} product{% plural %}{{ counter }} products{% endblocktrans %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            <p>{{ manufacturer.short_description|safe }}</p>
+        </div>
+    </div>
+{% endfor %}
+<script type="text/javascript">
+    $(function() {
+        $('div.manufacturer').click(function(){
+            window.location = $(this).data('href');
+            return false;
+        });
+    });
+</script>
+{% endblock %}
