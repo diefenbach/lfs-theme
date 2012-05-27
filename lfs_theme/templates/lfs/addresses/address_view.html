@@ -1,0 +1,35 @@
+{% for value in address.get_values_before_postal %}
+    {% if value.div %}<div>{% else %}<span>{% endif %}
+    {{ value.value }}
+    {% if value.div %}</div>{% else %}</span>{% endif %}
+{% endfor %}
+
+<div>
+    {{ address.zip_code }} {{ address.city }}
+</div>
+{% if address.line1 %}
+    <div>
+        {{ address.line1 }}
+    </div>
+{% endif %}
+{% if address.line2 %}
+    <div>
+        {{ address.line2 }}
+    </div>
+{% endif %}
+{% if address.state %}
+    <div>
+        {{ address.state }}
+    </div>
+{% endif %}
+{% if address.country %}
+    <div>
+        {{ address.country }}
+    </div>
+{% endif %}
+
+{% for value in address.get_values_after_postal %}
+    {% if value.div %}<div>{% else %}<span>{% endif %}
+    {{ value.value }}
+    {% if value.div %}</div>{% else %}</span>{% endif %}
+{% endfor %}

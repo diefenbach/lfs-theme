@@ -57,14 +57,14 @@
                     </td>
                     <td>
                         <a href="{% url lfs_my_order order.id %}">
-                            {{order.created|date:_("DATETIME_FORMAT")}}
+                            {{ order.created|date:_("DATETIME_FORMAT") }}
                         </a>
                     </td>
                     <td class="number">
-                        {{order.price|currency:request}}
+                        {{ order.price|currency:request }}
                     </td>
                     <td class="right">
-                        {{order.get_state_display}}
+                        {{ order.get_state_display }}
                     </td>
                 </tr>
             {% empty %}

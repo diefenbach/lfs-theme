@@ -69,62 +69,10 @@
     </tr>
     <tr>
         <td>
-            <div>
-                {{ current_order.invoice_firstname }}
-            </div>
-            <div>
-                {{ current_order.invoice_lastname }}
-            </div>
-            <div>
-                {{ current_order.invoice_line1 }}
-            </div>
-            <div>
-                {{ current_order.invoice_line2 }}
-            </div>
-            <div>
-                {{ current_order.invoice_city }}
-            </div>
-            <div>
-                {{ current_order.invoice_state }}
-            </div>
-            <div>
-                {{ current_order.invoice_code }}
-            </div>
-            <div>
-                {{ current_order.invoice_country }}
-            </div>
-            <div>
-                {{ current_order.invoice_phone }}
-            </div>
+            {{ current_order.invoice_address.as_html|safe }}
         </td>
         <td>
-            <div>
-                {{ current_order.shipping_firstname }}
-            </div>
-            <div>
-                {{ current_order.shipping_lastname }}
-            </div>
-            <div>
-                {{ current_order.shipping_line1 }}
-            </div>
-            <div>
-                {{ current_order.shipping_line2 }}
-            </div>
-            <div>
-                {{ current_order.shipping_city }}
-            </div>
-            <div>
-                {{ current_order.shipping_state }}
-            </div>
-            <div>
-                {{ current_order.shipping_code }}
-            </div>
-            <div>
-                {{ current_order.shipping_country }}
-            </div>
-            <div>
-                {{ current_order.shipping_phone }}
-            </div>
+            {{ current_order.shipping_address.as_html|safe }}
         </td>
         <td>
             <div>
@@ -151,7 +99,6 @@
             {% endifequal %}
         </td>
     </tr>
-
 </table>
 
 <table class="order lfs-default padding-top-middle">
@@ -216,7 +163,6 @@
                         </div>
                     {% endfor %}
                 {% endif %}
-
             </td>
             <td class="number top">
                {{ item.amount }}

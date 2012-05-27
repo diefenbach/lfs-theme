@@ -31,19 +31,21 @@
                     </th>
                     <th>
                         {% trans 'Shipping address' %}
-                        ({{ form.no_shipping }}
-                        {{ form.no_shipping.label_tag }})
+                        ({{ checkout_form.no_shipping }}
+                        {{ checkout_form.no_shipping.label_tag }})
                     </th>
                 </tr>
                 <tr>
                 	{# Invoice Address #}
                     <td width="50%">
-                    	{{ invoice_address_inline|safe }}
+                        {{ invoice_address_inline|safe }}
                     </td>
 
                     {#  Shipping Address #}
                     <td width="50%">
-                    	{{ shipping_address_inline|safe }}
+                        <div class="shipping-address">
+                    	   {{ shipping_address_inline|safe }}
+                        </div>
                     </td>
                 </tr>
             </table>
@@ -69,9 +71,9 @@
                          <th colspan="2">
                              {% trans 'Please enter your credit card information' %}
 
-                            {% if form.errors.credit_card %}
+                            {% if credit_card_form.errors.credit_card %}
                                 <ul class="errorlist">
-                                    <li>{{ form.errors.credit_card }}</li>
+                                    <li>{{ credit_card_form.errors.credit_card }}</li>
                                 </ul>
                             {% endif %}
 
@@ -85,44 +87,44 @@
                      <tr>
                          <td class="label"
                              colspan="2">
-                             {{ form.account_number.errors }}
+                             {{ credit_card_form.type.errors }}
                          </td>
                      </tr>
                      <tr>
                          <td class="label">
-                             {{ form.credit_card_type.label_tag }}:
+                             {{ credit_card_form.type.label_tag }}:
                          </td>
                          <td>
-                             {{ form.credit_card_type }}
+                             {{ credit_card_form.type }}
                          </td>
                      </tr>
                      <tr>
                          <td class="label"
                              colspan="2">
-                             {{ form.credit_card_owner.errors }}
+                             {{ credit_card_form.owner.errors }}
                          </td>
                      </tr>
                      <tr>
                          <td class="label">
-                             {{ form.credit_card_owner.label_tag }}:
+                             {{ credit_card_form.owner.label_tag }}:
                          </td>
                          <td>
-                             {{ form.credit_card_owner }}
+                             {{ credit_card_form.owner }}
                          </td>
                      </tr>
 
                      <tr>
                          <td class="label"
                              colspan="2">
-                             {{ form.credit_card_number.errors }}
+                             {{ credit_card_form.number.errors }}
                          </td>
                      </tr>
                      <tr>
                          <td class="label">
-                             {{ form.credit_card_number.label_tag }}:
+                             {{ credit_card_form.number.label_tag }}:
                          </td>
                          <td>
-                             {{ form.credit_card_number }}
+                             {{ credit_card_form.number }}
                          </td>
                      </tr>
 
@@ -131,22 +133,22 @@
                              <label>{% trans "Expiration date" %}:</label>
                          </td>
                          <td>
-                             {{ form.credit_card_expiration_date_month }} {{ form.credit_card_expiration_date_year }}
+                             {{ credit_card_form.expiration_date_month }} {{ credit_card_form.expiration_date_year }}
                          </td>
                      </tr>
 
                      <tr>
                          <td class="label"
                              colspan="2">
-                             {{ form.credit_card_verification.errors }}
+                             {{ credit_card_form.verification.errors }}
                          </td>
                      </tr>
                      <tr>
                          <td class="label">
-                             {{ form.credit_card_verification.label_tag }}:
+                             {{ credit_card_form.verification.label_tag }}:
                          </td>
                          <td>
-                             {{ form.credit_card_verification }}
+                             {{ credit_card_form.verification }}
                          </td>
                      </tr>
 
@@ -167,57 +169,57 @@
                     <tr>
                         <td class="label"
                             colspan="2">
-                            {{ form.account_number.errors }}
+                            {{ bank_account_form.account_number.errors }}
                         </td>
                     </tr>
                     <tr>
                         <td class="label">
-                            {{ form.account_number.label_tag }}:
+                            {{ bank_account_form.account_number.label_tag }}:
                         </td>
                         <td>
-                            {{ form.account_number }}
+                            {{ bank_account_form.account_number }}
                         </td>
                     </tr>
                     <tr>
                         <td class="label"
                             colspan="2">
-                            {{ form.bank_identification_code.errors }}
+                            {{ bank_account_form.bank_identification_code.errors }}
                         </td>
                     </tr>
                     <tr>
                         <td class="label">
-                            {{ form.bank_identification_code.label_tag }}:
+                            {{ bank_account_form.bank_identification_code.label_tag }}:
                         </td>
                         <td>
-                            {{ form.bank_identification_code }}
+                            {{ bank_account_form.bank_identification_code }}
                         </td>
                     </tr>
                     <tr>
                         <td class="label"
                             colspan="2">
-                            {{ form.bank_name.errors }}
+                            {{ bank_account_form.bank_name.errors }}
                         </td>
                     </tr>
                     <tr>
                         <td class="label">
-                            {{ form.bank_name.label_tag }}:
+                            {{ bank_account_form.bank_name.label_tag }}:
                         </td>
                         <td>
-                            {{ form.bank_name }}
+                            {{ bank_account_form.bank_name }}
                         </td>
                     </tr>
                     <tr>
                         <td class="label"
                             colspan="2">
-                            {{ form.depositor.errors }}
+                            {{ bank_account_form.depositor.errors }}
                         </td>
                     </tr>
                     <tr>
                         <td class="label">
-                            {{ form.depositor.label_tag }}:
+                            {{ bank_account_form.depositor.label_tag }}:
                         </td>
                         <td>
-                            {{ form.depositor }}
+                            {{ bank_account_form.depositor }}
                         </td>
                     </tr>
                 </table>
@@ -230,16 +232,16 @@
 
             {# Message #}
             <div>
-                {{form.message.label_tag}}:
+                {{ checkout_form.message.label_tag }}:
             </div>
             <div>
-                {{ form.message }}
+                {{ checkout_form.message }}
             </div>
 
             {% if SHOP.confirm_toc %}
-                {% if form.errors.confirm_toc %}
+                {% if checkout_form.errors.confirm_toc %}
                     <ul class="errorlist">
-                        <li>{{ form.errors.confirm_toc }}</li>
+                        <li>{{ checkout_form.errors.confirm_toc }}</li>
                     </ul>
                 {% endif %}
 

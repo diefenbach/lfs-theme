@@ -123,20 +123,12 @@ table.lfs-default th {
     padding: 4px 6px;
 }
 
-table.invoice-address th {
+table.address th {
     background-color: white;
     color: #58585A;
     font-weight: bold;
     padding-left: 0px;
 }
-
-table.shipping-address th {
-    background-color: white;
-    color: #58585A;
-    font-weight: bold;
-    padding-left: 0px;
-}
-
 
 table.lfs-default a {
     text-decoration: none;
@@ -753,6 +745,13 @@ ___________________________________________________________________________ */
     padding-bottom: 2px;
 }
 
+#id_invoice-state,
+#id_invoice-country,
+#id_shipping-state,
+#id_shipping-country {
+    width: 133px;
+}
+
 select.cart-country,
 select.cart-shipping-method,
 select.cart-payment-method {
@@ -762,7 +761,8 @@ select.cart-payment-method {
 .checkout .payment,
 .checkout .shipping,
 .checkout #cart-inline,
-.checkout #bank-account {
+.checkout #bank-account,
+.checkout #credit-card {
     margin-top: 20px;
 }
 
