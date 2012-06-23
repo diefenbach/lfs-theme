@@ -33,11 +33,7 @@
     {% endif %}
 
     <span class="products-total">
-        {% blocktrans count counter=amount_of_products %}
-            ({{ amount_of_products }} product)
-        {% plural %}
-            ({{ amount_of_products }} products)
-        {% endblocktrans %}
+        {% blocktrans count counter=amount_of_products %}({{ amount_of_products }} product){% plural %}({{ amount_of_products }} products){% endblocktrans %}
     </span>
 </div>
 {% endif %}
