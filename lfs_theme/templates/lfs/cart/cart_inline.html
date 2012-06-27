@@ -93,13 +93,14 @@
                                value="{{ cart_item.quantity }}" />
                     </td>
                     <td>
-                        {% if cart_item.product.unit %}
-                            {{ cart_item.product.unit }}
+                        {% if cart_item.product.get_unit %}
+                            <span class="product-unit">
+                                {{ cart_item.product.get_unit }}
+                            </span>
                         {% endif %}
-
-                        {% if cart_item.product.active_packing_unit %}
+                        {% if cart_item.product.get_active_packing_unit %}
                             <span class="packing-unit">
-                                ({{ cart_item.obj|packages }} {{ cart_item.product.packing_unit_unit }})
+                                ({{ cart_item.obj|packages }} {{ cart_item.product.get_packing_info.1 }})
                             </span>
                         {% endif %}
                     </td>
