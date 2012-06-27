@@ -18,8 +18,9 @@
     <label for="search">{% trans 'Search' %}:</label>
     <form action="{% url lfs_search %}"
           class="search-results-form">
-        <input id="search-input"
+        <input id="search-results-input"
                type="text"
+               value="{{ q }}"
                name="q" />
 
         <input type="submit"
@@ -101,5 +102,6 @@
                 </tr>
             {% endfor %}
         </table>
+        {% paginate %}
     {% endif %}
 {% endblock %}
