@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lfstheme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-12 11:30+0200\n"
-"PO-Revision-Date: 2012-04-21 14:53+0100\n"
+"PO-Revision-Date: 2012-06-27 14:48+0100\n"
 "Last-Translator: Radim Novotny <novotny.radim@gmail.com>\n"
 "Language-Team: Czech <info@dms4u.cz>\n"
 "MIME-Version: 1.0\n"
@@ -66,7 +66,7 @@ msgstr "Vyhledávání"
 #: templates/lfs/catalog/sorting.html:18
 #: templates/lfs/search/search_results.html:26
 msgid "Go!"
-msgstr "Jdi!"
+msgstr "Vyhledat"
 
 #: templates/lfs/base.html:167
 msgid "Powered by"
