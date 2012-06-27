@@ -5,14 +5,10 @@
         {% csrf_token %}
         <select name="sorting"
                 onchange="this.form.submit()">
-            <option value="price"
-                {% ifequal "price" current %}selected="selected"{% endifequal %}>{% trans 'Price ascending' %}</option>
-            <option value="-price"
-                {% ifequal "-price" current %}selected="selected"{% endifequal %}>{% trans 'Price descending' %}</option>
-            <option value="name"
-                {% ifequal "name" current %}selected="selected"{% endifequal %}>{% trans 'Name ascending' %}</option>
-            <option value="-name"
-                {% ifequal "-name" current %}selected="selected"{% endifequal %}>{% trans 'Name descending' %}</option>
+            {% for item in sort_options %}
+            <option value="{{ item.default }}"
+                {% ifequal item.default current %}selected="selected"{% endifequal %}>{{ item.title }}</option>
+            {% endfor %}
         </select>
         <noscript>
             <input type="submit" value="{% trans 'Go!' %}" />
