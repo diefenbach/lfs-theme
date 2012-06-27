@@ -51,11 +51,10 @@
 
             </td>
             <td class="number">
-                {{ cart_item.quantity }} {{ cart_item.product.unit }}
-
-                {% if cart_item.product.active_packing_unit %}
+                {{ cart_item.quantity }} {{ cart_item.product.get_unit }}
+                {% if cart_item.product.get_active_packing_unit %}
                     <span class="packing-unit">
-                        ({{ cart_item.obj|packages }} {{ cart_item.product.packing_unit_unit }})
+                        ({{ cart_item.obj|packages }} {{ cart_item.product.get_packing_info.1 }})
                     </span>
                 {% endif %}
 

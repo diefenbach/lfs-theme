@@ -455,6 +455,10 @@ div.product-quantity {
     margin: 2px 10px 20px 0;
 }
 
+.cart-amount {
+    margin-right: 4px;
+}
+
 .packing-unit {
     color: #555;
 }
