@@ -37,13 +37,13 @@
                 </tr>
                 <tr>
                 	{# Invoice Address #}
-                    <td width="50%">
+                    <td width="50%" id="invoice-address-inline">
                         {{ invoice_address_inline|safe }}
                     </td>
 
                     {#  Shipping Address #}
                     <td width="50%">
-                        <div class="shipping-address">
+                        <div class="shipping-address" id="shipping-address-inline">
                     	   {{ shipping_address_inline|safe }}
                         </div>
                     </td>
