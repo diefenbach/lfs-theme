@@ -4,12 +4,14 @@
 
 {% sorting %}
 
+{% block products-header %}
 <h1 class="first-heading">
     {{ category.name }}
 </h1>
 <div class="description">
     {{ category.description|safe }}
 </div>
+{% endblock %}
 <div id="products">
     <table class="lfs-default">
         {% for col in products %}

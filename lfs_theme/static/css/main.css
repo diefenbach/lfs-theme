@@ -595,6 +595,10 @@ ___________________________________________________________________________ */
     float: left;
 }
 
+.manufacturer #products{
+    clear: left;
+}
+
 .manufacturer .product-row {
     border-bottom: 1px solid #eae5e2;
 }
