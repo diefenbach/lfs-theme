@@ -1,0 +1,71 @@
+{% load i18n lfs_tags %}
+
+{% if products %}
+    <div class="latest-products-portlet portlet">
+        <div class="portlet-header">
+            {{ title }}
+        </div>
+        <div class="portlet-body">
+            {% if not slideshow %}
+                {% for product in products %}
+                <div class="portlet-item {% if forloop.last %}last{% endif %}">
+                    <a href="{{ product.get_absolute_url }}">
+                        {{ product.get_name }}
+                    </a>
+                    <div class="product-price">
+                        {{ product.price|currency:request}}*
+                        <div class="price-disclaimer">
+                            {% if product.price_includes_tax %}
+                                {% trans '*inc. VAT' %}
+                            {% else  %}
+                                {% trans '*exc. VAT' %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+            <div class="products-wrapper slideshow">
+                {% for product in products %}
+                    <div id="tab-{{ forloop.counter }}"class="portlet-item">
+                        <div class="product-data">
+                            <div class="product-image">
+                                <a href="{{ product.get_absolute_url }}">
+                                    {% if product.get_image %}
+                                        <img alt="{{ product.get_name }}"
+                                            src="{{ product.get_image.image.url_100x100 }}" />
+                                    {% endif %}
+                                </a>
+                            </div>
+                            <div>
+                                <a href="{{ product.get_absolute_url }}"
+                                   class="product-title">{{ product.get_name }}</a>
+                            </div>
+
+                            <div class="product-price">
+                                {{ product.price|currency:request}}*
+                                <div class="price-disclaimer">
+                                    {% if product.price_includes_tax %}
+                                        {% trans '*inc. VAT' %}
+                                    {% else  %}
+                                        {% trans '*exc. VAT' %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}{# slideshow products #}
+                {# tabs #}
+                <ul style="display:none">
+                {% for product in products %}
+                    <li><a href="#tab-{{ forloop.counter }}">{{ forloop.counter }}</a></li>
+                {% endfor %}
+                </ul>
+            </div>
+            <script type="text/javascript">
+                $('.slideshow').tabs({ fx: { opacity: 'toggle', duration: 'fast' } }).tabs('rotate', 3000);
+            </script>
+            {% endif %}{# slideshow check #}
+        </div>{# portlet-body #}
+    </div>
+{% endif %}
