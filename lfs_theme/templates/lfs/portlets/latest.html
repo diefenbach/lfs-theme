@@ -25,7 +25,7 @@
                 </div>
                 {% endfor %}
             {% else %}
-            <div class="products-wrapper slideshow">
+            <div class="products-wrapper slideshow-latest">
                 {% for product in products %}
                     <div id="tab-{{ forloop.counter }}"class="portlet-item">
                         <div class="product-data">
@@ -63,7 +63,7 @@
                 </ul>
             </div>
             <script type="text/javascript">
-                $('.slideshow').tabs({ fx: { opacity: 'toggle', duration: 'fast' } }).tabs('rotate', 3000);
+                $('.slideshow-latest').tabs({ fx: { opacity: 'toggle', duration: 'fast' } }).tabs('rotate', 3000);
             </script>
             {% endif %}{# slideshow check #}
         </div>{# portlet-body #}
