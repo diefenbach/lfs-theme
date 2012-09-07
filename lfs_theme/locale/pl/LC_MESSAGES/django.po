@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: LFS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-24 17:38+0100\n"
-"PO-Revision-Date: 2012-09-08 00:03+0100\n"
+"PO-Revision-Date: 2012-09-08 00:06+0100\n"
 "Last-Translator: Maciej Wiśniowski <pigletto@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pl\n"
@@ -986,7 +986,7 @@ msgstr "Aż do"
 
 #: templates/lfs/portlets/filter.html:106
 msgid "Reset all filters"
-msgstr "Restartuj filtry"
+msgstr "Resetuj filtry"
 
 #: templates/lfs/portlets/pages.html:18
 msgid "More information"
