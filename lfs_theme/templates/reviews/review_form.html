@@ -3,6 +3,10 @@
 
 {% block section %}add-review {% endblock %}
 
+{% block breadcrumbs %}
+    {% breadcrumbs object _('Add Review') %}
+{% endblock %}
+
 {% block content %}
 
     <h1>{% trans 'Add Review' %} {% trans "for" %} {{ object.get_name }}</h1>
