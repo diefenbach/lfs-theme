@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: LFS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-24 17:38+0100\n"
-"PO-Revision-Date: 2012-09-05 23:00+0100\n"
+"PO-Revision-Date: 2012-09-08 00:03+0100\n"
 "Last-Translator: Maciej Wiśniowski <pigletto@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pl\n"
@@ -1043,7 +1043,7 @@ msgstr "Obrazek"
 #: templates/registration/password_reset_complete.html:4
 #: templates/registration/password_reset_complete.html:22
 msgid "Password reset complete"
-msgstr "Restartowanie hasła zakończone"
+msgstr "Resetowanie hasła zakończone"
 
 #: templates/registration/password_reset_complete.html:15
 #: templates/registration/password_reset_confirm.html:4
@@ -1086,7 +1086,7 @@ msgstr "Link umożliwiający zresetowanie hasła jest nieprawidłowy, prawdopodo
 #: templates/registration/password_reset_done.html:4
 #: templates/registration/password_reset_done.html:22
 msgid "Password reset successful"
-msgstr "Restartowanie hasła zakończone sukcesem"
+msgstr "Resetowanie hasła zakończone sukcesem"
 
 #: templates/registration/password_reset_done.html:25
 msgid "We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly."
