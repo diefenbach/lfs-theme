@@ -8,14 +8,17 @@ msgstr ""
 "Project-Id-Version: LFS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-24 17:38+0100\n"
-"PO-Revision-Date: 2012-09-08 00:06+0100\n"
+"PO-Revision-Date: 2012-09-08 00:24+0100\n"
 "Last-Translator: Maciej Wiśniowski <pigletto@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: Natcam <hello@natcam.pl>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"X-Poedit-Language: Polish\n"
+"X-Poedit-Country: POLAND\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
 #: templates/404.html:9
 #: templates/500.html:4
@@ -24,7 +27,7 @@ msgstr "Przykro nam!"
 
 #: templates/404.html:12
 msgid "The page you have requested could not be found."
-msgstr "Żądanej strony nie udało się odnaleźć."
+msgstr "Nie udało się odnaleźć żądanej strony."
 
 #: templates/500.html:7
 msgid "An error has occured. Please try again in a minute."
@@ -296,7 +299,7 @@ msgstr "Strona domowa"
 
 #: templates/lfs/catalog/packing_result.html:4
 msgid "This complies to"
-msgstr "Jest to zgodne z"
+msgstr "Odpowiada to"
 
 #: templates/lfs/catalog/packing_result.html:5
 msgid "pieces"
@@ -430,7 +433,7 @@ msgstr "Dodaj do koszyka"
 
 #: templates/lfs/catalog/products/product_inline.html:191
 msgid "Send request"
-msgstr "Wyślij żadanie "
+msgstr "Wyślij zapytanie "
 
 #: templates/lfs/catalog/products/product_inline.html:201
 msgid "Variants"
@@ -450,7 +453,7 @@ msgstr "Twój koszyk"
 
 #: templates/lfs/checkout/empty_page_checkout.html:17
 msgid "There is nothing to checkout"
-msgstr "Nie ma niczego do realizacji zamówienia"
+msgstr "Nie wybrano żadnych produktów"
 
 #: templates/lfs/checkout/login.html:17
 #: templates/lfs/customer/login.html:17
@@ -476,7 +479,7 @@ msgstr "Zarejestruj się"
 #: templates/lfs/checkout/login.html:63
 #: templates/lfs/customer/login.html:62
 msgid "If you are not already a customer you can register in order to store your address data and to follow the state of your orders."
-msgstr "Jeżeli nie jesteś jeszcze naszym klientem możesz się zarejestrować w celu przechowywania danych adresowych i śledzenia stanu swojego zamówienia"
+msgstr "Jeżeli nie jesteś jeszcze naszym klientem możesz się zarejestrować w celu przechowywania danych adresowych i śledzenia stanu swoich zamówień"
 
 #: templates/lfs/checkout/login.html:95
 msgid "You can also checkout without login or registration."
@@ -512,7 +515,7 @@ msgstr "Konieczne tylko wtedy, gdy metodą płatności jest polecenie zapłaty"
 
 #: templates/lfs/checkout/one_page_checkout.html:131
 msgid "Expiration date"
-msgstr "Data przydatności"
+msgstr "Data ważności"
 
 #: templates/lfs/checkout/one_page_checkout.html:159
 msgid "Please enter your bank information"
@@ -520,7 +523,7 @@ msgstr "Proszę podać pełne dane banku"
 
 #: templates/lfs/checkout/one_page_checkout.html:247
 msgid "Please confirm our terms and conditions"
-msgstr "Proszę potwierdzić nasze warunki"
+msgstr "Proszę zaakceptować nasz regulamin"
 
 #: templates/lfs/checkout/one_page_checkout.html:253
 msgid "Submit order"
@@ -538,15 +541,15 @@ msgstr "Wkrótce otrzymasz potwierdzenie zamówienia poprzez e-mail."
 
 #: templates/lfs/checkout/thank_you_page.html:21
 msgid "Please use the following link if you want to pay now"
-msgstr "Proszę użyć poniższy link, jeśli chcesz zapłacić teraz"
+msgstr "Jeśli chcesz zapłacić teraz, użyj poniższego linku"
 
 #: templates/lfs/checkout/thank_you_page.html:25
 msgid "Pay"
-msgstr "Opłata"
+msgstr "Zapłać"
 
 #: templates/lfs/checkout/thank_you_page.html:28
 msgid "You will find the same link on your order confirmation"
-msgstr "Znajdziesz ten sam link w potwierdzeniu"
+msgstr "Znajdziesz ten sam link w potwierdzeniu zamówienia"
 
 #: templates/lfs/contact/contact_form.html:6
 #: templates/lfs/contact/contact_form.html:17
@@ -681,7 +684,7 @@ msgstr "Zmień swój adres e-mail"
 
 #: templates/lfs/customer/login.html:24
 msgid "If you are already customer you can login. Your address data will be stored in your account."
-msgstr "Jeśli jesteś już naszym klientem, możesz się zalogować. Twoje dane adresowe zostaną zapisane na koncie."
+msgstr "Jeśli jesteś już naszym klientem, możesz się zalogować. Twoje dane adresowe zostaną zapisane."
 
 #: templates/lfs/customer/order.html:6
 #: templates/lfs/customer/order.html:12
@@ -742,7 +745,7 @@ msgstr "Y-m-d H:i:s"
 
 #: templates/lfs/customer/orders.html:73
 msgid "There are no orders for this time range."
-msgstr "Brak zamówień na ten przedział czasu."
+msgstr "Brak zamówień w podanym przedziale czasu."
 
 #: templates/lfs/customer/password.html:5
 #: templates/lfs/customer/password.html:8
@@ -752,7 +755,7 @@ msgstr "Zmiana hasła"
 
 #: templates/lfs/customer/password.html:14
 msgid "Please enter your old password, for security's sake, and then enter your new password twice so we can verify you typed it in correctly."
-msgstr "Proszę podać swoje stare hasło ze względów bezpieczeństwo, a następnie wpisz nowe hasło dwa razy, dzięki czemu potwierdzi to, że masz je wpisane poprawnie."
+msgstr "Proszę podać swoje stare hasło ze względów bezpieczeństwa, a następnie wpisać nowe hasło dwa razy."
 
 #: templates/lfs/customer/password.html:22
 msgid "Old password:"
@@ -770,7 +773,7 @@ msgstr "Potwierdź hasło:"
 
 #: templates/lfs/mail/contact_mail.html:13
 msgid "A new mail has been received:"
-msgstr "Nowa poczta została odebrana:"
+msgstr "Otrzymano nowy e-mail:"
 
 #: templates/lfs/mail/contact_mail.html:16
 msgid "Shop"
@@ -839,7 +842,7 @@ msgstr "Sposób płatności"
 #: templates/lfs/mail/order_details.html:157
 #: templates/lfs/mail/order_details.txt:43
 msgid "Pay now"
-msgstr "Opłać teraz"
+msgstr "Zapłać teraz"
 
 #: templates/lfs/mail/order_details.html:169
 #: templates/lfs/mail/order_details.txt:47
@@ -1002,7 +1005,7 @@ msgstr "Najlepiej kupowane"
 
 #: templates/lfs/portlets/topseller.html:22
 msgid "All topseller"
-msgstr "Wszystkie najlepiej kupowane produkty"
+msgstr "Wszystkie najczęściej kupowane produkty"
 
 #: templates/lfs/reviews/rating_mail.html:7
 #: templates/lfs/reviews/rating_mail.txt:2
@@ -1015,7 +1018,7 @@ msgstr "Wszystkie wyniki"
 
 #: templates/lfs/search/livesearch_results.html:55
 msgid "No products found"
-msgstr "Brak znalezionych wyników"
+msgstr "Brak wyników"
 
 #: templates/lfs/search/search_results.html:5
 #: templates/lfs/search/search_results.html:11
@@ -1057,7 +1060,7 @@ msgstr "Resetuj hasło"
 
 #: templates/registration/password_reset_complete.html:25
 msgid "Your password has been set. You may go ahead and log in now."
-msgstr "Twoje hasło zostało ustawione. Możesz iść dalej i zalogować się teraz."
+msgstr "Twoje hasło zostało ustawione. Możesz teraz przejść dalej i zalogować się."
 
 #: templates/registration/password_reset_complete.html:28
 msgid "Log in"
@@ -1069,7 +1072,7 @@ msgstr "Wpisz nowe hasło"
 
 #: templates/registration/password_reset_confirm.html:26
 msgid "Please enter your new password twice so we can verify you typed it in correctly."
-msgstr "Proszę wpisać dwukrotnie nowe hasło, dzięki czemu możemy potwierdzić, że masz je poprawnie wpisane."
+msgstr "Proszę wpisać dwukrotnie nowe hasło."
 
 #: templates/registration/password_reset_confirm.html:50
 msgid "Change my password"
@@ -1090,7 +1093,7 @@ msgstr "Resetowanie hasła zakończone sukcesem"
 
 #: templates/registration/password_reset_done.html:25
 msgid "We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly."
-msgstr "Wysłaliśmy instrukcje ustawienia hasła na wskazany e-mail. Powinieneś otrzymać je w najbliższym czasie."
+msgstr "Wysłaliśmy instrukcje ustawienia hasła na wskazany e-mail. Powinieneś otrzymać je wkrótce."
 
 #: templates/registration/password_reset_email.html:2
 msgid "You're receiving this e-mail because you requested a password reset"
@@ -1107,11 +1110,11 @@ msgstr "Proszę przejść do następującej strony i wybrać nowe hasło:"
 
 #: templates/registration/password_reset_email.html:9
 msgid "Your username, in case you've forgotten:"
-msgstr "Twoja nazwa użytkownika, w przypadku zapomnienia:"
+msgstr "Twoja nazwa użytkownika, w przypadku gdybyś jej nie pamiętał:"
 
 #: templates/registration/password_reset_email.html:11
 msgid "Thanks for using our site!"
-msgstr "Dziękujemy za korzystanie z naszego serwisu!"
+msgstr "Dziękujemy za korzystanie z naszego sklepu!"
 
 #: templates/registration/password_reset_email.html:13
 #, python-format
@@ -1132,7 +1135,7 @@ msgstr "Ocena"
 
 #: templates/reviews/already_rated.html:10
 msgid "You have already rated for this product."
-msgstr "Masz już ocenę tego produktu"
+msgstr "Już oceniałeś ten produkt"
 
 #: templates/reviews/review_form.html:8
 msgid "Add Review"
@@ -1181,7 +1184,7 @@ msgstr "Brak ocen dla tego produktu. Bądź pierwszy!"
 
 #: templates/reviews/reviews_for_instance.html:39
 msgid "You have already rated"
-msgstr "Już oceniłeś"
+msgstr "Już dokonałeś oceny"
 
 #: templates/reviews/reviews_for_instance.html:44
 msgid "Add review"
