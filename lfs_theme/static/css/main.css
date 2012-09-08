@@ -734,6 +734,12 @@ ___________________________________________________________________________ */
     vertical-align: middle;
 }
 
+.voucher-description{
+    display: block;
+    color: #888888;
+    margin-bottom: 5px;
+}
+
 /* Checkout
 ___________________________________________________________________________ */
 
@@ -805,27 +811,13 @@ select.cart-payment-method {
 /* Login / Register
 ___________________________________________________________________________ */
 
-
-.customer-login th,
-.checkout-login th {
-    padding-right: 10px;
-}
-
-.customer-login th,
-.customer-login td,
-.checkout-login th,
-.checkout-login td {
-    padding-top: 2px;
-    padding-bottom: 2px;
-}
-
 .customer-login .description,
 .checkout-login .description {
     height: 60px;
 }
 
-.customer-login .form,
-.checkout-login .form {
+.customer-login .form-wrapper,
+.checkout-login .form-wrapper {
     height: 120px;
 }
 
@@ -858,6 +850,38 @@ div.anonymous-checkout {
 .customer-login div.register {
     width: 470px;
     padding-right: 0 !important;
+}
+
+
+div.login div.form{
+    display: table;
+}
+
+div.login div.field,
+div.register div.field,
+div.customer-login div.field,
+div.checkout-login div.field {
+    display: table-row;
+}
+
+div.login div.field div,
+div.register div.field div,
+div.customer-login div.field div,
+div.checkout-login div.field div{
+    display: table-cell;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+
+div.customer-login div.field div.label,
+div.checkout-login div.field div.label{
+    padding-right: 10px;
+}
+
+a.forgot-password-link{
+    display: block;
+    clear: left;
 }
 
 /* Tags

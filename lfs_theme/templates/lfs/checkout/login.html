@@ -28,16 +28,12 @@
               action="{% url lfs_checkout_login %}"
               method="post">
             {% csrf_token %}
-            <div class="form">
-                <table>
-                    {{ login_form }}
-                    <tr>
-                        <td></td>
-                        <td>
-                            <a href="{% url lfs_password_reset %}">{% trans 'Forgot password?' %}</a>
-                        </td>
-                    </tr>
-                </table>
+            <div class="form-wrapper">
+                <div class="form">
+                    {% with login_form as form %}
+                        {% include "lfs/shop/lfs_form.html" %}
+                    {% endwith %}
+                </div>
             </div>
 
             <input type="hidden"
@@ -51,7 +47,7 @@
             <button type="submit"
                     class="button checkout-button emphasized left"
                     href="{% url lfs_checkout %}">{% trans 'Login' %}</button>
-
+            <a class="forgot-password-link" href="{% url lfs_password_reset %}">{% trans 'Forgot password?' %}</a>
         </form>
     </div>
 
@@ -66,10 +62,12 @@
             <form action="{% url lfs_checkout_login %}"
                   method="post">
                     {% csrf_token %}
-                    <div class="form">
-                        <table>
-                            {{ register_form }}
-                        </table>
+                    <div class="form-wrapper">
+                        <div class="form">
+                            {% with register_form as form %}
+                                {% include "lfs/shop/lfs_form.html" %}
+                            {% endwith %}
+                        </div>
                     </div>
                     <input type="hidden"
                            name="action"
@@ -95,7 +93,7 @@
                 {% trans 'You can also checkout without login or registration.' %}
             </div>
 
-            <div class="form">&nbsp;</div>
+            <div class="form-wrapper">&nbsp;</div>
 
             <a class="button checkout-button emphasized left"
                href="{% url lfs_checkout %}">
