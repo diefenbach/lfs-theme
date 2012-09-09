@@ -6,7 +6,7 @@
     {% trans 'Your orders' %} - {{ block.super }}
 {% endblock %}
 
-{% block section %}my-addresses{% endblock %}
+{% block section %}my-orders{% endblock %}
 
 {% block breadcrumbs %}
     {% breadcrumbs _("Your orders") %}
@@ -36,44 +36,48 @@
         </div>
 
         <table class="order lfs-default">
-            <tr>
-                <th>
-                    {% trans 'Number' %}
-                </th>
-                <th>
-                    {% trans 'Date' %}
-                </th>
-                <th class="number">
-                    {% trans 'Price' %}
-                </th>
-                <th class="right">
-                    {% trans 'State' %}
-                </th>
-            </tr>
-            {% for order in orders %}
+            <thead>
                 <tr>
-                    <td>
-                        <a href="{% url lfs_my_order order.id %}">{{ order.number|default_if_none:"-" }}</a>
-                    </td>
-                    <td>
-                        <a href="{% url lfs_my_order order.id %}">
-                            {{ order.created|date:_("DATETIME_FORMAT") }}
-                        </a>
-                    </td>
-                    <td class="number">
-                        {{ order.price|currency:request }}
-                    </td>
-                    <td class="right">
-                        {{ order.get_state_display }}
-                    </td>
+                    <th>
+                        {% trans 'Number' %}
+                    </th>
+                    <th>
+                        {% trans 'Date' %}
+                    </th>
+                    <th class="number">
+                        {% trans 'Price' %}
+                    </th>
+                    <th class="right">
+                        {% trans 'State' %}
+                    </th>
                 </tr>
-            {% empty %}
-                <tr colspan="3">
-                    <td>
-                        {% trans "There are no orders for this time range." %}
-                    </td>
-                </tr>
-            {% endfor %}
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                    <tr>
+                        <td>
+                            <a href="{% url lfs_my_order order.id %}">{{ order.number|default_if_none:"-" }}</a>
+                        </td>
+                        <td>
+                            <a href="{% url lfs_my_order order.id %}">
+                                {{ order.created|date:_("DATETIME_FORMAT") }}
+                            </a>
+                        </td>
+                        <td class="number">
+                            {{ order.price|currency:request }}
+                        </td>
+                        <td class="right">
+                            {{ order.get_state_display }}
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr colspan="3">
+                        <td>
+                            {% trans "There are no orders for this time range." %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
         </table>
     {% endif %}
 {% endblock %}
