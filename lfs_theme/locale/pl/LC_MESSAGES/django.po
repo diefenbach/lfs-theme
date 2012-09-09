@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: LFS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-08 22:45+0200\n"
-"PO-Revision-Date: 2012-09-09 22:33+0100\n"
+"PO-Revision-Date: 2012-09-09 22:58+0100\n"
 "Last-Translator: Maciej Wiśniowski <pigletto@gmail.com>\n"
 "Language-Team: Natcam <hello@natcam.pl>\n"
 "Language: pl\n"
@@ -781,7 +781,7 @@ msgstr "Twój login"
 #: templates/lfs/mail/order_details.txt:2
 #: templates/lfs/order/lfs_order_tmpl.html:6
 msgid "General"
-msgstr "Ogólny"
+msgstr "Ogólne"
 
 #: templates/lfs/mail/order_details.html:11
 #: templates/lfs/mail/order_details.txt:4
