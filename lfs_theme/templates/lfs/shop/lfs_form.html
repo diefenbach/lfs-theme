@@ -1,9 +1,9 @@
-{{ form.non_field_errors }}
+{% if lfs_form_is_form %}{{ form.non_field_errors }}{% endif %}
 
-{% for field in form %}
-    <div class="field clearfix">
+{% for field in lfs_form %}
+    <div class="field clearfix {% if field.field.required %}required{% endif %}">
         <div class="label">
-            {{ field.label_tag }}:
+            {{ field.label_tag }}
         </div>
         
         {% if field.errors %}

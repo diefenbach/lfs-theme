@@ -1,35 +1,8 @@
-<table class="address">
-    {% for field in address_form.get_fields_before_postal %}
-        <tr>
-            <td class="label">
-                {{ field.label_tag }}{% if field.field.required %}*{% endif %}:
-            </td>
-            <td>
-                {{ field.errors }}
-                {{ field }}
-            </td>
-        </tr>
-    {% endfor %}
-    {% for field in postal_form %}
-        <tr>
-            <td class="label">
-                {{ field.label_tag }}{% if field.field.required %}*{% endif %}:
-            </td>
-            <td>
-                {{ field.errors }}
-                {{ field }}
-            </td>
-        </tr>
-    {% endfor %}
-    {% for field in address_form.get_fields_after_postal %}
-        <tr>
-            <td class="label">
-                {{ field.label_tag }}{% if field.field.required %}*{% endif %}:
-            </td>
-            <td>
-                {{ field.errors }}
-                {{ field }}
-            </td>
-        </tr>
-    {% endfor %}
-</table>
+{% load lfs_tags %}
+<div class="form-wrapper address">
+    <div class="form">
+        {% lfs_form address_form.get_fields_before_postal %}
+        {% lfs_form postal_form %}
+        {% lfs_form address_form.get_fields_after_postal %}
+    </div>
+</div>
