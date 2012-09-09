@@ -25,29 +25,33 @@
               shipping="{% url lfs_changed_shipping_country %}">
             {% csrf_token %}
             <table class="lfs-default">
-                <tr>
-                    <th>
-                        {% trans 'Invoice address' %}
-                    </th>
-                    <th>
-                        {% trans 'Shipping address' %}
-                        ({{ checkout_form.no_shipping }}
-                        {{ checkout_form.no_shipping.label_tag }})
-                    </th>
-                </tr>
-                <tr>
-                	{# Invoice Address #}
-                    <td width="50%" id="invoice-address-inline">
-                        {{ invoice_address_inline|safe }}
-                    </td>
+                <thead>
+                    <tr>
+                        <th>
+                            {% trans 'Invoice address' %}
+                        </th>
+                        <th>
+                            {% trans 'Shipping address' %}
+                            ({{ checkout_form.no_shipping }}
+                             {{ checkout_form.no_shipping.label_tag }})
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        {# Invoice Address #}
+                        <td width="50%" id="invoice-address-inline">
+                            {{ invoice_address_inline|safe }}
+                        </td>
 
-                    {#  Shipping Address #}
-                    <td width="50%">
-                        <div class="shipping-address" id="shipping-address-inline">
-                    	   {{ shipping_address_inline|safe }}
-                        </div>
-                    </td>
-                </tr>
+                        {#  Shipping Address #}
+                        <td width="50%">
+                            <div class="shipping-address" id="shipping-address-inline">
+                               {{ shipping_address_inline|safe }}
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
 
             {# Shipping #}
@@ -231,11 +235,8 @@
             </div>
 
             {# Message #}
-            <div>
-                {{ checkout_form.message.label_tag }}:
-            </div>
-            <div>
-                {{ checkout_form.message }}
+            <div id="checkout-message">
+                {% lfs_form checkout_form.message %}
             </div>
 
             {% if SHOP.confirm_toc %}

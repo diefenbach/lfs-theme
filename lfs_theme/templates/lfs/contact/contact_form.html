@@ -23,7 +23,7 @@
           method="post">
 
         {% csrf_token %}
-        {% include "lfs/shop/lfs_form.html" %}
+        {% lfs_form form %}
 
         <div class="buttons">
             <button class="button emphasized left"

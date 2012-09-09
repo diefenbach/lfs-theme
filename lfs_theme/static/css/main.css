@@ -82,6 +82,32 @@ td.label {
     padding-bottom: 4px;
 }
 
+.field div.label label:after {
+    content: ":";
+}
+
+.field.required div.label label:after {
+    content: "*:";
+}
+
+div.form {
+    display: table;
+}
+
+div.form .field {
+    display: table-row;
+}
+
+div.form .field div {
+    display: table-cell;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+div.form .field div.label {
+    padding-right: 10px;
+}
+
 .contact-form  #id_message {
     width: 500px;
     height: 200px;
@@ -852,31 +878,12 @@ div.anonymous-checkout {
     padding-right: 0 !important;
 }
 
-
-div.login div.form{
-    display: table;
-}
-
-div.login div.field,
-div.register div.field,
-div.customer-login div.field,
-div.checkout-login div.field {
-    display: table-row;
-}
-
 div.login div.field div,
 div.register div.field div,
 div.customer-login div.field div,
 div.checkout-login div.field div{
-    display: table-cell;
     padding-top: 2px;
     padding-bottom: 2px;
-}
-
-
-div.customer-login div.field div.label,
-div.checkout-login div.field div.label{
-    padding-right: 10px;
 }
 
 a.forgot-password-link{

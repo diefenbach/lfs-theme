@@ -31,9 +31,7 @@
 
             <div class="form-wrapper">
                 <div class="form">
-                    {% with login_form as form %}
-                        {% include "lfs/shop/lfs_form.html" %}
-                    {% endwith %}
+                    {% lfs_form login_form %}
                 </div>
             </div>
 
@@ -64,9 +62,7 @@
                     {% csrf_token %}
                     <div class="form-wrapper">
                         <div class="form">
-                            {% with register_form as form %}
-                                {% include "lfs/shop/lfs_form.html" %}
-                            {% endwith %}
+                            {% lfs_form register_form %}
                         </div>
                     </div>
                     <input type="hidden"

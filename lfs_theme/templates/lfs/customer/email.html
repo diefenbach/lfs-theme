@@ -11,20 +11,20 @@
     <form action="{% url lfs_my_email %}"
           method="post">
         {% csrf_token %}
-        <table>
-            {{ email_form }}
-            <tr>
-                <td></td>
-                <td>
-                    <input type="hidden"
-                           name="action"
-                           value="email" />
 
-                    <input class="lfs-default"
-                           type="submit"
-                           value="{% trans 'Save e-mail address' %}" />
-                </td>
-            </tr>
-        </table>
+        <div class="form-wrapper">
+            <div class="form">
+                {% lfs_form email_form %}
+            </div>
+        </div>
+
+        <input type="hidden"
+               name="action"
+               value="email" />
+
+        <input class="lfs-default"
+               type="submit"
+               value="{% trans 'Save e-mail address' %}" />
+
     </form>
 {% endblock %}
