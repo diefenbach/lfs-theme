@@ -1,223 +1,239 @@
 {% load i18n %}
 {% load lfs_tags %}
 <table class="order lfs-default">
-    <tr>
-        <th colspan="4">
-            {% trans 'General' %}
-        </th>
-    </tr>
-    <tr>
-        <td class="label" width="25%">
-            {% trans 'Customer name' %}:
-        </td>
-        <td width="25%">
-            {{ current_order.customer_firstname }} {{ current_order.customer_lastname }}
-        </td>
-        <td class="label" width="25%">
-            {% trans 'Date' %}:
-        </td>
-        <td width="25%">
-            {{ current_order.created|date:_("DATETIME_FORMAT") }}
-        </td>
-    </tr>
-    <tr>
-        <td class="label">
-            {% trans 'E-mail' %}:
-        </td>
-        <td>
-            <a href="mailto:{{ current_order.customer_email }}">
-                {{ current_order.customer_email }}
-            </a>
-        </td>
-        <td class="label">
-            {% trans 'State' %}:
-        </td>
-        <td>
-            {{ current_order.get_state_display }}
-        </td>
-    </tr>
-    <tr>
-        <td class="label">
-            {% trans 'Phone' %}:
-        </td>
-        <td>
-            {{ current_order.shipping_phone }}
-        </td>
-        <td class="label">
-            {% trans 'Total' %}:
-        </td>
-        <td>
-            {{ current_order.price|currency:request}}
-        </td>
-    </tr>
-
-</table>
-<table class="order lfs-default padding-top-middle">
-    <tr>
-        <th width="25%">
-            {% trans 'Invoice address' %}
-        </th>
-        <th width="25%">
-            {% trans 'Shipping address' %}
-        </th>
-        <th width="25%">
-            {% trans 'Shipping method' %}
-        </th>
-        <th width="25%">
-            {% trans 'Payment method' %}
-        </th>
-    </tr>
-    <tr>
-        <td>
-            {{ current_order.invoice_address.as_html|safe }}
-        </td>
-        <td>
-            {{ current_order.shipping_address.as_html|safe }}
-        </td>
-        <td>
-            <div>
-                {{ current_order.shipping_method }}
-            </div>
-        </td>
-        <td>
-            <div>
-                {{ current_order.payment_method.name }}
-            </div>
-            {% ifequal current_order.payment_method.id 1 %}
-                <div>
-                    {{ current_order.account_number }}
-                </div>
-                <div>
-                    {{ current_order.bank_identification_code }}
-                </div>
-                <div>
-                    {{ current_order.bank_name }}
-                </div>
-                <div>
-                    {{ current_order.depositor }}
-                </div>
-            {% endifequal %}
-        </td>
-    </tr>
-</table>
-
-<table class="order lfs-default padding-top-middle">
-    <tr>
-        <th width="13%">
-            {% trans 'Image' %}
-        </th>
-        <th width="12%">
-            {% trans 'SKU' %}
-        </th>
-        <th>
-            {% trans 'Name' %}
-        </th>
-        <th class="number">
-            {% trans 'Amount' %}
-        </th>
-        <th class="number">
-            {% trans 'Price' %}
-        </th>
-        <th class="number">
-            {% trans 'Total' %}
-        </th>
-    </tr>
-    {% for item in current_order.items.all %}
+    <thead>
         <tr>
-            <td class="top">
-                {% if item.product.get_image.image %}
-                <div>
-                  <a href="{% url lfs_manage_product item.product.id %}">
-                      <img alt="{{ item.product_name }}"
-                         src="{{ item.product.get_image.image.url_100x100 }}" />
-                   </a>
-                </div>
-                {% else %}
-                &nbsp;
-                {% endif %}
+            <th colspan="4">
+                {% trans 'General' %}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="label" width="25%">
+                {% trans 'Customer name' %}:
             </td>
-            <td class="top">
-               {{ item.product_sku }}
+            <td width="25%">
+                {{ current_order.customer_firstname }} {{ current_order.customer_lastname }}
             </td>
-            <td class="top">
-                {{ item.product_name }}
-                {% for property in item.product.get_variant_properties %}
-                    <div>
-                        {{ property.title }} : {{ property.value }} {{ property.unit|safe }}
-                    </div>
-                {% endfor %}
-
-                {% for property in item.product.get_displayed_properties %}
-                    <div>
-                        {{ property.title }} : {{ property.value }} {{ property.unit|safe }}
-                    </div>
-                {% endfor %}
-
-                {% if item.product.is_configurable_product %}
-                    {% for property in item.get_properties %}
-                        <div>
-                            {{ property.title }} : {{ property.value }} {{ property.unit|safe }}
-                            {% if property.obj.is_select_field and property.display_price %}
-                                ({{ property.price|currency:request}})
-                            {% endif %}
-                        </div>
-                    {% endfor %}
-                {% endif %}
+            <td class="label" width="25%">
+                {% trans 'Date' %}:
             </td>
-            <td class="number top">
-               {{ item.amount }}
-            </td>
-            <td class="number top">
-               {{ item.product_price_gross|currency:request}}
-            </td>
-            <td class="number top">
-               {{ item.price_gross|currency:request}}
+            <td width="25%">
+                {{ current_order.created|date:_("DATETIME_FORMAT") }}
             </td>
         </tr>
-    {% endfor %}
-    <tr>
-        <td></td>
-        <td>
-            {% trans 'Shipping' %} ({{ current_order.shipping_method }})
-        </td>
-        <td class="number">
-            1
-        </td>
-        <td class="number">
-            {{ current_order.shipping_price|currency:request}}
-        </td>
-        <td class="number">
-            {{ current_order.shipping_price|currency:request}}
-        </td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>
-            {% trans 'Payment' %} ({{ current_order.payment_method }})
-        </td>
-        <td class="number">
-            1
-        </td>
-        <td class="number">
-            {{ current_order.payment_price|currency:request}}
-        </td>
-        <td class="number">
-            {{ current_order.payment_price|currency:request}}
-        </td>
-    </tr>
-    <tr class="total">
-        <td colspan="5"
-            class="number total">
-            {{ current_order.price|currency:request}}
-        </td>
-    </tr>
-    <tr>
-        <td colspan="5"
-            class="number tax">
-            <span class="total-label">{% trans 'Inclusive VAT' %}:</span>
-            {{ current_order.tax|currency:request}}
-        </td>
-    </tr>
+        <tr>
+            <td class="label">
+                {% trans 'E-mail' %}:
+            </td>
+            <td>
+                <a href="mailto:{{ current_order.customer_email }}">
+                    {{ current_order.customer_email }}
+                </a>
+            </td>
+            <td class="label">
+                {% trans 'State' %}:
+            </td>
+            <td>
+                {{ current_order.get_state_display }}
+            </td>
+        </tr>
+        <tr>
+            <td class="label">
+                {% trans 'Phone' %}:
+            </td>
+            <td>
+                {{ current_order.shipping_phone }}
+            </td>
+            <td class="label">
+                {% trans 'Total' %}:
+            </td>
+            <td>
+                {{ current_order.price|currency:request}}
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<table class="order lfs-default padding-top-middle">
+    <thead>
+        <tr>
+            <th width="25%">
+                {% trans 'Invoice address' %}
+            </th>
+            <th width="25%">
+                {% trans 'Shipping address' %}
+            </th>
+            <th width="25%">
+                {% trans 'Shipping method' %}
+            </th>
+            <th width="25%">
+                {% trans 'Payment method' %}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                {{ current_order.invoice_address.as_html|safe }}
+            </td>
+            <td>
+                {{ current_order.shipping_address.as_html|safe }}
+            </td>
+            <td>
+                <div>
+                    {{ current_order.shipping_method }}
+                </div>
+            </td>
+            <td>
+                <div>
+                    {{ current_order.payment_method.name }}
+                </div>
+                {% ifequal current_order.payment_method.id 1 %}
+                    <div>
+                        {{ current_order.account_number }}
+                    </div>
+                    <div>
+                        {{ current_order.bank_identification_code }}
+                    </div>
+                    <div>
+                        {{ current_order.bank_name }}
+                    </div>
+                    <div>
+                        {{ current_order.depositor }}
+                    </div>
+                {% endifequal %}
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<table class="order lfs-default padding-top-middle">
+    <thead>
+        <tr>
+            <th width="13%">
+                {% trans 'Image' %}
+            </th>
+            <th width="12%">
+                {% trans 'SKU' %}
+            </th>
+            <th>
+                {% trans 'Name' %}
+            </th>
+            <th class="number">
+                {% trans 'Amount' %}
+            </th>
+            <th class="number">
+                {% trans 'Price' %}
+            </th>
+            <th class="number">
+                {% trans 'Total' %}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in current_order.items.all %}
+            <tr>
+                <td class="top">
+                    {% if item.product.get_image.image %}
+                    <div>
+                      <a href="{% url lfs_manage_product item.product.id %}">
+                          <img alt="{{ item.product_name }}"
+                             src="{{ item.product.get_image.image.url_100x100 }}" />
+                       </a>
+                    </div>
+                    {% else %}
+                    &nbsp;
+                    {% endif %}
+                </td>
+                <td class="top">
+                   {{ item.product_sku }}
+                </td>
+                <td class="top">
+                    {{ item.product_name }}
+                    {% for property in item.product.get_variant_properties %}
+                        <div>
+                            {{ property.title }} : {{ property.value }} {{ property.unit|safe }}
+                        </div>
+                    {% endfor %}
+
+                    {% for property in item.product.get_displayed_properties %}
+                        <div>
+                            {{ property.title }} : {{ property.value }} {{ property.unit|safe }}
+                        </div>
+                    {% endfor %}
+
+                    {% if item.product.is_configurable_product %}
+                        {% for property in item.get_properties %}
+                            <div>
+                                {{ property.title }} : {{ property.value }} {{ property.unit|safe }}
+                                {% if property.obj.is_select_field and property.display_price %}
+                                    ({{ property.price|currency:request}})
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </td>
+                <td class="number top">
+                   {{ item.amount }}
+                </td>
+                <td class="number top">
+                   {{ item.product_price_gross|currency:request}}
+                </td>
+                <td class="number top">
+                   {{ item.price_gross|currency:request}}
+                </td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td>
+                {% trans 'Shipping' %} ({{ current_order.shipping_method }})
+            </td>
+            <td class="number">
+                1
+            </td>
+            <td class="number">
+                {{ current_order.shipping_price|currency:request}}
+            </td>
+            <td class="number">
+                {{ current_order.shipping_price|currency:request}}
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>
+                {% trans 'Payment' %} ({{ current_order.payment_method }})
+            </td>
+            <td class="number">
+                1
+            </td>
+            <td class="number">
+                {{ current_order.payment_price|currency:request}}
+            </td>
+            <td class="number">
+                {{ current_order.payment_price|currency:request}}
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr class="total">
+            <td colspan="6"
+                class="number total">
+                {{ current_order.price|currency:request}}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6"
+                class="number tax">
+                <span class="total-label">{% trans 'Inclusive VAT' %}:</span>
+                {{ current_order.tax|currency:request}}
+            </td>
+        </tr>
+    </tfoot>
 </table>
 {% if current_order.message %}
     <table class="order lfs-default padding-top-middle">
