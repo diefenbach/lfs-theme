@@ -28,29 +28,35 @@
           shipping="{% url lfs_changed_shipping_country %}">
         {% csrf_token %}
         <table class="lfs-default">
-            <tr>
-                <td>
-                    <h2>{% trans 'Invoice Address' %}</h2>
-                </td>
-                <td>
-                    <h2>{% trans 'Shipping Address' %}</h2>
-                </td>
-            </tr>
-            <tr>
-                <td id="invoice-address-inline">
-                    {{ invoice_address_inline|safe }}
-                </td>
-                <td id="shipping-address-inline">
-                    {{ shipping_address_inline|safe }}
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input class="lfs-default"
-                           type="submit"
-                           value="{% trans 'Save addresses' %}">
-                </td>
-            </tr>
+            <thead>
+                <tr>
+                    <td>
+                        <h2>{% trans 'Invoice Address' %}</h2>
+                    </td>
+                    <td>
+                        <h2>{% trans 'Shipping Address' %}</h2>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="invoice-address-inline">
+                        {{ invoice_address_inline|safe }}
+                    </td>
+                    <td id="shipping-address-inline">
+                        {{ shipping_address_inline|safe }}
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <input class="lfs-default"
+                               type="submit"
+                               value="{% trans 'Save addresses' %}">
+                    </td>
+                </tr>
+            </tfoot>
         </table>
     </form>
 {% endblock %}
