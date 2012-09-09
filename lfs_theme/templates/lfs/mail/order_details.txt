@@ -12,25 +12,25 @@
 
 {% trans 'Shipping address' %}
 ==============================================================================
-{{ order.shipping_firstname }} {{ order.shipping_lastname }}
-{{ order.shipping_company_name }}
-{{ order.shipping_line1 }}
-{{ order.shipping_line2 }}
-{{ order.shipping_code }} {{ order.shipping_city }}
-{{ order.shipping_country }}
-{{ order.shipping_phone }}
-{{ order.shipping_email }}
+{% with order.shipping_address as sa %}{{ sa.firstname }} {{ sa.lastname }}
+{{ sa.company_name }}
+{{ sa.line1 }}
+{{ sa.line2 }}
+{{ sa.zip_code }} {{ sa.city }}
+{{ sa.country }}
+{{ sa.phone }}
+{{ sa.email }}{% endwith %}
 
 {% trans 'Invoice address' %}
 ==============================================================================
-{{ order.invoice_firstname }} {{ order.invoice_lastname }}
-{{ order.invoice_company_name }}
-{{ order.invoice_line1 }}
-{{ order.invoice_line2 }}
-{{ order.invoice_code }} {{ order.invoice_city }}
-{{ order.invoice_country }}
-{{ order.invoice_phone }}
-{{ order.invoice_email }}
+{% with order.invoice_address as ia %}{{ ia.firstname }} {{ ia.lastname }}
+{{ ia.company_name }}
+{{ ia.line1 }}
+{{ ia.line2 }}
+{{ ia.zip_code }} {{ ia.city }}
+{{ ia.country }}
+{{ ia.phone }}
+{{ ia.email }}{% endwith %}
 
 {% trans 'Shipping method' %}:
 ==============================================================================

@@ -77,62 +77,66 @@
     </tr>
     <tr>
         <td>
-            <div>
-                {{ order.shipping_firstname }}
-            </div>
-            <div>
-                {{ order.shipping_lastname }}
-            </div>
-            <div>
-                {{ order.shipping_company_name }}
-            </div>
-            <div>
-                {{ order.shipping_line1 }}
-            </div>
-            <div>
-                {{ order.shipping_line2 }}
-            </div>
-            <div>
-                {{ order.shipping_code }} {{ order.shipping_city }}
-            </div>
-            <div>
-                {{ order.shipping_country }}
-            </div>
-            <div>
-                {{ order.shipping_phone }}
-            </div>
-            <div>
-                {{ order.shipping_email }}
-            </div>
+            {% with order.shipping_address as sa %}
+                <div>
+                    {{ sa.firstname }}
+                </div>
+                <div>
+                    {{ sa.lastname }}
+                </div>
+                <div>
+                    {{ sa.company_name }}
+                </div>
+                <div>
+                    {{ sa.line1 }}
+                </div>
+                <div>
+                    {{ sa.line2 }}
+                </div>
+                <div>
+                    {{ sa.zip_code }} {{ sa.city }}
+                </div>
+                <div>
+                    {{ sa.country }}
+                </div>
+                <div>
+                    {{ sa.phone }}
+                </div>
+                <div>
+                    {{ sa.email }}
+                </div>
+            {% endwith %}
         </td>
         <td>
-            <div>
-                {{ order.invoice_firstname }}
-            </div>
-            <div>
-                {{ order.invoice_lastname }}
-            </div>
-            <div>
-                {{ order.invoice_company_name }}
-            </div>
-            <div>
-                {{ order.invoice_line1 }}
-            </div>
-            <div>
-                {{ order.invoice_line2 }}
-            </div>
-            <div>
-                {{ order.invoice_code }} {{ order.invoice_city }}
-            </div>
-            <div>
-                {{ order.invoice_country }}
-            </div>
-            <div>
-                {{ order.invoice_phone }}
-            </div>
-            <div>
-                {{ order.invoice_email }}
-            </div>
+            {% with order.invoice_address as ia %}
+                <div>
+                    {{ ia.firstname }}
+                </div>
+                <div>
+                    {{ ia.lastname }}
+                </div>
+                <div>
+                    {{ ia.company_name }}
+                </div>
+                <div>
+                    {{ ia.line1 }}
+                </div>
+                <div>
+                    {{ ia.line2 }}
+                </div>
+                <div>
+                    {{ ia.zip_code }} {{ ia.city }}
+                </div>
+                <div>
+                    {{ ia.country }}
+                </div>
+                <div>
+                    {{ ia.phone }}
+                </div>
+                <div>
+                    {{ ia.email }}
+                </div>
+            {% endwith %}
         </td>
         <td>
             <div>
