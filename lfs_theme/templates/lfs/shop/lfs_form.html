@@ -1,4 +1,4 @@
-{% if lfs_form_is_form %}{{ form.non_field_errors }}{% endif %}
+{% if lfs_form_is_form %}{{ lfs_form.non_field_errors }}{% endif %}
 
 {% for field in lfs_form %}
     <div class="field clearfix {% if field.field.required %}required{% endif %}">
