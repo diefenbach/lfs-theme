@@ -90,9 +90,11 @@
                 <div>
                     {{ sa.line1 }}
                 </div>
-                <div>
-                    {{ sa.line2 }}
-                </div>
+                {% if sa.line2 %}
+                    <div>
+                        {{ sa.line2 }}
+                    </div>
+                {% endif %}
                 <div>
                     {{ sa.zip_code }} {{ sa.city }}
                 </div>
@@ -121,9 +123,11 @@
                 <div>
                     {{ ia.line1 }}
                 </div>
-                <div>
-                    {{ ia.line2 }}
-                </div>
+                {% if ia.line2 %}
+                    <div>
+                        {{ ia.line2 }}
+                    </div>
+                {% endif %}
                 <div>
                     {{ ia.zip_code }} {{ ia.city }}
                 </div>

@@ -14,8 +14,8 @@
 ==============================================================================
 {% with order.shipping_address as sa %}{{ sa.firstname }} {{ sa.lastname }}
 {{ sa.company_name }}
-{{ sa.line1 }}
-{{ sa.line2 }}
+{{ sa.line1 }}{% if sa.line2 %}
+{{ sa.line2 }}{% endif %}
 {{ sa.zip_code }} {{ sa.city }}
 {{ sa.country }}
 {{ sa.phone }}
@@ -25,8 +25,8 @@
 ==============================================================================
 {% with order.invoice_address as ia %}{{ ia.firstname }} {{ ia.lastname }}
 {{ ia.company_name }}
-{{ ia.line1 }}
-{{ ia.line2 }}
+{{ ia.line1 }}{% if ia.line2 %}
+{{ ia.line2 }}{% endif %}
 {{ ia.zip_code }} {{ ia.city }}
 {{ ia.country }}
 {{ ia.phone }}
