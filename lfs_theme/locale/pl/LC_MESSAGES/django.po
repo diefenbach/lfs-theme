@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: LFS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-08 22:45+0200\n"
-"PO-Revision-Date: 2012-10-04 21:32+0100\n"
+"PO-Revision-Date: 2012-10-21 14:06+0100\n"
 "Last-Translator: Maciej Wiśniowski <pigletto@gmail.com>\n"
 "Language-Team: Natcam <hello@natcam.pl>\n"
 "Language: pl\n"
@@ -294,7 +294,7 @@ msgstr "Jesteś tutaj"
 #: templates/registration/password_reset_done.html:12
 #: templates/registration/password_reset_form.html:14
 msgid "Home"
-msgstr "Strona domowa"
+msgstr "Strona startowa"
 
 #: templates/lfs/catalog/packing_result.html:4
 msgid "This complies to"
