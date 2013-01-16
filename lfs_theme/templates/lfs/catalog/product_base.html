@@ -39,7 +39,13 @@
     </div>
 
     <div id="product-inline">
-        {{ product_inline|safe }}
+        <form id="product-form"
+              action="{% url lfs.catalog.views.product_form_dispatcher %}"
+              data="{% url lfs_select_variant_from_properties %}"
+              method="post">
+            {% csrf_token %}
+            {{ product_inline|safe }}
+        </form>
     </div>
 
     <a name="reviews"></a>

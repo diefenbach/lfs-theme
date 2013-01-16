@@ -2,345 +2,337 @@
 {% load lfs_tags %}
 {% load reviews_tags %}
 
-<form id="product-form"
-      action="{% url lfs.catalog.views.product_form_dispatcher %}"
-      data="{% url lfs_select_variant_from_properties %}"
-      method="post">
-    {% csrf_token %}
-
-    {# Images #}
-    <div class="product-images">
-        <div class="main-image">
-            {% if product.get_image %}
-                <a href="{{ product.get_image.image.url_400x400 }}"
-                   class="product-image">
-                    <img src="{{ product.get_image.image.url_200x200 }}"
-                         title="{{ product.get_image.title }}"
-                         alt="{{ product.get_image.title }}" />
-                </a>
-            {% endif %}
-        </div>
-        <div class="sub-images">
-            {% for image in product.get_sub_images %}
-                <a href="{{ image.image.url_400x400 }}"
-                   class="product-image">
-                    <img src="{{ image.image.url_60x60 }}"
-                         title="{{ image.title }}"
-                         alt="{{ image.title }}" />
-                </a>
-            {% endfor %}
-        </div>
-    </div>
-
-    <h1 class="product-title">
-        {{ product.get_name }}
-    </h1>
-
-    {# Displayed Properties #}
-    <div class="product-properties">
-        {% for property in product.get_displayed_properties %}
-            <div>
-                {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
-            </div>
-        {% endfor %}
-    </div>
-
-    {% shipping product %}
-    {% average_for_instance product %}
-
-    {# Prices #}
-    <div class="prices">
-        {% if for_sale %}
-            <div>
-                <span class="for-sale-standard-price" nowrap="nowrap">
-                    <span class="for-sale-standard-price-value">
-                        {{ product|get_standard_price_gross:request|currency:request }}
-                    </span>
-                    * {% if price_unit %}/ {{ price_unit }}{% endif %}</span>
-                <span class="for-sale-price" nowrap="nowrap">
-                    <span class="for-sale-price-value">
-                        {{ product|get_for_sale_price_gross:request|currency:request }}
-                    </span>
-                    * {% if price_unit %}/ {{ price_unit }}{% endif %}
-                </span>
-            </div>
-            {% if product.get_active_base_price %}
-                <div class="base-price">
-                    {{ product|get_base_price_gross:request|currency:request }} / {{ product.get_base_price_unit }}*
-                </div>
-            {% endif %}
-            <div class="price-disclaimer">
-                {% if price_includes_tax %}
-                    {% trans '*inc. VAT' %}
-                {% else  %}
-                    {% trans '*exc. VAT' %}
-                {% endif %}
-            </div>
-        {% else %}
-            <div class="standard-price"
-                  nowrap="nowrap">
-                  <span class="standard-price-value">{{ product|get_price_gross:request|currency:request }}</span>* {% if price_unit %}/ {{ price_unit }}{% endif %}
-            </div>
-            {% if product.get_active_base_price %}
-                <div class="base-price">
-                    {{ product|get_base_price_gross:request|currency:request }} / {{ product.get_base_price_unit }}*
-                </div>
-            {% endif %}
-            <div class="price-disclaimer">
-                {% if price_includes_tax %}
-                    {% trans '*inc. VAT' %}
-                {% else  %}
-                    {% trans '*exc. VAT' %}
-                {% endif %}
-            </div>
+{# Images #}
+<div class="product-images">
+    <div class="main-image">
+        {% if product.get_image %}
+            <a href="{{ product.get_image.image.url_400x400 }}"
+               class="product-image">
+                <img src="{{ product.get_image.image.url_200x200 }}"
+                     title="{{ product.get_image.title }}"
+                     alt="{{ product.get_image.title }}" />
+            </a>
         {% endif %}
     </div>
+    <div class="sub-images">
+        {% for image in product.get_sub_images %}
+            <a href="{{ image.image.url_400x400 }}"
+               class="product-image">
+                <img src="{{ image.image.url_60x60 }}"
+                     title="{{ image.title }}"
+                     alt="{{ image.title }}" />
+            </a>
+        {% endfor %}
+    </div>
+</div>
 
-    {# Configurable Properties #}
-    {% if product.is_configurable_product %}
-        <table class="cp-properties"
-               id="cp-url"
-               data="{% url lfs_calculate_price product.id %}">
+<h1 class="product-title">
+    {{ product.get_name }}
+</h1>
 
-            {% for property in properties %}
-                <tr>
-                    {% if property.obj.is_select_field %}
-                        <td class="property-label">
-                            {{ property.title }}:
-                        </td>
-                        <td>
-                            <select class="cp-property"
-                                    name="property-{{ property.id }}">
-                                {% if not property.obj.required %}
-                                    <option>---</option>
-                                {% endif %}
-                                {% for option in property.options %}
-                                    <option value="{{ option.id }}"
-                                        {% if option.selected %}selected="selected"{% endif %}>
-                                        {{ option.name }}
+{# Displayed Properties #}
+<div class="product-properties">
+    {% for property in product.get_displayed_properties %}
+        <div>
+            {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
+        </div>
+    {% endfor %}
+</div>
 
-                                        {% if property.display_price %}
-                                         / {{ option.price|currency:request}}
-                                        {% endif %}
-                                    </option>
-                                {% endfor %}
-                            </select>
-                        </td>
-                        <td></td>
-                    {% else %}
-                        <td class="property-label">
-                            {{ property.title }}:
-                        </td>
-                        <td class="right">
-                            {% if property.obj.is_text_field %}
-                                <input class="product-input-field text-field" type="input" size="15" maxlength="100" name="property-{{ property.id }}" value="{{ property.value }}" />
-                            {% else %}
-                                <input class="right product-input-field number-field" type="input" size="6" maxlength="9" name="property-{{ property.id }}" value="{{ property.value }}" />
-                            {% endif %}
-                        </td>
-                        <td>
-                            {{ property.unit }}
-                        </td>
-                    {% endif %}
-                </tr>
-            {% endfor %}
-        </table>
+{% shipping product %}
+{% average_for_instance product %}
+
+{# Prices #}
+<div class="prices">
+    {% if for_sale %}
+        <div>
+            <span class="for-sale-standard-price" nowrap="nowrap">
+                <span class="for-sale-standard-price-value">
+                    {{ product|get_standard_price_gross:request|currency:request }}
+                </span>
+                * {% if price_unit %}/ {{ price_unit }}{% endif %}</span>
+            <span class="for-sale-price" nowrap="nowrap">
+                <span class="for-sale-price-value">
+                    {{ product|get_for_sale_price_gross:request|currency:request }}
+                </span>
+                * {% if price_unit %}/ {{ price_unit }}{% endif %}
+            </span>
+        </div>
+        {% if product.get_active_base_price %}
+            <div class="base-price">
+                {{ product|get_base_price_gross:request|currency:request }} / {{ product.get_base_price_unit }}*
+            </div>
+        {% endif %}
+        <div class="price-disclaimer">
+            {% if price_includes_tax %}
+                {% trans '*inc. VAT' %}
+            {% else  %}
+                {% trans '*exc. VAT' %}
+            {% endif %}
+        </div>
+    {% else %}
+        <div class="standard-price"
+              nowrap="nowrap">
+              <span class="standard-price-value">{{ product|get_price_gross:request|currency:request }}</span>* {% if price_unit %}/ {{ price_unit }}{% endif %}
+        </div>
+        {% if product.get_active_base_price %}
+            <div class="base-price">
+                {{ product|get_base_price_gross:request|currency:request }} / {{ product.get_base_price_unit }}*
+            </div>
+        {% endif %}
+        <div class="price-disclaimer">
+            {% if price_includes_tax %}
+                {% trans '*inc. VAT' %}
+            {% else  %}
+                {% trans '*exc. VAT' %}
+            {% endif %}
+        </div>
     {% endif %}
+</div>
 
-    <br clear="both">
-    {% if product.is_deliverable %}
-        <table align="right" class="buttons">
+{# Configurable Properties #}
+{% if product.is_configurable_product %}
+    <table class="cp-properties"
+           id="cp-url"
+           data="{% url lfs_calculate_price product.id %}">
+
+        {% for property in properties %}
             <tr>
-                {% if product.get_active_packing_unit %}
-                    <td>
-                        <div class="product-quantity packing-unit"
-                            id="packing-url"
-                            data="{% url lfs_calculate_packing product.id %}">
-                            <input class="number quantity"
-                                   name="quantity"
-                                   size="3"
-                                   type="text"
-                                   value="{{ quantity }}" /> {{ unit }}
-                        </div>
+                {% if property.obj.is_select_field %}
+                    <td class="property-label">
+                        {{ property.title }}:
                     </td>
-                {% else %}
                     <td>
-                        {% if unit %}
-                            {{ unit }}:
+                        <select class="cp-property"
+                                name="property-{{ property.id }}">
+                            {% if not property.obj.required %}
+                                <option>---</option>
+                            {% endif %}
+                            {% for option in property.options %}
+                                <option value="{{ option.id }}"
+                                    {% if option.selected %}selected="selected"{% endif %}>
+                                    {{ option.name }}
+
+                                    {% if property.display_price %}
+                                     / {{ option.price|currency:request}}
+                                    {% endif %}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                    <td></td>
+                {% else %}
+                    <td class="property-label">
+                        {{ property.title }}:
+                    </td>
+                    <td class="right">
+                        {% if property.obj.is_text_field %}
+                            <input class="product-input-field text-field" type="input" size="15" maxlength="100" name="property-{{ property.id }}" value="{{ property.value }}" />
                         {% else %}
-                            {% trans "Quantity" %}:
+                            <input class="right product-input-field number-field" type="input" size="6" maxlength="9" name="property-{{ property.id }}" value="{{ property.value }}" />
                         {% endif %}
                     </td>
-                    <td class="product-quantity">
-                        <input class="number"
+                    <td>
+                        {{ property.unit }}
+                    </td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+
+<br clear="both">
+{% if product.is_deliverable %}
+    <table align="right" class="buttons">
+        <tr>
+            {% if product.get_active_packing_unit %}
+                <td>
+                    <div class="product-quantity packing-unit"
+                        id="packing-url"
+                        data="{% url lfs_calculate_packing product.id %}">
+                        <input class="number quantity"
                                name="quantity"
                                size="3"
                                type="text"
-                               value="{{ quantity }}" />
-                    </td>
-                {% endif %}
-                <td nowrap="nowrap">
-                    <button class="emphasized"
-                           type="submit"
-                           name="add-to-cart">{% trans 'Add to cart' %}</button>
+                               value="{{ quantity }}" /> {{ unit }}
+                    </div>
                 </td>
-            </tr>
-        </table>
-        <div class="packing-result">
-            {{ packing_result }}
-        </div>
-    {% else %}
-        <button class="emphasized"
-                onclick="window.location='{% url lfs_contact_form %}'; return false"
-                name="">{% trans 'Send request' %}</button>
-    {% endif %}
-
-    <p class="product-description">
-        {{ product.get_description|safe}}
-    </p>
-
-    {# Variants #}
-    {% if product.is_variant %}
-        <div class="variants">
-            <h1 class="section">{% trans 'Variants' %}</h1>
-            {# List #}
-            {% if display_variants_list %}
-                <table class="product-variants lfs-default"
-                       data="{% url lfs_select_variant %}">
-                    <tr>
-                        <th></th>
-                        <th>
-                            {% trans 'Name' %}
-                        </th>
-                        {% for property in properties %}
-                            <th>
-                                {{ property.title }}
-                            </th>
-                        {% endfor %}
-                        <th class="number">
-                            {% trans 'Price' %}
-                        </th>
-                    </tr>
-                    {% for product_variant in variants %}
-                        <tr>
-                            <td class="select">
-                                <input type="radio"
-                                       class="variant"
-                                       name="variant_id"
-                                       value="{{ product_variant.id }}"
-                                       {% ifequal product_variant.id product.id %}checked="checked"{% endifequal %}  />
-                            </td>
-                            <td>
-                                {{ product_variant.get_name }}
-                            </td>
-                            {% for property in product_variant.get_variant_properties %}
-                                <td>
-                                    {{ property.value }}
-                                </td>
-                            {% endfor %}
-                            <td class="number"
-                            nowrap="nowrap">
-                                {% if product_variant.get_for_sale %}
-                                    <span class="for-sale-standard-price">
-                                        {{ product_variant|get_standard_price:request|currency:request}}
-                                    </span>
-                                    {{ product_variant|get_for_sale_price:request|currency:request}}
-                                {% else %}
-                                    {{ product_variant|get_price:request|currency:request}}
-                                {% endif %}
-                            </td>
-                        </tr>
-                    {% endfor %}
-                </table>
             {% else %}
-                <div>
-                    {% for property in properties %}
-                        <div>
-                            <span class="property-label">
-                                {{ property.title }}:
-                            </span>
-                            <select class="property"
-                                    name="property_{{ property.id }}">
-                                {% for option in property.options %}
-                                    <option value="{{ option.id }}"
-                                            {% if option.selected %}selected="selected"{% endif %}>
-                                        {{ option.name }}
-                                    </option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                    {% endfor %}
-                </div>
+                <td>
+                    {% if unit %}
+                        {{ unit }}:
+                    {% else %}
+                        {% trans "Quantity" %}:
+                    {% endif %}
+                </td>
+                <td class="product-quantity">
+                    <input class="number"
+                           name="quantity"
+                           size="3"
+                           type="text"
+                           value="{{ quantity }}" />
+                </td>
             {% endif %}
-        </div>
-    {% endif %}
+            <td nowrap="nowrap">
+                <button class="emphasized"
+                       type="submit"
+                       name="add-to-cart">{% trans 'Add to cart' %}</button>
+            </td>
+        </tr>
+    </table>
+    <div class="packing-result">
+        {{ packing_result }}
+    </div>
+{% else %}
+    <button class="emphasized"
+            onclick="window.location='{% url lfs_contact_form %}'; return false"
+            name="">{% trans 'Send request' %}</button>
+{% endif %}
 
-    {# Attachments #}
-    {% if attachments %}
-        <div class="attachments">
-            <h1 class="section">{% trans 'Attachments' %}</h1>
-            {% for attachment in attachments %}
-            <div class="item">
-                <div class="title">
-                    <a title="{{ attachment.title}}" href="{{ attachment.get_url }}">
-                        {{ attachment.title}}
-                    </a>
-                </div>
-                {% if attachment.description %}
-                <div class="description">
-                    {{ attachment.description }}
-                </div>
-                {% endif %}
-            </div>
-            {% endfor %}
-        </div>
-    {% endif %}
+<p class="product-description">
+    {{ product.get_description|safe}}
+</p>
 
-    {# Accessories #}
-    {% if product_accessories %}
-        <div class="accessories">
-            <h1 class="section">{% trans 'Accessories' %}</h1>
-            <table class="product-accessories lfs-default">
+{# Variants #}
+{% if product.is_variant %}
+    <div class="variants">
+        <h1 class="section">{% trans 'Variants' %}</h1>
+        {# List #}
+        {% if display_variants_list %}
+            <table class="product-variants lfs-default"
+                   data="{% url lfs_select_variant %}">
                 <tr>
                     <th></th>
-                    <th>{% trans 'Name' %}</th>
-                    <th class="number">{% trans 'Quantity' %}</th>
-                    <th class="number">{% trans 'Price' %}</th>
-                    <th class="number last">{% trans 'Total' %}</th>
+                    <th>
+                        {% trans 'Name' %}
+                    </th>
+                    {% for property in properties %}
+                        <th>
+                            {{ property.title }}
+                        </th>
+                    {% endfor %}
+                    <th class="number">
+                        {% trans 'Price' %}
+                    </th>
                 </tr>
-                {% for product_accessory in product_accessories %}
+                {% for product_variant in variants %}
                     <tr>
-                        <td class="checkbox-left">
-                            <input type="checkbox"
-                                   name="accessory-{{ product_accessory.accessory.id }}"/>
+                        <td class="select">
+                            <input type="radio"
+                                   class="variant"
+                                   name="variant_id"
+                                   value="{{ product_variant.id }}"
+                                   {% ifequal product_variant.id product.id %}checked="checked"{% endifequal %}  />
                         </td>
                         <td>
-                            <a href="{{ product_accessory.accessory.get_absolute_url }}">
-                                {{ product_accessory.accessory.get_name|truncatewords_html:5 }}
-                            </a>
+                            {{ product_variant.get_name }}
                         </td>
-                        <td class="number">
-                            <input type="hidden"
-                                   name="quantity-{{ product_accessory.accessory.id }}"
-                                   value="{{ product_accessory.quantity }}" />
-                            {{ product_accessory.quantity|quantity }}
-                        </td>
+                        {% for property in product_variant.get_variant_properties %}
+                            <td>
+                                {{ property.value }}
+                            </td>
+                        {% endfor %}
                         <td class="number"
-                            nowrap="nowrap">
-                            {{ product_accessory.accessory|get_price:request|currency:request}}
-                        </td>
-                        <td class="number"
-                             nowrap="nowrap">
-                            {{ product_accessory|get_price:request|currency:request}}
+                        nowrap="nowrap">
+                            {% if product_variant.get_for_sale %}
+                                <span class="for-sale-standard-price">
+                                    {{ product_variant|get_standard_price:request|currency:request}}
+                                </span>
+                                {{ product_variant|get_for_sale_price:request|currency:request}}
+                            {% else %}
+                                {{ product_variant|get_price:request|currency:request}}
+                            {% endif %}
                         </td>
                     </tr>
                 {% endfor %}
             </table>
+        {% else %}
+            <div>
+                {% for property in properties %}
+                    <div>
+                        <span class="property-label">
+                            {{ property.title }}:
+                        </span>
+                        <select class="property"
+                                name="property_{{ property.id }}">
+                            {% for option in property.options %}
+                                <option value="{{ option.id }}"
+                                        {% if option.selected %}selected="selected"{% endif %}>
+                                    {{ option.name }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+{% endif %}
+
+{# Attachments #}
+{% if attachments %}
+    <div class="attachments">
+        <h1 class="section">{% trans 'Attachments' %}</h1>
+        {% for attachment in attachments %}
+        <div class="item">
+            <div class="title">
+                <a title="{{ attachment.title}}" href="{{ attachment.get_url }}">
+                    {{ attachment.title}}
+                </a>
+            </div>
+            {% if attachment.description %}
+            <div class="description">
+                {{ attachment.description }}
+            </div>
+            {% endif %}
         </div>
-    {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}
 
-    <input type="hidden"
-           name="product_id"
-           value="{{ product.id }}" />
+{# Accessories #}
+{% if product_accessories %}
+    <div class="accessories">
+        <h1 class="section">{% trans 'Accessories' %}</h1>
+        <table class="product-accessories lfs-default">
+            <tr>
+                <th></th>
+                <th>{% trans 'Name' %}</th>
+                <th class="number">{% trans 'Quantity' %}</th>
+                <th class="number">{% trans 'Price' %}</th>
+                <th class="number last">{% trans 'Total' %}</th>
+            </tr>
+            {% for product_accessory in product_accessories %}
+                <tr>
+                    <td class="checkbox-left">
+                        <input type="checkbox"
+                               name="accessory-{{ product_accessory.accessory.id }}"/>
+                    </td>
+                    <td>
+                        <a href="{{ product_accessory.accessory.get_absolute_url }}">
+                            {{ product_accessory.accessory.get_name|truncatewords_html:5 }}
+                        </a>
+                    </td>
+                    <td class="number">
+                        <input type="hidden"
+                               name="quantity-{{ product_accessory.accessory.id }}"
+                               value="{{ product_accessory.quantity }}" />
+                        {{ product_accessory.quantity|quantity }}
+                    </td>
+                    <td class="number"
+                        nowrap="nowrap">
+                        {{ product_accessory.accessory|get_price:request|currency:request}}
+                    </td>
+                    <td class="number"
+                         nowrap="nowrap">
+                        {{ product_accessory|get_price:request|currency:request}}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endif %}
 
-</form>
+<input type="hidden"
+       name="product_id"
+       value="{{ product.id }}" />
