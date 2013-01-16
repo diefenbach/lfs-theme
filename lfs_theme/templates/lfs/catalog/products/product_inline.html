@@ -1,13 +1,7 @@
 {% load i18n %}
 {% load lfs_tags %}
 {% load reviews_tags %}
-
-<form id="product-form"
-      action="{% url lfs.catalog.views.product_form_dispatcher %}"
-      data="{% url lfs_select_variant_from_properties %}"
-      method="post">
-    {% csrf_token %}
-
+<div id="product-inline">
     {# Images #}
     <div class="product-images">
         <div class="main-image">
@@ -342,5 +336,4 @@
     <input type="hidden"
            name="product_id"
            value="{{ product.id }}" />
-
-</form>
+</div>
