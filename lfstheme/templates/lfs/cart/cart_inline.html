@@ -139,7 +139,7 @@
                         - {{ discount.price_net|currency:request }}
                     </td>
                     <td class="number">
-                        - {{ discount.get_tax|currency:request }}
+                        - {{ discount.tax|currency:request }}
                     </td>
                     <td class="number">
                         - {{ discount.price_gross|currency:request }}
