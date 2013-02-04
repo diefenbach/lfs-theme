@@ -167,7 +167,7 @@
             {% endifequal %}
             {% ifequal order.payment_method.id 3 %}
                 <div>
-                    <a href="{{ order|get_pay_link:None }}"
+                    <a href="{{ order|get_pay_link }}"
                        class="order-pay-link">{% trans 'Pay now' %}</a>
                 </div>
             {% endifequal %}
