@@ -25,7 +25,7 @@
         </div>
 
         <form class="authenticate"
-              action="{% url lfs_checkout_login %}"
+              action="{% url 'lfs_checkout_login' %}"
               method="post">
             {% csrf_token %}
             <div class="form-wrapper">
@@ -40,12 +40,12 @@
 
             <input type="hidden"
                    name="next"
-                   value="{% url lfs_checkout %}" />
+                   value="{% url 'lfs_checkout' %}" />
 
             <button type="submit"
                     class="button checkout-button emphasized left"
-                    href="{% url lfs_checkout %}">{% trans 'Login' %}</button>
-            <a class="forgot-password-link" href="{% url lfs_password_reset %}">{% trans 'Forgot password?' %}</a>
+                    href="{% url 'lfs_checkout' %}">{% trans 'Login' %}</button>
+            <a class="forgot-password-link" href="{% url 'lfs_password_reset' %}">{% trans 'Forgot password?' %}</a>
         </form>
     </div>
 
@@ -57,7 +57,7 @@
                 {% trans 'If you are not already a customer you can register in order to store your address data and to follow the state of your orders.' %}
             </div>
 
-            <form action="{% url lfs_checkout_login %}"
+            <form action="{% url 'lfs_checkout_login' %}"
                   method="post">
                     {% csrf_token %}
                     <div class="form-wrapper">
@@ -71,11 +71,11 @@
 
                     <input type="hidden"
                            name="next"
-                           value="{% url lfs_checkout %}" />
+                           value="{% url 'lfs_checkout' %}" />
 
                     <button class="button register-button emphasized left"
                             type="submit"
-                            href="{% url lfs_checkout %}">{% trans "Register" %}</button>
+                            href="{% url 'lfs_checkout' %}">{% trans "Register" %}</button>
             </form>
 
         </div>
@@ -92,7 +92,7 @@
             <div class="form-wrapper">&nbsp;</div>
 
             <a class="button checkout-button emphasized left"
-               href="{% url lfs_checkout %}">
+               href="{% url 'lfs_checkout' %}">
                {% trans 'Checkout' %}
             </a>
         </div>

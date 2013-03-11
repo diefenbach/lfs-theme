@@ -94,7 +94,7 @@
     {% if product.is_configurable_product %}
         <table class="cp-properties"
                id="cp-url"
-               data="{% url lfs_calculate_price product.id %}">
+               data="{% url 'lfs_calculate_price' product.id %}">
 
             {% for property in properties %}
                 <tr>
@@ -149,7 +149,7 @@
                     <td>
                         <div class="product-quantity packing-unit"
                             id="packing-url"
-                            data="{% url lfs_calculate_packing product.id %}">
+                            data="{% url 'lfs_calculate_packing' product.id %}">
                             <input class="number quantity"
                                    name="quantity"
                                    size="3"
@@ -185,7 +185,7 @@
         </div>
     {% else %}
         <button class="emphasized"
-                onclick="window.location='{% url lfs_contact_form %}'; return false"
+                onclick="window.location='{% url 'lfs_contact_form' %}'; return false"
                 name="">{% trans 'Send request' %}</button>
     {% endif %}
 
@@ -200,7 +200,7 @@
             {# List #}
             {% if display_variants_list %}
                 <table class="product-variants lfs-default"
-                       data="{% url lfs_select_variant %}">
+                       data="{% url 'lfs_select_variant' %}">
                     <tr>
                         <th></th>
                         <th>

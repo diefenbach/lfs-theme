@@ -7,7 +7,7 @@
         <h2>{% trans "Please, review the articles you've bought in our shop." %}</h2>
         {% for item in order.items.all %}
             <div>
-                <a href="http://{{ site.domain }}{% url reviews_add content_type_id item.product.id %}">{{ item.product_name }}</a>
+                <a href="http://{{ site.domain }}{% url 'reviews_add' content_type_id item.product.id %}">{{ item.product_name }}</a>
             </div>
         {% endfor %}
 

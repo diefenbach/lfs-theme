@@ -6,16 +6,16 @@
     <h1>{% trans 'Your Data' %}</h1>
 
     <h2>{% trans 'E-Mail' %}</h2>
-    <form action="{% url lfs_save_email %}"
+    <form action="{% url 'lfs_save_email' %}"
           method="post">
         <table>
             {{email_form}}
         </table>
-        
+
         <input type="hidden"
                name="action"
                value="email" />
-        
+
         <input class="lfs-default"
                type="submit"
                value="{% trans 'Save e-mail address' %}">
@@ -27,7 +27,7 @@
         <h2>{% trans 'Address' %}</h2>
     {% endif %}
 
-    <form action="{% url lfs_save_addresses %}"
+    <form action="{% url 'lfs_save_addresses' %}"
           method="post">
         <table class="lfs-default">
             {% if show_shipping_address %}
@@ -51,7 +51,7 @@
                         <table>
                             {{shipping_address_form}}
                         </table>
-                    </td>                                    
+                    </td>
                 {% endif %}
             </tr>
         </table>
@@ -70,11 +70,11 @@
         {% endif %}
 
     </form>
-    
+
     {% if bank_account_form %}
         <h2>{% trans 'Bank account' %}</h2>
 
-        <form action="{% url lfs_my_data %}"
+        <form action="{% url 'lfs_my_data' %}"
               method="post">
             <table>
                 {{bank_account_form}}
@@ -85,7 +85,7 @@
             <input class="lfs-default"
                    type="submit"
                    value="{% trans 'Save bank account' %}">
-        </form>        
+        </form>
     {% endif %}
-    
+
 {% endblock %}

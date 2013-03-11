@@ -21,7 +21,7 @@
         </p>
     {% else %}
         <div class="site-actions">
-            <form action="{% url lfs_my_orders %}"
+            <form action="{% url 'lfs_my_orders' %}"
                   method="post">
                 {% csrf_token %}
                 <select name="date-filter">
@@ -56,10 +56,10 @@
                 {% for order in orders %}
                     <tr>
                         <td>
-                            <a href="{% url lfs_my_order order.id %}">{{ order.number|default_if_none:"-" }}</a>
+                            <a href="{% url 'lfs_my_order' order.id %}">{{ order.number|default_if_none:"-" }}</a>
                         </td>
                         <td>
-                            <a href="{% url lfs_my_order order.id %}">
+                            <a href="{% url 'lfs_my_order' order.id %}">
                                 {{ order.created|date:_("DATETIME_FORMAT") }}
                             </a>
                         </td>
