@@ -227,9 +227,9 @@
                             <td>
                                 {{ product_variant.get_name }}
                             </td>
-                            {% for property in product_variant.get_variant_properties %}
+                            {% for property in product_variant.get_variant_properties_for_parent %}
                                 <td>
-                                    {{ property.value }}
+                                    {{ property.selected_option_name }}
                                 </td>
                             {% endfor %}
                             <td class="number"
