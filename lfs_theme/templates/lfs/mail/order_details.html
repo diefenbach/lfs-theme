@@ -167,7 +167,7 @@
             {% endifequal %}
             {% if order.payment_method.id == 3 and order.can_be_paid %}
                 <div>
-                    <a href="{{ order|get_pay_link }}"
+                    <a href="{{ order|get_pay_link:request }}"
                        class="order-pay-link">{% trans 'Pay now' %}</a>
                 </div>
             {% endif %}

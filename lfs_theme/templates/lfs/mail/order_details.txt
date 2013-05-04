@@ -42,7 +42,7 @@
 {{ order.account_number }}
 {{ order.bank_identification_code }}
 {{ order.bank_name }}
-{{ order.depositor }}{% endifequal %}{% if order.payment_method.id == 3 and order.can_be_paid %} {% trans 'Pay now' %}: {{ order|get_pay_link }}{% endif %}
+{{ order.depositor }}{% endifequal %}{% if order.payment_method.id == 3 and order.can_be_paid %} {% trans 'Pay now' %}: {{ order|get_pay_link:request }}{% endif %}
 
 {% trans 'Order' %}:
 ==============================================================================
