@@ -156,7 +156,7 @@
                 {{ shipping_costs.price_net|currency:request}}
             </td>
             <td class="number">
-                ({{ shipping_costs.tax|currency:request}})
+                {{ shipping_costs.tax|currency:request}}
             </td>
             <td class="number">
                 {{ shipping_costs.price_gross|currency:request}}
