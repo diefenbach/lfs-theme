@@ -153,11 +153,13 @@
             </td>
             <td></td>
             <td class="number">
-                {{ shipping_price|currency:request}}
+                {{ shipping_costs.price_net|currency:request}}
             </td>
-            <td></td>
             <td class="number">
-                {{ shipping_price|currency:request}}
+                ({{ shipping_costs.tax|currency:request}})
+            </td>
+            <td class="number">
+                {{ shipping_costs.price_gross|currency:request}}
             </td>
         </tr>
 
