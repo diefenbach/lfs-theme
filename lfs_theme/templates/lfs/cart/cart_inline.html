@@ -175,7 +175,6 @@
             <tr>
                 <td></td>
                 <td></td>
-                <td></td>
                 <td class="left">
                     {% trans 'Country' %}:
                 </td>
@@ -190,11 +189,11 @@
                         {% endfor %}
                     </select>
                 </td>
+                <td></td>
                 <td colspan="2"></td>
                 <td></td>
             </tr>
             <tr>
-                <td></td>
                 <td></td>
                 <td></td>
                 <td class="left">
@@ -211,16 +210,22 @@
                         {% endfor %}
                     </select>
                 </td>
-                <td></td>
                 <td class="number"
                     nowrap="nowrap">
-                    {{ shipping_price|currency:request }}
+                    {{ shipping_costs.price_net|currency:request }}
+                </td>
+                <td class="number"
+                    nowrap="nowrap">
+                    {{ shipping_costs.tax|currency:request }}
+                </td>
+                <td class="number"
+                    nowrap="nowrap">
+                    {{ shipping_costs.price_gross|currency:request }}
                 </td>
                 <td></td>
             </tr>
 
             <tr>
-                <td></td>
                 <td></td>
                 <td></td>
                 <td class="left">
@@ -238,6 +243,7 @@
                     </select>
                 </td>
                 <td></td>
+                <td></td>
                 <td class="number"
                     nowrap="nowrap">
                     {{ payment_price|currency:request }}
@@ -248,11 +254,11 @@
             <tr>
                 <td></td>
                 <td></td>
-                <td></td>
                 <td colspan="3"
                     class="total left padding-top">
                     {% trans 'Total' %}:
                 </td>
+                <td></td>
                 <td class="total number padding-top"
                     nowrap="nowrap">
                     {{ cart_price|currency:request }}
@@ -262,11 +268,11 @@
             <tr>
                 <td></td>
                 <td></td>
-                <td></td>
                 <td colspan="3"
                     class="discreet left">
                     {% trans 'Inclusive VAT' %}:
                 </td>
+                <td></td>
                 <td class="discreet number"
                     nowrap="nowrap">
                     {{ cart_tax|currency:request }}
@@ -276,8 +282,7 @@
             <tr>
                 <td></td>
                 <td></td>
-                <td></td>
-                <td colspan="5"
+                <td colspan="6"
                     class="discreet left padding-top">
                     {% trans 'Total delivery time' %}: {{ max_delivery_time }}
                 </td>
