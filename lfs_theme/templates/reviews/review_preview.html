@@ -8,22 +8,22 @@
 
 {% block content %}
     <h1>{% trans 'Preview' %}</h1>
-    
-    <form action="{% url reviews_reedit %}"
+
+    <form action="{% url 'reviews_reedit' %}"
           method="post">
-          
+
         <label for="user_name">{% trans 'Your name' %}:</label>
         <div class="field">
             {{name}}
         </div>
 
         {% if request.POST.user_email %}
-            <label for="user_email">{% trans 'Your email' %}:</label>          
+            <label for="user_email">{% trans 'Your email' %}:</label>
             <div class="field">
                 {{email}}
             </div>
         {% endif %}
-        
+
         <label for="score">{% trans 'Your score' %}:</label>
         <div class="field star-rating-wrapper">
             <ul class="star-rating">
@@ -33,9 +33,9 @@
                 </li>
             </ul>
         </div>
-        
+
         {% if request.POST.comment %}
-            <label for="comment">{% trans 'Your comment' %}:</label>            
+            <label for="comment">{% trans 'Your comment' %}:</label>
             <div class="field">
                 {{request.POST.comment|linebreaks}}
             </div>
@@ -43,7 +43,7 @@
         <input type="hidden"
                name="user_name"
                value="{{request.POST.user_name}}" />
-           
+
         <input type="hidden"
                name="user_email"
                value="{{request.POST.user_email}}" />
@@ -67,10 +67,10 @@
         <input type="submit"
                name="edit"
                value="{% trans 'Edit' %}" />
-    
+
         <input type="submit"
                name="save"
                value="{% trans 'Submit' %}" />
-    </form>    
+    </form>
 {% endblock %}
 

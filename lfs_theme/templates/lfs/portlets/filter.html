@@ -5,7 +5,7 @@
     <div class="filtered-navigation-portlet portlet">
 
         <div class="portlet-header">
-            {{ title }} <a href="{% url lfs_reset_all_product_filter category.slug %}">[x]</a>
+            {{ title }} <a href="{% url 'lfs_reset_all_product_filter' category.slug %}">[x]</a>
         </div>
 
         <div class="portlet-body">
@@ -18,14 +18,14 @@
                                     {{ property_group.title }}
                                 </span>
                                 {% if property_group.show_reset %}
-                                    <a href="{% url lfs_reset_product_filter category.slug property_group.id %}">[x]</a>
+                                    <a href="{% url 'lfs_reset_product_filter' category.slug property_group.id %}">[x]</a>
                                 {% endif %}
                             </div>
                             {% for property in property_group.items %}
                                 <div>
                                     {% if property_group.object.is_number_field %}
                                         {% if property_group.show_quantity %}
-                                            <a href='{% url lfs_set_product_filter category.slug property_group.id property.min property.max %}'>
+                                            <a href='{% url 'lfs_set_product_filter' category.slug property_group.id property.min property.max %}'>
                                                 {{ property.min|quantity }} - {{ property.max|quantity }} {{ property_group.unit|safe }} ({{ property.quantity }})
                                             </a>
                                         {% else %}
@@ -35,7 +35,7 @@
                                         {% endif %}
                                     {% else %}
                                         {% if property.show_quantity %}
-                                            <a href='{% url lfs_set_product_filter category.slug property_group.id property.value %}'>
+                                            <a href='{% url 'lfs_set_product_filter' category.slug property_group.id property.value %}'>
                                                 {{ property.name }} {{ property_group.unit|safe }} ({{ property.quantity }})
                                             </a>
                                         {% else %}
@@ -58,14 +58,14 @@
                     <div class="filter-title">
                         <span>{% trans 'Price' %}</span>
                         {% if price_filters.show_reset %}
-                            <a href="{% url lfs_reset_price_filter category.slug %}">[x]</a>
+                            <a href="{% url 'lfs_reset_price_filter' category.slug %}">[x]</a>
                         {% endif %}
                     </div>
 
                     {% for price_filter in price_filters.items %}
                         <div>
                             {% if price_filters.show_quantity %}
-                                <a href="{% url lfs_set_price_filter category.slug %}?min={{ price_filter.min }}&amp;max={{ price_filter.max }}">
+                                <a href="{% url 'lfs_set_price_filter' category.slug %}?min={{ price_filter.min }}&amp;max={{ price_filter.max }}">
                                     {% trans 'Up to' %} {{ price_filter.max|decimal_l10n }}
                                     ({{ price_filter.quantity }})
                                 </a>
@@ -77,7 +77,7 @@
                         </div>
                     {% endfor %}
                 </div>
-                {# <form action="{% url lfs_set_price_filter category.slug %}" #}
+                {# <form action="{% url 'lfs_set_price_filter' category.slug %}" #}
                 {#       method="post">         #}
                 {#     <div> #}
                 {#         <label>{% trans 'From' %}</label> #}
@@ -102,7 +102,7 @@
         </div>
 
         <div class="portlet-footer">
-            <a href="{% url lfs_reset_all_product_filter category.slug %}">
+            <a href="{% url 'lfs_reset_all_product_filter' category.slug %}">
                 {% trans 'Reset all filters' %}
             </a>
         </div>

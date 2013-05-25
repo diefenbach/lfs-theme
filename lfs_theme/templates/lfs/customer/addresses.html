@@ -22,10 +22,10 @@
     {% endif %}
 
     <form class="address-form postal-address"
-    	  action="{% url lfs_my_addresses %}"
+    	  action="{% url 'lfs_my_addresses' %}"
           method="post"
-          invoice="{% url lfs_changed_invoice_country %}"
-          shipping="{% url lfs_changed_shipping_country %}">
+          invoice="{% url 'lfs_changed_invoice_country' %}"
+          shipping="{% url 'lfs_changed_shipping_country' %}">
         {% csrf_token %}
         <table class="lfs-default">
             <thead>

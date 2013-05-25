@@ -15,7 +15,7 @@
                         <h2 class="first-heading">{{ category.name }}</h2>
                         {% if category.get_image %}
                         <div class="category-image">
-                            <a href="{% url lfs_category category.slug %}">
+                            <a href="{% url 'lfs_category' category.slug %}">
                                 <img src="{{ category.get_image.url_100x100 }}"
                                      alt="{{ category.name }}" />
                             </a>
@@ -26,7 +26,7 @@
                         </div>
                         <div class="clear details-button">
                             <a class="button emphasized"
-                               href="{% url lfs_category category.slug %}">{% trans 'Details' %}
+                               href="{% url 'lfs_category' category.slug %}">{% trans 'Details' %}
                             </a>
                         </div>
                         <hr>

@@ -1,6 +1,6 @@
 {% load i18n %}
 <div class="sorting">
-    <form action="{% url lfs_catalog_set_sorting %}"
+    <form action="{% url 'lfs_catalog_set_sorting' %}"
           method="post">
         {% csrf_token %}
         <select name="sorting"

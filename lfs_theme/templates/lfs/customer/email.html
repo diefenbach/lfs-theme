@@ -8,7 +8,7 @@
 
 {% block content %}
     <h1>{% trans 'Change your e-mail address' %}</h1>
-    <form action="{% url lfs_my_email %}"
+    <form action="{% url 'lfs_my_email' %}"
           method="post">
         {% csrf_token %}
 

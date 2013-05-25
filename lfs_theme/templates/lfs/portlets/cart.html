@@ -4,7 +4,7 @@
 
     <div class="portlet-header">
         {% if title %}
-            <a href="{% url lfs.cart.views.cart %}"
+            <a href="{% url 'lfs.cart.views.cart' %}"
                title="{% trans 'Go to cart' %}">{{ title }}
         {% else %}
             {% trans 'Cart' %}
@@ -28,7 +28,7 @@
     </div>
 
     <div class="portlet-footer">
-        <a href="{% url lfs.cart.views.cart %}">
+        <a href="{% url 'lfs.cart.views.cart' %}">
             {% trans 'Go to cart' %}
         </a>
     </div>

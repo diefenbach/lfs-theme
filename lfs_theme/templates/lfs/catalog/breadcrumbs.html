@@ -2,7 +2,7 @@
 <ul class="breadcrumbs">
     <li class="breadcrumbs-label">{% trans 'You are here:' %}</li>
     <li>
-        <a href="{% url lfs_shop_view %}">
+        <a href="{% url 'lfs_shop_view' %}">
             {% trans 'Home' %}</a>
     </li>
     {% for object in objects %}

@@ -2,13 +2,13 @@
 <div class="product-navigation">
     {% if display %}
         {% if previous %}
-            <a href="{% url lfs_product previous %}">&lt;&lt; {% trans 'Previous product' %}</a>
+            <a href="{% url 'lfs_product' previous %}">&lt;&lt; {% trans 'Previous product' %}</a>
         {% else %}
             &lt;&lt; {% trans 'Previous product' %}
         {% endif %}
         - {{ current }} {% trans 'of' %} {{ total }} -
         {% if next %}
-            <a href="{% url lfs_product next %}">{% trans 'Next product' %} &gt;&gt;</a>
+            <a href="{% url 'lfs_product' next %}">{% trans 'Next product' %} &gt;&gt;</a>
         {% else %}
             {% trans 'Next product' %} &gt;&gt;
         {% endif %}
