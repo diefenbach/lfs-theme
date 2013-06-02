@@ -50,29 +50,7 @@
                 </td>
                 <td>
                     {{ cart_item.product.get_name }}
-                    {% for property in cart_item.product.get_variant_properties %}
-                        <div>
-                            {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
-                        </div>
-                    {% endfor %}
-
-                    {% for property in cart_item.product.get_displayed_properties %}
-                        <div>
-                            {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
-                        </div>
-                    {% endfor %}
-
-                    {% if cart_item.product.is_configurable_product %}
-                        {% for property in cart_item.obj.get_properties %}
-                            <div>
-                                {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
-                                {% if property.obj.is_select_field and property.display_price %}
-                                    ({{ property.price|currency:request}})
-                                {% endif %}
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-
+                    {% include "lfs/catalog/products/_product_properties.html" with product=cart_item.product configurable_properties=cart_item.obj.get_properties %}
                 </td>
                 <td class="number">
                     {{ cart_item.quantity }}

@@ -17,17 +17,7 @@
                     <a href="{{ product.get_absolute_url }}">
                         {{ product.get_name }}
                     </a>
-                    {% for property in product.get_variant_properties %}
-                        <div>
-                            {{ property.title }} : {{ property.value }} {{ property.unit|safe }}
-                        </div>
-                    {% endfor %}
-
-                    {% for property in product.get_displayed_properties %}
-                        <div>
-                            {{ property.title }} : {{ property.value }} {{ property.unit|safe }}
-                        </div>
-                    {% endfor %}
+                    {% include "lfs/catalog/products/_product_properties.html" with product=product configurable_properties=0 %}
                 </td>
                 <td class="number"
                     nowrap="nowrap">

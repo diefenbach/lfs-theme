@@ -201,27 +201,8 @@
                {{ item.product_sku }}
             </td>
             <td>
-               {{ item.product_name }}
-                {% for property in item.product.get_displayed_properties %}
-                    <div>
-                        {{ property.title }} : {{ property.value }} {{ property.unit|safe }}
-                    </div>
-                {% endfor %}
-
-                {% for property in item.product.get_variant_properties %}
-                    <div>
-                        {{ property.title }} : {{ property.value }} {{ property.unit|safe }}
-                    </div>
-                {% endfor %}
-
-                {% if item.product.is_configurable_product %}
-                    {% for property in item.get_properties %}
-                        <div>
-                            {{ property.title }} : {{ property.value }} {{ property.unit|safe }} ({{ property.price|currency }})
-                        </div>
-                    {% endfor %}
-                {% endif %}
-
+                {{ item.product_name }}
+                {% include "lfs/catalog/products/_product_properties.html" with product=item.product configurable_properties=item.get_properties %}
             </td>
             <td class="number">
                 {{ item.amount }} {{ item.product.unit }}
