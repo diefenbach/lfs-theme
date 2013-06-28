@@ -1,10 +1,5 @@
-{% load i18n %}
-{% load lfs_tags %}
-{% load lfs_theme_tags %}
-{% load lfs_portlets_tags %}
-{% load compress %}
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load i18n lfs_tags lfs_theme_tags lfs_portlets_tags compress %}
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <title>{% block title %}{{ SHOP.get_meta_title }}{% endblock %}</title>
