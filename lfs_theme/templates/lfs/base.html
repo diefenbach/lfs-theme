@@ -146,25 +146,29 @@
 
         <div id="footer">
             <div class="container">
-                {% block footer %}
-                    {% actions Footer %}
-                    {% for action in actions %}
-                        <a href="{{ action.link }}">{{ action.title }}</a>
-                        {% if not forloop.last %}|{% endif %}
-                    {% endfor %}
-                {% endblock %}
+                <div class="footer-inner">
+                    {% block footer %}
+                        {% actions Footer %}
+                        {% for action in actions %}
+                            <a href="{{ action.link }}">{{ action.title }}</a>
+                            {% if not forloop.last %}|{% endif %}
+                        {% endfor %}
+                    {% endblock %}
+                </div>
             </div>
         </div>
 
         <div id="colophon">
             <div class="container">
-                {% block colophon %}
-                    <p>{% trans 'Powered by' %} <a target="_blank" href="http://www.getlfs.com">LFS</a> &mdash; Lightning Fast Shop</p>
-                    <p>
-                        &copy; 2009 - 2011 {% trans 'by' %} Kai Diefenbach and contributors &mdash; {% trans 'All rights reserved' %}
-                    </p>
-                    <p>{% trans 'Distributed under the' %} <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">{% trans 'BSD-License' %}</a></p>
-                {% endblock %}
+                <div class="colophon-inner">
+                    {% block colophon %}
+                        <p>{% trans 'Powered by' %} <a target="_blank" href="http://www.getlfs.com">LFS</a> &mdash; Lightning Fast Shop</p>
+                        <p>
+                            &copy; 2009 - 2011 {% trans 'by' %} Kai Diefenbach and contributors &mdash; {% trans 'All rights reserved' %}
+                        </p>
+                        <p>{% trans 'Distributed under the' %} <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">{% trans 'BSD-License' %}</a></p>
+                    {% endblock %}
+                </div>
             </div>
         </div>
 
