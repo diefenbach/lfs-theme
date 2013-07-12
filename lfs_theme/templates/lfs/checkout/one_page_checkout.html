@@ -12,7 +12,7 @@
 {% endblock %}
 
 {% block wrapper %}
-    {% if form.errors %}
+    {% if checkout_form.errors %}
         <div class="form-errors">
             {% trans "The operation could not be performed because one or more errors occurred. Please see below." %}
         </div>
