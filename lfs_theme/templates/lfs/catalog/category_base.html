@@ -1,7 +1,5 @@
 {% extends "lfs/base.html" %}
-{% load lfs_tags  %}
-{% load portlets_tags %}
-{% load lfs_theme_tags %}
+{% load lfs_tags portlets_tags lfs_theme_tags %}
 
 {% block title %}
     {{ category.get_meta_title }} - {{ block.super }}

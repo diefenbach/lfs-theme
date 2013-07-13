@@ -1,10 +1,5 @@
 {% extends "lfs/base.html" %}
-{% load i18n %}
-{% load lfs_tags %}
-{% load lfs_tagging_tags %}
-{% load lfs_theme_tags %}
-{% load reviews_tags %}
-{% load tagging_tags %}
+{% load i18n lfs_tags lfs_tagging_tags lfs_theme_tags reviews_tags tagging_tags %}
 
 {% block title %}
     {{ product.get_meta_title }} - {{ block.super }}
