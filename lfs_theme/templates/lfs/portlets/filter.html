@@ -99,6 +99,29 @@
                 {#     </div> #}
                 {# </form> #}
             {% endif %}
+
+            {% if show_manufacturer_filters %}
+                <div class="portlet-item">
+                    <div class="filter-title">
+                        <span>{% trans 'Manufacturer' %}</span>
+                    </div>
+
+                    <div class="{% if not manufacturer_filters.show_reset %}active{% endif %}">
+                         <a href="{% url lfs_reset_all_manufacturer_filter category.slug %}">{% trans "All" %}</a>
+                    </div>
+
+                    {% for mfilter in manufacturer_filters.items %}
+                        <div class="{% if mfilter.selected %}active{% endif %}">
+                            <a href="{% url lfs_set_manufacturer_filter category.slug mfilter.obj.pk %}">
+                                {{ mfilter.obj.name }} ({{ mfilter.obj.products_count }})
+                            </a>
+                            {% if mfilter.selected %}
+                                <a href="{% url lfs_reset_manufacturer_filter category.slug mfilter.obj.pk %}">[x]</a>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
         </div>
 
         <div class="portlet-footer">
