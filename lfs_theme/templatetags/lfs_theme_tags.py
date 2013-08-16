@@ -12,13 +12,14 @@ import lfs.core.utils
 
 register = Library()
 
+
 class SlotsInformationNode(Node):
     """
     """
     def render(self, context):
         request = context.get("request")
         object = context.get("category") or context.get("product") or context.get("page")
-        if object is None:
+        if object is None or not hasattr(object, 'id'):
             object = lfs.core.utils.get_default_shop(request)
 
         slots = cache.get("slots")
