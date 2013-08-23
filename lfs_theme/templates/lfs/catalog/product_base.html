@@ -49,6 +49,7 @@
 
     {% tags_for_object product as tags %}
     {% if tags %}
+        <div class="clearfix"></div>
         <div class="tags">
             <h1 class="section">{% trans 'Tags' %}</h1>
             {% for tag in tags %}
