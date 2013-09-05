@@ -2,11 +2,11 @@
 {% load i18n %}
 
 {% block head %}
-    {% if shop.get_meta_keywords %}
-        <meta name="keywords" content="{{ shop.get_meta_keywords }}" />
+    {% if SHOP.get_meta_keywords %}
+        <meta name="keywords" content="{{ SHOP.get_meta_keywords }}" />
     {% endif %}
-    {% if shop.get_meta_description %}
-        <meta name="description" content="{{ shop.get_meta_description }}" />
+    {% if SHOP.get_meta_description %}
+        <meta name="description" content="{{ SHOP.get_meta_description }}" />
     {% endif %}
 {% endblock %}
 
@@ -20,6 +20,6 @@
 {% endblock %}
 
 {% block content %}
-    {{ shop.static_block.html|safe }}
-    {{ shop.description|safe }}
+    {{ SHOP.static_block.html|safe }}
+    {{ SHOP.description|safe }}
 {% endblock %}
