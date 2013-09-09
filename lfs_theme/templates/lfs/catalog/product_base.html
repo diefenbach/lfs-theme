@@ -1,5 +1,5 @@
 {% extends "lfs/base.html" %}
-{% load i18n lfs_tags lfs_tagging_tags lfs_theme_tags reviews_tags tagging_tags %}
+{% load i18n lfs_tags lfs_tagging_tags lfs_theme_tags reviews_tags taggit_extras %}
 
 {% block title %}
     {{ product.get_meta_title }} - {{ block.super }}
@@ -46,25 +46,25 @@
     <a name="reviews"></a>
 
     {% reviews_for_instance product %}
+    <div class="clearfix"></div>
 
-    {% tags_for_object product as tags %}
-    {% if tags %}
+    {% if product.tags.all %}
         <div class="tags">
             <h1 class="section">{% trans 'Tags' %}</h1>
-            {% for tag in tags %}
+            {% for tag in product.tags.all %}
                 <a href="{% url product_tag_detail tag.name %}">
                     {{ tag }}</a>
             {% endfor %}
         </div>
     {% endif %}
 
-    {% tag_cloud_for_model catalog.Product as cloud with steps=6 min_count=1 distribution=log %}
+    {% get_tagcloud as cloud for 'catalog.product' %}
     {% if cloud %}
         <div class="tags">
             <h1 class="section">{% trans 'Tag cloud' %}</h1>
             <div class="tag-cloud">
                 {% for tag in cloud %}
-                    <a href="{% url product_tag_detail tag.name %}" style="font-size:1{{ tag.font_size }}px">
+                    <a href="{% url product_tag_detail tag %}" style="font-size:1{{tag.weight|floatformat:0}}px">
                         {{ tag }}</a>
                 {% endfor %}
             </div>
