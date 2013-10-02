@@ -13,13 +13,13 @@
 {% trans 'Shipping address' %}
 ==============================================================================
 {% with order.shipping_address as sa %}{{ sa.firstname }} {{ sa.lastname }}
-{{ sa.company_name }}
-{{ sa.line1 }}{% if sa.line2 %}
+{{ sa.company_name|default_if_none:"" }}
+{{ sa.line1|default_if_none:"" }}{% if sa.line2 %}
 {{ sa.line2 }}{% endif %}
-{{ sa.zip_code }} {{ sa.city }}
-{{ sa.country }}
-{{ sa.phone }}
-{{ sa.email }}{% endwith %}
+{{ sa.zip_code|default_if_none:"" }} {{ sa.city|default_if_none:"" }}
+{{ sa.country|default_if_none:"" }}
+{{ sa.phone|default_if_none:"" }}
+{{ sa.email|default_if_none:"" }}{% endwith %}
 
 {% trans 'Invoice address' %}
 ==============================================================================

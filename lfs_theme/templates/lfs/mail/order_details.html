@@ -88,7 +88,7 @@
                     {{ sa.company_name }}
                 </div>
                 <div>
-                    {{ sa.line1 }}
+                    {{ sa.line1|default_if_none:"" }}
                 </div>
                 {% if sa.line2 %}
                     <div>
@@ -96,16 +96,16 @@
                     </div>
                 {% endif %}
                 <div>
-                    {{ sa.zip_code }} {{ sa.city }}
+                    {{ sa.zip_code|default_if_none:"" }} {{ sa.city|default_if_none:"" }}
                 </div>
                 <div>
-                    {{ sa.country }}
+                    {{ sa.country|default_if_none:"" }}
                 </div>
                 <div>
-                    {{ sa.phone }}
+                    {{ sa.phone|default_if_none:"" }}
                 </div>
                 <div>
-                    {{ sa.email }}
+                    {{ sa.email|default_if_none:"" }}
                 </div>
             {% endwith %}
         </td>
@@ -121,7 +121,7 @@
                     {{ ia.company_name }}
                 </div>
                 <div>
-                    {{ ia.line1 }}
+                    {{ ia.line1|default_if_none:"" }}
                 </div>
                 {% if ia.line2 %}
                     <div>
@@ -129,16 +129,16 @@
                     </div>
                 {% endif %}
                 <div>
-                    {{ ia.zip_code }} {{ ia.city }}
+                    {{ ia.zip_code|default_if_none:"" }} {{ ia.city|default_if_none:"" }}
                 </div>
                 <div>
-                    {{ ia.country }}
+                    {{ ia.country|default_if_none:"" }}
                 </div>
                 <div>
-                    {{ ia.phone }}
+                    {{ ia.phone|default_if_none:"" }}
                 </div>
                 <div>
-                    {{ ia.email }}
+                    {{ ia.email|default_if_none:"" }}
                 </div>
             {% endwith %}
         </td>
