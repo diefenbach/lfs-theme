@@ -49,10 +49,10 @@
                             {{ product_accessory.quantity|quantity }}
                         </td>
                         <td class="number">
-                            {{ product_accessory.accessory.get_price|currency:request }}
+                            {{ product_accessory.accessory|get_price:request|currency:request }}
                         </td>
                         <td class="number">
-                            {{ product_accessory.get_price|currency:request }}
+                            {{ product_accessory|get_price:request|currency:request }}
                         </td>
                         <td class="right">
                             <a class="button add-accessory-link"
