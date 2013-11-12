@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: LFS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-23 14:14-0500\n"
-"PO-Revision-Date: 2013-10-23 21:23+0100\n"
+"PO-Revision-Date: 2013-11-12 23:15+0100\n"
 "Last-Translator: Maciej Wiśniowski <pigletto@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: fr\n"
@@ -402,7 +402,7 @@ msgstr "Variantes"
 
 #: templates/lfs/catalog/products/product_inline.html:276
 msgid "Attachments"
-msgstr "Produits complementaires"
+msgstr "Attachments"
 
 #: templates/lfs/checkout/checkout_cart_inline.html:5
 msgid "Voucher code"
@@ -802,9 +802,8 @@ msgid "Your message to us"
 msgstr "Votre message"
 
 #: templates/lfs/mail/order_details.txt:58
-#, fuzzy
 msgid " Total"
-msgstr "Total"
+msgstr "Totale"
 
 #: templates/lfs/mail/order_details.txt:61
 msgid "Message"
