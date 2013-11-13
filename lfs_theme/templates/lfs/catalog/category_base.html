@@ -9,10 +9,13 @@
 
 {% block head %}
     {% if category.get_meta_keywords %}
-        <meta name="keywords" content="{{category.get_meta_keywords}}" />
+        <meta name="keywords" content="{{ category.get_meta_keywords }}" />
     {% endif %}
     {% if category.get_meta_description %}
-        <meta name="description" content="{{category.get_meta_description}}" />
+        <meta name="description" content="{{ category.get_meta_description }}" />
+    {% endif %}
+    {% if pagination != 0 %}
+        <link rel="canonical" href="{{ category.get_absolute_url }}" />
     {% endif %}
 {% endblock %}
 
