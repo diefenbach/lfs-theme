@@ -1,33 +1,36 @@
-{% load i18n %}
-{% load lfs_tags %}
+{% load i18n lfs_tags %}
 
 <div class="reviews">
     <h1 class="section">{% trans 'Reviews' %}</h1>
 
     {% if reviews %}
         {% for review in reviews %}
-            <div class="review">
-                <ul class="star-rating small-star inline-rating">
-                    <li class="current-rating"
-                        style="width:{{review.score|multiply:10}}px">
-                        Currently 3/5 Stars
-                    </li>
-                </ul>
-        
-                {% if review.email and review.name %}                    
-                    <a href="mailto:{{review.email}}">{{review.name}}</a>,
-                {% else %}
-                    {% if review.name %}
-                        {{ review.name }},
+            <div class="review-wrapper" itemprop="review" itemscope itemtype="http://schema.org/Review">
+                <div class="review">
+                    <ul class="star-rating small-star inline-rating">
+                        <li class="current-rating"
+                            style="width:{{review.score|multiply:10}}px">
+                            <meta itemprop="worstRating" content = "1"/>
+                            {% blocktrans with avg=review.score|floatformat %}Currently <span itemprop="ratingValue">{{ avg }}</span>/<span itemprop="bestRating">5</span> stars{% endblocktrans %}
+                        </li>
+                    </ul>
+
+                    {% if review.email and review.name %}
+                        <meta itemprop="author" content="{{ review.email }}">
+                        <a href="mailto:{{review.email}}" itemprop="name">{{review.name}}</a>,
                     {% else %}
-                        {% trans 'Anonymous' %},
+                        {% if review.name %}
+                            <span itemprop="name">{{ review.name }}</span>,
+                        {% else %}
+                            <span itemprop="author">{% trans 'Anonymous' %}</span>,
+                        {% endif %}
                     {% endif %}
-                {% endif %}
-                 {{ review.creation_date|date:"d. F Y" }}
-            </div>    
-            <div>        
-                {{ review.comment|linebreaks }}
-            </div>    
+                    <span itemprop="datePublished" content="{{ review.creation_date|date:"Y-m-d" }}">{{ review.creation_date|date:"d. F Y" }}</span>
+                </div>
+                <div itemprop="description">
+                    {{ review.comment|linebreaks }}
+                </div>
+            </div>
         {% endfor %}
     {% else %}
         <p>
