@@ -1,8 +1,8 @@
 {% extends "lfs/base.html" %}
-{% load lfs_tags portlets_tags lfs_theme_tags %}
+{% load lfs_tags portlets_tags lfs_theme_tags i18n %}
 
 {% block title %}
-    {{ category.get_meta_title }} - {{ block.super }}
+    {{ category.get_meta_title }}{% if pagination_data.total_pages > 1 %} - {% blocktrans with page_no=pagination_data.current_page %}page {{ page_no }}{% endblocktrans %}{% endif %} - {{ block.super }}
 {% endblock %}
 
 {% block section %}category{% endblock %}
@@ -12,11 +12,17 @@
         <meta name="keywords" content="{{ category.get_meta_keywords }}" />
     {% endif %}
     {% if category.get_meta_description %}
-        <meta name="description" content="{{ category.get_meta_description }}" />
+        <meta name="description" content="{{ category.get_meta_description }}{% if pagination_data.total_pages > 1 %} {% blocktrans with page_no=pagination_data.current_page %}page {{ page_no }}{% endblocktrans %}{% endif %}" />
     {% endif %}
-    {% if pagination != 0 %}
-        <link rel="canonical" href="{{ category.get_absolute_url }}" />
+
+    {% if pagination_data.has_next %}
+        <link rel="next" href="{{ pagination_data.url }}?{{ pagination_data.getparam }}={{ pagination_data.next }}{{ pagination_data.getvars }}" />
     {% endif %}
+
+    {% if pagination_data.has_prev %}
+        <link rel="prev" href="{{ pagination_data.url }}?{{ pagination_data.getparam }}={{ pagination_data.prev }}{{ pagination_data.getvars }}" />
+    {% endif %}
+
 {% endblock %}
 
 {% block breadcrumbs %}
