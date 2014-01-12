@@ -8,7 +8,7 @@
             {% if product.get_image %}
                 <a href="{{ product.get_image.image.url_400x400 }}"
                    class="product-image">
-                    <img src="{{ product.get_image.image.url_200x200 }}"
+                    <img itemprop="image" src="{{ product.get_image.image.url_200x200 }}"
                          title="{{ product.get_image.title }}"
                          alt="{{ product.get_image.title }}" />
                 </a>
@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <h1 class="product-title">
+    <h1 class="product-title" itemprop="name">
         {{ product.get_name }}
     </h1>
 
@@ -43,16 +43,17 @@
     {% average_for_instance product %}
 
     {# Prices #}
-    <div class="prices">
+    <div class="prices" itemprop="offers" itemscope itemtype="http://schema.org/Offer>
         {% if for_sale %}
             <div>
                 <span class="for-sale-standard-price" nowrap="nowrap">
                     <span class="for-sale-standard-price-value">
                         {{ product|get_standard_price_gross:request|currency:request }}
                     </span>
-                    * {% if price_unit %}/ {{ price_unit }}{% endif %}</span>
+                    * {% if price_unit %}/ {{ price_unit }}{% endif %}
+                </span>
                 <span class="for-sale-price" nowrap="nowrap">
-                    <span class="for-sale-price-value">
+                    <span class="for-sale-price-value" itemprop="price">
                         {{ product|get_for_sale_price_gross:request|currency:request }}
                     </span>
                     * {% if price_unit %}/ {{ price_unit }}{% endif %}
@@ -73,7 +74,7 @@
         {% else %}
             <div class="standard-price"
                   nowrap="nowrap">
-                  <span class="standard-price-value">{{ product|get_price_gross:request|currency:request }}</span>* {% if price_unit %}/ {{ price_unit }}{% endif %}
+                  <span class="standard-price-value" itemprop="price">{{ product|get_price_gross:request|currency:request }}</span>* {% if price_unit %}/ {{ price_unit }}{% endif %}
             </div>
             {% if product.get_active_base_price %}
                 <div class="base-price">
