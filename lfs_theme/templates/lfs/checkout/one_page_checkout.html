@@ -29,6 +29,9 @@
                     <tr>
                         <th>
                             {% trans 'Invoice address' %}
+                            {# uncomment if LFS_CHECKOUT_NOT_REQUIRED_ADDRESS = 'invoice' #}
+                            {% comment %}({{ checkout_form.no_invoice_field }}
+                             {{ checkout_form.no_invoice_field.label_tag }}){% endcomment %}
                         </th>
                         <th>
                             {% trans 'Shipping address' %}
