@@ -115,13 +115,13 @@
                     <td class="number">
 
                     </td>
-                    <td class="number">
+                    <td class="number" nowrap="nowrap">
                         - {{ discount.price_net|currency:request }}
                     </td>
-                    <td class="number">
+                    <td class="number" nowrap="nowrap">
                         - {{ discount.get_tax|currency:request }}
                     </td>
-                    <td class="number">
+                    <td class="number" nowrap="nowrap">
                         - {{ discount.price_gross|currency:request }}
                     </td>
                     <td></td>
@@ -138,13 +138,13 @@
                         1
                     </td>
                     <td></td>
-                    <td class="number">
+                    <td class="number" nowrap="nowrap">
                         - {{ voucher_value|currency:request }}
                     </td>
-                    <td class="number">
+                    <td class="number" nowrap="nowrap">
                         ({{ voucher_tax|currency:request }})
                     </td>
-                    <td class="number">
+                    <td class="number" nowrap="nowrap">
                         - {{ voucher_value|currency:request }}
                     </td>
                     <td></td>
