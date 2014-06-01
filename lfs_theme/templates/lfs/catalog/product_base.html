@@ -1,5 +1,5 @@
 {% extends "lfs/base.html" %}
-{% load i18n lfs_tags lfs_tagging_tags lfs_theme_tags reviews_tags tagging_tags %}
+{% load i18n lfs_tags lfs_theme_tags reviews_tags %}
 
 {% block title %}
     {{ product.get_meta_title }} - {{ block.super }}
@@ -24,18 +24,14 @@
 {% endblock %}
 
 {% block content %}
-
     {{ product.static_block.html|safe }}
-
     {% product_navigation product %}
-
     <div class="overview">
         {% come_from_page product %}
         <a href="{{ come_from_page.get_absolute_url }}">
             {% trans 'Back to overview' %}
         </a>
     </div>
-
     <div itemscope itemtype="http://schema.org/Product">
         <div id="product-form-wrapper">
             <form id="product-form"
@@ -46,36 +42,7 @@
                 {{ product_inline|safe }}
             </form>
         </div>
-
         <a name="reviews"></a>
-
         {% reviews_for_instance product %}
-
-        {% tags_for_object product as tags %}
-        {% if tags %}
-            <div class="tags">
-                <h1 class="section">{% trans 'Tags' %}</h1>
-                {% for tag in tags %}
-                    <a href="{% url product_tag_detail tag.name %}">
-                        {{ tag }}</a>
-                {% endfor %}
-            </div>
-        {% endif %}
-
-        {% tag_cloud_for_model catalog.Product as cloud with steps=6 min_count=1 distribution=log %}
-        {% if cloud %}
-            <div class="tags">
-                <h1 class="section">{% trans 'Tag cloud' %}</h1>
-                <div class="tag-cloud">
-                    {% for tag in cloud %}
-                        <a href="{% url product_tag_detail tag.name %}" style="font-size:1{{ tag.font_size }}px">
-                            {{ tag }}</a>
-                    {% endfor %}
-                </div>
-            </div>
-        {% endif %}
-
-        {% related_products_by_tags product %}
     </div>
-
 {% endblock %}
