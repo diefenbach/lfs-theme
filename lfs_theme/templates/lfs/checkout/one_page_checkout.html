@@ -20,9 +20,9 @@
     <div>
         <form class="checkout-form postal-address"
               method="post"
-              data="{% url lfs_changed_checkout %}"
-              invoice="{% url lfs_changed_invoice_country %}"
-              shipping="{% url lfs_changed_shipping_country %}">
+              data="{% url 'lfs_changed_checkout' %}"
+              invoice="{% url 'lfs_changed_invoice_country' %}"
+              shipping="{% url 'lfs_changed_shipping_country' %}">
             {% csrf_token %}
             <table class="lfs-default">
                 <thead>
@@ -259,7 +259,7 @@
                     {% trans 'Submit order' %}
                 </button>
                 <a class="button"
-                   href="{% url lfs.cart.views.cart %}">{% trans 'Go to cart' %}</a>
+                   href="{% url 'lfs_cart' %}">{% trans 'Go to cart' %}</a>
             </div>
 
             {% if request.user.is_anonymous %}

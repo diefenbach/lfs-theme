@@ -35,8 +35,8 @@
     <div itemscope itemtype="http://schema.org/Product">
         <div id="product-form-wrapper">
             <form id="product-form"
-                  action="{% url lfs.catalog.views.product_form_dispatcher %}"
-                  data="{% url lfs_select_variant_from_properties %}"
+                  action="{% url 'lfs_product_dispatcher' %}"
+                  data="{% url 'lfs_select_variant_from_properties' %}"
                   method="post">
                 {% csrf_token %}
                 {{ product_inline|safe }}

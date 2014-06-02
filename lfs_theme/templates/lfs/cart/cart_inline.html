@@ -5,7 +5,7 @@
         {% trans "Voucher" %}
     </h1>
     <span class="voucher-description">{% trans "If you have voucher code, please enter it here" %}</span>
-    <input data="{% url lfs_check_voucher_cart %}"
+    <input data="{% url 'lfs_check_voucher_cart' %}"
            type="text"
            id="voucher"
            name="voucher"
@@ -23,7 +23,7 @@
     </h1>
 
     <form id="cart-form"
-          action="{% url lfs.cart.views.refresh_cart %}"
+          action="{% url 'lfs_refresh_cart' %}"
           onsubmit="return false;">
 
         <table class="lfs-default">
@@ -97,7 +97,7 @@
                         {{ cart_item.product_price_gross|currency:request }}
                     </td>
                     <td class="right">
-                        <a href="{% url lfs_delete_cart_item cart_item.obj.id %}"
+                        <a href="{% url 'lfs_delete_cart_item' cart_item.obj.id %}"
                            title="{% trans 'Delete item' %}"
                            class="delete-button delete-cart-item">X</a>
                     </td>
@@ -270,7 +270,7 @@
                 <td colspan="8">
                     <div class="buttons">
                         <a class="button checkout-button emphasized"
-                           href="{% url lfs_checkout_dispatcher %}">
+                           href="{% url 'lfs_checkout_dispatcher' %}">
                            {% trans 'Checkout' %}
                         </a>
                         <a class="button shopping-button"

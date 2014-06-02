@@ -19,7 +19,7 @@
         {% trans 'Please leave us a message. We will answer as soon as possible.' %}
     </p>
 
-    <form action="{% url lfs_contact_form %}"
+    <form action="{% url 'lfs_contact_form' %}"
           method="post">
 
         {% csrf_token %}

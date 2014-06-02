@@ -16,7 +16,7 @@
     <h1 class="first-heading">{% trans 'Search results' %}</h1>
 
     <label for="search">{% trans 'Search' %}:</label>
-    <form action="{% url lfs_search %}"
+    <form action="{% url 'lfs_search' %}"
           class="search-results-form">
         <input id="search-results-input"
                type="text"
@@ -88,7 +88,7 @@
                     </td>
                     <td class="buttons">
                         <a class="button emphasized"
-                           href="{% url lfs_product product.slug %}"
+                           href="{% url 'lfs_product' product.slug %}"
                            type="submit">
                             {% trans 'Details' %}
                         </a>

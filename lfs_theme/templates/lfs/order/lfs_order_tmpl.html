@@ -138,7 +138,7 @@
                 <td class="top">
                     {% if item.product.get_image.image %}
                     <div>
-                      <a href="{% if request.user.is_superuser %}{% url lfs_manage_product item.product.id %}{% else %}{{ item.product.get_absolute_url }}{% endif %}">
+                      <a href="{% if request.user.is_superuser %}{% url 'lfs_manage_product' item.product.id %}{% else %}{{ item.product.get_absolute_url }}{% endif %}">
                           <img alt="{{ item.product_name }}"
                              src="{{ item.product.get_image.image.url_100x100 }}" />
                        </a>

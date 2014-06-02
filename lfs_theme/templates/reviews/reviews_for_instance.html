@@ -36,7 +36,7 @@
         <p>
             {% trans 'There are no ratings for this product. Be the first one!' %}
         </p>
-    {% endif %} 
+    {% endif %}
     {% if has_rated %}
         <div>
             {% trans 'You have already rated' %}
@@ -44,7 +44,7 @@
     {% else %}
         <div class="buttons">
             <a class="button left"
-               href="{% url reviews_add content_type_id content_id %}">{% trans 'Add review' %}</a>
+               href="{% url 'reviews_add' content_type_id content_id %}">{% trans 'Add review' %}</a>
         </div>
     {% endif %}
 </div>

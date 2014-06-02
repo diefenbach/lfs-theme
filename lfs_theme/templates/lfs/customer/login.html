@@ -25,7 +25,7 @@
         </div>
 
         <form class="authenticate"
-              action="{% url lfs_login %}"
+              action="{% url 'lfs_login' %}"
               method="post">
             {% csrf_token %}
 
@@ -45,7 +45,7 @@
 
             <button type="submit"
                     class="button login-button emphasized left">{% trans 'Login' %}</button>
-            <a class="forgot-password-link" href="{% url lfs_password_reset %}">{% trans 'Forgot password?' %}</a>
+            <a class="forgot-password-link" href="{% url 'lfs_password_reset' %}">{% trans 'Forgot password?' %}</a>
         </form>
     </div>
 
@@ -57,7 +57,7 @@
                 {% trans 'If you are not already a customer you can register in order to store your address data and to follow the state of your orders.' %}
             </div>
 
-            <form action="{% url lfs_login %}"
+            <form action="{% url 'lfs_login' %}"
                   method="post">
                     {% csrf_token %}
                     <div class="form-wrapper">

@@ -18,9 +18,9 @@
         <tr class="product-row">
             {% for product in col %}
                 <td class="product-data"
-                    onclick="window.location='{% url lfs.catalog.views.product_view product.slug %}'">
+                    onclick="window.location='{% url 'lfs_product' product.slug %}'">
                     <div class="product-image">
-                        <a href="{% url lfs.catalog.views.product_view product.slug %}">
+                        <a href="{% url 'lfs_product' product.slug %}">
                             {% if product.image.url_100x100 %}
                                 <img alt="{{ product.name }}"
                                      src="{{ product.image.url_100x100 }}" />
@@ -73,7 +73,7 @@
                     </div>
                     <div class="details-button">
                         <a class="button emphasized"
-                           href="{% url lfs_product product.slug %}">{% trans 'Details' %}
+                           href="{% url 'lfs_product' product.slug %}">{% trans 'Details' %}
                         </a>
                     </div>
                 </td>

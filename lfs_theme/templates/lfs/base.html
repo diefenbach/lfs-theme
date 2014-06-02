@@ -39,7 +39,7 @@
             <div class="container">
                 {% block header %}
                     <div class="span-6 logo">
-                        <a href="{% url lfs.core.views.shop_view %}">
+                        <a href="{% url 'lfs_shop_view' %}">
                             <img class="logo"
                                  src="{{ STATIC_URL }}img/logo.jpg"
                                  alt="Logo" />
@@ -55,34 +55,34 @@
 
                             {% if user.is_superuser %}
                                 {% if category %}
-                                    <a href="{% url lfs_manage_category category.id %}">{% trans 'Manage' %}</a>
+                                    <a href="{% url 'lfs_manage_category' category.id %}">{% trans 'Manage' %}</a>
                                 {% endif %}
                                 {% if product %}
-                                    <a href="{% url lfs_manage_product product.id %}">{% trans 'Manage' %}</a>
+                                    <a href="{% url 'lfs_manage_product' product.id %}">{% trans 'Manage' %}</a>
                                 {% endif %}
                                 {% if page %}
-                                    <a href="{% url lfs_manage_page page.id %}">{% trans 'Manage' %}</a>
+                                    <a href="{% url 'lfs_manage_page' page.id %}">{% trans 'Manage' %}</a>
                                 {% endif %}
                                 {% if not category and not product and not page %}
-                                    <a href="{% url lfs_manage_dashboard %}">{% trans 'Manage' %}</a>
+                                    <a href="{% url 'lfs_manage_dashboard' %}">{% trans 'Manage' %}</a>
                                 {% endif %}
                                 |
                             {% endif %}
 
                             <a href="/logout">{% trans 'Logout' %}</a> |
-                            <a href="{% url lfs_my_account %}">{% trans 'My account' %}</a>
+                            <a href="{% url 'lfs_my_account' %}">{% trans 'My account' %}</a>
                         {% else %}
                             {% if not ANON_ONLY %}
-                                <a href="{% url lfs_login %}">{% trans 'Login' %}</a> |
+                                <a href="{% url 'lfs_login' %}">{% trans 'Login' %}</a> |
                             {% endif %}
 
                         {% endif %}
                         <label for="search">{% trans 'Search' %}:</label>
                         <form id="search-form"
-                              action="{% url lfs_search %}"
+                              action="{% url 'lfs_search' %}"
                               autocomplete="off">
                             <input type="hidden" name="livesearch" value="1" />
-                            <input id="search-input" value="{{ q }}" type="text" name="q" autocomplete="off" data-url="{% url lfs_livesearch %}" />
+                            <input id="search-input" value="{{ q }}" type="text" name="q" autocomplete="off" data-url="{% url 'lfs_livesearch' %}" />
                             <input type="submit"
                                    value="{% trans 'Go!' %}" />
                         </form>

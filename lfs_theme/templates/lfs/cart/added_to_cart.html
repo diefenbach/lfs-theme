@@ -57,7 +57,7 @@
                         <td class="right">
                             <a class="button add-accessory-link"
                                rel="nofollow"
-                               href="{% url lfs_add_accessory_to_cart product_accessory.accessory.id product_accessory.quantity %}">
+                               href="{% url 'lfs_add_accessory_to_cart' product_accessory.accessory.id product_accessory.quantity %}">
                                {% trans 'Add' %}
                             </a>
                         </td>
@@ -69,11 +69,11 @@
 
     <div class="buttons">
         <a class="button checkout-button emphasized"
-           href="{% url lfs_checkout_dispatcher %}">
+           href="{% url 'lfs_checkout_dispatcher' %}">
             {% trans 'Checkout' %}
         </a>
         <a class="button cart-button"
-           href="{% url lfs.cart.views.cart %}">
+           href="{% url 'lfs_cart' %}">
             {% trans 'Go to cart' %}
         </a>
         <a class="button shopping-button"
