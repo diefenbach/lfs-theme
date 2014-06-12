@@ -69,7 +69,7 @@
                                 |
                             {% endif %}
 
-                            <a href="/logout">{% trans 'Logout' %}</a> |
+                            <a href="{% url 'lfs_logout' %}">{% trans 'Logout' %}</a> |
                             <a href="{% url 'lfs_my_account' %}">{% trans 'My account' %}</a>
                         {% else %}
                             {% if not ANON_ONLY %}
