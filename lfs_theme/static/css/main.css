@@ -70,6 +70,11 @@ form label {
     font-weight: bold;
 }
 
+form label.small {
+    font-weight: normal;
+    font-size: 90%;
+}
+
 td.label {
     padding-right: 10px;
 }
@@ -1314,4 +1319,8 @@ button.emphasized:hover {
 #id_comment {
     width: 100%;
     height: 300px;
+}
+
+.disabled {
+    color: #aaa;
 }
