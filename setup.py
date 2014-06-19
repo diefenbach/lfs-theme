@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.7.4'
+version = '0.8.0a3'
 
 here = os.path.abspath(os.path.dirname(__file__))
 README = open(os.path.join(here, 'README.txt')).read()
@@ -26,6 +26,6 @@ setup(name='django-lfstheme',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-        'setuptools',
+          'setuptools',
       ],
       )
