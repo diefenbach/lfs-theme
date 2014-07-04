@@ -87,12 +87,8 @@ td.label {
     padding-bottom: 4px;
 }
 
-.field div.label label:after {
-    content: ":";
-}
-
 .field.required div.label label:after {
-    content: "*:";
+    content: "*";
 }
 
 div.form {
