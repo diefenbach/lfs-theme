@@ -24,7 +24,7 @@
         {% if request.user.is_anonymous %}
             <div class="field">
                 <div class="label">
-                    {{ form.user_name.label_tag }}:
+                    {{ form.user_name.label_tag }}
                 </div>
 
                 {% if form.user_name.errors %}
@@ -41,7 +41,7 @@
 
             <div class="field">
                 <div class="label">
-                    {{ form.user_email.label_tag }}:
+                    {{ form.user_email.label_tag }}
                 </div>
 
                 {% if form.user_email.errors %}
@@ -58,7 +58,7 @@
         {% endif %}
 
         <div class="label">
-            {{ form.score.label_tag }}:
+            {{ form.score.label_tag }}
         </div>
         <div class="star-rating-wrapper">
             {% if form.score.errors %}
@@ -81,7 +81,7 @@
         </div>
         <div class="field">
             <div class="label">
-                {{ form.comment.label_tag }}:
+                {{ form.comment.label_tag }}
             </div>
 
             {% if form.comment.errors %}
