@@ -1,4 +1,4 @@
-{% load i18n %}{% load lfs_tags %}
+{% load i18n lfs_tags %}
 {% trans 'General' %}
 ==============================================================================
 {% trans 'Customer name' %}: {{ order.customer_firstname }} {{ order.customer_lastname }}
