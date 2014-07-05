@@ -12,14 +12,15 @@ import lfs.core.utils
 
 register = Library()
 
+
 class SlotsInformationNode(Node):
     """
     """
     def render(self, context):
         request = context.get("request")
-        object = context.get("category") or context.get("product") or context.get("page")
-        if object is None:
-            object = lfs.core.utils.get_default_shop(request)
+        obj = context.get("category") or context.get("product") or context.get("page")
+        if obj is None or obj.__class__.__name__.lower() not in ('category', 'product', 'page'):
+            obj = lfs.core.utils.get_default_shop(request)
 
         slots = cache.get("slots")
         if slots is None:
@@ -27,15 +28,15 @@ class SlotsInformationNode(Node):
             cache.set("slots", slots)
 
         for slot in slots:
-            cache_key = "has-portlets-%s-%s-%s" % (object.__class__.__name__, object.id, slot.name)
+            cache_key = "has-portlets-%s-%s-%s" % (obj.__class__.__name__, obj.id, slot.name)
             has_portlets = cache.get(cache_key)
             if has_portlets is None:
-                has_portlets = portlets.utils.has_portlets(object, slot)
+                has_portlets = portlets.utils.has_portlets(obj, slot)
                 cache.set(cache_key, has_portlets)
 
             context["Slot%s" % slot.name] = has_portlets
 
-        cache_key = "content-class-%s-%s" % (object.__class__.__name__, object.id)
+        cache_key = "content-class-%s-%s" % (obj.__class__.__name__, obj.id)
         content_class = cache.get(cache_key)
         if content_class is None:
             content_class = "span-24 last"
