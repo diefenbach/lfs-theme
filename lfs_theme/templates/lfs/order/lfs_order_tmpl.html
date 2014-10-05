@@ -75,10 +75,10 @@
     <tbody>
         <tr>
             <td>
-                {{ current_order.invoice_address.as_html|safe }}
+                {% render_address current_order.invoice_address "invoice" %}
             </td>
             <td>
-                {{ current_order.shipping_address.as_html|safe }}
+                {% render_address current_order.shipping_address "shipping" %}
             </td>
             <td>
                 <div>
