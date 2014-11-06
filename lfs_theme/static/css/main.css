@@ -1219,6 +1219,18 @@ ___________________________________________________________________________ */
     width: 120px;
 }
 
+
+/* filtered navigation portlet
+___________________________________________________________________________ */
+.filtered-navigation-portlet div.property-group-name {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.filtered-navigation-portlet div.portlet-item {
+    padding-top: 5px;
+}
+
 /* Footer
 ___________________________________________________________________________ */
 

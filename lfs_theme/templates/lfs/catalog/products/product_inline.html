@@ -246,7 +246,7 @@
                         </th>
                         {% for property in properties %}
                             <th>
-                                {{ property.title }}
+                                {% if property.property_group.name %}[{{ property.property_group.name }}]{% endif %} {{ property.title }}
                             </th>
                         {% endfor %}
                         <th class="number">
