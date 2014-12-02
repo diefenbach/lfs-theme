@@ -1,0 +1,21 @@
+{
+  "name": "LFS",
+  "version": "0.0.1",
+  "description": "Lightning Fast Shop",
+  "main": "style.css",
+  "authors": [
+    "Maciej Wiśniowski"
+  ],
+  "license": "",
+  "homepage": "http://getlfs.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fancybox": "~2.1.5"
+  }
+}

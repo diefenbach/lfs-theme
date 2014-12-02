@@ -1320,3 +1320,8 @@ button.emphasized:hover {
 .disabled {
     color: #aaa;
 }
+
+div.jGrowl-notification.lfs {
+    border: 1px solid #cccccc;
+    background: #eeeeee;
+}
