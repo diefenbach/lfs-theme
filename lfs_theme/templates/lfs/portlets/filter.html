@@ -49,7 +49,7 @@
             {% if show_product_filters %}
                 {% for property_group_dict in product_filters.number_fields %}
                     <div class="portlet-item">
-                        <div class="property-group-name">{{ property_group_dict.property_group.name }}</div>
+                        <div class="property-group-label">{{ property_group_dict.property_group.name }}</div>
                         {% for property_dict in property_group_dict.items %}
                             <div class="filter-title">
                                 <span>
@@ -87,7 +87,7 @@
                 {% endfor %}
 
                 {% for property_group_dict in product_filters.select_fields %}
-                    <div class="property-group-name">{{ property_group_dict.property_group.name }}</div>
+                    <div class="property-group-label">{{ property_group_dict.property_group.name }}</div>
                     {% for property_dict in property_group_dict.properties %}
                         {% if property_dict.items %}
                             <div class="portlet-item">

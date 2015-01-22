@@ -1222,7 +1222,7 @@ ___________________________________________________________________________ */
 
 /* filtered navigation portlet
 ___________________________________________________________________________ */
-.filtered-navigation-portlet div.property-group-name {
+.filtered-navigation-portlet div.property-group-label {
     font-weight: bold;
     font-size: 14px;
 }
