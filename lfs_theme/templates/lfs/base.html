@@ -3,16 +3,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <title>{% block title %}{{ SHOP.get_meta_title }}{% endblock %}</title>
-        <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico" type="image/ico" />
+        <link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico" type="image/ico" />
 
         {% block head %}{% endblock %}
         <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
         <meta name="generator" content="LFS - http://www.getlfs.com" />
 
         {% compress css %}
-            <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}jquery/lightbox/jquery.lightbox-0.5.css" />
-            <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}jquery-ui-1.8.13.custom/css/smoothness/jquery-ui-1.8.13.custom.css" />
-            <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}jquery/jquery.jgrowl.css" />
+            <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}lfs_theme/bower_components/fancybox/source/jquery.fancybox.css" />
+            <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}lfs/bower_components/jquery-ui/themes/smoothness/jquery-ui.css" />
+            <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}lfs/bower_components/jgrowl/jquery.jgrowl.css" />
             <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}yui/reset-fonts.css">
             <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}blueprint/src/grid.css">
             <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css" />
@@ -24,13 +24,13 @@
         <![endif]-->
 
         {% compress js %}
-            <script type="text/javascript" src="{{ STATIC_URL }}jquery/jquery-1.7.2.min.js"></script>
-            <script type="text/javascript" src="{{ STATIC_URL }}jquery-ui-1.8.13.custom/js/jquery-ui-1.8.13.custom.min.js"></script>
-            <script type="text/javascript" src="{{ STATIC_URL }}jquery/jquery.form.pack.js"></script>
-            <script type="text/javascript" src="{{ STATIC_URL }}jquery/jquery.jgrowl_minimized.js"></script>
-            <script type="text/javascript" src="{{ STATIC_URL }}jquery/jquery.cookie.js"></script>
-            <script type="text/javascript" src="{{ STATIC_URL }}jquery/lightbox/jquery.lightbox-0.5.js"></script>
-            <script type="text/javascript" src="{{ STATIC_URL }}js/lfs.js"></script>
+            <script type="text/javascript" src="{{ STATIC_URL }}lfs/bower_components/jquery/dist/jquery.js"></script>
+            <script type="text/javascript" src="{{ STATIC_URL }}lfs/bower_components/jquery-ui/jquery-ui.js"></script>
+            <script type="text/javascript" src="{{ STATIC_URL }}lfs/bower_components/jquery-form/jquery.form.js"></script>
+            <script type="text/javascript" src="{{ STATIC_URL }}lfs/bower_components/jgrowl/jquery.jgrowl.js"></script>
+            <script type="text/javascript" src="{{ STATIC_URL }}lfs/bower_components/jquery-cookie/jquery.cookie.js"></script>
+            <script type="text/javascript" src="{{ STATIC_URL }}lfs_theme/bower_components/fancybox/source/jquery.fancybox.pack.js"></script>
+            <script type="text/javascript" src="{{ STATIC_URL }}lfs/js/lfs.js"></script>
         {% endcompress %}
 
     </head>
