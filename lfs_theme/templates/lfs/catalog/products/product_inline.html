@@ -296,9 +296,9 @@
                                 {{ property.title }}:
                             </span>
                             <select class="property"
-                                    name="property_{{ property.id }}">
+                                    name="property_{{ property.property_group_id }}|{{ property.id }}">
                                 {% for option in property.options %}
-                                    <option value="{{ property.property_group_id }}|{{ option.id }}"
+                                    <option value="{{ option.id }}"
                                             {% if option.selected %}selected="selected"{% endif %}>
                                         {{ option.name }}
                                     </option>
