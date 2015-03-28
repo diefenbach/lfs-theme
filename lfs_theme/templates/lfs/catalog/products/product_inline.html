@@ -298,7 +298,7 @@
                             <select class="property"
                                     name="property_{{ property.id }}">
                                 {% for option in property.options %}
-                                    <option value="{{ option.id }}"
+                                    <option value="{{ property.property_group_id }}|{{ option.id }}"
                                             {% if option.selected %}selected="selected"{% endif %}>
                                         {{ option.name }}
                                     </option>
