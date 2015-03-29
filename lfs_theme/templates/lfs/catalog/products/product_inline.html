@@ -27,22 +27,48 @@
             {% endfor %}
         </div>
     </div>
+    <div class="product-main-data">
+        <h1 class="product-title" itemprop="name">
+            {{ product.get_name }}
+        </h1>
 
-    <h1 class="product-title" itemprop="name">
-        {{ product.get_name }}
-    </h1>
+        {# Displayed Properties #}
+        <div class="product-properties">
+            {% with product.get_displayed_properties as displayed_properties %}
+                {% if displayed_properties %}
+                    {% regroup displayed_properties by property_group as displayed_property_groups %}
 
-    {# Displayed Properties #}
-    <div class="product-properties">
-        {% for property in product.get_displayed_properties %}
-            <div>
-                {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
-            </div>
-        {% endfor %}
+                    <ul class="product-property-groups">
+                        {% for property_group in displayed_property_groups %}
+                            <li>
+                                {% if property_group.grouper %}
+                                    <span class="property-group-label">
+                                        {{ property_group.grouper|default_if_none:"" }}
+                                    </span>
+                                {% endif %}
+
+                                <ul class="product-property-group-properties">
+                                {% for prop in property_group.list %}
+                                    <li>{{ prop.title }}: {{ prop.value }} {{ prop.unit|safe }}</li>
+                                {% endfor %}
+                                </ul>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+
+    {% comment %}
+            {% for property in product.get_displayed_properties %}
+                <div>
+                    {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
+                </div>
+            {% endfor %}{% endcomment %}
+        </div>
+
+        {% shipping product %}
+        {% average_for_instance product %}
     </div>
-
-    {% shipping product %}
-    {% average_for_instance product %}
 
     {# Prices #}
     <div class="prices" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
@@ -99,47 +125,59 @@
                id="cp-url"
                data="{% url 'lfs_calculate_price' product.id %}">
 
-            {% for property in properties %}
-                <tr>
-                    {% if property.obj.is_select_field %}
-                        <td class="property-label">
-                            {{ property.title }}:
-                        </td>
-                        <td>
-                            <select class="cp-property"
-                                    name="property-{{ property.id }}">
-                                {% if not property.obj.required %}
-                                    <option>---</option>
-                                {% endif %}
-                                {% for option in property.options %}
-                                    <option value="{{ option.id }}"
-                                        {% if option.selected %}selected="selected"{% endif %}>
-                                        {{ option.name }}
+            {% regroup properties by property_group as property_groups %}
 
-                                        {% if property.display_price %}
-                                         / {{ option.price|currency:request}}
-                                        {% endif %}
-                                    </option>
-                                {% endfor %}
-                            </select>
-                        </td>
-                        <td></td>
-                    {% else %}
-                        <td class="property-label">
-                            {{ property.title }}:
-                        </td>
-                        <td class="right">
-                            {% if property.obj.is_text_field %}
-                                <input class="product-input-field text-field" type="input" size="15" maxlength="100" name="property-{{ property.id }}" value="{{ property.value }}" />
-                            {% else %}
-                                <input class="right product-input-field number-field" type="input" size="6" maxlength="9" name="property-{{ property.id }}" value="{{ property.value }}" />
-                            {% endif %}
-                        </td>
-                        <td>
-                            {{ property.unit }}
-                        </td>
-                    {% endif %}
-                </tr>
+            {% for property_group in property_groups %}
+                {% if property_group.grouper %}
+                    <tr>
+                        <th colspan="3" class="property-group-label">
+                            {{ property_group.grouper|default_if_none:"" }}
+                        </th>
+                    </tr>
+                {% endif %}
+
+                {% for prop in property_group.list %}
+                    <tr>
+                        {% if prop.obj.is_select_field %}
+                            <td class="property-label">
+                                {{ prop.title }}:
+                            </td>
+                            <td>
+                                <select class="cp-property"
+                                        name="property-{{ prop.property_group_id }}-{{ prop.id }}">
+                                    {% if not prop.obj.required %}
+                                        <option>---</option>
+                                    {% endif %}
+                                    {% for option in prop.options %}
+                                        <option value="{{ option.id }}"
+                                            {% if option.selected %}selected="selected"{% endif %}>
+                                            {{ option.name }}
+
+                                            {% if prop.display_price %}
+                                             / {{ option.price|currency:request}}
+                                            {% endif %}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                            </td>
+                            <td></td>
+                        {% else %}
+                            <td class="property-label">
+                                {{ prop.title }}:
+                            </td>
+                            <td class="right">
+                                {% if prop.obj.is_text_field %}
+                                    <input class="product-input-field text-field" type="input" size="15" maxlength="100" name="property-{{ prop.property_group_id }}-{{ prop.id }}" value="{{ prop.value }}" />
+                                {% else %}
+                                    <input class="right product-input-field number-field" type="input" size="6" maxlength="9" name="property-{{ prop.property_group_id }}-{{ prop.id }}" value="{{ prop.value }}" />
+                                {% endif %}
+                            </td>
+                            <td>
+                                {{ prop.unit }}
+                            </td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
             {% endfor %}
         </table>
     {% endif %}
@@ -212,7 +250,7 @@
                         </th>
                         {% for property in properties %}
                             <th>
-                                {{ property.title }}
+                                {% if property.property_group.name %}[{{ property.property_group.name }}]{% endif %} {{ property.title }}
                             </th>
                         {% endfor %}
                         <th class="number">
@@ -258,7 +296,7 @@
                                 {{ property.title }}:
                             </span>
                             <select class="property"
-                                    name="property_{{ property.id }}">
+                                    name="property_{{ property.property_group_id }}|{{ property.id }}">
                                 {% for option in property.options %}
                                     <option value="{{ option.id }}"
                                             {% if option.selected %}selected="selected"{% endif %}>

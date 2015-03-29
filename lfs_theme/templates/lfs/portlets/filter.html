@@ -47,78 +47,85 @@
             {% endif %}
 
             {% if show_product_filters %}
-                {% for property_group in product_filters.number_fields %}
+                {% for property_group_dict in product_filters.number_fields %}
                     <div class="portlet-item">
-                        <div class="filter-title">
-                            <span>
-                                {{ property_group.title }}
-                            </span>
-                            {% if property_group.show_reset %}
-                                <a href="{% url 'lfs_reset_number_filter' category.slug property_group.id %}">[x]</a>
-                            {% endif %}
-                        </div>
-                        <form action="{% url 'lfs_set_product_number_filter' %}"
-                              method="post">
-                            {% csrf_token %}
-                            <input type="hidden" name="category_slug" value="{{ category.slug }}" />
-                            <input type="hidden" name="property_id" value="{{ property_group.id }}" />
-                            <label class="small">{% trans 'From' %}</label>
-                            <input type="text"
-                                   name="min"
-                                   value="{{ property_group.items.min }}"
-                                   style="width:40px" />
-
-                            <label class="small">{% trans 'To' %}</label>
-                            <input type="text"
-                                   name="max"
-                                   value="{{ property_group.items.max }}"
-                                   style="width:40px" />
-                            <div>
-                                <input type="submit"
-                                       style="position: absolute; left: -9999px; width: 1px; height: 1px;"
-                                       value="{% trans 'Go!' %}" />
+                        <div class="property-group-label">{{ property_group_dict.property_group.name }}</div>
+                        {% for property_dict in property_group_dict.items %}
+                            <div class="filter-title">
+                                <span>
+                                    {{ property_dict.title }}
+                                </span>
+                                {% if property_dict.show_reset %}
+                                    <a href="{% url 'lfs_reset_number_filter' category.slug property_dict.property_group_id property_dict.id %}">[x]</a>
+                                {% endif %}
                             </div>
-                        </form>
+                            <form action="{% url 'lfs_set_product_number_filter' %}"
+                                  method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="category_slug" value="{{ category.slug }}" />
+                                <input type="hidden" name="property_id" value="{{ property_dict.id }}" />
+                                <input type="hidden" name="property_group_id" value="{{ property_dict.property_group_id }}" />
+                                <label class="small">{% trans 'From' %}</label>
+                                <input type="text"
+                                       name="min"
+                                       value="{{ property_dict.items.min }}"
+                                       style="width:40px" />
+
+                                <label class="small">{% trans 'To' %}</label>
+                                <input type="text"
+                                       name="max"
+                                       value="{{ property_dict.items.max }}"
+                                       style="width:40px" />
+                                <div>
+                                    <input type="submit"
+                                           style="position: absolute; left: -9999px; width: 1px; height: 1px;"
+                                           value="{% trans 'Go!' %}" />
+                                </div>
+                            </form>
+                        {% endfor %}
                     </div>
                 {% endfor %}
 
-                {% for property_group in product_filters.select_fields %}
-                    {% if property_group.items %}
-                        <div class="portlet-item">
-                            <div class="filter-title {% if forloop.first %}first{% endif %}">
-                                <span>
-                                    {{ property_group.title }}
-                                </span>
-                                {% if property_group.show_reset %}
-                                    <a href="{% url 'lfs_reset_product_filter' category.slug property_group.id %}">[x]</a>
-                                {% endif %}
-                            </div>
-                            {% for property in property_group.items %}
-                                <div>
-                                    {% if property_group.object.is_number_field %}
-                                        {% if property_group.show_quantity %}
-                                            <a href="{% url 'lfs_set_product_filter' category.slug property_group.id property.min property.max %}">
-                                                {{ property.min|quantity }} - {{ property.max|quantity }} {{ property_group.unit|safe }} ({{ property.quantity }})
-                                            </a>
-                                        {% else %}
-                                            <span>
-                                                {{ property.min|quantity }} - {{ property.max|quantity }} {{ property_group.unit|safe }}
-                                            </span>
-                                        {% endif %}
-                                    {% else %}
-                                        <input type="checkbox"
-                                               class="property-checkbox"
-                                               id="property-checkbox-{{ property.name }}"
-                                               url="{% url 'lfs_set_product_filter' category.slug property_group.id property.value %}"
-                                               {% if property.checked %}checked="checked"{% endif %}
-                                               {% if property.quantity == 0 %}disabled="disabled"{% endif %} />
-                                        <label for="property-checkbox-{{ property.name }}"
-                                               {% if property.quantity == 0 %}class="disabled"{% endif %}>{{ property.name }} {{ property_group.unit|safe }} {% if property.show_quantity %} ({{ property.quantity }}){% endif %}</label>
+                {% for property_group_dict in product_filters.select_fields %}
+                    <div class="property-group-label">{{ property_group_dict.property_group.name }}</div>
+                    {% for property_dict in property_group_dict.properties %}
+                        {% if property_dict.items %}
+                            <div class="portlet-item">
+                                <div class="filter-title {% if forloop.first %}first{% endif %}">
+                                    <span>
+                                        {{ property_dict.title }}
+                                    </span>
+                                    {% if property_dict.show_reset %}
+                                        <a href="{% url 'lfs_reset_product_filter' category.slug property_dict.property_group_id property_dict.id %}">[x]</a>
                                     {% endif %}
                                 </div>
-                            {% endfor %}
-                        </div>
-                    {% endif %}
+                                {% for property_option in property_dict.items %}
+                                    <div>
+                                        {% if property_dict.object.is_number_field %}
+                                            {% if property_dict.show_quantity %}
+                                                <a href="{% url 'lfs_set_product_filter' category.slug property_dict.property_group_id property_dict.id property_option.min property_option.max %}">
+                                                    {{ property_option.min|quantity }} - {{ property_option.max|quantity }} {{ property_dict.unit|safe }} ({{ property_option.quantity }})
+                                                </a>
+                                            {% else %}
+                                                <span>
+                                                    {{ property_option.min|quantity }} - {{ property_option.max|quantity }} {{ property_dict.unit|safe }}
+                                                </span>
+                                            {% endif %}
+                                        {% else %}
+                                            <input type="checkbox"
+                                                   class="property-checkbox"
+                                                   id="property-checkbox-{{ property_option.name }}"
+                                                   url="{% url 'lfs_set_product_filter' category.slug property_dict.property_group_id property_dict.id property_option.value %}"
+                                                   {% if property_option.checked %}checked="checked"{% endif %}
+                                                   {% if property_option.quantity == 0 %}disabled="disabled"{% endif %} />
+                                            <label for="property-checkbox-{{ property_option.name }}"
+                                                   {% if property_option.quantity == 0 %}class="disabled"{% endif %}>{{ property_option.name }} {{ property_dict.unit|safe }} {% if property_option.show_quantity %} ({{ property_option.quantity }}){% endif %}</label>
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
                 {% endfor %}
             {% endif %}
 
