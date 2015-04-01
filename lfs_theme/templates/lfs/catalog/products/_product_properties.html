@@ -5,7 +5,6 @@
             {% if property.property_group.name %}<span class="property-group-label">[{{ property.property_group.name }}]</span> {% endif %}{{ property.title }}: {{ property.value }} {{ property.unit|safe }}
         </div>
     {% endfor %}
-dd
     {% for property in product.get_displayed_properties %}
         <div class="displayed-property">
             {% if property.property_group.name %}<span class="property-group-label">[{{ property.property_group.name }}]</span> {% endif %}{{ property.title }}: {{ property.value }} {{ property.unit|safe }}
