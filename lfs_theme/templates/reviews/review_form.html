@@ -72,7 +72,7 @@
                         <a href="#"
                            class="rate {% if score.current %}current-rating{% endif %}"
                            title="{{ score.title|floatformat }}"
-                           data="{{ score.value|floatformat:0 }}"
+                           data="{{ score.value|floatformat:1 }}"
                            style="z-index:{{ score.z_index }}; width:{{ score.width }}px">
                         </a>
                     </li>
