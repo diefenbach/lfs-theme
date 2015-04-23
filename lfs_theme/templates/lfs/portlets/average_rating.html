@@ -1,4 +1,4 @@
-{% load i18n lfs_tags %}
+{% load i18n lfs_tags l10n %}
 
 {% if average %}
     <div class="average-rating-portlet portlet">
@@ -10,7 +10,7 @@
                  onclick="window.location='#reviews'">
                 <ul class="star-rating">
                     <li class="current-rating"
-                        style="width:{{ average|multiply:25 }}px">
+                        style="{% localize off %}width:{{ average|multiply:25 }}px{% endlocalize %}">
                     </li>
                 </ul>
             </div>
