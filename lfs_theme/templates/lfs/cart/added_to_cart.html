@@ -24,7 +24,8 @@
                     <th>
                         {% trans 'Name' %}
                     </th>
-                    <th class="number">
+                    <th class="center"
+                        colspan="2">
                         {% trans 'Quantity' %}
                     </th>
                     <th class="number">
@@ -45,7 +46,13 @@
                             </a>
                         </td>
                         <td class="number">
-                            {{ product_accessory.quantity|quantity }}
+                            <input type="text"
+                                   size="4"
+                                   id="quantity-{{ product_accessory.accessory.id }}"
+                                   value="{{ product_accessory.quantity|quantity }}"/>
+                        </td>
+                        <td>
+                            &nbsp;{{ product_accessory.accessory.get_unit }}
                         </td>
                         <td class="number">
                             {{ product_accessory.accessory|get_price:request|currency:request }}
@@ -55,8 +62,9 @@
                         </td>
                         <td class="right">
                             <a class="button add-accessory-link"
+                               id="add-{{ product_accessory.accessory.id }}"
                                rel="nofollow"
-                               href="{% url 'lfs_add_accessory_to_cart' product_accessory.accessory.id product_accessory.quantity %}">
+                               href="{% url 'lfs_add_accessory_to_cart' product_accessory.accessory.id %}">
                                {% trans 'Add' %}
                             </a>
                         </td>
