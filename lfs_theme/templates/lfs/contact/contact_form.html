@@ -19,6 +19,7 @@
     </p>
 
     <form action="{% url 'lfs_contact_form' %}"
+          enctype="multipart/form-data"
           method="post">
 
         {% csrf_token %}
