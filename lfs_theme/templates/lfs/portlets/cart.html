@@ -1,7 +1,6 @@
-{% load i18n lfs_tags %}
+{% load i18n lfs_tags static %}
 
 <div class="cart-portlet portlet">
-
     <div class="portlet-header">
         {% if title %}
             <a href="{% url 'lfs_cart' %}"
@@ -9,11 +8,10 @@
         {% else %}
             {% trans 'Cart' %}
         {% endif %}
-        <img src="{{ STATIC_URL }}img/cart.png"
+        <img src="{% static 'img/cart.png' %}"
              alt="{% trans 'Cart' %}" />
         </a>
     </div>
-
     <div class="portlet-body">
         {% if amount_of_items_int %}
             <div class="article">
@@ -26,11 +24,9 @@
             {% trans 'Cart is empty' %}
         {% endif %}
     </div>
-
     <div class="portlet-footer">
-        <a href="{% url 'lfs.cart.views.cart' %}">
+        <a href="{% url 'lfs_cart' %}">
             {% trans 'Go to cart' %}
         </a>
     </div>
-
 </div>

@@ -1,13 +1,9 @@
-# django imports
 from django.core.cache import cache
 from django.template import Library, Node, TemplateSyntaxError
 from django.utils.translation import ugettext as _
 
-# portlets imports
-import portlets.utils
 from portlets.models import Slot
 
-# lfs imports
 import lfs.core.utils
 
 register = Library()
@@ -51,6 +47,7 @@ class SlotsInformationNode(Node):
 
         context["content_class"] = content_class
         return ''
+
 
 def do_slots_information(parser, token):
     """Calculates some context variables based on displayed slots.

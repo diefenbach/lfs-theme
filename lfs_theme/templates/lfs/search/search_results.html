@@ -1,5 +1,5 @@
 {% extends "lfs/base.html" %}
-{% load i18n lfs_tags pagination_tags %}
+{% load i18n lfs_tags %}
 
 {% block title %}
     {% trans 'Search results' %} - {{ block.super }}
@@ -37,11 +37,6 @@
     </p>
 
     {% if products %}
-
-        {% if not paginator %}
-            {% autopaginate products 10 %}
-        {% endif %}
-        {% paginate %}
         {% sorting %}
 
         <table class="lfs-default padding-top">
@@ -96,6 +91,5 @@
                 </tr>
             {% endfor %}
         </table>
-        {% paginate %}
     {% endif %}
 {% endblock %}

@@ -1,36 +1,36 @@
-{% load i18n lfs_tags lfs_theme_tags lfs_portlets_tags compress %}
+{% load i18n lfs_tags lfs_theme_tags lfs_portlets_tags compress static %}
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <title>{% block title %}{{ SHOP.get_meta_title }}{% endblock %}</title>
-        <link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico" type="image/ico" />
+        <link rel="shortcut icon" href="{% static 'favicon.ico '%}" type="image/ico" />
 
         {% block head %}{% endblock %}
         <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
         <meta name="generator" content="LFS - http://www.getlfs.com" />
 
         {% compress css %}
-            <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}lfs_theme/bower_components/fancybox/source/jquery.fancybox.css" />
-            <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}lfs/bower_components/jquery-ui/themes/smoothness/jquery-ui.css" />
-            <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}lfs/bower_components/jgrowl/jquery.jgrowl.css" />
-            <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}yui/reset-fonts.css">
-            <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}blueprint/src/grid.css">
-            <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css" />
+            <link rel="stylesheet" type="text/css" href="{% static 'lfs_theme/bower_components/fancybox/source/jquery.fancybox.css' / %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'lfs/bower_components/jquery-ui/themes/smoothness/jquery-ui.css' / %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'lfs/bower_components/jgrowl/jquery.jgrowl.css' / %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'yui/reset-fonts.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'blueprint/src/grid.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
         {% endcompress %}
         <!--[if IE]>
             {% compress css %}
-                <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/iefixes.css" />
+                <link rel="stylesheet" type="text/css" href="{% static 'css/iefixes.css' %} />
             {% endcompress %}
         <![endif]-->
 
         {% compress js %}
-            <script type="text/javascript" src="{{ STATIC_URL }}lfs/bower_components/jquery/dist/jquery.js"></script>
-            <script type="text/javascript" src="{{ STATIC_URL }}lfs/bower_components/jquery-ui/jquery-ui.js"></script>
-            <script type="text/javascript" src="{{ STATIC_URL }}lfs/bower_components/jquery-form/jquery.form.js"></script>
-            <script type="text/javascript" src="{{ STATIC_URL }}lfs/bower_components/jgrowl/jquery.jgrowl.js"></script>
-            <script type="text/javascript" src="{{ STATIC_URL }}lfs/bower_components/jquery-cookie/jquery.cookie.js"></script>
-            <script type="text/javascript" src="{{ STATIC_URL }}lfs_theme/bower_components/fancybox/source/jquery.fancybox.pack.js"></script>
-            <script type="text/javascript" src="{{ STATIC_URL }}lfs/js/lfs.js"></script>
+            <script type="text/javascript" src="{% static 'lfs/bower_components/jquery/dist/jquery.js' %}"></script>
+            <script type="text/javascript" src="{% static 'lfs/bower_components/jquery-ui/jquery-ui.js' %}"></script>
+            <script type="text/javascript" src="{% static 'lfs/bower_components/jquery-form/jquery.form.js' %}"></script>
+            <script type="text/javascript" src="{% static 'lfs/bower_components/jgrowl/jquery.jgrowl.js' %}"></script>
+            <script type="text/javascript" src="{% static 'lfs/bower_components/jquery-cookie/jquery.cookie.js' %}"></script>
+            <script type="text/javascript" src="{% static 'lfs_theme/bower_components/fancybox/source/jquery.fancybox.pack.js' %}"></script>
+            <script type="text/javascript" src="{% static 'lfs/js/lfs.js' %}"></script>
         {% endcompress %}
 
     </head>
@@ -41,7 +41,7 @@
                     <div class="span-6 logo">
                         <a href="{% url 'lfs_shop_view' %}">
                             <img class="logo"
-                                 src="{{ STATIC_URL }}img/logo.jpg"
+                                 src="{% static 'img/logo.jpg' %}"
                                  alt="Logo" />
                         </a>
                     </div>
@@ -164,7 +164,7 @@
                     {% block colophon %}
                         <p>{% trans 'Powered by' %} <a target="_blank" href="http://www.getlfs.com">LFS</a> &mdash; Lightning Fast Shop</p>
                         <p>
-                            &copy; 2009 - 2015 {% trans 'by' %} Kai Diefenbach and contributors &mdash; {% trans 'All rights reserved' %}
+                            &copy; 2009 - 2017 {% trans 'by' %} Kai Diefenbach and contributors &mdash; {% trans 'All rights reserved' %}
                         </p>
                         <p>{% trans 'Distributed under the' %} <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">{% trans 'BSD-License' %}</a></p>
                     {% endblock %}
