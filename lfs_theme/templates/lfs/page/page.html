@@ -12,8 +12,6 @@
     {% if page.get_meta_description %}
         <meta name="description" content="{{ page.get_meta_description }}" />
     {% endif %}
-
-    <link rel="canonical" href="https://www.holzhandel-im-netz.de{{ page.get_absolute_url }}" />
 {% endblock %}
 
 {% block section %}page{% endblock %}
@@ -31,7 +29,7 @@
     </div>
 
     {% if page.file %}
-        <a href="{{ page.file.url }}">
+        <a href="{{page.file.url}}">
             {% trans "Download" %}
         </a>
     {% endif %}
