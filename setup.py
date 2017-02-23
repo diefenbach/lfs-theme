@@ -1,9 +1,6 @@
-# python imports
 import os
 from setuptools import find_packages
 from setuptools import setup
-
-# lfs imports
 from lfs_theme import __version__
 
 here = os.path.abspath(os.path.dirname(__file__))
@@ -29,6 +26,6 @@ setup(name='lfs-theme',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-        'setuptools',
+          'setuptools',
       ],
-)
+      )
