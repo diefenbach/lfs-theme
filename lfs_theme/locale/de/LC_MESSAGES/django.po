@@ -580,7 +580,7 @@ msgstr "Ihre Bestellungen"
 
 #: templates/lfs/customer/base.html:16 templates/lfs/customer/password.html:24
 msgid "Change password"
-msgstr "Password ändern"
+msgstr "Passwort ändern"
 
 #: templates/lfs/customer/base.html:19
 msgid "Change e-mail"
@@ -588,7 +588,7 @@ msgstr "E-Mail ändern"
 
 #: templates/lfs/customer/base.html:22
 msgid "Change addresses"
-msgstr "Addressen ändern"
+msgstr "Adressdaten ändern"
 
 #: templates/lfs/customer/data.html:5
 msgid "Your Data"
