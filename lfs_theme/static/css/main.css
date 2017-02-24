@@ -60,6 +60,12 @@ em {
     font-style: italic;
 }
 
+input[type=submit] {
+    background: white;
+    border: 1px solid #bbb;
+    padding: 1px 3px;
+}
+
 /* Contain floats: nicolasgallagher.com/micro-clearfix-hack/ */
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
