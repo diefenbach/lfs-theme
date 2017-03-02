@@ -12,7 +12,6 @@
 {% endblock %}
 
 {% block wrapper %}
-
     <h1 class="first-heading">{% trans 'Search results' %}</h1>
 
     <label for="search">{% trans 'Search' %}:</label>
@@ -34,6 +33,9 @@
         {% else %}
             {% blocktrans count total as counter %}1 product was found.{% plural %}{{ counter }} products were found.{% endblocktrans %}
         {% endif %}
+    </p>
+    <p>
+        {% include "lfs/catalog/categories/product/products_navigation.html" %}
     </p>
 
     {% if products %}

@@ -994,8 +994,8 @@ msgstr "Sie suchten nach"
 #, python-format
 msgid "1 product was found."
 msgid_plural "%(counter)s products were found."
-msgstr[0] "Ein Produkt wurde gefunden"
-msgstr[1] "%(counter)s wurden Produkte gefunden"
+msgstr[0] "Ein Produkt wurde gefunden."
+msgstr[1] "Es wurden %(counter)s Produkte gefunden."
 
 #: templates/registration/password_reset_complete.html:4
 #: templates/registration/password_reset_complete.html:22
