@@ -5,7 +5,7 @@
 {% endfor %}
 
 <div>
-    {{ address.zip_code }} {{ address.city }}
+    {{ address.zip_code|default_if_none:"" }} {{ address.city }}
 </div>
 {% if address.line1 %}
     <div>

@@ -27,7 +27,7 @@
 {{ ia.company_name }}
 {{ ia.line1 }}{% if ia.line2 %}
 {{ ia.line2 }}{% endif %}
-{{ ia.zip_code }} {{ ia.city }}
+{{ ia.zip_code|default_if_none:"" }} {{ ia.city }}
 {{ ia.country }}
 {{ ia.phone }}
 {{ ia.email }}{% endwith %}
