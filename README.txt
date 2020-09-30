@@ -1,4 +1,4 @@
-What is it?
+What is it? This is usefull.
 ===========
 
 This is the default theme for `LFS`_, an online shop based on Django.
