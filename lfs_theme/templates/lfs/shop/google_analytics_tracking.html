@@ -1,11 +1,10 @@
 {% if ga_site_tracking and google_analytics_id %}
-    <script type="text/javascript">
-    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ google_analytics_id }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ google_analytics_id }}');
     </script>
-    <script type="text/javascript">
-    try {
-    var pageTracker = _gat._getTracker("{{google_analytics_id}}");
-    pageTracker._trackPageview();
-    } catch(err) {}</script>    
 {% endif %}
