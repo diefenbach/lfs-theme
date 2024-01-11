@@ -161,7 +161,7 @@
                     <select class="cart-country"
                             name="country">
                         {% for country in countries %}
-                            <option {% ifequal country.code selected_country.code  %}selected="selected"{% endifequal %}
+                            <option {% if country.code == selected_country.code  %}selected="selected"{% endif %}
                                     value="{{ country.code }}">
                                 {{ country.name }}
                             </option>
@@ -182,7 +182,7 @@
                     <select class="cart-shipping-method"
                             name="shipping_method">
                         {% for shipping_method in shipping_methods %}
-                            <option {% ifequal shipping_method.id selected_shipping_method.id  %}selected="selected"{% endifequal %}
+                            <option {% if shipping_method.id == selected_shipping_method.id  %}selected="selected"{% endif %}
                                     value="{{ shipping_method.id }}">
                                 {{ shipping_method.name }}
                             </option>
@@ -214,7 +214,7 @@
                     <select class="cart-payment-method"
                             name="payment_method">
                         {% for payment_method in payment_methods %}
-                            <option {% ifequal payment_method.id selected_payment_method.id  %}selected="selected"{% endifequal %}
+                            <option {% if payment_method.id == selected_payment_method.id  %}selected="selected"{% endif %}
                                     value="{{ payment_method.id }}">
                                 {{ payment_method.name }}
                             </option>

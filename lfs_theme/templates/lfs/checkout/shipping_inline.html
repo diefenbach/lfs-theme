@@ -4,7 +4,7 @@
             <input type="radio"
                    name="shipping-method"
                    class="update-checkout"
-                   {% ifequal shipping_method.id selected_shipping_method.id  %}checked="checked"{% endifequal %}
+                   {% if shipping_method.id == selected_shipping_method.id  %}checked="checked"{% endif %}
                    value="{{shipping_method.id}}"
                    id="shipping-method-{{shipping_method.id}}" />
         </div>

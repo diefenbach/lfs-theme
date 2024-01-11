@@ -264,7 +264,7 @@
                                        class="variant"
                                        name="variant_id"
                                        value="{{ product_variant.id }}"
-                                       {% ifequal product_variant.id product.id %}checked="checked"{% endifequal %}  />
+                                       {% if product_variant.id == product.id %}checked="checked"{% endif %}  />
                             </td>
                             <td>
                                 {{ product_variant.get_name }}

@@ -7,7 +7,7 @@
                 onchange="this.form.submit()">
             {% for item in sort_options %}
             <option value="{{ item.default }}"
-                {% ifequal item.default current %}selected="selected"{% endifequal %}>{{ item.title }}</option>
+                {% if item.default == current %}selected="selected"{% endif %}>{{ item.title }}</option>
             {% endfor %}
         </select>
         <noscript>
