@@ -10,12 +10,12 @@ register = Library()
 
 
 class SlotsInformationNode(Node):
-    """
-    """
+    """ """
+
     def render(self, context):
         request = context.get("request")
         obj = context.get("category") or context.get("product") or context.get("page")
-        if obj is None or obj.__class__.__name__.lower() not in ('category', 'product', 'page'):
+        if obj is None or obj.__class__.__name__.lower() not in ("category", "product", "page"):
             obj = lfs.core.utils.get_default_shop(request)
 
         slots = cache.get("slots")
@@ -46,35 +46,31 @@ class SlotsInformationNode(Node):
             cache.set(cache_key, content_class)
 
         context["content_class"] = content_class
-        return ''
+        return ""
 
 
 def do_slots_information(parser, token):
-    """Calculates some context variables based on displayed slots.
-    """
+    """Calculates some context variables based on displayed slots."""
     bits = token.contents.split()
     len_bits = len(bits)
     if len_bits != 1:
-        raise TemplateSyntaxError(_('%s tag needs no argument') % bits[0])
+        raise TemplateSyntaxError(_("%s tag needs no argument") % bits[0])
 
     return SlotsInformationNode()
 
-register.tag('slots_information', do_slots_information)
+
+register.tag("slots_information", do_slots_information)
 
 
-@register.inclusion_tag('lfs/mail/mail_html_footer.html', takes_context=True)
+@register.inclusion_tag("lfs/mail/mail_html_footer.html", takes_context=True)
 def email_html_footer(context):
-    request = context.get('request', None)
+    request = context.get("request", None)
     shop = lfs.core.utils.get_default_shop(request)
-    return {
-        "shop": shop
-    }
+    return {"shop": shop}
 
 
-@register.inclusion_tag('lfs/mail/mail_text_footer.html', takes_context=True)
+@register.inclusion_tag("lfs/mail/mail_text_footer.html", takes_context=True)
 def email_text_footer(context):
-    request = context.get('request', None)
+    request = context.get("request", None)
     shop = lfs.core.utils.get_default_shop(request)
-    return {
-        "shop": shop
-    }
+    return {"shop": shop}
