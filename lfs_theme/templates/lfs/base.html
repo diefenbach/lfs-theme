@@ -8,24 +8,23 @@
         {% block head %}{% endblock %}
         <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
         <meta name="generator" content="LFS - http://www.getlfs.com" />
-
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-              integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         
+        <link rel="stylesheet" type="text/css" href="{% static 'lfs_theme/3rd_party/bootstrap/css/bootstrap.min.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'lfs_theme/3rd_party/bootstrap-icons/font/bootstrap-icons.css' %}" />
         <link rel="stylesheet" type="text/css" href="{% static 'lfs_theme/bower_components/fancybox/source/jquery.fancybox.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'lfs_theme/css/main.css' %}" />
+
         <link rel="stylesheet" type="text/css" href="{% static 'lfs/bower_components/jquery-ui/themes/smoothness/jquery-ui.css' %}" />
         <link rel="stylesheet" type="text/css" href="{% static 'lfs/bower_components/jgrowl/jquery.jgrowl.css' %}" />
-        <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
 
+        <script src="{% static 'lfs_theme/3rd_party/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'lfs/bower_components/jquery/dist/jquery.js' %}"></script>
         <script type="text/javascript" src="{% static 'lfs/bower_components/jquery-ui/jquery-ui.js' %}"></script>
         <script type="text/javascript" src="{% static 'lfs/bower_components/jquery-form/jquery.form.js' %}"></script>
         <script type="text/javascript" src="{% static 'lfs/bower_components/jgrowl/jquery.jgrowl.js' %}"></script>
         <script type="text/javascript" src="{% static 'lfs/bower_components/jquery-cookie/jquery.cookie.js' %}"></script>
-        <script type="text/javascript" src="{% static 'lfs_theme/bower_components/fancybox/source/jquery.fancybox.pack.js' %}"></script>
         <script type="text/javascript" src="{% static 'lfs/js/lfs.js' %}"></script>
-
-
+        <script type="text/javascript" src="{% static 'lfs_theme/bower_components/fancybox/source/jquery.fancybox.pack.js' %}"></script>
     </head>
     <body class="{% block section %}lfs{% endblock %}">
         <div id="header">
@@ -34,7 +33,7 @@
                     <div class="span-6 logo">
                         <a href="{% url 'lfs_shop_view' %}">
                             <img class="logo"
-                                 src="{% static 'img/logo.jpg' %}"
+                                 src="{% static 'lfs_theme/img/logo.jpg' %}"
                                  alt="Logo" />
                         </a>
                     </div>

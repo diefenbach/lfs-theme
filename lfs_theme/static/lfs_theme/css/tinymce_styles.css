@@ -1,0 +1,9 @@
+img.left {
+    float: left;
+    padding-right: 10px;
+}
+
+img.right {
+    float: right;
+    padding-left: 10px;
+}
