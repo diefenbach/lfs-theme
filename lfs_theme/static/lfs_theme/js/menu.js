@@ -16,7 +16,7 @@ hamburger.forEach(hamburger => {
 // Top Menu for mobile devices (make hovering work)
 // By default click and touchstart is triggered, when clicking on the menu point on a mobile device.
 if (/Mobi|Android/i.test(navigator.userAgent)) {
-    const links = document.querySelectorAll('.nav-top-item-link');
+    const links = document.querySelectorAll('.lfs-theme-nav-top-item-link');
 
     links.forEach(link => {
         // Don't go to the target
@@ -44,23 +44,23 @@ if (/Mobi|Android/i.test(navigator.userAgent)) {
         });
     });
     // On mobile we don't want to have the hover intent feature;
-    $('.nav-top-item').hover(
-        function () {
-                $(this).addClass('hover')
-        },
-        function () {
-            $(this).removeClass('hover')
-        }
-    );
+    const menuItems = document.querySelectorAll('.lfs-theme-nav-top-item');
+    menuItems.forEach(menuItem => {
+        menuItem.addEventListener('mouseenter', event => {
+            menuItem.classList.add('hover');
+        });
+        menuItem.addEventListener('mouseout', event => {
+            menuItem.classList.remove('hover');
+        });
+    });
 } else {
-    $('.nav-top-item').hoverIntent({
-            over: function () {
-                $(this).addClass('hover')
-            },
-            timeout: 250,
-            out: function () {
-                $(this).removeClass('hover')
-            },
-        }
-    );
+    const menuItems = document.querySelectorAll('.lfs-theme-nav-top-item');
+    const hi = new SV.HoverIntent(menuItems, {
+        onEnter: function(targetItem) {
+            targetItem.classList.add('hover');
+        },
+        onExit: function(targetItem) {
+            targetItem.classList.remove('hover');
+        },
+    });
 }

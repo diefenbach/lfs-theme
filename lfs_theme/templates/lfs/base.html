@@ -2,12 +2,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
-        <title>{% block title %}{{ SHOP.get_meta_title }}{% endblock %}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+        <meta name="generator" content="LFS - http://www.getlfs.com" />
         <link rel="shortcut icon" href="{% static 'favicon.ico '%}" type="image/ico" />
 
+        <title>{% block title %}{{ SHOP.get_meta_title }}{% endblock %}</title>
+
         {% block head %}{% endblock %}
-        <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-        <meta name="generator" content="LFS - http://www.getlfs.com" />
         
         <link rel="stylesheet" type="text/css" href="{% static 'lfs_theme/3rd_party/bootstrap/css/bootstrap.min.css' %}" />
         <link rel="stylesheet" type="text/css" href="{% static 'lfs_theme/3rd_party/bootstrap-icons/font/bootstrap-icons.css' %}" />
@@ -90,8 +92,7 @@
             </div>
         </div>
 
-        <div id="tabs">
-            
+        <div id="tabs">            
             <div class="container">
                 {% block tabs %}
                     {% top_nav %}
@@ -109,7 +110,7 @@
         <div id="content">
             <div class="container">
                 {% slots_information %}
-
+                
                 {% block wrapper %}
                     <div class="row">
                         {% block left-slot-wrapper %}
@@ -176,7 +177,7 @@
             {% google_analytics_tracking %}
         {% endblock %}
         {% block google-analytics-ecommerce %}{% endblock %}
+        <script type="text/javascript" src="{% static 'lfs_theme/3rd_party/sv_hover_intent.js' %}"></script>
         <script type="text/javascript" src="{% static 'lfs_theme/js/menu.js' %}"></script>
-        
     </body>
 </html>

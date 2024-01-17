@@ -8,22 +8,20 @@
                 Menü Schließen
             </a>
         </li>
-
         <li class="nav-mobile-item">
             <a class="nav-mobile-link nav-back-link" href="javascript:;">
                 Zur&uuml;ck
             </a>
         </li>
-
         <li class="nav-mobile-item">
-            <a href="#" class="nav-mobile-link">
-                {{ category.name }} anzeigen
+            <a href="{% url 'lfs_category' category.slug %}" class="nav-mobile-link">
+                <b>{{ category.name }}</b>
             </a>
         </li>
         {% for category in categories %}
             <li class="nav-mobile-item {% if category.children %}nav-mobile-expand{% endif %}">
-                <a class="nav-mobile-link {% if category.children%}nav-mobile-expand-link{% endif %}"
-                   href="#">
+                <a class="nav-mobile-link {% if category.children %}nav-mobile-expand-link{% endif %}"
+                   href="{% if category.children %}#{% else %}{% url 'lfs_category' category.category.slug %}{% endif %}">
                     {{ category.category.name }}
                 </a>
                 {% sidebar_nav_children category %}
