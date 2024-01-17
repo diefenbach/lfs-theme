@@ -1,0 +1,22 @@
+.lfs-cart-product-name {
+    font-weight:bold;    
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.lfs-cart-properties {
+    margin-top: 6px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.lfs-cart-label {
+    font-weight: bold;
+}
+
+.lfs-cart-amount {
+    text-align: right;
+}

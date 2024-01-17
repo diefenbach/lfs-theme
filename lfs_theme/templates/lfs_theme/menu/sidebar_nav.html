@@ -1,0 +1,20 @@
+{% load lfs_theme_tags %}
+<nav class="nav-mobile-sidebar">
+    <ul class="nav-mobile-items nav-level-1">
+        <li class="nav-mobile-item">
+            <a class="nav-mobile-link close-menu hamburger"
+               href="#">
+                Menü Schließen
+            </a>
+        </li>
+        {% for category in category_tree %}
+            <li class="nav-mobile-item {% if category.children%}nav-mobile-expand{% endif %}">
+                <a class="nav-mobile-link {% if category.children%}nav-mobile-expand-link{% endif %}"
+                   href="#">
+                    {{ category.category.name }}
+                </a>
+                {% sidebar_nav_children category %}
+            </li>
+        {% endfor %}
+    </ul>
+</nav>

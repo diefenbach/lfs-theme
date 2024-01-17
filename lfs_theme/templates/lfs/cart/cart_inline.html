@@ -1,293 +1,397 @@
-{% load i18n lfs_tags %}
+{% load i18n %}
+{% load lfs_tags %}
 
-{% if cart_items %}
-    <h1 class="first-heading">
-        {% trans "Voucher" %}
-    </h1>
-    <span class="voucher-description">{% trans "If you have voucher code, please enter it here" %}</span>
-    <input data="{% url 'lfs_check_voucher_cart' %}"
-           type="text"
-           id="voucher"
-           name="voucher"
-           value="{{ voucher_number }}"
-           size="30" />
+<div class="ci"
+     id="cart-inline">
+    {% if cart_items %}
+        <h1 class="cart-title">
+            {% trans 'Your Cart' %}
+        </h1>
 
-    {% if voucher_number and voucher_message %}
-        <span class="voucher-message">
-            {{ voucher_message }}
-        </span>
-    {% endif %}
-
-    <h1 class="title">
-        {% trans 'Your Cart' %}
-    </h1>
-
-    <form id="cart-form"
-          action="{% url 'lfs_refresh_cart' %}"
-          onsubmit="return false;">
-
-        <table class="lfs-default">
-            <tr>
-                <th colspan="2">
-                    {% trans 'Product' %}
-                </th>
-                <th class="left"
-                    colspan="2">
+        {% comment %} {% current_zip_code %} {% endcomment %}
+        <form id="cart-form"
+              action="{% url 'lfs_refresh_cart' %}"
+              onsubmit="return false;">
+            {% comment %} <div class="row cart-labels">
+                <div class="col-6">
+                    {% trans 'Image' %}
+                </div>
+                <div class="col-6">
+                    {% trans 'Description' %}
+                </div>
+                <div class="col-6">
                     {% trans 'Amount' %}
-                </th>
-                <th class="number">
+                </div>
+                <div class="col-6 lfs-cart-number">
                     {% trans 'Net Price' %}
-                </th>
-                <th class="number">
+                </div>
+                <div class="col-6 lfs-cart-number">
                     {% trans 'VAT' %}
-                </th>
-                <th class="number">
+                </div>
+                <div class="col-6 lfs-cart-number">
                     {% trans 'Total' %}
-                </th>
-                <th></th>
-            </tr>
+                </div>
+            </div> {% endcomment %}
             {% for cart_item in cart_items %}
-                <tr>
-                    <td class="image">
+                {% comment %} Main Image {% endcomment %}
+                <div class="row lfs-cart-row">
+                    <div class="col-md-3 col-4 lfs-cart-image">
                         {% if cart_item.product.get_image.image %}
                             <a href="{{ cart_item.product.get_absolute_url }}">
-                                <img src="{{ cart_item.product.get_image.image.url_60x60 }}"
+                                <img src="{{ cart_item.product.get_image.image.url_200x200 }}"
+                                     width="150px"
                                      alt="{{ cart_item.product.get_name }}"/>
                             </a>
                         {% endif %}
-                    </td>
-                    <td>
-                        <span class="product-title">
-                            <a href="{{ cart_item.product.get_absolute_url }}">
-                                {{ cart_item.product.get_name }}
-                            </a>
-                        </span>
-
-                        {% include "lfs/catalog/products/_product_properties.html" with product=cart_item.product configurable_properties=cart_item.obj.get_properties %}
-                    </td>
-                    <td class="number">
-                        <input class="number cart-amount"
-                               type="text"
-                               name="amount-cart-item_{{ cart_item.obj.id }}"
-                               size="6"
-                               value="{{ cart_item.quantity }}" />
-                    </td>
-                    <td>
-                        {% if cart_item.product.get_unit %}
-                            <span class="product-unit">
-                                {{ cart_item.product.get_unit }}
-                            </span>
-                        {% endif %}
-                        {% if cart_item.product.get_active_packing_unit %}
-                            <span class="packing-unit">
-                                ({{ cart_item.obj|packages }} {{ cart_item.product.get_packing_info.1 }})
-                            </span>
-                        {% endif %}
-                    </td>
-                    <td class="number"
-                        nowrap="nowrap">
-                        {{ cart_item.product_price_net|currency:request }}
-                    </td>
-                    <td class="number"
-                        nowrap="nowrap">
-                        {{ cart_item.product_tax|currency:request }}
-                    </td>
-                    <td class="number"
-                        nowrap="nowrap">
-                        {{ cart_item.product_price_gross|currency:request }}
-                    </td>
-                    <td class="right">
-                        <a href="{% url 'lfs_delete_cart_item' cart_item.obj.id %}"
-                           title="{% trans 'Delete item' %}"
-                           class="delete-button delete-cart-item">X</a>
-                    </td>
-                </tr>
-            {% endfor %}
-            {% for discount in discounts %}
-                <tr id="discounts-display">
-                    <td></td>
-                    <td class="left">
-                        {{ discount.name }}
-                    </td>
-                    <td class="number">
-                        1
-                    </td>
-                    <td class="number">
-
-                    </td>
-                    <td class="number" nowrap="nowrap">
-                        - {{ discount.price_net|currency:request }}
-                    </td>
-                    <td class="number" nowrap="nowrap">
-                        - {{ discount.get_tax|currency:request }}
-                    </td>
-                    <td class="number" nowrap="nowrap">
-                        - {{ discount.price_gross|currency:request }}
-                    </td>
-                    <td></td>
-                </tr>
-            {% endfor %}
-
-            {% if display_voucher %}
-                <tr id="voucher-display">
-                    <td></td>
-                    <td class="product-title left">
-                        {% trans "Voucher" %}
-                    </td>
-                    <td class="number">
-                        1
-                    </td>
-                    <td></td>
-                    <td class="number" nowrap="nowrap">
-                        - {{ voucher_value|currency:request }}
-                    </td>
-                    <td class="number" nowrap="nowrap">
-                        ({{ voucher_tax|currency:request }})
-                    </td>
-                    <td class="number" nowrap="nowrap">
-                        - {{ voucher_value|currency:request }}
-                    </td>
-                    <td></td>
-                </tr>
-            {% endif %}
-
-            <tr>
-                <td></td>
-                <td></td>
-                <td class="left">
-                    {% trans 'Country' %}:
-                </td>
-                <td>
-                    <select class="cart-country"
-                            name="country">
-                        {% for country in countries %}
-                            <option {% if country.code == selected_country.code  %}selected="selected"{% endif %}
-                                    value="{{ country.code }}">
-                                {{ country.name }}
-                            </option>
-                        {% endfor %}
-                    </select>
-                </td>
-                <td></td>
-                <td colspan="2"></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td class="left">
-                    {% trans 'Shipping' %}:
-                </td>
-                <td>
-                    <select class="cart-shipping-method"
-                            name="shipping_method">
-                        {% for shipping_method in shipping_methods %}
-                            <option {% if shipping_method.id == selected_shipping_method.id  %}selected="selected"{% endif %}
-                                    value="{{ shipping_method.id }}">
-                                {{ shipping_method.name }}
-                            </option>
-                        {% endfor %}
-                    </select>
-                </td>
-                <td class="number"
-                    nowrap="nowrap">
-                    {{ shipping_costs.price_net|currency:request }}
-                </td>
-                <td class="number"
-                    nowrap="nowrap">
-                    {{ shipping_costs.tax|currency:request }}
-                </td>
-                <td class="number"
-                    nowrap="nowrap">
-                    {{ shipping_costs.price_gross|currency:request }}
-                </td>
-                <td></td>
-            </tr>
-
-            <tr>
-                <td></td>
-                <td></td>
-                <td class="left">
-                    {% trans 'Payment' %}:
-                </td>
-                <td>
-                    <select class="cart-payment-method"
-                            name="payment_method">
-                        {% for payment_method in payment_methods %}
-                            <option {% if payment_method.id == selected_payment_method.id  %}selected="selected"{% endif %}
-                                    value="{{ payment_method.id }}">
-                                {{ payment_method.name }}
-                            </option>
-                        {% endfor %}
-                    </select>
-                </td>
-                <td></td>
-                <td></td>
-                <td class="number"
-                    nowrap="nowrap">
-                    {{ payment_price|currency:request }}
-                </td>
-                <td></td>
-            </tr>
-
-            <tr>
-                <td></td>
-                <td></td>
-                <td colspan="3"
-                    class="total left padding-top">
-                    {% trans 'Total' %}:
-                </td>
-                <td></td>
-                <td class="total number padding-top"
-                    nowrap="nowrap">
-                    {{ cart_price|currency:request }}
-                </td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td colspan="3"
-                    class="discreet left">
-                    {% trans 'Inclusive VAT' %}:
-                </td>
-                <td></td>
-                <td class="discreet number"
-                    nowrap="nowrap">
-                    {{ cart_tax|currency:request }}
-                </td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td colspan="6"
-                    class="discreet left padding-top">
-                    {% trans 'Total delivery time' %}: {{ max_delivery_time }}
-                </td>
-            </tr>
-            <tr>
-                <td colspan="8">
-                    <div class="buttons">
-                        <a class="button checkout-button emphasized"
-                           href="{% url 'lfs_checkout_dispatcher' %}">
-                           {% trans 'Checkout' %}
+                    </div>
+                    {% comment %} Properties {% endcomment %}
+                    <div class="col lfs-cart-product-infos">
+                        <a class="lfs-cart-product-name" href="{{ cart_item.product.get_absolute_url }}">
+                            {{ cart_item.product.get_name }}
                         </a>
-                        <a class="button shopping-button"
+                        {% if cart_item.product.get_variant_properties or cart_item.product.get_displayed_properties %}
+                            <div class="lfs-cart-properties">                                
+                                {% for property in cart_item.product.get_variant_properties %}
+                                    <div>
+                                        {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
+                                    </div>
+                                {% endfor %}
+
+                                {% for property in cart_item.product.get_displayed_properties %}
+                                    <div>
+                                        {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
+                                    </div>
+                                {% endfor %}
+
+                                {% if cart_item.product.is_configurable_product %}
+                                    {% for property in cart_item.obj.get_properties %}
+                                        <div>
+                                            {{ property.title }}: {{ property.value|decimal_l10n }} {{ property.unit|safe }}
+                                            {% if property.display_price %}
+                                                ({{ property.price|currency }})
+                                            {% endif %}
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                        <div class="row mt-2">
+                            <div class="col-12">
+                                <div class="lfs-cart-label">
+                                    {% trans 'Amount' %}{% if cart_item.product.unit %} / {{ cart_item.product.unit }}{% endif %}
+                                </div>
+                                <input class="lfs-cart-amount"
+                                    type="text"
+                                    name="amount-cart-item_{{ cart_item.obj.id }}"
+                                    size="6"
+                                    value="{{ cart_item.quantity }}"/>
+                                {% if cart_item.product.active_packing_unit %}
+                                    <span class="packing-unit">
+                                        ({{ cart_item.obj|packages }} {{ cart_item.product.packing_unit_unit }})
+                                    </span>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div class="mt-2 lfs-cart-number">
+                                <div class="lfs-cart-label">
+                                    {% trans 'Price net' %}
+                                </div>
+                                {{ cart_item.product_price_net|currency }}
+                            </div>
+                            <div class="mt-2 lfs-cart-number">
+                                <div class="lfs-cart-label">{% trans 'VAT' %}</div>
+                                {{ cart_item.product_tax|currency }}
+                            </div>
+                            <div class="mt-2 lfs-cart-item-total lfs-cart-number"
+                                nowrap="nowrap">
+                                <div class="lfs-cart-label">{% trans 'Total' %}</div>
+                                {{ cart_item.product_price_gross|currency }}
+                            </div>
+                        </div>
+                    </div>                            
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <hr class="my-3" />
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="cart-options">
+                {% if discounts %}
+                    <h2 class="cart-title">
+                        Ihre Rabatte
+                    </h2>
+                    <div class="row cart-labels">
+                        <div class="col">
+                            {% trans 'Description' %}
+                        </div>
+                        <div class="col-2">
+                            {% trans 'Net Price' %}
+                        </div>
+                        <div class="col-2 number">
+                            {% trans 'VAT' %}
+                        </div>
+                        <div class="col-2">
+                            {% trans 'Total' %}
+                        </div>
+                    </div>
+                {% endif %}
+                {% for discount in discounts %}
+                    <div class="row">
+                        <div class="col-12 col-lg-2">
+                            <div>
+                                {{ discount.name }}
+                            </div>
+                        </div>
+                        <div class="col-4 col-lg-2 offset-lg-4 discount-price-net">
+                            <div class="lfs-cart-label">
+                                {% trans 'Net Price' %}
+                            </div>
+                            - {{ discount.price_net|currency }}
+                        </div>
+                        <div class="col-4 col-lg-2 discount-tax">
+                            <div class="lfs-cart-label">
+                                {% trans 'VAT' %}
+                            </div>
+                            {% if discount.tax %}
+                                - {{ discount.tax|currency }}
+                            {% endif %}
+                        </div>
+                        <div class="col-4 col-lg-2 discount-price-gross">
+                            <div class="lfs-cart-label">
+                                Bruttopreis
+                            </div>
+                            - {{ discount.price_gross|currency }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="hr"></div>
+                        </div>
+                    </div>
+                {% endfor %}
+                {% if display_voucher %}
+                    <h2 class="cart-title">
+                        Ihre Gutscheine
+                    </h2>
+                    <div class="row cart-labels">
+                        <div class="col">
+                            {% trans 'Description' %}
+                        </div>
+                        <div class="col">
+                        </div>
+                        <div class="col-2 number">
+                            {% trans 'Net Price' %}
+                        </div>
+                        <div class="col-2 number">
+                            {% trans 'VAT' %}
+                        </div>
+                        <div class="col-2">
+                            {% trans 'Total' %}
+                        </div>
+                    </div>
+                    <div class="row" id="voucher-display">
+                        <div class="col-12 col-lg-2">
+                            <div>
+                                {% trans "Voucher" %}
+                            </div>
+                        </div>
+                        <div class="col-4 col-lg-2 offset-lg-4">
+                            <div class="lfs-cart-label">
+                                {% trans 'Net Price' %}
+                            </div>
+                            - {{ voucher_value|currency }}
+                        </div>
+                        <div class="col-4 col-lg-2 number">
+                            <div class="lfs-cart-label">
+                                {% trans 'VAT' %}
+                            </div>
+                            {{ voucher_tax|currency }}
+                        </div>
+                        <div class="col-4 col-lg-2 number">
+                            <div class="lfs-cart-label">
+                                Bruttopreis
+                            </div>
+                            - {{ voucher_value|currency }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="hr"></div>
+                        </div>
+                    </div>
+                {% endif %}
+                <h2 class="cart-title">
+                    Zahlmethode und Versand
+                </h2>
+                <div class="row">
+                    <div class="col-12 col-lg-2">
+                        <div class="cart-label-section">
+                            {% trans 'Country' %}
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-2">
+                        <select class="cart-country"
+                                name="country">
+                            {% for country in countries %}
+                                <option {% if country.code == selected_country.code %}selected="selected"{% endif %}
+                                        value="{{ country.code }}">
+                                    {{ country.name }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-2">
+                        <div class="cart-label-section">
+                            {% trans 'Zip Code' %}
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-2">
+                        <div class="cart-zip-code">
+                            {% if message %}
+                                <div class="cart-zip-code-error">{{ message }}</div>
+                            {% endif %}
+                            <input type="text" id="cart-zip-code" name="cart_zip_code" value="{{ current_zip_code }}"/>
+                        </div>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+                <div class="row">
+                    <div class="col-12"></div>
+                    <div class="col cart-zip-code-help">Geben Sie hier Ihre Postleitzahl ein um die Lieferkosten zu
+                        berechnen.
+                    </div>
+                </div>
+                <div class="row cart-labels">
+                    <div class="col-2 offset-lg-6">
+                        {% trans 'Net Price' %}
+                    </div>
+                    <div class="col-2">
+                        {% trans 'VAT' %}
+                    </div>
+                    <div class="col-2">
+                        {% trans 'Total' %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-2">
+                        <div class="cart-label-section">
+                            {% trans 'Shipping' %}
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-2">
+                        <select class="cart-shipping-method"
+                                name="shipping_method">
+                            {% for shipping_method in shipping_methods %}
+                                <option {% if shipping_method.id == selected_shipping_method.id %}selected="selected"{% endif %}
+                                        value="{{ shipping_method.id }}">
+                                    {{ shipping_method.name }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-4 col-lg-2 offset-lg-2">
+                        <div class="lfs-cart-label">
+                            {% trans 'Price net' %}
+                        </div>
+                        {{ shipping_costs.price_net|currency:request }}
+                    </div>
+                    <div class="col-4 col-lg-2">
+                        <div class="lfs-cart-label">
+                            {% trans 'VAT' %}
+                        </div>
+                        {{ shipping_costs.tax|currency:request }}
+                    </div>
+                    <div class="col-4 col-lg-2">
+                        <div class="lfs-cart-label">
+                            Bruttopreis
+                        </div>
+                        {{ shipping_costs.price_gross|currency:request }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-2">
+                        <div class="cart-label-section">
+                            {% trans 'Payment' %}
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-2">
+                        <select class="cart-payment-method"
+                                name="payment_method">
+                            {% for payment_method in payment_methods %}
+                                <option {% if payment_method.id == selected_payment_method.id %}selected="selected"{% endif %}
+                                        value="{{ payment_method.id }}">
+                                    {{ payment_method.name }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-4 col-lg-2 offset-lg-2">
+                        <div class="lfs-cart-label">
+                            {% trans 'Price net' %}
+                        </div>
+                        {{ payment_costs.price_net|currency:request }}
+                    </div>
+                    <div class="col-4 col-lg-2">
+                        <div class="lfs-cart-label">
+                            {% trans 'VAT' %}:
+                        </div>
+                        {{ payment_costs.tax|currency:request }}
+                    </div>
+                    <div class="col-4 col-lg-2">
+                        <div class="lfs-cart-label">
+                            Bruttopreis
+                        </div>
+                        {{ payment_costs.price_gross|currency:request }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-end total">
+                        {% trans 'Total' %}:
+                        {{ cart_price|currency }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-end small">
+                        {% trans 'Inclusive VAT' %}:
+                        {{ cart_tax|currency }}
+                    </div>
+                </div>
+                <div class="row buttons">
+                    <div class="col-6 text-end">
+                        <a class="button-shopping"
                            href="{{ shopping_url }}">
-                            {% trans 'Go on shopping' %}
                         </a>
                     </div>
-                </td>
-            </tr>
-        </table>
-    </form>
-{% else %}
-    <h1 class="title">
-        {% trans 'Your Cart is empty' %}
-    </h1>
-    <a class="button emphasized left"
-       href="{{ shopping_url }}">
-       {% trans 'Go on shopping' %}
-    </a>
-{% endif %}
+                    <div class="col-6">
+                        <a class="button-checkout"
+                           href="{% url 'lfs_checkout_dispatcher' %}">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    {% else %}
+        <h1 class="cart-title">
+            {% trans 'Your Cart is empty' %}
+        </h1>
+        <a class="button_shopping"
+           href="{{ shopping_url }}">
+        </a>
+    {% endif %}
+
+    <script type="text/javascript">
+        $(function () {
+            var message = "{{ message }}";
+            if (message) {
+                $("#cart-zip-code").focus();
+            } else {
+                $(".lfs-cart-amount").focus();
+            }
+        })
+    </script>
+</div>

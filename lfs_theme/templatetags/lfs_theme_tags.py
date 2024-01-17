@@ -4,6 +4,7 @@ from django.utils.translation import gettext as _
 
 from portlets.models import Slot
 
+from lfs.catalog.models import Category
 import lfs.core.utils
 
 register = Library()
@@ -74,3 +75,82 @@ def email_text_footer(context):
     request = context.get("request", None)
     shop = lfs.core.utils.get_default_shop(request)
     return {"shop": shop}
+
+
+@register.inclusion_tag("lfs_theme/menu/top_nav.html", takes_context=True)
+def top_nav(context):
+    request = context.get("request")
+    obj = context.get("product") or context.get("category")
+
+    categories = []
+    top_category = lfs.catalog.utils.get_current_top_category(request, obj)
+
+    for category1 in Category.objects.filter(parent=None):
+        if top_category:
+            current = top_category.id == category1.id
+        else:
+            current = False
+
+        children = []
+        i = 1
+        children_temp_1 = category1.get_children().filter(exclude_from_navigation=False)
+        len_children = len(children_temp_1) - 1
+        for child in children_temp_1:
+            if (i + 1) % 2 == 0:
+                row = True
+            else:
+                row = False
+
+            if i < len_children:
+                border = True
+            else:
+                border = False
+
+            children1 = []
+            for child2 in child.get_children():
+                if child2.exclude_from_navigation:
+                    continue
+                children1.append(
+                    {
+                        "title1": child2.name,
+                        "link1": child2.get_absolute_url(),
+                    }
+                )
+            children.append(
+                {
+                    "title": child.name,
+                    "image": child.get_image(),
+                    "link": child.get_absolute_url(),
+                    "children1": children1,
+                    "row": row,
+                    "border": border,
+                }
+            )
+            i += 1
+
+        categories.append(
+            {
+                "url": category1.get_absolute_url(),
+                "name": category1.name,
+                "current": current,
+                "children": children,
+            }
+        )
+
+    return {
+        "categories": categories,
+    }
+
+
+@register.inclusion_tag("lfs_theme/menu/sidebar_nav.html", takes_context=True)
+def sidebar_nav(context):
+    ct = lfs.core.utils.CategoryTree(currents=[], start_level=1, expand_level=100)
+    return {"category_tree": ct.get_category_tree()}
+
+
+@register.inclusion_tag("lfs_theme/menu/sidebar_nav_children.html", takes_context=True)
+def sidebar_nav_children(context, category):
+    return {
+        "category": category["category"],
+        "categories": category["children"],
+    }

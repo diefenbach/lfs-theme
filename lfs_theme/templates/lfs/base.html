@@ -13,6 +13,8 @@
         <link rel="stylesheet" type="text/css" href="{% static 'lfs_theme/3rd_party/bootstrap-icons/font/bootstrap-icons.css' %}" />
         <link rel="stylesheet" type="text/css" href="{% static 'lfs_theme/3rd_party/fancybox/source/jquery.fancybox.css' %}" />
         <link rel="stylesheet" type="text/css" href="{% static 'lfs_theme/css/main.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'lfs_theme/css/main-ng.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'lfs_theme/css/menu.css' %}" />
 
         <link rel="stylesheet" type="text/css" href="{% static 'lfs/bower_components/jquery-ui/themes/smoothness/jquery-ui.css' %}" />
         <link rel="stylesheet" type="text/css" href="{% static 'lfs/bower_components/jgrowl/jquery.jgrowl.css' %}" />
@@ -24,6 +26,7 @@
         <script type="text/javascript" src="{% static 'lfs/bower_components/jgrowl/jquery.jgrowl.js' %}"></script>
         <script type="text/javascript" src="{% static 'lfs/bower_components/jquery-cookie/jquery.cookie.js' %}"></script>
         <script type="text/javascript" src="{% static 'lfs_theme/3rd_party/fancybox/source/jquery.fancybox.pack.js' %}"></script>
+        <script type="text/javascript" src="{% static 'lfs_theme/3rd_party/jquery.hoverIntent.js' %}"></script>
         <script type="text/javascript" src="{% static 'lfs/js/lfs.js' %}"></script>
     </head>
     <body class="{% block section %}lfs{% endblock %}">
@@ -88,9 +91,11 @@
         </div>
 
         <div id="tabs">
+            
             <div class="container">
                 {% block tabs %}
-                    {% tabs %}
+                    {% top_nav %}
+                    {% comment %} {% tabs %} {% endcomment %}
                 {% endblock %}
             </div>
         </div>
@@ -171,6 +176,7 @@
             {% google_analytics_tracking %}
         {% endblock %}
         {% block google-analytics-ecommerce %}{% endblock %}
-
+        <script type="text/javascript" src="{% static 'lfs_theme/js/menu.js' %}"></script>
+        
     </body>
 </html>
