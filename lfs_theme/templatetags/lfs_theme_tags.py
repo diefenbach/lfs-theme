@@ -79,61 +79,56 @@ def email_text_footer(context):
 
 @register.inclusion_tag("lfs_theme/menu/top_nav.html", takes_context=True)
 def top_nav(context):
+    """Renders the top navigation.
+
+    In this case it is all top categories with their children up to level 3.
+    """
     request = context.get("request")
     obj = context.get("product") or context.get("category")
 
     categories = []
-    top_category = lfs.catalog.utils.get_current_top_category(request, obj)
+    current_top_category = lfs.catalog.utils.get_current_top_category(request, obj)
+    for category_level_1 in Category.objects.filter(parent=None):
+        if category_level_1.exclude_from_navigation:
+            continue
 
-    for category1 in Category.objects.filter(parent=None):
-        if top_category:
-            current = top_category.id == category1.id
+        if current_top_category:
+            current = current_top_category.id == category_level_1.id
         else:
             current = False
 
-        children = []
-        i = 1
-        children_temp_1 = category1.get_children().filter(exclude_from_navigation=False)
-        len_children = len(children_temp_1) - 1
-        for child in children_temp_1:
-            if (i + 1) % 2 == 0:
-                row = True
-            else:
-                row = False
+        categories_level_2 = []
+        for category_level_2 in category_level_1.get_children().filter(exclude_from_navigation=False):
+            if category_level_2.exclude_from_navigation:
+                continue
 
-            if i < len_children:
-                border = True
-            else:
-                border = False
-
-            children1 = []
-            for child2 in child.get_children():
-                if child2.exclude_from_navigation:
+            categories_level_3 = []
+            for category_level_3 in category_level_2.get_children():
+                if category_level_3.exclude_from_navigation:
                     continue
-                children1.append(
+
+                categories_level_3.append(
                     {
-                        "title1": child2.name,
-                        "link1": child2.get_absolute_url(),
+                        "name": category_level_3.name,
+                        "url": category_level_3.get_absolute_url(),
                     }
                 )
-            children.append(
+
+            categories_level_2.append(
                 {
-                    "title": child.name,
-                    "image": child.get_image(),
-                    "link": child.get_absolute_url(),
-                    "children1": children1,
-                    "row": row,
-                    "border": border,
+                    "name": category_level_2.name,
+                    "url": category_level_2.get_absolute_url(),
+                    "children": categories_level_3,
+                    "image": category_level_2.get_image(),
                 }
             )
-            i += 1
 
         categories.append(
             {
-                "url": category1.get_absolute_url(),
-                "name": category1.name,
+                "name": category_level_1.name,
+                "url": category_level_1.get_absolute_url(),
+                "children": categories_level_2,
                 "current": current,
-                "children": children,
             }
         )
 

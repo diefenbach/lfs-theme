@@ -1,15 +1,16 @@
 // Mobile Menu
-const navExpand = [].slice.call(document.querySelectorAll('.nav-mobile-expand'))
 
-navExpand.forEach(item => {
-    item.querySelector('.nav-mobile-link').addEventListener('click', () => item.classList.add('active'))
-    item.querySelector('.nav-back-link').addEventListener('click', () => item.classList.remove('active'))
-})
-
-// Mobile menu toggles
+// Toggle sidebar
 const hamburger = document.querySelectorAll('.hamburger')
 hamburger.forEach(hamburger => {
     hamburger.addEventListener('click', event => document.body.classList.toggle('nav-mobile-is-toggled'));
+})
+
+// Toggle submenus
+const navExpand = [].slice.call(document.querySelectorAll('.nav-mobile-expand'))
+navExpand.forEach(item => {
+    item.querySelector('.nav-mobile-link').addEventListener('click', () => item.classList.add('active'))
+    item.querySelector('.nav-back-link').addEventListener('click', () => item.classList.remove('active'))
 })
 
 

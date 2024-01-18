@@ -1,30 +1,39 @@
 {% load lfs_theme_tags %}
 
-
 <nav class="lfs-theme-nav-top">
     {% for category in categories %}
         <div class="lfs-theme-nav-top-item">
             <a href="{{ category.url }}" class="lfs-theme-nav-top-item-link {% if category.current %}active{% endif %}">
                 {{ category.name }}
             </a>
-            {% if category.children %}
+            {% if category.children %}            
                 <div class="lfs-theme-nav-top-item-content">
+                    <div class="lfs-theme-nav-top-current-category">
+                        <a href="{{ category.url }}">
+                            Zu {{ category.name }} wechseln
+                        </a>
+                    </div>
                     <div class="row">
-                        {% for sub_category in category.children %}
+                        {% for category_level_2 in category.children %}
                             <div class="col-6">
                                 <div class="lfs-theme-nav-top-level-2">
                                     <div class="row">
-                                        <div class="col-3">
-                                            <img src="/media/{{ sub_category.image }}" alt="">
+                                        <div class="col-2">
+                                            <a href="{{ category_level_2.url }}">
+                                                <img src="/media/{{ category_level_2.image }}" 
+                                                    width="40px"   
+                                                    alt="{{ category_level_2.name }}"
+                                                    title="{{ category_level_2.name }}">
+                                            </a>                                                    
                                         </div>
                                         <div class="col">
-                                            <a href="{{ category.url }}">
-                                                {{ sub_category.title }}
+                                            <a href="{{ category_level_2.url }}">
+                                                {{ category_level_2.name }}
                                             </a>
-                                            {% for sub_sub_category in sub_category.children1 %}
+                                            {% for category_level_3 in category_level_2.children %}
                                                 <div class="lfs-theme-nav-top-level-3">
-                                                    <a href="{{ sub_sub_category.link1 }}">
-                                                        {{ sub_sub_category.title1 }}
+                                                    <a href="{{ category_level_3.url }}">
+                                                        {{ category_level_3.name }}
                                                     </a>
                                                 </div>
                                             {% endfor %}
@@ -45,46 +54,3 @@
     </span>
 </div>
 {% sidebar_nav %}
-
-{% comment %} <div class="col-5 col-md-8 col-xl-9">
-    <nav class="lfs-theme-nav-top">
-        <ul>
-            {% for category in categories %}
-                <li class="lfs-theme-nav-top-item">
-                    <a class="lfs-theme-nav-top-item-link {% if category.current %}active{% endif %}"
-                       href="{{ category.url }}">{{ category.name }}</a>
-                    <ul class="lfs-theme-nav-top-item-content">
-                        <li class="lfs-theme-nav-top-current-category">
-                            <a href="{{ category.url }}">
-                                Zu {{ category.name }} wechseln
-                            </a>
-                        </li>
-                        {% for sub_category in category.children %}
-                            <li class="lfs-theme-nav-top-level-2">
-                                <a href="{{ sub_category.link }}">
-                                    <img src="/media/{{ sub_category.image }}" alt="">
-                                    {{ sub_category.title }}
-                                </a>
-                                {% if sub_category.children1 %}
-                                    <ul>
-                                        {% for sub_sub_category in sub_category.children1 %}
-                                            <li class="lfs-theme-nav-top-level-3">
-                                                <a href="{{ sub_sub_category.link1 }}">
-                                                    {{ sub_sub_category.title1 }}
-                                                </a>
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                {% endif %}
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </li>
-            {% endfor %}
-        </ul>
-    </nav>
-    <div class="text-end nav-mobile">
-        <span class="hamburger material-icons">menu</span>
-    </div>
-    {% category_tree %}
-</div> {% endcomment %}

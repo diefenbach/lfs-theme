@@ -75,7 +75,7 @@ a {
     transform: translateX(100%);
     background-color: #eee;
     transition: 0.3s;
-    /* visibility: hidden; */
+    visibility: hidden;
 }
   
 .nav-mobile-expand-content .nav-mobile-item:not(:last-child) {
@@ -143,7 +143,7 @@ a {
     color: #82a41c;
     background-color: #eee;
     position: absolute;
-    width: 500px;
+    width: 600px;
     border: 1px solid #3f322c;
 }
   
