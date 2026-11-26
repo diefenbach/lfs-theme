@@ -1,5 +1,6 @@
 {% extends "lfs/base.html" %}
-{% load i18n lfs_tags %}
+{% load i18n %}
+{% load lfs_tags %}
 
 {% block section %}added-to-cart{% endblock %}
 {% block left-slot-wrapper %}{% endblock %}
@@ -10,83 +11,91 @@
 {% endblock %}
 
 {% block wrapper %}
-    <h1>{% blocktrans count counter=cart_items_count %}This product has been added to cart{% plural %}These products have been added to cart{% endblocktrans %}</h1>
-
-    <div id="cart-items">
-        {{ cart_items }}
-    </div>
-
-    {% if product_accessories %}
-        <h3>{% trans 'Accessories' %}</h3>
-        <table class="accessories lfs-default">
-            <thead>
-                <tr>
-                    <th>
+    <div class="atc">
+        <h1>{% blocktrans count counter=cart_items_count %}This product has been added to cart{% plural %}These products
+            have been added to cart{% endblocktrans %}</h1>
+        <div id="cart-items">
+            {{ cart_items }}
+        </div>
+        <div class="row buttons">
+            <div class="col-6">
+                <a class="button-shopping"
+                   href="{{ shopping_url }}">
+                </a>
+            </div>
+            <div class="col-6">
+                <a class="button-checkout"
+                   href="{% url 'lfs_checkout_dispatcher' %}">
+                </a>
+            </div>
+        </div>
+        {% if product_accessories %}
+            <div class="accessories-title">{% trans 'Accessories' %}</div>
+            <div class="accessories">
+                <div class="row cart-labels">
+                    <div class="col-lg-3 offset-lg-1">
                         {% trans 'Name' %}
-                    </th>
-                    <th class="center"
-                        colspan="2">
+                    </div>
+                    <div class="col-lg-2">
                         {% trans 'Quantity' %}
-                    </th>
-                    <th class="number">
+                    </div>
+                    <div class="col-lg-2">
                         {% trans 'Price' %}
-                    </th>
-                    <th class="number">
+                    </div>
+                    <div class="col-lg-2">
                         {% trans 'Total' %}
-                    </th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
+                    </div>
+                </div>
                 {% for product_accessory in product_accessories %}
-                    <tr>
-                        <td>
-                            <a href="{{ product_accessory.accessory.get_absolute_url }}">
+                    <div class="row">
+                        <div class="col-6 col-lg-1 image">
+                            <img src="{{ product_accessory.accessory.get_image.image.url_60x60 }}"
+                                 alt="{{ product_accessory.accessory.get_name }}"/>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <a class="product-name" href="{{ product_accessory.accessory.get_absolute_url }}">
                                 {{ product_accessory.accessory.get_name }}
                             </a>
-                        </td>
-                        <td class="number">
+                        </div>
+                        <div class="col-6 col-lg-2">
+                            <div class="cart-label">
+                                {% trans 'Amount' %}
+                            </div>
                             <input type="text"
                                    size="4"
                                    id="quantity-{{ product_accessory.accessory.id }}"
                                    value="{{ product_accessory.quantity|quantity }}"/>
-                        </td>
-                        <td>
                             &nbsp;{{ product_accessory.accessory.get_unit }}
-                        </td>
-                        <td class="number">
-                            {{ product_accessory.accessory|get_price:request|currency:request }}
-                        </td>
-                        <td class="number">
-                            {{ product_accessory|get_price:request|currency:request }}
-                        </td>
-                        <td class="right">
-                            <a class="button add-accessory-link"
+                        </div>
+                        <div class="col-6 col-lg-2">
+                            <div class="cart-label">
+                                {% trans 'Price' %}
+                            </div>
+                            {{ product_accessory.accessory|get_price:request|currency }}
+                        </div>
+                        <div class="col-6 col-lg-2">
+                            <div class="cart-label">
+                                {% trans 'Total' %}
+                            </div>
+                            {{ product_accessory|get_price:request|currency }}
+                        </div>
+                        <div class="col-6 col-lg-2">
+                            <div class="cart-label">
+                                {% trans 'Add' %}
+                            </div>
+                            <a class="add-accessory-link"
                                id="add-{{ product_accessory.accessory.id }}"
-                               rel="nofollow"
                                href="{% url 'lfs_add_accessory_to_cart' product_accessory.accessory.id %}">
-                               {% trans 'Add' %}
                             </a>
-                        </td>
-                    </tr>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="hr-small"></div>
+                        </div>
+                    </div>
                 {% endfor %}
-            </tbody>
-        </table>
-    {% endif %}
-
-    <div class="buttons">
-        <a class="button checkout-button emphasized"
-           href="{% url 'lfs_checkout_dispatcher' %}">
-            {% trans 'Checkout' %}
-        </a>
-        <a class="button cart-button"
-           href="{% url 'lfs_cart' %}">
-            {% trans 'Go to cart' %}
-        </a>
-        <a class="button shopping-button"
-           href="{{ shopping_url }}">
-            {% trans 'Go on shopping' %}
-        </a>
+            </div>
+        {% endif %}
     </div>
-
 {% endblock %}

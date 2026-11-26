@@ -1,8 +1,9 @@
 {% extends "lfs/base.html" %}
+{% load lfs_theme_tags %}
 {% load i18n lfs_tags %}
 
 {% block title %}
-    {% trans 'Search results' %} - {{ block.super }}
+    {% trans 'Search results' %} | {% site_name %}
 {% endblock %}
 
 {% block section %}search-results{% endblock %}
@@ -12,86 +13,90 @@
 {% endblock %}
 
 {% block wrapper %}
-    <h1 class="first-heading">{% trans 'Search results' %}</h1>
+    <div class="search">
+        <h1 class="first-heading mt-5">{% trans 'Search' %}</h1>
 
-    <label for="search">{% trans 'Search' %}:</label>
-    <form action="{% url 'lfs_search' %}"
-          class="search-results-form">
-        <input id="search-results-input"
-               type="text"
-               value="{{ q }}"
-               name="q" />
+        <form class="search-page-form mt-2"
+              action="{% url 'lfs_search' %}">
+                        <div class="input-group">
+                <input class="form-control" id="search-page-input" type="search" name="q" value="{{ q|default:'' }}"
+                       placeholder="{% trans 'Search' %}" aria-label="{% trans 'Search' %}"/>
+                <button class="btn btn-primary" type="submit">{% trans 'Search' %}</button>
+            </div>
+        </form>
 
-        <input type="submit"
-               value="{% trans 'Go!' %}">
-    </form>
-
-    <p class="search-results-description">
-        {% trans 'You searched for' %} <span class="search-results-query">"{{ q }}"</span>.
-        {% if total == 0 %}
-            {% trans "No products found" %}
-        {% else %}
-            {% blocktrans count total as counter %}1 product was found.{% plural %}{{ counter }} products were found.{% endblocktrans %}
+        {% if q %}
+        <p class="search-results-description">
+            {% trans 'You searched for' %} <span class="search-results-query">"{{ q }}"</span>.
+            {% blocktrans count total as counter %}1 product was found.{% plural %}
+                {{ counter }} products were found.
+            {% endblocktrans %}
+        </p>
         {% endif %}
-    </p>
-    <p>
-        {% include "lfs/catalog/categories/product/products_navigation.html" %}
-    </p>
-
-    {% if products %}
-        {% sorting %}
-
-        <table class="lfs-default padding-top">
-            <tr>
-                <th>{% trans 'Image' %}</th>
-                <th>{% trans 'Product' %}</th>
-                <th class="number">{% trans 'Price' %}</th>
-                <th></th>
-            <tr>
-            {% for product in products %}
-                <tr>
-                    <td>
-                        <a href="{{ product.get_absolute_url }}" class="preview-100-100">
-                            <img src="{{ product.get_image.image.url_100x100 }}"
-                                 alt="{{ product.get_name }}"
-                                 title="{{ product.get_name }}" />
-                        </a>
-                    </td>
-                    <td>
-                        <a href="{{ product.get_absolute_url }}">
-                            {{ product.get_name }}
-                        </a>
-                        {% include "lfs/catalog/products/_product_properties.html" with product=cart_item.product configurable_properties=cart_item.obj.get_properties %}
-                    </td>
-
-                    <td class="number">
-                        <div class="product-price">
-                            {% if product.for_sale %}
-                               <span class="for-sale-standard-price">{{ product.get_standard_price|currency:request }}</span>
-                               <span class="for-sale-price">{{ product|get_for_sale_price:request|currency:request }}*</span>
-                            {% else %}
-                            <span class="standard-price">{{ product|get_price:request|currency:request }}*</span>
-                            {% endif %}
-                            {% if product.get_price_unit %}/ {{ product.get_price_unit }}{% endif %}
-                            {% if product.active_base_price %}
-                                <div class="base-price">
-                                    {{ product|get_base_price_gross:request|currency:request}}* {% if product.get_base_price_unit %}/ {{ product.get_base_price_unit }}{% endif %}
+        <p>
+            {% include "lfs/catalog/categories/product/products_navigation.html" %}
+        </p>
+        {% if products %}
+            {% sorting %}
+            <div class="row">
+                {% for product in products %}
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                        <div class="product row"
+                             onclick="window.location='{% url 'lfs_product' product.slug %}'">
+                            <div class="col-12 col-sm-6 col-md-12 product-image">
+                                <a href="{{ product.get_absolute_url }}">
+                                    {% if product.get_image.image.url_200x200 %}
+                                        <img alt="{{ product.get_name }}"
+                                             src="{{ product.get_image.image.url_200x200 }}"/>
+                                    {% endif %}
+                                </a>
+                            </div>
+                            <div class="product-info col-12 col-sm-6 col-md-12">
+                                <h2 class="product-title">
+                                    <a href="{{ product.get_absolute_url }}">
+                                        {{ product.get_name }}
+                                    </a>
+                                </h2>
+                                <div class="product-description">{{ product.short_description|safe }}</div>
+                                <div class="product-price">
+                                    {% if product.get_for_sale %}
+                                        {% if product.price %}
+                                            <span class="for-sale-standard-price">{{ product.price|currency }}</span>
+                                            <span class="for-sale-price">{{ product.for_sale_price|currency }}*</span>
+                                        {% else %}
+                                            <span class="for-sale-standard-price">{{ product.get_standard_price|currency }}</span>
+                                            <span class="for-sale-price">{{ product.get_for_sale_price|currency }}*</span>
+                                        {% endif %}
+                                    {% else %}
+                                        {% if product.price %}
+                                            <span class="standard-price">{{ product.price|currency }}*</span>
+                                        {% else %}
+                                            <span class="standard-price">{{ product.get_price|currency }}*</span>
+                                        {% endif %}
+                                    {% endif %}
+                                    {% if product.price_unit %}
+                                        / {{ product.price_unit }}
+                                    {% endif %}
+                                    <div class="price-disclaimer">
+                                        {% if product.price_includes_tax %}
+                                            <a target="_blank" rel="nofollow"
+                                               href="/page/versandkosten">{% trans '*inc. VAT' %}</a>
+                                        {% else %}
+                                            <a target="_blank" rel="/page/versandkosten">{% trans '*exc. VAT' %}</a>
+                                        {% endif %}
+                                    </div>
                                 </div>
-                            {% endif %}
-                            <div class="price-disclaimer">
-                                {% trans '*inc. VAT' %}
                             </div>
                         </div>
-                    </td>
-                    <td class="buttons">
-                        <a class="button emphasized"
-                           href="{% url 'lfs_product' product.slug %}"
-                           type="submit">
-                            {% trans 'Details' %}
-                        </a>
-                    </td>
-                </tr>
-            {% endfor %}
-        </table>
-    {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <p>
+                {% include "lfs/catalog/categories/product/products_navigation.html" %}
+            </p>
+
+        {% endif %}
+
+        {% addon_include "lfs_gtm" "lfs_theme/addons/gtm/view_item_list_script.html" %}
+    </div>
 {% endblock %}

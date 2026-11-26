@@ -7,7 +7,7 @@ name = "lfs-theme"
 dynamic = ["version"]
 description = "The default theme for LFS"
 readme = "README.txt"
-license = "BSD-3-Clause"
+license = "BSD-3-Clause AND MIT AND 0BSD"
 license-files = ["LICENSE.txt"]
 authors = [{ name = "Kai Diefenbach" }]
 keywords = ["django", "e-commerce", "online-shop"]
@@ -31,3 +31,8 @@ include = ["lfs_theme*"]
 
 [tool.setuptools.dynamic]
 version = { attr = "lfs_theme.__version__" }
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "lfs_theme.tests.settings"
+addopts = "--nomigrations"
+python_files = ["test_*.py"]

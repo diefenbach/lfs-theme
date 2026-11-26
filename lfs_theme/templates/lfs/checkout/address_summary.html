@@ -1,0 +1,11 @@
+{# A postal address in the checkout summary. #}
+{% if address %}
+    <address>
+        {% if address.company_name %}{{ address.company_name }}<br>{% endif %}
+        {{ address.firstname }} {{ address.lastname }}<br>
+        {{ address.line1 }}<br>
+        {% if address.line2 %}{{ address.line2 }}<br>{% endif %}
+        {{ address.zip_code }} {{ address.city }}<br>
+        {{ address.country.name }}
+    </address>
+{% endif %}

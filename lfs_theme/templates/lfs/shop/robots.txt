@@ -1,3 +1,17 @@
-# Ganze Site für alle Robots sperren
 User-agent: *
 Disallow: /
+
+Allow: /$
+Allow: /category-
+Allow: /product/
+Allow: /page/
+Allow: /manufacturers/
+Allow: /manufacturer-
+Allow: /media/
+Allow: /static/
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /contact
+
+# Sitemap
+Sitemap: {{ request.scheme }}://{{ request.get_host }}/sitemap.xml

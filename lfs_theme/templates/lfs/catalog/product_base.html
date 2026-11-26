@@ -1,21 +1,28 @@
 {% extends "lfs/base.html" %}
-{% load i18n lfs_tags lfs_theme_tags reviews_tags %}
+{% load i18n %}
+{% load static %}
+{% load lfs_tags %}
+{% load reviews_tags %}
+{% load lfs_theme_tags %}
 
 {% block title %}
-    {{ product.get_meta_title }} - {{ block.super }}
+    {{ product.get_meta_title }} | {% site_name %}
 {% endblock %}
 
 {% block section %}product{% endblock %}
 
 {% block head %}
+    <meta property="og:title" content="{{ product.get_meta_title }}">
+    <meta property="og:type" content="website">
+    {% if product_image_url %}
+        <meta property="og:image" content="{{ product_image_url }}">
+    {% endif %}
+
     {% if product.get_meta_keywords %}
         <meta name="keywords" content="{{ product.get_meta_keywords }}" />
     {% endif %}
     {% if product.get_meta_description %}
         <meta name="description" content="{{ product.get_meta_description }}" />
-    {% endif %}
-    {% if product.parent.is_product_with_variants %}
-        <link rel="canonical" href="{{ variant_canonical.get_absolute_url }}">
     {% endif %}
 {% endblock %}
 
@@ -24,25 +31,17 @@
 {% endblock %}
 
 {% block content %}
-    {{ product.static_block.html|safe }}
-    {% product_navigation product %}
-    <div class="overview">
-        {% come_from_page product %}
-        <a href="{{ come_from_page.get_absolute_url }}">
-            {% trans 'Back to overview' %}
-        </a>
+    <div id="product-inline"
+         data-msg-number="{% trans '%(title)s must be a number.' %}"
+         data-msg-range="{% trans '%(title)s must be between %(min)s and %(max)s%(unit)s.' %}"
+         data-msg-step="{% trans 'The value %(value)s for %(title)s is not a multiple of the step %(step)s.' %}">
+        {{ product_inline|safe }}
     </div>
-    <div itemscope itemtype="http://schema.org/Product">
-        <div id="product-form-wrapper">
-            <form id="product-form"
-                  action="{% url 'lfs_product_dispatcher' %}"
-                  data="{% url 'lfs_select_variant_from_properties' %}"
-                  method="post">
-                {% csrf_token %}
-                {{ product_inline|safe }}
-            </form>
-        </div>
-        <a name="reviews"></a>
-        {% reviews_for_instance product %}
-    </div>
+
+    {% addon_include "lfs_gtm" "lfs_theme/addons/gtm/view_item_script.html" %}
+{% endblock %}
+
+{% block scripts %}
+    <script defer src="{% static 'lfs_theme/js/product.js' %}"></script>
+    {% addon_include "lfs_bulk_prices" "lfs_theme/addons/bulk_prices_scripts.html" %}
 {% endblock %}

@@ -1,8 +1,49 @@
 What is it?
 ===========
 
-This is the default theme for `LFS`_, an online shop based on Django.
+The default theme for LFS (django-lfs), an online shop based on Django: a responsive Bootstrap 5 storefront with
+category navigation, live search, cart, and a three-step checkout.
 
-See `LFS`_ for more information.
+Installation
+============
 
-.. _`LFS`: http://pypi.python.org/pypi/django-lfs
+Add ``lfs_theme`` to ``INSTALLED_APPS`` before the LFS apps, so its templates win.
+
+Optional add-ons
+================
+
+The theme works without any optional add-on. When one is installed, the theme shows its parts automatically:
+
+* lfs_carousel: image slider on the home page (Swiper is loaded only there)
+* lfs_bulk_prices, lfs_samples: bulk discounts and free samples on the product page
+* lfs_cookie_consent: cookie banner and a "Cookie settings" link in the footer
+* lfs_gtm: Google Tag Manager and e-commerce events
+* lfs_stripe: card payment fields in the checkout
+
+Shop content
+============
+
+* Logo: the shop's image (Manage > Shop); without one the shop name is shown.
+* Footer columns: the first three static blocks.
+* Footer links (imprint, terms, privacy, ...): the actions of the group "Footer".
+* Colours: ``static/lfs_theme/scss/_colors.scss``.
+
+Development
+===========
+
+CSS and the vendored libraries (Bootstrap, Bootstrap Icons, Swiper, htmx) are built with npm::
+
+    cd lfs_theme
+    npm install
+    npm run build        # vendor files and CSS
+    npm run build:css    # CSS only, after changing the SCSS
+
+Tests::
+
+    pytest lfs_theme/tests
+
+License
+=======
+
+BSD (see LICENSE.txt). The vendored libraries in ``static/lfs_theme/vendor`` are MIT (Bootstrap, Bootstrap Icons,
+Swiper) and 0BSD (htmx).

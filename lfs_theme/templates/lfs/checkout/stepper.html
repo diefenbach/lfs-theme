@@ -1,0 +1,20 @@
+{% load i18n %}
+{# The three steps of the checkout; ``step`` is the current one (1, 2, or 3). Earlier steps link back. #}
+<ol class="stepper mt-5">
+    <li class="step {% if step == 1 %}active{% else %}completed{% endif %}"{% if step == 1 %} aria-current="step"{% endif %}>
+        {% if step > 1 %}<a href="{% url 'lfs_checkout_addresses' %}">{% endif %}
+            <span class="step-circle">1</span>
+            <span class="step-title">{% trans 'Addresses' %}</span>
+        {% if step > 1 %}</a>{% endif %}
+    </li>
+    <li class="step {% if step == 2 %}active{% elif step > 2 %}completed{% endif %}"{% if step == 2 %} aria-current="step"{% endif %}>
+        {% if step > 2 %}<a href="{% url 'lfs_checkout_payment_and_shipping' %}">{% endif %}
+            <span class="step-circle">2</span>
+            <span class="step-title">{% trans 'Shipping & payment' %}</span>
+        {% if step > 2 %}</a>{% endif %}
+    </li>
+    <li class="step {% if step == 3 %}active{% endif %}"{% if step == 3 %} aria-current="step"{% endif %}>
+        <span class="step-circle">3</span>
+        <span class="step-title">{% trans 'Review & order' %}</span>
+    </li>
+</ol>

@@ -2,14 +2,9 @@
 
 <div class="cart-portlet portlet">
     <div class="portlet-header">
-        {% if title %}
-            <a href="{% url 'lfs_cart' %}"
-               title="{% trans 'Go to cart' %}">{{ title }}
-        {% else %}
-            {% trans 'Cart' %}
-        {% endif %}
-        <img src="{% static 'img/cart.png' %}"
-             alt="{% trans 'Cart' %}" />
+        <a href="{% url 'lfs_cart' %}" title="{% trans 'Go to cart' %}">
+            <i class="bi bi-cart" aria-hidden="true"></i>
+            {% if title %}{{ title }}{% else %}{% trans 'Cart' %}{% endif %}
         </a>
     </div>
     <div class="portlet-body">

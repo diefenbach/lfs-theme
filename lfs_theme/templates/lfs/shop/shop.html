@@ -1,7 +1,35 @@
 {% extends "lfs/base.html" %}
-{% load i18n %}
+{% load i18n lfs_tags lfs_seo_tags lfs_theme_tags static %}
 
 {% block head %}
+    <meta property="og:title" content="{{ SHOP.get_meta_title }}">
+    <meta property="og:type" content="website">
+    {% include "lfs_theme/og_share_card.html" %}
+    {# The business behind the shop, for the home page (Google: "Adding organization structured data to your home page"). #}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "OnlineStore",
+                "@id": "https://{{ request.get_host|escapejs }}/#organization",
+                "name": "{{ SHOP.shop_owner|default:SHOP.name|escapejs }}",
+                "alternateName": "{{ SHOP.name|escapejs }}",
+                "url": "https://{{ request.get_host|escapejs }}/"{% if SHOP.image %},
+                "logo": "{% absolute_uri request SHOP.image.url %}"{% endif %}{% if SHOP.from_email %},
+                "email": "{{ SHOP.from_email|escapejs }}"{% endif %}
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://{{ request.get_host|escapejs }}/#website",
+                "url": "https://{{ request.get_host|escapejs }}/",
+                "name": "{{ SHOP.name|escapejs }}",
+                "publisher": {"@id": "https://{{ request.get_host|escapejs }}/#organization"}
+            }
+        ]
+    }
+    </script>
+
     {% if SHOP.get_meta_keywords %}
         <meta name="keywords" content="{{ SHOP.get_meta_keywords }}" />
     {% endif %}
@@ -13,13 +41,73 @@
 {% block breadcrumbs %}
     <ul class="breadcrumbs">
         <li>{% trans 'You are here:' %}</li>
-        <li>
-            {% trans 'Home' %}
-        </li>
+        <li>{% trans 'Home' %}</li>
     </ul>
 {% endblock %}
 
+
 {% block content %}
+    {% addon_include "lfs_carousel" "lfs_theme/addons/carousel.html" %}
+    <div class="shop">
+        {% topseller %}
+        {% if topseller %}
+            <div class="row cpd">
+                {% for line in topseller %}
+                    {% for product in line %}
+                        {% category_product_prices_gross product.id %}
+                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                            <div class="product row">
+                                <div class="product-image col-12 col-sm-6 col-md-12">
+                                    {% if product.get_image.image.url_200x200 %}
+                                        {% with size=product.get_image.image|thumbnail_size:"200x200" %}
+                                        <img alt="{{ product.get_name }}"
+                                             src="{{ product.get_image.image.url_200x200 }}"
+                                             {% if size %}width="{{ size.0 }}" height="{{ size.1 }}"{% endif %}/>
+                                        {% endwith %}
+                                    {% endif %}
+                                </div>
+                                <div class="product-info col-12 col-sm-6 col-md-12">
+                                    <h2 class="product-title"><a class="stretched-link" href="{{ product.get_absolute_url }}">{{ product.get_name }}</a></h2>
+                                    <div class="product-description">{{ product.get_short_description|safe }}</div>
+                                    <div class="product-price">
+                                        {% if price_starting_from %}{% trans 'from' %}{% endif %}
+                                        {% if product.get_for_sale %}
+                                            <span class="for-sale-standard-price">{{ standard_price|currency }}</span>
+                                            <span class="for-sale-price">{{ price|currency }}*</span>
+                                        {% else %}
+                                            <span class="standard-price">{{ price|currency }}*</span>
+                                        {% endif %}
+                                        {% if product.get_price_unit %} / {{ product.get_price_unit }} {% endif %}
+                                        {% if product.get_active_packing_unit %}
+                                            <div class="base-price">
+                                                {{ base_packing_price|currency }}* / {{ product.get_packing_info.1 }}
+                                            </div>
+                                        {% endif %}
+                                        {% if product.get_active_base_price %}
+                                            <div class="base-price">
+                                                {% if base_price_starting_from %}{% trans 'from' %}{% endif %}
+                                                {{ base_price|currency }}*
+                                                {% if product.get_base_price_unit %} /
+                                                    {{ product.get_base_price_unit }}{% endif %}
+                                            </div>
+                                        {% endif %}
+                                        <div class="price-disclaimer">
+                                            {% if product.price_includes_tax %}
+                                                {% trans '*inc. VAT' %}
+                                            {% else %}
+                                                {% trans '*exc. VAT' %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>  
+
     {{ SHOP.static_block.html|safe }}
     {{ SHOP.description|safe }}
 {% endblock %}

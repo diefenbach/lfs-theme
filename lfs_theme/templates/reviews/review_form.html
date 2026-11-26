@@ -1,5 +1,6 @@
 {% extends "lfs/base.html" %}
-{% load i18n lfs_theme_tags lfs_tags l10n %}
+{% load static %}
+{% load i18n lfs_tags l10n %}
 
 {% block section %}add-review {% endblock %}
 
@@ -8,8 +9,7 @@
 {% endblock %}
 
 {% block content %}
-
-    <h1>{% trans 'Add Review' %} {% trans "for" %} {{ object.get_name }}</h1>
+    <h1 class="mt-4">{% blocktrans with name=object.get_name %}Add review for {{ name }}{% endblocktrans %}</h1>
 
     {% if object.get_image.image %}
         <img class="image-left"
@@ -119,4 +119,8 @@
 
     </form>
 
+{% endblock %}
+
+{% block scripts %}
+    <script defer src="{% static 'lfs_theme/js/rating.js' %}"></script>
 {% endblock %}

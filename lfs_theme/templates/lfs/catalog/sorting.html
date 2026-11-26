@@ -1,9 +1,9 @@
 {% load i18n %}
-<div class="sorting">
+<div class="sorting my-4">
     <form action="{% url 'lfs_catalog_set_sorting' %}"
           method="post">
         {% csrf_token %}
-        <select name="sorting"
+        <select class="form-select" name="sorting"
                 onchange="this.form.submit()">
             {% for item in sort_options %}
             <option value="{{ item.default }}"

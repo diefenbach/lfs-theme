@@ -1,0 +1,251 @@
+@import "colors";
+
+/* Mobile Menu */
+.mobile-nav {
+  display: none;
+  padding-bottom: 8px;
+}
+
+.mobile-nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-nav button i {
+  font-size: 24px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.mobile-nav-sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.mobile-nav-sidebar a {
+  text-decoration: none;
+}
+
+.mobile-nav-close-link {
+  background-color: #ccc !important;
+}
+
+.mobile-nav-is-toggled .mobile-nav-sidebar {
+  transform: translateX(0);
+  left: 0;
+}
+
+.mobile-nav-sidebar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 250px;
+  height: 100vh;
+  background-color: $theme-light;
+  border-right: 1px solid #d0d0d0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  transition: 0.3s;
+  box-shadow: 10px 0px 25px -15px rgb(0, 0, 0);
+  z-index: 1000;
+}
+
+.mobile-nav-items {
+  flex: 0 0 100%;
+}
+
+.mobile-nav-item {
+  border-bottom: solid 1px black;
+}
+
+.mobile-nav-link {
+  display: block;
+  width: 100%;
+  border: 0;
+  text-align: left;
+  padding: 0.875em 1em;
+  background-color: $theme-light;
+  color: black;
+  font-size: 1rem;
+  line-height: 1.5em;
+  font-weight: 300;
+}
+
+.mobile-nav-link.active {
+  font-weight: bold;
+}
+
+.mobile-nav-sub-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(100%);
+  background-color: $theme-light;
+  transition: 0.3s;
+  visibility: hidden;
+}
+
+.mobile-nav-sub-menu .mobile-nav-item {
+  border-bottom: solid 1px black;
+}
+
+.mobile-nav-sub-menu .mobile-nav-link {
+  background-color: $theme-light;
+}
+
+.mobile-nav-sub-menu .mobile-nav-back-link::after {
+  content: "\F284";
+  font-family: "bootstrap-icons";
+}
+
+.mobile-nav-back-link,
+.mobile-nav-close-link,
+.mobile-nav-sub-menu-link {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mobile-nav-close-link::after {
+  content: "\F659";
+  flex: 0 1 auto;
+  font-family: "bootstrap-icons";
+}
+
+.mobile-nav-sub-menu-link::after {
+  content: "\F285";
+  flex: 0 1 auto;
+  font-family: "bootstrap-icons";
+}
+
+.mobile-nav-expand.active > .mobile-nav-sub-menu {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.desktop-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.75rem;
+  padding-top: 12px;
+}
+
+.desktop-nav-item {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: white;
+  padding: 0 0 14px;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+
+#header .desktop-nav-item.active,
+#header .desktop-nav-item:hover,
+#header .desktop-nav-item.is-open {
+  border-bottom-color: $theme-primary;
+}
+
+
+/* Desktop sub menu */
+.desktop-dropdown-container {
+  position: relative;
+}
+
+.desktop-dropdown {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $theme-light;
+  border: 1px solid #d0d0d0;
+  box-shadow: 5px 10px 25px -15px rgb(0, 0, 0);
+  z-index: 1000;
+}
+
+.desktop-dropdown a {
+  text-decoration: none;
+}
+
+.desktop-dropdown-active {
+  display: block;
+}
+
+.desktop-dropdown-content {
+  width: 100%;
+  padding: 15px;
+}
+
+.desktop-dropdown-content .row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.desktop-dropdown-item {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.desktop-dropdown-item:hover {
+  background-color: #d0d0d0;
+  color: #000;
+}
+
+#header a.desktop-nav-item-level-2 {
+  font-size: 1.1em;
+  display: block;
+  color: black;
+}
+
+a.desktop-nav-item-level-2.active,
+a.desktop-nav-item-level-3.active,
+a.desktop-nav-item-level-2:hover,
+a.desktop-nav-item-level-3:hover {
+  color: $theme-primary;
+}
+
+#header a.desktop-nav-item-level-3 {
+  display: block;
+  color: black;
+  font-size: 0.85em;
+}
+
+.desktop-nav-item-level-2 img.icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+a.desktop-nav-item-level-2.active,
+a.desktop-nav-item-level-3.active {
+  font-weight: bold;
+}
+
+
+@media (max-width: 992px) {
+  .mobile-nav {
+      display: flex;
+      justify-content: flex-end;
+  }
+  
+  .desktop-nav {
+      display: none;
+  }
+  
+  .desktop-dropdown-container {
+      display: none;
+  }
+}

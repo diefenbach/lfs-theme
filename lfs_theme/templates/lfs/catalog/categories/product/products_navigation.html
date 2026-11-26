@@ -1,16 +1,21 @@
 {% load i18n %}
 {% if pagination.total_pages > 1 %}
-<div class="lfs-pagination">
-    {% if pagination.first_page %}
+<div class="lfs-pagination mt-3">
     <span class="first-page">
-        <a href="{{ pagination.url }}?{{ pagination.getparam }}={{ pagination.first_page }}{{ pagination.getvars }}">{% trans "First page" %}</a>
+          <a href="{{ pagination.url }}?{{ pagination.getparam }}={{ pagination.first_page }}{{ pagination.getvars }}">
+              <i class="bi bi-chevron-double-left"></i>
+          </a>
     </span>
-    {% endif %}
-    {% if pagination.has_prev %}
+    
     <span class="previous-page">
-        <a href="{{ pagination.url }}?{{ pagination.getparam }}={{ pagination.prev }}{{ pagination.getvars }}">{% trans "Previous page" %}</a>
+        {% if pagination.has_prev %}
+          <a href="{{ pagination.url }}?{{ pagination.getparam }}={{ pagination.prev }}{{ pagination.getvars }}">
+              <i class="bi bi-chevron-left"></i>
+          </a>
+        {% else %}
+          <i class="bi bi-chevron-left"></i>
+        {% endif %}
     </span>
-    {% endif %}
 
     {% for p in pagination.page_range %}
       {% if p == pagination.current_page %}
@@ -20,17 +25,21 @@
       {% endif %}
     {% endfor %}
 
-    {% if pagination.has_next %}
     <span class="next-page">
-        <a href="{{ pagination.url }}?{{ pagination.getparam }}={{ pagination.next }}{{ pagination.getvars }}">{% trans "Next page" %}</a>
+      {% if pagination.has_next %}
+          <a href="{{ pagination.url }}?{{ pagination.getparam }}={{ pagination.next }}{{ pagination.getvars }}">
+              <i class="bi bi-chevron-right"></i>
+          </a>
+      {% else %}
+          <i class="bi bi-chevron-right"></i>
+      {% endif %}
     </span>
-    {% endif %}
 
-    {% if pagination.last_page %}
     <span class="last-page">
-      <a href="{{ pagination.url }}?{{ pagination.getparam }}={{ pagination.last_page }}{{ pagination.getvars }}">{% trans "Last page" %}</a>
+      <a href="{{ pagination.url }}?{{ pagination.getparam }}={{ pagination.last_page }}{{ pagination.getvars }}">
+        <i class="bi bi-chevron-double-right"></i>
+      </a>
     </span>
-    {% endif %}
 
     {% if pagination.total_text %}
         <span class="total-text">

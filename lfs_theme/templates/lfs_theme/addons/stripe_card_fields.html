@@ -1,0 +1,25 @@
+{% load i18n %}
+{# Card fields of the optional lfs_stripe add-on; Stripe mounts its inputs into the empty elements. #}
+<div id="credit-card">
+    <div class="row mt-3">
+        <div class="col-lg-6">
+            <label class="form-label" for="card-number-element">{% trans 'Card number' %}</label>
+            <div id="card-number-element" class="form-control"></div>
+        </div>
+        <div class="col-lg-6">
+            <label class="form-label mt-3 mt-lg-0" for="cardholder-name">{% trans 'Cardholder' %}</label>
+            <input type="text" id="cardholder-name" name="cardholder_name" class="form-control" placeholder="{% trans 'Name on the card' %}">
+        </div>
+    </div>
+    <div class="row mt-lg-3">
+        <div class="col-lg-6">
+            <label class="form-label mt-3 mt-lg-0" for="card-expiry-element">{% trans 'Expiry date' %}</label>
+            <div id="card-expiry-element" class="form-control"></div>
+        </div>
+        <div class="col-lg-6">
+            <label class="form-label mt-3 mt-lg-0" for="card-cvc-element">{% trans 'CVC' %}</label>
+            <div id="card-cvc-element" class="form-control"></div>
+        </div>
+    </div>
+    <div id="card-errors" role="alert" class="text-danger mt-2"></div>
+</div>

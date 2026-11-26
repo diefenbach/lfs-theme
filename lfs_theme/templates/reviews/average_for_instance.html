@@ -1,12 +1,11 @@
 {% load lfs_tags i18n l10n %}
 
 {% if average %}
-    <div class="average-rating" itemprop="aggregateRating"
+    <div class="average-rating"
          onclick="window.location='#reviews'">
         <ul class="star-rating">
             <li class="current-rating"
-                style="{% localize off %}width:{{average|multiply:25}}px{% endlocalize %}" itemscope itemtype="http://schema.org/AggregateRating">
-                {% blocktrans with avg=average|floatformat %}Currently <span itemprop="ratingValue">{{ avg }}</span>/5 stars{% endblocktrans %}
+                style="{% localize off %}width:{{average|multiply:25}}px{% endlocalize %}">
             </li>
         </ul>
     </div>

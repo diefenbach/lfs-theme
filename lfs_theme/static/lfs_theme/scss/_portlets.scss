@@ -1,0 +1,73 @@
+@import "colors";
+
+.portlet {
+  margin-top: 10px;
+  padding: 2px 8px 8px 8px;
+  background-color: #f5f5f5;
+}
+
+.portlet-footer a {
+  text-decoration: none;
+}
+
+.portlet .filter-title {
+  margin-top: 12px;
+  margin-bottom: 2px;
+  font-weight: bold;
+}
+
+
+#portlet-filter.htmx-request {
+  color: rgba(black, 0.3);
+  position: relative;
+  
+  i {
+    opacity: 0.3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(0, 0, 0, 0.2);
+    border-top: 3px solid $theme-primary;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+}
+
+#portlet-filter {
+  transition: opacity 0.3s ease;
+}
+
+@media (min-width: 1200px) {
+  .portlet {
+    display: block;
+  }
+}
+
+// @media (max-width: 576px) {
+//   .filtered-navigation-portlet {
+//     position: fixed;
+//     top: 0;
+//     left: -550px;
+//     height: 100%;
+//     width: 90%;
+//     background-color: #ccc;
+//   }
+
+//   .filtered-navigation-portlet.active {
+//     left: 0;
+//   }
+// }
