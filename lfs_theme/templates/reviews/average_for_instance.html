@@ -1,12 +1,11 @@
 {% load lfs_tags i18n l10n %}
 
 {% if average %}
-    <div class="average-rating"
-         onclick="window.location='#reviews'">
+    <a class="average-rating d-block" href="#reviews" title="{% trans 'Reviews' %}">
         <ul class="star-rating">
             <li class="current-rating"
                 style="{% localize off %}width:{{average|multiply:25}}px{% endlocalize %}">
             </li>
         </ul>
-    </div>
+    </a>
 {% endif %}

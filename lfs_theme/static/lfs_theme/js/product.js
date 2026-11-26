@@ -94,6 +94,17 @@ document.addEventListener('DOMContentLoaded', () => {
         main.title = thumbnail.title;
     });
 
+    // The star rating links to the reviews tab: show it.
+    document.addEventListener('click', (event) => {
+        if (!event.target.closest('a.average-rating')) return;
+        const tab = document.querySelector('[data-bs-target="#reviews"]');
+        if (tab) {
+            event.preventDefault();
+            bootstrap.Tab.getOrCreateInstance(tab).show();
+            tab.scrollIntoView({behavior: 'smooth', block: 'start'});
+        }
+    });
+
     // Variants: radio list or select fields.
     container.addEventListener('change', (event) => {
         const form = document.getElementById('product-form');

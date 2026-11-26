@@ -41,8 +41,7 @@
             <div class="row">
                 {% for product in products %}
                     <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                        <div class="product row"
-                             onclick="window.location='{% url 'lfs_product' product.slug %}'">
+                        <div class="product row position-relative">
                             <div class="col-12 col-sm-6 col-md-12 product-image">
                                 <a href="{{ product.get_absolute_url }}">
                                     {% if product.get_image.image.url_200x200 %}

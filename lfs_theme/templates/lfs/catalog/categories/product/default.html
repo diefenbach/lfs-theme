@@ -22,13 +22,8 @@
     {% for col in products %}
         {% for product in col %}
             {% category_product_prices_gross product.obj.id %}
-            <div class="col-xs-12 col-md-6
-                        {% if SlotRight and SlotLeft %}
-                            col-xxl-6
-                        {% else %}
-                            col-xxl-4
-                        {% endif %}">
-                <div class="product row" onclick="window.location='{% url 'lfs_product' product.slug %}'">
+            <div class="col-12 col-sm-6 {% if SlotRight and SlotLeft %}col-xxl-4{% elif SlotRight or SlotLeft %}col-xl-4{% else %}col-lg-4 col-xl-3{% endif %}">
+                <div class="product row position-relative">
                     <div class="product-image col-12 col-sm-6 col-md-12">
                         {% if product.image.url_200x200 %}
                             {% with size=product.image|thumbnail_size:"200x200" %}
