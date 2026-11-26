@@ -1,178 +1,204 @@
 {% load i18n lfs_tags %}
 
-{# Voucher #}
-<h2 class="padding-top-large">
-    {% trans "Voucher code" %}
-</h2>
-<input data="{% url 'lfs_check_voucher' %}"
-       type="text"
-       id="voucher"
-       name="voucher"
-       value="{{ voucher_number }}"
-       size="30" />
+<div class="title">{% trans 'Your cart' %}</div>
 
-{% if voucher_number and voucher_message %}
-    <span class="voucher-message">
-        {{ voucher_message }}
-    </span>
+<div class="row cart-labels">
+    <div class="col-3 offset-1">
+        {% trans 'Description' %}
+    </div>
+    <div class="col-2 text-end">
+        {% trans 'Amount' %}
+    </div>
+    <div class="col-2 text-end">
+        {% trans 'Net Price' %}
+    </div>
+    <div class="col-2 text-end">
+        {% trans 'VAT' %}
+    </div>
+    <div class="col-2 text-end">
+        {% trans 'Total' %}
+    </div>
+</div>
+{% for cart_item in cart_items %}
+    <div class="row">
+        <div class="col-6 col-lg-1 image">
+            <a href="{{ cart_item.product.get_absolute_url }}">
+                <img src="{{ cart_item.product.get_image.image.url_60x60 }}"
+                     alt="{{ cart_item.product.get_name }}"/>
+            </a>
+        </div>
+        <div class="col-6 col-lg-3">
+            <span class="product-name">
+                {{ cart_item.product.get_name }}
+            </span>
+            {% include "lfs/catalog/products/_product_properties.html" with product=cart_item.product configurable_properties=cart_item.obj.get_properties %}
+        </div>
+        <div class="col col-lg-2 text-end">
+            <div class="cart-label">{% trans 'Amount' %}</div>
+            {{ cart_item.quantity }}
+            {{ cart_item.product.get_unit }}
+            {% if cart_item.product.get_active_packing_unit %}
+                <span class="packing-unit">
+                    ({{ cart_item.obj|packages }} {{ cart_item.product.get_packing_info.1 }})
+                </span>
+            {% endif %}
+        </div>
+        <div class="col-6 col-lg-2 text-end">
+            <div class="cart-label">
+                {% trans 'Price net' %}
+            </div>
+            {{ cart_item.product_price_net|currency:request }}
+        </div>
+        <div class="col-6 col-lg-2 text-end">
+            <div class="cart-label">{% trans 'VAT' %}</div>
+            {{ cart_item.product_tax|currency:request }}
+        </div>
+        <div class="col-6 col-lg-2 text-end">
+            <div class="cart-label">{% trans 'Total' %}</div>
+            {{ cart_item.product_price_gross|currency:request }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="hr-small"></div>
+        </div>
+    </div>
+{% endfor %}
+
+{% for discount in discounts %}
+    <div class="row" id="discounts-display">
+        <div class="col-12 col-lg-2 offset-lg-1 fw-responsive">
+            {{ discount.name }}
+        </div>
+        <div class="col-4 col-lg-2 offset-lg-3 text-end discount-price-net">
+            <div class="cart-label">
+                {% trans 'Net Price' %}
+            </div>
+            - {{ discount.price_net|currency:request }}
+        </div>
+        <div class="col-4 col-lg-2 text-end discount-tax">
+            <div class="cart-label">
+                {% trans 'VAT' %}
+            </div>
+            {% if discount.tax %}
+                - {{ discount.tax|currency:request }}
+            {% endif %}
+        </div>
+        <div class="col-4 col-lg-2 text-end discount-price-gross">
+            <div class="cart-label">
+                {% trans 'Gross price' %}
+            </div>
+            - {{ discount.price_gross|currency:request }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="hr-small"></div>
+        </div>
+    </div>
+{% endfor %}
+
+{% if display_voucher %}
+    <div class="row" id="voucher-display">
+        <div class="col-12 col-lg-2 offset-lg-1 fw-responsive">
+            {% trans "Voucher" %} ({{ voucher_number }})
+        </div>
+        <div class="col-4 col-lg-2 offset-lg-3 text-end">
+            <div class="cart-label">
+                {% trans 'Net Price' %}
+            </div>
+            - {{ voucher_value|currency:request }}
+        </div>
+        <div class="col-4 col-lg-2 text-end">
+            <div class="cart-label">
+                {% trans 'VAT' %}
+            </div>
+            - {{ voucher_tax|currency:request }}
+        </div>
+        <div class="col-4 col-lg-2 text-end">
+            <div class="cart-label">
+                {% trans 'Gross price' %}
+            </div>
+            - {{ voucher_value|currency:request }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="hr-small"></div>
+        </div>
+    </div>
 {% endif %}
 
-<h2>{% trans 'Your cart' %}</h2>
-<table class="lfs-default cart">
-    <thead>
-        <tr>
-            <th colspan="2">
-                {% trans 'Product' %}
-            </th>
-            <th class="left"
-                colspan="2">
-                {% trans 'Amount' %}
-            </th>
-            <th class="number">
-                {% trans 'Net Price' %}
-            </th>
-            <th class="number">
-                {% trans 'VAT' %}
-            </th>
-            <th class="number">
-                {% trans 'Total' %}
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for cart_item in cart_items %}
-            <tr>
-                <td class="image">
-                    <a href="{{ cart_item.product.get_absolute_url }}">
-                        <img src="{{ cart_item.product.get_image.image.url_60x60 }}"
-                             alt="{{ cart_item.product.get_name }}"/>
-                    </a>
-                </td>
-                <td>
-                    {{ cart_item.product.get_name }}
-                    {% include "lfs/catalog/products/_product_properties.html" with product=cart_item.product configurable_properties=cart_item.obj.get_properties %}
-                </td>
-                <td class="number">
-                    {{ cart_item.quantity }}
-                </td>
-                <td class="padding-left">
-                    {{ cart_item.product.get_unit }}
-                    {% if cart_item.product.get_active_packing_unit %}
-                        <span class="packing-unit">
-                            ({{ cart_item.obj|packages }} {{ cart_item.product.get_packing_info.1 }})
-                        </span>
-                    {% endif %}
-                </td>
-                <td class="number">
-                    {{ cart_item.product_price_net|currency:request}}
-                </td>
-                <td class="number">
-                    {{ cart_item.product_tax|currency:request}}
-                </td>
-                <td class="number">
-                    {{ cart_item.product_price_gross|currency:request}}
-                </td>
-            </tr>
-        {% endfor %}
+<div class="row">
+    <div class="col-12 col-lg-2 offset-lg-1">
+        <span class="fw-responsive">
+            {% trans 'Shipping' %}: {{ selected_shipping_method.name }}
+        </span>
+    </div>
+    <div class="col-4 col-lg-2 offset-lg-3 text-end">
+        <div class="cart-label">
+            {% trans 'Price net' %}
+        </div>
+        {{ shipping_costs.price_net|currency:request }}
+    </div>
+    <div class="col-4 col-lg-2 text-end">
+        <div class="cart-label">
+            {% trans 'VAT' %}
+        </div>
+        {{ shipping_costs.tax|currency:request }}
+    </div>
+    <div class="col-4 col-lg-2 text-end">
+        <div class="cart-label">
+            {% trans 'Gross price' %}
+        </div>
+        {{ shipping_costs.price_gross|currency:request }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="hr-small"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 col-lg offset-lg-1">
+        <span class="fw-responsive">
+            {% trans 'Payment' %}: {{ selected_payment_method.name }}
+        </span>
+    </div>
+    <div class="col-4 col-lg-2 text-end">
+        <div class="cart-label">
+            {% trans 'Price net' %}
+        </div>
+        {{ payment_costs.price_net|currency:request }}
+    </div>
+    <div class="col-4 col-lg-2 text-end">
+        <div class="cart-label">
+            {% trans 'VAT' %}:
+        </div>
+        {{ payment_costs.tax|currency:request }}
+    </div>
+    <div class="col-4 col-lg-2 text-end">
+        <div class="cart-label">
+            {% trans 'Gross price' %}
+        </div>
+        {{ payment_costs.price_gross|currency:request }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="hr-small"></div>
+    </div>
+</div>
 
-        {% for discount in discounts %}
-            <tr id="discounts-display">
-                <td></td>
-                <td class="left">
-                    {{ discount.name }}
-                </td>
-                <td class="number">
-                    1
-                </td>
-                <td></td>
-                <td class="number">
-                    - {{ discount.price_net|currency:request}}
-                </td>
-                <td class="number">
-                    {% if discount.tax %}
-                        (- {{ discount.tax|currency:request}})
-                    {% endif %}
-                </td>
-                <td class="number">
-                    - {{ discount.price_gross|currency:request}}
-                </td>
-            </tr>
-        {% endfor %}
-
-        {% if display_voucher %}
-            <tr id="voucher-display">
-                <td></td>
-                <td class="left">
-                    {% trans "Voucher" %}
-                </td>
-                <td class="number">
-                    1
-                </td>
-                <td></td>
-                <td class="number">
-                    - {{ voucher_value|currency:request}}
-                </td>
-                <td class="number">
-                    ({{ voucher_tax|currency:request}})
-                </td>
-                <td class="number">
-                    - {{ voucher_value|currency:request}}
-                </td>
-            </tr>
-        {% endif %}
-
-        <tr>
-            <td></td>
-            <td>
-                {% trans 'Shipping' %} ({{ selected_shipping_method.name }})
-            </td>
-            <td class="number">
-                1
-            </td>
-            <td></td>
-            <td class="number">
-                {{ shipping_costs.price_net|currency:request}}
-            </td>
-            <td class="number">
-                {{ shipping_costs.tax|currency:request}}
-            </td>
-            <td class="number">
-                {{ shipping_costs.price_gross|currency:request}}
-            </td>
-        </tr>
-
-        <tr>
-            <td></td>
-            <td>
-                {% trans 'Payment' %} ({{ selected_payment_method.name }})
-            </td>
-            <td class="number">
-                1
-            </td>
-            <td></td>
-            <td class="number">
-                {{ payment_price|currency:request}}
-            </td>
-            <td></td>
-            <td class="number">
-                {{ payment_price|currency:request}}
-            </td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <td colspan="7"
-                class="total number padding-top">
-                <span class="total-label">{% trans 'Total' %}:</span>
-                {{ cart_price|currency:request}}
-            </td>
-        </tr>
-        <tr>
-            <td colspan="7"
-                class="discreet number">
-                <span class="total-label">{% trans 'Inclusive VAT' %}:</span>
-                {{ cart_tax|currency:request}}
-            </td>
-        </tr>
-    </tfoot>
-</table>
+<div class="row">
+    <div class="col-12 text-end total">
+        <span class="total-label">{% trans 'Total' %}:</span>
+        {{ cart_price|currency:request }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 text-end small">
+        <span class="total-label">{% trans 'Inclusive VAT' %}:</span>
+        {{ cart_tax|currency:request }}
+    </div>
+</div>

@@ -1,11 +1,20 @@
 {% extends "lfs/base.html" %}
+{% load lfs_theme_tags %}
 {% load i18n lfs_tags %}
 
 {% block title %}
-    {% trans 'Contact form' %} - {{ block.super }}
+    {% trans 'Contact form' %} | {% site_name %}
 {% endblock %}
 
 {% block section %}contact-form{% endblock %}
+
+{% block head %}
+    {# The contact form has no admin fields for meta data, so the description is fixed here. #}
+    <meta name="description" content="{% trans "Questions? Write to us via the contact form, we will answer as soon as possible." %}">
+    <meta property="og:title" content="{% trans 'Contact form' %}">
+    <meta property="og:type" content="website">
+    {% include "lfs_theme/og_share_card.html" %}
+{% endblock %}
 
 {% block breadcrumbs %}
     {% breadcrumbs _("Contact") %}

@@ -1,0 +1,56 @@
+{% extends "lfs/base.html" %}
+{% load i18n static lfs_tags lfs_theme_tags %}
+
+{% block title %}{% trans 'Checkout' %} | {% site_name %}{% endblock %}
+
+{% block section %}checkout{% endblock %}
+
+{% block breadcrumbs %}
+    {% breadcrumbs _("Checkout") %}
+{% endblock %}
+
+{% block wrapper %}
+    <div class="checkout-addresses">
+        {% include "lfs/checkout/stepper.html" with step=1 %}
+
+        <h1 class="mt-4">{% trans 'Enter addresses' %}</h1>
+        <p>{% trans 'Please enter your invoice and shipping address.' %}</p>
+        {% if checkout_form.errors %}
+            <div class="alert alert-danger form-errors">
+                {% trans "The operation could not be performed because one or more errors occurred. Please see below." %}
+            </div>
+        {% endif %}
+        <form class="checkout-form postal-address"
+              method="post"
+              data-url="{% url 'lfs_changed_checkout' %}"
+              novalidate>
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-12 col-md-6" id="invoice-address-inline">
+                    <h2 class="title">{% trans 'Invoice address' %}</h2>
+                    {{ invoice_address_inline|safe }}
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="title form-check">
+                        <input type="checkbox" name="no_shipping" id="id_no_shipping" class="form-check-input" {% if no_shipping %}checked{% endif %}>
+                        <label for="id_no_shipping" class="form-check-label">{% trans 'Different shipping address' %}</label>
+                    </div>
+                    <div class="shipping-address" id="shipping-address-inline" {% if not no_shipping %}hidden{% endif %}>
+                        {{ shipping_address_inline|safe }}
+                    </div>
+                </div>
+            </div>
+            <div class="text-end mt-3">
+                <button class="btn btn-primary">
+                    {% trans 'Next' %} <i class="bi bi-caret-right-fill" aria-hidden="true"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    {% addon_include "lfs_gtm" "lfs_theme/addons/gtm/begin_checkout_script.html" %}
+{% endblock %}
+
+{% block scripts %}
+    <script defer src="{% static 'lfs_theme/js/checkout.js' %}"></script>
+{% endblock %}

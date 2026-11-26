@@ -1,0 +1,44 @@
+{% load i18n lfs_tags %}
+{# Desktop: top-level categories with a dropdown of their children. Mobile: a sliding category tree. #}
+<nav class="desktop-nav" aria-label="{% trans 'Main navigation' %}">
+    {% for category in categories %}
+        <a href="{{ category.url }}" class="desktop-nav-item{% if category.current %} active{% endif %}"
+           {% if category.children %}data-dropdown="dropdown-{{ category.id }}" aria-haspopup="true"{% endif %}>
+            {{ category.name }}
+        </a>
+    {% endfor %}
+</nav>
+
+<div class="desktop-dropdown-container">
+    {% for category in categories %}
+        {% if category.children %}
+            <div class="desktop-dropdown" id="dropdown-{{ category.id }}">
+                <div class="row desktop-dropdown-content">
+                    {% for child in category.children %}
+                        <div class="col-4 pb-4">
+                            <a class="desktop-nav-item-level-2{% if child.current %} active{% endif %}" href="{{ child.url }}">
+                                {% if child.image %}
+                                    <img src="{{ child.image.url_60x60 }}" alt="" class="icon" width="24" height="24">
+                                {% endif %}
+                                {{ child.title }}
+                            </a>
+                            {% for grandchild in child.children %}
+                                <a class="desktop-nav-item-level-3{% if grandchild.current %} active{% endif %}" href="{{ grandchild.url }}">
+                                    {{ grandchild.title }}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+<div class="mobile-nav">
+    <button type="button" class="mobile-nav-toggle-btn" aria-label="{% trans 'Open menu' %}">
+        <i class="bi bi-list" aria-hidden="true"></i>
+    </button>
+</div>
+
+{% category_tree %}

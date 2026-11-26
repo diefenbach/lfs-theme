@@ -1,0 +1,111 @@
+@import "colors";
+
+.ci {
+  .cart-options select,
+  .cart-options input {
+    width: 100%;
+  }
+
+  .cart-options .row {
+    padding: 2px 0;
+  }
+
+  .cart-title {
+    padding: 10px 0;
+  }
+
+  .cart-labels {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .cart-label {
+    display: none;
+  }
+
+  .cart-delete-button {
+    display: none;
+  }
+
+  .cart-delete-button-lg {
+    display: none;
+  }
+
+
+  .cart-product-name {
+    font-weight: bold;
+  }
+
+  .voucher-name,
+  .discount-name {
+    font-weight: bold;
+  }
+
+  .hr {
+    display: block;
+    border-bottom: 2px solid $theme-primary;
+    margin: 30px 0;
+    opacity: 1;
+  }
+
+  .hr-small {
+    display: block;
+    border-bottom: 1px solid $theme-primary;
+    margin: 30px 0;
+    opacity: 1;
+  }
+
+  .cart-labels {
+    display: none;
+  }
+
+  .cart-label-section,
+  .cart-label {
+    display: block;
+    font-weight: bold;
+    padding: 20px 0 2px 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid $theme-primary;
+  }
+
+  .total {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+
+  .fw-responsive {
+    font-weight: normal;
+  }
+
+  @media (max-width: 992px) {
+    .fw-responsive {
+      font-weight: bold;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .cart-label-section {
+      font-weight: normal;
+      padding: 0;
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+
+    .cart-delete-button-md {
+      display: none;
+    }
+
+    .cart-delete-button-lg {
+      display: inline;
+    }
+
+    .cart-label {
+      display: none;
+    }
+
+    .cart-labels {
+      display: flex;
+    }
+  }
+}

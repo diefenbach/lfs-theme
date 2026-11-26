@@ -1,0 +1,42 @@
+{% extends "lfs/base.html" %}
+{% load i18n static lfs_tags lfs_theme_tags %}
+
+{% block title %}{% trans 'Checkout' %} | {% site_name %}{% endblock %}
+
+{% block section %}checkout{% endblock %}
+
+{% block breadcrumbs %}
+    {% breadcrumbs _("Checkout") %}
+{% endblock %}
+
+{% block wrapper %}
+    <div class="checkout-payment-and-shipping">
+        {% include "lfs/checkout/stepper.html" with step=2 %}
+
+        <h1 class="mt-4">{% trans 'Shipping and payment' %}</h1>
+        <p>{% trans 'Please choose your shipping method and payment method.' %}</p>
+        <form class="checkout-form postal-address"
+              method="post"
+              data-url="{% url 'lfs_changed_checkout' %}"
+              novalidate>
+            {% csrf_token %}
+            <div class="row">
+                <div id="shipping-inline" class="col-12 col-md-6">
+                    {{ shipping_inline|safe }}
+                </div>
+                <div id="payment-inline" class="col-12 col-md-6">
+                    {{ payment_inline|safe }}
+                </div>
+            </div>
+            <div class="text-end mt-3">
+                <button class="btn btn-primary">
+                    {% trans 'Next' %} <i class="bi bi-caret-right-fill" aria-hidden="true"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script defer src="{% static 'lfs_theme/js/checkout.js' %}"></script>
+{% endblock %}

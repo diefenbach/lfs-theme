@@ -1,0 +1,32 @@
+{% load i18n %}
+
+<h2 class="title">
+    {% trans "Voucher code" %}
+</h2>
+
+<div class="row">
+    <div class="col-12 col-md-6">
+        <div class="input-group">
+            <input class="form-control"
+                type="text"
+                id="voucher"
+                name="voucher"
+                aria-label="{% trans 'Voucher code' %}" />
+            <button type="button" data-url="{% url 'lfs_set_voucher' %}"
+                class="btn btn-primary add-voucher">
+                {% trans "Apply" %}
+            </button>
+        </div>
+        <span class="voucher-message">
+            {{ voucher_message }}
+        </span>        
+    </div>
+    {% if voucher_number %}
+        <div class="col-12 col-md-6 mt-3 mt-md-0 d-flex">
+            {% trans 'Your voucher code' %}: {{ voucher_number }}
+            <a href="{% url 'lfs_delete_voucher' %}" class="delete-voucher" aria-label="{% trans 'Remove voucher' %}">
+                <i class="bi bi-trash3-fill text-danger ms-2" aria-hidden="true"></i>
+            </a>                        
+        </div>
+    {% endif %}    
+</div>    

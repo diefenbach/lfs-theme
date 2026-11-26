@@ -1,13 +1,17 @@
 {% extends "lfs/base.html" %}
-{% load lfs_tags portlets_tags lfs_theme_tags %}
+{% load lfs_theme_tags %}
+{% load lfs_tags portlets_tags %}
 
 {% block title %}
-    {{ manufacturer.get_meta_title }} - {{ block.super }}
+    {{ manufacturer.get_meta_title }} | {% site_name %}
 {% endblock %}
 
 {% block section %}manufacturer{% endblock %}
 
 {% block head %}
+    <meta property="og:title" content="{{ manufacturer.get_meta_title }}">
+    <meta property="og:type" content="website">
+    {% include "lfs_theme/og_image.html" with image=manufacturer.get_image %}
     {% if manufacturer.get_meta_keywords %}
         <meta name="keywords" content="{{ manufacturer.get_meta_keywords }}" />
     {% endif %}

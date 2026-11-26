@@ -6,14 +6,13 @@
             {{ title }}
         </div>
         <div class="portlet-body">
-            <div class="average-rating"
-                 onclick="window.location='#reviews'">
+            <a class="average-rating d-block" href="#reviews" title="{% trans 'Reviews' %}">
                 <ul class="star-rating">
                     <li class="current-rating"
                         style="{% localize off %}width:{{ average|multiply:25 }}px{% endlocalize %}">
                     </li>
                 </ul>
-            </div>
+            </a>
 	        <div class="average-rating-description clear">
 	            {% trans 'Score' %}: {{ average|decimal_l10n }}, {% trans 'based on' %}
 	            {% blocktrans count amount as counter %}{{ amount }} review{% plural %}{{ amount }} reviews{% endblocktrans %}.

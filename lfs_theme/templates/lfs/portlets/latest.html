@@ -55,16 +55,7 @@
                         </div>
                     </div>
                 {% endfor %}{# slideshow products #}
-                {# tabs #}
-                <ul style="display:none">
-                {% for product in products %}
-                    <li><a href="#tab-{{ forloop.counter }}">{{ forloop.counter }}</a></li>
-                {% endfor %}
-                </ul>
             </div>
-            <script type="text/javascript">
-                $('.slideshow-latest').tabs({ fx: { opacity: 'toggle', duration: 'fast' } }).tabs('rotate', 3000);
-            </script>
             {% endif %}{# slideshow check #}
         </div>{# portlet-body #}
     </div>

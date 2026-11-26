@@ -1,18 +1,22 @@
 {% extends "lfs/base.html" %}
-{% load lfs_tags portlets_tags lfs_theme_tags i18n %}
+{% load lfs_tags portlets_tags i18n static lfs_theme_tags %}
 
 {% block title %}
-    {{ category.get_meta_title }}{% if pagination_data.total_pages > 1 %} - {% blocktrans with page_no=pagination_data.current_page %}page {{ page_no }}{% endblocktrans %}{% endif %} - {{ block.super }}
+    {{ category.get_meta_title }}{% if pagination_data.current_page > 1 %} - {% blocktrans with page_no=pagination_data.current_page %}page {{ page_no }}{% endblocktrans %}{% endif %} | {% site_name %}
 {% endblock %}
 
 {% block section %}category{% endblock %}
 
 {% block head %}
+    <meta property="og:title" content="{{ category.get_meta_title }}">
+    <meta property="og:type" content="website">
+    {% include "lfs_theme/og_image.html" with image=category.get_image %}
+
     {% if category.get_meta_keywords %}
         <meta name="keywords" content="{{ category.get_meta_keywords }}" />
     {% endif %}
     {% if category.get_meta_description %}
-        <meta name="description" content="{{ category.get_meta_description }}{% if pagination_data.total_pages > 1 %} {% blocktrans with page_no=pagination_data.current_page %}page {{ page_no }}{% endblocktrans %}{% endif %}" />
+        <meta name="description" content="{{ category.get_meta_description }}{% if pagination_data.current_page > 1 %} {% blocktrans with page_no=pagination_data.current_page %}page {{ page_no }}{% endblocktrans %}{% endif %}" />
     {% endif %}
 
     {% if pagination_data.has_next %}
@@ -25,11 +29,17 @@
 
 {% endblock %}
 
+{% block top_image %}
+    <div class="top-image-small"></div>
+{% endblock %}
+
+
 {% block breadcrumbs %}
     {% breadcrumbs category %}
 {% endblock %}
 
 {% block content %}
-    {{ category.static_block.html|safe }}
     {{ category_inline|safe }}
+
+    {% addon_include "lfs_gtm" "lfs_theme/addons/gtm/view_item_list_script.html" %}
 {% endblock %}

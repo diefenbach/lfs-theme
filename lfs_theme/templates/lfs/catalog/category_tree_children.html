@@ -1,0 +1,30 @@
+{% load i18n lfs_tags %}
+{% if categories %}
+    <ul class="mobile-nav-items mobile-nav-sub-menu">
+        <li class="mobile-nav-item">
+            <button type="button" class="mobile-nav-link mobile-nav-close-link">{% trans 'Close menu' %}</button>
+        </li>
+        <li class="mobile-nav-item">
+            <button type="button" class="mobile-nav-link mobile-nav-back-link">{% trans 'Back' %}</button>
+        </li>
+        <li class="mobile-nav-item">
+            <a href="{{ category.get_absolute_url }}" class="mobile-nav-link{% if is_current %} active{% endif %}">
+                {% blocktrans with name=category.name %}Show {{ name }}{% endblocktrans %}
+            </a>
+        </li>
+        {% for category in categories %}
+            <li class="mobile-nav-item{% if category.children %} mobile-nav-expand{% endif %}{% if category.is_current %} active{% endif %}">
+                {% if category.children %}
+                    <button type="button" class="mobile-nav-link mobile-nav-sub-menu-link{% if category.is_current %} active{% endif %}">
+                        {{ category.category.name }}
+                    </button>
+                    {% category_tree_children category %}
+                {% else %}
+                    <a class="mobile-nav-link{% if category.is_current %} active{% endif %}" href="{{ category.category.get_absolute_url }}">
+                        {{ category.category.name }}
+                    </a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

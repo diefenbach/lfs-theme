@@ -1,0 +1,25 @@
+{% load static lfs_seo_tags %}
+{# Image slider of the optional lfs_carousel add-on; Swiper is only loaded where a carousel is shown. #}
+{% if items %}
+    <link rel="stylesheet" href="{% static 'lfs_theme/vendor/swiper/swiper-bundle.min.css' %}">
+    <div class="swiper carousel">
+        <div class="swiper-wrapper">
+            {% for item in items %}
+                <div class="swiper-slide">
+                    {% with size=item.image|image_size %}
+                        <img class="slide-image" src="{{ item.image.url }}" {% if size %}width="{{ size.0 }}" height="{{ size.1 }}" {% endif %}alt="{{ item.title|striptags }}">
+                    {% endwith %}
+                    <div class="slide-text">
+                        <h2><strong>{{ item.title|safe }}</strong></h2>
+                        <p>{{ item.text|safe }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <script defer src="{% static 'lfs_theme/vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script defer src="{% static 'lfs_theme/js/addons/carousel.js' %}"></script>
+{% endif %}

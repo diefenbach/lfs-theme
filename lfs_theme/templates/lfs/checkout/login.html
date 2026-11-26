@@ -1,8 +1,10 @@
 {% extends "lfs/base.html" %}
-{% load i18n lfs_tags %}
+{% load lfs_theme_tags %}
+{% load i18n %}
+{% load lfs_tags %}
 
 {% block title %}
-    {% trans 'Login' %} - {{ block.super }}
+    {% trans 'Login' %} | {% site_name %}
 {% endblock %}
 
 {% block section %}checkout-login{% endblock %}
@@ -27,10 +29,16 @@
               action="{% url 'lfs_checkout_login' %}"
               method="post">
             {% csrf_token %}
-            <div class="form-wrapper">
-                <div class="form">
-                    {% lfs_form login_form %}
-                </div>
+            <div class="form">
+                <table>
+                    {{ login_form }}
+                    <tr>
+                        <td></td>
+                        <td>
+                            <a href="{% url 'lfs_password_reset' %}">{% trans 'Forgot password?' %}</a>
+                        </td>
+                    </tr>
+                </table>
             </div>
 
             <input type="hidden"
@@ -39,12 +47,12 @@
 
             <input type="hidden"
                    name="next"
-                   value="{% url 'lfs_checkout' %}" />
+                   value="{% url 'lfs_checkout_addresses' %}" />
 
             <button type="submit"
                     class="button checkout-button emphasized left"
-                    href="{% url 'lfs_checkout' %}">{% trans 'Login' %}</button>
-            <a class="forgot-password-link" href="{% url 'lfs_password_reset' %}">{% trans 'Forgot password?' %}</a>
+                    href="{% url 'lfs_checkout_addresses' %}">{% trans 'Login' %}</button>
+
         </form>
     </div>
 
@@ -59,10 +67,10 @@
             <form action="{% url 'lfs_checkout_login' %}"
                   method="post">
                     {% csrf_token %}
-                    <div class="form-wrapper">
-                        <div class="form">
-                            {% lfs_form register_form %}
-                        </div>
+                    <div class="form">
+                        <table>
+                            {{ register_form }}
+                        </table>
                     </div>
                     <input type="hidden"
                            name="action"
@@ -70,11 +78,11 @@
 
                     <input type="hidden"
                            name="next"
-                           value="{% url 'lfs_checkout' %}" />
+                           value="{% url 'lfs_checkout_addresses' %}" />
 
                     <button class="button register-button emphasized left"
                             type="submit"
-                            href="{% url 'lfs_checkout' %}">{% trans "Register" %}</button>
+                            href="{% url 'lfs_checkout_addresses' %}">{% trans "Register" %}</button>
             </form>
 
         </div>
@@ -88,10 +96,10 @@
                 {% trans 'You can also checkout without login or registration.' %}
             </div>
 
-            <div class="form-wrapper">&nbsp;</div>
+            <div class="form">&nbsp;</div>
 
             <a class="button checkout-button emphasized left"
-               href="{% url 'lfs_checkout' %}">
+               href="{% url 'lfs_checkout_addresses' %}">
                {% trans 'Checkout' %}
             </a>
         </div>

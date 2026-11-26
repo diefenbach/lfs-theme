@@ -1,8 +1,9 @@
 {% extends "lfs/customer/base.html" %}
+{% load lfs_theme_tags %}
 {% load i18n lfs_tags %}
 
 {% block title %}
-    {% trans 'Order' %} - {{ block.super }}
+    {% trans 'Order' %} | {% site_name %}
 {% endblock %}
 
 {% block section %}my-orders{% endblock %}

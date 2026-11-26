@@ -1,8 +1,8 @@
 {% extends "lfs/base.html" %}
-{% load i18n lfs_tags %}
+{% load i18n static lfs_tags lfs_theme_tags %}
 
 {% block title %}
-    {% trans 'Cart' %} - {{ block.super }}
+    {% trans 'Cart' %} | {% site_name %}
 {% endblock %}
 
 {% block section %}cart{% endblock %}
@@ -12,8 +12,11 @@
 {% endblock %}
 
 {% block wrapper %}
+    {{ cart_inline }}
 
-    <div id="cart-inline">
-        {{cart_inline}}
-    </div>
+    {% addon_include "lfs_gtm" "lfs_theme/addons/gtm/added_to_cart_script.html" %}
+{% endblock %}
+
+{% block scripts %}
+    <script defer src="{% static 'lfs_theme/js/cart.js' %}"></script>
 {% endblock %}

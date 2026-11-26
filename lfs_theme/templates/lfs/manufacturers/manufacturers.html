@@ -1,6 +1,16 @@
 {% extends "lfs/base.html" %}
 {% load i18n lfs_tags portlets_tags lfs_theme_tags %}
 
+{% block title %}{% trans "Manufacturers" %} | {% site_name %}{% endblock %}
+
+{% block head %}
+    {# The list has no admin fields for meta data, so title and description are fixed here. #}
+    <meta name="description" content="{% blocktrans with shop=SHOP.name %}All manufacturers and brands at {{ shop }}, with the number of products of each.{% endblocktrans %}">
+    <meta property="og:title" content="{% trans "Manufacturers" %}">
+    <meta property="og:type" content="website">
+    {% include "lfs_theme/og_share_card.html" %}
+{% endblock %}
+
 {% block section %}manufacturers{% endblock %}
 
 {% block breadcrumbs %}
@@ -13,7 +23,10 @@
 <h1>{% trans "Manufacturers" %}</h1>
 
 {% for manufacturer in manufacturers %}
-    <div class="manufacturer clearfix {% cycle "even" "odd" %}" data-href="{{ manufacturer.get_absolute_url }}">
+{# A manufacturer without active products has an empty page; the sitemap leaves it out too. #}
+{% with manufacturer.get_all_products.count as products_count %}
+{% if products_count %}
+    <div class="manufacturer clearfix position-relative {% cycle "even" "odd" %}">
         <div class="img">
             {% if manufacturer.get_image %}
                 <a href="{{ manufacturer.get_absolute_url }}">
@@ -22,24 +35,14 @@
             {% endif %}
         </div>
         <div class="description">
-            <h2><a href="{{ manufacturer.get_absolute_url }}">{{ manufacturer.name }}</a></h2>
-            {% with manufacturer.get_all_products.count as products_count %}
-                {% if products_count %}
-                    <div class="products-count">
-                        {% blocktrans count counter=products_count %}{{ counter }} product{% plural %}{{ counter }} products{% endblocktrans %}
-                    </div>
-                {% endif %}
-            {% endwith %}
+            <h2><a class="stretched-link" href="{{ manufacturer.get_absolute_url }}">{{ manufacturer.name }}</a></h2>
+            <div class="products-count">
+                {% blocktrans count counter=products_count %}{{ counter }} product{% plural %}{{ counter }} products{% endblocktrans %}
+            </div>
             <p>{{ manufacturer.short_description|safe }}</p>
         </div>
     </div>
+{% endif %}
+{% endwith %}
 {% endfor %}
-<script type="text/javascript">
-    $(function() {
-        $('div.manufacturer').click(function(){
-            window.location = $(this).data('href');
-            return false;
-        });
-    });
-</script>
 {% endblock %}

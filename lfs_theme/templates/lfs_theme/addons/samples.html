@@ -1,0 +1,14 @@
+{% load i18n lfs_samples_tags %}
+{# Free sample of the product, from the optional lfs_samples add-on. #}
+{% product_samples %}
+{% with sample=product_samples.0 %}
+    {% if sample %}
+        <div class="product-samples">
+            <input type="hidden" name="sample_id" value="{{ sample.id }}"/>
+            <input type="hidden" name="add-sample-to-cart" value="1"/>
+            <button class="product-sample btn btn-link" type="submit" name="action" value="add-sample-to-cart">
+                {% trans 'Order a free sample' %}
+            </button>
+        </div>
+    {% endif %}
+{% endwith %}

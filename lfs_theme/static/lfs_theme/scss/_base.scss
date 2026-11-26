@@ -1,0 +1,173 @@
+@import "colors";
+
+
+/* Header */
+#header {
+  background-color: $theme-dark;
+  color: white;
+  padding-top: 12px;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.header-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 56px;
+}
+
+.shop-logo {
+  flex: 0 1 auto;
+  margin-right: auto;
+}
+
+.shop-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.logo {
+  max-width: 260px;
+  max-height: 64px;
+}
+
+.search-form {
+  position: relative;
+  flex: 0 1 320px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.3rem;
+}
+
+.cart-link {
+  position: relative;
+}
+
+.cart-link .badge {
+  position: absolute;
+  font-size: 0.5em;
+  top: -6px;
+  right: -10px;
+}
+
+.management {
+  font-size: 0.85rem;
+  text-align: right;
+  opacity: 0.85;
+}
+
+.search-page-form,
+.sorting {
+  max-width: 400px;
+}
+
+.lfs-pagination {
+  background-color: #eee;
+  padding: 4px;
+  margin-bottom: 10px;
+}
+
+.lfs-pagination a {
+  color: black;
+}
+
+.lfs-pagination a:hover,
+.lfs-pagination .current {
+  color: $theme-primary;
+}
+
+form .field {
+  padding-bottom: 10px;
+}
+
+form .errorlist {
+  color: $theme-danger
+}
+
+.categories-footer {
+  background-color: $theme-dark;
+  color: white;
+  padding: 20px;
+  margin-top: 40px;
+
+  .footer-sub-category {
+    display: block;
+  }
+
+  .footer-main-category {
+    color: $theme-primary;
+    text-decoration: none;
+  }
+
+  .footer-sub-category {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8em;    
+  }
+
+  .footer-sub-category:hover {
+    color: $theme-primary;
+  }
+  .footer-main-category:hover {
+    color: white;
+  }
+}
+
+/* Livesearch */
+.livesearch-wrapper {
+  position: relative; 
+  top: 4px;
+}
+
+#livesearch-result {
+  position: absolute;
+  right: 0;
+  z-index: 1050;
+  color: black;
+  width: min(700px, 90vw);
+  background-color: white;
+  box-shadow: 5px 10px 25px -15px rgb(0, 0, 0);
+}
+
+#livesearch-result:empty {
+  display: none;
+}
+
+#livesearch-result a {
+  color: black;
+}
+
+#livesearch-result a:hover {
+  color: $theme-primary;
+}
+
+#livesearch-result .image {
+  min-height: 60px;
+}
+
+#livesearch-result .container {
+  background-color: white;
+}
+
+.livesearch-results {
+  padding: 5px 25px;
+}
+
+
+.payment-method-note {
+  margin-left: 26px;
+}
+
+.footer-title {
+  font-size: 1.1rem;
+  padding-bottom: 10px;
+}

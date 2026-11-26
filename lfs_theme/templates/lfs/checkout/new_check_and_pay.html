@@ -1,0 +1,117 @@
+{% extends "lfs/base.html" %}
+{% load i18n static lfs_tags crispy_forms_tags lfs_theme_tags %}
+
+{% block title %}{% trans 'Checkout' %} | {% site_name %}{% endblock %}
+
+{% block section %}checkout{% endblock %}
+
+{% block breadcrumbs %}
+    {% breadcrumbs _("Checkout") %}
+{% endblock %}
+
+{% block wrapper %}
+    <div class="checkout-check-and-pay">
+        {% include "lfs/checkout/stepper.html" with step=3 %}
+
+        <h1 class="mt-4">{% trans 'Review and order' %}</h1>
+        <p>{% trans 'Please review your details and complete your order.' %}</p>
+
+        {% if checkout_form.errors %}
+            <div class="alert alert-danger">{% trans 'An error occurred. Please check your input.' %}</div>
+        {% endif %}
+
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h2 class="title d-flex justify-content-between">
+                    {% trans 'Invoice address' %}
+                    <a href="{% url 'lfs_checkout_addresses' %}" aria-label="{% trans 'Change invoice address' %}">
+                        <i class="bi bi-pencil-fill" aria-hidden="true"></i>
+                    </a>
+                </h2>
+                {% include "lfs/checkout/address_summary.html" with address=invoice_address.address %}
+            </div>
+            <div class="col-12 col-md-6">
+                <h2 class="title d-flex justify-content-between">
+                    {% trans 'Shipping address' %}
+                    <a href="{% url 'lfs_checkout_addresses' %}" aria-label="{% trans 'Change shipping address' %}">
+                        <i class="bi bi-pencil-fill" aria-hidden="true"></i>
+                    </a>
+                </h2>
+                {% include "lfs/checkout/address_summary.html" with address=shipping_address.address %}
+            </div>
+            <div class="col-12 col-md-6">
+                <h2 class="title d-flex justify-content-between" id="payment-method-title">
+                    {% trans 'Payment method' %}
+                    <a href="{% url 'lfs_checkout_payment_and_shipping' %}" aria-label="{% trans 'Change payment method' %}">
+                        <i class="bi bi-pencil-fill" aria-hidden="true"></i>
+                    </a>
+                </h2>
+                {{ payment_method.name }}
+                {% if payment_method.type == 2 %}
+                    {% addon_include "lfs_stripe" "lfs_theme/addons/stripe_card_fields.html" %}
+                {% endif %}
+            </div>
+            <div class="col-12 col-md-6">
+                <h2 class="title d-flex justify-content-between">
+                    {% trans 'Shipping method' %}
+                    <a href="{% url 'lfs_checkout_payment_and_shipping' %}" aria-label="{% trans 'Change shipping method' %}">
+                        <i class="bi bi-pencil-fill" aria-hidden="true"></i>
+                    </a>
+                </h2>
+                <div>{{ shipping_method.name }}</div>
+                {% with delivery_time=cart|cart_delivery_time:request %}
+                    {% if delivery_time %}
+                        <div>{% trans 'Delivery time' %}: {{ delivery_time }}</div>
+                    {% endif %}
+                {% endwith %}
+            </div>
+
+            <div class="voucher-inline col-12">
+                {{ voucher_inline }}
+            </div>
+
+            <div class="cart-inline col-12">
+                {{ cart_inline }}
+            </div>
+
+            {# The creditcard-form class starts the card payment of the optional lfs_stripe add-on. #}
+            <form method="post"
+                  {% if payment_method.type == 2 %}
+                      class="creditcard-form"
+                      data-customer-first_name="{{ customer.first_name }}"
+                      data-customer-last_name="{{ customer.last_name }}"
+                  {% endif %}>
+                {% csrf_token %}
+                <div class="mt-3">
+                    <h2 class="title">{% trans 'Your message to us' %}</h2>
+                    {{ checkout_form.message|as_crispy_field_no_label }}
+                </div>
+                {% if SHOP.confirm_toc %}
+                    <div class="form-check mt-3">
+                        <input class="form-check-input" type="checkbox" name="confirm_toc" id="id_confirm_toc" required>
+                        <label class="form-check-label" for="id_confirm_toc">{% trans 'Please confirm our terms and conditions' %}</label>
+                        {% if checkout_form.errors.confirm_toc %}
+                            <div class="text-danger">{{ checkout_form.errors.confirm_toc }}</div>
+                        {% endif %}
+                    </div>
+                {% endif %}
+                <div class="text-end mt-5">
+                    <button class="btn btn-primary" id="pay-button">
+                        <i class="pe-2 bi bi-cart-check-fill" id="cart-icon" aria-hidden="true"></i>
+                        <span class="spinner-border spinner-border-sm me-2" role="status" id="loading-spinner" hidden>
+                            <span class="visually-hidden">{% trans 'Loading...' %}</span>
+                        </span>
+                        {% trans 'Buy now' %}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script defer src="{% static 'lfs_theme/js/checkout.js' %}"></script>
+    {% if payment_method.type == 2 %}
+        {% addon_include "lfs_stripe" "lfs_theme/addons/stripe_scripts.html" %}
+    {% endif %}
+{% endblock %}

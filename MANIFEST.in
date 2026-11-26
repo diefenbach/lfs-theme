@@ -1,3 +1,4 @@
 include README.txt LICENSE.txt
 graft lfs_theme
 global-exclude __pycache__ *.py[co] .DS_Store
+prune lfs_theme/node_modules

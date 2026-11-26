@@ -1,8 +1,9 @@
 {% extends "lfs/base.html" %}
+{% load lfs_theme_tags %}
 {% load i18n lfs_tags %}
 
 {% block title %}
-    {% trans 'Checkout' %} - {{ block.super }}
+    {% trans 'Checkout' %} | {% site_name %}
 {% endblock %}
 
 {% block section %}checkout{% endblock %}
