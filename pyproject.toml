@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=77,<81"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lfs-theme"
+dynamic = ["version"]
+description = "The default theme for LFS"
+readme = "README.txt"
+license = "BSD-3-Clause"
+license-files = ["LICENSE.txt"]
+authors = [{ name = "Kai Diefenbach" }]
+keywords = ["django", "e-commerce", "online-shop"]
+classifiers = [
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Framework :: Django :: 5.2",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+]
+requires-python = ">=3.12"
+dependencies = [
+    "django-lfs>=1.0,<2",
+]
+
+[project.urls]
+Source = "https://github.com/diefenbach/lfs-theme"
+
+[tool.setuptools.packages.find]
+include = ["lfs_theme*"]
+
+[tool.setuptools.dynamic]
+version = { attr = "lfs_theme.__version__" }
