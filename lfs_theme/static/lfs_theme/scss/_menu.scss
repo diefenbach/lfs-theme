@@ -2,7 +2,7 @@
 
 /* Mobile Menu */
 // The menu button sits in the header next to the cart and is shown only where the desktop menu is hidden.
-.mobile-nav-toggle-btn {
+#header .mobile-nav-toggle-btn {
   display: none;
   background: none;
   border: none;
@@ -249,8 +249,8 @@ a.desktop-nav-item-level-3.active {
 
 
 @media (max-width: 992px) {
-  .mobile-nav-toggle-btn {
-      display: inline-block;
+  #header .mobile-nav-toggle-btn {
+      display: inline-flex;
   }
   
   .desktop-nav {
