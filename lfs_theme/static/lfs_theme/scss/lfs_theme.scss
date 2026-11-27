@@ -2,7 +2,6 @@
 @use 'breadcrumbs';
 @use 'added-to-cart';
 @use 'cart';
-@use 'categories';
 @use 'footer';
 @use 'new_checkout';
 @use 'login';
@@ -11,8 +10,8 @@
 @use 'portlets';
 @use 'products';
 @use 'rating';
+@use 'product-cards';
 @use 'search';
 @use 'shop';
 @use 'swiper';
-
 @use 'tabs';
