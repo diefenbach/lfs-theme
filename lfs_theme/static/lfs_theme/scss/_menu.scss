@@ -9,7 +9,13 @@
   padding: 0;
   color: $theme-dark;
   font-size: inherit;
+  line-height: 1;
   cursor: pointer;
+}
+
+// The list glyph is drawn thinner and smaller than the search, person, and cart icons.
+.mobile-nav-toggle-btn i {
+  font-size: 1.2em;
 }
 
 .mobile-nav-sidebar ul {
