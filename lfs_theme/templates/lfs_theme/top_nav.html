@@ -1,8 +1,8 @@
-{% load i18n lfs_tags %}
-{# Desktop: top-level categories with a dropdown of their children. Mobile: a sliding category tree, opened by the menu button next to the cart (lfs/base.html). #}
+{% load i18n %}
+{# Desktop: top-level categories with a dropdown of their children. Mobile: a drawer opened by the menu button next to the cart (lfs/base.html), whose levels main.js loads from mobile_menu_url; without it they are part of the page. #}
 <nav class="desktop-nav" aria-label="{% trans 'Main navigation' %}">
     {% for category in categories %}
-        <a href="{{ category.url }}" class="desktop-nav-item{% if category.current %} active{% endif %}"
+        <a href="{{ category.url }}" class="desktop-nav-item{% if category.id in current_ids %} active{% endif %}"
            {% if category.children %}data-dropdown="dropdown-{{ category.id }}" aria-haspopup="true"{% endif %}>
             {{ category.name }}
         </a>
@@ -16,15 +16,15 @@
                 <div class="row desktop-dropdown-content">
                     {% for child in category.children %}
                         <div class="col-4 pb-4">
-                            <a class="desktop-nav-item-level-2{% if child.current %} active{% endif %}" href="{{ child.url }}">
+                            <a class="desktop-nav-item-level-2{% if child.id in current_ids %} active{% endif %}" href="{{ child.url }}">
                                 {% if child.image %}
-                                    <img src="{{ child.image.url_60x60 }}" alt="" class="icon" width="24" height="24">
+                                    <img src="{{ child.image }}" alt="" class="icon" width="24" height="24">
                                 {% endif %}
-                                {{ child.title }}
+                                {{ child.name }}
                             </a>
                             {% for grandchild in child.children %}
-                                <a class="desktop-nav-item-level-3{% if grandchild.current %} active{% endif %}" href="{{ grandchild.url }}">
-                                    {{ grandchild.title }}
+                                <a class="desktop-nav-item-level-3{% if grandchild.id in current_ids %} active{% endif %}" href="{{ grandchild.url }}">
+                                    {{ grandchild.name }}
                                 </a>
                             {% endfor %}
                         </div>
@@ -35,4 +35,7 @@
     {% endfor %}
 </div>
 
-{% category_tree %}
+<div class="mobile-nav-backdrop"></div>
+<nav class="mobile-nav-sidebar" id="mobile-nav" aria-label="{% trans 'Categories' %}" tabindex="-1"{% if mobile_menu_url %} data-src="{{ mobile_menu_url }}"{% endif %}{% if current_url %} data-current="{{ current_url }}"{% endif %}>
+    {% if not mobile_menu_url %}{% include "lfs_theme/mobile_menu.html" %}{% endif %}
+</nav>

@@ -1,0 +1,28 @@
+{% load i18n %}
+{# One category of the mobile menu: a button that opens a level with its children, or a link. #}
+<li class="mobile-nav-item{% if category.children %} mobile-nav-expand{% endif %}">
+    {% if category.children %}
+        <button type="button" class="mobile-nav-link mobile-nav-sub-menu-link">
+            {{ category.name }}
+        </button>
+        <ul class="mobile-nav-items mobile-nav-sub-menu">
+            <li class="mobile-nav-head">
+                <button type="button" class="mobile-nav-back-link" aria-label="{% trans 'Back' %}"><i class="bi bi-chevron-left" aria-hidden="true"></i></button>
+                <span class="mobile-nav-title">{{ category.name }}</span>
+                <button type="button" class="mobile-nav-close" aria-label="{% trans 'Close menu' %}"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+            </li>
+            <li class="mobile-nav-item">
+                <a class="mobile-nav-link mobile-nav-all" href="{{ category.url }}">
+                    {% blocktrans with name=category.name %}All in {{ name }}{% endblocktrans %}
+                </a>
+            </li>
+            {% for category in category.children %}
+                {% include "lfs_theme/mobile_menu_item.html" %}
+            {% endfor %}
+        </ul>
+    {% else %}
+        <a class="mobile-nav-link" href="{{ category.url }}">
+            {{ category.name }}
+        </a>
+    {% endif %}
+</li>

@@ -9,7 +9,9 @@ from django.forms import boundfield
 from django.template import Context, Library, Node, TemplateSyntaxError
 from django.template.base import Parser, Token
 from django.template.loader import get_template, render_to_string
+from django.urls import NoReverseMatch, reverse
 from django.utils.safestring import SafeString, mark_safe
+from django.utils.translation import get_language
 
 from crispy_forms.exceptions import CrispyError
 from crispy_forms.utils import TEMPLATE_PACK
@@ -18,7 +20,8 @@ from portlets.models import Slot
 import lfs.catalog.utils
 import lfs.core.utils
 import lfs.marketing.utils
-from lfs.catalog.models import Category, Product, StaticBlock
+from lfs.catalog.models import Product, StaticBlock
+from lfs_theme.navigation import get_category_tree, get_path
 
 register = Library()
 
@@ -57,7 +60,7 @@ def site_name(context: Context) -> str:
 @register.inclusion_tag("lfs_theme/categories_footer.html")
 def categories_footer() -> dict[str, Any]:
     """Display the top-level categories and their children in the footer."""
-    return {"categories": Category.objects.filter(parent=None, exclude_from_navigation=False)}
+    return {"categories": get_category_tree()["categories"]}
 
 
 class FooterNode(Node):
@@ -109,41 +112,30 @@ def do_topseller(parser: Parser, token: Token) -> TopsellerNode:
 
 @register.inclusion_tag("lfs_theme/top_nav.html", takes_context=True)
 def top_nav(context: Context) -> dict[str, Any]:
-    """Build the top navigation: top-level categories with up to two levels of children."""
+    """Build the desktop menu and the drawer of the mobile menu from the cached category tree.
+
+    The categories on the path to the current one (the page's category, or the product's) are marked as current.
+    The drawer names the URL its levels are loaded from, and the current category, which main.js opens; a shop that
+    does not include the theme's URLs gets the levels inside the page.
+    """
     request = context.get("request")
-    current_object = context.get("product") or context.get("category")
-    active_top_category = lfs.catalog.utils.get_current_top_category(request, current_object)
-    path = request.path if request else ""
+    tree = get_category_tree()
+    current = context.get("category")
+    if current is None and context.get("product") is not None:
+        current = context["product"].get_current_category(request)
+    path = get_path(tree["categories"], current.id if current else None)
 
-    top_level_categories = []
-    for root in Category.objects.filter(parent=None, exclude_from_navigation=False):
-        children = []
-        for child in root.get_children().filter(exclude_from_navigation=False):
-            grandchildren = [
-                {"title": c.name, "url": c.get_absolute_url(), "current": c.get_absolute_url() == path}
-                for c in child.get_children()
-                if not c.exclude_from_navigation
-            ]
-            children.append(
-                {
-                    "title": child.name,
-                    "url": child.get_absolute_url(),
-                    "image": child.get_image(),
-                    "children": grandchildren,
-                    "current": child.get_absolute_url() == path,
-                }
-            )
-        top_level_categories.append(
-            {
-                "id": root.id,
-                "url": root.get_absolute_url(),
-                "name": root.name,
-                "current": bool(active_top_category and active_top_category.id == root.id),
-                "children": children,
-            }
-        )
+    try:
+        mobile_menu_url = f"{reverse('lfs_theme_mobile_menu')}?v={tree['version']}-{get_language()}"
+    except NoReverseMatch:
+        mobile_menu_url = ""
 
-    return {"categories": top_level_categories, "request": request, "current_object": current_object}
+    return {
+        "categories": tree["categories"],
+        "current_ids": {category["id"] for category in path},
+        "current_url": path[-1]["url"] if path else "",
+        "mobile_menu_url": mobile_menu_url,
+    }
 
 
 @register.filter(name="as_crispy_field_no_label")

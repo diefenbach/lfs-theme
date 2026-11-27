@@ -1,0 +1,11 @@
+{% load i18n %}
+{# The levels of the mobile menu, loaded into the drawer (lfs_theme/top_nav.html) when it is first opened; see initMobileMenu in main.js. #}
+<ul class="mobile-nav-items">
+    <li class="mobile-nav-head">
+        <span class="mobile-nav-title">{% trans 'Categories' %}</span>
+        <button type="button" class="mobile-nav-close" aria-label="{% trans 'Close menu' %}"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+    </li>
+    {% for category in categories %}
+        {% include "lfs_theme/mobile_menu_item.html" %}
+    {% endfor %}
+</ul>
