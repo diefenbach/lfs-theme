@@ -1,4 +1,5 @@
 @use "colors" as *;
+@use "breakpoints" as *;
 
 .shop {
     /* Shop-specific header styling */
@@ -82,7 +83,7 @@
  
     
     /* Responsive adjustments */
-    @media (max-width: 768px) {
+    @include down(md) {
         .first-heading {
             font-size: 1.5rem;
         }

@@ -1,4 +1,5 @@
 @use "colors" as *;
+@use "breakpoints" as *;
 
 /* Mobile Menu */
 // The menu button sits in the header next to the cart and is shown only where the desktop menu is hidden.
@@ -233,7 +234,7 @@ a.desktop-nav-item-level-3.active {
 }
 
 
-@media (max-width: 992px) {
+@include down(lg) {
   #header .mobile-nav-toggle-btn {
       display: inline-flex;
   }

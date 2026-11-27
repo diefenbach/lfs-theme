@@ -1,3 +1,5 @@
+@use "breakpoints" as *;
+
 .swiper {
     max-width: 1320px;
     margin: 0 auto;
@@ -39,14 +41,14 @@
     background-color: black;
 }
 
-@media (max-width: 768px) {
+@include down(md) {
     .swiper-slide {
         flex-direction: column;
         padding: 2rem;
     }
 }
 
-@media (max-width: 992px) {
+@include down(lg) {
     .slide-image, .slide-text {
         max-width: 100%;
     }      

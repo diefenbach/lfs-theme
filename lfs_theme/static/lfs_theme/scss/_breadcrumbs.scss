@@ -1,4 +1,5 @@
 @use "colors" as *;
+@use "breakpoints" as *;
 
 #breadcrumbs {
     ul {    
@@ -15,7 +16,7 @@
     margin: 10px 0;
 }
 
-@media (max-width: 768px) {
+@include down(md) {
     #breadcrumbs {
         display: none;
     }

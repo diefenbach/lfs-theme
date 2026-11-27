@@ -1,4 +1,5 @@
 @use "colors" as *;
+@use "breakpoints" as *;
 
 .ci {
   .cart-options select,
@@ -57,13 +58,13 @@
     font-weight: normal;
   }
 
-  @media (max-width: 992px) {
+  @include down(lg) {
     .fw-responsive {
       font-weight: bold;
     }
   }
   
-  @media (min-width: 992px) {
+  @include up(lg) {
     .cart-label-section {
       font-weight: normal;
       padding: 0;

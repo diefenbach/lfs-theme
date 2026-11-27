@@ -1,4 +1,5 @@
 @use "colors" as *;
+@use "breakpoints" as *;
 
 // Shared by the three checkout steps
 .checkout-addresses,
@@ -118,7 +119,7 @@
         font-weight: bold;
     }
 
-    @media (min-width: 992px) {
+    @include up(lg) {
         .cart-labels {
            display: flex;
         }

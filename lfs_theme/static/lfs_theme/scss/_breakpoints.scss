@@ -1,0 +1,18 @@
+@use "sass:map";
+
+// Bootstrap's breakpoints, so the theme changes its layout at the same widths as Bootstrap's grid and utilities.
+$breakpoints: (sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px);
+
+// From the breakpoint upwards.
+@mixin up($name) {
+  @media (min-width: map.get($breakpoints, $name)) {
+    @content;
+  }
+}
+
+// Below the breakpoint; .02px less, like Bootstrap, so `up` and `down` of one breakpoint never overlap.
+@mixin down($name) {
+  @media (max-width: map.get($breakpoints, $name) - 0.02px) {
+    @content;
+  }
+}

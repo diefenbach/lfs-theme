@@ -1,5 +1,7 @@
+@use "breakpoints" as *;
+
 .login {
-  @media (max-width: 767px) {
+  @include down(md) {
     .register {
       margin-top: 20px;
     }

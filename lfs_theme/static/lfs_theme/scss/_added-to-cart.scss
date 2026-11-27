@@ -1,4 +1,5 @@
 @use "colors" as *;
+@use "breakpoints" as *;
 
 .atc {
   .button-checkout {
@@ -60,7 +61,7 @@
     font-size: 2em;
   }
 
-  @media (min-width: 992px) {
+  @include up(lg) {
     .cart-label {
       display: none;
     }

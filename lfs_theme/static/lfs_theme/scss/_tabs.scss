@@ -1,4 +1,5 @@
 @use "colors" as *;
+@use "breakpoints" as *;
 
 .product-tabs {
     display: flex;
@@ -51,6 +52,6 @@
     border-color: transparent !important;
   }
   
-  @media (max-width: 480px) {
+  @include down(sm) {
     .product-tabs { --underline-width: 120px; }
   }
