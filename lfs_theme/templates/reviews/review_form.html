@@ -40,11 +40,14 @@
                     {% endfor %}
                 </div>
 
+                {# The name is shown with the review; logged-in customers often have no name on their account. #}
                 {% if request.user.is_anonymous %}
                     <div class="row">
                         <div class="col-sm-6">{{ form.user_name|as_crispy_field }}</div>
                         <div class="col-sm-6">{{ form.user_email|as_crispy_field }}</div>
                     </div>
+                {% elif not request.user.get_full_name %}
+                    {{ form.user_name|as_crispy_field }}
                 {% endif %}
 
                 {{ form.comment|as_crispy_field }}

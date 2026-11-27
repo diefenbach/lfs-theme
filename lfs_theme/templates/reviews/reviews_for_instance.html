@@ -9,16 +9,8 @@
                 <div class="review">
                     {% star_rating review.score %}
 
-                    {% if review.email and review.name %}
-                        <meta content="{{ review.email }}">
-                        <a href="mailto:{{review.email}}">{{review.name}}</a>,
-                    {% else %}
-                        {% if review.name %}
-                            <span>{{ review.name }}</span>,
-                        {% else %}
-                            <span>{% trans 'Anonymous' %}</span>,
-                        {% endif %}
-                    {% endif %}
+                    {# Only the name: the reviewer's e-mail address is not published. #}
+                    <span>{{ review.name|default:review.user_name|default:_('Anonymous') }}</span>,
                     <span>{{ review.creation_date|date:"d. F Y" }}</span>
                 </div>
                 <div>

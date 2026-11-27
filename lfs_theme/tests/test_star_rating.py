@@ -70,3 +70,31 @@ def test_score_of_a_star_button_is_accepted_by_the_review_form(client, product):
     })
 
     assert Review.objects.get().score == 4.0
+
+
+def _add_review(client, product, **data) -> None:
+    """Post the review form for ``product`` with ``data``."""
+    content_type = ContentType.objects.get_for_model(Product)
+    client.post(reverse("reviews_add", args=[content_type.id, product.id]), {
+        "score": "5.0", "comment": "Fine", "content_type_id": content_type.id, "content_id": product.id, **data,
+    })
+
+
+def test_logged_in_customer_without_full_name_is_shown_with_the_name_they_entered(client, django_user_model, product):
+    """Customers log in with their e-mail and often have no first and last name on their user."""
+    client.force_login(django_user_model.objects.create_user("kai", "kai@example.com", "secret"))
+    form = client.get(reverse("reviews_add", args=[ContentType.objects.get_for_model(Product).id, product.id]))
+    assert 'name="user_name"' in form.content.decode()
+
+    _add_review(client, product, user_name="Kai")
+
+    html = client.get(product.get_absolute_url()).content.decode()
+    assert "Kai" in html and "Anonymous" not in html
+
+
+def test_reviews_do_not_publish_the_reviewers_email(client, product):
+    _add_review(client, product, user_name="Joe", user_email="joe@example.com")
+
+    html = client.get(product.get_absolute_url()).content.decode()
+    assert "Joe" in html
+    assert "joe@example.com" not in html
