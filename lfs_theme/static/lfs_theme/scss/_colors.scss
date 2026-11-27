@@ -7,7 +7,8 @@ $theme-sand-dark: #e5dac7; // footer
 $theme-surface: #faf6ef;   // product cards
 $theme-border: #e2d6c4;    // card and search field borders
 $theme-light: #faf6ef;     // light surfaces: dropdowns, mobile menu
-$theme-danger: #b91c1c;    // errors
+$theme-danger: #b91c1c;    // errors, not deliverable
+$theme-success: #15803d;   // deliverable, valid voucher
 $theme-popup-shadow: 0 8px 24px -12px rgba(43, 38, 34, 0.35); // menus that open over the page
 
 // Accent darkened for links on sand-coloured surfaces, where the plain accent is too light to read.

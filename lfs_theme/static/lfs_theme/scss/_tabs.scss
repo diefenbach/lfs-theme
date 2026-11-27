@@ -24,7 +24,7 @@
     border: 0 !important;
     background: transparent;
     padding: .25rem 0 .5rem;            
-    color: #333;
+    color: $theme-dark;
     font-weight: 600;
   }
   
@@ -43,7 +43,7 @@
   }
   
   .product-tabs .nav-link:hover {
-    color: #000;
+    color: $theme-primary-on-sand;
   }
   
   .product-tabs .nav-link,

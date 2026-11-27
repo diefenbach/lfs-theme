@@ -96,13 +96,13 @@ h1, h2, h3 {
 }
 
 .lfs-pagination {
-  background-color: #eee;
+  background-color: $theme-surface;
   padding: 4px;
   margin-bottom: 10px;
 }
 
 .lfs-pagination a {
-  color: black;
+  color: $theme-dark;
 }
 
 .lfs-pagination a:hover,
@@ -157,10 +157,10 @@ form .errorlist {
   position: absolute;
   right: 0;
   z-index: 1050;
-  color: black;
+  color: $theme-dark;
   width: min(700px, 90vw);
   background-color: white;
-  box-shadow: 5px 10px 25px -15px rgb(0, 0, 0);
+  box-shadow: $theme-popup-shadow;
 }
 
 #livesearch-result:empty {
@@ -168,7 +168,7 @@ form .errorlist {
 }
 
 #livesearch-result a {
-  color: black;
+  color: $theme-dark;
 }
 
 #livesearch-result a:hover {

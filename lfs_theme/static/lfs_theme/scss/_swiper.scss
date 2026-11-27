@@ -1,3 +1,4 @@
+@use "colors" as *;
 @use "breakpoints" as *;
 
 .swiper {
@@ -6,7 +7,7 @@
   }
 
 .swiper a {
-    color: black;
+    color: $theme-dark;
 }
 
 .swiper-slide {
@@ -33,12 +34,12 @@
 
 .swiper-button-next, 
 .swiper-button-prev {
-    color: black;
+    color: $theme-dark;
     font-size: 0.5rem;
 }
 
 .swiper-pagination-bullet-active {
-    background-color: black;
+    background-color: $theme-dark;
 }
 
 @include down(md) {
