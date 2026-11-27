@@ -6,6 +6,11 @@ h1, h2, h3 {
   letter-spacing: -0.01em;
 }
 
+// Native radio buttons and checkboxes without Bootstrap classes (e.g. the variants table) in the accent colour.
+body {
+  accent-color: $theme-primary;
+}
+
 .dropdown-menu {
   box-shadow: $theme-popup-shadow;
 }
