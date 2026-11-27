@@ -56,6 +56,20 @@ h1, h2, h3 {
   font-size: 1.3rem;
 }
 
+// Every icon (search, account, cart, menu) as its own centred box, so they line up whatever their size.
+.header-actions > a,
+.header-actions > .dropdown,
+.header-actions > .dropdown > a,
+.header-actions > button {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.header-actions .bi::before {
+  vertical-align: 0;
+}
+
 .cart-link {
   position: relative;
 }
