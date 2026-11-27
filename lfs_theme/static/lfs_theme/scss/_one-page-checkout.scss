@@ -13,7 +13,6 @@
   input[type=text],
   input[type=email] {
     width: 100%;
-    border: 1px solid $theme-primary;
   }
 
   .error {
@@ -21,8 +20,7 @@
     textarea,
     input[type=text],
     input[type=email] {
-      width: 100%;
-      border: 1px solid $theme-danger;
+      border-color: $theme-danger;
     }
   }
 
