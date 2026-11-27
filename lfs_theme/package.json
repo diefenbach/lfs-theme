@@ -1,14 +1,14 @@
 {
     "private": true,
     "scripts": {
-        "setup": "npm install && npm run vendor:update",
+        "setup": "npm install && npm run build",
         "vendor:clean": "rm -rf static/lfs_theme/vendor/*",
-        "vendor:bootstrap": "mkdir -p static/lfs_theme/vendor/bootstrap && cp node_modules/bootstrap/dist/js/bootstrap.bundle.min.js static/lfs_theme/vendor/bootstrap/ && cp node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map static/lfs_theme/vendor/bootstrap/ && sass static/lfs_theme/scss/bootstrap-custom.scss static/lfs_theme/vendor/bootstrap/bootstrap.min.css --style compressed --no-source-map --quiet-deps",
+        "vendor:bootstrap": "mkdir -p static/lfs_theme/vendor/bootstrap && cp node_modules/bootstrap/dist/js/bootstrap.bundle.min.js static/lfs_theme/vendor/bootstrap/ && cp node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map static/lfs_theme/vendor/bootstrap/",
         "vendor:bootstrap-icons": "mkdir -p static/lfs_theme/vendor/bootstrap-icons/fonts && cp node_modules/bootstrap-icons/font/bootstrap-icons.css static/lfs_theme/vendor/bootstrap-icons/ && cp node_modules/bootstrap-icons/font/bootstrap-icons.min.css static/lfs_theme/vendor/bootstrap-icons/ && cp node_modules/bootstrap-icons/font/bootstrap-icons.json static/lfs_theme/vendor/bootstrap-icons/ && cp node_modules/bootstrap-icons/font/bootstrap-icons.scss static/lfs_theme/vendor/bootstrap-icons/ && cp node_modules/bootstrap-icons/font/fonts/* static/lfs_theme/vendor/bootstrap-icons/fonts/",
         "vendor:swiper": "mkdir -p static/lfs_theme/vendor/swiper && cp node_modules/swiper/swiper-bundle.min.js static/lfs_theme/vendor/swiper/ && cp node_modules/swiper/swiper-bundle.min.js.map static/lfs_theme/vendor/swiper/ && cp node_modules/swiper/swiper-bundle.min.css static/lfs_theme/vendor/swiper/",
         "vendor:htmx": "mkdir -p static/lfs_theme/vendor/htmx && cp node_modules/htmx.org/dist/htmx.min.js static/lfs_theme/vendor/htmx/",
         "vendor:update": "npm run vendor:clean && npm run vendor:bootstrap && npm run vendor:bootstrap-icons && npm run vendor:swiper && npm run vendor:htmx",
-        "build:css": "sass static/lfs_theme/scss/lfs_theme.scss static/lfs_theme/css/lfs_theme.css --style compressed --no-source-map --quiet-deps",
+        "build:css": "sass static/lfs_theme/scss/lfs_theme.scss:static/lfs_theme/css/lfs_theme.css static/lfs_theme/scss/bootstrap-custom.scss:static/lfs_theme/vendor/bootstrap/bootstrap.min.css --style compressed --no-source-map --quiet-deps",
         "build": "npm run vendor:update && npm run build:css"
     },
     "dependencies": {
