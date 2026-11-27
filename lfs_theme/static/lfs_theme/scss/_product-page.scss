@@ -1,5 +1,8 @@
-@import "colors";
+@use "colors" as *;
+@use "breakpoints" as *;
 
+// Product page (.pid = product inline default): images, prices, properties, variants, accessories, and the
+// bulk prices and samples of their add-ons; then the tabs below the product.
 .pid {
   padding-top: 20px;
 
@@ -9,15 +12,11 @@
   }
 
   .main-image {
-    border: 1px solid #eee;
+    border: 1px solid $theme-border;
     padding: 10px;
-
-  }
-
-  .main-image {
     height: 400px;
   }
-  
+
   .main-image img {
     max-width: 100%;
     max-height: 100%;
@@ -28,7 +27,7 @@
   }
 
   .sub-images img {
-    border: 1px solid #eee;
+    border: 1px solid $theme-border;
     padding: 10px;
     height: 60px;
     margin-top: 5px;
@@ -39,17 +38,17 @@
   }
 
   .product-box {
-    background-color: #eee;
+    background-color: $theme-surface;
     padding: 24px;
   }
 
   .deliverable {
-    color: green;
+    color: $theme-success;
     font-size: 13px;
   }
 
   .not-deliverable {
-    color: red;
+    color: $theme-danger;
     font-size: 0.8em;
   }
 
@@ -80,7 +79,7 @@
 
   .price-disclaimer div,
   .price-disclaimer a {
-    color: #666;
+    color: $theme-muted;
     text-decoration: none;
   }
 
@@ -131,13 +130,13 @@
 
   .property-range-hint {
     font-size: 0.875em;
-    color: #6c757d;
+    color: $theme-muted;
     white-space: nowrap;
   }
 
   .property-error {
     grid-column: 2 / -1;
-    color: #dc3545;
+    color: $theme-danger;
     font-size: 0.875em;
     line-height: 1.3;
   }
@@ -147,22 +146,17 @@
   }
 
   .product-input-field.is-invalid {
-    border-color: #dc3545;
+    border-color: $theme-danger;
   }
 
   .shipping-information {
     padding-bottom: 10px;
   }
 
-  .shipping-free {
-    color: green;
-  }
-
   .variants-title {
     padding-top: 20px;
     font-size: 1.2em;
   }
-
 
   button.product-sample {
     width: 194px;
@@ -202,9 +196,9 @@
   }
 
   .bulk-prices-popup-close {
-    padding: 10px; 
+    padding: 10px;
     margin-bottom: 10px;
-    background-color: #ddd;
+    background-color: $theme-sand;
   }
 
   .bulk-prices-popup-close::before {
@@ -214,15 +208,14 @@
     position: relative;
   }
 
-
   .bulk-prices-popup {
     position: absolute;
     background-color: white;
     width: 420px;
     z-index: 1000;
-    color: black;
+    color: $theme-dark;
     padding: 5px;
-    border: 1px solid #bbb;
+    border: 1px solid $theme-border;
   }
 
   .bulk-prices-popup table {
@@ -239,19 +232,19 @@
     width: 100%;
   }
 
-  @media (min-width: 768px)  {
+  @include up(md) {
     .variants select {
       width: 70%;
     }
   }
 
-  @media (min-width: 992px)  {
+  @include up(lg) {
     .variants select {
       width: 100%;
     }
   }
 
-  @media (min-width: 1200px)  {
+  @include up(xl) {
     .variants select {
       width: 70%;
     }
@@ -282,7 +275,7 @@
     display: none;
   }
 
-  @media (max-width: 575px) {
+  @include down(sm) {
     .product-accessories-labels {
       display: none;
     }
@@ -307,9 +300,9 @@
       left: -550px;
       height: 100vh;
       width: 90%;
-      background-color: #eee;
-      border: 1px solid #d0d0d0;
-      box-shadow: 5px 10px 25px -15px rgb(0, 0, 0);
+      background-color: $theme-surface;
+      border: 1px solid $theme-border;
+      box-shadow: $theme-popup-shadow;
       z-index: 1000;
     }
 
@@ -327,23 +320,79 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @include down(md) {
     .product-info {
       padding-top: 20px;
     }
   }
 
-  @media (min-width: 577px) {
+  @include up(sm) {
     .bulk-prices-popup-close {
       display: none;
     }
   }
 }
 
-
 .main-image img,
 .product-image img,
 .static-block img {
   max-width: 100%;
   height: auto;
+}
+
+// Tabs below the product (description, reviews, ...)
+.product-tabs {
+  display: flex;
+  justify-content: flex-start;
+  // The tabs are a grid row item, but .nav drops the row's padding; this lines them up with the content.
+  padding-inline: calc(var(--bs-gutter-x) * 0.5);
+  --underline-width: 170px;
+  --underline-height: 6px;
+  --underline-radius: 2px;
+  --color-inactive: #{$theme-border};
+  --color-active: #{$theme-primary};
+
+  border-bottom: 0;
+  gap: 2.2rem;
+}
+
+.product-tabs .nav-link {
+  width: 150px;
+  min-width: 150px;
+  flex: none;
+  text-align: left;
+  position: relative;
+  border: 0 !important;
+  background: transparent;
+  padding: .25rem 0 .5rem;
+  color: $theme-dark;
+  font-weight: 600;
+}
+
+.product-tabs .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: var(--underline-width);
+  height: var(--underline-height);
+  background: var(--color-inactive);
+}
+
+.product-tabs .nav-link.active::after {
+  background: var(--color-active);
+}
+
+.product-tabs .nav-link:hover {
+  color: $theme-primary-on-sand;
+}
+
+.product-tabs .nav-link,
+.product-tabs .nav-link:hover,
+.product-tabs .nav-link:focus {
+  border-color: transparent !important;
+}
+
+@include down(sm) {
+  .product-tabs { --underline-width: 120px; }
 }

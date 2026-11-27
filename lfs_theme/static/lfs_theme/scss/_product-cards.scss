@@ -1,0 +1,97 @@
+@use "colors" as *;
+@use "breakpoints" as *;
+
+// Product cards in product lists: shop start page and categories (.cpd = category products default) and search results.
+.cpd,
+.search {
+  .product {
+    border: 1px solid $theme-border;
+    border-radius: 0.375rem;
+    overflow: hidden;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .product:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .product-info {
+    background-color: $theme-surface;
+    padding: 10px;
+  }
+
+  .product:hover .product-info {
+    background-color: $theme-sand;
+  }
+
+  .product-image {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .product-title {
+    font-weight: bold;
+    font-size: 1em;
+    min-height: 40px;
+    margin-bottom: 10px;
+  }
+
+  .product-description {
+    height: 100px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .product-price {
+    font-size: 13px;
+    min-height: 60px;
+    text-align: right;
+  }
+
+  .for-sale-standard-price {
+    text-decoration: line-through;
+    color: $theme-muted;
+    margin-right: 5px;
+  }
+
+  .base-price {
+    font-size: 11px;
+    color: $theme-muted;
+    margin-top: 5px;
+  }
+
+  .price-disclaimer {
+    font-size: 10px;
+    margin-top: 5px;
+
+    a {
+      color: $theme-muted;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  @include down(md) {
+    .product-image {
+      height: 150px;
+    }
+
+    .product-description {
+      height: 80px;
+    }
+  }
+}

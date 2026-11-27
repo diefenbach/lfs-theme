@@ -1,6 +1,6 @@
 // Bootstrap with the theme's colours; built into vendor/bootstrap/bootstrap.min.css (see package.json).
 @use "sass:color";
-@import "colors";
+@use "colors" as *;
 
 $primary: $theme-primary;
 $secondary: $theme-dark;

@@ -1,22 +1,14 @@
 {% load i18n lfs_tags %}
-<nav class="mobile-nav-sidebar" aria-label="{% trans 'Categories' %}">
+{# Mobile category menu: a drawer from the left, one level at a time (see initMobileMenu in main.js). #}
+<div class="mobile-nav-backdrop"></div>
+<nav class="mobile-nav-sidebar" id="mobile-nav" aria-label="{% trans 'Categories' %}" tabindex="-1">
     <ul class="mobile-nav-items">
-        <li class="mobile-nav-item">
-            <button type="button" class="mobile-nav-link mobile-nav-close-link">{% trans 'Close menu' %}</button>
+        <li class="mobile-nav-head">
+            <span class="mobile-nav-title">{% trans 'Categories' %}</span>
+            <button type="button" class="mobile-nav-close" aria-label="{% trans 'Close menu' %}"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
         </li>
         {% for category in category_tree %}
-            <li class="mobile-nav-item{% if category.children %} mobile-nav-expand{% endif %}{% if category.is_current %} active{% endif %}">
-                {% if category.children %}
-                    <button type="button" class="mobile-nav-link mobile-nav-sub-menu-link{% if category.is_current %} active{% endif %}">
-                        {{ category.category.name }}
-                    </button>
-                    {% category_tree_children category %}
-                {% else %}
-                    <a class="mobile-nav-link{% if category.is_current %} active{% endif %}" href="{{ category.category.get_absolute_url }}">
-                        {{ category.category.name }}
-                    </a>
-                {% endif %}
-            </li>
+            {% include "lfs/catalog/category_tree_item.html" %}
         {% endfor %}
     </ul>
 </nav>

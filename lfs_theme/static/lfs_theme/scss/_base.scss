@@ -1,113 +1,18 @@
-@import "colors";
+@use "colors" as *;
+@use "breakpoints" as *;
 
-
-/* Header */
-#header {
-  background-color: white;
-  color: $theme-dark;
-  padding-top: 12px;
-
-  a {
-    color: $theme-dark;
-    text-decoration: none;
-  }
-
-  .search-form .form-control {
-    border-color: $theme-border;
-  }
-}
-
+// Shared styles: headings, forms, menus that open over the page, pagination, sorting.
 h1, h2, h3 {
   letter-spacing: -0.01em;
 }
 
-.header-bar {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  min-height: 56px;
-}
-
-.shop-logo {
-  flex: 0 1 auto;
-  margin-right: auto;
-}
-
-.shop-name {
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-
-.logo {
-  max-width: 260px;
-  max-height: 64px;
-}
-
-.search-form {
-  position: relative;
-  flex: 0 1 320px;
-}
-
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-size: 1.3rem;
-}
-
-// Every icon (search, account, cart, menu) as its own centred box, so they line up whatever their size.
-.header-actions > a,
-.header-actions > .dropdown,
-.header-actions > .dropdown > a,
-.header-actions > .mobile-nav-toggle-btn {
-  display: inline-flex;
-  align-items: center;
-  line-height: 1;
-}
-
-.header-actions .bi::before {
-  vertical-align: 0;
-}
-
-.cart-link {
-  position: relative;
-}
-
-.cart-link .badge {
-  position: absolute;
-  font-size: 0.5em;
-  top: -6px;
-  right: -10px;
-}
-
-// The person icon opens the account menu (my account, manage, logout); no caret next to the icon.
-.account-menu .dropdown-toggle::after {
-  display: none;
+// Native radio buttons and checkboxes without Bootstrap classes (e.g. the variants table) in the accent colour.
+body {
+  accent-color: $theme-primary;
 }
 
 .dropdown-menu {
   box-shadow: $theme-popup-shadow;
-}
-
-.search-page-form,
-.sorting {
-  max-width: 400px;
-}
-
-.lfs-pagination {
-  background-color: #eee;
-  padding: 4px;
-  margin-bottom: 10px;
-}
-
-.lfs-pagination a {
-  color: black;
-}
-
-.lfs-pagination a:hover,
-.lfs-pagination .current {
-  color: $theme-primary;
 }
 
 form .field {
@@ -115,84 +20,52 @@ form .field {
 }
 
 form .errorlist {
-  color: $theme-danger
+  color: $theme-danger;
 }
 
-.categories-footer {
-  background-color: $theme-sand;
+// Pagination and sorting of product lists
+.lfs-pagination {
+  background-color: $theme-surface;
+  padding: 4px;
+  margin-bottom: 10px;
+}
+
+.lfs-pagination a {
   color: $theme-dark;
-  padding: 20px;
-  margin-top: 40px;
-
-  .footer-sub-category {
-    display: block;
-  }
-
-  .footer-main-category {
-    color: $theme-primary-on-sand;
-    text-decoration: none;
-  }
-
-  .footer-sub-category {
-    color: $theme-muted;
-    text-decoration: none;
-    font-size: 0.8em;    
-  }
-
-  .footer-sub-category:hover {
-    color: $theme-primary-on-sand;
-  }
-  .footer-main-category:hover {
-    color: $theme-dark;
-  }
 }
 
-/* Livesearch */
-.livesearch-wrapper {
-  position: relative; 
-  top: 4px;
-}
-
-#livesearch-result {
-  position: absolute;
-  right: 0;
-  z-index: 1050;
-  color: black;
-  width: min(700px, 90vw);
-  background-color: white;
-  box-shadow: 5px 10px 25px -15px rgb(0, 0, 0);
-}
-
-#livesearch-result:empty {
-  display: none;
-}
-
-#livesearch-result a {
-  color: black;
-}
-
-#livesearch-result a:hover {
+.lfs-pagination a:hover,
+.lfs-pagination .current {
   color: $theme-primary;
 }
 
-#livesearch-result .image {
-  min-height: 60px;
+.lfs-pagination a {
+  text-decoration: none;
 }
 
-#livesearch-result .container {
-  background-color: white;
+.sorting {
+  max-width: 400px;
 }
 
-.livesearch-results {
-  padding: 5px 25px;
-}
-
-
+// Payment methods in the checkout: the note lines up with the label, next to the radio button.
 .payment-method-note {
   margin-left: 26px;
 }
 
-.footer-title {
-  font-size: 1.1rem;
-  padding-bottom: 10px;
+// Start page heading on small screens
+.shop {
+  @include down(md) {
+    .first-heading {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+// Login page: the registration form below the login form on small screens
+.login {
+  @include down(md) {
+    .register {
+      margin-top: 20px;
+    }
+  }
 }

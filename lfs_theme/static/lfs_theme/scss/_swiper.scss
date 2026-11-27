@@ -1,53 +1,56 @@
+@use "colors" as *;
+@use "breakpoints" as *;
+
 .swiper {
-    max-width: 1320px;
-    margin: 0 auto;
-  }
+  max-width: 1320px;
+  margin: 0 auto;
+}
 
 .swiper a {
-    color: black;
+  color: $theme-dark;
 }
 
 .swiper-slide {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 2rem;
-    padding: 2rem 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 4rem;
 }
 
 .slide-image {
-    flex: 1 1 auto;
-    max-width: 100%;
-    height: auto;
+  flex: 1 1 auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .slide-text {
-    flex: 1 1 200px;
+  flex: 1 1 200px;
 }
 
 .slide-text h2 {
-    margin-top: 0;
+  margin-top: 0;
 }
 
-.swiper-button-next, 
+.swiper-button-next,
 .swiper-button-prev {
-    color: black;
-    font-size: 0.5rem;
+  color: $theme-dark;
+  font-size: 0.5rem;
 }
 
 .swiper-pagination-bullet-active {
-    background-color: black;
+  background-color: $theme-dark;
 }
 
-@media (max-width: 768px) {
-    .swiper-slide {
-        flex-direction: column;
-        padding: 2rem;
-    }
+@include down(md) {
+  .swiper-slide {
+    flex-direction: column;
+    padding: 2rem;
+  }
 }
 
-@media (max-width: 992px) {
-    .slide-image, .slide-text {
-        max-width: 100%;
-    }      
+@include down(lg) {
+  .slide-image, .slide-text {
+    max-width: 100%;
+  }
 }

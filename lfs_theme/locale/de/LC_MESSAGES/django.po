@@ -1450,3 +1450,17 @@ msgstr "Zum bewerteten Produkt"
 #: templates/reviews/thank_you.html:14
 msgid "Go to Shop"
 msgstr "Weiter Einkaufen"
+
+#: templates/lfs_theme/star_rating.html:2 templates/reviews/review_form.html:72
+#, python-format
+msgid "%(score)s of 5 stars"
+msgstr "%(score)s von 5 Sternen"
+
+#: templates/reviews/review_form.html
+msgid "Back to the product"
+msgstr "Zurück zum Produkt"
+
+#: templates/lfs/catalog/category_tree_children.html
+#, python-format
+msgid "All in %(name)s"
+msgstr "Alle in %(name)s"

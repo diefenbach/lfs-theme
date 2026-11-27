@@ -1,22 +1,23 @@
-@import 'colors';
+@use "colors" as *;
+@use "breakpoints" as *;
 
 #breadcrumbs {
-    ul {    
-        list-style: none;
-        display: inline-block;
-        padding: 0;
-        margin: 0;
-    }
+  ul {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+  }
 
-    li {
-        display: inline-block;
-    }
+  li {
+    display: inline-block;
+  }
 
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
-@media (max-width: 768px) {
-    #breadcrumbs {
-        display: none;
-    }
+@include down(md) {
+  #breadcrumbs {
+    display: none;
+  }
 }

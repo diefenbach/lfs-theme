@@ -1,0 +1,2 @@
+{% load i18n l10n %}{# Five stars for a score; see the star_rating tag. #}
+<span class="stars" role="img" aria-label="{% blocktrans with score=score|floatformat:'-1' %}{{ score }} of 5 stars{% endblocktrans %}">{% for kind in stars %}<i class="bi {% if kind == 'fill' %}bi-star-fill{% elif kind == 'half' %}bi-star-half{% else %}bi-star{% endif %}" aria-hidden="true"></i>{% endfor %}</span>

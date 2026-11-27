@@ -1,36 +1,96 @@
-@import "colors";
+@use "colors" as *;
+@use "breakpoints" as *;
 
-.opc {
+// Shared by the three checkout steps
+.checkout-addresses,
+.checkout-payment-and-shipping,
+.checkout-check-and-pay {
   .title {
     border-bottom: 2px solid $theme-primary;
+    font-size: 1.1rem;
     font-weight: bold;
     margin: 20px 0 10px 0;
   }
 
-  select,
-  textarea,
-  input[type=text],
-  input[type=email] {
+  .stepper {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 4rem 0;
+  }
+
+  .stepper a {
+    text-decoration: none;
+  }
+
+  .step {
+    flex: 1;
+    text-align: center;
+    position: relative;
+  }
+
+  .step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 27px;
+    right: -50%;
     width: 100%;
-    border: 1px solid $theme-primary;
+    height: 2px;
+    background-color: $theme-border;
+    z-index: 1;
   }
 
-  .error {
-    select,
-    textarea,
-    input[type=text],
-    input[type=email] {
-      width: 100%;
-      border: 1px solid $theme-danger;
-    }
+  .step.completed:not(:last-child)::after {
+    background-color: $theme-primary;
   }
 
-  label {
-    display: inline;
-  }
-
-  .product-name {
+  .step-circle {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: $theme-border;
+    color: $theme-muted;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
     font-weight: bold;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .step.active .step-circle {
+    background-color: $theme-primary;
+    color: white;
+  }
+
+  .step.completed .step-circle {
+    background-color: $theme-primary;
+    color: white;
+  }
+
+  .step-title {
+    display: block;
+    font-size: 0.9rem;
+    color: $theme-muted;
+    font-weight: 500;
+  }
+
+  .step.active .step-title {
+    font-weight: 600;
+  }
+}
+
+.checkout-check-and-pay {
+  .voucher-message.invalid {
+    color: $theme-danger;
+  }
+
+  .voucher-message.valid {
+    color: $theme-success;
   }
 
   .cart-labels {
@@ -55,24 +115,10 @@
   }
 
   .total {
-    margin-top: 20px;
     font-weight: bold;
-    font-size: 1.5em;
   }
 
-  .button-order {
-    float: right;
-    text-align: right;
-    display: block;
-    margin: 40px 0 0 auto;
-    cursor: pointer;
-  }
-
-  .age {
-    margin: 30px 0;
-  }
-
-  @media (min-width: 992px) {
+  @include up(lg) {
     .cart-labels {
       display: flex;
     }

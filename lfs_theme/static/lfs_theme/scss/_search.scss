@@ -1,77 +1,52 @@
-@import "colors";
+@use "colors" as *;
+
+// Live search below the header search field, and the search results page.
+.livesearch-wrapper {
+  position: relative;
+  top: 4px;
+}
+
+#livesearch-result {
+  position: absolute;
+  right: 0;
+  z-index: 1050;
+  color: $theme-dark;
+  width: min(700px, 90vw);
+  background-color: white;
+  box-shadow: $theme-popup-shadow;
+}
+
+#livesearch-result:empty {
+  display: none;
+}
+
+#livesearch-result a {
+  color: $theme-dark;
+}
+
+#livesearch-result a:hover {
+  color: $theme-primary;
+}
+
+#livesearch-result .image {
+  min-height: 60px;
+}
+
+#livesearch-result .container {
+  background-color: white;
+}
+
+.livesearch-results {
+  padding: 5px 25px;
+}
+
+.search-page-form {
+  max-width: 400px;
+}
 
 .search {
-  a {
-    color: black;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: $theme-primary;
-  }
-
   .search-form {
     display: block;
     margin-bottom: 10px;
-  }
-
-  .product-image {
-    height: 200px;
-  }
-
-  .product {
-    border: 1px solid $theme-border;
-    border-radius: 0.375rem;
-    overflow: hidden;
-    margin: 10px 0;
-    cursor: pointer;
-  }
-
-  .product:hover {
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-
-  .product-info {
-    background-color: $theme-surface;
-    padding: 10px;
-}
-
-  .product:hover .product-info {
-    background-color: $theme-sand;
-  }
-
-  .product-image {
-    height: 200px;
-  }
-
-  .product-title {
-    font-weight: bold;
-    font-size: 1em;
-    min-height: 40px;
-  }
-
-  .product-description {
-    font-size: 13px;
-    height: 100px;
-  }
-
-  .product-price {
-    font-size: 13px;
-    height: 60px;
-    text-align: right;
-  }
-
-  .price-disclaimer {
-    font-size: 10px;
-    margin-top: 5px;
-    
-    a {
-        color: #666;
-        text-decoration: none;
-        
-        &:hover {
-            text-decoration: underline;
-        }
-    }
   }
 }
