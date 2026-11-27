@@ -1,4 +1,4 @@
-@import "colors";
+@use "colors" as *;
 
 /* cpd = categories-product-default */
 
@@ -64,9 +64,4 @@
     text-decoration: line-through;
     
   }
-}
-
-.static-block img {
-  max-width: 100%;
-  height: auto;
 }

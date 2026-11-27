@@ -1,4 +1,4 @@
-@import "colors";
+@use "colors" as *;
 
 .search {
   a {
@@ -13,10 +13,6 @@
   .search-form {
     display: block;
     margin-bottom: 10px;
-  }
-
-  .product-image {
-    height: 200px;
   }
 
   .product {

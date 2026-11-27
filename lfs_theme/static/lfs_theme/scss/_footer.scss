@@ -1,4 +1,4 @@
-@import "colors";
+@use "colors" as *;
 
 #footer {
     background-color: $theme-sand-dark;

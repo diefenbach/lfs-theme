@@ -1,4 +1,4 @@
-@import "colors";
+@use "colors" as *;
 
 /* Mobile Menu */
 // The menu button sits in the header next to the cart and is shown only where the desktop menu is hidden.
@@ -197,21 +197,6 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-}
-
-.desktop-dropdown-item {
-  text-decoration: none;
-  color: $theme-dark;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: background-color 0.2s ease;
-  font-size: 14px;
-  white-space: nowrap;
-}
-
-.desktop-dropdown-item:hover {
-  background-color: $theme-sand;
-  color: $theme-dark;
 }
 
 #header a.desktop-nav-item-level-2 {
