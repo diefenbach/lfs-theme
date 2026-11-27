@@ -1,5 +1,4 @@
-"""Mobile category menu: a drawer from the left with a header row (back, title, close), an "All in <category>"
-entry per level, and the current category path marked so the menu can open where the visitor is."""
+"""Mobile category menu: the menu button controls the drawer; its levels are tested in test_navigation."""
 
 import re
 
@@ -31,22 +30,3 @@ def test_menu_button_controls_the_drawer_and_reports_it_is_closed(client, garden
     button = re.search(r'<button type="button" class="mobile-nav-toggle-btn"[^>]*>', html).group(0)
     assert 'aria-controls="mobile-nav"' in button and 'aria-expanded="false"' in button
     assert 'id="mobile-nav"' in drawer(html)
-
-
-def test_sub_menu_has_a_header_row_and_an_all_in_entry(client, garden):
-    menu = drawer(client.get(reverse("lfs_shop_view")).content.decode())
-
-    sub_menu = menu[menu.index('class="mobile-nav-items mobile-nav-sub-menu"') :]
-    assert '<span class="mobile-nav-title">Garden</span>' in sub_menu
-    assert 'class="mobile-nav-back-link"' in sub_menu and 'class="mobile-nav-close"' in sub_menu
-    assert f'href="{garden.get_absolute_url()}"' in sub_menu and "All in Garden" in sub_menu
-    assert "Show Garden" not in menu
-
-
-def test_current_category_path_is_marked_for_opening_the_menu_there(client, garden):
-    tools = Category.objects.get(slug="tools")
-
-    menu = drawer(client.get(tools.get_absolute_url()).content.decode())
-
-    assert re.search(r'<li class="mobile-nav-item mobile-nav-expand is-current">\s*<button[^>]*>\s*Garden', menu)
-    assert re.search(rf'<a class="mobile-nav-link" href="{tools.get_absolute_url()}" aria-current="page">', menu)

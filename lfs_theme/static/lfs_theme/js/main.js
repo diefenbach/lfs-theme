@@ -110,6 +110,36 @@ const initMobileMenu = () => {
     const backdrop = document.querySelector('.mobile-nav-backdrop');
     if (!toggle || !drawer) return;
 
+    // The levels come from data-src on first use (see top_nav in lfs_theme_tags.py), or are already in the page.
+    let loading = null;
+    const load = () => {
+        if (!drawer.dataset.src) return Promise.resolve();
+        loading ??= fetch(drawer.dataset.src)
+            .then((response) => {
+                if (!response.ok) throw new Error(`Mobile menu: ${response.status} ${response.url}`);
+                return response.text();
+            })
+            .then((html) => {
+                drawer.innerHTML = html;
+                markCurrent();
+            })
+            .catch((error) => {
+                loading = null; // try again on the next tap
+                throw error;
+            });
+        return loading;
+    };
+    // Mark the current category and its parents, so the menu opens at the visitor's level.
+    const markCurrent = () => {
+        const link = drawer.querySelector(`a[href="${CSS.escape(drawer.dataset.current || '')}"]`);
+        if (!link) return;
+        link.setAttribute('aria-current', 'page');
+        for (let item = link.closest('li'); item; item = item.parentElement.closest('li')) {
+            item.classList.add('is-current');
+        }
+    };
+    if (!drawer.dataset.src) markCurrent();
+
     const isOpen = () => document.body.classList.contains('mobile-nav-is-toggled');
     // The level shown: the deepest open sub menu, or the top level.
     const level = () => [...drawer.querySelectorAll('.mobile-nav-expand.open > .mobile-nav-sub-menu')].pop()
@@ -117,7 +147,8 @@ const initMobileMenu = () => {
     const focusables = () => [...level().querySelectorAll(':scope > li > a, :scope > li > button')];
     const focusLevel = () => focusables()[0]?.focus({preventScroll: true});
 
-    const open = () => {
+    const open = async () => {
+        await load();
         // Jump straight to the current category's level; only the drawer itself slides in.
         drawer.classList.add('no-transition');
         drawer.querySelectorAll('.mobile-nav-expand').forEach((item) => {
@@ -135,18 +166,26 @@ const initMobileMenu = () => {
         toggle.focus({preventScroll: true});
     };
 
-    toggle.addEventListener('click', () => (isOpen() ? close() : open()));
+    // Start loading as soon as the visitor reaches for the button, so the menu is there when the tap ends.
+    toggle.addEventListener('pointerdown', () => load().catch(() => {}), {once: true});
+    toggle.addEventListener('click', () => {
+        if (isOpen()) close();
+        else open().catch((error) => console.error(error));
+    });
     backdrop?.addEventListener('click', close);
-    drawer.querySelectorAll('.mobile-nav-close').forEach((button) => button.addEventListener('click', close));
-    drawer.querySelectorAll('.mobile-nav-expand').forEach((item) => {
-        item.querySelector(':scope > .mobile-nav-sub-menu-link')?.addEventListener('click', () => {
+    drawer.addEventListener('click', (event) => {
+        const button = event.target.closest('button');
+        if (!button) return;
+        const item = button.closest('.mobile-nav-expand');
+        if (button.classList.contains('mobile-nav-close')) {
+            close();
+        } else if (button.classList.contains('mobile-nav-sub-menu-link')) {
             item.classList.add('open');
             focusLevel();
-        });
-        item.querySelector(':scope > .mobile-nav-sub-menu .mobile-nav-back-link')?.addEventListener('click', () => {
+        } else if (button.classList.contains('mobile-nav-back-link')) {
             item.classList.remove('open');
             item.querySelector(':scope > .mobile-nav-sub-menu-link').focus({preventScroll: true});
-        });
+        }
     });
 
     document.addEventListener('keydown', (event) => {

@@ -7,7 +7,12 @@ category navigation, live search, cart, and a three-step checkout.
 Installation
 ============
 
-Add ``lfs_theme`` to ``INSTALLED_APPS`` before the LFS apps, so its templates win.
+Add ``lfs_theme`` to ``INSTALLED_APPS`` before the LFS apps, so its templates win, and include its URLs::
+
+    path("theme/", include("lfs_theme.urls")),
+
+The mobile menu is then loaded when it is first opened, instead of being part of every page; without the URLs it is
+part of every page.
 
 Optional add-ons
 ================
