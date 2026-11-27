@@ -1,4 +1,4 @@
-"""Mobile category menu: a drawer from the right with a header row (back, title, close), an "All in <category>"
+"""Mobile category menu: a drawer from the left with a header row (back, title, close), an "All in <category>"
 entry per level, and the current category path marked so the menu can open where the visitor is."""
 
 import re

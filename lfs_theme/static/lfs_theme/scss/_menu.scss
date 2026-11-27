@@ -19,7 +19,7 @@
   font-size: 1.2em;
 }
 
-// The drawer comes in from the right, where the menu button is, over a darkened page.
+// The drawer comes in from the left over a darkened page.
 .mobile-nav-backdrop {
   position: fixed;
   inset: 0;
@@ -33,15 +33,15 @@
 .mobile-nav-sidebar {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   width: min(320px, 85vw);
   height: 100vh;
   background-color: $theme-light;
-  border-left: 1px solid $theme-border;
+  border-right: 1px solid $theme-border;
   box-shadow: $theme-popup-shadow;
   overflow-x: hidden;
   overflow-y: auto;
-  transform: translateX(100%);
+  transform: translateX(-100%);
   visibility: hidden;
   // Visible at once when opened, so it can take the focus; hidden only after sliding out.
   transition: transform 0.3s, visibility 0s 0.3s;

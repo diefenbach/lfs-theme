@@ -101,7 +101,7 @@ const initNavigation = () => {
 
 };
 
-// Mobile category menu: a drawer from the right that shows one level at a time. It opens at the level of the
+// Mobile category menu: a drawer from the left that shows one level at a time. It opens at the level of the
 // current category, closes on the backdrop, the close buttons, and Escape, keeps the focus inside the level shown,
 // and returns it to the menu button when closed.
 const initMobileMenu = () => {
