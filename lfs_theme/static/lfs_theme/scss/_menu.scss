@@ -19,51 +19,129 @@
   font-size: 1.2em;
 }
 
-.mobile-nav-sidebar ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.mobile-nav-sidebar a {
-  text-decoration: none;
-}
-
-.mobile-nav-close-link {
-  background-color: $theme-sand !important;
-}
-
-.mobile-nav-is-toggled .mobile-nav-sidebar {
-  transform: translateX(0);
-  left: 0;
+// The drawer comes in from the right, where the menu button is, over a darkened page.
+.mobile-nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(43, 38, 34, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 999;
 }
 
 .mobile-nav-sidebar {
-  display: flex;
   position: fixed;
   top: 0;
-  left: -260px;
-  width: 250px;
+  right: 0;
+  width: min(320px, 85vw);
   height: 100vh;
   background-color: $theme-light;
-  border-right: 1px solid $theme-border;
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
-  transition: 0.3s;
+  border-left: 1px solid $theme-border;
   box-shadow: $theme-popup-shadow;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transform: translateX(100%);
+  visibility: hidden;
+  // Visible at once when opened, so it can take the focus; hidden only after sliding out.
+  transition: transform 0.3s, visibility 0s 0.3s;
   z-index: 1000;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
 }
 
+.mobile-nav-is-toggled {
+  // The page behind the menu does not scroll.
+  overflow: hidden;
+
+  .mobile-nav-backdrop {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-nav-sidebar {
+    transform: translateX(0);
+    visibility: visible;
+    transition: transform 0.3s;
+  }
+}
+
+// One level; a sub menu covers its parent level when opened.
 .mobile-nav-items {
-  flex: 0 0 100%;
+  min-height: 100%;
+  background-color: $theme-light;
+}
+
+.mobile-nav-sub-menu {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.3s, visibility 0s 0.3s;
+}
+
+.mobile-nav-expand.open > .mobile-nav-sub-menu {
+  transform: translateX(0);
+  visibility: visible;
+  transition: transform 0.3s;
+}
+
+// Header row of a level: back (in sub menus), the level's name, close.
+.mobile-nav-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 3.25rem;
+  padding: 0 0.5rem 0 1rem;
+  background-color: $theme-sand;
+  border-bottom: 1px solid $theme-border;
+
+  button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: $theme-dark;
+    font-size: 1.1rem;
+  }
+
+  .mobile-nav-back-link {
+    margin-left: -0.75rem;
+  }
+
+  .mobile-nav-close {
+    margin-left: auto;
+  }
+}
+
+.mobile-nav-title {
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .mobile-nav-item {
-  border-bottom: solid 1px $theme-border;
+  border-bottom: 1px solid $theme-border;
 }
 
 .mobile-nav-link {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   border: 0;
   text-align: left;
@@ -72,66 +150,26 @@
   color: $theme-dark;
   font-size: 1rem;
   line-height: 1.5em;
-  font-weight: 300;
+
+  &:hover {
+    background-color: $theme-sand;
+    color: $theme-dark;
+  }
+
+  &[aria-current="page"] {
+    font-weight: 600;
+    color: $theme-primary-on-sand;
+  }
 }
 
-.mobile-nav-link:hover {
-  background-color: $theme-sand;
-  color: $theme-dark;
-}
-
-.mobile-nav-link.active {
-  font-weight: bold;
-  color: $theme-primary-on-sand;
-}
-
-.mobile-nav-sub-menu {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: translateX(100%);
-  background-color: $theme-light;
-  transition: 0.3s;
-  visibility: hidden;
-}
-
-.mobile-nav-sub-menu .mobile-nav-item {
-  border-bottom: solid 1px $theme-border;
-}
-
-.mobile-nav-sub-menu .mobile-nav-link {
-  background-color: $theme-light;
-}
-
-.mobile-nav-sub-menu .mobile-nav-back-link::after {
-  content: "\F284";
-  font-family: "bootstrap-icons";
-}
-
-.mobile-nav-back-link,
-.mobile-nav-close-link,
-.mobile-nav-sub-menu-link {
-  display: flex;
-  justify-content: space-between;
-}
-
-.mobile-nav-close-link::after {
-  content: "\F659";
-  flex: 0 1 auto;
-  font-family: "bootstrap-icons";
+// "All in <category>" stands apart from the subcategories below it.
+.mobile-nav-all {
+  font-weight: 600;
 }
 
 .mobile-nav-sub-menu-link::after {
   content: "\F285";
-  flex: 0 1 auto;
   font-family: "bootstrap-icons";
-}
-
-.mobile-nav-expand.active > .mobile-nav-sub-menu {
-  transform: translateX(0);
-  visibility: visible;
 }
 
 .desktop-nav {

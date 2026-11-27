@@ -99,19 +99,78 @@ const initNavigation = () => {
         if (!event.target.closest('.desktop-nav, .desktop-dropdown-container')) hideAll();
     });
 
-    // Mobile menu
-    document.querySelectorAll('.mobile-nav-toggle-btn, .mobile-nav-close-link').forEach((button) => {
-        button.addEventListener('click', () => document.body.classList.toggle('mobile-nav-is-toggled'));
+};
+
+// Mobile category menu: a drawer from the right that shows one level at a time. It opens at the level of the
+// current category, closes on the backdrop, the close buttons, and Escape, keeps the focus inside the level shown,
+// and returns it to the menu button when closed.
+const initMobileMenu = () => {
+    const toggle = document.querySelector('.mobile-nav-toggle-btn');
+    const drawer = document.getElementById('mobile-nav');
+    const backdrop = document.querySelector('.mobile-nav-backdrop');
+    if (!toggle || !drawer) return;
+
+    const isOpen = () => document.body.classList.contains('mobile-nav-is-toggled');
+    // The level shown: the deepest open sub menu, or the top level.
+    const level = () => [...drawer.querySelectorAll('.mobile-nav-expand.open > .mobile-nav-sub-menu')].pop()
+        || drawer.querySelector(':scope > .mobile-nav-items');
+    const focusables = () => [...level().querySelectorAll(':scope > li > a, :scope > li > button')];
+    const focusLevel = () => focusables()[0]?.focus();
+
+    const open = () => {
+        drawer.querySelectorAll('.mobile-nav-expand').forEach((item) => {
+            item.classList.toggle('open', item.classList.contains('is-current'));
+        });
+        document.body.classList.add('mobile-nav-is-toggled');
+        toggle.setAttribute('aria-expanded', 'true');
+        focusLevel();
+    };
+    const close = () => {
+        document.body.classList.remove('mobile-nav-is-toggled');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
+    };
+
+    toggle.addEventListener('click', () => (isOpen() ? close() : open()));
+    backdrop?.addEventListener('click', close);
+    drawer.querySelectorAll('.mobile-nav-close').forEach((button) => button.addEventListener('click', close));
+    drawer.querySelectorAll('.mobile-nav-expand').forEach((item) => {
+        item.querySelector(':scope > .mobile-nav-sub-menu-link')?.addEventListener('click', () => {
+            item.classList.add('open');
+            focusLevel();
+        });
+        item.querySelector(':scope > .mobile-nav-sub-menu .mobile-nav-back-link')?.addEventListener('click', () => {
+            item.classList.remove('open');
+            item.querySelector(':scope > .mobile-nav-sub-menu-link').focus();
+        });
     });
-    document.querySelectorAll('.mobile-nav-expand').forEach((item) => {
-        item.querySelector(':scope > .mobile-nav-sub-menu-link')?.addEventListener('click', () => item.classList.add('active'));
-        item.querySelector(':scope > .mobile-nav-sub-menu .mobile-nav-back-link')?.addEventListener('click', () => item.classList.remove('active'));
+
+    document.addEventListener('keydown', (event) => {
+        if (!isOpen()) return;
+        if (event.key === 'Escape') {
+            close();
+        } else if (event.key === 'Tab') {
+            const items = focusables();
+            const first = items[0];
+            const last = items[items.length - 1];
+            if (!level().contains(document.activeElement)) {
+                event.preventDefault();
+                first?.focus();
+            } else if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
+        }
     });
 };
 
 document.addEventListener('DOMContentLoaded', () => {
     initLiveSearch();
     initNavigation();
+    initMobileMenu();
 
     // External links in the footer open in a new tab.
     document.querySelectorAll('#footer a[href^="https://"]').forEach((link) => {

@@ -1459,3 +1459,8 @@ msgstr "%(score)s von 5 Sternen"
 #: templates/reviews/review_form.html
 msgid "Back to the product"
 msgstr "Zurück zum Produkt"
+
+#: templates/lfs/catalog/category_tree_children.html
+#, python-format
+msgid "All in %(name)s"
+msgstr "Alle in %(name)s"
