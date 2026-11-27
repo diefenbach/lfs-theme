@@ -26,7 +26,7 @@ Shop content
 * Logo: the shop's image (Manage > Shop); without one the shop name is shown.
 * Footer columns: the first three static blocks.
 * Footer links (imprint, terms, privacy, ...): the actions of the group "Footer".
-* Colours: ``static/lfs_theme/scss/_colors.scss``.
+* Colours: ``static/lfs_theme/scss/_colors.scss``; other Bootstrap settings (fonts, radii, spacing): ``static/lfs_theme/scss/bootstrap-custom.scss``. Then ``npm run build:css``.
 
 Development
 ===========
@@ -36,7 +36,7 @@ CSS and the vendored libraries (Bootstrap, Bootstrap Icons, Swiper, htmx) are bu
     cd lfs_theme
     npm install
     npm run build        # vendor files and CSS
-    npm run build:css    # CSS only, after changing the SCSS
+    npm run build:css    # theme CSS and Bootstrap, after changing the SCSS
 
 Tests::
 

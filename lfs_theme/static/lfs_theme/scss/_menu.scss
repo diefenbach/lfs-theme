@@ -1,21 +1,21 @@
 @import "colors";
 
 /* Mobile Menu */
-.mobile-nav {
+// The menu button sits in the header next to the cart and is shown only where the desktop menu is hidden.
+#header .mobile-nav-toggle-btn {
   display: none;
-  padding-bottom: 8px;
-}
-
-.mobile-nav button {
   background: none;
   border: none;
+  padding: 0;
+  color: $theme-dark;
+  font-size: inherit;
+  line-height: 1;
   cursor: pointer;
 }
 
-.mobile-nav button i {
-  font-size: 24px;
-  color: white;
-  transition: color 0.3s ease;
+// The list glyph is drawn thinner and smaller than the search, person, and cart icons.
+.mobile-nav-toggle-btn i {
+  font-size: 1.2em;
 }
 
 .mobile-nav-sidebar ul {
@@ -28,7 +28,7 @@
 }
 
 .mobile-nav-close-link {
-  background-color: #ccc !important;
+  background-color: $theme-sand !important;
 }
 
 .mobile-nav-is-toggled .mobile-nav-sidebar {
@@ -44,12 +44,12 @@
   width: 250px;
   height: 100vh;
   background-color: $theme-light;
-  border-right: 1px solid #d0d0d0;
+  border-right: 1px solid $theme-border;
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   transition: 0.3s;
-  box-shadow: 10px 0px 25px -15px rgb(0, 0, 0);
+  box-shadow: $theme-popup-shadow;
   z-index: 1000;
 }
 
@@ -58,7 +58,7 @@
 }
 
 .mobile-nav-item {
-  border-bottom: solid 1px black;
+  border-bottom: solid 1px $theme-border;
 }
 
 .mobile-nav-link {
@@ -68,14 +68,20 @@
   text-align: left;
   padding: 0.875em 1em;
   background-color: $theme-light;
-  color: black;
+  color: $theme-dark;
   font-size: 1rem;
   line-height: 1.5em;
   font-weight: 300;
 }
 
+.mobile-nav-link:hover {
+  background-color: $theme-sand;
+  color: $theme-dark;
+}
+
 .mobile-nav-link.active {
   font-weight: bold;
+  color: $theme-primary-on-sand;
 }
 
 .mobile-nav-sub-menu {
@@ -91,7 +97,7 @@
 }
 
 .mobile-nav-sub-menu .mobile-nav-item {
-  border-bottom: solid 1px black;
+  border-bottom: solid 1px $theme-border;
 }
 
 .mobile-nav-sub-menu .mobile-nav-link {
@@ -132,13 +138,18 @@
   flex-wrap: wrap;
   gap: 0 1.75rem;
   padding-top: 12px;
+  margin-top: 12px;
+  // The band spans the full window width although the menu sits in the container.
+  background-color: $theme-sand;
+  box-shadow: 0 0 0 100vmax $theme-sand;
+  clip-path: inset(0 -100vmax);
 }
 
 .desktop-nav-item {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  color: white;
+  color: $theme-dark;
   padding: 0 0 14px;
   border-bottom: 3px solid transparent;
   white-space: nowrap;
@@ -162,9 +173,10 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: $theme-light;
-  border: 1px solid #d0d0d0;
-  box-shadow: 5px 10px 25px -15px rgb(0, 0, 0);
+  background-color: $theme-surface;
+  border: 1px solid $theme-border;
+  border-radius: 0 0 0.375rem 0.375rem;
+  box-shadow: $theme-popup-shadow;
   z-index: 1000;
 }
 
@@ -189,7 +201,7 @@
 
 .desktop-dropdown-item {
   text-decoration: none;
-  color: #333;
+  color: $theme-dark;
   padding: 8px 12px;
   border-radius: 4px;
   transition: background-color 0.2s ease;
@@ -198,27 +210,28 @@
 }
 
 .desktop-dropdown-item:hover {
-  background-color: #d0d0d0;
-  color: #000;
+  background-color: $theme-sand;
+  color: $theme-dark;
 }
 
 #header a.desktop-nav-item-level-2 {
   font-size: 1.1em;
   display: block;
-  color: black;
-}
-
-a.desktop-nav-item-level-2.active,
-a.desktop-nav-item-level-3.active,
-a.desktop-nav-item-level-2:hover,
-a.desktop-nav-item-level-3:hover {
-  color: $theme-primary;
+  color: $theme-dark;
 }
 
 #header a.desktop-nav-item-level-3 {
   display: block;
-  color: black;
+  color: $theme-muted;
   font-size: 0.85em;
+}
+
+// After the base colours and with #header, so hover and the active category win over them.
+#header a.desktop-nav-item-level-2.active,
+#header a.desktop-nav-item-level-3.active,
+#header a.desktop-nav-item-level-2:hover,
+#header a.desktop-nav-item-level-3:hover {
+  color: $theme-primary-on-sand;
 }
 
 .desktop-nav-item-level-2 img.icon {
@@ -236,9 +249,8 @@ a.desktop-nav-item-level-3.active {
 
 
 @media (max-width: 992px) {
-  .mobile-nav {
-      display: flex;
-      justify-content: flex-end;
+  #header .mobile-nav-toggle-btn {
+      display: inline-flex;
   }
   
   .desktop-nav {

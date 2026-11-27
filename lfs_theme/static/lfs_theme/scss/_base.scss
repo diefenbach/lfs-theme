@@ -3,14 +3,22 @@
 
 /* Header */
 #header {
-  background-color: $theme-dark;
-  color: white;
+  background-color: white;
+  color: $theme-dark;
   padding-top: 12px;
 
   a {
-    color: white;
+    color: $theme-dark;
     text-decoration: none;
   }
+
+  .search-form .form-control {
+    border-color: $theme-border;
+  }
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.01em;
 }
 
 .header-bar {
@@ -48,6 +56,20 @@
   font-size: 1.3rem;
 }
 
+// Every icon (search, account, cart, menu) as its own centred box, so they line up whatever their size.
+.header-actions > a,
+.header-actions > .dropdown,
+.header-actions > .dropdown > a,
+.header-actions > .mobile-nav-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.header-actions .bi::before {
+  vertical-align: 0;
+}
+
 .cart-link {
   position: relative;
 }
@@ -59,10 +81,13 @@
   right: -10px;
 }
 
-.management {
-  font-size: 0.85rem;
-  text-align: right;
-  opacity: 0.85;
+// The person icon opens the account menu (my account, manage, logout); no caret next to the icon.
+.account-menu .dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown-menu {
+  box-shadow: $theme-popup-shadow;
 }
 
 .search-page-form,
@@ -94,8 +119,8 @@ form .errorlist {
 }
 
 .categories-footer {
-  background-color: $theme-dark;
-  color: white;
+  background-color: $theme-sand;
+  color: $theme-dark;
   padding: 20px;
   margin-top: 40px;
 
@@ -104,21 +129,21 @@ form .errorlist {
   }
 
   .footer-main-category {
-    color: $theme-primary;
+    color: $theme-primary-on-sand;
     text-decoration: none;
   }
 
   .footer-sub-category {
-    color: white;
+    color: $theme-muted;
     text-decoration: none;
     font-size: 0.8em;    
   }
 
   .footer-sub-category:hover {
-    color: $theme-primary;
+    color: $theme-primary-on-sand;
   }
   .footer-main-category:hover {
-    color: white;
+    color: $theme-dark;
   }
 }
 

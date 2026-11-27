@@ -1,8 +1,8 @@
 @import "colors";
 
 #footer {
-    background-color: color-mix(in srgb, #{$theme-dark} 85%, black);
-    color: white;
+    background-color: $theme-sand-dark;
+    color: $theme-dark;
 }
 
 #footer .container {
@@ -11,11 +11,11 @@
 
 #footer a {
     text-decoration: none;
-    color: color-mix(in srgb, #{$theme-primary} 40%, white);
+    color: $theme-primary-on-sand;
 }
 
 #footer a:hover {
-    color: white;
+    color: $theme-dark;
 }
 
 #footer-bottom {

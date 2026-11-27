@@ -7,8 +7,8 @@
     --underline-width: 170px;
     --underline-height: 6px;           
     --underline-radius: 2px;           
-    --color-inactive: #{$theme-primary};
-    --color-active: #9a9a9a;           
+    --color-inactive: #{$theme-border};
+    --color-active: #{$theme-primary};
   
     border-bottom: 0;
     gap: 2.2rem;                        

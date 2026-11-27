@@ -1,8 +1,12 @@
+@import "colors";
+
 /* cpd = categories-product-default */
 
 .cpd {
   .product {
-    border: 1px solid #ccc;
+    border: 1px solid $theme-border;
+    border-radius: 0.375rem;
+    overflow: hidden;
     margin: 10px 0;
     cursor: pointer;
   }
@@ -12,12 +16,12 @@
   }
 
   .product-info {
-    background-color: #eee;
+    background-color: $theme-surface;
     padding: 10px;
   }
 
   .product:hover .product-info {
-    background-color: #ddd;
+    background-color: $theme-sand;
   }
 
   .product-image {
