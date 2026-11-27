@@ -65,7 +65,7 @@ def test_score_of_a_star_button_is_accepted_by_the_review_form(client, product):
     score = re.findall(r'data-score="([^"]+)"', client.get(url).content.decode())[3]
 
     client.post(url, {
-        "score": score, "comment": "Good spade", "name": "Joe", "email": "joe@example.com",
+        "score": score, "comment": "Good spade", "user_name": "Joe", "user_email": "joe@example.com",
         "content_type_id": content_type.id, "content_id": product.id,
     })
 

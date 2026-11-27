@@ -58,13 +58,10 @@
                name="content_id"
                value="{{request.POST.content_id}}" />
 
-        <input type="submit"
-               name="edit"
-               value="{% trans 'Edit' %}" />
-
-        <input type="submit"
-               name="save"
-               value="{% trans 'Submit' %}" />
+        <div class="d-flex gap-2">
+            <button type="submit" name="edit" value="1" class="btn btn-outline-secondary">{% trans 'Edit' %}</button>
+            <button type="submit" name="save" value="1" class="btn btn-primary">{% trans 'Submit' %}</button>
+        </div>
     </form>
 {% endblock %}
 

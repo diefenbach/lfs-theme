@@ -1455,3 +1455,7 @@ msgstr "Weiter Einkaufen"
 #, python-format
 msgid "%(score)s of 5 stars"
 msgstr "%(score)s von 5 Sternen"
+
+#: templates/reviews/review_form.html
+msgid "Back to the product"
+msgstr "Zurück zum Produkt"
