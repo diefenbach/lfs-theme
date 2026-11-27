@@ -118,9 +118,13 @@ const initMobileMenu = () => {
     const focusLevel = () => focusables()[0]?.focus();
 
     const open = () => {
+        // Jump straight to the current category's level; only the drawer itself slides in.
+        drawer.classList.add('no-transition');
         drawer.querySelectorAll('.mobile-nav-expand').forEach((item) => {
             item.classList.toggle('open', item.classList.contains('is-current'));
         });
+        drawer.offsetWidth; // apply the levels' positions before transitions come back
+        drawer.classList.remove('no-transition');
         document.body.classList.add('mobile-nav-is-toggled');
         toggle.setAttribute('aria-expanded', 'true');
         focusLevel();

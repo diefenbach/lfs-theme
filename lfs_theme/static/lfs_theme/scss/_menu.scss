@@ -95,6 +95,11 @@
   transition: transform 0.3s;
 }
 
+// Set while the menu opens, so the levels of the current category do not slide in on top of the drawer.
+.mobile-nav-sidebar.no-transition .mobile-nav-sub-menu {
+  transition: none;
+}
+
 // Header row of a level: back (in sub menus), the level's name, close.
 .mobile-nav-head {
   display: flex;
