@@ -1,4 +1,4 @@
-{% load i18n lfs_tags l10n %}
+{% load i18n lfs_tags l10n lfs_theme_tags %}
 
 <div class="reviews">
     <h2 class="section">{% trans 'Reviews' %}</h2>
@@ -7,12 +7,7 @@
         {% for review in reviews %}
             <div class="review-wrapper">
                 <div class="review">
-                    <ul class="star-rating small-star inline-rating">
-                        <li class="current-rating"
-                            style="{% localize off %}width:{{review.score|multiply:10}}px{% endlocalize %}">                            
-                            {% blocktrans with avg=review.score|floatformat %}Currently <span>{{ avg }}</span>/<span>5</span> stars{% endblocktrans %}
-                        </li>
-                    </ul>
+                    {% star_rating review.score %}
 
                     {% if review.email and review.name %}
                         <meta content="{{ review.email }}">

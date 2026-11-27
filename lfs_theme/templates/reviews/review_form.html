@@ -66,18 +66,14 @@
                     {{ form.score.errors }}
                 </div>
             {% endif %}
-            <ul class="star-rating">
+            <div class="star-input" role="group" aria-label="{{ form.score.label }}">
                 {% for score in scores %}
-                    <li>
-                        <a href="#"
-                           class="rate {% if score.current %}current-rating{% endif %}"
-                           title="{{ score.title|floatformat }}"
-                           data="{% localize off %}{{ score.value }}{% endlocalize %}"
-                           style="z-index:{{ score.z_index }}; width:{{ score.width }}px">
-                        </a>
-                    </li>
+                    <button type="button" class="rate" data-score="{% localize off %}{{ score.value }}{% endlocalize %}"
+                            aria-label="{% blocktrans with score=score.value|floatformat:'0' %}{{ score }} of 5 stars{% endblocktrans %}">
+                        <i class="bi bi-star" aria-hidden="true"></i>
+                    </button>
                 {% endfor %}
-            </ul>
+            </div>
         </div>
         <div class="field">
             <div class="label">

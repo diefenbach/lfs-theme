@@ -1,5 +1,5 @@
 {% extends "lfs/base.html" %}
-{% load i18n lfs_tags l10n %}
+{% load i18n lfs_tags l10n lfs_theme_tags %}
 
 {% block section %}preview-review {% endblock %}
 {% block left-slot-wrapper %}{% endblock %}
@@ -25,12 +25,7 @@
 
         <label for="score">{% trans 'Your score' %}:</label>
         <div class="field star-rating-wrapper">
-            <ul class="star-rating">
-                <li class="current-rating"
-                    style="width:{{score|multiply:25}}px">
-                    Currently 3/5 Stars
-                </li>
-            </ul>
+            {% star_rating score %}
         </div>
 
         {% if request.POST.comment %}

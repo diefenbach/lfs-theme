@@ -222,3 +222,14 @@ def email_text_footer(context: Context) -> dict[str, Any]:
 def cart_delivery_time(cart: Any, request: Any) -> Any:
     """Return the longest delivery time of the cart's products, for the checkout summary; None without a cart."""
     return cart.get_delivery_time(request) if cart else None
+
+
+@register.inclusion_tag("lfs_theme/star_rating.html")
+def star_rating(score: float | None) -> dict[str, Any]:
+    """Draw ``score`` (0 to 5) as five Bootstrap Icons stars, rounded to half stars.
+
+    Each star is "fill", "half", or "empty"; ``score`` is passed on for the label that screen readers read out.
+    """
+    halves = round((score or 0) * 2)
+    kinds = ["fill" if halves >= 2 * i else "half" if halves == 2 * i - 1 else "empty" for i in range(1, 6)]
+    return {"stars": kinds, "score": score or 0}

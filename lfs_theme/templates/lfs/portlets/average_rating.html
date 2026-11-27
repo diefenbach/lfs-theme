@@ -1,4 +1,4 @@
-{% load i18n lfs_tags l10n %}
+{% load i18n lfs_tags l10n lfs_theme_tags %}
 
 {% if average %}
     <div class="average-rating-portlet portlet">
@@ -7,11 +7,7 @@
         </div>
         <div class="portlet-body">
             <a class="average-rating d-block" href="#reviews" title="{% trans 'Reviews' %}">
-                <ul class="star-rating">
-                    <li class="current-rating"
-                        style="{% localize off %}width:{{ average|multiply:25 }}px{% endlocalize %}">
-                    </li>
-                </ul>
+                {% star_rating average %}
             </a>
 	        <div class="average-rating-description clear">
 	            {% trans 'Score' %}: {{ average|decimal_l10n }}, {% trans 'based on' %}
