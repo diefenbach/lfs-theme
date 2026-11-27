@@ -3,14 +3,22 @@
 
 /* Header */
 #header {
-  background-color: $theme-dark;
-  color: white;
+  background-color: white;
+  color: $theme-dark;
   padding-top: 12px;
 
   a {
-    color: white;
+    color: $theme-dark;
     text-decoration: none;
   }
+
+  .search-form .form-control {
+    border-color: $theme-border;
+  }
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.01em;
 }
 
 .header-bar {
@@ -64,6 +72,10 @@
   display: none;
 }
 
+.dropdown-menu {
+  box-shadow: $theme-popup-shadow;
+}
+
 .search-page-form,
 .sorting {
   max-width: 400px;
@@ -93,8 +105,8 @@ form .errorlist {
 }
 
 .categories-footer {
-  background-color: $theme-dark;
-  color: white;
+  background-color: $theme-sand;
+  color: $theme-dark;
   padding: 20px;
   margin-top: 40px;
 
@@ -103,21 +115,21 @@ form .errorlist {
   }
 
   .footer-main-category {
-    color: $theme-primary;
+    color: $theme-primary-on-sand;
     text-decoration: none;
   }
 
   .footer-sub-category {
-    color: white;
+    color: $theme-muted;
     text-decoration: none;
     font-size: 0.8em;    
   }
 
   .footer-sub-category:hover {
-    color: $theme-primary;
+    color: $theme-primary-on-sand;
   }
   .footer-main-category:hover {
-    color: white;
+    color: $theme-dark;
   }
 }
 

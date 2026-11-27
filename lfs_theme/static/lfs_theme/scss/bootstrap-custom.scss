@@ -8,5 +8,13 @@ $danger: $theme-danger;
 $link-color: $theme-primary;
 $link-hover-color: color.adjust($theme-primary, $lightness: -10%);
 $enable-shadows: false;
+$headings-font-weight: 600;
+$dropdown-bg: $theme-surface;
+$dropdown-color: $theme-dark;
+$dropdown-border-color: $theme-border;
+$dropdown-link-color: $theme-dark;
+$dropdown-link-hover-color: $theme-dark;
+$dropdown-link-hover-bg: $theme-sand;
+$dropdown-divider-bg: $theme-border;
 
 @import "../../../node_modules/bootstrap/scss/bootstrap";
