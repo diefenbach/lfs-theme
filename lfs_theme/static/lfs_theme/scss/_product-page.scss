@@ -344,7 +344,8 @@
 .product-tabs {
   display: flex;
   justify-content: flex-start;
-  margin-left: 16px;
+  // The tabs are a grid row item, but .nav drops the row's padding; this lines them up with the content.
+  padding-inline: calc(var(--bs-gutter-x) * 0.5);
   --underline-width: 170px;
   --underline-height: 6px;
   --underline-radius: 2px;
