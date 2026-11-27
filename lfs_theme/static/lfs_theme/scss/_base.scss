@@ -1,6 +1,5 @@
 @use "colors" as *;
 
-
 /* Header */
 #header {
   background-color: white;
@@ -136,7 +135,7 @@ form .errorlist {
   .footer-sub-category {
     color: $theme-muted;
     text-decoration: none;
-    font-size: 0.8em;    
+    font-size: 0.8em;
   }
 
   .footer-sub-category:hover {
@@ -149,7 +148,7 @@ form .errorlist {
 
 /* Livesearch */
 .livesearch-wrapper {
-  position: relative; 
+  position: relative;
   top: 4px;
 }
 
@@ -186,7 +185,6 @@ form .errorlist {
 .livesearch-results {
   padding: 5px 25px;
 }
-
 
 .payment-method-note {
   margin-left: 26px;

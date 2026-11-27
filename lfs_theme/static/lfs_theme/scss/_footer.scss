@@ -1,49 +1,49 @@
 @use "colors" as *;
 
 #footer {
-    background-color: $theme-sand-dark;
-    color: $theme-dark;
+  background-color: $theme-sand-dark;
+  color: $theme-dark;
 }
 
 #footer .container {
-    padding: 20px 20px 0 20px;
+  padding: 20px 20px 0 20px;
 }
 
 #footer a {
-    text-decoration: none;
-    color: $theme-primary-on-sand;
+  text-decoration: none;
+  color: $theme-primary-on-sand;
 }
 
 #footer a:hover {
-    color: $theme-dark;
+  color: $theme-dark;
 }
 
 #footer-bottom {
-    background-color: $theme-dark;
-    color: white;
+  background-color: $theme-dark;
+  color: white;
 }
 
 #footer-bottom .container {
-    padding: 30px 20px;
+  padding: 30px 20px;
 }
 
 #footer-bottom a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 #footer-bottom a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
 }
 
 .powered-by {
-    margin: 1rem 0 0;
-    font-size: 0.85rem;
-    opacity: 0.7;
+  margin: 1rem 0 0;
+  font-size: 0.85rem;
+  opacity: 0.7;
 }

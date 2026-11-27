@@ -162,7 +162,6 @@
   border-bottom-color: $theme-primary;
 }
 
-
 /* Desktop sub menu */
 .desktop-dropdown-container {
   position: relative;
@@ -233,17 +232,16 @@ a.desktop-nav-item-level-3.active {
   font-weight: bold;
 }
 
-
 @include down(lg) {
   #header .mobile-nav-toggle-btn {
-      display: inline-flex;
+    display: inline-flex;
   }
-  
+
   .desktop-nav {
-      display: none;
+    display: none;
   }
-  
+
   .desktop-dropdown-container {
-      display: none;
+    display: none;
   }
 }

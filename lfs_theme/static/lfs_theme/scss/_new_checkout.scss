@@ -5,127 +5,126 @@
 .checkout-addresses,
 .checkout-payment-and-shipping,
 .checkout-check-and-pay {
-    .title {
-        border-bottom: 2px solid $theme-primary;
-        font-size: 1.1rem;
-        font-weight: bold;
-        margin: 20px 0 10px 0;
-    }
+  .title {
+    border-bottom: 2px solid $theme-primary;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+  }
 
-    .stepper {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0 0 4rem 0;
-    }
-    
-    .stepper a {
-        text-decoration: none;
-    }
+  .stepper {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 4rem 0;
+  }
 
-    .step {
-        flex: 1;
-        text-align: center;
-        position: relative;
-    }
-    
-    .step:not(:last-child)::after {
-        content: '';
-        position: absolute;
-        top: 27px;
-        right: -50%;
-        width: 100%;
-        height: 2px;
-        background-color: $theme-border;
-        z-index: 1;
-    }
-    
-    .step.completed:not(:last-child)::after {
-        background-color: $theme-primary;
-    }
-    
-    .step-circle {
-        width: 55px;
-        height: 55px;
-        border-radius: 50%;
-        background-color: $theme-border;
-        color: $theme-muted;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 10px;
-        font-weight: bold;
-        font-size: 1.1rem;
-        position: relative;
-        z-index: 2;
-    }
-    
-    .step.active .step-circle {
-        background-color: $theme-primary;
-        color: white;
-    }
-    
-    .step.completed .step-circle {
-        background-color: $theme-primary;
-        color: white;
-    }
-    
-    .step-title {
-        display: block;
-        font-size: 0.9rem;
-        color: $theme-muted;
-        font-weight: 500;
-    }
-    
-    .step.active .step-title {
-        font-weight: 600;
-    }    
+  .stepper a {
+    text-decoration: none;
+  }
+
+  .step {
+    flex: 1;
+    text-align: center;
+    position: relative;
+  }
+
+  .step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 27px;
+    right: -50%;
+    width: 100%;
+    height: 2px;
+    background-color: $theme-border;
+    z-index: 1;
+  }
+
+  .step.completed:not(:last-child)::after {
+    background-color: $theme-primary;
+  }
+
+  .step-circle {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: $theme-border;
+    color: $theme-muted;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .step.active .step-circle {
+    background-color: $theme-primary;
+    color: white;
+  }
+
+  .step.completed .step-circle {
+    background-color: $theme-primary;
+    color: white;
+  }
+
+  .step-title {
+    display: block;
+    font-size: 0.9rem;
+    color: $theme-muted;
+    font-weight: 500;
+  }
+
+  .step.active .step-title {
+    font-weight: 600;
+  }
 }
 
-
 .checkout-check-and-pay {
-    .voucher-message.invalid {
-        color: $theme-danger;
-    }
+  .voucher-message.invalid {
+    color: $theme-danger;
+  }
 
-    .voucher-message.valid {
-        color: $theme-success;
-    }
+  .voucher-message.valid {
+    color: $theme-success;
+  }
 
+  .cart-labels {
+    display: none;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .cart-label {
+    display: block;
+    font-weight: bold;
+    padding: 20px 0 2px 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid $theme-primary;
+  }
+
+  .hr-small {
+    display: block;
+    border-bottom: 1px solid $theme-primary;
+    margin: 30px 0;
+    opacity: 1;
+  }
+
+  .total {
+    font-weight: bold;
+  }
+
+  @include up(lg) {
     .cart-labels {
-        display: none;
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
-    
+      display: flex;
+    }
+
     .cart-label {
-        display: block;
-        font-weight: bold;
-        padding: 20px 0 2px 0;
-        margin-bottom: 10px;
-        border-bottom: 1px solid $theme-primary;
-      }
-
-    .hr-small {
-        display: block;
-        border-bottom: 1px solid $theme-primary;
-        margin: 30px 0;
-        opacity: 1;
+      display: none;
     }
-
-    .total {
-        font-weight: bold;
-    }
-
-    @include up(lg) {
-        .cart-labels {
-           display: flex;
-        }
-    
-        .cart-label {
-          display: none;
-        }
-      }    
+  }
 }
