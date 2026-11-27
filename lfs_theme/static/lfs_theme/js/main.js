@@ -115,7 +115,7 @@ const initMobileMenu = () => {
     const level = () => [...drawer.querySelectorAll('.mobile-nav-expand.open > .mobile-nav-sub-menu')].pop()
         || drawer.querySelector(':scope > .mobile-nav-items');
     const focusables = () => [...level().querySelectorAll(':scope > li > a, :scope > li > button')];
-    const focusLevel = () => focusables()[0]?.focus();
+    const focusLevel = () => focusables()[0]?.focus({preventScroll: true});
 
     const open = () => {
         // Jump straight to the current category's level; only the drawer itself slides in.
@@ -132,7 +132,7 @@ const initMobileMenu = () => {
     const close = () => {
         document.body.classList.remove('mobile-nav-is-toggled');
         toggle.setAttribute('aria-expanded', 'false');
-        toggle.focus();
+        toggle.focus({preventScroll: true});
     };
 
     toggle.addEventListener('click', () => (isOpen() ? close() : open()));
@@ -145,7 +145,7 @@ const initMobileMenu = () => {
         });
         item.querySelector(':scope > .mobile-nav-sub-menu .mobile-nav-back-link')?.addEventListener('click', () => {
             item.classList.remove('open');
-            item.querySelector(':scope > .mobile-nav-sub-menu-link').focus();
+            item.querySelector(':scope > .mobile-nav-sub-menu-link').focus({preventScroll: true});
         });
     });
 
@@ -159,13 +159,13 @@ const initMobileMenu = () => {
             const last = items[items.length - 1];
             if (!level().contains(document.activeElement)) {
                 event.preventDefault();
-                first?.focus();
+                first?.focus({preventScroll: true});
             } else if (event.shiftKey && document.activeElement === first) {
                 event.preventDefault();
-                last.focus();
+                last.focus({preventScroll: true});
             } else if (!event.shiftKey && document.activeElement === last) {
                 event.preventDefault();
-                first.focus();
+                first.focus({preventScroll: true});
             }
         }
     });
