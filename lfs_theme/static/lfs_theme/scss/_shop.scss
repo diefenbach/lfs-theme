@@ -1,9 +1,0 @@
-@use "breakpoints" as *;
-
-.shop {
-  @include down(md) {
-    .first-heading {
-      font-size: 1.5rem;
-    }
-  }
-}

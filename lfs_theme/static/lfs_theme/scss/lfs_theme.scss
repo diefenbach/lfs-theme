@@ -1,18 +1,17 @@
+// The theme's styles. _colors.scss and _breakpoints.scss hold the settings the partials use; they emit no CSS.
+// Bootstrap is built separately from bootstrap-custom.scss with the same colours.
 @use 'base';
-@use 'breadcrumbs';
-@use 'added-to-cart';
-@use 'cart';
-@use 'footer';
-@use 'new_checkout';
-@use 'one-page-checkout';
-@use 'login';
+@use 'header';
 @use 'menu';
-@use 'pagination';
-@use 'portlets';
-@use 'products';
-@use 'rating';
-@use 'product-cards';
 @use 'search';
-@use 'shop';
+@use 'breadcrumbs';
+@use 'footer';
+@use 'portlets';
+@use 'product-cards';
+@use 'product-page';
+@use 'rating';
+@use 'cart';
+@use 'added-to-cart';
+@use 'checkout';
+@use 'one-page-checkout';
 @use 'swiper';
-@use 'tabs';

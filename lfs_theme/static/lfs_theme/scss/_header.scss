@@ -1,0 +1,82 @@
+@use "colors" as *;
+
+// Header bar: logo or shop name, search field, and the icons for search, account, cart, and menu.
+#header {
+  background-color: white;
+  color: $theme-dark;
+  padding-top: 12px;
+
+  a {
+    color: $theme-dark;
+    text-decoration: none;
+  }
+
+  .search-form .form-control {
+    border-color: $theme-border;
+  }
+}
+
+.header-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 56px;
+}
+
+.shop-logo {
+  flex: 0 1 auto;
+  margin-right: auto;
+}
+
+.shop-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.logo {
+  max-width: 260px;
+  max-height: 64px;
+}
+
+.search-form {
+  position: relative;
+  flex: 0 1 320px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.3rem;
+}
+
+// Every icon (search, account, cart, menu) as its own centred box, so they line up whatever their size.
+.header-actions > a,
+.header-actions > .dropdown,
+.header-actions > .dropdown > a,
+.header-actions > .mobile-nav-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.header-actions .bi::before {
+  vertical-align: 0;
+}
+
+.cart-link {
+  position: relative;
+}
+
+.cart-link .badge {
+  position: absolute;
+  font-size: 0.5em;
+  top: -6px;
+  right: -10px;
+}
+
+// The person icon opens the account menu (my account, manage, logout); no caret next to the icon.
+.account-menu .dropdown-toggle::after {
+  display: none;
+}

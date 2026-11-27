@@ -1,9 +1,0 @@
-@use "breakpoints" as *;
-
-.login {
-  @include down(md) {
-    .register {
-      margin-top: 20px;
-    }
-  }
-}

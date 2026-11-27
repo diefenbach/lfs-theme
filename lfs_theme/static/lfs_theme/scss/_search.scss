@@ -1,3 +1,49 @@
+@use "colors" as *;
+
+// Live search below the header search field, and the search results page.
+.livesearch-wrapper {
+  position: relative;
+  top: 4px;
+}
+
+#livesearch-result {
+  position: absolute;
+  right: 0;
+  z-index: 1050;
+  color: $theme-dark;
+  width: min(700px, 90vw);
+  background-color: white;
+  box-shadow: $theme-popup-shadow;
+}
+
+#livesearch-result:empty {
+  display: none;
+}
+
+#livesearch-result a {
+  color: $theme-dark;
+}
+
+#livesearch-result a:hover {
+  color: $theme-primary;
+}
+
+#livesearch-result .image {
+  min-height: 60px;
+}
+
+#livesearch-result .container {
+  background-color: white;
+}
+
+.livesearch-results {
+  padding: 5px 25px;
+}
+
+.search-page-form {
+  max-width: 400px;
+}
+
 .search {
   .search-form {
     display: block;
