@@ -52,3 +52,12 @@ def test_account_menu_has_no_manage_link_for_a_customer(client, django_user_mode
 
     assert f'href="{reverse("lfs_logout")}"' in menu
     assert reverse("lfs_manage_dashboard") not in menu
+
+
+def test_mobile_menu_button_sits_next_to_the_cart(client, shop):
+    html = client.get(reverse("lfs_shop_view")).content.decode()
+
+    actions = html[html.index('<div class="header-actions">') :]
+    actions = actions[: actions.index("</div>")]
+    assert actions.index('class="cart-link"') < actions.index('class="mobile-nav-toggle-btn"')
+    assert html.count('class="mobile-nav-toggle-btn"') == 1
