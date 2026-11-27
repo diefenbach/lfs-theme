@@ -58,9 +58,30 @@
                     <i class="bi bi-search" aria-hidden="true"></i>
                 </a>
                 {% if user.is_authenticated %}
-                    <a href="{% url 'lfs_my_account' %}" title="{% trans 'My account' %}" aria-label="{% trans 'My account' %}">
-                        <i class="bi bi-person" aria-hidden="true"></i>
-                    </a>
+                    <div class="dropdown account-menu">
+                        <a href="{% url 'lfs_my_account' %}" class="dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false" title="{% trans 'My account' %}" aria-label="{% trans 'My account' %}">
+                            <i class="bi bi-person" aria-hidden="true"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="{% url 'lfs_my_account' %}">{% trans 'My account' %}</a></li>
+                            {% if user.is_superuser %}
+                                <li>
+                                    {% if category %}
+                                        <a class="dropdown-item" href="{% url 'lfs_manage_category' category.id %}">{% trans 'Manage' %}</a>
+                                    {% elif product %}
+                                        <a class="dropdown-item" href="{% url 'lfs_manage_product_data' product.id %}">{% trans 'Manage' %}</a>
+                                    {% elif page %}
+                                        <a class="dropdown-item" href="{% url 'lfs_manage_page' page.id %}">{% trans 'Manage' %}</a>
+                                    {% else %}
+                                        <a class="dropdown-item" href="{% url 'lfs_manage_dashboard' %}">{% trans 'Manage' %}</a>
+                                    {% endif %}
+                                </li>
+                            {% endif %}
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{% url 'lfs_logout' %}">{% trans 'Logout' %}</a></li>
+                        </ul>
+                    </div>
                 {% elif not ANON_ONLY %}
                     <a href="{% url 'lfs_login' %}" title="{% trans 'Login' %}" aria-label="{% trans 'Login' %}">
                         <i class="bi bi-person" aria-hidden="true"></i>
@@ -72,21 +93,6 @@
                 </a>
             </div>
         </div>
-
-        {% if user.is_superuser %}
-            <div class="management">
-                {% if category %}
-                    <a href="{% url 'lfs_manage_category' category.id %}">{% trans 'Manage' %}</a>
-                {% elif product %}
-                    <a href="{% url 'lfs_manage_product_data' product.id %}">{% trans 'Manage' %}</a>
-                {% elif page %}
-                    <a href="{% url 'lfs_manage_page' page.id %}">{% trans 'Manage' %}</a>
-                {% else %}
-                    <a href="{% url 'lfs_manage_dashboard' %}">{% trans 'Manage' %}</a>
-                {% endif %}
-                | <a href="{% url 'lfs_logout' %}">{% trans 'Logout' %}</a>
-            </div>
-        {% endif %}
 
         {% top_nav %}
     </div>

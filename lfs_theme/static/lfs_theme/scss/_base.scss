@@ -59,10 +59,9 @@
   right: -10px;
 }
 
-.management {
-  font-size: 0.85rem;
-  text-align: right;
-  opacity: 0.85;
+// The person icon opens the account menu (my account, manage, logout); no caret next to the icon.
+.account-menu .dropdown-toggle::after {
+  display: none;
 }
 
 .search-page-form,
