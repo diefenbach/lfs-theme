@@ -1,4 +1,4 @@
-{% load i18n %}
+{% load i18n lfs_theme_tags %}
 {% trans "Please, review the articles you've bought in our shop." %}
 
 {% for item in order.items.all %}
